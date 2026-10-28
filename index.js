@@ -6,7 +6,7 @@ import { Worktrees } from './server/worktrees.js';
 import { Native } from './server/native.js';
 import { Projects } from './server/projects.js';
 
-export const inject = ['connection', 'tools', 'systemPrompt', 'sessionController', 'agents', 'permissionPresets', 'sandboxPolicy', 'sessionPersistence'];
+export const inject = ['connection', 'tools', 'systemPrompt', 'sessionController', 'agents', 'permissionPresets', 'sandboxPolicy', 'sessionPersistence', 'workspaceRegistry'];
 export async function apply(ctx, config = {}) {
   const registered = JSON.parse(await readFile(new URL('./config/hyperparams.yaml', import.meta.url), 'utf8'));
   const limits = Object.fromEntries(Object.entries(registered).map(([key, item]) => [key, item.value]));
@@ -24,12 +24,21 @@ export async function apply(ctx, config = {}) {
     if (owned.lead === agent.id) return;
     void projects.report(agent.id, { outcome: 'failed', summary: String(error?.message || error).slice(0, limits.maxText) }).catch(() => {});
   });
+  // Project membership is the authority boundary, including when another delegation plugin is installed.
+  ctx.tools.guard(exec => {
+    if (!exec.agent) return;
+    try { projects.status(exec.agent.id); } catch { return; }
+    if (/^subagent(?:_|$)|^spawn_teammate$|^send_message$|^interrupt_agent$|^team_task_|^workflow$|^ralph$/.test(exec.name))
+      return '本阶段只协调当前项目内的 DSH 工作线程，请使用 project_dispatch / project_report；外部代理和另一套团队分派未启用。';
+  });
   ctx.systemPrompt.context({ name: 'project-workbench:identity', order: ctx.systemPrompt.getContextOrder('TEAM_IDENTITY'), required: true,
     text: ({ agent }) => agent ? projects.context(agent.id) : '' });
   const string = description => ({ type: 'string', description });
   const required = description => ({ ...string(description), required: true });
   function tool(name, description, parameters, action) {
-    ctx.tools.register({ name, description, parameters,
+    const properties = Object.fromEntries(Object.entries(parameters).map(([key, { required, ...schema }]) => [key, schema]));
+    const requiredKeys = Object.entries(parameters).filter(([, schema]) => schema.required).map(([key]) => key);
+    ctx.tools.register({ name, description, parameters: { type: 'object', properties, required: requiredKeys, additionalProperties: false },
       output: { schema: { type: 'object', properties: { result: { type: 'string' } }, required: ['result'], additionalProperties: false }, render: (_args, value) => [{ type: 'text', text: value.result }] },
       async execute(args, exec) {
         if (!exec.agent || ctx.agents.get(exec.agent.id) !== exec.agent) throw Error('需要当前真实的 DSH 会话');

@@ -35,10 +35,12 @@ test('parallel dispatch respects the configured limit and task dependencies', as
   const a = await f.service.dispatch(f.p.lead, { title: 'A', task: 'read A' }, 'a');
   const b = await f.service.dispatch(f.p.lead, { title: 'B', task: 'read B' }, 'b');
   const c = await f.service.dispatch(f.p.lead, { title: 'C', task: 'combine', depends_on: [a.id, b.id] }, 'c');
+  const d = await f.service.dispatch(f.p.lead, { title: 'D', task: 'independent fourth' }, 'd');
   await f.drain();
   let p = f.service.list()[0];
   assert.equal(p.threads.filter(t => t.phase === 'running').length, 2);
   assert.equal(p.threads.find(t => t.id === c.id).phase, 'queued');
+  assert.equal(p.threads.find(t => t.id === d.id).phase, 'queued');
   for (const t of p.threads.filter(t => t.phase === 'running')) {
     await f.service.report(t.sessionId, { summary: '实际结果', outcome: 'review' });
     f.sessions.get(t.sessionId).running = false;
@@ -104,11 +106,27 @@ test('restore keeps completed work and exposes interrupted work without rerunnin
   assert.equal(restored.list()[0].threads[0].sessionId, t.sessionId);
   assert.equal(f.deliveries.length, 1);
 });
+test('restore does not replay an unacknowledged task; pause still delivers worker results', async () => {
+  const f = await fixture(); await f.service.dispatch(f.p.lead, { title: 'A', task: 'a' }); await f.drain();
+  const t = f.service.list()[0].threads[0]; f.sessions.get(t.sessionId).running = false;
+  await f.store.change(s => { s.outbox[0].sent = false; });
+  const restored = new Projects(await new Store(f.store.path).open(), f.native, {}, limits);
+  await restored.recover(); while (restored.driving) await restored.driving;
+  assert.equal(f.deliveries.length, 1, 'an unsent message must not restart interrupted work');
+  await restored.action(f.p.id, t.id, 'retry'); while (restored.driving) await restored.driving;
+  assert.equal(f.deliveries.length, 2);
+  await restored.action(f.p.id, null, 'pause'); while (restored.driving) await restored.driving;
+  await restored.report(t.sessionId, { summary: 'done while project paused' }); while (restored.driving) await restored.driving;
+  assert.equal(f.deliveries.at(-1).target, f.p.lead);
+  assert.match(f.deliveries.at(-1).text, /done while project paused/);
+});
 test('join only explicitly selected ordinary sessions and retains their history', async () => {
   const f = await fixture(); const id = await f.native.create('/other', 'existing');
   f.sessions.get(id).events.push({ type: 'assistant/message', data: { content: [{ type: 'text', text: 'old result' }] } });
+  f.sessions.get(id).events.push({ type: 'session/title', data: { title: 'Latest native title' } });
   const joined = await f.service.join(f.p.id, id);
   assert.equal(joined.sessionId, id); assert.equal(f.deliveries.length, 0);
+  assert.equal(joined.title, 'Latest native title');
   assert.equal((await f.service.read(f.p.lead, joined.id)).messages[0].text, 'old result');
   await assert.rejects(f.service.join(f.p.id, id), /已属于/);
 });

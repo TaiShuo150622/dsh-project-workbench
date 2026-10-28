@@ -19,8 +19,14 @@ export class Native {
   constructor(ctx) { this.ctx = ctx; }
   running(id) { return this.ctx.agents.get(id)?.status === 'running'; }
   async inspect(id) { return this.ctx.sessionController.inspect(id); }
+  async ensureWorkspace(id) {
+    const info = await this.inspect(id);
+    const workspace = await this.ctx.workspaceRegistry.create(info.meta.cwd);
+    await workspace.attachSession(id);
+  }
   async create(cwd, title, mode) {
-    const { sessionId } = await this.ctx.sessionController.create({ cwd });
+    const workspace = await this.ctx.workspaceRegistry.create(cwd);
+    const { sessionId } = await this.ctx.sessionController.create({ workspaceId: workspace.id });
     await this.ctx.sessionController.rename({ sessionId, title });
     if (mode) {
       const agent = this.ctx.agents.get(sessionId);

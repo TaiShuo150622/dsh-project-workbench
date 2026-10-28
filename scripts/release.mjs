@@ -9,7 +9,7 @@ if (!base || !patchPath) throw Error('Usage: node scripts/release.mjs --releases
 const build = JSON.parse(await readFile(join(root, 'build.json'), 'utf8'));
 const target = resolve(base, build.id);
 await mkdir(target, { recursive: true });
-for (const name of ['package.json', 'index.js', 'client.js', 'build.json', 'cordis.patch.yml', 'server', 'config']) await cp(join(root, name), join(target, name), { recursive: true });
+for (const name of ['package.json', 'index.js', 'client.js', 'build.json', 'cordis.patch.yml', 'server', 'config', 'README.md']) await cp(join(root, name), join(target, name), { recursive: true });
 const raw = await readFile(patchPath, 'utf8');
 const doc = YAML.parseDocument(raw, { strict: false });
 if (doc.errors.length || !YAML.isSeq(doc.contents)) throw Error('Profile patch must be a valid YAML sequence');
