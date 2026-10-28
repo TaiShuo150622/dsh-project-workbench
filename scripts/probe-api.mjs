@@ -1,0 +1,14 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { randomUUID } from 'node:crypto';
+const log = await readFile('.acceptance/probe.log', 'utf8');
+const url = log.match(/http:\/\/127\.0\.0\.1:\d+\/\?token=[^\s]+/)?.[0];
+if (!url) throw Error('Probe Host has not published its URL');
+const origin = new URL(url).origin;
+const auth = await fetch(url, { redirect: 'manual' });
+const cookie = auth.headers.getSetCookie().map(v => v.split(';')[0]).join('; ');
+const op = process.argv[2] || 'health';
+const payload = process.argv[3] ? JSON.parse(await readFile(process.argv[3], 'utf8')) : {};
+const response = await fetch(`${origin}/api/project-workbench/${op}`, { method: 'POST', headers: { 'content-type': 'application/json', cookie, origin }, body: JSON.stringify({ type: 'client-request', rpcId: randomUUID(), method: `project-workbench/${op}`, payload }) });
+const body = await response.text();
+await writeFile(`.acceptance/evidence/${op}.json`, body);
+console.log(JSON.stringify({ status: response.status, body: JSON.parse(body) }));

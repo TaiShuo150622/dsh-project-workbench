@@ -1,0 +1,10 @@
+{
+  "maxParallel": { "value": 3, "why": "同时执行三条工作线，避免无界启动模型", "adjust": "修改本文件并重新构建发布" },
+  "maxThreads": { "value": 64, "why": "单项目线程上限，满后复用已有线程", "adjust": "修改本文件并重新构建发布" },
+  "maxText": { "value": 24000, "why": "单条任务或汇报的字符上限", "adjust": "修改本文件并重新构建发布" },
+  "gitTimeoutMs": { "value": 60000, "why": "本地工作树创建与差异读取的等待上限", "adjust": "修改本文件并重新构建发布" },
+  "gitOutputBytes": { "value": 2097152, "why": "单次 Git 输出预算", "adjust": "修改本文件并重新构建发布" },
+  "pollMs": { "value": 2500, "why": "只在项目面板可见时刷新，后台不轮询模型", "adjust": "修改本文件并重新构建发布" },
+  "maxDiffChars": { "value": 100000, "why": "界面差异预览上限，超限显示截断提示", "adjust": "修改本文件并重新构建发布" },
+  "panelOrder": { "value": 31, "why": "放在活跃度入口之后", "adjust": "修改本文件并重新构建发布" }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "dsh-project-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH 项目总对话、自动工作线程与项目进展面板",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "server",
+    "client.js",
+    "config",
+    "build.json",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "devDependencies": {
+    "yaml": "^2.9.1"
+  }
+}
