@@ -1,0 +1,91 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>TUI 成屏</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+.dsh[data-theme="dark"][data-depth="256"]{--term:#121212;--l1:#262626;--l2:#303030;--l3:#444444;--t1:#EEEEEE;--t2:#D0D0D0;--t3:#B2B2B2;--t4:#808080;--accent:#87AFFF;--accent-t:#87AFFF;--accent-btn:#87AFFF;--on-accent:#121212;--ok:#00D75F;--ok-t:#5FD787;--ok-bg:#005F00;--warn:#FFAF00;--warn-t:#FFAF00;--err:#FF5F5F;--err-t:#FF5F5F;--err-bg:#5F0000;--idle:#808080}
+.dsh[data-theme="light"][data-depth="256"]{--term:#FFFFFF;--l1:#EEEEEE;--l2:#E4E4E4;--l3:#D0D0D0;--t1:#000000;--t2:#444444;--t3:#585858;--t4:#6C6C6C;--accent:#005FD7;--accent-t:#005FD7;--accent-btn:#005FD7;--on-accent:#FFFFFF;--ok:#00AF5F;--ok-t:#008700;--ok-bg:#D7FFD7;--warn:#FFAF00;--warn-t:#AF5F00;--err:#D70000;--err-t:#D70000;--err-bg:#FFD7D7;--idle:#6C6C6C}
+.dsh[data-theme="dark"][data-depth="16"]{--term:#0C0C0C;--l1:transparent;--l2:transparent;--l3:#767676;--t1:#F2F2F2;--t2:#CCCCCC;--t3:#CCCCCC;--t4:#767676;--accent:#3B78FF;--accent-t:#3B78FF;--accent-btn:#3B78FF;--on-accent:#F2F2F2;--ok:#16C60C;--ok-t:#16C60C;--ok-bg:transparent;--warn:#C19C00;--warn-t:#C19C00;--err:#E74856;--err-t:#E74856;--err-bg:transparent;--idle:#767676}
+.dsh[data-theme="light"][data-depth="16"]{--term:#F2F2F2;--l1:transparent;--l2:transparent;--l3:#767676;--t1:#0C0C0C;--t2:#0C0C0C;--t3:#0C0C0C;--t4:#3A3A3A;--accent:#0037DA;--accent-t:#0037DA;--accent-btn:#0037DA;--on-accent:#F2F2F2;--ok:#13A10E;--ok-t:#0E7A0A;--ok-bg:transparent;--warn:#C19C00;--warn-t:#6E5900;--err:#C50F1F;--err-t:#C50F1F;--err-bg:transparent;--idle:#3A3A3A}
+.lines{display:flex;flex-direction:column;min-width:0}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" data-depth="{{depth}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div role="img" aria-label="DSH TUI 的完整界面，与桌面端成屏是同一时刻" style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="display: flex; gap: 16px"><span style="color: var(--accent-t); font-weight: 700">dsh</span><span style="color: var(--t1); font-weight: 700">审批卡状态统一</span><span style="color: var(--t3)">dsh-workbench</span><span style="flex: 1"></span><span style="color: var(--t3)">feat/approval-card</span></div>
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+
+    <div style="flex: 1; min-height: 0; display: flex; gap: 24px">
+
+      <div class="lines" style="flex: 1; gap: 0">
+        <div style="padding: 0 8px; background: var(--l1); color: var(--t1)"><span style="color: var(--accent-t); font-weight: 700">❯</span> 把审批卡的风险等级改成和 StateDot 同一套状态。</div>
+        <div> </div>
+        <div style="color: var(--t1)">我先看现有组件，再改状态映射。</div>
+        <div> </div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span>读取</span><span style="flex: 1; color: var(--t1)">RiskConfirmation.tsx</span><span style="color: var(--t4)">212 行</span></div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span>搜索</span><span style="flex: 1; color: var(--t1)">StateDot</span><span style="color: var(--t4)">14 处</span></div>
+        <div> </div>
+        <div class="lines">
+          <div style="display: flex; gap: 8px"><span style="flex: 1; color: var(--t1); font-weight: 700">RiskConfirmation.tsx</span><span style="color: var(--ok-t)">+2</span><span style="color: var(--err-t)">−1</span></div>
+          <div style="background: var(--err-bg); color: var(--t1)">− const tone = risk === 'high' ? 'red' : 'amber';</div>
+          <div style="background: var(--ok-bg); color: var(--t1)">+ const state = riskToState(risk);</div>
+          <div style="background: var(--ok-bg); color: var(--t1)">+ return &lt;StateDot state={state} /&gt;;</div>
+        </div>
+        <div> </div>
+        <div class="lines" style="border-left: 2px solid var(--ok); padding-left: 8px">
+          <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span style="flex: 1; color: var(--t1); font-weight: 700">pnpm vitest run ui-primitives</span><span style="color: var(--t4)">24s</span></div>
+          <div><span style="color: var(--t4)">≡</span> ✓ 2 个文件，共 19 条</div>
+        </div>
+        <div> </div>
+        <div class="lines" style="border-left: 2px solid var(--warn); padding: 0 8px; background: var(--l1)">
+          <div style="display: flex; gap: 8px"><span style="color: var(--warn)">▲</span><span style="flex: 1; color: var(--t1); font-weight: 700">要推送到远端吗？</span><span style="color: var(--warn-t)">需确认</span></div>
+          <div style="color: var(--t1)">  git push origin feat/approval-card</div>
+          <div> </div>
+          <div><span style="background: var(--accent-btn); color: var(--on-accent); font-weight: 700"> y 允许一次 </span>  <span style="color: var(--t1)">a 本会话都允许</span>  <span style="color: var(--t3)">n 拒绝</span></div>
+        </div>
+      </div>
+
+      <div class="lines" style="width: 344px; flex: none; padding-left: 16px; border-left: 1px solid var(--line)">
+        <div style="color: var(--t1); font-weight: 700">计划</div>
+        <div style="color: var(--t3)"><span style="color: var(--ok)">●</span> 读现有审批组件</div>
+        <div style="color: var(--t3)"><span style="color: var(--ok)">●</span> 改风险到状态的映射</div>
+        <div style="color: var(--t3)"><span style="color: var(--ok)">●</span> 跑组件测试</div>
+        <div style="color: var(--t1); font-weight: 700"><span style="color: var(--warn)">▲</span> 推分支并开 PR</div>
+        <div> </div>
+        <div style="color: var(--t1); font-weight: 700">任务</div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--accent)">◐</span><span style="flex: 1; color: var(--t1)">子代理：审查这次改动</span><span style="color: var(--t4)">42s</span></div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span style="flex: 1">后台：构建文档站</span><span style="color: var(--t4)">2 分钟前</span></div>
+        <div> </div>
+        <div style="color: var(--t1); font-weight: 700">上下文</div>
+        <div><span style="color: var(--accent)">━━━━━━━━━━━━</span><span style="color: var(--l3)">━━━━━━━━</span> 62%</div>
+      </div>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="padding: 0 8px; background: var(--l1); color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh</span> <span style="color: var(--warn)">▲</span> <span style="background: var(--t1); color: var(--term)"> </span> 排队一条消息，这一轮结束后发送</div>
+    <div style="display: flex; gap: 24px; padding-top: 2px; color: var(--t4)"><span style="color: var(--t3)">deepseek-v4.1-flash</span><span>工作区写入</span><span style="flex: 1"></span><span>y 允许</span><span>Ctrl+O 展开</span><span>/ 命令</span><span>Esc 停止</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"depth":{"editor":"enum","options":["truecolor","256","16"],"default":"truecolor"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark', depth: this.props.depth ?? 'truecolor' };
+  }
+}
+</script>
+</body>
+</html>

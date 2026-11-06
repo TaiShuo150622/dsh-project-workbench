@@ -1,0 +1,216 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>界面动效</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1);--cycle:2.4s}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-bg:rgba(122,170,255,.14);--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A;--err-bg:#3F2223}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-bg:rgba(65,118,230,.10);--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313;--err-bg:#FEE2E2}
+.m{display:grid;grid-template-columns:112px 168px 96px minmax(0,1fr) minmax(0,1fr);column-gap:20px;align-items:center;height:56px;box-shadow:0 -0.5px 0 var(--line-soft)}
+.m[data-on="true"]{background:var(--l1);box-shadow:0 -0.5px 0 var(--line-soft),-8px 0 0 var(--l1),8px 0 0 var(--l1)}
+.v{height:32px;padding:0 8px;border:0;border-radius:8px;background:transparent;color:var(--t1);font-family:var(--sans);font-size:13px;line-height:20px;font-weight:600;text-align:left;cursor:pointer}
+.v:hover{background:var(--l2)}
+.mean{font-size:12px;line-height:18px;color:var(--t2)}
+.tok{font-family:var(--mono);font-size:11px;line-height:16px;color:var(--t3)}
+.st{position:relative;height:44px;display:flex;align-items:center;gap:6px;font-size:12px;line-height:18px;color:var(--t2);overflow:hidden;min-width:0}
+.tu{position:relative;height:44px;box-sizing:border-box;padding:2px 10px;border-radius:6px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:12px;line-height:20px;color:var(--t2);white-space:pre;display:flex;flex-direction:column;justify-content:center;overflow:hidden;min-width:0}
+.b{box-sizing:border-box;background:var(--bg);box-shadow:0 0 0 0.5px var(--line);border-radius:6px;display:flex;align-items:center;padding:0 8px;height:32px;flex:none;white-space:nowrap;overflow:hidden}
+.side{background:var(--l2);height:36px;border-radius:6px;flex:none;width:120px}
+.old,.new{display:inline-block;overflow:hidden;vertical-align:bottom}
+.new{max-width:0}
+.mono{font-family:var(--mono)}
+.m[data-on="true"] .k-side{animation:kSide var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-right{animation:kRight var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-split{animation:kSplit var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-zone{animation:kZone var(--cycle) ease-out infinite}
+.m[data-on="true"] .k-swap{animation:kSwap var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-thread{animation:kThread var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-rise{animation:kRise var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-expand{animation:kExpand var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-send{animation:kSend var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-toast{animation:kToast var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-menu{animation:kMenu var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-tree{animation:kExpand var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-flash{animation:kFlash var(--cycle) ease-out infinite}
+.m[data-on="true"] .k-goal{animation:kGoal var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-ctx{animation:kCtx var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-theme{animation:kTheme var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-pill{animation:kPill var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-gantt{animation:kGantt var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-dock{animation:kDock var(--cycle) var(--ease) infinite}
+.m[data-on="true"] .k-old{animation:kOld var(--cycle) steps(1) infinite}
+.m[data-on="true"] .k-new{animation:kNew var(--cycle) steps(1) infinite}
+.m[data-on="true"] .t-show{animation:tShow var(--cycle) steps(1) infinite}
+.m[data-on="true"] .t-rows{animation:tRows var(--cycle) steps(1) infinite}
+.m[data-on="true"] .t-side{animation:tSide var(--cycle) steps(6) infinite}
+.m[data-on="true"] .t-bar{animation:tBar var(--cycle) steps(14) infinite}
+.m[data-on="true"] .t-rev{animation:tRev var(--cycle) steps(1) infinite}
+@keyframes kSide{0%,20%{width:120px}33%,88%{width:28px}100%{width:120px}}
+@keyframes kRight{0%,20%{width:0}33%,88%{width:120px}100%{width:0}}
+@keyframes kSplit{0%,20%{width:0;opacity:0}33%,88%{width:50%;opacity:1}100%{width:0;opacity:0}}
+@keyframes kZone{0%,20%{opacity:0}26%,80%{opacity:1}86%,100%{opacity:0}}
+@keyframes kSwap{0%,20%{opacity:0;transform:translateY(4px)}28%,100%{opacity:1;transform:none}}
+@keyframes kThread{0%,20%{height:0;opacity:0}30%,88%{height:18px;opacity:1}100%{height:0;opacity:0}}
+@keyframes kRise{0%,16%{opacity:0;transform:translateY(8px)}26%,88%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes kExpand{0%,20%{height:18px}30%,88%{height:36px}100%{height:18px}}
+@keyframes kSend{0%,16%{transform:translateY(16px);opacity:0}28%,88%{transform:none;opacity:1}100%{opacity:0}}
+@keyframes kToast{0%,14%{transform:translateX(24px);opacity:0}24%,76%{transform:none;opacity:1}86%,100%{transform:translateX(24px);opacity:0}}
+@keyframes kMenu{0%,20%{transform:translateY(-4px);opacity:0}25%,80%{transform:none;opacity:1}85%,100%{opacity:0}}
+@keyframes kFlash{0%,20%{background:transparent}26%{background:var(--ok-bg)}70%,100%{background:transparent}}
+@keyframes kGoal{0%,20%{width:50%}34%,88%{width:75%}100%{width:50%}}
+@keyframes kCtx{0%,20%{width:60%;background:var(--accent)}40%,88%{width:84%;background:var(--warn)}100%{width:60%;background:var(--accent)}}
+@keyframes kTheme{0%,30%{background:var(--bg)}44%,80%{background:var(--l3)}94%,100%{background:var(--bg)}}
+@keyframes kPill{0%,20%{transform:translateY(20px);opacity:0}30%,84%{transform:none;opacity:1}96%,100%{transform:translateY(20px);opacity:0}}
+@keyframes kGantt{0%,20%{height:36px}34%,88%{height:10px}100%{height:36px}}
+@keyframes kDock{0%,20%{width:100%}34%,88%{width:96px}100%{width:100%}}
+@keyframes kOld{0%,32%{max-width:10em}34%,100%{max-width:0}}
+@keyframes kNew{0%,32%{max-width:0}34%,100%{max-width:10em}}
+@keyframes tShow{0%,30%{opacity:0}32%,88%{opacity:1}90%,100%{opacity:0}}
+@keyframes tRows{0%,30%{height:20px}32%,88%{height:40px}90%,100%{height:20px}}
+@keyframes tSide{0%,20%{width:12ch}40%,88%{width:3ch}100%{width:12ch}}
+@keyframes tBar{0%,20%{width:12ch}50%,88%{width:18ch}100%{width:12ch}}
+@keyframes tRev{0%,30%{background:transparent;color:var(--t1)}32%,50%{background:var(--t1);color:var(--term)}52%,100%{background:transparent;color:var(--t1)}}
+@media (prefers-reduced-motion:reduce){.m *{animation:none !important}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1524px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 16px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; align-items: flex-end; gap: 24px">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">界面动效</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">时长和缓动沿用桌面端现有的 100、200、300ms 和标准曲线。拖动时跟手，不加缓动。TUI 不做补间，一步到位或逐格走。</p>
+    </div>
+    <button type="button" onClick="{{toggleAuto}}" aria-pressed="{{autoPressed}}" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); color: var(--t1); font-family: var(--sans); font-size: 13px; line-height: 20px; cursor: pointer">{{autoLabel}}</button>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 112px 168px 96px minmax(0, 1fr) minmax(0, 1fr); column-gap: 20px; font-size: 12px; line-height: 18px; color: var(--t3)"><span style="padding-left: 8px">界面</span><span>动作</span><span>时长</span><span>桌面端</span><span>TUI</span></div>
+
+  <div style="display: flex; flex-direction: column">
+
+    <div class="m" data-on="{{on.r0}}"><button type="button" class="v" onClick="{{pick.r0}}">侧栏折叠</button><span class="mean">收成 56 宽的轨道，状态符号留着</span><span class="tok">slow 300ms</span>
+      <div class="st"><span class="side k-side" style="display: flex; align-items: center; padding-left: 8px; box-sizing: border-box; color: var(--accent)">◐</span><span class="b" style="flex: 1">对话</span></div>
+      <div class="tu"><div style="display: flex"><span class="t-side" style="width: 12ch; overflow: hidden; color: var(--t3)"><span style="color: var(--accent)">◐</span> 审批卡状态</span><span style="color: var(--t4)">│</span><span> 对话</span></div></div></div>
+
+    <div class="m" data-on="{{on.r1}}"><button type="button" class="v" onClick="{{pick.r1}}">右栏展开</button><span class="mean">对话先让出宽度，右栏再进</span><span class="tok">slow 300ms</span>
+      <div class="st"><span class="b" style="flex: 1">对话</span><span class="side k-right" style="width: 0; display: flex; align-items: center; overflow: hidden; color: var(--t2); white-space: nowrap"><span style="padding-left: 8px">文件 · 进度</span></span></div>
+      <div class="tu"><div style="display: flex"><span style="flex: 1">对话</span><span class="t-show" style="color: var(--t3)">│ 文件 · 进度</span></div></div></div>
+
+    <div class="m" data-on="{{on.r2}}"><button type="button" class="v" onClick="{{pick.r2}}">分屏拆开</button><span class="mean">原来的格子变窄，新格子长出来</span><span class="tok">slow 300ms</span>
+      <div class="st"><span class="b" style="flex: 1">审批卡状态统一</span><span class="b k-split" style="width: 0; opacity: 0; padding: 0; justify-content: center">修复 MCP 重连</span></div>
+      <div class="tu"><div style="display: flex"><span style="flex: 1">审批卡状态统一</span><span class="t-show" style="flex: 1; color: var(--t3)">│ 修复 MCP 重连</span></div></div></div>
+
+    <div class="m" data-on="{{on.r3}}"><button type="button" class="v" onClick="{{pick.r3}}">拖放落区</button><span class="mean">拖进来才显示能放在哪</span><span class="tok">140ms</span>
+      <div class="st"><span class="b" style="flex: 1; position: relative; overflow: visible">对话<span class="k-zone" style="position: absolute; left: 50%; right: 4px; top: 4px; bottom: 4px; box-sizing: border-box; border: 1px dashed var(--accent); border-radius: 4px; background: var(--accent-bg); opacity: 0; display: flex; align-items: center; justify-content: center; color: var(--accent-t); font-size: 11px">放到右边</span></span></div>
+      <div class="tu"><div>对话 <span class="t-show" style="background: var(--accent-bg); color: var(--accent-t)"> ▐ 放到右边 </span></div></div></div>
+
+    <div class="m" data-on="{{on.r4}}"><button type="button" class="v" onClick="{{pick.r4}}">切换会话</button><span class="mean">外框不动，只换正文</span><span class="tok">base 200ms</span>
+      <div class="st"><span class="b k-swap" style="flex: 1">修复 MCP 重连 · 正文淡入</span></div>
+      <div class="tu"><div><span class="old k-old" style="color: var(--t3)">审批卡状态统一</span><span class="new k-new" style="color: var(--t1); font-weight: 700">修复 MCP 重连</span></div></div></div>
+
+    <div class="m" data-on="{{on.r5}}"><button type="button" class="v" onClick="{{pick.r5}}">线程长出</button><span class="mean">子线程从父会话下面接出来</span><span class="tok">base 200ms</span>
+      <div class="st" style="flex-direction: column; align-items: stretch; gap: 0; justify-content: center"><div style="color: var(--t1)"><span class="mono" style="color: var(--accent)">◐</span> 审批卡状态统一</div><div class="k-thread" style="height: 0; opacity: 0; overflow: hidden; padding-left: 14px"><span class="mono" style="color: var(--t4)">└</span> 审查这次改动</div></div>
+      <div class="tu"><div style="color: var(--t1)"><span style="color: var(--accent)">◐</span> 审批卡状态统一</div><div class="t-show" style="color: var(--t3)">  └ 审查这次改动</div></div></div>
+
+    <div class="m" data-on="{{on.r6}}"><button type="button" class="v" onClick="{{pick.r6}}">状态切换</button><span class="mean">符号和文字一起换，高度不跳</span><span class="tok">fast 100ms</span>
+      <div class="st"><span class="mono"><span class="old k-old" style="color: var(--accent)">◐</span><span class="new k-new" style="color: var(--warn)">▲</span></span><span class="old k-old">进行中</span><span class="new k-new" style="color: var(--warn-t)">等待审批</span></div>
+      <div class="tu"><div><span class="old k-old" style="color: var(--accent)">◐ 进行中</span><span class="new k-new" style="color: var(--warn-t)">▲ 等待审批</span></div></div></div>
+
+    <div class="m" data-on="{{on.r7}}"><button type="button" class="v" onClick="{{pick.r7}}">审批卡出现</button><span class="mean">从下往上进，输入框让位</span><span class="tok">base 200ms</span>
+      <div class="st"><span class="b k-rise" style="flex: 1; gap: 6px"><span class="mono" style="color: var(--warn)">▲</span>要推送到远端吗？</span></div>
+      <div class="tu"><div class="t-show" style="border-left: 2px solid var(--warn); padding-left: 8px"><span style="color: var(--warn)">▲</span> <span style="color: var(--t1)">要推送到远端吗？</span></div></div></div>
+
+    <div class="m" data-on="{{on.r8}}"><button type="button" class="v" onClick="{{pick.r8}}">工具卡展开</button><span class="mean">卡片长高，下面内容被推开</span><span class="tok">base 200ms</span>
+      <div class="st"><div class="b k-expand" style="flex: 1; height: 18px; display: block; padding: 0 8px; line-height: 18px"><div>pnpm vitest run</div><div style="color: var(--t3)">✓ 2 个文件，共 19 条</div></div></div>
+      <div class="tu"><div class="t-rows" style="height: 20px; overflow: hidden; display: flex; flex-direction: column"><div>● pnpm vitest run</div><div style="color: var(--t3)">≡ ✓ 2 个文件，共 19 条</div></div></div></div>
+
+    <div class="m" data-on="{{on.r9}}"><button type="button" class="v" onClick="{{pick.r9}}">消息发送</button><span class="mean">消息从输入框的位置升上去</span><span class="tok">base 200ms</span>
+      <div class="st" style="justify-content: flex-end"><span class="k-send" style="padding: 4px 10px; border-radius: 12px; background: var(--l2); color: var(--t1)">帮我查一下</span></div>
+      <div class="tu"><div class="t-show" style="background: var(--l1); color: var(--t1)"><span style="color: var(--accent-t)">❯</span> 帮我查一下</div></div></div>
+
+    <div class="m" data-on="{{on.r10}}"><button type="button" class="v" onClick="{{pick.r10}}">Toast 进出</button><span class="mean">右侧滑入，停一会儿自己走</span><span class="tok">base 200ms</span>
+      <div class="st" style="justify-content: flex-end"><span class="b k-toast" style="gap: 6px"><span class="mono" style="color: var(--ok)">●</span>已复制</span></div>
+      <div class="tu"><div class="t-show" style="text-align: right"><span style="color: var(--ok)">●</span> 已复制</div></div></div>
+
+    <div class="m" data-on="{{on.r11}}"><button type="button" class="v" onClick="{{pick.r11}}">菜单弹出</button><span class="mean">贴着按钮出现，只移 4px</span><span class="tok">120ms</span>
+      <div class="st"><span class="b" style="width: 72px">分享</span><span class="b k-menu" style="gap: 12px">复制链接<span style="color: var(--t3)">导出</span></span></div>
+      <div class="tu"><div class="t-show"><span style="color: var(--t4)">╭───────────╮</span> <span style="color: var(--t1)">复制链接</span>  导出</div></div></div>
+
+    <div class="m" data-on="{{on.r12}}"><button type="button" class="v" onClick="{{pick.r12}}">文件树展开</button><span class="mean">箭头转 90°，子项跟着长高</span><span class="tok">base 200ms</span>
+      <div class="st"><div class="mono k-tree" style="height: 18px; overflow: hidden"><div style="color: var(--t1)">▸ ui-approval</div><div style="padding-left: 16px">RiskConfirmation.tsx</div></div></div>
+      <div class="tu"><div class="t-rows" style="height: 20px; overflow: hidden; display: flex; flex-direction: column"><div style="color: var(--t1)"><span class="old k-old">▸</span><span class="new k-new">▾</span> ui-approval</div><div>    RiskConfirmation.tsx</div></div></div></div>
+
+    <div class="m" data-on="{{on.r13}}"><button type="button" class="v" onClick="{{pick.r13}}">文件改动</button><span class="mean">改过的行亮一下再退掉</span><span class="tok">700ms 褪色</span>
+      <div class="st"><span class="k-flash mono" style="padding: 2px 6px; border-radius: 4px; color: var(--t1)">+ const state = riskToState(risk);</span></div>
+      <div class="tu"><div><span class="t-rev">+ const state = riskToState(risk);</span></div></div></div>
+
+    <div class="m" data-on="{{on.r14}}"><button type="button" class="v" onClick="{{pick.r14}}">进度更新</button><span class="mean">目标进度往前走一格</span><span class="tok">slow 300ms</span>
+      <div class="st"><span style="flex: 1; height: 6px; border-radius: 3px; background: var(--l3); overflow: hidden"><span class="k-goal" style="display: block; width: 50%; height: 6px; background: var(--accent)"></span></span><span><span class="old k-old">2 / 4</span><span class="new k-new">3 / 4</span></span></div>
+      <div class="tu"><div><span class="t-bar" style="display: inline-block; width: 12ch; overflow: hidden; color: var(--accent); vertical-align: bottom">━━━━━━━━━━━━━━━━━━</span><span style="color: var(--l3)">━━━━━━</span> <span class="old k-old">2 / 4</span><span class="new k-new">3 / 4</span></div></div></div>
+
+    <div class="m" data-on="{{on.r15}}"><button type="button" class="v" onClick="{{pick.r15}}">上下文增长</button><span class="mean">过 80% 换警告色，只提示一次</span><span class="tok">slow 300ms</span>
+      <div class="st"><span style="flex: 1; height: 6px; border-radius: 3px; background: var(--l3); overflow: hidden"><span class="k-ctx" style="display: block; width: 60%; height: 6px; background: var(--accent)"></span></span><span><span class="old k-old">60%</span><span class="new k-new" style="color: var(--warn-t)">84%</span></span></div>
+      <div class="tu"><div><span class="old k-old" style="color: var(--accent)">━━━━━━━━━━━━━━</span><span class="new k-new" style="color: var(--warn)">━━━━━━━━━━━━━━━━━━━</span><span style="color: var(--l3)">━━━━</span></div></div></div>
+
+    <div class="m" data-on="{{on.r16}}"><button type="button" class="v" onClick="{{pick.r16}}">主题切换</button><span class="mean">颜色整体过渡，布局不动</span><span class="tok">slow 300ms</span>
+      <div class="st"><span class="b k-theme" style="flex: 1">深色和浅色之间过渡</span></div>
+      <div class="tu"><div>一帧切完，<span class="t-rev"> 不做渐变 </span></div></div></div>
+
+    <div class="m" data-on="{{on.r17}}"><button type="button" class="v" onClick="{{pick.r17}}">新消息提示</button><span class="mean">人在往上翻时，不抢滚动位置</span><span class="tok">base 200ms</span>
+      <div class="st" style="justify-content: center"><span class="k-pill" style="padding: 2px 10px; border-radius: 12px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line); color: var(--t1)">↓ 3 条新内容</span></div>
+      <div class="tu"><div class="t-show" style="text-align: center; color: var(--t1)">↓ 3 条新内容  End 回到底部</div></div></div>
+
+    <div class="m" data-on="{{on.r18}}"><button type="button" class="v" onClick="{{pick.r18}}">线程卡出现</button><span class="mean">主频道派活时长出一张卡</span><span class="tok">base 200ms</span>
+      <div class="st"><span class="b k-rise" style="flex: 1; gap: 6px"><span class="mono" style="color: var(--accent)">◐</span>审查这次改动<span style="margin-left: auto; color: var(--t3)">查看线程</span></span></div>
+      <div class="tu"><div class="t-show"><span style="color: var(--accent)">◐</span> <span style="color: var(--t1)">审查这次改动</span>  <span style="color: var(--t4)">Enter 查看</span></div></div></div>
+
+    <div class="m" data-on="{{on.r19}}"><button type="button" class="v" onClick="{{pick.r19}}">工作流收起</button><span class="mean">成员行收窄，只留时间条</span><span class="tok">slow 300ms</span>
+      <div class="st"><div class="k-gantt" style="flex: 1; height: 36px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 2px"><span style="display: block; width: 40%; height: 4px; border-radius: 2px; background: var(--accent)"></span><span style="display: block; width: 62%; margin-left: 20%; height: 4px; border-radius: 2px; background: var(--accent)"></span></div></div>
+      <div class="tu"><div class="t-rows" style="height: 20px; overflow: hidden; display: flex; flex-direction: column"><div>审查 <span style="color: var(--accent)">█████████████</span></div><div style="color: var(--t3)">├ 安全 <span style="color: var(--accent)">██████</span></div></div></div></div>
+
+    <div class="m" data-on="{{on.r20}}"><button type="button" class="v" onClick="{{pick.r20}}">实时弹出</button><span class="mean">文档进右栏，焦点留在对话</span><span class="tok">slow 300ms</span>
+      <div class="st"><span class="b" style="flex: 1">对话</span><span class="side k-right" style="width: 0; display: flex; align-items: center; overflow: hidden; white-space: nowrap"><span style="padding-left: 8px"><span class="mono" style="color: var(--accent)">◐</span> 方案对比.md</span></span></div>
+      <div class="tu"><div style="display: flex"><span style="flex: 1">对话</span><span class="t-show" style="color: var(--t3)">│ <span style="color: var(--accent)">◐</span> 方案对比.md</span></div></div></div>
+
+    <div class="m" data-on="{{on.r21}}"><button type="button" class="v" onClick="{{pick.r21}}">会话缩进右栏</button><span class="mean">大会话变成常驻卡片，还在跑</span><span class="tok">slow 300ms</span>
+      <div class="st" style="justify-content: flex-end"><span class="b k-dock" style="width: 100%; gap: 6px"><span class="mono" style="color: var(--accent)">◐</span>审批卡状态统一</span></div>
+      <div class="tu"><div style="display: flex; justify-content: flex-end"><span class="t-side" style="width: 12ch; overflow: hidden; color: var(--t1)"><span style="color: var(--accent)">◐</span> 审批卡状态统一</span></div></div></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1524}}'>
+class Component extends DCLogic {
+  state = { i: 0, auto: true };
+  count = 22;
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if (this.state.auto && !document.hidden) this.setState({ i: (this.state.i + 1) % this.count });
+    }, 2400);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const { i, auto } = this.state;
+    const on = {}, pick = {};
+    for (let k = 0; k < this.count; k++) {
+      on[`r${k}`] = k === i ? 'true' : 'false';
+      pick[`r${k}`] = () => this.setState({ i: k, auto: false });
+    }
+    return {
+      theme: this.props.theme ?? 'dark', on, pick,
+      autoLabel: auto ? '暂停轮播' : '继续轮播',
+      autoPressed: auto ? 'true' : 'false',
+      toggleAuto: () => this.setState({ auto: !auto })
+    };
+  }
+}
+</script>
+</body>
+</html>

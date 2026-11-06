@@ -1,0 +1,243 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>面板实样 · 桌面端</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-bg:rgba(122,170,255,.16);--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A;--c1:#4F8AF2;--c2:#0FA696;--c3:#A066F0;--c4:#DE4F92}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-bg:rgba(65,118,230,.12);--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313;--c1:#2F5FCC;--c2:#008F7F;--c3:#8A4FD0;--c4:#C43E7E}
+button,input{font-family:inherit}
+.gl{flex:none;display:inline-block;width:14px;text-align:center;font-family:var(--mono)}
+.tab{height:30px;padding:0 12px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:13px;line-height:20px;cursor:pointer;white-space:nowrap}
+.tab[aria-pressed="true"]{background:var(--l2);color:var(--t1)}
+.chip{height:26px;padding:0 8px;border:0;border-radius:6px;background:transparent;color:var(--t3);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--l2);color:var(--t1)}
+.ic{width:28px;height:28px;border:0;border-radius:6px;background:var(--l1);box-shadow:0 0 0 0.5px var(--line);color:var(--t1);font-size:14px;line-height:20px;cursor:pointer}
+.btn{height:30px;padding:0 10px;border:0;border-radius:8px;background:var(--l2);color:var(--t1);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--l3)}
+.pri{background:var(--accent-btn);color:var(--on-accent)}
+.pri:hover{background:var(--accent-btn)}
+.mk{position:absolute;display:flex;align-items:center;gap:4px;height:22px;margin:-11px 0 0 -7px;padding:0 6px 0 0;border:0;border-radius:6px;background:transparent;color:var(--t1);font-size:12px;line-height:16px;white-space:nowrap;cursor:pointer}
+.mk:hover{background:var(--l1)}
+.kv{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:8px;font-size:12px;line-height:22px;color:var(--t2)}
+.kv span:first-child{color:var(--t3)}
+.ov{position:absolute;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:var(--bg);font-size:13px;line-height:20px;color:var(--t2)}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.pulse{animation:pulse 1.2s var(--ease) 2}
+@keyframes pulse{50%{box-shadow:0 0 0 6px var(--accent-bg)}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <div style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; display: flex">
+    <main style="width: 420px; flex: none; box-sizing: border-box; padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 22px; box-shadow: 0.5px 0 0 var(--line)">
+      <div style="align-self: flex-end; max-width: 92%; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1)">{{chat.ask}}</div>
+      <p style="margin: 0; color: var(--t1)">{{chat.reply}}</p>
+      <button type="button" class="btn" onClick="{{aiPoint}}" style="align-self: flex-start">{{chat.point}}</button>
+      <div style="flex: 1"></div>
+      <div style="box-sizing: border-box; min-height: 84px; padding: 10px 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); display: flex; flex-direction: column; gap: 6px; color: var(--t4)">
+        <div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{refs}}" as="r" hint-placeholder-count="2"><button type="button" class="btn" onClick="{{r.drop}}" style="height: 24px">{{r.t}} ×</button></sc-for></div>
+        <span>继续这个会话</span>
+      </div>
+    </main>
+
+    <section aria-label="面板" style="flex: 1; min-width: 0; display: flex; flex-direction: column; background: var(--bg)">
+      <div style="height: 44px; flex: none; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 2px; box-shadow: 0 0.5px 0 var(--line); background: var(--side)">
+        <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5"><button type="button" class="tab" onClick="{{t.pick}}" aria-pressed="{{t.on}}">{{t.name}}</button></sc-for>
+        <span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3); padding-right: 8px">{{meta.fam}} · {{meta.src}}</span>
+      </div>
+      <div style="height: 40px; flex: none; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 4px; box-shadow: 0 0.5px 0 var(--line-soft)">
+        <strong style="font-size: 13px; line-height: 20px; font-weight: 600; padding: 0 6px; white-space: nowrap">{{meta.title}}</strong>
+        <span style="width: 1px; height: 16px; background: var(--line); margin: 0 4px"></span>
+        <sc-for list="{{layers}}" as="l" hint-placeholder-count="4"><button type="button" class="chip" onClick="{{l.toggle}}" aria-pressed="{{l.on}}">{{l.name}}</button></sc-for>
+        <span style="flex: 1"></span>
+        <span style="display: {{timeShow}}; align-items: center; gap: 6px; font-size: 12px; line-height: 18px; color: var(--t3)"><label for="pg-time">恒星时</label><input id="pg-time" type="range" min="0" max="24" step="0.25" value="{{lst}}" onChange="{{setLst}}" style="width: 120px"></span>
+      </div>
+
+      <div style="flex: 1; min-height: 0; display: flex">
+        <div role="application" aria-label="{{meta.title}}" style="position: relative; flex: 1; min-width: 0; overflow: hidden; cursor: grab; user-select: none" onMouseDown="{{down}}" onMouseMove="{{move}}" onMouseUp="{{up}}" onMouseLeave="{{up}}">
+          <svg viewBox="0 0 744 788" width="744" height="788" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+            <path d="{{p.a.d}}" fill="{{p.a.f}}" stroke="{{p.a.s}}" stroke-width="{{p.a.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="{{p.b.d}}" fill="{{p.b.f}}" stroke="{{p.b.s}}" stroke-width="{{p.b.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="{{p.c.d}}" fill="{{p.c.f}}" stroke="{{p.c.s}}" stroke-width="{{p.c.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="{{p.d.d}}" fill="{{p.d.f}}" stroke="{{p.d.s}}" stroke-width="{{p.d.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="{{p.e.d}}" fill="{{p.e.f}}" stroke="{{p.e.s}}" stroke-width="{{p.e.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="{{p.g.d}}" fill="{{p.g.f}}" stroke="{{p.g.s}}" stroke-width="{{p.g.w}}" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <sc-for list="{{marks}}" as="m" hint-placeholder-count="8"><button type="button" class="mk {{m.cls}}" onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="left: {{m.x}}px; top: {{m.y}}px; opacity: {{m.op}}; box-shadow: {{m.ring}}"><span class="gl" style="color: {{m.c}}">{{m.g}}</span>{{m.t}}</button></sc-for>
+          <div style="position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 4px"><button type="button" class="ic" onClick="{{zoomIn}}" aria-label="放大">+</button><button type="button" class="ic" onClick="{{zoomOut}}" aria-label="缩小">−</button><button type="button" class="ic" onClick="{{zoomFit}}" aria-label="装下全部">⤢</button></div>
+          <div style="display: {{loadShow}}" class="ov"><span class="gl" style="color: var(--accent)">◐</span>框已经到了，数据还在取</div>
+          <div style="display: {{emptyShow}}" class="ov"><span>这个范围没有数据</span><button type="button" class="btn" onClick="{{zoomFit}}">看全部</button></div>
+          <div style="display: {{errShow}}" class="ov"><span><span class="gl" style="color: var(--err)">✕</span> 数据源连不上</span><button type="button" class="btn" onClick="{{stNormal}}">重试</button></div>
+          <div style="display: {{staleShow}}; position: absolute; left: 12px; top: 12px; height: 28px; box-sizing: border-box; padding: 0 8px; align-items: center; gap: 8px; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 12px; line-height: 18px; color: var(--warn-t)"><span class="gl">▲</span>2 小时前的数据<button type="button" class="chip" onClick="{{stNormal}}" style="height: 22px">刷新</button></div>
+        </div>
+
+        <aside aria-label="检查器" style="width: 220px; flex: none; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+          <strong style="font-size: 13px; line-height: 20px; font-weight: 600">{{ins.title}}</strong>
+          <sc-for list="{{ins.rows}}" as="r" hint-placeholder-count="4"><div class="kv"><span>{{r.k}}</span><span>{{r.v}}</span></div></sc-for>
+          <div style="flex: 1"></div>
+          <button type="button" class="btn pri" onClick="{{addRef}}" style="display: {{refBtn}}">引用到对话</button>
+        </aside>
+      </div>
+
+      <div style="height: 28px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 16px; font-family: var(--mono); font-size: 11px; line-height: 16px; color: var(--t3); box-shadow: 0 -0.5px 0 var(--line-soft)"><span>{{status}}</span><span style="flex: 1"></span><span>{{zText}}</span></div>
+    </section>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 44px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 4px; background: var(--side); box-shadow: 0 -0.5px 0 var(--line); font-size: 13px; line-height: 20px">
+    <span style="color: var(--t3); padding-right: 8px">拖动画布，点标记看属性。所有类型同一外壳，五种状态也相同</span><span style="flex: 1"></span>
+    <button type="button" class="opt" onClick="{{stNormal}}" aria-pressed="{{sN}}">正常</button><button type="button" class="opt" onClick="{{stLoad}}" aria-pressed="{{sL}}">加载</button><button type="button" class="opt" onClick="{{stEmpty}}" aria-pressed="{{sE}}">空</button><button type="button" class="opt" onClick="{{stErr}}" aria-pressed="{{sR}}">出错</button><button type="button" class="opt" onClick="{{stStale}}" aria-pressed="{{sS}}">过期</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  W = 744; H = 788;
+  state = { type: 'map', view: {}, sel: null, off: {}, refs: [], ai: [], st: 'normal', lst: 6, yaw: 0.7, pitch: 0.42, aiTick: 0 };
+  meta = {
+    map: { name: '地图', fam: '空间', src: 'sites.geojson', title: '站点分布', cx: 372, cy: 394 },
+    sky: { name: '天体', fam: '空间', src: 'stars.csv', title: '北天星图', cx: 0, cy: 0 },
+    plan: { name: '平面图', fam: '空间', src: 'floor-2.dxf', title: '二层平面', cx: 6000, cy: 4500 },
+    solid: { name: '立体', fam: '空间', src: 'housing.glb', title: '壳体装配', cx: 0, cy: 0 },
+    graph: { name: '知识图谱', fam: '关系', src: 'kb.graph.json', title: '注意力相关概念', cx: 372, cy: 394 }
+  };
+  chats = {
+    map: { ask: '哪些站点这周异常最多？', reply: '青港和云渡最多，都在沿海线路上。', point: '在地图上指出来', ids: ['s1', 's4'] },
+    sky: { ask: '现在北斗在哪个方位？', reply: '北斗在勾陈一的这一侧，斗柄沿开阳到摇光的方向伸出去。', point: '在星图上指出来', ids: ['s0', 's6'] },
+    plan: { ask: '主卧能放下 1.8 米的床吗？', reply: '能，床头靠北墙时两侧各留 0.6 米。', point: '在图上指出来', ids: ['r3'] },
+    solid: { ask: '内胆和外壳间隙够吗？', reply: '底部只有 6 毫米，低于要求的 8 毫米。', point: '在模型上指出来', ids: ['inner'] },
+    graph: { ask: '多头注意力和什么最相关？', reply: '和缩放点积注意力、Transformer 直接相连。', point: '在图谱上指出来', ids: ['n2', 'n0', 'n3'] }
+  };
+  sites = [['s1', '青港', 520, 300, 'wait', 12], ['s2', '石桥', 300, 240, 'ok', 2], ['s3', '南湾', 410, 560, 'ok', 3], ['s4', '云渡', 560, 470, 'wait', 9], ['s5', '北坪', 240, 420, 'run', 5], ['s6', '东岙', 380, 380, 'ok', 1]];
+  stars = [['s0', '天枢', 11.06, 61.75], ['s1', '天璇', 11.03, 56.38], ['s2', '天玑', 11.9, 53.69], ['s3', '天权', 12.26, 57.03], ['s4', '玉衡', 12.9, 55.96], ['s5', '开阳', 13.4, 54.93], ['s6', '摇光', 13.79, 49.31], ['p', '勾陈一', 2.53, 89.26], ['c0', '王良一', 0.15, 59.15], ['c1', '王良四', 0.68, 56.54], ['c2', '策', 0.95, 60.72], ['c3', '阁道三', 1.43, 60.24], ['c4', '阁道二', 1.91, 63.67]];
+  rooms = [['r1', '客厅', 0, 0, 6000, 5000, 30.0], ['r2', '厨房', 6000, 0, 3000, 3000, 9.0], ['r3', '主卧', 6000, 3000, 6000, 6000, 36.0], ['r4', '次卧', 0, 5000, 3600, 4000, 14.4], ['r5', '卫生间', 3600, 5000, 2400, 4000, 9.6], ['r6', '书房', 9000, 0, 3000, 3000, 9.0]];
+  nodes = [['n0', 'Transformer', 372, 330, 0], ['n1', '注意力机制', 250, 420, 1], ['n2', '多头注意力', 372, 460, 1], ['n3', '缩放点积', 500, 500, 1], ['n4', '位置编码', 520, 300, 1], ['n5', 'Attention Is All You Need', 372, 170, 2], ['n6', 'BERT', 170, 240, 0], ['n7', 'GPT-2', 250, 130, 0], ['n8', 'DeepSeek-V3', 560, 150, 0], ['n9', 'mHC', 620, 260, 1], ['n10', 'Vaswani', 150, 110, 3], ['n11', '残差连接', 130, 400, 1], ['n12', 'LayerNorm', 240, 580, 1], ['n13', 'Adam', 520, 640, 1], ['n14', '困惑度', 120, 560, 3]];
+  edges = [['n5', 'n0'], ['n0', 'n2'], ['n1', 'n2'], ['n2', 'n3'], ['n0', 'n4'], ['n0', 'n6'], ['n0', 'n7'], ['n0', 'n8'], ['n8', 'n9'], ['n5', 'n10'], ['n0', 'n11'], ['n11', 'n12'], ['n0', 'n12'], ['n3', 'n13'], ['n7', 'n14'], ['n1', 'n11'], ['n4', 'n9']];
+  parts = { shell: '外壳', inner: '内胆', stand: '支架' };
+  look = { ok: ['●', 'var(--ok)'], wait: ['▲', 'var(--warn)'], run: ['◐', 'var(--accent)'] };
+  hash(a, b) { let h = (a * 73856093) ^ (b * 19349663); h = Math.imul(h ^ (h >>> 13), 1274126177); return (h ^ (h >>> 16)) >>> 0; }
+  v() { const { type, view } = this.state, m = this.meta[type]; return view[type] || { z: 1, cx: m.cx, cy: m.cy }; }
+  setV(patch) { this.setState((s) => ({ view: { ...s.view, [s.type]: { ...this.v(), ...patch } } })); }
+  P(pts, close) { return pts.map((q, i) => `${i ? 'L' : 'M'}${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join('') + (close ? 'Z' : ''); }
+  coast(ox, oy, R, seed, n) { const out = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, r = R * (0.72 + (this.hash(i, seed) % 100) / 100 * 0.32); out.push([ox + Math.cos(a) * r, oy + Math.sin(a) * r * 1.18]); } return out; }
+  empty() { return { d: '', f: 'none', s: 'none', w: 1 }; }
+  drawMap(T, on) {
+    const land = this.coast(390, 390, 230, 3, 44).map((q) => T(...q)), isle = this.coast(640, 200, 44, 7, 16).map((q) => T(...q));
+    let grid = '';
+    for (let x = 60; x < 740; x += 100) grid += this.P([T(x, 0), T(x, 788)]);
+    for (let y = 40; y < 780; y += 100) grid += this.P([T(0, y), T(744, y)]);
+    const roads = [[[240, 420], [300, 240], [520, 300], [560, 470], [410, 560], [240, 420]], [[380, 380], [520, 300]], [[380, 380], [410, 560]]].map((r) => this.P(r.map((q) => T(...q)))).join('');
+    const river = this.P([[300, 140], [330, 260], [380, 380], [350, 500], [370, 640]].map((q) => T(...q)));
+    const heat = this.P(this.coast(540, 380, 96, 11, 18).map((q) => T(...q)), true);
+    return {
+      a: { d: this.P(land, true) + this.P(isle, true), f: 'var(--l1)', s: 'var(--t4)', w: 1 }, b: on.grid ? { d: grid, f: 'none', s: 'var(--line)', w: 0.5 } : this.empty(),
+      c: on.heat ? { d: heat, f: 'var(--accent-bg)', s: 'none', w: 0 } : this.empty(), d: on.road ? { d: roads, f: 'none', s: 'var(--t3)', w: 1.25 } : this.empty(), e: { d: river, f: 'none', s: 'var(--c1)', w: 1.5 }, g: this.empty()
+    };
+  }
+  skyXY(ra, dec, lst) { const a = (ra - lst) / 12 * Math.PI, r = (90 - dec) * 8.4; return [Math.sin(a) * r, -Math.cos(a) * r]; }
+  drawSky(T, on, lst) {
+    let dots = '', big = '', grid = '';
+    for (let i = 0; i < 220; i++) { const ra = (this.hash(i, 5) % 2400) / 100, dec = 42 + (this.hash(i, 9) % 4800) / 100, [x, y] = T(...this.skyXY(ra, dec, lst)); (i % 9 === 0 ? (big += `M${x.toFixed(1)} ${y.toFixed(1)}l0 0`) : (dots += `M${x.toFixed(1)} ${y.toFixed(1)}l0 0`)); }
+    [80, 70, 60, 50].forEach((dec) => { const c = []; for (let i = 0; i <= 48; i++) c.push(T(...this.skyXY(i / 2, dec, 0))); grid += this.P(c); });
+    for (let h = 0; h < 24; h += 3) grid += this.P([T(...this.skyXY(h, 90, lst)), T(...this.skyXY(h, 44, lst))]);
+    const S = Object.fromEntries(this.stars.map(([id, , ra, dec]) => [id, T(...this.skyXY(ra, dec, lst))]));
+    const lines = this.P(['s0', 's1', 's2', 's3', 's0'].map((k) => S[k])) + this.P(['s3', 's4', 's5', 's6'].map((k) => S[k])) + this.P(['c0', 'c1', 'c2', 'c3', 'c4'].map((k) => S[k]));
+    return { a: on.grid ? { d: grid, f: 'none', s: 'var(--line)', w: 0.5 } : this.empty(), b: { d: dots, f: 'none', s: 'var(--t4)', w: 1.4 }, c: { d: big, f: 'none', s: 'var(--t2)', w: 2.4 }, d: on.lines ? { d: lines, f: 'none', s: 'var(--c1)', w: 1 } : this.empty(), e: this.empty(), g: this.empty() };
+  }
+  drawPlan(T, on, sel) {
+    const r = (x, y, w, h) => this.P([T(x, y), T(x + w, y), T(x + w, y + h), T(x, y + h)], true);
+    const walls = this.rooms.map(([, , x, y, w, h]) => r(x, y, w, h)).join('');
+    const hit = this.rooms.find((q) => q[0] === sel), furn = [[600, 600, 2400, 900], [800, 3400, 2000, 900], [7400, 4600, 1800, 2000], [10600, 3400, 900, 1800], [6400, 300, 600, 2200], [800, 5600, 1500, 2000], [9400, 400, 1800, 700]].map((q) => r(...q)).join('');
+    const pipe = this.P([T(6000, 2600), T(6000, 5300), T(4000, 5300), T(4000, 8200)]) + this.P([T(7000, 2600), T(7000, 1400)]);
+    const dim = this.P([T(0, -500), T(12000, -500)]) + this.P([T(0, -650), T(0, -350)]) + this.P([T(12000, -650), T(12000, -350)]) + this.P([T(-500, 0), T(-500, 9000)]) + this.P([T(-650, 0), T(-350, 0)]) + this.P([T(-650, 9000), T(-350, 9000)]);
+    return { a: hit ? { d: r(hit[2], hit[3], hit[4], hit[5]), f: 'var(--accent-bg)', s: 'none', w: 0 } : this.empty(), b: { d: walls, f: 'none', s: 'var(--t1)', w: 2.5 }, c: on.furn ? { d: furn, f: 'var(--l1)', s: 'var(--t4)', w: 0.75 } : this.empty(), d: on.pipe ? { d: pipe, f: 'none', s: 'var(--c2)', w: 1.25 } : this.empty(), e: on.dim ? { d: dim, f: 'none', s: 'var(--t3)', w: 0.75 } : this.empty(), g: this.empty() };
+  }
+  solidGeo() {
+    const box = (x0, x1, y0, y1, z0, z1) => { const v = [[x0, y0, z0], [x1, y0, z0], [x1, y1, z0], [x0, y1, z0], [x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1]], e = [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]]; return e.map(([a, b]) => [v[a], v[b]]); };
+    const cyl = []; for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, b = (i + 1) / 16 * Math.PI * 2, R = 62; cyl.push([[Math.cos(a) * R, -44, Math.sin(a) * R], [Math.cos(b) * R, -44, Math.sin(b) * R]], [[Math.cos(a) * R, 44, Math.sin(a) * R], [Math.cos(b) * R, 44, Math.sin(b) * R]]); if (i % 2 === 0) cyl.push([[Math.cos(a) * R, -44, Math.sin(a) * R], [Math.cos(a) * R, 44, Math.sin(a) * R]]); }
+    return { shell: box(-100, 100, -60, 60, -80, 80), inner: cyl, stand: [...box(-90, -70, 60, 96, -70, -50), ...box(70, 90, 60, 96, -70, -50), ...box(-90, -70, 60, 96, 50, 70), ...box(70, 90, 60, 96, 50, 70)] };
+  }
+  solidProj(p, z) {
+    const { yaw, pitch } = this.state, [x, y, w] = p, cx = Math.cos(yaw), sx = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    const x1 = x * cx - w * sx, z1 = x * sx + w * cx, y1 = y * cp - z1 * sp, z2 = y * sp + z1 * cp, f = 640 / (640 + z2);
+    return [372 + x1 * f * z * 2.4, 394 + y1 * f * z * 2.4];
+  }
+  drawSolid(on, sel, z) {
+    const g = this.solidGeo(), seg = (list) => list.map(([a, b]) => this.P([this.solidProj(a, z), this.solidProj(b, z)])).join('');
+    return { a: on.shell ? { d: seg(g.shell), f: 'none', s: sel === 'shell' ? 'var(--accent)' : 'var(--t3)', w: 1.25 } : this.empty(), b: on.inner ? { d: seg(g.inner), f: 'none', s: sel === 'inner' ? 'var(--accent)' : 'var(--c2)', w: 1.25 } : this.empty(), c: on.stand ? { d: seg(g.stand), f: 'none', s: sel === 'stand' ? 'var(--accent)' : 'var(--t2)', w: 1.25 } : this.empty(), d: this.empty(), e: this.empty(), g: this.empty() };
+  }
+  drawGraph(T, sel, N) {
+    const near = (a) => this.edges.filter((e) => e.includes(a)), line = (e) => this.P([T(N[e[0]][2], N[e[0]][3]), T(N[e[1]][2], N[e[1]][3])]);
+    return { a: { d: this.edges.map(line).join(''), f: 'none', s: sel ? 'var(--line)' : 'var(--t4)', w: 1 }, b: sel ? { d: near(sel).map(line).join(''), f: 'none', s: 'var(--accent)', w: 1.5 } : this.empty(), c: this.empty(), d: this.empty(), e: this.empty(), g: this.empty() };
+  }
+  renderVals() {
+    const { type, sel, off, refs, ai, st, lst, aiTick } = this.state, meta = this.meta[type], v = this.v(), W = this.W, H = this.H;
+    const base = type === 'plan' ? 0.055 : 1, z = v.z * base, T = (x, y) => [(x - v.cx) * z + W / 2, (y - v.cy) * z + H / 2];
+    const layerDefs = { map: [['grid', '经纬网'], ['road', '道路'], ['heat', '异常热区']], sky: [['grid', '坐标网'], ['lines', '星座线'], ['names', '星名']], plan: [['furn', '家具'], ['pipe', '管线'], ['dim', '尺寸']], solid: [['shell', '外壳'], ['inner', '内胆'], ['stand', '支架']], graph: [['c0', '模型'], ['c1', '方法'], ['c2', '论文'], ['c3', '人和指标']] }[type];
+    const on = Object.fromEntries(layerDefs.map(([k]) => [k, !off[`${type}.${k}`]]));
+    const mk = (id, x, y, t, g, c, o = {}) => { const hit = sel === id, pointed = ai.includes(id); return { id, x: Math.round(x), y: Math.round(y), t, g, c, op: 1, cls: pointed ? `pulse p${aiTick % 2}` : '', on: hit ? 'true' : 'false', ring: hit ? '0 0 0 1.5px var(--accent)' : pointed ? '0 0 0 1.5px var(--accent)' : 'none', pick: () => this.setState({ sel: hit ? null : id }), ...o }; };
+    let p, marks = [], ins = { title: '没有选中', rows: [{ k: '提示', v: '点画布上的标记' }] }, status = '', refText = '';
+    if (type === 'map') {
+      p = this.drawMap(T, on);
+      marks = this.sites.map(([id, t, x, y, s, n]) => { const q = T(x, y), [g, c] = this.look[s]; return mk(id, q[0], q[1], t, g, c); });
+      const s = this.sites.find((q) => q[0] === sel);
+      if (s) { ins = { title: s[1], rows: [{ k: '状态', v: { ok: '正常', wait: '有异常', run: '巡检中' }[s[4]] }, { k: '本周异常', v: `${s[5]} 次` }, { k: '经度', v: `${(118 + s[2] / 100).toFixed(2)}°E` }, { k: '纬度', v: `${(33 - s[3] / 200).toFixed(2)}°N` }] }; refText = `地图 · ${s[1]}`; }
+      status = `${this.sites.length} 个站点 · 示例地理数据`;
+    } else if (type === 'sky') {
+      p = this.drawSky(T, on, lst);
+      marks = this.stars.filter((s) => s[0] !== 'p' || true).map(([id, t, ra, dec]) => { const q = T(...this.skyXY(ra, dec, lst)); return mk(id, q[0], q[1], on.names ? t : '', '✦', 'var(--t1)'); });
+      const s = this.stars.find((q) => q[0] === sel);
+      if (s) { ins = { title: s[1], rows: [{ k: '赤经', v: `${Math.floor(s[2])}h ${String(Math.round((s[2] % 1) * 60)).padStart(2, '0')}m` }, { k: '赤纬', v: `+${s[3].toFixed(2)}°` }, { k: '星群', v: s[0][0] === 's' ? '北斗' : s[0] === 'p' ? '北极' : '仙后' }] }; refText = `星图 · ${s[1]}`; }
+      status = `恒星时 ${lst.toFixed(2)}h · 赤经赤纬 J2000 · 恒星 ${this.stars.length} + 220`;
+    } else if (type === 'plan') {
+      p = this.drawPlan(T, on, sel);
+      marks = this.rooms.map(([id, t, x, y, w, h]) => { const q = T(x + w / 2, y + h / 2); return mk(id, q[0], q[1], t, '', 'transparent'); });
+      const r = this.rooms.find((q) => q[0] === sel);
+      if (r) { ins = { title: r[1], rows: [{ k: '面积', v: `${r[6].toFixed(1)} m²` }, { k: '开间', v: `${r[4]} mm` }, { k: '进深', v: `${r[5]} mm` }] }; refText = `平面图 · ${r[1]}`; }
+      status = `比例 1:${Math.round(100 / v.z)} · 单位 mm · 总宽 12000`;
+    } else if (type === 'solid') {
+      p = this.drawSolid(on, sel, v.z);
+      const at = { shell: [100, -60, 80], inner: [0, -44, 62], stand: [80, 96, 60] };
+      marks = Object.keys(this.parts).filter((k) => on[k]).map((k) => { const q = this.solidProj(at[k], v.z); return mk(k, q[0], q[1], this.parts[k], '◇', 'var(--t2)'); });
+      if (sel && this.parts[sel]) { ins = { title: this.parts[sel], rows: { shell: [{ k: '材料', v: 'ABS' }, { k: '尺寸', v: '200 × 120 × 160' }, { k: '壁厚', v: '2.5 mm' }], inner: [{ k: '材料', v: '304 不锈钢' }, { k: '直径', v: '124 mm' }, { k: '间隙', v: '6 mm，低于 8 mm' }], stand: [{ k: '数量', v: '4 个' }, { k: '高度', v: '36 mm' }] }[sel] }; refText = `模型 · ${this.parts[sel]}`; }
+      status = `转角 ${Math.round(this.state.yaw * 57.3)}° · 俯角 ${Math.round(this.state.pitch * 57.3)}° · 拖动旋转`;
+    } else {
+      const N = Object.fromEntries(this.nodes.map((n) => [n[0], n]));
+      p = this.drawGraph(T, sel, N);
+      const nb = sel ? new Set(this.edges.filter((e) => e.includes(sel)).flat()) : null, cc = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)'];
+      marks = this.nodes.filter((n) => on[`c${n[4]}`]).map(([id, t, x, y, c]) => { const q = T(x, y); return mk(id, q[0], q[1], t, ['●', '◆', '■', '▲'][c], cc[c], { op: !nb || nb.has(id) ? 1 : 0.3 }); });
+      const n = N[sel];
+      if (n) { ins = { title: n[1], rows: [{ k: '类别', v: ['模型', '方法', '论文', '人和指标'][n[4]] }, { k: '相连', v: `${this.edges.filter((e) => e.includes(sel)).length} 条` }, { k: '来源', v: 'docs/kb' }] }; refText = `图谱 · ${n[1]}`; }
+      status = `${this.nodes.length} 个节点 · ${this.edges.length} 条边`;
+    }
+    const set = (v2) => () => this.setState({ st: v2 }), z1 = (k) => this.setV({ z: Math.max(0.5, Math.min(5, v.z * k)) });
+    return {
+      theme: this.props.theme ?? 'dark', meta, p, marks, ins, status, refs: refs.map((t, i) => ({ t, drop: () => this.setState((s) => ({ refs: s.refs.filter((_, k) => k !== i) })) })),
+      chat: this.chats[type], lst, timeShow: type === 'sky' ? 'flex' : 'none', zText: `${Math.round(v.z * 100)}%`,
+      tabs: Object.keys(this.meta).map((k) => ({ name: this.meta[k].name, on: k === type ? 'true' : 'false', pick: () => this.setState({ type: k, sel: null, ai: [] }) })),
+      layers: layerDefs.map(([k, name]) => ({ name, on: on[k] ? 'true' : 'false', toggle: () => this.setState((s) => ({ off: { ...s.off, [`${type}.${k}`]: !s.off[`${type}.${k}`] } })) })),
+      refBtn: refText ? 'block' : 'none', addRef: () => this.setState((s) => ({ refs: s.refs.includes(refText) ? s.refs : [...s.refs, refText] })),
+      aiPoint: () => this.setState((s) => ({ ai: this.chats[type].ids, aiTick: s.aiTick + 1 })),
+      setLst: (e) => this.setState({ lst: Number(e.target.value) }),
+      zoomIn: () => z1(1.3), zoomOut: () => z1(0.77), zoomFit: () => { this.setV({ z: 1, cx: meta.cx, cy: meta.cy }); this.setState({ st: 'normal' }); },
+      down: (e) => { this.drag = { x: e.clientX, y: e.clientY, v, yaw: this.state.yaw, pitch: this.state.pitch }; },
+      move: (e) => { const d = this.drag; if (!d) return; const dx = e.clientX - d.x, dy = e.clientY - d.y; if (type === 'solid') this.setState({ yaw: d.yaw + dx * 0.01, pitch: Math.max(-1.2, Math.min(1.2, d.pitch + dy * 0.01)) }); else this.setV({ cx: d.v.cx - dx / z, cy: d.v.cy - dy / z }); },
+      up: () => { this.drag = null; },
+      loadShow: st === 'load' ? 'flex' : 'none', emptyShow: st === 'empty' ? 'flex' : 'none', errShow: st === 'err' ? 'flex' : 'none', staleShow: st === 'stale' ? 'flex' : 'none',
+      stNormal: set('normal'), stLoad: set('load'), stEmpty: set('empty'), stErr: set('err'), stStale: set('stale'),
+      sN: st === 'normal' ? 'true' : 'false', sL: st === 'load' ? 'true' : 'false', sE: st === 'empty' ? 'true' : 'false', sR: st === 'err' ? 'true' : 'false', sS: st === 'stale' ? 'true' : 'false'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>上限样例 · 知识图谱</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--warn:#F7AD31;--c1:#4F8AF2;--c2:#0FA696;--c3:#A066F0;--c4:#DE4F92}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--warn:#A35F0A;--c1:#2F5FCC;--c2:#008F7F;--c3:#8A4FD0;--c4:#C43E7E}
+button,input{font-family:inherit}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.lb{position:absolute;left:0;top:0;padding:0 3px;border-radius:3px;font-size:11px;line-height:16px;white-space:nowrap;pointer-events:none;will-change:transform;opacity:0}
+.st{font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:nowrap}
+.st strong{font-weight:700;color:var(--t1)}
+.kv{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:8px;font-size:12px;line-height:22px;color:var(--t2)}
+.kv span:first-child{color:var(--t3)}
+.hit{display:flex;gap:6px;width:100%;height:24px;padding:0 6px;box-sizing:border-box;border:0;border-radius:4px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;text-align:left;cursor:pointer}
+.hit:hover{background:var(--l1)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="position: absolute; left: 0; right: 0; top: 0; height: 44px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 12px; background: var(--side); box-shadow: 0 0.5px 0 var(--line)">
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">知识图谱</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">关系 · 第二级渲染器 · 力导向布局实时计算</span>
+    <span style="flex: 1"></span><span class="st"><strong>{{fps}}</strong> 帧/秒 · 布局 {{layout}} · <strong>{{count}}</strong> 节点 · {{edgeCount}} 边</span>
+  </header>
+  <div style="position: absolute; left: 0; top: 44px; width: 1140px; height: 788px; overflow: hidden; background: var(--term)">
+    <canvas data-gl="graph" width="1140" height="788" aria-label="知识图谱，拖动平移，滚轮缩放，点节点查看" style="display: {{glShow}}; width: 1140px; height: 788px; cursor: grab"></canvas>
+    <sc-for list="{{pool}}" as="p" hint-placeholder-count="48"><span class="lb" data-lb="{{p}}" style="display: {{glShow}}; color: var(--t1)"></span></sc-for>
+    <div style="display: {{tuiShow}}; box-sizing: border-box; height: 788px; padding: 16px 20px; font-family: var(--mono); font-size: 13px; line-height: 19px; color: var(--t2); white-space: pre; overflow: hidden"><sc-for list="{{tui}}" as="l" hint-placeholder-count="30"><div style="height: 19px; color: {{l.c}}">{{l.t}}</div></sc-for></div>
+    <div style="position: absolute; left: 12px; bottom: 12px; display: flex; gap: 12px; font-size: 12px; line-height: 18px; color: var(--t2)"><span><span style="color: var(--c1)">●</span> 概念</span><span><span style="color: var(--c2)">●</span> 论文</span><span><span style="color: var(--c3)">●</span> 代码</span><span><span style="color: var(--c4)">●</span> 人物</span></div>
+    <div style="display: {{failShow}}; position: absolute; left: 24px; top: 24px; font-size: 14px; line-height: 22px; color: var(--warn)">这个环境没有 WebGL2，面板退到邻接树</div>
+  </div>
+  <aside aria-label="检查器" style="position: absolute; left: 1140px; right: 0; top: 44px; height: 788px; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; gap: 6px; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+    <label for="lg-q" style="font-size: 12px; line-height: 18px; color: var(--t3)">搜索节点或社区</label>
+    <input id="lg-q" value="{{q}}" onChange="{{setQ}}" placeholder="比如 注意力" style="height: 32px; box-sizing: border-box; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); color: var(--t1); font-size: 13px">
+    <div><sc-for list="{{hits}}" as="h" hint-placeholder-count="5"><button type="button" class="hit" onClick="{{h.pick}}"><span style="flex: 1; white-space: nowrap; overflow: hidden">{{h.t}}</span><span style="color: var(--t3)">{{h.d}}</span></button></sc-for></div>
+    <strong style="padding-top: 6px; font-size: 14px; line-height: 22px; font-weight: 600">{{ins.name}}</strong>
+    <sc-for list="{{ins.rows}}" as="r" hint-placeholder-count="4"><div class="kv"><span>{{r.k}}</span><span>{{r.v}}</span></div></sc-for>
+    <div style="padding-top: 8px; font-size: 12px; line-height: 18px; color: var(--t3)">{{pathHead}}</div>
+    <div style="flex: 1; min-height: 0; overflow: hidden; font-size: 12px; line-height: 22px; color: var(--t2)"><sc-for list="{{path}}" as="p" hint-placeholder-count="6"><div style="white-space: nowrap; overflow: hidden"><span style="color: var(--t4); font-family: var(--mono)">{{p.i}} </span>{{p.t}}</div></sc-for></div>
+  </aside>
+  <div style="position: absolute; left: 0; right: 0; top: 832px; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 8px; box-shadow: 0 -0.5px 0 var(--line)">
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3)">点两个节点找最短路径。缩小看社区名，放大看节点名</span><span style="flex: 1"></span>
+    <button type="button" class="opt" onClick="{{relayout}}">重新布局</button><button type="button" class="opt" onClick="{{clearSel}}">清除选中</button><button type="button" class="opt" onClick="{{toggleTui}}" aria-pressed="{{tuiOn}}">看 TUI 退化</button>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; background: var(--side); box-shadow: 0 -0.5px 0 var(--line)">
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3); padding-right: 6px">节点数量</span><sc-for list="{{sizes}}" as="o" hint-placeholder-count="5"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">合成数据，带社区结构。布局每帧最多用 8ms，不够就分多帧算</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  state = { N: 30000, fps: 0, layout: '计算中', tui: false, rows: [], noGL: false, q: '', hits: [], a: null, b: null, path: [], bfs: 0, E: 0 };
+  sx = 0; sy = 0; zoom = 0.46;
+  groups = ['注意力', '优化器', '蒸馏', '强化学习', '检索', '多模态', '量化', '推理加速', '数据集', '评测', '安全', '记忆', '规划', '世界模型', '扩散', '图学习', '因果', '联邦', '提示工程', '工具调用', '代码生成', '语音', '机器人', '编译'];
+  kinds = ['概念', '论文', '代码', '人物'];
+  componentDidMount() { this.boot(); }
+  componentWillUnmount() { clearTimeout(this.bt); clearTimeout(this.vt); cancelAnimationFrame(this.raf); this.io && this.io.disconnect(); }
+  boot() {
+    const c = document.querySelector('[data-gl="graph"]');
+    if (!c) { this.bt = setTimeout(() => this.boot(), 100); return; }
+    this.c = c;
+    let d = null;
+    c.addEventListener('mousedown', (e) => { d = { x: e.clientX, y: e.clientY, sx: this.sx, sy: this.sy, moved: false }; });
+    window.addEventListener('mousemove', (e) => { if (!d) return; if (Math.abs(e.clientX - d.x) + Math.abs(e.clientY - d.y) > 3) d.moved = true; this.sx = d.sx + (e.clientX - d.x) / this.zoom / this.k(c); this.sy = d.sy + (e.clientY - d.y) / this.zoom / this.k(c); });
+    window.addEventListener('mouseup', (e) => { if (d && !d.moved) this.pick(e); d = null; });
+    c.addEventListener('wheel', (e) => { e.preventDefault(); this.zoom = Math.max(0.15, Math.min(14, this.zoom * Math.exp(-e.deltaY * 0.0012))); }, { passive: false });
+    const start = () => { this.vis = true; if (!this.gl && !this.state.noGL) this.init(); this.kick(); };
+    if (window.IntersectionObserver) { this.io = new IntersectionObserver((e) => { this.vis = e[0].isIntersecting; if (this.vis) start(); }); this.io.observe(c); } else start();
+    const wake = () => { if (!document.hidden && this.vis) this.kick(); this.vt = setTimeout(wake, 1000); }; wake();
+  }
+  k(c) { const r = c.getBoundingClientRect(); return r.width / 1140 || 1; }
+  prog(vs, fs) {
+    const gl = this.gl, p = gl.createProgram();
+    [[gl.VERTEX_SHADER, vs], [gl.FRAGMENT_SHADER, fs]].forEach(([t, src]) => { const s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); gl.attachShader(p, s); });
+    gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    return p;
+  }
+  init() {
+    const gl = this.c.getContext('webgl2', { antialias: true, alpha: false });
+    if (!gl) { this.setState({ noGL: true, tui: true }); return; }
+    this.gl = gl;
+    this.pr = this.prog(`#version 300 es
+      precision highp float; in vec2 p; in float k; uniform vec2 S; uniform vec2 O; uniform float PS; flat out float c; void main(){ c=k; gl_Position=vec4((p+O)*S,0.,1.); gl_PointSize=PS; }`, `#version 300 es
+      precision mediump float; flat in float c; uniform vec3 C[4]; uniform vec4 FC; uniform float MODE; out vec4 o; void main(){ if(MODE>.5){ if(length(gl_PointCoord-.5)>.5)discard; o=vec4(C[int(c+.5)],FC.a);} else o=FC; }`);
+    this.bp = gl.createBuffer(); this.bk = gl.createBuffer(); this.be = gl.createBuffer(); this.bo = gl.createBuffer();
+    this.make(this.state.N);
+  }
+  make(N) {
+    const gl = this.gl, G = this.groups.length, x = new Float32Array(N), y = new Float32Array(N), kind = new Float32Array(N), grp = new Uint16Array(N), eA = [], R = Math.random, gs = [];
+    for (let g = 0; g < G; g++) { const a = g * 2.39996, r = 300 * Math.sqrt((g + 0.5) / G) * 2.6; gs.push([Math.cos(a) * r, Math.sin(a) * r]); }
+    const starts = new Int32Array(G + 1); for (let g = 0; g <= G; g++) starts[g] = Math.floor(g / G * N);
+    for (let g = 0; g < G; g++) for (let i = starts[g]; i < starts[g + 1]; i++) {
+      grp[i] = g; const a = R() * 6.2832, r = Math.sqrt(-2 * Math.log(R() + 1e-6)) * 46; x[i] = gs[g][0] + Math.cos(a) * r; y[i] = gs[g][1] + Math.sin(a) * r; kind[i] = R() < 0.5 ? 0 : R() < 0.5 ? 1 : R() < 0.6 ? 2 : 3;
+      const lo = starts[g], m = i - lo;
+      if (m > 0) { const links = 2 + (R() < 0.3 ? 1 : 0); for (let l = 0; l < links; l++) { const t = lo + Math.floor(m * R() * R()); eA.push(i, t); } }
+      if (R() < 0.05 && g > 0) { const og = Math.floor(R() * G), t = starts[og] + Math.floor(R() * (starts[og + 1] - starts[og])); if (t < i) eA.push(i, t); }
+    }
+    const e = new Uint32Array(eA), adjS = new Int32Array(N + 1); for (let i = 0; i < e.length; i++) adjS[e[i] + 1]++;
+    for (let i = 0; i < N; i++) adjS[i + 1] += adjS[i];
+    const pos = adjS.slice(0, N), adj = new Int32Array(e.length); for (let i = 0; i < e.length; i += 2) { adj[pos[e[i]]++] = e[i + 1]; adj[pos[e[i + 1]]++] = e[i]; }
+    Object.assign(this, { x, y, grp, kind, e, adj, adjS, gs, vx: new Float32Array(N), vy: new Float32Array(N), N, iter: 0, xy: new Float32Array(N * 2) });
+    const hub = []; for (let g = 0; g < G; g++) { let best = starts[g], d = -1; for (let i = starts[g]; i < starts[g + 1]; i += 7) { const n = adjS[i + 1] - adjS[i]; if (n > d) { d = n; best = i; } } hub.push(best); } this.hub = hub;
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bk); gl.bufferData(gl.ARRAY_BUFFER, kind, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.be); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, e, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bp); gl.bufferData(gl.ARRAY_BUFFER, N * 8, gl.DYNAMIC_DRAW);
+    this.upload(); this.setState({ E: e.length / 2, a: null, b: null, path: [], layout: '计算中' }); this.olay = new Float32Array(0);
+  }
+  upload() { const { x, y, xy, N, gl } = this; for (let i = 0; i < N; i++) { xy[i * 2] = x[i]; xy[i * 2 + 1] = y[i]; } gl.bindBuffer(gl.ARRAY_BUFFER, this.bp); gl.bufferSubData(gl.ARRAY_BUFFER, 0, xy); }
+  step() {
+    const { x, y, vx, vy, N, e, grp, gs } = this, C = 128, S = 8, head = this.head || (this.head = new Int32Array(C * C)), next = this.nx && this.nx.length === N ? this.nx : (this.nx = new Int32Array(N)), oX = -C * S / 2 * 3, sc = 1 / (S * 3);
+    head.fill(-1);
+    for (let i = 0; i < N; i++) { const cx = Math.max(0, Math.min(C - 1, ((x[i] - oX) * sc) | 0)), cy = Math.max(0, Math.min(C - 1, ((y[i] - oX) * sc) | 0)), c = cx + cy * C; next[i] = head[c]; head[c] = i; }
+    for (let i = 0; i < N; i++) {
+      const cx = Math.max(0, Math.min(C - 1, ((x[i] - oX) * sc) | 0)), cy = Math.max(0, Math.min(C - 1, ((y[i] - oX) * sc) | 0)); let fx = 0, fy = 0, cnt = 0;
+      for (let j = head[cx + cy * C]; j >= 0 && cnt < 24; j = next[j], cnt++) { const dx = x[i] - x[j], dy = y[i] - y[j], d = dx * dx + dy * dy + 0.5; fx += dx / d; fy += dy / d; }
+      const g = gs[grp[i]]; vx[i] = (vx[i] + fx * 3.2 + (g[0] - x[i]) * 0.0016) * 0.8; vy[i] = (vy[i] + fy * 3.2 + (g[1] - y[i]) * 0.0016) * 0.8;
+    }
+    for (let i = 0; i < e.length; i += 2) { const a = e[i], b = e[i + 1], dx = x[b] - x[a], dy = y[b] - y[a], w = grp[a] === grp[b] ? 0.0035 : 0.00012; vx[a] += dx * w; vy[a] += dy * w; vx[b] -= dx * w; vy[b] -= dy * w; }
+    for (let i = 0; i < N; i++) { x[i] += vx[i]; y[i] += vy[i]; }
+    this.iter++;
+  }
+  kick() { if (this.raf || !this.gl) return; const loop = (t) => { this.raf = null; if (!this.vis || document.hidden) return; this.frame(t); this.raf = requestAnimationFrame(loop); }; this.raf = requestAnimationFrame(loop); }
+  frame(t) {
+    const gl = this.gl, dark = (this.props.theme ?? 'dark') === 'dark', t0 = performance.now();
+    let moved = false;
+    if (this.iter < 240) { do { this.step(); moved = true; } while (performance.now() - t0 < 8 && this.iter < 240); this.upload(); if (this.iter >= 240) { this.layoutMs = Math.round(performance.now() - (this.layoutT0 || t0)); this.setState({ layout: '完成' }); } }
+    if (!this.layoutT0) this.layoutT0 = t0;
+    const W = 1140, H = 788, z = this.zoom, S = [z * 2 / W, -z * 2 / H], O = [this.sx, this.sy], u = (n) => gl.getUniformLocation(this.pr, n);
+    gl.viewport(0, 0, W, H); gl.clearColor(...(dark ? [0.059, 0.067, 0.082, 1] : [0.976, 0.98, 0.984, 1])); gl.clear(gl.COLOR_BUFFER_BIT); gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    gl.useProgram(this.pr); gl.uniform2fv(u('S'), S); gl.uniform2fv(u('O'), O);
+    gl.uniform3fv(u('C'), new Float32Array(dark ? [0.31, 0.54, 0.95, 0.06, 0.65, 0.59, 0.63, 0.4, 0.94, 0.87, 0.31, 0.57] : [0.18, 0.37, 0.8, 0, 0.56, 0.5, 0.54, 0.31, 0.82, 0.77, 0.24, 0.49]));
+    const lp = gl.getAttribLocation(this.pr, 'p'), lk = gl.getAttribLocation(this.pr, 'k');
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bp); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bk); gl.enableVertexAttribArray(lk); gl.vertexAttribPointer(lk, 1, gl.FLOAT, false, 0, 0);
+    gl.uniform1f(u('MODE'), 0); gl.uniform4f(u('FC'), ...(dark ? [1, 1, 1, Math.min(0.09, 900 / this.N + 0.012)] : [0, 0, 0, Math.min(0.1, 900 / this.N + 0.015)])); gl.drawElements(gl.LINES, this.e.length, gl.UNSIGNED_INT, 0);
+    gl.uniform1f(u('MODE'), 1); gl.uniform1f(u('PS'), Math.max(1.6, Math.min(9, z * 2.2))); gl.uniform4f(u('FC'), 0, 0, 0, 0.9); gl.drawArrays(gl.POINTS, 0, this.N);
+    if (this.olay && this.olay.length) {
+      gl.disableVertexAttribArray(lk); gl.vertexAttrib1f(lk, 0); gl.bindBuffer(gl.ARRAY_BUFFER, this.bo); gl.bufferData(gl.ARRAY_BUFFER, this.olay, gl.DYNAMIC_DRAW); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform1f(u('MODE'), 0); gl.uniform4f(u('FC'), ...(dark ? [0.48, 0.67, 1, 1] : [0.25, 0.46, 0.9, 1])); gl.drawArrays(gl.LINE_STRIP, 0, this.olay.length / 2); gl.uniform1f(u('PS'), 7); gl.drawArrays(gl.POINTS, 0, this.olay.length / 2);
+    }
+    gl.flush();
+    this.fN = (this.fN || 0) + 1; if (!this.lastS) this.lastS = t;
+    if (t - this.lastS >= 200) { this.labels(); if (t - this.lastS >= 500) { const fps = Math.round(this.fN * 1000 / (t - this.lastS)); this.fN = 0; this.lastS = t; this.setState({ fps, layout: this.iter >= 240 ? `完成 · ${(this.layoutMs / 1000).toFixed(1)}s` : `第 ${this.iter} / 240 轮` }); } }
+  }
+  labels() {
+    const W = 1140, H = 788, z = this.zoom, px = (i) => [(this.x[i] + this.sx) * z + W / 2, (this.y[i] + this.sy) * z + H / 2], els = this.lbs || (this.lbs = [...document.querySelectorAll('[data-lb]')]), items = [];
+    if (z < 1.6) this.groups.forEach((g, i) => { const c = this.gs[i], q = [(c[0] + this.sx) * z + W / 2, (c[1] + this.sy) * z + H / 2]; items.push([q, g]); });
+    else { const cand = []; for (let i = 0; i < this.N; i += Math.max(1, Math.floor(this.N / 6000))) { const q = px(i); if (q[0] > 0 && q[0] < W && q[1] > 0 && q[1] < H) cand.push([this.adjS[i + 1] - this.adjS[i], i, q]); } cand.sort((a, b) => b[0] - a[0]); cand.slice(0, 40).forEach(([, i, q]) => items.push([q, this.nameOf(i)])); }
+    els.forEach((el, i) => { const it = items[i]; if (!it) { el.style.opacity = 0; return; } el.textContent = it[1]; el.style.opacity = 1; el.style.transform = `translate(${Math.round(it[0][0])}px, ${Math.round(it[0][1])}px)`; });
+  }
+  nameOf(i) { return `${this.groups[this.grp[i]]} · ${this.kinds[this.kind[i]]} ${i}`; }
+  pick(e) {
+    if (!this.gl) return;
+    const r = this.c.getBoundingClientRect(), k = 1140 / r.width, mx = (e.clientX - r.left) * k, my = (e.clientY - r.top) * k;
+    if (mx < 0 || my < 0 || mx > 1140 || my > 788) return;
+    const z = this.zoom, wx = (mx - 570) / z - this.sx, wy = (my - 394) / z - this.sy; let best = -1, bd = (14 / z) ** 2;
+    for (let i = 0; i < this.N; i++) { const dx = this.x[i] - wx, dy = this.y[i] - wy, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = i; } }
+    if (best >= 0) this.choose(best);
+  }
+  choose(i) {
+    const { a, b } = this.state;
+    if (a === null || b !== null) { this.setState({ a: i, b: null, path: [], bfs: 0 }); this.olay = new Float32Array([this.x[i], this.y[i]]); return; }
+    const t0 = performance.now(), prev = new Int32Array(this.N).fill(-2), q = new Int32Array(this.N); let h = 0, tl = 0; q[tl++] = a; prev[a] = -1;
+    while (h < tl) { const v = q[h++]; if (v === i) break; for (let j = this.adjS[v]; j < this.adjS[v + 1]; j++) { const w = this.adj[j]; if (prev[w] === -2) { prev[w] = v; q[tl++] = w; } } }
+    const p = []; if (prev[i] !== -2) { for (let v = i; v !== -1; v = prev[v]) p.push(v); p.reverse(); }
+    this.olay = new Float32Array(p.flatMap((v) => [this.x[v], this.y[v]])); this.setState({ b: i, path: p, bfs: (performance.now() - t0).toFixed(1), visited: tl });
+  }
+  search(q) {
+    if (!q || !this.groups) return [];
+    const out = []; this.groups.forEach((g, i) => { if (g.includes(q)) out.push({ t: g, d: '社区', i: this.hub ? this.hub[i] : 0 }); });
+    if (/^\d+$/.test(q) && Number(q) < (this.N || 0)) out.push({ t: this.nameOf(Number(q)), d: '节点', i: Number(q) });
+    return out.slice(0, 6);
+  }
+  tuiRows() {
+    const a = this.state.a ?? (this.hub ? this.hub[0] : 0), out = [{ t: '知识图谱  终端只画选中节点的邻接树', c: 'var(--t3)' }, { t: ' ', c: 'var(--t3)' }, { t: `● ${this.nameOf(a)}`, c: 'var(--accent)' }];
+    const nb = []; for (let j = this.adjS[a]; j < this.adjS[a + 1]; j++) nb.push(this.adj[j]);
+    nb.slice(0, 18).forEach((n, i) => { out.push({ t: `${i === Math.min(nb.length, 18) - 1 ? '└─' : '├─'} ${this.nameOf(n)}  相连 ${this.adjS[n + 1] - this.adjS[n]}`, c: 'var(--t1)' }); });
+    if (nb.length > 18) out.push({ t: `   还有 ${nb.length - 18} 个`, c: 'var(--t4)' });
+    return out;
+  }
+  renderVals() {
+    const { N, fps, layout, tui, noGL, q, a, b, path, bfs, E, visited } = this.state, name = (v) => (v >= 10000 ? `${v / 10000} 万` : `${v}`);
+    const node = (i) => (this.grp ? this.nameOf(i) : '');
+    const hits = this.search(q).map((h) => ({ ...h, pick: () => { this.sx = -this.x[h.i]; this.sy = -this.y[h.i]; this.zoom = 2.4; this.choose(h.i); } }));
+    const cur = b ?? a;
+    return {
+      theme: this.props.theme ?? 'dark', fps, layout, count: N.toLocaleString('en-US'), edgeCount: E.toLocaleString('en-US'), q, hits,
+      pool: Array.from({ length: 48 }, (_, i) => i), glShow: tui ? 'none' : 'block', tuiShow: tui ? 'block' : 'none', failShow: noGL ? 'block' : 'none', tui: tui && this.adjS ? this.tuiRows() : [],
+      ins: cur !== null && this.grp ? { name: node(cur), rows: [{ k: '类型', v: this.kinds[this.kind[cur]] }, { k: '社区', v: this.groups[this.grp[cur]] }, { k: '相连', v: `${this.adjS[cur + 1] - this.adjS[cur]} 条` }] } : { name: '没有选中', rows: [{ k: '提示', v: '点一个节点' }] },
+      pathHead: path.length ? `最短路径 ${path.length - 1} 跳，走了 ${(visited || 0).toLocaleString('en-US')} 个节点，用时 ${bfs}ms` : a !== null && b === null ? '再点一个节点找路径' : b !== null ? '这两个节点不相连' : '路径', path: path.slice(0, 14).map((v, i) => ({ i: String(i + 1).padStart(2, ' '), t: node(v) })),
+      setQ: (e) => this.setState({ q: e.target.value }), relayout: () => { if (this.gl) { this.iter = 0; this.layoutT0 = 0; this.setState({ layout: '计算中' }); } }, clearSel: () => { this.olay = new Float32Array(0); this.setState({ a: null, b: null, path: [] }); },
+      toggleTui: () => this.setState((s) => ({ tui: !s.tui })), tuiOn: tui ? 'true' : 'false',
+      sizes: [5000, 30000, 100000, 300000, 1000000].map((v) => ({ t: name(v), on: N === v ? 'true' : 'false', pick: () => { this.setState({ N: v }); if (this.gl) { this.layoutT0 = 0; this.make(v); } } }))
+    };
+  }
+}
+</script>
+</body>
+</html>

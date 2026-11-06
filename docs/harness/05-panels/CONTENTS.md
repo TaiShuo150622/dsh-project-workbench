@@ -1,0 +1,49 @@
+# 05 · 通用面板平台
+
+返回 [阅读指南](../README.md) · [完整索引](../INDEX.md)
+
+- [DSH 面板平台](<README.md>) — 未编号；公开整理版。
+- [DSH 通用面板平台整体设计讨论稿 v0.1.0](<docs/design/history/overall-discussion-v0.1.0.md>) — 0.1.0；历史公开整理版。
+- [DSH 通用面板平台整体设计讨论稿 v0.1.1](<docs/design/history/overall-discussion-v0.1.1.md>) — 0.1.1；历史公开整理版。
+- [DSH 通用面板平台整体设计讨论稿 v0.1.2](<docs/design/overall-discussion.md>) — 0.1.2；公开整理版。
+- [ACC设计讨论入口](<docs/handoff/panels/ACC-DESIGN-DRAFT.md>) — 未编号；公开整理版。
+- [看板](<docs/handoff/panels/BOARD.md>) — 未编号；公开整理版。
+- [DSH面板平台设计与实施协作讨论稿 v0.1.0](<docs/handoff/panels/COLLABORATION.md>) — 0.1.0；公开整理版。
+- [接口契约](<docs/handoff/panels/CONTRACT.md>) — 未编号；公开整理版。
+- [实现方案讨论入口](<docs/handoff/panels/IMPLEMENTATION-DISCUSSION-DRAFT.md>) — 未编号；公开整理版。
+- [开源演进讨论入口](<docs/handoff/panels/OPEN-SOURCE-EVOLUTION-DRAFT.md>) — 未编号；公开整理版。
+- [真宿主探针](<docs/handoff/panels/PROBE.md>) — 未编号；历史记录（未复测）。
+- [给 Codex 的开工提示词](<docs/handoff/panels/PROMPT.md>) — 未编号；公开整理版。
+- [DSH 面板平台 · 任务包](<docs/handoff/panels/README.md>) — 未编号；公开整理版。
+- [基础映射](<docs/handoff/panels/design/Foundations.dc.html>) — 未编号；设计附件。
+- [上限样例 · 设计图](<docs/handoff/panels/design/LimitBim.dc.html>) — 未编号；设计附件。
+- [上限样例 · 知识图谱](<docs/handoff/panels/design/LimitGraph.dc.html>) — 未编号；设计附件。
+- [上限样例 · 地图](<docs/handoff/panels/design/LimitMap.dc.html>) — 未编号；设计附件。
+- [上限样例 · 天体](<docs/handoff/panels/design/LimitSky.dc.html>) — 未编号；设计附件。
+- [系统上限](<docs/handoff/panels/design/LimitSummary.dc.html>) — 未编号；设计附件。
+- [自定义面板](<docs/handoff/panels/design/PanelDefine.dc.html>) — 未编号；设计附件。
+- [面板实样 · 桌面端](<docs/handoff/panels/design/PanelGallery.dc.html>) — 未编号；设计附件。
+- [面板实样 · TUI](<docs/handoff/panels/design/PanelGalleryTui.dc.html>) — 未编号；设计附件。
+- [面板平台怎么做](<docs/handoff/panels/design/PanelHow.dc.html>) — 未编号；设计附件。
+- [面板类型](<docs/handoff/panels/design/PanelTypes.dc.html>) — 未编号；设计附件。
+- [基础组件](<docs/handoff/panels/design/Primitives.dc.html>) — 未编号；设计附件。
+- [设计稿导出](<docs/handoff/panels/design/README.md>) — 未编号；公开整理版。
+- [运行图 · TUI](<docs/handoff/panels/design/RunGraphTui.dc.html>) — 未编号；设计附件。
+- [冷灰主题](<docs/handoff/panels/design/TuiTheme.dc.html>) — 未编号；设计附件。
+- [dsh-cool-dark.json](<docs/handoff/panels/design/themes/dsh-cool-dark.json>) — 未编号；设计附件。
+- [dsh-cool-light.json](<docs/handoff/panels/design/themes/dsh-cool-light.json>) — 未编号；设计附件。
+- [P-01-skeleton](<docs/handoff/panels/tasks/P-01-skeleton.md>) — 未编号；实施任务卡（计划）。
+- [P-02-spec](<docs/handoff/panels/tasks/P-02-spec.md>) — 未编号；实施任务卡（计划）。
+- [P-03-data](<docs/handoff/panels/tasks/P-03-data.md>) — 未编号；实施任务卡（计划）。
+- [P-04-shell](<docs/handoff/panels/tasks/P-04-shell.md>) — 未编号；实施任务卡（计划）。
+- [P-05-table](<docs/handoff/panels/tasks/P-05-table.md>) — 未编号；实施任务卡（计划）。
+- [P-06-timeline](<docs/handoff/panels/tasks/P-06-timeline.md>) — 未编号；实施任务卡（计划）。
+- [P-07-graph](<docs/handoff/panels/tasks/P-07-graph.md>) — 未编号；实施任务卡（计划）。
+- [P-08-space](<docs/handoff/panels/tasks/P-08-space.md>) — 未编号；实施任务卡（计划）。
+- [P-09-sandbox](<docs/handoff/panels/tasks/P-09-sandbox.md>) — 未编号；实施任务卡（计划）。
+- [P-10-trust](<docs/handoff/panels/tasks/P-10-trust.md>) — 未编号；实施任务卡（计划）。
+- [P-11-model](<docs/handoff/panels/tasks/P-11-model.md>) — 未编号；实施任务卡（计划）。
+- [P-12-tui](<docs/handoff/panels/tasks/P-12-tui.md>) — 未编号；实施任务卡（计划）。
+- [P-13-types](<docs/handoff/panels/tasks/P-13-types.md>) — 未编号；实施任务卡（计划）。
+- [P-14-ceiling](<docs/handoff/panels/tasks/P-14-ceiling.md>) — 未编号；实施任务卡（计划）。
+- [P-15-integration](<docs/handoff/panels/tasks/P-15-integration.md>) — 未编号；实施任务卡（计划）。

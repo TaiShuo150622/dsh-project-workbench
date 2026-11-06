@@ -1,0 +1,99 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>会话分屏 · 桌面端</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:rgba(122,170,255,.14);--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:rgba(65,118,230,.10);--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A}
+button{font-family:inherit}
+.pane{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;flex-basis:0;transition:flex-grow 300ms var(--ease),opacity 200ms var(--ease)}
+.inner{display:flex;flex-direction:column;height:100%;min-width:0}
+.spin{display:inline-block;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.zone{position:absolute;top:56px;bottom:8px;box-sizing:border-box;border:1px dashed var(--accent);border-radius:12px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:13px;line-height:20px;color:var(--accent-t);animation:zone 140ms ease-out}
+@keyframes zone{from{opacity:0}to{opacity:1}}
+.write{animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.pane{transition:none}.spin,.zone,.write{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; display: flex; background: var(--bg); color: var(--t1); font-family: var(--sans); overflow: hidden">
+
+  <aside aria-label="会话导航" style="width: 56px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding-top: 16px; box-sizing: border-box; background: var(--side); box-shadow: 0.5px 0 0 var(--line); font-family: var(--mono); font-size: 14px; line-height: 20px"><span aria-hidden="true" style="color: var(--t2); margin-bottom: 8px">☰</span><span class="spin" style="color: var(--accent)">◐</span><span style="color: var(--warn)">▲</span><span style="color: var(--ok)">●</span><span style="color: var(--t4)">○</span></aside>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="height: 44px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 0.5px 0 var(--line); font-size: 13px; line-height: 20px">
+      <span style="color: var(--t3)">分屏</span>
+      <div role="group" aria-label="格数" style="display: flex; gap: 2px; padding: 2px; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)"><sc-for list="{{counts}}" as="c" hint-placeholder-count="3"><button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="height: 26px; padding: 0 10px; border: 0; border-radius: 6px; background: {{c.bg}}; color: {{c.fg}}; font-size: 13px; line-height: 20px; cursor: pointer">{{c.label}}</button></sc-for></div>
+      <button type="button" onClick="{{toggleDrag}}" aria-pressed="{{dragOn}}" style="height: 30px; padding: 0 10px; border: 0; border-radius: 8px; background: {{dragBg}}; color: var(--t2); font-size: 13px; line-height: 20px; cursor: pointer">{{dragLabel}}</button>
+      <span style="flex: 1"></span>
+      <span style="font-size: 12px; line-height: 18px; color: var(--t3)">每格不小于 400。放不下时写原因：栏宽不足，拖宽窗口后再分栏</span>
+    </div>
+
+    <div style="flex: 1; min-height: 0; display: flex">
+      <sc-for list="{{panes}}" as="p" hint-placeholder-count="3">
+        <section class="pane" aria-label="{{p.title}}" style="flex-grow: {{p.grow}}; opacity: {{p.alpha}}; box-shadow: -0.5px 0 0 var(--line)">
+          <div class="inner">
+            <button type="button" onClick="{{p.focus}}" aria-pressed="{{p.focused}}" style="height: 44px; flex: none; box-sizing: border-box; padding: 0 12px; border: 0; display: flex; align-items: center; gap: 8px; background: {{p.headBg}}; color: var(--t1); text-align: left; cursor: pointer; box-shadow: inset 0 -2px 0 {{p.bar}}"><span style="font-family: var(--mono); font-size: 13px; line-height: 20px; color: {{p.tone}}">{{p.glyph}}</span><strong style="flex: 1; min-width: 0; font-size: 13px; line-height: 20px; font-weight: 600; white-space: nowrap; overflow: hidden">{{p.title}}</strong><span style="font-size: 12px; line-height: 18px; color: {{p.statusFg}}; white-space: nowrap">{{p.status}}</span></button>
+            <div style="flex: 1; min-height: 0; box-sizing: border-box; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 22px; overflow: hidden">
+              <div style="align-self: flex-end; max-width: 88%; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1)">{{p.ask}}</div>
+              <p style="margin: 0; color: var(--t2)">{{p.reply}}</p>
+              <sc-for list="{{p.tools}}" as="t" hint-placeholder-count="2"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 20px; color: var(--t2)"><span style="font-family: var(--mono); color: {{t.c}}">{{t.g}}</span><span style="flex: 1; min-width: 0">{{t.t}}</span></div></sc-for>
+              <div style="display: {{p.approvalShow}}; flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 20px; font-weight: 600"><span style="font-family: var(--mono); color: var(--warn)">▲</span>要重启 MCP 服务吗？</div><code style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t2)">dsh mcp restart github</code><div style="display: flex; gap: 8px"><button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-size: 13px; line-height: 20px; cursor: pointer">允许一次 Y</button><button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l3); color: var(--t1); font-size: 13px; line-height: 20px; cursor: pointer">拒绝 N</button></div></div>
+            </div>
+            <div style="flex: none; padding: 0 16px 16px"><div style="height: 56px; box-sizing: border-box; padding: 8px 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 {{p.ringW}} {{p.ring}}; font-size: 14px; line-height: 22px; color: var(--t4)">{{p.hint}}</div></div>
+          </div>
+          <div class="zone" style="display: {{p.zoneShow}}; left: 8px; right: 8px">放到这里，换成这个会话</div>
+        </section>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { n: 2, focus: 0, drag: false };
+  renderVals() {
+    const { n, focus, drag } = this.state;
+    const data = [
+      { title: '审批卡状态统一', glyph: '◐', tone: 'var(--accent)', status: '1 个子智能体运行中', statusFg: 'var(--t3)', ask: '把审批卡的风险等级改成和 StateDot 同一套状态。', reply: '我先看现有组件，再改状态映射。', tools: [{ g: '●', c: 'var(--ok)', t: '读取 RiskConfirmation.tsx' }, { g: '●', c: 'var(--ok)', t: '修改 RiskConfirmation.tsx' }, { g: '◐', c: 'var(--accent)', t: '子智能体审查这次改动' }], approval: false },
+      { title: '修复 MCP 重连', glyph: '▲', tone: 'var(--warn)', status: '等待审批', statusFg: 'var(--warn-t)', ask: 'GitHub 连接器断了不会自动重连，帮我查一下。', reply: '重连逻辑在错误分支里被跳过了，修好后需要重启服务验证。', tools: [{ g: '●', c: 'var(--ok)', t: '搜索 reconnect，7 处' }], approval: true },
+      { title: '发布说明草稿', glyph: '●', tone: 'var(--ok)', status: '已完成', statusFg: 'var(--t3)', ask: '根据这周合并的 PR 写发布说明。', reply: '写好了，放在 docs/release-notes.md，共 12 条。', tools: [{ g: '●', c: 'var(--ok)', t: '读取 12 个 PR' }, { g: '●', c: 'var(--ok)', t: '写入 release-notes.md' }], approval: false }
+    ];
+    const seg = (on) => ({ bg: on ? 'var(--l3)' : 'transparent', fg: on ? 'var(--t1)' : 'var(--t3)', pressed: on ? 'true' : 'false' });
+    return {
+      theme: this.props.theme ?? 'dark',
+      counts: [1, 2, 3].map((v) => ({ label: `${v} 格`, ...seg(n === v), pick: () => this.setState({ n: v, focus: Math.min(focus, v - 1), drag: false }) })),
+      dragOn: drag ? 'true' : 'false', dragBg: drag ? 'var(--l3)' : 'var(--l1)', dragLabel: drag ? '松手' : '拖一个会话进来',
+      toggleDrag: () => this.setState({ drag: !drag }),
+      panes: data.map((p, i) => {
+        const on = i < n, f = i === focus;
+        return {
+          ...p,
+          grow: on ? 1 : 0.0001, alpha: on ? 1 : 0,
+          focused: f ? 'true' : 'false',
+          focus: () => this.setState({ focus: i }),
+          headBg: f ? 'var(--l1)' : 'transparent',
+          bar: f ? 'var(--accent)' : 'var(--line)',
+          ring: f ? 'var(--accent)' : 'var(--line)', ringW: f ? '1px' : '0.5px',
+          hint: f ? '输入进这一格' : '点一下这一格再输入',
+          approvalShow: p.approval ? 'flex' : 'none',
+          zoneShow: drag && on ? 'flex' : 'none'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Agent 组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+.row{display:grid;grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);border-bottom:.5px solid var(--line-soft)}
+.name{display:flex;align-items:center;font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2)}
+.gui{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:16px 24px;font-size:13px;line-height:20px;min-width:0}
+.tui{display:flex;flex-direction:column;justify-content:center;padding:16px 24px;background:var(--term);font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2);white-space:pre;min-width:0;overflow:hidden}
+.stack{display:flex;flex-direction:column}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1500px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 28px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">Agent 组件</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">对话里真正高频的部分。TUI 的卡片只画左边条，不画右边框，中文宽度和窗口缩放都不会把它撑坏。</p>
+  </header>
+
+  <section aria-label="Agent 组件两端对照" style="display: flex; flex-direction: column">
+    <div class="row" style="height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); border-bottom: 0.5px solid var(--line)">
+      <span>组件</span><span style="padding-left: 24px">桌面端</span><span style="padding-left: 24px">TUI</span>
+    </div>
+
+    <div class="row">
+      <div class="name">ReadBlock<br>SearchBlock<br>WebBlock</div>
+      <div class="gui" style="gap: 2px">
+        <div style="display: flex; align-items: center; gap: 8px; height: 28px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span>读取</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">RiskConfirmation.tsx</code><span style="font-size: 12px; color: var(--t3)">212 行</span></div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 28px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span>搜索</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">StateDot</code><span style="font-size: 12px; color: var(--t3)">14 处</span></div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 28px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--accent)">◐</span><span>抓取</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">docs.deepseek.com</code><span style="font-size: 12px; color: var(--t3)">3s</span></div>
+      </div>
+      <div class="tui">
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span>读取</span><span style="flex: 1; color: var(--t1)">RiskConfirmation.tsx</span><span style="color: var(--t4)">212 行</span></div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span>搜索</span><span style="flex: 1; color: var(--t1)">StateDot</span><span style="color: var(--t4)">14 处</span></div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--accent)">◐</span><span>抓取</span><span style="flex: 1; color: var(--t1)">docs.deepseek.com</span><span style="color: var(--t4)">3s</span></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">TerminalBlock</div>
+      <div class="gui">
+        <article style="border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08); overflow: hidden">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px"><span style="font-family: var(--mono); color: var(--accent)">◐</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 13px; color: var(--t1)">pnpm vitest run ui-primitives</code><span style="font-size: 12px; color: var(--t3)">18s</span></div>
+          <div style="padding: 8px 12px; background: var(--l1); font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t2)">
+            <div>✓ StateDot.test.tsx (6)</div>
+            <div>… RiskConfirmation.test.tsx</div>
+          </div>
+        </article>
+      </div>
+      <div class="tui">
+        <div class="stack" style="border-left: 2px solid var(--accent); padding-left: 8px">
+          <div style="display: flex; gap: 8px"><span style="color: var(--accent)">◐</span><span style="flex: 1; color: var(--t1); font-weight: 700">pnpm vitest run ui-primitives</span><span style="color: var(--t4)">18s</span></div>
+          <div><span style="color: var(--t4)">≡</span> ✓ StateDot.test.tsx (6)</div>
+          <div>  … RiskConfirmation.test.tsx</div>
+          <div style="color: var(--t4)">Ctrl+O 展开输出</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">DiffBlock</div>
+      <div class="gui">
+        <article style="border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08); overflow: hidden">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px"><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1)">RiskConfirmation.tsx</code><span style="font-family: var(--mono); font-size: 12px; color: var(--ok-t)">+2</span><span style="font-family: var(--mono); font-size: 12px; color: var(--err-t)">−1</span></div>
+          <div style="font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t1)">
+            <div style="padding: 0 12px; background: var(--err-bg)">− const tone = risk === 'high' ? 'red' : 'amber';</div>
+            <div style="padding: 0 12px; background: var(--ok-bg)">+ const state = riskToState(risk);</div>
+            <div style="padding: 0 12px; background: var(--ok-bg)">+ return &lt;StateDot state={state} /&gt;;</div>
+          </div>
+        </article>
+      </div>
+      <div class="tui">
+        <div class="stack">
+          <div style="display: flex; gap: 8px; margin-bottom: 2px"><span style="flex: 1; color: var(--t1); font-weight: 700">RiskConfirmation.tsx</span><span style="color: var(--ok-t)">+2</span><span style="color: var(--err-t)">−1</span></div>
+          <div style="background: var(--err-bg); color: var(--t1)">− const tone = risk === 'high' ? 'red' : 'amber';</div>
+          <div style="background: var(--ok-bg); color: var(--t1)">+ const state = riskToState(risk);</div>
+          <div style="background: var(--ok-bg); color: var(--t1)">+ return &lt;StateDot state={state} /&gt;;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">RiskConfirmation</div>
+      <div class="gui">
+        <article style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08)">
+          <div style="display: flex; align-items: center; gap: 8px"><span style="font-family: var(--mono); color: var(--warn)">▲</span><strong style="flex: 1; font-size: 14px; line-height: 22px; font-weight: 600">要推送到远端吗？</strong><span style="padding: 1px 8px; border-radius: 6px; background: var(--warn-bg); color: var(--warn-t); font-size: 12px; line-height: 18px">需确认</span></div>
+          <code style="padding: 8px 10px; border-radius: 8px; background: var(--l1); font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t1)">git push origin feat/approval-card</code>
+          <div style="display: flex; gap: 8px">
+            <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-family: var(--sans); font-size: 13px">允许一次 <span style="font-family: var(--mono); font-size: 12px">Y</span></button>
+            <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; box-shadow: inset 0 0 0 0.5px var(--line); color: var(--t1); font-family: var(--sans); font-size: 13px">本会话都允许 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">A</span></button>
+            <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: var(--t2); font-family: var(--sans); font-size: 13px">拒绝 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">N</span></button>
+          </div>
+        </article>
+      </div>
+      <div class="tui">
+        <div class="stack" style="border-left: 2px solid var(--warn); padding: 0 8px; background: var(--l1)">
+          <div style="display: flex; gap: 8px"><span style="color: var(--warn)">▲</span><span style="flex: 1; color: var(--t1); font-weight: 700">要推送到远端吗？</span><span style="color: var(--warn-t)">需确认</span></div>
+          <div style="color: var(--t1)">  git push origin feat/approval-card</div>
+          <div> </div>
+          <div><span style="background: var(--accent-btn); color: var(--on-accent); font-weight: 700"> y 允许一次 </span>  <span style="color: var(--t1)">a 本会话都允许</span>  <span style="color: var(--t3)">n 拒绝</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">PlanBlock</div>
+      <div class="gui" style="gap: 0">
+        <div style="display: flex; align-items: center; gap: 8px; height: 26px; color: var(--t3)"><span style="font-family: var(--mono); color: var(--ok)">●</span>读现有审批组件</div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 26px; color: var(--t3)"><span style="font-family: var(--mono); color: var(--ok)">●</span>改风险到状态的映射</div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 26px; color: var(--t1); font-weight: 500"><span style="font-family: var(--mono); font-weight: 400; color: var(--accent)">◐</span>跑组件测试</div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 26px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--idle)">○</span>推分支并开 PR</div>
+      </div>
+      <div class="tui">
+        <div style="color: var(--t3)"><span style="color: var(--ok)">●</span> 读现有审批组件</div>
+        <div style="color: var(--t3)"><span style="color: var(--ok)">●</span> 改风险到状态的映射</div>
+        <div style="color: var(--t1); font-weight: 700"><span style="color: var(--accent)">◐</span> 跑组件测试</div>
+        <div><span style="color: var(--idle)">○</span> 推分支并开 PR</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">JobRow</div>
+      <div class="gui" style="gap: 0">
+        <div style="display: flex; align-items: center; gap: 8px; height: 30px"><span style="font-family: var(--mono); color: var(--accent)">◐</span><span style="flex: 1">子代理：审查这次改动</span><span style="font-size: 12px; color: var(--t3)">42s</span></div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 30px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span style="flex: 1">后台：构建文档站</span><span style="font-size: 12px; color: var(--t3)">2 分钟前</span></div>
+      </div>
+      <div class="tui">
+        <div style="display: flex; gap: 8px"><span style="color: var(--accent)">◐</span><span style="flex: 1; color: var(--t1)">子代理：审查这次改动</span><span style="color: var(--t4)">42s</span></div>
+        <div style="display: flex; gap: 8px"><span style="color: var(--ok)">●</span><span style="flex: 1">后台：构建文档站</span><span style="color: var(--t4)">2 分钟前</span></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="name">ContextMeter</div>
+      <div class="gui" style="flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px">
+        <span style="color: var(--t3)">上下文</span>
+        <span role="meter" aria-label="上下文用量" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="display: block; width: 160px; height: 4px; border-radius: 2px; background: var(--l3); overflow: hidden"><span style="display: block; width: 62%; height: 4px; background: var(--accent)"></span></span>
+        <span style="font-family: var(--mono); font-size: 12px; color: var(--t2)">62%</span>
+      </div>
+      <div class="tui"><div><span style="color: var(--t3)">上下文</span> <span style="color: var(--accent)">━━━━━━━━━━━━</span><span style="color: var(--l3)">━━━━━━━━</span> <span style="color: var(--t2)">62%</span></div></div>
+    </div>
+
+    <div class="row" style="border-bottom: 0">
+      <div class="name">Composer</div>
+      <div class="gui">
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+          <textarea aria-label="输入消息" rows="1" placeholder="排队一条消息，这一轮结束后发送" style="width: 100%; box-sizing: border-box; padding: 0; border: 0; outline: 0; resize: none; background: transparent; color: var(--t1); font-family: var(--sans); font-size: 14px; line-height: 22px"></textarea>
+          <div style="display: flex; align-items: center; gap: 8px">
+            <button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l2); color: var(--t2); font-family: var(--sans); font-size: 12px">deepseek-v4.1-flash</button>
+            <button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: var(--t3); font-family: var(--sans); font-size: 12px">工作区写入</button>
+            <span style="flex: 1"></span>
+            <button type="button" aria-label="停止这一轮" style="width: 44px; height: 44px; margin: -8px -4px; border: 0; border-radius: 22px; background: transparent; display: flex; align-items: center; justify-content: center"><span style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 14px; background: var(--t1)"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--bg)"></span></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="tui">
+        <div style="background: var(--l1); padding: 0 8px; color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh</span> <span style="color: var(--accent)">◐</span> <span style="background: var(--t1); color: var(--term)"> </span> 排队一条消息，这一轮结束后发送</div>
+        <div style="display: flex; gap: 16px; color: var(--t4); margin-top: 2px"><span style="flex: 1">deepseek-v4.1-flash · 工作区写入</span><span>Esc 停止</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark' };
+  }
+}
+</script>
+</body>
+</html>

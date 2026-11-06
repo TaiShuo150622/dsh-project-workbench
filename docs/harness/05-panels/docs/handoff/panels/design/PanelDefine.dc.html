@@ -1,0 +1,149 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>自定义面板</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--ok:#22C55E;--err:#F25A5A;--c1:#4F8AF2;--c2:#0FA696}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--ok:#22C55E;--err:#EC1313;--c1:#2F5FCC;--c2:#008F7F}
+button,textarea{font-family:inherit}
+.tab{height:30px;padding:0 12px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:13px;line-height:20px;cursor:pointer;white-space:nowrap}
+.tab[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.mk{position:absolute;height:24px;margin:-12px 0 0 -8px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--t1);font-size:12px;line-height:18px;white-space:nowrap;cursor:pointer}
+.mk:hover{background:var(--l1)}
+.mk[aria-pressed="true"]{box-shadow:0 0 0 1.5px var(--accent)}
+.tu{box-sizing:border-box;padding:10px 12px;border-radius:8px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:pre;overflow:hidden}
+.ln{display:block;height:18px;overflow:hidden}
+.code{box-sizing:border-box;margin:0;padding:12px;border-radius:8px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:pre;overflow:hidden}
+.pt{display:flex;gap:8px;font-size:13px;line-height:20px;color:var(--t2);padding:6px 0;box-shadow:0 -0.5px 0 var(--line-soft)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 960px; box-sizing: border-box; padding: 40px 56px; display: flex; flex-direction: column; gap: 16px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="display: flex; align-items: flex-end; gap: 24px">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+      <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">自定义面板</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">人和模型都能加面板。写一份配置就有两端，写渲染器能画任何东西，做插件能接进宿主。</p>
+    </div>
+    <div style="display: flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--l1)"><sc-for list="{{levels}}" as="l" hint-placeholder-count="3"><button type="button" class="tab" onClick="{{l.pick}}" aria-pressed="{{l.on}}">{{l.name}}</button></sc-for></div>
+  </header>
+
+  <div style="display: {{l1Show}}; flex: 1; min-height: 0; grid-template-columns: 420px minmax(0, 1fr) 400px; gap: 16px">
+    <section aria-label="配置" style="display: flex; flex-direction: column; gap: 8px; min-height: 0">
+      <div style="display: flex; align-items: center; gap: 2px"><span style="flex: 1; font-size: 13px; line-height: 20px; color: var(--t3)">panel.json，直接改</span><sc-for list="{{tpl}}" as="t" hint-placeholder-count="4"><button type="button" class="tab" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="height: 26px; padding: 0 8px; font-size: 12px; line-height: 18px">{{t.name}}</button></sc-for></div>
+      <label for="pd-src" style="position: absolute; width: 1px; height: 1px; overflow: hidden">面板配置</label>
+      <textarea id="pd-src" value="{{src}}" onChange="{{edit}}" spellcheck="false" style="flex: 1; min-height: 0; box-sizing: border-box; padding: 12px; border: 0; border-radius: 8px; resize: none; outline: none; background: var(--term); box-shadow: 0 0 0 0.5px {{srcRing}}; color: var(--t1); font-family: var(--mono); font-size: 12px; line-height: 18px"></textarea>
+      <div style="min-height: 40px; font-size: 13px; line-height: 20px; color: {{checkFg}}"><span style="font-family: var(--mono)">{{checkGlyph}}</span> {{checkText}}</div>
+    </section>
+
+    <section aria-label="桌面端预览" style="display: flex; flex-direction: column; min-width: 0; border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line); overflow: hidden">
+      <div style="height: 40px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 8px; background: var(--side); box-shadow: 0 0.5px 0 var(--line); font-size: 13px; line-height: 20px"><strong style="font-weight: 600">{{title}}</strong><span style="color: var(--t3); font-size: 12px; line-height: 18px">{{famName}}</span><span style="flex: 1"></span><span style="color: var(--t3); font-size: 12px; line-height: 18px">{{count}}</span></div>
+      <div style="position: relative; flex: 1; min-height: 0; overflow: hidden">
+        <svg viewBox="0 0 520 620" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="position: absolute; left: 0; top: 0"><path d="{{pa}}" fill="none" stroke="var(--t4)" stroke-width="1" stroke-linecap="round"></path><path d="{{pb}}" fill="none" stroke="var(--c1)" stroke-width="8" stroke-linecap="round"></path></svg>
+        <sc-for list="{{marks}}" as="m" hint-placeholder-count="6"><button type="button" class="mk" onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="left: {{m.x}}%; top: {{m.y}}%">{{m.t}}</button></sc-for>
+        <div style="display: {{tableShow}}; position: absolute; left: 16px; right: 16px; top: 12px; font-size: 13px; line-height: 28px"><sc-for list="{{table}}" as="r" hint-placeholder-count="4"><div style="display: grid; grid-template-columns: repeat({{r.n}}, minmax(0, 1fr)); column-gap: 12px; color: {{r.fg}}; box-shadow: 0 -0.5px 0 var(--line-soft)"><sc-for list="{{r.cells}}" as="c" hint-placeholder-count="3"><span>{{c}}</span></sc-for></div></sc-for></div>
+      </div>
+      <div style="height: 28px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; font-family: var(--mono); font-size: 11px; line-height: 16px; color: var(--t3); box-shadow: 0 -0.5px 0 var(--line-soft)">{{event}}</div>
+    </section>
+
+    <section aria-label="TUI 预览" class="tu" style="min-width: 0"><sc-for list="{{tui}}" as="l" hint-placeholder-count="20"><span class="ln" style="color: {{l.c}}; font-weight: {{l.w}}">{{l.t}}</span></sc-for></section>
+  </div>
+
+  <div style="display: {{codeShow}}; flex: 1; min-height: 0; grid-template-columns: minmax(0, 1fr) 460px; gap: 24px">
+    <pre class="code">{{code}}</pre>
+    <section style="display: flex; flex-direction: column"><strong style="font-size: 18px; line-height: 26px; font-weight: 600; padding-bottom: 8px">{{levelTitle}}</strong><sc-for list="{{points}}" as="p" hint-placeholder-count="5"><div class="pt"><span style="width: 72px; flex: none; color: var(--t3)">{{p.k}}</span><span>{{p.v}}</span></div></sc-for></section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  samples = {
+    space: { name: '坐标', json: { type: 'space', title: '门店分布', coords: 'lonlat', features: [{ id: 'a', label: '静安店', x: 121.45, y: 31.23 }, { id: 'b', label: '浦东店', x: 121.54, y: 31.22 }, { id: 'c', label: '闵行店', x: 121.38, y: 31.11 }, { id: 'd', label: '嘉定店', x: 121.26, y: 31.38 }] } },
+    graph: { name: '关系', json: { type: 'graph', title: '模块依赖', nodes: [{ id: 'ui', label: 'ui' }, { id: 'core', label: 'core' }, { id: 'llm', label: 'llm' }, { id: 'store', label: 'store' }, { id: 'tools', label: 'tools' }], edges: [['ui', 'core'], ['core', 'llm'], ['core', 'store'], ['core', 'tools'], ['tools', 'store']] } },
+    timeline: { name: '时序', json: { type: 'timeline', title: '发布计划', items: [{ label: '设计', start: 0, end: 3 }, { label: '后端', start: 2, end: 8 }, { label: '前端', start: 4, end: 10 }, { label: '验收', start: 9, end: 12 }] } },
+    table: { name: '表格', json: { type: 'table', title: '因子表现', columns: ['因子', 'IC', '夏普'], rows: [['动量', 0.041, 1.32], ['反转', 0.028, 0.91], ['波动', 0.019, 0.64]] } }
+  };
+  state = { level: 1, tpl: 'graph', src: JSON.stringify(this.samples.graph.json, null, 2), sel: null };
+  famNames = { space: '空间', graph: '关系', timeline: '时序', table: '表格' };
+  parse(src) {
+    try { const d = JSON.parse(src); return this.check(d); }
+    catch (e) {
+      const m = /position (\d+)/.exec(e.message), line = m ? src.slice(0, Number(m[1])).split('\n').length : null;
+      return { err: `${line ? `第 ${line} 行` : '这份配置'}写错了：${e.message.split(' in JSON')[0]}` };
+    }
+  }
+  check(d) {
+    if (!d || typeof d !== 'object') return { err: '配置要是一个对象' };
+    if (!d.type) return { err: '缺 type，可以写 space、graph、timeline、table' };
+    const need = { space: ['features'], graph: ['nodes', 'edges'], timeline: ['items'], table: ['columns', 'rows'] }[d.type];
+    if (!need) return { err: `不认识 ${d.type}，这种要写渲染器（第二级）` };
+    const miss = need.find((k) => !Array.isArray(d[k]));
+    if (miss) return { err: `${d.type} 需要数组字段 ${miss}` };
+    if (d.type === 'graph') { const ids = new Set(d.nodes.map((n) => n.id)), bad = d.edges.find((e) => !ids.has(e[0]) || !ids.has(e[1])); if (bad) return { err: `边 ${bad[0]} → ${bad[1]} 指向不存在的节点` }; }
+    return { d };
+  }
+  view(d) {
+    const out = { pa: '', pb: '', marks: [], table: [], tui: [], count: '' }, sel = this.state.sel, R = (t, c = 'var(--t2)', w = 400) => ({ t: t || ' ', c, w });
+    const P = (x, y) => [(x / 100 * 520).toFixed(1), (y / 100 * 620).toFixed(1)];
+    const mark = (id, t, x, y) => ({ t, x, y, on: sel === id ? 'true' : 'false', pick: () => this.setState({ sel: id }) });
+    out.tui.push(R(d.title || '未命名面板', 'var(--t1)', 700), R(this.famNames[d.type], 'var(--t3)'), R(''));
+    if (d.type === 'space') {
+      const xs = d.features.map((f) => f.x), ys = d.features.map((f) => f.y), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+      const pos = (f) => [12 + (f.x - x0) / ((x1 - x0) || 1) * 70, 86 - (f.y - y0) / ((y1 - y0) || 1) * 72];
+      out.marks = d.features.map((f) => { const [x, y] = pos(f); return mark(f.id, `● ${f.label}`, x, y); });
+      let g = ''; for (let i = 1; i < 6; i++) g += `M${i * 87} 0V620M0 ${i * 103}H520`;
+      out.pa = g; out.count = `${d.features.length} 个要素`;
+      const W = 38, H = 12, grid = Array.from({ length: H }, () => Array(W).fill('·'));
+      d.features.forEach((f) => { const [x, y] = pos(f); const X = Math.round(x / 100 * (W - 1)), Y = Math.round(y / 100 * (H - 1)); grid[Y][X] = '●'; });
+      grid.forEach((r) => out.tui.push(R(r.join(''), 'var(--t3)')));
+      out.tui.push(R('')); d.features.forEach((f) => out.tui.push(R(`● ${f.label}`, 'var(--t1)')));
+    } else if (d.type === 'graph') {
+      const pos = {}; d.nodes.forEach((n, i) => { const a = i / d.nodes.length * Math.PI * 2 - Math.PI / 2; pos[n.id] = [50 + Math.cos(a) * 34, 50 + Math.sin(a) * 36]; });
+      out.pa = d.edges.map(([a, b]) => { const [x0, y0] = P(...pos[a]), [x1, y1] = P(...pos[b]); return `M${x0} ${y0}L${x1} ${y1}`; }).join('');
+      out.marks = d.nodes.map((n) => mark(n.id, `● ${n.label}`, pos[n.id][0], pos[n.id][1])); out.count = `${d.nodes.length} 个节点 · ${d.edges.length} 条边`;
+      const root = sel && d.nodes.find((n) => n.id === sel) ? sel : d.nodes[0]?.id;
+      out.tui.push(R(`● ${root}`, 'var(--accent)', 700));
+      const nb = d.edges.filter((e) => e.includes(root)).map((e) => (e[0] === root ? e[1] : e[0]));
+      nb.forEach((n, i) => out.tui.push(R(`${i === nb.length - 1 ? '└─' : '├─'} ${n}`, 'var(--t1)')));
+    } else if (d.type === 'timeline') {
+      const T = Math.max(...d.items.map((i) => i.end), 1), W = 22;
+      d.items.forEach((it, i) => { const y = 14 + i * (72 / Math.max(1, d.items.length)), a = 24 + it.start / T * 70, b = 24 + it.end / T * 70, [x0, y0] = P(a, y), [x1] = P(b, y); out.pb += `M${x0} ${y0}H${x1}`; out.marks.push(mark(it.label, it.label, 3, y)); out.tui.push(R(`${it.label.padEnd(6, '　').slice(0, 6)} ${' '.repeat(Math.round(it.start / T * W))}${'█'.repeat(Math.max(1, Math.round((it.end - it.start) / T * W)))}`, 'var(--c1)')); });
+      out.count = `${d.items.length} 项 · 共 ${T}`;
+    } else {
+      const n = d.columns.length;
+      out.table = [{ n, fg: 'var(--t3)', cells: d.columns }, ...d.rows.map((r) => ({ n, fg: 'var(--t1)', cells: r.map(String) }))]; out.count = `${d.rows.length} 行`;
+      out.tui.push(R(d.columns.join('    '), 'var(--t3)')); d.rows.forEach((r) => out.tui.push(R(r.join('    '), 'var(--t1)')));
+    }
+    return out;
+  }
+  renderVals() {
+    const { level, tpl, src, sel } = this.state, r = this.parse(src), ok = !!r.d;
+    if (ok) this.last = r.d;
+    const d = this.last || this.samples.graph.json, v = this.view(d);
+    const code = {
+      2: `// panel.json\n{\n  "type": "custom",\n  "title": "激光点云",\n  "renderer": "renderer.html",\n  "data": ["scan-01.las"],\n  "permissions": { "network": [] },\n  "tui": { "image": "preview.png",\n           "summary": "12.4 万个点，3 处超差" }\n}\n\n// renderer.html，在沙箱里运行\n<script src="dsh-panel.js"><\/script>\n<script>\n  const panel = DshPanel.connect();\n  panel.on('data', (buf) => draw(buf));\n  panel.on('emphasize', (ids) => light(ids));\n  canvas.onclick = (e) => panel.select({ id: hit(e) });\n  panel.ready();\n<\/script>`,
+      3: `// 插件入口\nexport function apply(ctx) {\n  ctx.panels.registerType({\n    id: 'wafer-map',\n    family: 'space',\n    schema: waferSchema,\n    desktop: WaferPanel,\n    tui: { lines: waferLines, minColumns: 40 }\n  });\n}\n\n// 配置里就能用了\n{ "type": "wafer-map", "data": "lot-07.json" }`
+    }[level] || '';
+    const pts = { 2: [{ k: '谁来写', v: '会写前端的人，或者模型' }, { k: '能做什么', v: '任何网页能画的东西：three.js、MapLibre、WebGL' }, { k: '在哪运行', v: '沙箱 iframe，不能碰宿主，默认不联网' }, { k: '外壳', v: '标题、状态、检查器、引用都由宿主提供' }, { k: 'TUI', v: '给图片或摘要，没有就显示标记列表' }], 3: [{ k: '谁来写', v: '做长期能力的开发者' }, { k: '能做什么', v: '新增一种类型，别人只写配置就能用' }, { k: '在哪运行', v: '宿主进程，和现有插件一样要审' }, { k: '外壳', v: '继承，也能加自己的工具条按钮' }, { k: 'TUI', v: '可以提供字符画函数，走面板入口' }] }[level] || [];
+    return {
+      theme: this.props.theme ?? 'dark', ...v, src,
+      levels: [[1, '第一级 配置'], [2, '第二级 渲染器'], [3, '第三级 插件']].map(([k, name]) => ({ name, on: k === level ? 'true' : 'false', pick: () => this.setState({ level: k }) })),
+      tpl: Object.keys(this.samples).map((k) => ({ name: this.samples[k].name, on: k === tpl ? 'true' : 'false', pick: () => this.setState({ tpl: k, sel: null, src: JSON.stringify(this.samples[k].json, null, 2) }) })),
+      edit: (e) => this.setState({ src: e.target.value }),
+      srcRing: ok ? 'var(--line)' : 'var(--err)', checkFg: ok ? 'var(--t2)' : 'var(--err)', checkGlyph: ok ? '●' : '✕', checkText: ok ? '配置有效，两端都能显示' : `${r.err}。预览停在上一版`,
+      title: d.title || '未命名面板', famName: this.famNames[d.type], tableShow: d.type === 'table' ? 'block' : 'none', event: sel ? `select { id: "${sel}" } → 可以引用到对话` : '点一个要素，事件回到对话',
+      l1Show: level === 1 ? 'grid' : 'none', codeShow: level === 1 ? 'none' : 'grid', code, points: pts, levelTitle: level === 3 ? '第三级：做成插件' : '第二级：自己写渲染器'
+    };
+  }
+}
+</script>
+</body>
+</html>

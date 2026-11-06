@@ -1,0 +1,159 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>基础组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+.row{display:grid;grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);border-bottom:.5px solid var(--line-soft)}
+.name{display:flex;align-items:center;font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2)}
+.gui{display:flex;align-items:center;gap:12px;padding:12px 24px;font-size:13px;line-height:20px}
+.tui{display:flex;flex-direction:column;justify-content:center;padding:12px 24px;background:var(--term);font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2);white-space:pre}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1200px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 28px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">基础组件</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">名字来自 ui-primitives。左边是桌面端，右边是 TUI，同一行是同一个组件。</p>
+  </header>
+
+  <section aria-label="基础组件两端对照" style="display: flex; flex-direction: column">
+    <div class="row" style="height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); border-bottom: 0.5px solid var(--line)">
+      <span>组件</span><span style="padding-left: 24px">桌面端</span><span style="padding-left: 24px">TUI</span>
+    </div>
+
+    <div class="row" style="min-height: 76px">
+      <div class="name">Button</div>
+      <div class="gui">
+        <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-family: var(--sans); font-size: 13px; line-height: 20px">允许 <span style="font-family: var(--mono); font-size: 12px">Y</span></button>
+        <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; box-shadow: inset 0 0 0 0.5px var(--line); color: var(--t1); font-family: var(--sans); font-size: 13px; line-height: 20px">拒绝 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">N</span></button>
+        <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: var(--t2); font-family: var(--sans); font-size: 13px; line-height: 20px">取消 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">Esc</span></button>
+      </div>
+      <div class="tui"><div><span style="background: var(--accent-btn); color: var(--on-accent); font-weight: 700"> y 允许 </span>  <span style="background: var(--l2); color: var(--t1)"> n 拒绝 </span>  <span style="color: var(--t3)">Esc 取消</span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 76px">
+      <div class="name">SegmentedControl</div>
+      <div class="gui">
+        <div style="display: flex; gap: 2px; padding: 3px; border-radius: 10px; background: var(--l1)">
+          <span style="height: 28px; padding: 0 12px; display: flex; align-items: center; border-radius: 7px; background: var(--l3); color: var(--t1)">全部</span>
+          <span style="height: 28px; padding: 0 12px; display: flex; align-items: center; color: var(--t3)">运行中</span>
+          <span style="height: 28px; padding: 0 12px; display: flex; align-items: center; color: var(--t3)">失败</span>
+        </div>
+      </div>
+      <div class="tui"><div><span style="background: var(--l2); color: var(--t1); font-weight: 700"> 全部 </span>  <span style="color: var(--t3)">运行中</span>  <span style="color: var(--t3)">失败</span>   <span style="color: var(--t4)">Tab 切换</span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 64px">
+      <div class="name">Tag</div>
+      <div class="gui">
+        <span style="padding: 1px 8px; border-radius: 6px; background: var(--l2); color: var(--t2); font-size: 12px; line-height: 18px">主分支</span>
+        <span style="padding: 1px 8px; border-radius: 6px; background: var(--accent-bg); color: var(--accent-t); font-size: 12px; line-height: 18px">计划</span>
+        <span style="padding: 1px 8px; border-radius: 6px; background: var(--ok-bg); color: var(--ok-t); font-size: 12px; line-height: 18px">已通过</span>
+        <span style="padding: 1px 8px; border-radius: 6px; background: var(--warn-bg); color: var(--warn-t); font-size: 12px; line-height: 18px">需确认</span>
+        <span style="padding: 1px 8px; border-radius: 6px; background: var(--err-bg); color: var(--err-t); font-size: 12px; line-height: 18px">失败</span>
+      </div>
+      <div class="tui"><div><span style="background: var(--l2); color: var(--t2)"> 主分支 </span> <span style="background: var(--accent-bg); color: var(--accent-t)"> 计划 </span> <span style="background: var(--ok-bg); color: var(--ok-t)"> 已通过 </span> <span style="background: var(--warn-bg); color: var(--warn-t)"> 需确认 </span> <span style="background: var(--err-bg); color: var(--err-t)"> 失败 </span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 64px">
+      <div class="name">StateDot</div>
+      <div class="gui" style="gap: 20px; font-size: 13px; color: var(--t2)">
+        <span><span style="font-family: var(--mono); color: var(--accent)">◐</span> ongoing</span>
+        <span><span style="font-family: var(--mono); color: var(--ok)">●</span> done</span>
+        <span><span style="font-family: var(--mono); color: var(--warn)">▲</span> warning</span>
+        <span><span style="font-family: var(--mono); color: var(--err)">✕</span> error</span>
+        <span><span style="font-family: var(--mono); color: var(--idle)">○</span> idle</span>
+      </div>
+      <div class="tui"><div><span style="color: var(--accent)">◐</span> ongoing  <span style="color: var(--ok)">●</span> done  <span style="color: var(--warn)">▲</span> warning  <span style="color: var(--err)">✕</span> error  <span style="color: var(--idle)">○</span> idle</div></div>
+    </div>
+
+    <div class="row" style="min-height: 76px">
+      <div class="name">Input</div>
+      <div class="gui">
+        <label style="display: flex; align-items: center; gap: 12px; width: 100%; color: var(--t3)">搜索
+          <input type="text" value="approval" aria-label="搜索会话" style="flex: 1; min-width: 0; height: 36px; box-sizing: border-box; padding: 0 12px; border: 0; border-radius: 10px; background: var(--l1); outline: 2px solid var(--accent); outline-offset: 0; color: var(--t1); font-family: var(--sans); font-size: 14px; line-height: 22px">
+        </label>
+      </div>
+      <div class="tui"><div style="background: var(--l1); padding: 0 8px; color: var(--t1)"><span style="color: var(--accent-t); font-weight: 700">❯</span> approval<span style="background: var(--t1); color: var(--term)"> </span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 64px">
+      <div class="name">Switch</div>
+      <div class="gui" style="gap: 24px">
+        <span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: flex; justify-content: flex-end; width: 32px; height: 18px; box-sizing: border-box; padding: 2px; border-radius: 9px; background: var(--accent-btn)"><span style="width: 14px; height: 14px; border-radius: 7px; background: var(--on-accent)"></span></span>自动压缩</span>
+        <span style="display: flex; align-items: center; gap: 8px; color: var(--t3)"><span aria-hidden="true" style="display: flex; width: 32px; height: 18px; box-sizing: border-box; padding: 2px; border-radius: 9px; background: var(--l3)"><span style="width: 14px; height: 14px; border-radius: 7px; background: var(--t3)"></span></span>沙箱外执行</span>
+      </div>
+      <div class="tui"><div><span style="color: var(--accent-t); font-weight: 700">[●]</span> 自动压缩    <span style="color: var(--t4)">[ ]</span> <span style="color: var(--t3)">沙箱外执行</span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 64px">
+      <div class="name">ShortcutKeys</div>
+      <div class="gui">
+        <span style="display: inline-flex; gap: 4px"><kbd style="min-width: 22px; box-sizing: border-box; padding: 1px 6px; border-radius: 6px; background: var(--l2); color: var(--t2); font-family: var(--mono); font-size: 12px; line-height: 18px; text-align: center">Ctrl</kbd><kbd style="min-width: 22px; box-sizing: border-box; padding: 1px 6px; border-radius: 6px; background: var(--l2); color: var(--t2); font-family: var(--mono); font-size: 12px; line-height: 18px; text-align: center">O</kbd></span>
+        <span style="color: var(--t3)">展开输出</span>
+      </div>
+      <div class="tui"><div><span style="color: var(--t1); font-weight: 700">Ctrl+O</span> <span style="color: var(--t3)">展开输出</span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 148px">
+      <div class="name">Menu</div>
+      <div class="gui">
+        <div role="menu" aria-label="模型" style="width: 300px; padding: 4px; border-radius: 12px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.2), 0 0 20px rgba(0,0,0,.12)">
+          <div role="menuitem" style="display: flex; justify-content: space-between; align-items: center; height: 32px; padding: 0 10px; border-radius: 8px; background: var(--l3)"><span>deepseek-v4.1-flash</span><span style="color: var(--accent-t)">✓</span></div>
+          <div role="menuitem" style="display: flex; justify-content: space-between; align-items: center; height: 32px; padding: 0 10px"><span>hy3</span><span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">2</span></div>
+          <div role="menuitem" style="display: flex; justify-content: space-between; align-items: center; height: 32px; padding: 0 10px"><span>其他模型</span><span style="color: var(--t3)">›</span></div>
+        </div>
+      </div>
+      <div class="tui">
+        <div style="width: 300px; box-sizing: border-box; padding: 0 8px 4px; border: 1px solid var(--line); border-radius: 6px; display: flex; flex-direction: column">
+          <div style="margin: -11px 0 0 0; width: fit-content; padding: 0 6px; background: var(--term); color: var(--t3)">模型</div>
+          <div style="margin: 0 -8px; padding: 0 8px; display: flex; justify-content: space-between; background: var(--l2); color: var(--t1); font-weight: 700"><span>❯ deepseek-v4.1-flash</span><span style="color: var(--accent-t)">✓</span></div>
+          <div style="display: flex; justify-content: space-between"><span>  hy3</span><span style="color: var(--t4)">2</span></div>
+          <div style="display: flex; justify-content: space-between"><span>  其他模型</span><span style="color: var(--t4)">›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="min-height: 68px">
+      <div class="name">Toast</div>
+      <div class="gui">
+        <div role="status" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border-radius: 10px; background: var(--l3); box-shadow: 0 0 0 0.5px var(--line); color: var(--t1)"><span style="font-family: var(--mono); color: var(--ok)">●</span>已切换到工作区写入</div>
+      </div>
+      <div class="tui"><div style="background: var(--l1); padding: 0 8px; color: var(--t1)"><span style="color: var(--ok)">●</span> 已切换到工作区写入</div></div>
+    </div>
+
+    <div class="row" style="min-height: 56px">
+      <div class="name">PathLabel</div>
+      <div class="gui" style="font-family: var(--mono); font-size: 12px"><span><span style="color: var(--t3)">client/ui-primitives/src/</span><span style="color: var(--t1)">StateDot.tsx</span></span></div>
+      <div class="tui"><div><span style="color: var(--t4)">client/ui-primitives/src/</span><span style="color: var(--t1)">StateDot.tsx</span></div></div>
+    </div>
+
+    <div class="row" style="min-height: 64px; border-bottom: 0">
+      <div class="name">DisclosureRow</div>
+      <div class="gui"><span style="display: flex; align-items: center; gap: 8px; color: var(--t2)"><span style="color: var(--t3)">›</span>已读 3 个文件</span></div>
+      <div class="tui"><div><span style="color: var(--t3)">▸</span> 已读 3 个文件</div></div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark' };
+  }
+}
+</script>
+</body>
+</html>

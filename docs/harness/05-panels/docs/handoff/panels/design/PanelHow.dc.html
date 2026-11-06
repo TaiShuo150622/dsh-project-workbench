@@ -1,0 +1,99 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>面板平台怎么做</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--ok:#4ED17E;--warn:#F7AD31;--ask:#ADB2B8}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--ok:#15803D;--warn:#A35F0A;--ask:#61666B}
+h2{margin:0 0 6px;font-size:18px;line-height:26px;font-weight:600}
+.th{display:grid;column-gap:16px;padding-bottom:4px;font-size:12px;line-height:18px;color:var(--t3)}
+.tr{display:grid;column-gap:16px;padding:6px 0;font-size:13px;line-height:20px;color:var(--t2);box-shadow:0 -0.5px 0 var(--line-soft)}
+.t1{color:var(--t1)}
+code{font-family:var(--mono);font-size:12px}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1120px; box-sizing: border-box; padding: 48px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">面板平台怎么做</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">做成独立插件，不塞进项目工作台。DSH 的右栏、文件预览、终端面板都开放了入口，缺的是一层统一的面板描述和渲染器。</p>
+  </header>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; flex: 1; min-height: 0">
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+      <section><h2>能接什么</h2>
+        <div class="th" style="grid-template-columns: 148px minmax(0, 1fr) 64px"><span>要做的事</span><span>接在哪</span><span>现状</span></div>
+        <sc-for list="{{hooks}}" as="r" hint-placeholder-count="8"><div class="tr" style="grid-template-columns: 148px minmax(0, 1fr) 64px"><span class="t1">{{r.a}}</span><span>{{r.b}}</span><span style="color: {{r.c}}">{{r.s}}</span></div></sc-for>
+      </section>
+      <section><h2>分四步</h2>
+        <sc-for list="{{steps}}" as="r" hint-placeholder-count="4"><div class="tr" style="grid-template-columns: 56px minmax(0, 1fr)"><span class="t1">{{r.a}}</span><span>{{r.b}}</span></div></sc-for>
+      </section>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+      <section><h2>panel.json 的字段</h2>
+        <sc-for list="{{fields}}" as="r" hint-placeholder-count="8"><div class="tr" style="grid-template-columns: 112px minmax(0, 1fr)"><code class="t1">{{r.a}}</code><span>{{r.b}}</span></div></sc-for>
+      </section>
+      <section><h2>要守的规矩</h2>
+        <sc-for list="{{rules}}" as="r" hint-placeholder-count="6"><div class="tr" style="grid-template-columns: 112px minmax(0, 1fr)"><span class="t1">{{r.a}}</span><span>{{r.b}}</span></div></sc-for>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1120}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const has = ['已有', 'var(--ok)'], add = ['要新做', 'var(--warn)'], ask = ['要核', 'var(--ask)'];
+    const row = ([a, b, s]) => ({ a, b, s: s[0], c: s[1] });
+    return {
+      theme: this.props.theme ?? 'dark',
+      hooks: [
+        ['一种面板一个标签', '右栏标签类型开放注册，一种类型可开多个标签', has],
+        ['沙箱渲染器', 'DAG 的面板协议 v2，把前缀改成通用的', has],
+        ['模型交付面板', 'present 工具登记文件，生成交付卡片', has],
+        ['点文件直接打开', '文件预览注册 panel.json 后缀，真宿主已测通', has],
+        ['终端全屏', 'tuiScenes 场景', has],
+        ['终端图片', '面板自带 Image，走 Kitty 或 Sixel，没有就回退', has],
+        ['描述、校验、外壳', '新的 panel.json、校验器、统一外壳组件', add],
+        ['四种内置渲染器', '表格、时序、关系、二维空间', add],
+        ['联网和数据权限', '面板声明，人批准，存到项目里', add]
+      ].map(row),
+      steps: [
+        ['第 1 步', '配置、外壳、右栏标签，加表格和时序。运行条的甘特图也走这里。'],
+        ['第 2 步', '关系和二维空间。知识图谱、地图、平面图都在这一步。'],
+        ['第 3 步', '沙箱渲染器和 dsh-panel.js。立体、天体、任意自定义从这里开始。'],
+        ['第 4 步', '第三方类型注册、面板组合、把常用面板做成市场插件。']
+      ].map(([a, b]) => ({ a, b })),
+      fields: [
+        ['type', '类型：space、graph、timeline、table 等，或 custom'],
+        ['title', '面板标题'],
+        ['data', '内联数据，或工作区里的文件路径'],
+        ['encoding', '字段怎么映射到位置、颜色、标签'],
+        ['layers', '图层列表，可开关'],
+        ['renderer', 'custom 才有：沙箱页面的路径'],
+        ['tui', '图片、字符画函数或摘要'],
+        ['permissions', '联网地址、读取路径'],
+        ['refresh', '文件变化时刷新，或定时刷新']
+      ].map(([a, b]) => ({ a, b })),
+      rules: [
+        ['独立插件', '工作台插件没有运行时依赖，这条要守住。地图和三维库只进渲染器。'],
+        ['终端数量', 'dsh-tui 每个插件最多 4 个面板，所以只注册一个“面板”入口，里面切换。'],
+        ['默认离线', '沙箱不能碰宿主，CSP 断网。第一次运行要人点，取在线瓦片要声明并由人批准。'],
+        ['数据来源', '面板只读。写回一律回到对话，走现有审批。'],
+        ['同一口径', '外壳、状态符号、色板沿用组件库，自定义渲染器也拿得到这些变量。'],
+        ['不做大而全', '内置只做四种，其余交给渲染器，地图引擎不进主包。']
+      ].map(([a, b]) => ({ a, b }))
+    };
+  }
+}
+</script>
+</body>
+</html>

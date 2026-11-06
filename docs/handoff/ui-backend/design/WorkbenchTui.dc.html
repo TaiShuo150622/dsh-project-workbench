@@ -1,0 +1,179 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>工作台 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--ok:#22C55E;--ok-t:#4ED17E;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--ok:#22C55E;--ok-t:#15803D;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313}
+.lines{display:flex;flex-direction:column;min-width:0}
+.key{height:20px;padding:0 4px;border:0;background:transparent;font:inherit;cursor:pointer}
+.sb{display:flex;gap:8px;height:20px;padding:0 8px;min-width:0}
+.sb .n{flex:1;min-width:0;overflow:hidden}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="flex: 1; min-height: 0; display: flex; gap: 0">
+
+      <div class="lines" style="display: {{leftShow}}; width: 328px; flex: none; padding-right: 8px; border-right: 1px solid var(--line)">
+        <div class="sb" style="color: var(--t3)"><span class="n">dsh-workbench</span></div>
+        <div class="sb" style="background: var(--l2); color: var(--t1); font-weight: 700"><span style="color: var(--accent)">{{spin}}</span><span class="n">审批卡状态统一</span></div>
+        <div class="fold lines" style="display: {{threadShow}}">
+          <div class="sb"><span style="color: var(--t4)">├</span><span style="color: var(--accent)">{{spin}}</span><span class="n">审查这次改动</span><span style="color: var(--t4)">42s</span></div>
+          <div class="sb"><span style="color: var(--t4)">├</span><span style="color: var(--ok)">●</span><span class="n">查 StateDot 用法</span><span style="color: var(--t4)">18s</span></div>
+          <div class="sb"><span style="color: var(--t4)">└</span><span style="color: var(--ok)">●</span><span class="n">分支：换成图标方案</span></div>
+        </div>
+        <div class="sb"><span style="color: var(--warn)">▲</span><span class="n">修复 MCP 重连</span><span style="color: var(--warn-t)">待审批</span></div>
+        <div class="sb"><span style="color: var(--warn)">?</span><span class="n">发布说明草稿</span><span style="color: var(--warn-t)">待回答</span></div>
+        <div class="sb"><span style="color: var(--t4)">○</span><span class="n">整理快捷键表</span></div>
+        <div> </div>
+        <div class="sb" style="color: var(--t3)"><span class="n">demo-project</span></div>
+        <div class="sb"><span style="color: var(--warn)">▲</span><span class="n">改 view.py 前看影响</span><span style="color: var(--warn-t)">计划待审</span></div>
+        <div class="sb"><span style="color: var(--ok)">●</span><span class="n">每周因子周报</span><span style="color: var(--t4)">定时</span></div>
+      </div>
+
+      <div class="lines" style="flex: 1; padding: 0 16px">
+        <div style="display: flex; gap: 16px"><span style="color: var(--accent-t); font-weight: 700">dsh</span><span style="color: var(--t1); font-weight: 700">审批卡状态统一</span><span style="flex: 1"></span><span style="color: var(--t3)">feat/approval-card</span></div>
+        <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+        <div style="flex: 1; min-height: 0" class="lines">
+          <div style="padding: 0 8px; background: var(--l1); color: var(--t1); white-space: pre-wrap"><span style="color: var(--accent-t); font-weight: 700">❯</span> 把审批卡的风险等级改成和 StateDot 同一套状态。</div>
+          <div> </div>
+          <div style="color: var(--t1)">我先看现有组件，再改状态映射。</div>
+          <div> </div>
+          <div><span style="color: var(--ok)">●</span> 读取 <span style="color: var(--t1)">RiskConfirmation.tsx</span></div>
+          <div><span style="color: var(--ok)">●</span> 修改 <span style="color: var(--t1)">RiskConfirmation.tsx</span> <span style="color: var(--ok-t)">+2</span> <span style="color: var(--err)">−1</span></div>
+          <div><span style="color: var(--accent)">{{spin}}</span> 子智能体审查这次改动 <span style="color: var(--t4)">42s</span></div>
+        </div>
+        <div style="padding: 0 8px; background: var(--l1); color: var(--t2); white-space: pre-wrap"><span style="color: var(--accent)">{{spin}}</span> <span style="color: var(--t3)">进行中的目标</span> 审批卡和 StateDot 用同一套状态，测试全绿</div>
+        <div style="height: 6px"></div>
+        <div style="padding: 0 8px; background: var(--l1); color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh</span> <span style="background: var(--t1); color: var(--term)"> </span> 排队一条消息，这一轮结束后发送</div>
+      </div>
+
+      <div class="lines" style="display: {{rightShow}}; width: 400px; flex: none; padding-left: 12px; border-left: 1px solid var(--line)">
+        <div style="display: flex; gap: 8px"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="4"><button type="button" class="key" role="tab" aria-selected="{{t.pressed}}" onClick="{{t.pick}}" style="color: {{t.fg}}; background: {{t.bg}}; font-weight: {{t.w}}">{{t.key}} {{t.label}}</button></sc-for></div>
+        <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+
+        <div class="lines" style="display: {{p0}}">
+          <div style="display: flex"><span style="flex: 1; color: var(--t1); font-weight: 700">会话地图</span><a href="SessionMapTui.dc.html" style="color: var(--accent-t)">g 展开</a></div>
+          <div style="color: var(--t3)">本周目标 ─┬─ <span style="color: var(--accent)">{{spin}}</span> 审批卡 ══ 3 个线程</div>
+          <div style="color: var(--t3)">         ├─ <span style="color: var(--warn)">▲</span> MCP 重连</div>
+          <div style="color: var(--t3)">         └─ <span style="color: var(--warn)">?</span> 发布说明</div>
+          <div> </div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1); font-weight: 700">进度</span><span style="color: var(--t3)">3 / 4</span></div>
+          <div><span style="color: var(--ok)">●</span> 读现有审批组件</div>
+          <div><span style="color: var(--ok)">●</span> 改风险到状态的映射</div>
+          <div><span style="color: var(--ok)">●</span> 跑组件测试</div>
+          <div style="color: var(--t1)"><span style="color: var(--accent)">{{spin}}</span> 审查后推分支并开 PR</div>
+          <div> </div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1); font-weight: 700">产出</span><span style="color: var(--t3)">2</span></div>
+          <div style="display: flex"><span style="flex: 1">RiskConfirmation.tsx</span><span style="color: var(--ok-t)">+2 </span><span style="color: var(--err)">−1</span></div>
+          <div>审批卡状态说明.md</div>
+          <div> </div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1); font-weight: 700">上下文</span><span style="color: var(--t3)">62%</span></div>
+          <div><span style="color: var(--accent)">━━━━━━━━━━━━━━━━━━━━━━</span><span style="color: var(--l3)">━━━━━━━━━━━━━━</span></div>
+          <div style="color: var(--t3)">文件夹 dsh-workbench</div>
+          <div style="color: var(--t3)">说明   AGENTS.md</div>
+          <div style="color: var(--t3)">连接器 GitHub</div>
+        </div>
+
+        <div class="lines" style="display: {{p1}}">
+          <div style="display: flex; color: var(--t3)"><span style="flex: 1">类型 ▾</span><span style="color: var(--accent-t)">＋ 添加</span></div>
+          <div>▸ 产出 <span style="color: var(--t4)">2</span></div>
+          <div>▸ 子智能体的工作区 <span style="color: var(--t4)">3</span></div>
+          <div> </div>
+          <div style="color: var(--t3)">连接的文件夹 · dsh-workbench · 改动 2</div>
+          <div style="color: var(--t1)">▾ packages/client/ui-approval</div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1)">    RiskConfirmation.tsx</span><span style="color: var(--warn-t)">M</span></div>
+          <div>    RiskConfirmation.module.css</div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1)">    risk-to-state.ts</span><span style="color: var(--ok-t)">A</span></div>
+          <div>▸ packages/client/ui-primitives</div>
+          <div>▸ docs</div>
+          <div>  AGENTS.md</div>
+          <div>  package.json</div>
+        </div>
+
+        <div class="lines" style="display: {{p2}}">
+          <div><span style="color: var(--accent)">{{spin}}</span> <span style="color: var(--t1); font-weight: 700">进行中的目标</span> <span style="color: var(--t4)">第 2 天</span></div>
+          <div style="color: var(--t1); white-space: pre-wrap">审批卡和 StateDot 用同一套状态，测试全绿</div>
+          <div style="color: var(--t4)">/goal pause   /goal edit   /goal clear</div>
+          <div> </div>
+          <div style="color: var(--t1); font-weight: 700">完成标准</div>
+          <div><span style="color: var(--ok)">●</span> 风险等级走 riskToState</div>
+          <div><span style="color: var(--ok)">●</span> 组件测试 19 条通过</div>
+          <div><span style="color: var(--t4)">○</span> 审查没有阻塞项</div>
+          <div> </div>
+          <div style="color: var(--t1); font-weight: 700">项目说明</div>
+          <div style="color: var(--t3)">来自 AGENTS.md</div>
+        </div>
+
+        <div class="lines" style="display: {{p3}}">
+          <div style="color: var(--t3)">待审核 · 1</div>
+          <div style="display: flex"><span style="flex: 1"><span style="color: var(--ok)">◎</span> <span style="color: var(--t1)">查 StateDot 用法</span></span><span style="color: var(--t4)">18m</span></div>
+          <div style="color: var(--t3)">  找到 14 处，等你确认要不要全改</div>
+          <div> </div>
+          <div style="color: var(--t3)">等你处理 · 1</div>
+          <div style="display: flex"><span style="flex: 1"><span style="color: var(--warn)">?</span> <span style="color: var(--t1)">分支：换成图标方案</span></span><span style="color: var(--t4)">昨天</span></div>
+          <div style="color: var(--t3)">  回答：要图标还是字符</div>
+          <div> </div>
+          <div style="color: var(--t3)">进行中 · 2</div>
+          <div style="display: flex"><span style="flex: 1"><span style="color: var(--accent)">{{spin}}</span> <span style="color: var(--t1)">审查这次改动</span></span><span style="color: var(--t4)">42s</span></div>
+          <div style="color: var(--t3)">  读到第 3 个文件</div>
+          <div style="display: flex"><span style="flex: 1"><span style="color: var(--accent)">{{spin}}</span> <span style="color: var(--t1)">构建文档站</span></span><span style="color: var(--t4)">2m</span></div>
+          <div> </div>
+          <div style="color: var(--t3)">已解决 · 3</div>
+          <div><span style="color: var(--t3)">●</span> 查 StateDot 用法的旧版</div>
+          <div style="color: var(--t4)">Enter 打开线程   输入框变成“引导这个线程”</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="display: flex; gap: 16px; align-items: center; color: var(--t4)">
+      <button type="button" class="key" onClick="{{toggleLeft}}" aria-pressed="{{leftOn}}" style="color: var(--t3)">Alt+1 会话栏</button>
+      <button type="button" class="key" onClick="{{toggleThreads}}" aria-pressed="{{threadOn}}" style="color: var(--t3)">t 线程</button>
+      <button type="button" class="key" onClick="{{toggleRight}}" aria-pressed="{{rightOn}}" style="color: var(--t3)">Ctrl+B 右栏</button>
+      <span>←→ 换页</span><span>Alt+Z 放大</span><span>Ctrl+A 子智能体</span><span>/resume 全部会话</span>
+      <span style="flex: 1"></span><span style="color: var(--t3)">deepseek-v4.1-flash</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { left: true, right: true, threads: true, tab: 3, f: 0 };
+  frames = ['◐', '◓', '◑', '◒'];
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!still) this.timer = setInterval(() => { if (!document.hidden) this.setState({ f: (this.state.f + 1) % 4 }); }, 166);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const s = this.state;
+    const flip = (k) => () => this.setState({ [k]: !s[k] });
+    const tabs = [[3, '线程'], [1, '资料库'], [2, '目标'], [0, '地图']];
+    const show = (i) => (s.tab === i ? 'flex' : 'none');
+    return {
+      theme: this.props.theme ?? 'dark',
+      spin: this.frames[s.f],
+      leftShow: s.left ? 'flex' : 'none', rightShow: s.right ? 'flex' : 'none', threadShow: s.threads ? 'flex' : 'none',
+      leftOn: s.left ? 'true' : 'false', rightOn: s.right ? 'true' : 'false', threadOn: s.threads ? 'true' : 'false',
+      toggleLeft: flip('left'), toggleRight: flip('right'), toggleThreads: flip('threads'),
+      p0: show(0), p1: show(1), p2: show(2), p3: show(3),
+      tabs: tabs.map(([i, label], k) => ({ key: k + 1, label, pressed: s.tab === i ? 'true' : 'false', fg: s.tab === i ? 'var(--t1)' : 'var(--t3)', bg: s.tab === i ? 'var(--l3)' : 'transparent', w: s.tab === i ? 700 : 400, pick: () => this.setState({ tab: i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

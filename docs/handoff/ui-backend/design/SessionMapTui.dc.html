@@ -1,0 +1,128 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>会话地图 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A}
+.lines{display:flex;flex-direction:column;min-width:0}
+.r{display:flex;width:100%;height:20px;padding:0 6px;box-sizing:border-box;border:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;white-space:pre}
+.key{height:20px;padding:0 6px;border:0;background:transparent;font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="display: flex; gap: 16px"><span style="color: var(--accent-t); font-weight: 700">dsh map</span><span style="color: var(--t1); font-weight: 700">dsh-workbench</span><span style="flex: 1"></span><span style="color: var(--t2)">{{summary}}</span></div>
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+
+    <div style="flex: 1; min-height: 0; display: flex; gap: 0">
+      <div class="lines" style="width: 660px; flex: none; padding-right: 12px; border-right: 1px solid var(--line)">
+        <sc-for list="{{rows}}" as="n" hint-placeholder-count="9">
+          <button type="button" class="r" onClick="{{n.pick}}" aria-pressed="{{n.pressed}}" style="background: {{n.bg}}; color: {{n.fg}}; font-weight: {{n.weight}}; opacity: {{n.alpha}}"><span style="color: var(--t4); font-weight: 400">{{n.edge}}</span><span style="color: {{n.tone}}">{{n.glyph}}</span><span> {{n.title}}</span><span style="flex: 1"></span><span style="font-weight: 400; color: {{n.statusFg}}">{{n.status}}</span></button>
+        </sc-for>
+        <div> </div>
+        <div style="padding: 0 6px; color: var(--t4)">  ┄┄ 审批卡状态统一 和 发布说明草稿 都提到 RiskConfirmation</div>
+        <div style="flex: 1"></div>
+        <div style="padding: 0 6px; color: var(--t4)">── 分支   ══ 子智能体   ┄┄ 推测</div>
+      </div>
+
+      <div class="lines" style="flex: 1; padding-left: 16px">
+        <div style="display: flex; gap: 8px; color: var(--t1); font-weight: 700"><span style="color: {{cur.tone}}">{{cur.glyph}}</span><span style="flex: 1">{{cur.title}}</span><span style="font-weight: 400; color: var(--t3)">{{cur.kind}}</span></div>
+        <div style="color: var(--t3)">{{cur.note}}</div>
+        <div> </div>
+        <sc-for list="{{cur.msgs}}" as="m" hint-placeholder-count="2"><div style="white-space: pre-wrap; background: {{m.bg}}; color: {{m.fg}}; padding: {{m.pad}}; margin-bottom: 8px"><span style="color: var(--accent-t); font-weight: 700">{{m.mark}}</span>{{m.t}}</div></sc-for>
+        <div class="lines" style="display: {{cur.approveShow}}; padding: 0 6px; border-left: 2px solid var(--warn); background: var(--l1)">
+          <div style="color: var(--t1); font-weight: 700"><span style="color: var(--warn)">▲</span> 要重启 MCP 服务吗？</div>
+          <div style="color: var(--t1)">  dsh mcp restart github</div>
+          <div> </div>
+          <div style="display: flex; gap: 8px"><button type="button" class="key" onClick="{{cur.allow}}" style="background: var(--accent-btn); color: var(--on-accent); font-weight: 700">y 允许一次</button><button type="button" class="key" onClick="{{cur.deny}}" style="color: var(--t3)">n 拒绝</button></div>
+        </div>
+        <div style="flex: 1"></div>
+        <div style="display: flex; align-items: center; padding: 0 6px; background: var(--l1); color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh </span><span style="background: var(--t1); color: var(--term)"> </span><span> 发给这个会话，不用离开地图</span></div>
+      </div>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="display: flex; gap: 12px; align-items: center; color: var(--t4)">
+      <sc-for list="{{filters}}" as="f" hint-placeholder-count="3"><button type="button" class="key" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="color: {{f.fg}}; background: {{f.bg}}">{{f.label}}</button></sc-for>
+      <span>↑↓ 选会话</span><span>Enter 进入</span><span>b 开分支</span><span>s 放进分屏</span><span style="flex: 1"></span><span>Esc 回对话</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = {
+    pick: 'b', filter: 'all', f: 0,
+    over: {}
+  };
+  frames = ['◐', '◓', '◑', '◒'];
+  list = [
+    { id: 'g', edge: '', kind: '目标', title: '本周发布 0.3', st: 'run', note: '4 个会话，3 个线程要你看', msgs: [] },
+    { id: 'a', edge: '├─ ', kind: '会话', title: '审批卡状态统一', st: 'run', note: '子智能体审查这次改动', msgs: [{ me: 1, t: '把风险等级改成和 StateDot 同一套状态。' }, { t: '改完了，测试 19 条通过，在等审查。' }] },
+    { id: 'a1', edge: '│  ╞═ ', kind: '子智能体', title: '审查这次改动', st: 'run', note: '读到第 3 个文件 · 42s', msgs: [{ t: '正在看 RiskConfirmation.tsx。' }] },
+    { id: 'a2', edge: '│  ╞═ ', kind: '子智能体', title: '查 StateDot 用法', st: 'done', note: '找到 14 处 · 18s', msgs: [{ t: '一共 14 处，都走 state 属性。' }] },
+    { id: 'a3', edge: '│  └─ ', kind: '分支', title: '换成图标方案', st: 'idle', note: '从第 6 轮分出来', msgs: [{ t: '这个分支试的是图标，还没合回去。' }] },
+    { id: 'b', edge: '├─ ', kind: '会话', title: '修复 MCP 重连', st: 'wait', note: '等你批准重启服务', msgs: [{ me: 1, t: 'GitHub 连接器断了不会自动重连。' }, { t: '修好了，需要重启服务验证。' }], approval: true },
+    { id: 'b1', edge: '│  ╘═ ', kind: '子智能体', title: '写重连回归测试', st: 'review', note: '加了 3 条，等你看 PR', msgs: [{ t: '加了 3 条测试，都通过。' }] },
+    { id: 'c', edge: '├─ ', kind: '会话', title: '发布说明草稿', st: 'ask', note: '问你：要不要写破坏性改动', msgs: [{ t: '审批卡的改动要写进破坏性改动吗？' }] },
+    { id: 'd', edge: '└─ ', kind: '会话', title: '整理快捷键表', st: 'idle', note: '2 天前', msgs: [{ t: '上次停在 TUI 那一列。' }] }
+  ];
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!still) this.timer = setInterval(() => { if (!document.hidden) this.setState({ f: (this.state.f + 1) % 4 }); }, 166);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.t2); }
+  decide(id, text, st) {
+    this.setState((s) => ({ over: { ...s.over, [id]: { st, approval: false, extra: text } } }));
+  }
+  renderVals() {
+    const { pick, filter, f, over } = this.state;
+    const look = {
+      run: { c: 'var(--accent)', t: '进行中', x: 'var(--t3)' }, wait: { g: '▲', c: 'var(--warn)', t: '等待审批', x: 'var(--warn-t)' },
+      ask: { g: '?', c: 'var(--warn)', t: '等待回答', x: 'var(--warn-t)' }, review: { g: '◎', c: 'var(--ok)', t: '待审核', x: 'var(--t3)' }, done: { g: '●', c: 'var(--ok)', t: '已完成', x: 'var(--t3)' }, idle: { g: '○', c: 'var(--t4)', t: '空闲', x: 'var(--t3)' }
+    };
+    const list = this.list.map((n) => ({ ...n, ...(over[n.id] || {}) }));
+    const glyph = (n) => look[n.st].g || this.frames[f];
+    const match = (n) => filter === 'all' || n.kind === '目标' || (filter === 'me' ? ['wait', 'ask', 'review'].includes(n.st) : n.st === 'run');
+    const cur = list.find((n) => n.id === pick);
+    const msgs = cur.extra ? [...cur.msgs, { me: 1, t: cur.extra }] : cur.msgs;
+    const need = list.filter((n) => ['wait', 'ask', 'review'].includes(n.st)).length;
+    const running = list.filter((n) => n.st === 'run' && n.kind !== '目标').length;
+    return {
+      theme: this.props.theme ?? 'dark',
+      summary: `${need} 个要你处理 · ${running} 个在跑`,
+      rows: list.map((n) => ({
+        ...n, glyph: glyph(n), tone: look[n.st].c, status: look[n.st].t, statusFg: look[n.st].x,
+        pressed: n.id === pick ? 'true' : 'false',
+        bg: n.id === pick ? 'var(--l3)' : 'transparent',
+        fg: n.id === pick ? 'var(--t1)' : 'var(--t2)',
+        weight: n.id === pick ? 700 : 400,
+        alpha: match(n) ? 1 : 0.42,
+        pick: () => this.setState({ pick: n.id })
+      })),
+      cur: {
+        title: cur.title, kind: cur.kind, note: cur.note, glyph: glyph(cur), tone: look[cur.st].c,
+        approveShow: cur.approval ? 'flex' : 'none',
+        msgs: msgs.map((m) => ({ t: m.t, mark: m.me ? '❯ ' : '', bg: m.me ? 'var(--l1)' : 'transparent', fg: 'var(--t1)', pad: m.me ? '0 6px' : '0' })),
+        allow: () => this.decide(cur.id, '允许一次', 'run'),
+        deny: () => this.decide(cur.id, '拒绝', 'idle')
+      },
+      filters: [['all', 'a 全部'], ['me', 'm 要我处理'], ['run', 'r 在跑']].map(([id, label]) => ({ label, pressed: filter === id ? 'true' : 'false', fg: filter === id ? 'var(--t1)' : 'var(--t3)', bg: filter === id ? 'var(--l3)' : 'transparent', pick: () => this.setState({ filter: id }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

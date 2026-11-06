@@ -1,0 +1,215 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>工作台 · 桌面端</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313}
+button{font-family:inherit}
+.frame{display:grid;height:900px;transition:grid-template-columns 300ms var(--ease)}
+.row{width:100%;display:flex;align-items:center;gap:8px;box-sizing:border-box;border:0;border-radius:8px;background:transparent;color:var(--t2);font-size:13px;line-height:20px;text-align:left;cursor:pointer;min-width:0}
+.row:hover{background:var(--l2)}
+.fold{display:grid;transition:grid-template-rows 200ms var(--ease)}
+.fold>div{min-height:0;overflow:hidden}
+.spin{display:inline-block;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.swap{animation:swap 200ms var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.glyph{font-family:var(--mono);flex:none;width:14px;text-align:center}
+.grow{flex:1;min-width:0;white-space:nowrap;overflow:hidden}
+.tab{height:28px;padding:0 10px;border:0;border-radius:8px;font-size:13px;line-height:20px;cursor:pointer}
+.h3{display:flex;align-items:center;gap:6px;width:100%;height:32px;padding:0;border:0;background:transparent;color:var(--t1);font-size:13px;line-height:20px;font-weight:600;cursor:pointer}
+.tick{transition:transform 200ms var(--ease);color:var(--t3);font-weight:400}
+.meta{font-size:12px;line-height:18px;color:var(--t3)}
+.tree{font-family:var(--mono);font-size:12px;line-height:18px}
+.chk{display:none;width:14px;height:14px;flex:none;box-sizing:border-box;margin-top:3px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--t3)}
+.th:hover .chk{display:block}
+.th:hover .glyph{display:none}
+@media (prefers-reduced-motion:reduce){.frame,.fold,.tick{transition:none}.spin,.swap{animation:none}}
+</style>
+</helmet>
+<div class="dsh frame" data-theme="{{theme}}" style="width: 1440px; grid-template-columns: {{cols}}; background: var(--bg); color: var(--t1); font-family: var(--sans); overflow: hidden">
+
+  <aside aria-label="会话导航" style="min-width: 0; display: flex; flex-direction: column; background: var(--side); box-shadow: 0.5px 0 0 var(--line); overflow: hidden">
+    <div style="height: 48px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 8px">
+      <button type="button" onClick="{{toggleLeft}}" aria-label="折叠导航" aria-expanded="{{leftOpen}}" style="width: 32px; height: 32px; flex: none; border: 0; border-radius: 8px; background: transparent; color: var(--t2); font-family: var(--mono); font-size: 14px; cursor: pointer">☰</button>
+      <strong style="display: {{leftText}}; font-size: 14px; line-height: 22px; font-weight: 600; white-space: nowrap">dsh</strong>
+    </div>
+    <div style="display: {{leftText}}; flex: none; padding: 0 12px 8px; flex-direction: column; gap: 8px">
+      <button type="button" style="height: 32px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-size: 13px; line-height: 20px; font-weight: 500; cursor: pointer">新会话</button>
+      <div style="height: 32px; box-sizing: border-box; padding: 0 10px; display: flex; align-items: center; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 13px; line-height: 20px; color: var(--t4)">搜索会话</div>
+      <div style="display: flex; flex-direction: column"><button type="button" class="row" style="height: 32px; padding: 0 8px"><span class="glyph" style="color: var(--t3)">▣</span><span class="grow">项目</span></button><button type="button" class="row" style="height: 32px; padding: 0 8px"><span class="glyph" style="color: var(--t3)">◷</span><span class="grow">定时</span></button><button type="button" class="row" style="height: 32px; padding: 0 8px"><span class="glyph" style="color: var(--t3)">◇</span><span class="grow">产出</span></button></div>
+    </div>
+
+    <nav style="display: {{leftText}}; flex: 1; min-height: 0; padding: 4px 8px; flex-direction: column; gap: 2px; overflow: hidden">
+      <div class="meta" style="height: 28px; display: flex; align-items: center; padding: 0 8px">dsh-workbench</div>
+
+      <button type="button" class="row" style="height: 36px; padding: 0 8px; background: var(--l3); color: var(--t1)" aria-current="true"><span class="glyph spin" style="color: var(--accent)">◐</span><span class="grow">审批卡状态统一</span><span class="meta">3 个线程</span></button>
+      <button type="button" class="row" onClick="{{toggleThreads}}" aria-expanded="{{threadsOpen}}" style="height: 28px; padding: 0 8px 0 30px"><span class="tick" style="transform: rotate({{threadRot}}deg); font-family: var(--mono)">›</span><span class="grow meta">线程 3</span></button>
+      <div class="fold" style="grid-template-rows: {{threadRows}}"><div>
+        <button type="button" class="row" style="height: 32px; padding: 0 8px 0 30px"><span aria-hidden="true" style="color: var(--t4); font-family: var(--mono)">├</span><span class="glyph spin" style="color: var(--accent)">◐</span><span class="grow">审查这次改动</span><span class="meta">42s</span></button>
+        <button type="button" class="row" style="height: 32px; padding: 0 8px 0 30px"><span aria-hidden="true" style="color: var(--t4); font-family: var(--mono)">├</span><span class="glyph" style="color: var(--ok)">●</span><span class="grow">查 StateDot 用法</span><span class="meta">18s</span></button>
+        <button type="button" class="row" style="height: 32px; padding: 0 8px 0 30px"><span aria-hidden="true" style="color: var(--t4); font-family: var(--mono)">└</span><span class="glyph" style="color: var(--ok)">●</span><span class="grow">分支：换成图标方案</span><span class="meta">昨天</span></button>
+      </div></div>
+
+      <button type="button" class="row" style="height: 36px; padding: 0 8px"><span class="glyph" style="color: var(--warn)">▲</span><span class="grow">修复 MCP 重连</span><span class="meta" style="color: var(--warn-t)">待审批</span></button>
+      <button type="button" class="row" style="height: 36px; padding: 0 8px"><span class="glyph" style="color: var(--warn)">?</span><span class="grow">发布说明草稿</span><span class="meta" style="color: var(--warn-t)">待回答</span></button>
+      <button type="button" class="row" style="height: 36px; padding: 0 8px"><span class="glyph" style="color: var(--t4)">○</span><span class="grow">整理快捷键表</span><span class="meta">2 天前</span></button>
+
+      <div class="meta" style="height: 28px; display: flex; align-items: center; padding: 8px 8px 0">demo-project</div>
+      <button type="button" class="row" style="height: 36px; padding: 0 8px"><span class="glyph" style="color: var(--warn)">▲</span><span class="grow">改 view.py 前看影响</span><span class="meta" style="color: var(--warn-t)">计划待审</span></button>
+      <button type="button" class="row" style="height: 36px; padding: 0 8px"><span class="glyph" style="color: var(--ok)">●</span><span class="grow">每周因子周报</span><span class="meta">定时</span></button>
+    </nav>
+
+    <div style="display: {{railDisplay}}; flex: 1; min-height: 0; padding: 4px 0; flex-direction: column; align-items: center; gap: 12px; font-family: var(--mono); font-size: 14px; line-height: 20px"><span class="spin" style="color: var(--accent)">◐</span><span style="color: var(--warn)">▲</span><span style="color: var(--warn)">?</span><span style="color: var(--t4)">○</span><span style="color: var(--warn)">▲</span><span style="color: var(--ok)">●</span></div>
+
+    <div style="height: 48px; flex: none; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; font-size: 13px; line-height: 20px; color: var(--t2); white-space: nowrap; box-shadow: 0 -0.5px 0 var(--line-soft)">⚙<span style="display: {{leftText}}; margin-left: 8px">设置</span></div>
+  </aside>
+
+  <main style="min-width: 0; display: flex; flex-direction: column; overflow: hidden">
+    <header style="height: 48px; flex: none; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 0.5px 0 var(--line)">
+      <strong style="font-size: 14px; line-height: 22px; font-weight: 600; white-space: nowrap">审批卡状态统一</strong>
+      <span class="meta" style="font-family: var(--mono); white-space: nowrap">feat/approval-card</span>
+      <span style="flex: 1"></span>
+      <button type="button" onClick="{{toggleRight}}" aria-expanded="{{rightOpen}}" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); color: var(--t2); font-size: 13px; line-height: 20px; cursor: pointer; white-space: nowrap">{{rightLabel}}</button>
+    </header>
+
+    <div class="swap" style="display: {{threadShow}}; flex: 1; min-height: 0; padding: 12px 32px 20px; flex-direction: column; gap: 12px; font-size: 14px; line-height: 22px; overflow: hidden">
+      <nav aria-label="线程路径" style="display: flex; align-items: center; gap: 8px; height: 28px; font-size: 13px; line-height: 20px"><button type="button" onClick="{{closeThread}}" style="padding: 0; border: 0; background: transparent; color: var(--t2); font-size: 13px; line-height: 20px; cursor: pointer">线程</button><span style="color: var(--t4)">›</span><span style="color: var(--t1)">分支：换成图标方案</span><span style="flex: 1"></span><span class="meta">✓ 标为完成</span></nav>
+      <div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; color: var(--t2)"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 20px"><span class="glyph" style="color: var(--ok)">●</span>做了图标和字符两版</div><div style="display: flex; gap: 8px; font-size: 13px; line-height: 20px"><span class="glyph" style="color: var(--ok)">●</span>比较了 16 色下的辨认度</div><p style="margin: 8px 0 0">两版都放在方案对比里。字符版在 16 色下更清楚，图标版在桌面端更好看。你要哪一版？</p></div>
+      <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 20px"><div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; background: var(--l1)"><span class="tree" style="color: var(--ok-t)">#128</span><span class="grow tree">feat/icon-states</span><span class="meta">○ CI</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; background: var(--l1)"><span class="grow">方案对比.md</span><span class="meta">昨天更新</span></div></div>
+    </div>
+
+    <div style="display: {{chatShow}}; flex: 1; min-height: 0; padding: 20px 32px; flex-direction: column; gap: 16px; font-size: 14px; line-height: 22px; overflow: hidden">
+      <div style="align-self: flex-end; max-width: 480px; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1)">把审批卡的风险等级改成和 StateDot 同一套状态。</div>
+      <p style="margin: 0; color: var(--t2)">我先看现有组件，再改状态映射。</p>
+      <div style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 20px; color: var(--t2)"><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>读取 <span style="font-family: var(--mono); color: var(--t1)">RiskConfirmation.tsx</span></div><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>修改 <span style="font-family: var(--mono); color: var(--t1)">RiskConfirmation.tsx</span> <span style="color: var(--ok-t)">+2</span> <span style="color: var(--err)">−1</span></div><div style="display: flex; gap: 8px"><span class="glyph spin" style="color: var(--accent)">◐</span>子智能体审查这次改动 <span style="color: var(--t3)">42s</span></div></div>
+      <section aria-label="线程卡" style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; box-shadow: 0 0 0 0.5px var(--line); font-size: 13px; line-height: 20px"><div style="display: flex; align-items: center; gap: 8px"><span class="glyph" style="color: var(--warn)">?</span><strong class="grow" style="font-weight: 600">分支：换成图标方案</strong><span class="meta" style="white-space: nowrap">本机 <span style="color: var(--ok)">●</span></span><span class="meta" style="padding: 0 6px; border-radius: 4px; box-shadow: 0 0 0 0.5px var(--line)">方案对比.md</span></div><div class="meta" style="padding-left: 22px">回答：要图标还是字符</div><div style="display: flex; align-items: center; gap: 12px; padding: 6px 0 0 22px"><button type="button" onClick="{{openThread}}" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l3); color: var(--t1); font-size: 13px; line-height: 20px; cursor: pointer">查看线程</button><span class="meta">↩ 4 条回复</span></div></section>
+    </div>
+
+    <div style="flex: none; padding: 0 32px 16px; display: flex; flex-direction: column; gap: 8px">
+      <div role="status" aria-label="目标" style="height: 36px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 13px; line-height: 20px"><span class="glyph spin" style="color: var(--accent)">◐</span><span class="meta" style="white-space: nowrap">进行中的目标</span><span class="grow">审批卡和 StateDot 用同一套状态，测试全绿</span><span class="meta">暂停　编辑</span></div>
+      <div style="height: 72px; box-sizing: border-box; padding: 10px 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 14px; line-height: 22px; color: var(--t4)">{{composerHint}}<span style="float: right; font-size: 12px; line-height: 22px; color: var(--t3)">工作区写入</span></div>
+    </div>
+  </main>
+
+  <aside aria-label="右侧栏" style="min-width: 0; display: flex; flex-direction: column; background: var(--bg); box-shadow: -0.5px 0 0 var(--line); overflow: hidden">
+    <div role="tablist" style="height: 48px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 2px; box-shadow: 0 0.5px 0 var(--line)">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4"><button type="button" class="tab" role="tab" aria-selected="{{t.pressed}}" onClick="{{t.pick}}" style="background: {{t.bg}}; color: {{t.fg}}; white-space: nowrap">{{t.label}}</button></sc-for>
+      <span style="flex: 1"></span>
+      <button type="button" onClick="{{toggleFull}}" aria-pressed="{{fullOn}}" aria-label="全屏查看右栏" style="width: 28px; height: 28px; flex: none; border: 0; border-radius: 8px; background: transparent; color: var(--t3); font-family: var(--mono); font-size: 13px; cursor: pointer">⤢</button>
+    </div>
+
+    <div class="swap" style="display: {{p0}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 8px 16px; flex-direction: column; gap: 4px; overflow: hidden; width: 100%">
+      <section aria-label="会话地图缩略图" style="flex: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 4px">
+        <div style="display: flex; align-items: center; height: 32px"><strong style="flex: 1; font-size: 13px; line-height: 20px; font-weight: 600">会话地图</strong><a href="SessionMap.dc.html" style="font-size: 12px; line-height: 18px; color: var(--accent-t); text-decoration: none">展开 ▸</a></div>
+        <div aria-hidden="true" style="position: relative; height: 112px; font-size: 11px; line-height: 16px">
+          <div style="position: absolute; left: 0; top: 44px; width: 72px; height: 24px; box-sizing: border-box; padding-left: 6px; display: flex; align-items: center; background: var(--l1); box-shadow: 0 0 0 1px var(--line)">本周目标</div>
+          <div style="position: absolute; left: 72px; top: 56px; width: 16px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 88px; top: 12px; width: 1px; height: 88px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 88px; top: 12px; width: 16px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 88px; top: 56px; width: 16px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 88px; top: 100px; width: 16px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 104px; top: 0; width: 112px; height: 24px; box-sizing: border-box; padding-left: 6px; display: flex; align-items: center; background: var(--l1); box-shadow: 0 0 0 1px var(--accent)"><span class="spin" style="color: var(--accent); font-family: var(--mono)">◐</span>&nbsp;审批卡</div>
+          <div style="position: absolute; left: 104px; top: 44px; width: 112px; height: 24px; box-sizing: border-box; padding-left: 6px; display: flex; align-items: center; background: var(--l1); box-shadow: 0 0 0 1px var(--line)"><span style="color: var(--warn); font-family: var(--mono)">▲</span>&nbsp;MCP 重连</div>
+          <div style="position: absolute; left: 104px; top: 88px; width: 112px; height: 24px; box-sizing: border-box; padding-left: 6px; display: flex; align-items: center; background: var(--l1); box-shadow: 0 0 0 1px var(--line)"><span style="color: var(--warn); font-family: var(--mono)">?</span>&nbsp;发布说明</div>
+          <div style="position: absolute; left: 216px; top: 12px; width: 24px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 240px; top: 0; height: 24px; display: flex; align-items: center; color: var(--t3)">3 个线程</div>
+        </div>
+      </section>
+      <button type="button" class="h3" onClick="{{tgPlan}}" aria-expanded="{{planOpen}}"><span class="tick" style="transform: rotate({{planRot}}deg); font-family: var(--mono)">›</span>进度<span style="flex: 1"></span><span class="meta" style="font-weight: 400">3 / 4</span></button>
+      <div class="fold" style="grid-template-rows: {{planRows}}"><div style="font-size: 13px; line-height: 24px; color: var(--t2)"><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>读现有审批组件</div><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>改风险到状态的映射</div><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>跑组件测试</div><div style="display: flex; gap: 8px; color: var(--t1)"><span class="glyph spin" style="color: var(--accent)">◐</span>审查后推分支并开 PR</div></div></div>
+
+      <button type="button" class="h3" onClick="{{tgOut}}" aria-expanded="{{outOpen}}"><span class="tick" style="transform: rotate({{outRot}}deg); font-family: var(--mono)">›</span>产出<span style="flex: 1"></span><span class="meta" style="font-weight: 400">2</span></button>
+      <div class="fold" style="grid-template-rows: {{outRows}}"><div style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 20px"><div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px; background: var(--l1)"><span class="tree" style="color: var(--t3)">tsx</span><span class="grow" style="font-family: var(--mono); font-size: 12px">RiskConfirmation.tsx</span><span style="color: var(--ok-t); font-size: 12px">+2</span><span style="color: var(--err); font-size: 12px">−1</span></div><div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px; background: var(--l1)"><span class="tree" style="color: var(--t3)">md</span><span class="grow" style="font-family: var(--mono); font-size: 12px">审批卡状态说明.md</span><span class="meta">打开</span></div></div></div>
+
+      <button type="button" class="h3" onClick="{{tgCtx}}" aria-expanded="{{ctxOpen}}"><span class="tick" style="transform: rotate({{ctxRot}}deg); font-family: var(--mono)">›</span>上下文<span style="flex: 1"></span><span class="meta" style="font-weight: 400">62%</span></button>
+      <div class="fold" style="grid-template-rows: {{ctxRows}}"><div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 20px; color: var(--t2)"><div role="img" aria-label="上下文用量 62%" style="height: 6px; border-radius: 3px; background: var(--l3); overflow: hidden"><div style="width: 62%; height: 6px; background: var(--accent)"></div></div><div style="display: flex"><span class="grow">工作文件夹</span><span class="tree" style="color: var(--t3)">dsh-workbench</span></div><div style="display: flex"><span class="grow">用到的说明</span><span class="tree" style="color: var(--t3)">AGENTS.md</span></div><div style="display: flex"><span class="grow">连接器</span><span class="meta">GitHub</span></div><div style="display: flex"><span class="grow">Skill</span><span class="meta">code-review</span></div></div></div>
+    </div>
+
+    <div class="swap" style="display: {{p1}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 8px 12px; flex-direction: column; gap: 2px; overflow: hidden; width: 100%">
+      <div class="meta" style="height: 32px; display: flex; align-items: center; gap: 8px; padding: 0 8px"><span>类型 ▾</span><span style="flex: 1"></span><span style="color: var(--accent-t)">＋ 添加</span></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="color: var(--t3)">›</span><span class="grow">产出</span><span class="meta">2</span></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="color: var(--t3)">›</span><span class="grow">子智能体的工作区</span><span class="meta">3</span></div>
+      <div class="meta" style="height: 28px; display: flex; align-items: center; padding: 4px 8px 0">连接的文件夹 · dsh-workbench · 改动 2</div>
+      <button type="button" class="row tree" onClick="{{tgDir}}" aria-expanded="{{dirOpen}}" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span class="tick" style="transform: rotate({{dirRot}}deg)">›</span><span class="grow" style="color: var(--t1)">packages/client/ui-approval</span></button>
+      <div class="fold" style="grid-template-rows: {{dirRows}}"><div class="tree">
+        <div style="display: flex; height: 28px; align-items: center; padding: 0 8px 0 28px"><span class="grow" style="color: var(--t1)">RiskConfirmation.tsx</span><span style="color: var(--warn-t)">M</span></div>
+        <div style="display: flex; height: 28px; align-items: center; padding: 0 8px 0 28px; color: var(--t2)"><span class="grow">RiskConfirmation.module.css</span></div>
+        <div style="display: flex; height: 28px; align-items: center; padding: 0 8px 0 28px"><span class="grow" style="color: var(--t1)">risk-to-state.ts</span><span style="color: var(--ok-t)">A</span></div>
+      </div></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="color: var(--t3)">›</span><span class="grow">packages/client/ui-primitives</span></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="color: var(--t3)">›</span><span class="grow">docs</span></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="width: 8px"></span><span class="grow">AGENTS.md</span></div>
+      <div class="row tree" style="height: 28px; padding: 0 8px; font-family: var(--mono); font-size: 12px"><span style="width: 8px"></span><span class="grow">package.json</span></div>
+    </div>
+
+    <div class="swap" style="display: {{p2}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 12px 16px; flex-direction: column; gap: 12px; overflow: hidden; width: 100%">
+      <section style="padding: 12px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); display: flex; flex-direction: column; gap: 6px"><div style="display: flex; gap: 8px; align-items: center"><span class="glyph spin" style="color: var(--accent)">◐</span><strong style="flex: 1; font-size: 13px; line-height: 20px; font-weight: 600">进行中的目标</strong><span class="meta">第 2 天</span></div><p style="margin: 0; font-size: 14px; line-height: 22px; color: var(--t1)">审批卡和 StateDot 用同一套状态，测试全绿</p><div class="meta">暂停　编辑　清除</div></section>
+      <h3 style="margin: 4px 0 0; font-size: 13px; line-height: 20px; font-weight: 600">完成标准</h3>
+      <div style="display: flex; flex-direction: column; font-size: 13px; line-height: 24px; color: var(--t2)"><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>风险等级走 riskToState</div><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--ok)">●</span>组件测试 19 条通过</div><div style="display: flex; gap: 8px"><span class="glyph" style="color: var(--t4)">○</span>审查没有阻塞项</div></div>
+      <h3 style="margin: 4px 0 0; font-size: 13px; line-height: 20px; font-weight: 600">项目说明</h3>
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t2)">来自 <span class="tree">AGENTS.md</span>。feature 组件只用 alias token，不引组件库。</p>
+      <h3 style="margin: 4px 0 0; font-size: 13px; line-height: 20px; font-weight: 600">项目记忆</h3>
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t2)">只在这个项目里生效。记着：状态符号两端要相同。</p>
+    </div>
+
+    <div class="swap" style="display: {{p3}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 4px 12px; flex-direction: column; gap: 2px; overflow: hidden; width: 100%">
+      <div class="meta" style="height: 28px; display: flex; align-items: center; padding: 0 4px">产出</div>
+      <div style="flex: none; display: flex; gap: 8px; padding: 0 4px 4px; overflow: hidden"><div style="width: 100px; flex: none"><div style="height: 56px; border-radius: 8px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line)"></div><div class="meta" style="display: flex; padding-top: 2px"><span class="grow">方案对比</span><span>昨天</span></div></div><div style="width: 100px; flex: none"><div style="height: 56px; border-radius: 8px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line)"></div><div class="meta" style="display: flex; padding-top: 2px"><span class="grow">状态说明</span><span>2h</span></div></div><div style="width: 100px; flex: none"><div style="height: 56px; border-radius: 8px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line)"></div><div class="meta" style="display: flex; padding-top: 2px"><span class="grow">审查报告</span></div></div></div>
+      <div class="meta" style="height: 32px; display: flex; align-items: center; padding: 0 4px">待审核 · 1</div>
+      <button type="button" class="row th" onClick="{{openThread}}" style="padding: 6px 4px; align-items: flex-start"><span class="chk" aria-hidden="true"></span><span class="glyph" style="color: var(--ok)">◎</span><span style="flex: 1; min-width: 0"><span style="display: block; color: var(--t1); font-weight: 500">查 StateDot 用法</span><span class="meta" style="display: block; white-space: normal">找到 14 处，等你确认要不要全改</span></span><span class="meta">18m</span></button>
+      <div class="meta" style="height: 32px; display: flex; align-items: center; padding: 8px 4px 0">等你处理 · 1</div>
+      <button type="button" class="row th" onClick="{{openThread}}" style="padding: 6px 4px; align-items: flex-start"><span class="chk" aria-hidden="true"></span><span class="glyph" style="color: var(--warn)">?</span><span style="flex: 1; min-width: 0"><span style="display: block; color: var(--t1); font-weight: 500">分支：换成图标方案</span><span class="meta" style="display: block; white-space: normal">回答：要图标还是字符</span></span><span class="meta">昨天</span></button>
+      <div class="meta" style="height: 32px; display: flex; align-items: center; padding: 8px 4px 0">进行中 · 2</div>
+      <button type="button" class="row th" onClick="{{openThread}}" style="padding: 6px 4px; align-items: flex-start"><span class="chk" aria-hidden="true"></span><span class="glyph spin" style="color: var(--accent)">◐</span><span style="flex: 1; min-width: 0"><span style="display: block; color: var(--t1); font-weight: 500">审查这次改动</span><span class="meta" style="display: block; white-space: normal">读到第 3 个文件</span></span><span class="meta">42s</span></button>
+      <div class="row" style="padding: 6px 4px; align-items: flex-start"><span class="glyph spin" style="color: var(--accent)">◐</span><span style="flex: 1; min-width: 0"><span style="display: block; color: var(--t1); font-weight: 500">构建文档站</span><span class="meta" style="display: block">后台任务</span></span><span class="meta">2m</span></div>
+      <div class="meta" style="height: 32px; display: flex; align-items: center; padding: 8px 4px 0">定时</div>
+      <div class="row" style="padding: 6px 4px"><span class="glyph" style="color: var(--t4)">○</span><span class="grow">每周因子周报</span><span class="meta">周一 09:00</span></div>
+      <div class="meta" style="height: 32px; display: flex; align-items: center; padding: 8px 4px 0">已解决 · 3</div>
+      <div class="row" style="padding: 6px 4px"><span class="glyph" style="color: var(--t3)">●</span><span class="grow">查 StateDot 用法的旧版</span><span class="meta">10-20</span></div>
+      <div class="meta" style="height: 28px; display: flex; align-items: center; justify-content: center">显示更多</div>
+    </div>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { left: true, right: true, tab: 3, threads: true, plan: true, out: true, ctx: true, dir: true, full: false, thread: false };
+  renderVals() {
+    const s = this.state;
+    const fold = (k) => ({ [`${k}Rows`]: s[k] ? '1fr' : '0fr', [`${k}Rot`]: s[k] ? 90 : 0, [`${k}Open`]: s[k] ? 'true' : 'false' });
+    const flip = (k) => () => this.setState({ [k]: !s[k] });
+    const labels = [[3, '线程'], [1, '资料库'], [2, '目标'], [0, '地图']];
+    return {
+      theme: this.props.theme ?? 'dark',
+      cols: s.full && s.right ? `${s.left ? 280 : 56}px 0px minmax(0, 1fr)` : `${s.left ? 280 : 56}px minmax(0, 1fr) ${s.right ? 356 : 0}px`,
+      toggleFull: flip('full'), fullOn: s.full ? 'true' : 'false',
+      chatShow: s.thread ? 'none' : 'flex', threadShow: s.thread ? 'flex' : 'none',
+      composerHint: s.thread ? '引导这个线程' : '给这个项目派活，或者接着聊',
+      openThread: () => this.setState({ thread: true, full: false }), closeThread: () => this.setState({ thread: false }),
+      leftOpen: s.left ? 'true' : 'false', rightOpen: s.right ? 'true' : 'false',
+      leftText: s.left ? 'flex' : 'none', railDisplay: s.left ? 'none' : 'flex',
+      rightLabel: s.right ? '收起右栏' : '打开右栏',
+      toggleLeft: flip('left'), toggleRight: flip('right'),
+      threadRows: s.threads ? '1fr' : '0fr', threadRot: s.threads ? 90 : 0, threadsOpen: s.threads ? 'true' : 'false', toggleThreads: flip('threads'),
+      ...fold('plan'), ...fold('out'), ...fold('ctx'), ...fold('dir'),
+      tgPlan: flip('plan'), tgOut: flip('out'), tgCtx: flip('ctx'), tgDir: flip('dir'),
+      p0: s.tab === 0 ? 'flex' : 'none', p1: s.tab === 1 ? 'flex' : 'none', p2: s.tab === 2 ? 'flex' : 'none', p3: s.tab === 3 ? 'flex' : 'none',
+      tabs: labels.map(([i, label]) => ({ label, pressed: s.tab === i ? 'true' : 'false', bg: s.tab === i ? 'var(--l3)' : 'transparent', fg: s.tab === i ? 'var(--t1)' : 'var(--t3)', pick: () => this.setState({ tab: i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

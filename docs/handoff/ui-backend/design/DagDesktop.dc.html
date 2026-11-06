@@ -1,0 +1,214 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DAG 面板 · 桌面端</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--dot:rgba(255,255,255,.10);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--s1:#4F8AF2;--s2:#0FA696}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--dot:rgba(15,17,21,.16);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--s1:#2F5FCC;--s2:#008F7F}
+.seed{transition:width 200ms cubic-bezier(.2,0,0,1),height 200ms cubic-bezier(.2,0,0,1)}
+.fade{animation:fade 200ms ease-out}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+button{font-family:inherit}
+@media (prefers-reduced-motion:reduce){.seed{transition:none}.fade{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; display: flex; background: var(--bg); color: var(--t1); font-family: var(--sans); overflow: hidden">
+
+  <main aria-label="聊天" style="width: 546px; flex: none; box-sizing: border-box; padding: 16px 24px; display: flex; flex-direction: column; gap: 16px; min-width: 0">
+    <div style="height: 32px; display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 22px; font-weight: 600">改 view.py 前看影响<span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; font-weight: 400; color: var(--t3); font-family: var(--mono)">demo-project</span></div>
+    <div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 16px">
+      <div style="align-self: flex-end; max-width: 420px; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1); font-size: 14px; line-height: 22px">我想改 view.py，会碰到什么？</div>
+      <p style="margin: 0; font-size: 14px; line-height: 22px; color: var(--t2)">我查了影响面，画在右边的 DAG 面板里。最该先看入口脚本和 summary.build_rows。</p>
+
+      <section aria-label="聊天里的小图卡" style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 20px"><span style="font-family: var(--mono); color: var(--ok)">●</span><span style="flex: 1; color: var(--t1)">影响面 · view.py</span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">波及 11 个函数</span></div>
+        <div aria-hidden="true" style="position: relative; height: 72px; font-family: var(--mono); font-size: 11px; line-height: 16px">
+          <div style="position: absolute; left: 0; top: 24px; width: 80px; height: 24px; box-sizing: border-box; border: 1px solid var(--accent); color: var(--t1); display: flex; align-items: center; justify-content: center">view.py</div>
+          <div style="position: absolute; left: 80px; top: 35px; width: 40px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 120px; top: 11px; width: 1px; height: 48px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 120px; top: 11px; width: 24px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 120px; top: 59px; width: 24px; height: 1px; background: var(--t4)"></div>
+          <div style="position: absolute; left: 144px; top: 0; width: 96px; height: 24px; box-sizing: border-box; border: 1px solid var(--line); color: var(--t2); display: flex; align-items: center; justify-content: center">main</div>
+          <div style="position: absolute; left: 144px; top: 48px; width: 96px; height: 24px; box-sizing: border-box; border: 1px solid var(--line); color: var(--t2); display: flex; align-items: center; justify-content: center">build_rows</div>
+          <div style="position: absolute; left: 256px; top: 24px; color: var(--t3)">另有 9 个</div>
+        </div>
+      </section>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; line-height: 18px; color: var(--t3)"><span>本轮提到的</span><span style="padding: 1px 6px; border-radius: 4px; background: var(--l2); color: var(--t2); font-family: var(--mono)">view.py</span><span style="padding: 1px 6px; border-radius: 4px; background: var(--l2); color: var(--t2); font-family: var(--mono)">build_rows</span><span style="padding: 1px 6px; border-radius: 4px; background: var(--l2); color: var(--t2); font-family: var(--mono)">main</span></div>
+    </div>
+    <div style="height: 72px; box-sizing: border-box; padding: 10px 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 14px; line-height: 22px; color: var(--t4)">继续问这张图，或者派活给它</div>
+  </main>
+
+  <aside aria-label="DAG 面板" style="width: 894px; flex: none; display: flex; flex-direction: column; min-height: 0; box-shadow: -0.5px 0 0 var(--line); background: var(--bg)">
+
+    <header style="height: 40px; flex: none; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 0.5px 0 var(--line); font-size: 13px; line-height: 20px">
+      <strong style="font-weight: 600">DAG</strong>
+      <span style="width: 220px; height: 28px; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; border-radius: 8px; background: var(--l1); color: var(--t4); font-size: 12px; line-height: 18px">搜名字，或者问一句</span>
+      <span style="color: var(--t2)">全貌</span><span style="color: var(--t2)">待拍</span><span style="color: var(--t2)">做到哪了</span>
+      <span style="flex: 1"></span>
+      <span style="font-size: 12px; line-height: 18px; color: var(--t3)">装下全部</span>
+      <span style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t3)">− ＋</span>
+      <span style="font-size: 12px; line-height: 18px; color: var(--t3)">竖 · 自动</span>
+      <span style="font-family: var(--mono); color: var(--ok)">●</span>
+    </header>
+
+    <nav aria-label="位置" style="height: 28px; flex: none; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 6px; font-size: 12px; line-height: 18px; color: var(--t3); font-family: var(--mono)">demo-project<span style="color: var(--t4)">›</span>demo.graph<span style="color: var(--t4)">›</span><span style="color: var(--t1)">view.py</span></nav>
+
+    <section aria-label="答案区" style="flex: none; box-sizing: border-box; padding: 4px 16px 12px; display: flex; flex-direction: column; gap: 4px">
+      <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t1)">改 view.py 会波及 <strong style="font-weight: 600">11</strong> 个函数，跨 <strong style="font-weight: 600">6</strong> 个文件，最远 <strong style="font-weight: 600">4</strong> 跳到 <span style="color: var(--accent-t); font-family: var(--mono); font-size: 14px">59_graph_view._write</span>（这一跳可疑）。最该先看 <span style="color: var(--accent-t); font-family: var(--mono); font-size: 14px">52_graph_anchors.py</span> 的 main 和 <span style="color: var(--accent-t); font-family: var(--mono); font-size: 14px">summary.build_rows</span>。要跑图闸和整套测试。</p>
+    </section>
+
+    <div style="flex: none; height: 32px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 4px; box-shadow: 0 0.5px 0 var(--line), 0 -0.5px 0 var(--line); font-size: 12px; line-height: 18px">
+      <sc-for list="{{lenses}}" as="l" hint-placeholder-count="3">
+        <button type="button" onClick="{{l.pick}}" aria-pressed="{{l.pressed}}" style="height: 24px; padding: 0 8px; border: 0; border-radius: 4px; background: {{l.bg}}; color: {{l.fg}}; font-size: 12px; line-height: 18px; cursor: pointer">{{l.label}}</button>
+      </sc-for>
+      <span style="width: 0.5px; height: 16px; margin: 0 8px; background: var(--line)"></span>
+      <span style="color: var(--t2)">会被波及</span><span style="color: var(--t4); margin-left: 8px">它照着谁</span>
+      <span style="flex: 1"></span>
+      <span style="color: var(--t2)">测试 23 个在 3 个文件 · 图闸该重跑</span>
+      <button type="button" style="height: 24px; margin-left: 8px; padding: 0 8px; border: 0; border-radius: 4px; background: var(--accent-btn); color: var(--on-accent); font-size: 12px; line-height: 18px; font-weight: 500; cursor: pointer">全部跑一遍</button>
+    </div>
+
+    <div aria-label="画布" style="flex: 1; min-height: 0; overflow-y: auto; box-sizing: border-box; padding: 16px; background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0); background-size: 16px 16px">
+
+      <div style="height: 24px; display: flex; align-items: baseline; gap: 8px; font-size: 12px; line-height: 18px"><strong style="font-weight: 600; color: var(--t1)">你要改的</strong><span style="color: var(--t3)">view.py，把图节点拼成卡</span></div>
+
+      <article class="seed" aria-label="种子卡 view.py" style="width: {{seedW}}px; height: {{seedH}}px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: var(--l1); outline: 2px solid var(--t1); outline-offset: 2px; margin: 2px 0 0 2px">
+        <button type="button" onClick="{{toggle}}" aria-expanded="{{seedOpen}}" style="flex: none; display: flex; flex-direction: column; gap: 0; box-sizing: border-box; height: 92px; padding: 12px 16px; border: 0; background: transparent; color: var(--t1); text-align: left; cursor: pointer">
+          <span style="display: flex; gap: 8px; align-items: center; font-size: 11px; line-height: 16px; color: var(--t3)"><span style="padding: 0 4px; border-radius: 4px; background: var(--l3); color: var(--t2)">文件</span><span style="font-family: var(--mono)">demo/graph/view.py:1</span></span>
+          <span style="font-family: var(--mono); font-size: 13px; line-height: 20px; font-weight: 600">view.py</span>
+          <span style="font-size: 11px; line-height: 16px; color: var(--t2)">函数 9 · 类 2 · 导入我的 4</span>
+        </button>
+        <div role="tablist" aria-label="卡内的面" style="display: {{tabsDisplay}}; flex: none; height: 32px; box-sizing: border-box; padding: 0 12px; gap: 4px; align-items: center; box-shadow: 0 -0.5px 0 var(--line)">
+          <sc-for list="{{faces}}" as="f" hint-placeholder-count="5">
+            <button type="button" role="tab" aria-selected="{{f.pressed}}" onClick="{{f.pick}}" style="height: 24px; padding: 0 8px; border: 0; border-radius: 4px; background: {{f.bg}}; color: {{f.fg}}; font-size: 12px; line-height: 18px; cursor: pointer">{{f.label}}</button>
+          </sc-for>
+        </div>
+
+        <div class="fade" style="display: {{f0}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 12px 16px; gap: 24px; font-size: 12px; line-height: 20px">
+          <section style="flex: 1; min-width: 0"><h3 style="margin: 0 0 4px; font-size: 12px; line-height: 20px; font-weight: 600">提纲</h3>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; color: var(--t2); font-family: var(--mono)"><span>Card</span><span style="color: var(--t3)">45–88</span><span>build_card</span><span style="color: var(--t3)">194–219</span><span>_path_pairs</span><span style="color: var(--t3)">102–122</span></div>
+          </section>
+          <section style="flex: 1; min-width: 0"><h3 style="margin: 0 0 4px; font-size: 12px; line-height: 20px; font-weight: 600">谁依赖它</h3>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; color: var(--t2)"><span>包含我的</span><span>1</span><span>我包含的</span><span>11</span><span>导入我的</span><span>4</span><span>记录指向我的</span><span>3</span></div>
+          </section>
+          <section style="flex: 1; min-width: 0"><h3 style="margin: 0 0 4px; font-size: 12px; line-height: 20px; font-weight: 600">该跑什么</h3>
+            <p style="margin: 0; color: var(--t2)">图闸和整个测试套。直接盯着它的测试 10 个。</p>
+          </section>
+        </div>
+
+        <pre class="fade" style="display: {{f1}}; flex: 1; min-height: 0; margin: 0; box-sizing: border-box; padding: 12px 16px; font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t2); overflow: hidden; white-space: pre"><span style="color: var(--accent-t)">def</span> <span style="color: var(--t1); font-weight: 500">_path_pairs</span>(index, node) -&gt; list[tuple[str, str]]:
+    <span style="color: var(--t4)">"""层级路径上的 `(节点 id, 名字)`；连着两级同名的并成一级。"""</span>
+    parents: dict[str, str] = {}
+    <span style="color: var(--accent-t)">for</span> e <span style="color: var(--accent-t)">in</span> index.edges:
+        <span style="color: var(--accent-t)">if</span> e.kind == <span style="color: var(--ok-t)">"contains"</span>:
+            parents.setdefault(e.dst, e.src)
+    chain: list[str] = []
+    cur, seen = node.id, set()
+    <span style="color: var(--accent-t)">while</span> cur <span style="color: var(--accent-t)">in</span> parents <span style="color: var(--accent-t)">and</span> cur <span style="color: var(--accent-t)">not in</span> seen:</pre>
+
+        <div class="fade" style="display: {{f2}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 12px 16px; flex-direction: column; gap: 6px; overflow: hidden">
+          <h3 style="margin: 0; font-size: 15px; line-height: 22px; font-weight: 600">这屏要回答的问题</h3>
+          <p style="margin: 0; font-size: 13px; line-height: 22px; color: var(--t2)">指一个文件或函数，图告诉我<strong style="font-weight: 600; color: var(--t1)">改它会碰到什么</strong>、最该先看哪个、该跑哪些检查。</p>
+          <ol style="margin: 0; padding-left: 20px; font-size: 13px; line-height: 22px; color: var(--t2)"><li>改它会波及谁，多远</li><li>最该先看哪几个，为什么</li><li>哪些文字要跟着改，比如 <code style="padding: 1px 4px; border-radius: 4px; background: var(--l2); font-family: var(--mono); font-size: 12px">DAG_REBUILD_PLAN.md</code></li></ol>
+          <blockquote style="margin: 2px 0 0; padding-left: 10px; box-shadow: inset 2px 0 0 var(--line); font-size: 13px; line-height: 22px; color: var(--t3)">「先坏哪个」图算不出来，界面只写「最该先看」。</blockquote>
+        </div>
+
+        <div class="fade" style="display: {{f3}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 12px 16px; flex-direction: column; gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; font-size: 12px; line-height: 18px"><span style="flex: 1; color: var(--t1)">受波及的函数按距离</span><span style="color: var(--t3)">共 11</span></div>
+            <div role="img" aria-label="第 1 跳 5 个，第 2 到 4 跳 6 个" style="display: flex; gap: 2px; height: 12px"><span style="flex: 5; border-radius: 4px 0 0 4px; background: var(--s1)"></span><span style="flex: 6; border-radius: 0 4px 4px 0; background: var(--s2)"></span></div>
+            <div style="display: flex; gap: 16px; font-size: 12px; line-height: 18px; color: var(--t2)"><span><span aria-hidden="true" style="color: var(--s1)">■</span> 第 1 跳 5</span><span><span aria-hidden="true" style="color: var(--s2)">■</span> 第 2–4 跳 6</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; font-size: 12px; line-height: 18px"><span style="flex: 1; color: var(--t1)">要跑的测试</span><span style="color: var(--t3)">共 23，在 3 个文件</span></div>
+            <div role="img" aria-label="直接盯着的 10 个，间接的 13 个" style="display: flex; gap: 2px; height: 12px"><span style="flex: 10; border-radius: 4px 0 0 4px; background: var(--s1)"></span><span style="flex: 13; border-radius: 0 4px 4px 0; background: var(--s2)"></span></div>
+            <div style="display: flex; gap: 16px; font-size: 12px; line-height: 18px; color: var(--t2)"><span><span aria-hidden="true" style="color: var(--s1)">■</span> 直接盯着 10</span><span><span aria-hidden="true" style="color: var(--s2)">■</span> 间接 13</span></div></div>
+        </div>
+
+        <div class="fade" style="display: {{f4}}; flex: 1; min-height: 0; box-sizing: border-box; padding: 8px 16px; flex-direction: column; font-size: 12px; line-height: 18px">
+          <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 96px; column-gap: 16px; height: 32px; align-items: center; color: var(--t3); box-shadow: 0 0.5px 0 var(--line)"><span>检查</span><span>范围</span><span>状态</span></div>
+          <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 96px; column-gap: 16px; height: 36px; align-items: center; color: var(--t2); box-shadow: 0 0.5px 0 var(--line-soft)"><span style="color: var(--t1)">图闸</span><span>构建门禁、不变量、快照对账</span><span style="color: var(--warn-t)"><span style="font-family: var(--mono)">▲</span> 该重跑</span></div>
+          <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) 96px; column-gap: 16px; height: 36px; align-items: center; color: var(--t2)"><span style="color: var(--t1)">整个测试套</span><span>23 个相关测试，3 个文件</span><span style="color: var(--t3)"><span style="font-family: var(--mono)">○</span> 没跑</span></div>
+        </div>
+      </article>
+
+      <div aria-hidden="true" style="position: relative; height: 32px">
+        <div style="position: absolute; left: 104px; top: 4px; width: 1.25px; height: 12px; background: var(--t3)"></div>
+        <div style="position: absolute; left: 104px; top: 16px; width: 449px; height: 1.25px; background: var(--t3)"></div>
+        <div style="position: absolute; left: 104px; top: 16px; width: 1.25px; height: 14px; background: var(--t3)"></div>
+        <div style="position: absolute; left: 328px; top: 16px; width: 1.25px; height: 14px; background: var(--t3)"></div>
+        <div style="position: absolute; left: 552px; top: 16px; width: 1.25px; height: 14px; background: var(--t3)"></div>
+      </div>
+
+      <div style="height: 24px; display: flex; align-items: baseline; gap: 8px; font-size: 12px; line-height: 18px"><strong style="font-weight: 600; color: var(--t1)">直接用到它 · 第 1 跳</strong><span style="color: var(--t3)">改完先看它们</span><span style="flex: 1"></span><span style="color: var(--t3)">画出 5 / 共 5</span></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 208px); gap: 16px">
+        <sc-for list="{{cards}}" as="c" hint-placeholder-count="5">
+          <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="position: relative; height: 96px; box-sizing: border-box; display: flex; flex-direction: column; padding: 12px 16px; border: 0; box-shadow: 0 0 0 1px {{c.ring}}; background: var(--l1); color: var(--t1); text-align: left; cursor: pointer">
+            <span style="display: flex; gap: 6px; align-items: center; font-size: 11px; line-height: 16px; color: var(--t3)"><span style="padding: 0 4px; border-radius: 4px; background: var(--accent-bg); color: var(--accent-t); font-weight: 500">{{c.rank}}</span><span style="font-family: var(--mono)">{{c.where}}</span></span>
+            <span style="font-family: var(--mono); font-size: 13px; line-height: 20px; font-weight: 600">{{c.name}}</span>
+            <span style="font-size: 11px; line-height: 16px; color: {{c.noteFg}}">{{c.note}}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div aria-hidden="true" style="height: 24px"></div>
+      <div style="height: 24px; display: flex; align-items: baseline; gap: 8px; font-size: 12px; line-height: 18px"><strong style="font-weight: 600; color: var(--t1)">第 2–4 跳</strong><span style="color: var(--t3)">越往下越间接，最远到这里</span><span style="flex: 1"></span><span style="color: var(--t3)">共 6</span></div>
+      <div style="display: grid; grid-template-columns: repeat(3, 208px); gap: 16px">
+        <div style="height: 96px; box-sizing: border-box; padding: 12px 16px; display: flex; flex-direction: column; box-shadow: 0 0 0 1px var(--line); background: var(--l1)"><span style="font-size: 11px; line-height: 16px; color: var(--t3); font-family: var(--mono)">第 3 跳 · 到入口</span><span style="font-family: var(--mono); font-size: 13px; line-height: 20px; font-weight: 600">main</span><span style="font-size: 11px; line-height: 16px; color: var(--t2); font-family: var(--mono)">54_graph_snapshot.py</span></div>
+        <div style="height: 96px; box-sizing: border-box; padding: 12px 16px; display: flex; flex-direction: column; box-shadow: 0 0 0 1px var(--line); background: var(--l1)"><span style="font-size: 11px; line-height: 16px; color: var(--warn-t)">第 4 跳 · 可疑</span><span style="font-family: var(--mono); font-size: 13px; line-height: 20px; font-weight: 600">_write</span><span style="font-size: 11px; line-height: 16px; color: var(--t2); font-family: var(--mono)">59_graph_view.py</span></div>
+        <div style="height: 96px; box-sizing: border-box; padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 0 0 1px var(--line); background: var(--l1)"><span style="font-size: 12px; line-height: 18px; font-weight: 600">还有 4 个</span><span style="font-size: 11px; line-height: 16px; color: var(--t3)">样例未给逐条名单</span></div>
+      </div>
+    </div>
+
+    <div style="flex: none; height: 40px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; line-height: 18px; color: var(--t2); box-shadow: 0 -0.5px 0 var(--line)"><span>要复核的文字：挂上 0 · 搜到 1（DAG_REBUILD_PLAN.md）· 任务卡 0 · 要求 0</span><span style="flex: 1"></span><span style="color: var(--t3)">另有 3 份记录提到它</span></div>
+    <footer style="flex: none; height: 32px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; line-height: 18px; color: var(--t3); box-shadow: 0 -0.5px 0 var(--line)"><span>箭头 = 改了会波及到</span><span style="color: var(--accent-t)">图例 ▸</span><span style="flex: 1"></span><span>索引 13577 节点 · 20026 边</span></footer>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { open: true, face: 'docs', lens: 'impact', pick: 'main' };
+  renderVals() {
+    const { open, face, lens, pick } = this.state;
+    const tab = (on) => ({ bg: on ? 'var(--l3)' : 'transparent', fg: on ? 'var(--t1)' : 'var(--t3)', pressed: on ? 'true' : 'false' });
+    const faces = [['overview', '概览'], ['code', '代码'], ['docs', '文档'], ['chart', '图'], ['table', '材料']];
+    const lenses = [['impact', '影响面'], ['chain', '一条线'], ['rank', '名次表']];
+    const cards = [
+      ['main', '1', '52_graph_anchors.py', '到入口'],
+      ['build_rows', '2', 'summary.py', '图上没看到测试盯着'],
+      ['_cards', '3', 'service.py', '调用 build_card'],
+      ['_cards_for', '4', 'service.py', '调用或导入了它'],
+      ['build_views.pack', '5', 'service.py', '调用或导入了它']
+    ];
+    const show = (k) => (open && face === k ? 'flex' : 'none');
+    return {
+      theme: this.props.theme ?? 'dark',
+      seedW: open ? 764 : 204,
+      seedH: open ? 340 : 92,
+      seedOpen: open ? 'true' : 'false',
+      tabsDisplay: open ? 'flex' : 'none',
+      toggle: () => this.setState({ open: !open }),
+      f0: show('overview'), f1: open && face === 'code' ? 'block' : 'none', f2: show('docs'), f3: show('chart'), f4: show('table'),
+      faces: faces.map(([id, label]) => ({ label, ...tab(face === id), pick: () => this.setState({ face: id }) })),
+      lenses: lenses.map(([id, label]) => ({ label, ...tab(lens === id), pick: () => this.setState({ lens: id }) })),
+      cards: cards.map(([name, rank, where, note]) => ({
+        name, rank, where, note,
+        noteFg: name === 'build_rows' ? 'var(--warn-t)' : 'var(--t2)',
+        ring: pick === name ? 'var(--accent)' : 'var(--line)',
+        pressed: pick === name ? 'true' : 'false',
+        pick: () => this.setState({ pick: name })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

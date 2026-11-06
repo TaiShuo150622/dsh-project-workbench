@@ -1,0 +1,136 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>面板实样 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--ok:#22C55E;--warn:#F59E0B;--c1:#4F8AF2;--c2:#0FA696;--c3:#A066F0;--c4:#DE4F92}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--ok:#22C55E;--warn:#F59E0B;--c1:#2F5FCC;--c2:#008F7F;--c3:#8A4FD0;--c4:#C43E7E}
+.l{display:block;height:20px;overflow:hidden;white-space:pre}
+.key{height:20px;padding:0 4px;border:0;background:transparent;font:inherit;color:var(--t3);cursor:pointer;white-space:pre}
+.key:hover{color:var(--t1)}
+.key[aria-pressed="true"]{color:var(--t1);font-weight:700}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--ground); font-family: var(--mono)">
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex">
+    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+      <div style="display: flex; gap: 8px"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="5"><button type="button" class="key" onClick="{{t.pick}}" aria-pressed="{{t.on}}">{{t.label}}</button></sc-for><span style="flex: 1"></span><span style="color: var(--t3)">{{source}}</span></div>
+      <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+      <div style="flex: 1; min-height: 0; display: flex">
+        <div style="flex: 1; min-width: 0; overflow: hidden"><sc-for list="{{rows}}" as="r" hint-placeholder-count="34"><span class="l"><sc-for list="{{r}}" as="s" hint-placeholder-count="3"><span style="color: {{s.c}}; font-weight: {{s.w}}">{{s.t}}</span></sc-for></span></sc-for></div>
+        <aside aria-label="检查器" style="width: 300px; flex: none; padding-left: 10px; border-left: 1px solid var(--line); overflow: hidden">
+          <span class="l" style="color: var(--t1); font-weight: 700">{{ins.title}}</span><span class="l"> </span>
+          <sc-for list="{{ins.rows}}" as="k" hint-placeholder-count="4"><span class="l"><span style="color: var(--t3)">{{k.k}}  </span>{{k.v}}</span></sc-for>
+          <span class="l"> </span>
+          <span class="l" style="color: var(--t3)">标记</span>
+          <sc-for list="{{list}}" as="m" hint-placeholder-count="10"><button type="button" class="key l" onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="width: 100%; text-align: left; padding: 0"><span style="color: {{m.c}}">{{m.g}}</span> {{m.t}}</button></sc-for>
+        </aside>
+      </div>
+      <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+      <div style="display: flex; gap: 8px; align-items: center">
+        <button type="button" class="key" onClick="{{left}}">← </button><button type="button" class="key" onClick="{{up}}">↑ </button><button type="button" class="key" onClick="{{down}}">↓ </button><button type="button" class="key" onClick="{{right}}">→ {{moveHint}}</button><button type="button" class="key" onClick="{{zin}}">+ 放大</button><button type="button" class="key" onClick="{{zout}}">- 缩小</button>
+        <sc-for list="{{layers}}" as="l" hint-placeholder-count="3"><button type="button" class="key" onClick="{{l.toggle}}" aria-pressed="{{l.on}}">{{l.key}} {{l.name}}</button></sc-for>
+        <span style="flex: 1"></span><span style="color: var(--t4)">{{status}}</span>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 44px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; background: var(--term); box-shadow: 0 -0.5px 0 var(--line); color: var(--t3); font-family: var(--sans); font-size: 13px; line-height: 20px">同一份数据。终端支持 Kitty 或 Sixel 时直接显示图片，不支持就用这里的字符画，再不行退成标记列表</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  W = 118; H = 37;
+  state = { type: 'map', z: 1, ox: 0, oy: 0, sel: null, off: {}, lst: 6, yaw: 0.7, pitch: 0.42 };
+  meta = { map: ['地图', 'sites.geojson'], sky: ['天体', 'stars.csv'], plan: ['平面图', 'floor-2.dxf'], solid: ['立体', 'housing.glb'], graph: ['知识图谱', 'kb.graph.json'] };
+  sites = [['s1', '青港', 520, 300, 'wait', 12], ['s2', '石桥', 300, 240, 'ok', 2], ['s3', '南湾', 410, 560, 'ok', 3], ['s4', '云渡', 560, 470, 'wait', 9], ['s5', '北坪', 240, 420, 'run', 5], ['s6', '东岙', 380, 380, 'ok', 1]];
+  stars = [['s0', '天枢', 11.06, 61.75], ['s1', '天璇', 11.03, 56.38], ['s2', '天玑', 11.9, 53.69], ['s3', '天权', 12.26, 57.03], ['s4', '玉衡', 12.9, 55.96], ['s5', '开阳', 13.4, 54.93], ['s6', '摇光', 13.79, 49.31], ['p', '勾陈一', 2.53, 89.26], ['c0', '王良一', 0.15, 59.15], ['c1', '王良四', 0.68, 56.54], ['c2', '策', 0.95, 60.72], ['c3', '阁道三', 1.43, 60.24], ['c4', '阁道二', 1.91, 63.67]];
+  rooms = [['r1', '客厅', 0, 0, 6000, 5000, 30.0], ['r2', '厨房', 6000, 0, 3000, 3000, 9.0], ['r3', '主卧', 6000, 3000, 6000, 6000, 36.0], ['r4', '次卧', 0, 5000, 3600, 4000, 14.4], ['r5', '卫生间', 3600, 5000, 2400, 4000, 9.6], ['r6', '书房', 9000, 0, 3000, 3000, 9.0]];
+  nodes = [['n0', 'Transformer', 0], ['n1', '注意力机制', 1], ['n2', '多头注意力', 1], ['n3', '缩放点积', 1], ['n4', '位置编码', 1], ['n5', 'Attention Is All You Need', 2], ['n6', 'BERT', 0], ['n7', 'GPT-2', 0], ['n8', 'DeepSeek-V3', 0], ['n9', 'mHC', 1], ['n11', '残差连接', 1], ['n12', 'LayerNorm', 1]];
+  edges = [['n5', 'n0'], ['n0', 'n2'], ['n1', 'n2'], ['n2', 'n3'], ['n0', 'n4'], ['n0', 'n6'], ['n0', 'n7'], ['n0', 'n8'], ['n8', 'n9'], ['n0', 'n11'], ['n11', 'n12'], ['n0', 'n12'], ['n1', 'n11'], ['n4', 'n9']];
+  hash(a, b) { let h = (a * 73856093) ^ (b * 19349663); h = Math.imul(h ^ (h >>> 13), 1274126177); return (h ^ (h >>> 16)) >>> 0; }
+  blank() { const g = []; for (let y = 0; y < this.H; y++) { const r = []; for (let x = 0; x < this.W; x++) r.push({ ch: ' ', c: 'var(--t4)', w: 400 }); g.push(r); } return g; }
+  put(g, x, y, ch, c, w = 400) { const X = Math.round(x), Y = Math.round(y); if (Y >= 0 && Y < this.H && X >= 0 && X < this.W) g[Y][X] = { ch, c, w }; }
+  text(g, x, y, s, c, w = 400) { let X = Math.round(x); const Y = Math.round(y); for (const ch of s) { if (Y < 0 || Y >= this.H || X < 0 || X >= this.W - 1) return; const wide = ch.charCodeAt(0) > 0x2e80; g[Y][X] = { ch, c, w }; if (wide) { g[Y][X + 1] = { ch: '', c, w }; X += 2; } else X += 1; } }
+  line(g, a, b, c, force) {
+    const dx = b[0] - a[0], dy = b[1] - a[1], n = Math.max(1, Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)))), slope = Math.abs(dy) * 2.2 / (Math.abs(dx) + 0.01);
+    const ch = force || (slope < 0.5 ? '─' : slope > 2 ? '│' : dx * dy > 0 ? '╲' : '╱');
+    for (let i = 0; i <= n; i++) this.put(g, a[0] + dx * i / n, a[1] + dy * i / n, ch, c);
+  }
+  poly(g, pts, c, close, force) { for (let i = 0; i < pts.length - 1; i++) this.line(g, pts[i], pts[i + 1], c, force); if (close) this.line(g, pts[pts.length - 1], pts[0], c, force); }
+  coast(ox, oy, R, seed, n) { const o = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, r = R * (0.72 + (this.hash(i, seed) % 100) / 100 * 0.32); o.push([ox + Math.cos(a) * r, oy + Math.sin(a) * r * 1.18]); } return o; }
+  sky(ra, dec, lst) { const a = (ra - lst) / 12 * Math.PI, r = (90 - dec); return [Math.sin(a) * r, -Math.cos(a) * r]; }
+  look(s) { return { ok: ['●', 'var(--ok)'], wait: ['▲', 'var(--warn)'], run: ['◐', 'var(--accent)'] }[s]; }
+  proj3(p) { const { yaw, pitch, z } = this.state, [x, y, w] = p, cx = Math.cos(yaw), sx = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch), x1 = x * cx - w * sx, z1 = x * sx + w * cx, y1 = y * cp - z1 * sp, z2 = y * sp + z1 * cp, f = 640 / (640 + z2); return [this.W / 2 + x1 * f * z * 0.42, this.H / 2 + y1 * f * z * 0.2]; }
+  draw() {
+    const { type, z, ox, oy, sel, off, lst } = this.state, g = this.blank(), on = (k) => !off[`${type}.${k}`], W = this.W, H = this.H;
+    let list = [], ins = { title: '没有选中', rows: [{ k: '提示', v: '点右边的标记' }] };
+    if (type === 'map') {
+      const T = (x, y) => [(x - 372) * 0.15 * z + W / 2 + ox, (y - 394) * 0.075 * z + H / 2 + oy];
+      if (on('road')) { [[[240, 420], [300, 240], [520, 300], [560, 470], [410, 560], [240, 420]]].forEach((r) => this.poly(g, r.map((q) => T(...q)), 'var(--t4)', false, '·')); }
+      this.poly(g, this.coast(390, 390, 230, 3, 44).map((q) => T(...q)), 'var(--t3)', true);
+      this.poly(g, [[300, 140], [330, 260], [380, 380], [350, 500], [370, 640]].map((q) => T(...q)), 'var(--c1)', false, '~');
+      this.sites.forEach(([id, t, x, y, s]) => { const q = T(x, y), [gl, c] = this.look(s); this.put(g, q[0], q[1], gl, c, 700); this.text(g, q[0] + 2, q[1], t, sel === id ? 'var(--accent)' : 'var(--t1)', sel === id ? 700 : 400); });
+      list = this.sites.map(([id, t, , , s]) => { const [gl, c] = this.look(s); return { id, t, g: gl, c }; });
+      const s = this.sites.find((q) => q[0] === sel);
+      if (s) ins = { title: s[1], rows: [{ k: '本周异常', v: `${s[5]} 次` }, { k: '状态', v: { ok: '正常', wait: '有异常', run: '巡检中' }[s[4]] }] };
+    } else if (type === 'sky') {
+      const T = (x, y) => [x * 0.9 * z + W / 2 + ox, y * 0.42 * z + H / 2 + oy];
+      for (let i = 0; i < 160; i++) { const q = T(...this.sky((this.hash(i, 5) % 2400) / 100, 42 + (this.hash(i, 9) % 4800) / 100, lst)); this.put(g, q[0], q[1], i % 9 ? '·' : '∗', i % 9 ? 'var(--t4)' : 'var(--t2)'); }
+      const S = Object.fromEntries(this.stars.map(([id, , ra, dec]) => [id, T(...this.sky(ra, dec, lst))]));
+      if (on('lines')) { this.poly(g, ['s0', 's1', 's2', 's3', 's0'].map((k) => S[k]), 'var(--c1)'); this.poly(g, ['s3', 's4', 's5', 's6'].map((k) => S[k]), 'var(--c1)'); this.poly(g, ['c0', 'c1', 'c2', 'c3', 'c4'].map((k) => S[k]), 'var(--c1)'); }
+      this.stars.forEach(([id, t]) => { const q = S[id]; this.put(g, q[0], q[1], '✦', 'var(--t1)', 700); if (on('names')) this.text(g, q[0] + 2, q[1], t, sel === id ? 'var(--accent)' : 'var(--t2)'); });
+      list = this.stars.slice(0, 9).map(([id, t]) => ({ id, t, g: '✦', c: 'var(--t2)' }));
+      const s = this.stars.find((q) => q[0] === sel);
+      if (s) ins = { title: s[1], rows: [{ k: '赤经', v: `${s[2].toFixed(2)}h` }, { k: '赤纬', v: `+${s[3].toFixed(2)}°` }] };
+    } else if (type === 'plan') {
+      const T = (x, y) => [(x - 6000) * 0.0072 * z + W / 2 + ox, (y - 4500) * 0.0032 * z + H / 2 + oy];
+      this.rooms.forEach(([id, t, x, y, w, h]) => { const a = T(x, y), b = T(x + w, y + h), hit = sel === id; this.poly(g, [a, [b[0], a[1]], b, [a[0], b[1]]], hit ? 'var(--accent)' : 'var(--t1)', true); [[a[0], a[1], '┌'], [b[0], a[1], '┐'], [a[0], b[1], '└'], [b[0], b[1], '┘']].forEach(([cx, cy, ch]) => this.put(g, cx, cy, ch, hit ? 'var(--accent)' : 'var(--t1)')); this.text(g, (a[0] + b[0]) / 2 - 2, (a[1] + b[1]) / 2, t, hit ? 'var(--accent)' : 'var(--t2)'); });
+      list = this.rooms.map(([id, t, , , , , area]) => ({ id, t: `${t}  ${area} m²`, g: '▫', c: 'var(--t3)' }));
+      const r = this.rooms.find((q) => q[0] === sel);
+      if (r) ins = { title: r[1], rows: [{ k: '面积', v: `${r[6]} m²` }, { k: '开间', v: `${r[4]} mm` }, { k: '进深', v: `${r[5]} mm` }] };
+    } else if (type === 'solid') {
+      const box = (x0, x1, y0, y1, z0, z1) => { const v = [[x0, y0, z0], [x1, y0, z0], [x1, y1, z0], [x0, y1, z0], [x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1]]; return [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]].map(([a, b]) => [v[a], v[b]]); };
+      const seg = (l, c) => l.forEach(([a, b]) => this.line(g, this.proj3(a), this.proj3(b), c));
+      if (on('shell')) seg(box(-100, 100, -60, 60, -80, 80), sel === 'shell' ? 'var(--accent)' : 'var(--t3)');
+      if (on('inner')) { const c = []; for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, b = (i + 1) / 16 * Math.PI * 2; c.push([[Math.cos(a) * 62, -44, Math.sin(a) * 62], [Math.cos(b) * 62, -44, Math.sin(b) * 62]], [[Math.cos(a) * 62, 44, Math.sin(a) * 62], [Math.cos(b) * 62, 44, Math.sin(b) * 62]]); } seg(c, sel === 'inner' ? 'var(--accent)' : 'var(--c2)'); }
+      if (on('stand')) [[-90, -70, -70, -50], [70, 90, -70, -50], [-90, -70, 50, 70], [70, 90, 50, 70]].forEach(([a, b, c, d]) => seg(box(a, b, 60, 96, c, d), sel === 'stand' ? 'var(--accent)' : 'var(--t2)'));
+      list = [['shell', '外壳'], ['inner', '内胆'], ['stand', '支架']].map(([id, t]) => ({ id, t, g: '◇', c: 'var(--t3)' }));
+      ins = { shell: { title: '外壳', rows: [{ k: '材料', v: 'ABS' }, { k: '壁厚', v: '2.5 mm' }] }, inner: { title: '内胆', rows: [{ k: '材料', v: '304 不锈钢' }, { k: '间隙', v: '6 mm，低于 8 mm' }] }, stand: { title: '支架', rows: [{ k: '数量', v: '4 个' }] } }[sel] || ins;
+    } else {
+      const N = Object.fromEntries(this.nodes.map((n) => [n[0], n])), cur = N[sel] ? sel : 'n0', cc = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)'], gl = ['●', '◆', '■', '▲'];
+      this.text(g, 4, 2, `${gl[N[cur][2]]} ${N[cur][1]}`, 'var(--accent)', 700);
+      const nb = this.edges.filter((e) => e.includes(cur)).map((e) => (e[0] === cur ? e[1] : e[0])).filter((id) => N[id]);
+      nb.forEach((id, i) => { const last = i === nb.length - 1, y = 3 + i * 2 - 0; this.text(g, 4, y + 0, last ? '└─' : '├─', 'var(--t4)'); this.text(g, 8, y, gl[N[id][2]], cc[N[id][2]]); this.text(g, 10, y, N[id][1], 'var(--t1)'); const sub = this.edges.filter((e) => e.includes(id) && !e.includes(cur)).map((e) => (e[0] === id ? e[1] : e[0])).filter((k) => N[k]).map((k) => N[k][1]).slice(0, 3); if (!last) this.text(g, 4, y + 1, '│', 'var(--t4)'); if (sub.length) this.text(g, 8, y + 1, sub.join(' · '), 'var(--t4)'); });
+      list = this.nodes.slice(0, 11).map(([id, t, c]) => ({ id, t, g: gl[c], c: cc[c] }));
+      ins = { title: N[cur][1], rows: [{ k: '相连', v: `${nb.length} 条` }, { k: '说明', v: '终端用邻接树' }] };
+    }
+    return { g, list, ins };
+  }
+  renderVals() {
+    const { type, z, sel, off } = this.state, { g, list, ins } = this.draw();
+    const rows = g.map((r) => { const segs = []; let cur = null; r.forEach((c) => { if (c.ch === '') return; if (cur && cur.c === c.c && cur.w === c.w) cur.t += c.ch; else { cur = { t: c.ch, c: c.c, w: c.w }; segs.push(cur); } }); return segs; });
+    const layerDefs = { map: [['road', 'r', '道路']], sky: [['lines', 'l', '星座线'], ['names', 'n', '星名']], plan: [], solid: [['shell', 's', '外壳'], ['inner', 'i', '内胆'], ['stand', 't', '支架']], graph: [] }[type];
+    const mv = (x, y) => () => this.setState((s) => (s.type === 'solid' ? { yaw: s.yaw + x * 0.08, pitch: s.pitch + y * 0.08 } : s.type === 'sky' ? { lst: (s.lst + x * 0.25 + 24) % 24 } : { ox: s.ox - x * 4, oy: s.oy - y * 2 }));
+    return {
+      theme: this.props.theme ?? 'dark', rows, ins, source: `${this.meta[type][1]}  ${Math.round(z * 100)}%`, status: type === 'graph' ? '按选中节点展开两层' : '12 帧，只在画面变化时重绘',
+      tabs: Object.keys(this.meta).map((k, i) => ({ label: `${i + 1} ${this.meta[k][0]}`, on: k === type ? 'true' : 'false', pick: () => this.setState({ type: k, sel: null, ox: 0, oy: 0, z: 1 }) })),
+      list: list.map((m) => ({ ...m, on: sel === m.id ? 'true' : 'false', pick: () => this.setState((s) => ({ sel: s.sel === m.id ? null : m.id })) })),
+      layers: layerDefs.map(([k, key, name]) => ({ key, name, on: off[`${type}.${k}`] ? 'false' : 'true', toggle: () => this.setState((s) => ({ off: { ...s.off, [`${type}.${k}`]: !s.off[`${type}.${k}`] } })) })),
+      moveHint: type === 'solid' ? '旋转' : type === 'sky' ? '转动星空' : '平移', left: mv(-1, 0), right: mv(1, 0), up: mv(0, -1), down: mv(0, 1),
+      zin: () => this.setState((s) => ({ z: Math.min(4, s.z * 1.25) })), zout: () => this.setState((s) => ({ z: Math.max(0.5, s.z * 0.8) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

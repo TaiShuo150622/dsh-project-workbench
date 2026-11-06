@@ -1,0 +1,131 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>实时弹出 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-2:#ABC2EC;--ok:#22C55E;--warn:#F59E0B;--err:#F25A5A;--s1:#4F8AF2}
+.dsh[data-theme="light"]{--bg:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-2:#2F5FCC;--ok:#22C55E;--warn:#F59E0B;--err:#EC1313;--s1:#2F5FCC}
+.lines{display:flex;flex-direction:column;min-width:0}
+.ev{height:30px;padding:0 10px;border:0;border-radius:8px;font-family:var(--sans);font-size:13px;line-height:20px;cursor:pointer}
+.tab{height:20px;padding:0 6px;border:0;background:transparent;font:inherit;cursor:pointer}
+.in{animation:in .25s steps(3)}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.in{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 24px 40px 32px; display: flex; flex-direction: column; gap: 12px; background: var(--bg); font-family: var(--mono)">
+
+  <div style="display: flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 13px; line-height: 20px; color: var(--t2)">
+    <span>模拟一件事</span>
+    <sc-for list="{{events}}" as="e" hint-placeholder-count="4"><button type="button" class="ev" onClick="{{e.pick}}" aria-pressed="{{e.pressed}}" style="background: {{e.bg}}; color: {{e.fg}}">{{e.label}}</button></sc-for>
+    <span style="flex: 1"></span>
+    <span>终端宽度</span>
+    <sc-for list="{{widths}}" as="w" hint-placeholder-count="2"><button type="button" class="ev" onClick="{{w.pick}}" aria-pressed="{{w.pressed}}" style="background: {{w.bg}}; color: {{w.fg}}">{{w.label}}</button></sc-for>
+  </div>
+
+  <div style="position: relative; flex: 1; min-height: 0; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="flex: 1; min-height: 0; display: flex">
+      <div class="lines" style="flex: 1; padding-right: 16px">
+        <div style="display: flex; gap: 16px"><span style="color: var(--accent-t); font-weight: 700">dsh</span><span style="color: var(--t1); font-weight: 700">审批卡状态统一</span><span style="flex: 1"></span><span style="color: var(--t3)">feat/approval-card</span></div>
+        <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+        <div style="padding: 0 8px; background: var(--l1); color: var(--t1); white-space: pre-wrap"><span style="color: var(--accent-t); font-weight: 700">❯</span> 把两种方案写成对比，同时把文档站构建起来。</div>
+        <div> </div>
+        <div style="color: var(--t1)">我一边写一边放在侧栏，你可以继续聊。</div>
+        <div> </div>
+        <div><span style="color: var(--ok)">●</span> 读取 <span style="color: var(--t1)">RiskConfirmation.tsx</span></div>
+        <div><span style="color: var(--accent)">{{spin}}</span> 写入 <span style="color: var(--t1)">方案对比.md</span> <span style="color: var(--t4)">在侧栏实时看</span></div>
+        <div style="flex: 1"></div>
+        <div class="in" style="display: {{toastShow}}; align-self: flex-start; margin-bottom: 8px; padding: 0 8px; background: var(--l1); color: var(--t2)"><span style="color: {{toastTone}}">{{toastGlyph}}</span> {{toastText}}  <span style="color: var(--t4)">{{toastKey}}</span></div>
+        <div style="padding: 0 8px; background: var(--l1); color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh</span> <span style="background: var(--t1); color: var(--term)"> </span> 焦点还在这里，弹出来也能接着打字</div>
+      </div>
+
+      <aside class="lines" aria-label="侧栏" style="display: {{sideShow}}; width: 480px; flex: none; padding-left: 12px; border-left: 1px solid var(--line)">
+        <div style="display: flex; gap: 2px"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="5"><span class="tab" style="color: {{t.fg}}; background: {{t.bg}}; font-weight: {{t.w}}">{{t.label}}</span></sc-for><span style="flex: 1"></span><span style="color: var(--t4)">⤢</span></div>
+        <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+        <div style="display: flex; gap: 8px"><span style="color: {{liveTone}}">{{liveGlyph}}</span><span style="flex: 1; color: var(--t1); font-weight: 700">{{title}}</span><span style="color: var(--t4)">{{liveText}}</span></div>
+        <div> </div>
+        <div class="lines" style="flex: 1; min-height: 0; overflow: hidden"><sc-for list="{{body}}" as="l" hint-placeholder-count="10"><div class="in" style="color: {{l.c}}; font-weight: {{l.w}}; text-decoration: {{l.u}}; white-space: pre-wrap">{{l.t}}</div></sc-for></div>
+        <div style="color: var(--t4)">Ctrl+B 回对话  Alt+Z 放大  q 关掉这一项</div>
+      </aside>
+    </div>
+
+    <div style="display: {{overlayShow}}; position: absolute; inset: 24px 48px; box-sizing: border-box; flex-direction: column; padding: 8px 12px; background: var(--term); border: 1px solid var(--t3)">
+      <div style="display: flex; gap: 8px"><span style="color: {{liveTone}}">{{liveGlyph}}</span><span style="flex: 1; color: var(--t1); font-weight: 700">{{title}}</span><span style="color: var(--t4)">{{liveText}}</span></div>
+      <div> </div>
+      <div class="lines" style="flex: 1; min-height: 0; overflow: hidden"><sc-for list="{{body}}" as="l" hint-placeholder-count="10"><div style="color: {{l.c}}; font-weight: {{l.w}}; text-decoration: {{l.u}}; white-space: pre-wrap">{{l.t}}</div></sc-for></div>
+      <div style="color: var(--t4)">窄终端放不下侧栏：整屏盖住，Esc 回对话，内容不丢</div>
+    </div>
+  </div>
+
+  <p style="margin: 0; font-family: var(--sans); font-size: 13px; line-height: 20px; color: var(--t2)">不进对话记录，不抢键盘焦点。文档、任务输出、图表进侧栏新加的“实时”面板；一句话的事只出提示。关掉后还能在面板里找回。</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { kind: 'doc', narrow: false, n: 3, f: 0 };
+  frames = ['◐', '◓', '◑', '◒'];
+  feeds = {
+    doc: {
+      title: '方案对比.md', count: 10,
+      lines: [['方案对比', 'var(--accent-t)', 700, 'underline'], [' '], ['图标方案', 'var(--accent-2)', 700], ['桌面端好看，16 色终端里分不清。'], [' '], ['字符方案', 'var(--accent-2)', 700], ['两端一致，少于 256 色也能认。'], [' '], ['建议', 'var(--t1)', 700], ['用字符方案，桌面端再加图形。']]
+    },
+    job: {
+      title: '构建文档站', count: 10,
+      lines: [['$ pnpm docs:build', 'var(--t3)'], ['解析配置'], ['读取 212 个页面'], ['生成侧边导航'], ['渲染 40 / 212'], ['渲染 120 / 212'], ['渲染 212 / 212'], ['压缩资源'], ['写入 dist/'], ['完成，用时 41 秒', 'var(--ok)']]
+    },
+    chart: {
+      title: '测试耗时', count: 8,
+      lines: [['最近八次，秒', 'var(--t3)'], ['周一  ██████████████ 42', 'var(--s1)'], ['周二  █████████████ 39', 'var(--s1)'], ['周三  ██████████████ 41', 'var(--s1)'], ['周四  ███████████ 33', 'var(--s1)'], ['周五  ██████████ 31', 'var(--s1)'], ['周六  █████████ 28', 'var(--s1)'], ['今天  ████████ 25', 'var(--s1)']]
+    }
+  };
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still) { this.setState({ n: 99 }); return; }
+    this.timer = setInterval(() => {
+      if (document.hidden) return;
+      const { n, f } = this.state;
+      this.tick = (this.tick || 0) + 1;
+      this.setState({ f: (f + 1) % 4, n: this.tick % 3 === 0 ? n + 1 : n });
+    }, 166);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const { kind, narrow, n, f } = this.state;
+    const seg = (on) => ({ bg: on ? 'var(--l3)' : 'var(--l1)', fg: on ? 'var(--t1)' : 'var(--t2)', pressed: on ? 'true' : 'false' });
+    const events = [['doc', '模型在写文档'], ['job', '后台任务有输出'], ['chart', '结果是一张图'], ['note', '只是一句提醒']];
+    const feed = this.feeds[kind];
+    const live = feed && n < feed.count;
+    const body = feed ? feed.lines.slice(0, n).map(([t, c = 'var(--t2)', w = 400, u = 'none']) => ({ t, c, w, u })) : [];
+    const toast = kind === 'note'
+      ? { g: '●', c: 'var(--ok)', t: 'PR #128 的 CI 通过了', k: '不用处理' }
+      : narrow ? null : { g: this.frames[f], c: 'var(--accent)', t: `${feed.title} 在侧栏更新`, k: 'Ctrl+B 看' };
+    const tabs = [['目标'], ['任务'], ['智能体'], ['实时', true], ['工作区']];
+    return {
+      theme: this.props.theme ?? 'dark',
+      spin: this.frames[f],
+      events: events.map(([id, label]) => ({ label, ...seg(kind === id), pick: () => this.setState({ kind: id, n: 0 }) })),
+      widths: [[false, '宽，≥ 97 列'], [true, '窄，80 列']].map(([v, label]) => ({ label, ...seg(narrow === v), pick: () => this.setState({ narrow: v }) })),
+      tabs: tabs.map(([label, on]) => ({ label, fg: on ? 'var(--t1)' : 'var(--t3)', bg: on ? 'var(--l3)' : 'transparent', w: on ? 700 : 400 })),
+      title: feed ? feed.title : '', body,
+      liveGlyph: live ? this.frames[f] : '●', liveTone: live ? 'var(--accent)' : 'var(--ok)', liveText: live ? '实时更新中' : '已完成',
+      sideShow: feed && !narrow ? 'flex' : 'none',
+      overlayShow: feed && narrow ? 'flex' : 'none',
+      toastShow: toast ? 'block' : 'none',
+      toastGlyph: toast ? toast.g : '', toastTone: toast ? toast.c : 'var(--t3)', toastText: toast ? toast.t : '', toastKey: toast ? toast.k : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

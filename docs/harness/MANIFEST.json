@@ -1,0 +1,1735 @@
+{
+  "collection_date": "2026-11-06",
+  "scope": "个人 Harness 相关讨论稿、公开整理版及关联设计附件",
+  "notice": "文件哈希对应本次公开副本。索引不代表功能已实现；历史测试未因收录而重新验证。",
+  "files": [
+    {
+      "path": "docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "title": "DSH 项目工作台：后端建议与实施时间计划（评审稿）",
+      "topic": "项目工作台",
+      "source_version": "第四版 / 2026-11-01",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766"
+    },
+    {
+      "path": "docs/handoff/ui-backend/BOARD.md",
+      "title": "看板",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "105a7de5379ac8f018e967c1b3e1a1adfcf0ed90e9f2a9b388ce41c8d3df77ce"
+    },
+    {
+      "path": "docs/handoff/ui-backend/CONTRACT.md",
+      "title": "接口契约",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b"
+    },
+    {
+      "path": "docs/handoff/ui-backend/OPEN-SOURCE-RESEARCH-DRAFT.md",
+      "title": "DSH 工作台：开源项目调研与选型讨论稿",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "086e7ed9736663bc53e094d060b68e08a6350f2fb1e75b4969a297c99e8d07a0"
+    },
+    {
+      "path": "docs/handoff/ui-backend/PROMPT.md",
+      "title": "给 Codex 的开工提示词",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "fd0a7550df0110d40545e6df04eb5614e3bab5e676206c363685184185d54a24"
+    },
+    {
+      "path": "docs/handoff/ui-backend/README.md",
+      "title": "DSH 统一组件库 · 后端任务包",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "78d3642a9c86af1ca5b877041e7cfc9ee523692d8553a0c0ba75c4ecbce778cd"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Agent.dc.html",
+      "title": "Agent 组件",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "bb11c95599a122da6e015294cc834d577c0477538b59e9f3c3ea15a6a7dd4c20"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Build.dc.html",
+      "title": "构建动效",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c20d292b77dcaf03354dfe9790a4a5c0e35f418708e94e7c7ede7b8a0df82001"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Charts.dc.html",
+      "title": "图表",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "837767277f19aeae7a56d4c9a8c2890bb68d1a1bc5a3a2c8b4a794ae53b98967"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/ChartsMore.dc.html",
+      "title": "更多图表",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "db0d567d4e462f7a266fea835e561fabaafa3e92f8996a64a5961119becaf79d"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Content.dc.html",
+      "title": "Markdown 与富文本",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f2d8b8fb0884acbafd49894e5614eb6ccd34df622491896c5d5ca57b0abac698"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/DagDesktop.dc.html",
+      "title": "DAG 面板 · 桌面端",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "33ca05bb29ec91d37cfc329e9a82c2e38424aca833cf7b91c4114dacfcbfd1a3"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/DagParts.dc.html",
+      "title": "DAG 组件",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a83940ba80284ba43bbbf38166451f8752363532cbd2b98d9e29b23035717b93"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/DagTui.dc.html",
+      "title": "DAG 面板 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "47a0cb3d511b323aca974d6c726cd88e6a0599c8a67368d322a62fd40db50de7"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/DesktopScreen.dc.html",
+      "title": "桌面端成屏",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "72f9211d8859c7a333f568202e4f9867afd1c002b25bd227c7d76db6f288ea2d"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Foundations.dc.html",
+      "title": "基础映射",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "66df2892aac3285028983067e56152c7d16ce94436b358fb00ef10d0eb7f4631"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Main.dc.html",
+      "title": "DSH 组件库总览",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1451ceb064794986239e64ed655e0640fdacb9f68c5c8ddfe216a46f94d58099"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Motion.dc.html",
+      "title": "动作语法",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c48aad932a0da553bc7ff03d8b2abbc038796a8d5fbe263095102e58d25d66aa"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/MotionUi.dc.html",
+      "title": "界面动效",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1baea3ab4f2e0892c97f83b8011c7c7e0dec450e332a2dda04a28d062866e3d1"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/PeekTui.dc.html",
+      "title": "实时弹出 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "66c47435e70b1b79406c91bae3b22f068f7d158637fb5dd73c36fb737c2c3e30"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Primitives.dc.html",
+      "title": "基础组件",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a7774a9b8e2a9099ad0b61459d8baa08e308d8577d10d483abe069ca45c619ec"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/README.md",
+      "title": "设计稿导出",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "8e62c2dc1e0cee2bad7ed9eead56314d9504ba213828f0d0cb32883470812021"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SessionDock.dc.html",
+      "title": "大会话缩进右栏",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "e7a9087369ea6096e13d99d6c3f77633faf33a4c3f5479b7cba2d3dacae58b3b"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SessionDockTui.dc.html",
+      "title": "大会话缩进右栏 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5634e9b55eb8efe6471a35ba705ae85ff7c393fb91b106377d1c60eaecf59aff"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SessionMap.dc.html",
+      "title": "会话地图 · 桌面端",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7b38698a9904988b9a5820e87338cc9639704af9a23092cd37bee82d24f2c323"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SessionMapHow.dc.html",
+      "title": "怎么做出来",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "cacb35e3a4f6cda74c945394bf9cd753a33ae31e56fc043732b358ccbdefe2d8"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SessionMapTui.dc.html",
+      "title": "会话地图 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5c810b92fa02aa49a3bdf45cd758beea50186b564e9d9f3551f4e804c812ced2"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SplitDesktop.dc.html",
+      "title": "会话分屏 · 桌面端",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "255402cc835e46fe05fa09153f48f365303e4c7c04e704fff50ab3136c673928"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/SplitTui.dc.html",
+      "title": "会话分屏 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "583294d3dac096c80229614043fc8dc4c8108e8ac1c8ab951f130a3c7039356e"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/TuiScreen.dc.html",
+      "title": "TUI 成屏",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5328a78542ad724445f5f57a8dbd97ae5d93891b0c17e6897a496bd57da59464"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/TuiTheme.dc.html",
+      "title": "冷灰主题",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "79a90ee53066edce28d6042e34fce404e5ed62b44159fe62960dfad2117e6d6c"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/Workbench.dc.html",
+      "title": "工作台 · 桌面端",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "55061f9a66e808cc173784b59da723c1653eb55db461c7c50ff45f68f6e6a710"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/WorkbenchTui.dc.html",
+      "title": "工作台 · TUI",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a0cd1f0f2c89b14faf162a977e37928ce75dd6d4cd65995dfc3bd5f9cae3e030"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/WorkflowGantt.dc.html",
+      "title": "工作流收成甘特图",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "266da316714a804fea8a5a493da647c61689253bc31219e1cdcd9dac1883555f"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/canvas.json",
+      "title": "canvas.json",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "12fb6a0f1aa18fe52b454d6517fcd6c4df390bf8a78c4c7548d12c562c83d0db"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/themes/dsh-cool-dark.json",
+      "title": "dsh-cool-dark.json",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "27c5d4ded07bdc0c613a3830a433a800c309cd1fc6f07e0118c45b8583040b0a"
+    },
+    {
+      "path": "docs/handoff/ui-backend/design/themes/dsh-cool-light.json",
+      "title": "dsh-cool-light.json",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1bc063ca1367178bc100b9e5205487604683bc76c7fb9da2ee79a3d1197649b1"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-01-phase-history.md",
+      "title": "B-01-phase-history",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c9515d8681c1bbc3d133fbf699dab6fb34a441dd85cbb46a77b04c9884b12922"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-02-display-status.md",
+      "title": "B-02-display-status",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "879d637001049b366d8d3c7ae1f8119b1e9295e042f47c8252b104009b6f72b0"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-03-overview.md",
+      "title": "B-03-overview",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5fdf4144e7b7dcd49d5d85014848bfaafc8a913ff64d8e60db1e595a36d981fc"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-04-library.md",
+      "title": "B-04-library",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "0782c4da13c9323b9ad821594a3ca7bb4738266721d2489fa57e7de70bbf1745"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-05-project-goal.md",
+      "title": "B-05-project-goal",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "e50fae892567e5c172760b690127a71b813cf0bcdac272db9af08841f212a6b8"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-06-session-map.md",
+      "title": "B-06-session-map",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7b3d0d4f5653e6a100e207ba93ea8686eaec49d2b8f774407ba46fce9810891d"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-07-thread-card.md",
+      "title": "B-07-thread-card",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7a6a504ca93359d11279b62edc3553ddd130dcc212e50661f0ffd3540232c762"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-08-timeline.md",
+      "title": "B-08-timeline",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "bc3910cd9c306c6681020d728ce67a96813c37e7fa88ee3abcdb01c54a10d405"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-09-live-feed.md",
+      "title": "B-09-live-feed",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "0afe362853852085a693f7d20cafd6b6ff1b4016098e4477fcfefce7e9c1a4da"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-10-layout-state.md",
+      "title": "B-10-layout-state",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "91eb43dcf4acf4c118975aa21514e1f574c5d004daf65c2b5c54f0902f44fb93"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-11-tui-panels.md",
+      "title": "B-11-tui-panels",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "3d351e3e86172d67477b3153168b31fa72de2a7cf31c7bed56b84960d3a116de"
+    },
+    {
+      "path": "docs/handoff/ui-backend/tasks/B-12-integration.md",
+      "title": "B-12-integration",
+      "topic": "项目工作台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f1aa707f1903e83326ec9921da03fc8e6d0d4ff9efc3437575ea73417414410b"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-deep-research-and-resources.md",
+      "title": "Harness 开源深研与本机资源研究",
+      "topic": "开源机制与资源研究",
+      "source_version": "2026-10-27",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "b668e91ffe8849d80f1567e24e5cda4043571a3c3c28aa0448df284b557095d8"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.1.md",
+      "title": "信息驱动的决策与工作流演化 Harness",
+      "topic": "信息到动作与工作流演化",
+      "source_version": "0.1",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a05e63afe1e488d8ebb51d79e9ab90e81c3eb6c1816cd85edf2e974e67222cbd"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.2.md",
+      "title": "信息驱动的决策与工作流演化 Harness",
+      "topic": "信息到动作与工作流演化",
+      "source_version": "0.2",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d0193c304797b47137109029d5e9f53439bdc82e2c3b1668bdf1ff3a021cac10"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.3.md",
+      "title": "信息驱动的决策与工作流演化 Harness · 调研与讨论稿 v0.3",
+      "topic": "信息到动作与工作流演化",
+      "source_version": "0.3",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "673e7c5f272d4209cb7332d89e746f56c70c4ebd92a712dfef7385edc74b3ec1"
+    },
+    {
+      "path": "docs/harness/01-vision/ten-agent-repositories-harness-review.md",
+      "title": "十个 Agent 仓库核查与 Harness 借鉴分析",
+      "topic": "十仓框架核查",
+      "source_version": "0.1",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9c4756293cfb18095d60875373e11d9e9c063bf073a73c95c91b92b3de79e129"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "title": "Agent 框架 H0 轮任务书",
+      "topic": "H0 方法与记录闭环",
+      "source_version": "未编号",
+      "kind": "历史实施计划（未据此确认完成）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "title": "Agent 框架下一轮开发设计稿",
+      "topic": "H0 方法与记录闭环",
+      "source_version": "v1",
+      "kind": "历史实施计划（未据此确认完成）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "fe0554a572cb807fae2fd711b1c5466ac346198ebf362baf90319ce88e77922d"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-大型软件架构讨论与待续.md",
+      "title": "大型软件架构怎么设计（讨论记录）",
+      "topic": "架构讨论起点",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c6f9c381b3affbf17377b2e9a0fc4d1f17e5bf4e44c7c283564d690d415b4b67"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "title": "Agent 与 Workflow 讨论稿 v0.1.0",
+      "topic": "Workflow 与可验证改进",
+      "source_version": "0.1.0",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "cce4c41da7d1baae4db15d16c04b2ff4eb40404bf443019a8293e1abae21ca0d"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "title": "从修正模式到前置提问：Agent 主动性与提问边界讨论稿 v0.1.1",
+      "topic": "主动性与提问边界",
+      "source_version": "0.1.1",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1c0618747f40732104f71f59579bfeec8a83f461428867e74f95a39739734098"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "title": "Agent 工具面设计讨论稿 v0.1.0",
+      "topic": "工具目录与任务投影",
+      "source_version": "0.1.0",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "63f59f0d7c347a09bf9f6ed254cfdd83c915bc04c51a7840073666f8e9ca57f6"
+    },
+    {
+      "path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.5.md",
+      "title": "Harness 底座架构重评讨论稿 v0.1.5",
+      "topic": "底座、长期任务与资源治理",
+      "source_version": "0.1.5",
+      "kind": "历史公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "777577d9398901fff163a123d6e4ac97e86025e90afcf4dc10ce3cbf0b797c16"
+    },
+    {
+      "path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "title": "Harness 底座架构重评讨论稿 v0.1.6",
+      "topic": "底座、长期任务与资源治理",
+      "source_version": "0.1.6",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b"
+    },
+    {
+      "path": "docs/harness/03-runtime/history/AI编码Harness主干设计-源v0.1-公开整理版.md",
+      "title": "AI 编码 Harness 主干设计 · 调研与讨论稿 v0.1",
+      "topic": "harness-history",
+      "source_version": "0.1",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "32444b31a8591abb24f1b47d7705c3950681eb04634462863d61097cc665f7ba"
+    },
+    {
+      "path": "docs/harness/03-runtime/history/AI编码Harness主干设计-源文件v0.1.2-公开整理版.md",
+      "title": "AI 编码 Harness 主干设计 · 调研与讨论稿 v0.1.1",
+      "topic": "harness-history",
+      "source_version": "正文0.1.1；源文件0.1.2",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "41e97cef0d16999a435dd89027a34d16c8838a57d57566d4c96948581e9e03d7"
+    },
+    {
+      "path": "docs/harness/03-runtime/history/DSH插件开发复盘与AICoding流程-公开整理版.md",
+      "title": "DeepSeek Harness 插件开发复盘与 AI Coding 流程",
+      "topic": "harness-history",
+      "source_version": "未标版本；2026-10-19文件快照",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "02f025132fd9c26dd27e9648e780cfc7a526e7f42639feac3d76be2fce7d6b14"
+    },
+    {
+      "path": "docs/harness/04-memory/DeepSeek-SuperAgent原文与记录机制核查-2026-10-31-公开整理版.md",
+      "title": "Super agent 原文与记录机制核查",
+      "topic": "record-memory",
+      "source_version": "研究笔记；2026-10-31",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "b8b14111cea1e35538f706c4629b1e0773cc973eb9fec0b6c104f2416b4d912e"
+    },
+    {
+      "path": "docs/harness/04-memory/DeepSeek上下文组织与首轮输入核查-2026-10-31-公开整理版.md",
+      "title": "DeepSeek 上下文组织与首轮执行输入核查",
+      "topic": "record-memory",
+      "source_version": "研究笔记；2026-10-31",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "17a1d2e0fe4c030babba1ad75c74595388ef568e6f870c06092e0f44ed4bf4ba"
+    },
+    {
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "title": "Record 智能记忆与自主上下文组装讨论稿 v0.1.2",
+      "topic": "record-memory",
+      "source_version": "0.1.2",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57"
+    },
+    {
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.2历史稿-公开整理版.md",
+      "title": "Record 智能记忆与自主上下文组装讨论稿",
+      "topic": "record-memory",
+      "source_version": "0.2；后续统一编号为0.1.1",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "3e5a24617599f84247b78ee0e4600aa61c3d2ae9cae473fa80771ae1d4a2603a"
+    },
+    {
+      "path": "docs/harness/04-memory/任务条件化上下文组装-论文与运行时-2026-10-31-公开整理版.md",
+      "title": "任务条件化上下文组装：论文与运行时核查",
+      "topic": "record-memory",
+      "source_version": "研究笔记；2026-10-31",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "97b2c282b89bfce110da94fab79ce685b3a5c61185f94b06fd2b797bf3e0ff9b"
+    },
+    {
+      "path": "docs/harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "title": "会话记录常驻 agent · 设计稿 v0.1",
+      "topic": "record-memory",
+      "source_version": "0.1",
+      "kind": "早期设计／历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "b9f2859a5e7496770d7e545988d18149c197b9a53e562d8161c4d1eff5b9e88d"
+    },
+    {
+      "path": "docs/harness/04-memory/独立上下文组装器-认知依据与成本验收-2026-10-31-公开整理版.md",
+      "title": "独立上下文组装器：认知科学依据、prefill 成本与验收设计",
+      "topic": "record-memory",
+      "source_version": "研究笔记；2026-10-31",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5a89329c1c1a377b6c0ddd9092c057531c0940858bfc0d32fd2bfc2beb03edcd"
+    },
+    {
+      "path": "docs/harness/04-memory/自动本体与会话记忆相关研究-2026-10-31-公开整理版.md",
+      "title": "自动本体与会话记忆相关研究",
+      "topic": "record-memory",
+      "source_version": "研究笔记；2026-10-31",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "cfe3d0b1bac49ce9dd32a7af9f6ba0f2173ada6d83ab8a63b3d2871719afd9b0"
+    },
+    {
+      "path": "docs/harness/05-panels/README.md",
+      "title": "DSH 面板平台",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "33bcb1534ec7c2a3a8fc69c62f796f28e1a9e4c9466c70c2ed9675a8d0e0fd4e"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/design/history/overall-discussion-v0.1.0.md",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.0",
+      "topic": "通用面板平台",
+      "source_version": "0.1.0",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "e751618ff4a28332f9be3dd6533f5324820044780a2e5cab4701bd7da181f7ed"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/design/history/overall-discussion-v0.1.1.md",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.1",
+      "topic": "通用面板平台",
+      "source_version": "0.1.1",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "dbcac0573fe699c773e7daa3cf1eaab305ce68dbd35d11ea0a07eb07c1ed8725"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/design/overall-discussion.md",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.2",
+      "topic": "通用面板平台",
+      "source_version": "0.1.2",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/ACC-DESIGN-DRAFT.md",
+      "title": "ACC设计讨论入口",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d7229b3d444cf6c3aabdec62eb10ab19e0b5c09ad7df732c4274b7a725e319ef"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/BOARD.md",
+      "title": "看板",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "092fc2e0754197ca32ad491e1b44d3a6c63ca40bf73e69d0b435577e798d10a7"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "title": "DSH面板平台设计与实施协作讨论稿 v0.1.0",
+      "topic": "通用面板平台",
+      "source_version": "0.1.0",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "fe930300d6ed4db868c2e2d594096b6cde528ac7c117f418a7ec6a2a27aa4d14"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "title": "接口契约",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "40d1829386ab952f48135a0154a914e91b3e093c3c82f5c7e1b1f1d9c7b4867c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/IMPLEMENTATION-DISCUSSION-DRAFT.md",
+      "title": "实现方案讨论入口",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "b6ea2f499be73499c5369f74651355d422e958e2fa614a8391bcedb42539f7b1"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/OPEN-SOURCE-EVOLUTION-DRAFT.md",
+      "title": "开源演进讨论入口",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9139375b57786d240f092d19387cbceda1dbc0bb25b2a55d91560234749bab41"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/PROBE.md",
+      "title": "真宿主探针",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "历史记录（未复测）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "091c068474da4107747dc124a384d3429f17a0e9e52acdc1933484b61d4b9f3c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/PROMPT.md",
+      "title": "给 Codex 的开工提示词",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "8bf2a4fb4eeaeffa59cf33c756243dc82587a5668cb3eaaa1958348736870396"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/README.md",
+      "title": "DSH 面板平台 · 任务包",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7d60c381265b7fd016e40e5498565d36cd5667817d16dbe75029240a5727c2e9"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/Foundations.dc.html",
+      "title": "基础映射",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "66df2892aac3285028983067e56152c7d16ce94436b358fb00ef10d0eb7f4631"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/LimitBim.dc.html",
+      "title": "上限样例 · 设计图",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "3b0d03542d5c260d395fdea4766e3e95d8461432b1f08278e718425490fc263c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/LimitGraph.dc.html",
+      "title": "上限样例 · 知识图谱",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "545cd60cf4f50278e904f2731419ef084e56faad3cdd0aa939632ccf0b9f3c19"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/LimitMap.dc.html",
+      "title": "上限样例 · 地图",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d9df5037ca5ac6b8adf853576180de6e59bdd0bd553fe9dda0806afda7682b80"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/LimitSky.dc.html",
+      "title": "上限样例 · 天体",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "eb1e540cae068558cd8a54c13adcb1bd10be143ae9827c190450d304d932c26f"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/LimitSummary.dc.html",
+      "title": "系统上限",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "dac038a0cb61e4dc78162ea69c56eb14200cc4eaf24146ef21ce7f4414dfe320"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/PanelDefine.dc.html",
+      "title": "自定义面板",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c4a68a9f053b877a34a43de8ad832f66b0e96b745cd45be7ba343adc5032b3e9"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/PanelGallery.dc.html",
+      "title": "面板实样 · 桌面端",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "ce3168804b02b0a31c8fea0f6094a60de4132016e8bd85b79f5fc5bf18fe748c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/PanelGalleryTui.dc.html",
+      "title": "面板实样 · TUI",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "3f6073a094d181a375ffba64d0debac7f3f6fb97324502eb6f762941560db363"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/PanelHow.dc.html",
+      "title": "面板平台怎么做",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "8a70d111dc1ce44353de366040ebf4f86426a6286700e726eaaf0b4527cf8d7c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/PanelTypes.dc.html",
+      "title": "面板类型",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "775c1d21952037f1cdbf3366786e456d34d36a25ee928bf6df32de3e472df477"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/Primitives.dc.html",
+      "title": "基础组件",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a7774a9b8e2a9099ad0b61459d8baa08e308d8577d10d483abe069ca45c619ec"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/README.md",
+      "title": "设计稿导出",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7cb1bd361034163926e8d228ceb0f7ef8ca5bb47337176b390ce0a013cf857da"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/RunGraphTui.dc.html",
+      "title": "运行图 · TUI",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "70ecdf869c2f52141f9f18974dde91a924728259e589d939585fa59e947a684d"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/TuiTheme.dc.html",
+      "title": "冷灰主题",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "79a90ee53066edce28d6042e34fce404e5ed62b44159fe62960dfad2117e6d6c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/themes/dsh-cool-dark.json",
+      "title": "dsh-cool-dark.json",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "27c5d4ded07bdc0c613a3830a433a800c309cd1fc6f07e0118c45b8583040b0a"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/design/themes/dsh-cool-light.json",
+      "title": "dsh-cool-light.json",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1bc063ca1367178bc100b9e5205487604683bc76c7fb9da2ee79a3d1197649b1"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "title": "P-01-skeleton",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9be16f5918918830b9c203813e7ca7e5d8c86b33110144b94bc021f0a970aec7"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-02-spec.md",
+      "title": "P-02-spec",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d98d6737a5e10e7d0fd0ef45d5718e168bd3b2c7e777fae64363d76bc7f4de42"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-03-data.md",
+      "title": "P-03-data",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1f32958d0ee59fc52fac9bb1ef571bb344b71684581a89775bf8b90a01d5e336"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-04-shell.md",
+      "title": "P-04-shell",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "15b1133a60b3466ff89ac0bf836570274bbaad3ed94d1464f076bc35917e5f5b"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-05-table.md",
+      "title": "P-05-table",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f3ab83e147541af25969cb30abcbb40f35cc0bba884b25dbf2813073cce3a725"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-06-timeline.md",
+      "title": "P-06-timeline",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d8b1e3fb46224baafcbff573d59ed4526ba46d86b18b2e013bbcebe40c4224ef"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-07-graph.md",
+      "title": "P-07-graph",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "101424eadf695a62a37a3b799410f9bea097c692eca761790e18a4c5c8565aca"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-08-space.md",
+      "title": "P-08-space",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "175e7cd536fd6f62b611d4f8c5ac908340c3678e0e1a21edb7dda082d65b085c"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "title": "P-09-sandbox",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "68e72a1242c768bfc08dd716d083b89503f98d94509d48516e18b76f053257ff"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "title": "P-10-trust",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "36bbe1fa58f452f245c4110397bf50a3700d5196070d4dd4a0c5fb47f0eb666d"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "title": "P-11-model",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d7aea0de8af2b523bcc9d13f21e8279193b5ba8273f21c5dd17da25d8fdeba61"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "title": "P-12-tui",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c998118e75ef3d4ffaf604a269f55531c5cc42b9f7475af288551767aa99c587"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "title": "P-13-types",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "2d530253cd51da76b17ae6db3bcbb7e81ca98971fcf65085a321265bbafcdcc5"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-14-ceiling.md",
+      "title": "P-14-ceiling",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "e708c522955e946c62d1b87e1bad9ee1928b4e2e958c297356ffc37919535479"
+    },
+    {
+      "path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "title": "P-15-integration",
+      "topic": "通用面板平台",
+      "source_version": "未编号",
+      "kind": "实施任务卡（计划）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d3ab7450ec3e9e4207c9bd1c16030c5ef9bd7d014fb6227ee5d5fba7186da34f"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/00-总则.md",
+      "title": "00 总则（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "0499ff62af47d3bf4f566abcd96cf8bb486db77e2804ee5e51145a6e7b4f1394"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "title": "01 统一口径表（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "241b08a108e0447b84dafbebcef061f09096c02f0834a8349828816736724c66"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "title": "02 代码结构与实施路线（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "d0d0c6eee0170c322981454475ac7adca985c0358b73140a6bea7aee3a8dde90"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-上传清单与分轮提示.md",
+      "title": "上传清单与分轮评审（Claude Design · DAG 第一期）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "27ba629bcde15a167b4133202bb1435afdac810b6352ec002c41ed1b79a4256a"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-前端结构需求.md",
+      "title": "DAG 第一期 · 前端结构需求（交给 Claude Design）（公开摘编）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "12290c6cdb1a6cf1d8d211fe135a853bbd1292b4862fccd211a72b009b9d459e"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-视觉参考收集模板.md",
+      "title": "视觉参考收集模板（给「好看」这件事用）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7174c6f4d760f44ae1c5bfdf0720bc8076a6c0d3980e56ee6ba28a639c484e9b"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/04-组件库规格.md",
+      "title": "04 · 组件库规格（第一版）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d2210d8451f50775883606781de43f25863e698600f6fc65cd2aba25fb0505e5"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/05-构建动效讨论稿.md",
+      "title": "05 · 构建动效讨论稿（点阵 → 成型 → 流动）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开整理版（编辑改写）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "655063ce87532114170a0731df00e19d8b3909b1bb8797b29cfd4257ac01de10"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/06-布局引擎规格.md",
+      "title": "06 · 布局引擎规格（第二版：够「改之前看影响」这一屏）（公开摘编）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "688f463d85919c9acd884299d4afafd8557e52447c2e18b763c5802f9fbdc214"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "title": "07 · 第一屏收口计划（A：场景①「改之前看影响」）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "title": "08 · 面板协议 v2 第一版（场景① 先用）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9b38bbbe3eda3209313b3663061406cb35cbb7a623ed688fa32ef88c5723877a"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/09-面板头重做.md",
+      "title": "09 · 面板头重做（R1 一行头，2026-10-21）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "754840e8db7607d3358964c1c56ad6da0ae376d0710646ce9612dd5889e57d14"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "title": "DAG借鉴Super-agent架构讨论稿 v0.1.0",
+      "topic": "DAG与协同可视化",
+      "source_version": "0.1.0",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "4e2a489f520196d89f833778395edddad8183c78484b711581650fae96812280"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/README.md",
+      "title": "项目图（DAG）详细设计 · 公开阅读入口",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "15b74b833255d28b281b7e1709702d0cf2dd847351a2a2d293b42cd555df6a63"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/layout_spike.md",
+      "title": "布局内核选型试验 · 历史方法摘编",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "公开摘编",
+      "treatment": "公开摘编",
+      "sha256": "2c20533c6866dee5aaf77f59406a735cb9b13863ecd61a85462bf577d083dada"
+    },
+    {
+      "path": "docs/harness/06-dag/history/dsh-complete/docs/design/dag-detailed/09-面板头重做.md",
+      "title": "09 · 面板头重做（R1 一行头，2026-10-21）",
+      "topic": "DAG与协同可视化",
+      "source_version": "未编号",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "96eb78018cba9c5409b80916e573a740ff234f58fc964b94b0353ed18e2db14b"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-rc.5-插件兼容测试记录-2026-11-04.md",
+      "title": "DSH rc.5 插件兼容测试记录",
+      "topic": "远程工作区",
+      "source_version": "未编号",
+      "kind": "历史记录（未复测）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9224d4b98b0997fa0b39a0f598b364f79bc96b165050acb27c8487b834925b96"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-前端草图预览-v0.1.0.png",
+      "title": "DSH-前端草图预览-v0.1.0.png",
+      "topic": "远程工作区",
+      "source_version": "0.1.0",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "d619e9e6ab840402de4eaeef0eae22523285bdea90361fcb775fba037e1b8675"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-远程会话前端原型-v0.1.0.html",
+      "title": "DSH 远程会话 · 前端评审原型",
+      "topic": "远程工作区",
+      "source_version": "0.1.0",
+      "kind": "设计附件",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "878cde16a7f16a4a1960d967aa919d4598cd6a5cc1f2bc28ae53ca191fd5526d"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.0.md",
+      "title": "DSH 远程工作区与双运行模式讨论稿 v0.1.0",
+      "topic": "远程工作区",
+      "source_version": "0.1.0",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "84bcf5ded7d7d4dce2e412c7ecfc120272241400343761a11c8f4e2aa4687e01"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "title": "DSH 远程工作区与双运行模式讨论稿 v0.1.1",
+      "topic": "远程工作区",
+      "source_version": "0.1.1",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "title": "审批（approval）说明",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9d2993865c8021cb6395b338f6f069139c946001d81d74a47b5165193889d031"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "title": "平台扩展架构（Windows / Linux / Edge / Brave / Firefox / 云）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "81e0bee853e3be6d02dbffefc6ba3ac7886159e7eeebbf4b138a69a8283db040"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/AUTO-UPDATE.md",
+      "title": "自动更新（扩展与 provider）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "947fbd5d6819bebcb54c9a3ecd3b7916110fc9d8bcaf185ef36792bcfdbc581b"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/BROWSER-ROADMAP.md",
+      "title": "浏览器支持与部署路线（Chrome / Edge / Safari）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "457253e78673f16d12f8077eac92f0bd7eae3f419330e2c1a38658511b3ac52b"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "title": "Backend 能力契约（capabilities）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "16363ec71243bb81dc38716cf2355ac2cc6b9097dd3e620dfd8475ac1571e683"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CODE-REVIEW-SELF.md",
+      "title": "结构自审（2026-10-19，0.2.2）",
+      "topic": "浏览器插件",
+      "source_version": "0.2.2",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "07d4554a23e5853b0c4bdb16daf2ecae5cf2257be429ea101418d6100e3c2d1c"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CODEX-TASK-STRUCTURE-REVIEW.md",
+      "title": "Codex 任务书：代码结构审查",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "2c1b63b9d43094a407d6af707f3602b32c44c3d4bd05d481311e81118fa70fc8"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "title": "Computer Use：单独插件的长期规划",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "94cba3f002586d5923dd34801189a26f7de001d57c0074c1a9541f6b329ffaa9"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONFIG.md",
+      "title": "配置（provider config）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "2aabe864b71e37f01c50986b9a62fbeef2c312f187f459bc2fcbc7548fd50d90"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "title": "隔离浏览器上下文（I1）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "45b3d4eca958b2466ca3c77e29d93addb6be6dd85881e308d4f5e4631c24baf8"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "title": "公共契约（A-01）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "4e10c3b418af6b2ff79f755ec4fb81c62018de32d7b24592c17d647048ff0560"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DESIGN.md",
+      "title": "dsh-chrome 设计文档",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "2fa64522705255c96c929b85ce528184de8f79a22bef378ba2bab84c64c3c42a"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "title": "DSH 右侧边栏原生浏览器面板（Native Sidebar Browser）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f09901c22204e1c23aea5cd8fa4170e6d2f0fa5568bb80f909b63fa56d4b3c3d"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR.md",
+      "title": "DSH 右侧边栏浏览器（方案 A viewer 原型）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "eb6b713b8906893cea68b0e5b7d04834b4cb21575a55a6b4862edd14ba815ca1"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/EDGE.md",
+      "title": "Microsoft Edge 支持（Chromium）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "412422a6cb5e2fd1ceacf1f674d05c6e0f3a34864ddfb91515089014a30124e9"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-PLAN.md",
+      "title": "加固计划（Codex 审查 + 四角度评审后）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "cca2fafe96247bcec960d7bd03657ed539499b455b24a415426b0042275c866f"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-1.md",
+      "title": "加固队列 1（H1–H3）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "0fc4fdd1f556fa28db8be2b5ee594c726fb0764b67abebf463627d7c10f47a79"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-2.md",
+      "title": "加固队列 2（H4–H8：安全收尾 + close/crash）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1714be08362aa067f9c1b7f63c817912c0baae99dd589cb3893808427f6193fb"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HEADLESS.md",
+      "title": "后台浏览器（headless Chromium）H0/H1",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5f8f3626f5d23a38061492025323cbe48257959ca18b66f573f67ab77d56ed75"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "title": "Tab lease（I3 基础）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "8b08d98fa117607e21c30f2814d26f87ac9a2e0d82f3084073f5194ef00c9ece"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "title": "生命周期与资源表（A-02）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "bce5208260614bd8ea310637898f0b23ea83d2a566a4d042a68aedf107df0aaa"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-MONITOR-QUEUE.md",
+      "title": "内存监控队列（Codex 监控提议）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "5aaf9a2aa2a55fe1c63143b63f5c0476f78cab30ccc79c0b3b9ab6031832ee61"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-QUEUE.md",
+      "title": "内存/生命周期加固队列（来自 memory-reduction + Codex 新提议）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "98b4a9d6907cf6d609ae204db4b71065d59f771097f55dda259ead4c67cb1293"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "title": "多浏览器 / 多沙盒实例：现状、设计与分阶段计划",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OPEN-SOURCE-NOTES.md",
+      "title": "开源浏览器 Agent 方案调研（2026-10-17）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f9dcd6f55bd0b8dde9dbe659c129bdbb43d8203385580c73c6a699e972363e88"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "title": "操作记录（operations.jsonl）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "859196d31aec9193ee71a33e5c669ee5395543c1dc51509bca1ba6f5aea285ca"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OVERLAY.md",
+      "title": "页面 overlay：虚拟鼠标 + 标注",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "0dadbed838693365cd167b929c30254878237ad4f597ea73671b6824da862aad"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PASSWORD-MANAGEMENT.md",
+      "title": "密码与凭据管理（PASSWORD-MANAGEMENT）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "33d8194b5f9c96a086b7d7f3c09f5d5045d44bd7c98ca26cf5608381cb0e1e34"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PLATFORM-AUDIT.md",
+      "title": "平台 bridge / host / 可执行文件审计（E-01）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "历史记录（未复测）",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "82d293421b73e67e8041e6ce2264db28a2b7a5d007fdc6011ab80f33cc77eb2a"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "title": "插件设置设计（PLUGIN-SETTINGS）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-2.md",
+      "title": "结构重构队列 2（Codex 审查后）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "b877025a5a94f6960823d8f497a95451131d5fa4a2c57a1f006b420421317ab7"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-3.md",
+      "title": "结构重构队列 3（工具域 + runtime + headless 动作）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "60b023e20d6e2c8da391b4d5f6e066f9a34af37e7ac9732cd02d8be88542cc5c"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-4.md",
+      "title": "结构重构队列 4（剩余工具域 + runtime + headless login）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "fcf8839d0492c80c5a235a7d9c3e2b52e43f4c77630340150409a8aaed81ec75"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-5.md",
+      "title": "结构重构队列 5（剩余 tools + headless dispatch）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "65858646a27b1744b0f2510546408689fd8ff09ce343344dc085929b375def89"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-6.md",
+      "title": "结构重构队列 6（headless/viewer/update/tools 组装）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9c4faa7b64733110e34b37892e4528a8815543a0321788c37cfdd0765456c5af"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-7.md",
+      "title": "安全 / 多沙盒硬化队列 7",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "f5d8a23a1357b4761a07b665b2d97ed002ed87d48ee66f14b82d940545f101b9"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE.md",
+      "title": "结构重构队列（给循环子智能体）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a5a04b4cbc81b2bc7e9069a12ae1d943dcafeb80bc0ad3ee2d4b62e21845bd40"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/ROADMAP.md",
+      "title": "分阶段实施计划：从个人用到官方",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "cd3656386d360b931077d2d48e30c3fcd540c8c408c74efc77e5ba52848006e6"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SAFARI-SPIKE.md",
+      "title": "Safari 可行性 Spike（结论：不属于近期）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "7b1c40c03ca9874192125dc9b1a3a86b167523815e741bcbf9ee871c92ee9413"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SCREENCAST-SPIKE.md",
+      "title": "F1 Spike：实时画面（screencast）可行性",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9a6d59d40f7e5c7eaf44a6735a0cc25ee5618757d7a834bfe095d1849c54c374"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SECRETS.md",
+      "title": "跨通道机器型 token（sec）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "60de4066a85cae68f1ab7336c4ff6e805f76047aa537facdcbd39e1327871cd7"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "title": "安全模型（P2 + 批次 C 后）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "c4cd25f33381d283a8333c536d7092ff89a7784488bdad9645107691bcd24829"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SIDEPANEL.md",
+      "title": "浏览器侧边栏（side panel）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "9868ecd39c9214757c76afef5b7270b0fed59d82dfa7e44650ffee39aa07dd88"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-1.md",
+      "title": "Windows 真机反馈修复队列 1（P1–P3 + P6，目标 0.2.25）",
+      "topic": "浏览器插件",
+      "source_version": "0.2.25",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "3dd1f571c7f7656633223927380aec2f8d2343da79b24685f484b3563cc8b171"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-2.md",
+      "title": "Windows 真机反馈修复队列 2（P4/P5/P7，目标 0.2.26）",
+      "topic": "浏览器插件",
+      "source_version": "0.2.26",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "531457760b8eeab9e7bc1a30134dfaf78e5f6532f7739182560099a9c0307735"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-HOST.md",
+      "title": "Windows native host：单文件 `dsh-chrome-host.exe`（Node SEA）",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "a80d7bb43526600c2109a6383b797491a521e82fb016c611dd8f781519cce07e"
+    },
+    {
+      "path": "docs/harness/08-browser/history/dsh-chrome-memory-reduction.md",
+      "title": "dsh-chrome 插件侧内存占用与优化建议",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "1f69aa80c46c888a574c0929a1d2453982e2ab5fa6877f4ba974f47e73b334c7"
+    },
+    {
+      "path": "docs/harness/08-browser/history/dsh-next-steps-agent-team-plan.md",
+      "title": "DeepSeek Harness 下一步执行路线与智能体团队分工",
+      "topic": "浏览器插件",
+      "source_version": "未编号",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "4565ee74786ed313dbd97ffaa3d271364d525729b110f3582723c4adc1ecab00"
+    },
+    {
+      "path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "title": "跨通道凭据与截图遮罩讨论稿 v0.1.5",
+      "topic": "凭据、工具输出与截图边界",
+      "source_version": "0.1.5",
+      "kind": "历史公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291"
+    },
+    {
+      "path": "docs/harness/09-extensions/activity/docs/discussion/工作区活跃度显示讨论稿-v0.1.2.md",
+      "title": "工作区活跃度显示讨论稿 v0.1.2",
+      "topic": "工作区活跃度",
+      "source_version": "0.1.2",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "aa233a7f7d1b219eaf03367814b141e37c0c8fcb3ad2b8298a6f0e1f439ca567"
+    },
+    {
+      "path": "docs/harness/09-extensions/activity/docs/implementation/工作区活跃度插件-实施稿-2026-10-23.md",
+      "title": "工作区活跃度插件 · v0.1 实施稿：官方面板入口 + 活动视图，先读后写",
+      "topic": "工作区活跃度",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "8a2b871bdd3aa8dc3caa5dc66a52830cca63546b2278b087ccd6fee0edf66c62"
+    },
+    {
+      "path": "docs/harness/09-extensions/cli/docs/research/claude-code-history.md",
+      "title": "Claude Code 发展史：从 research preview 到现在",
+      "topic": "CLI与Harness参考研究",
+      "source_version": "未编号",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "73622b08a2b74d51db27c0e7a6edb3a04677bc7c635a38760e967fbca3955a7f"
+    },
+    {
+      "path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "title": "实时讨论工作台的开源参考与公共核心",
+      "topic": "discussion-workbench",
+      "source_version": "未标版本；2026-10-28",
+      "kind": "公开整理版",
+      "treatment": "公开整理；保留原稿历史语境",
+      "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403"
+    }
+  ]
+}

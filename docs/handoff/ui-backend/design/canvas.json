@@ -1,0 +1,318 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-31T14:30:00Z"
+  },
+  "title": "DSH 统一组件库",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 960,
+      "title": "总览：一份语义，两种介质",
+      "is_interactive": true
+    },
+    "Foundations.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 1240,
+      "title": "基础映射：颜色、字、几何"
+    },
+    "TuiTheme.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1240,
+      "title": "冷灰主题：dsh-tui 落地文件"
+    },
+    "Primitives.dc.html": {
+      "x": 0,
+      "y": 1640,
+      "w": 1440,
+      "h": 1200,
+      "title": "基础组件"
+    },
+    "Agent.dc.html": {
+      "x": 1520,
+      "y": 1640,
+      "w": 1440,
+      "h": 1500,
+      "title": "Agent 组件"
+    },
+    "DesktopScreen.dc.html": {
+      "x": 0,
+      "y": 3540,
+      "w": 1440,
+      "h": 900,
+      "title": "桌面端成屏",
+      "expand": "fill"
+    },
+    "TuiScreen.dc.html": {
+      "x": 1520,
+      "y": 3540,
+      "w": 1440,
+      "h": 900,
+      "title": "TUI 成屏"
+    },
+    "DagParts.dc.html": {
+      "x": 0,
+      "y": 5040,
+      "w": 1440,
+      "h": 1480,
+      "title": "DAG 组件"
+    },
+    "DagDesktop.dc.html": {
+      "x": 1520,
+      "y": 5040,
+      "w": 1440,
+      "h": 900,
+      "title": "DAG 面板 · 桌面端",
+      "is_interactive": true
+    },
+    "DagTui.dc.html": {
+      "x": 3040,
+      "y": 5040,
+      "w": 1440,
+      "h": 900,
+      "title": "DAG 面板 · TUI",
+      "is_interactive": true
+    },
+    "Content.dc.html": {
+      "x": 0,
+      "y": 7120,
+      "w": 1440,
+      "h": 1640,
+      "title": "Markdown 与富文本"
+    },
+    "Charts.dc.html": {
+      "x": 1520,
+      "y": 7120,
+      "w": 1440,
+      "h": 1320,
+      "title": "图表",
+      "is_interactive": true
+    },
+    "Motion.dc.html": {
+      "x": 0,
+      "y": 9280,
+      "w": 1440,
+      "h": 1100,
+      "title": "动作语法",
+      "is_interactive": true
+    },
+    "Build.dc.html": {
+      "x": 1520,
+      "y": 9280,
+      "w": 1440,
+      "h": 900,
+      "title": "构建动效",
+      "is_interactive": true
+    },
+    "ChartsMore.dc.html": {
+      "x": 3040,
+      "y": 7120,
+      "w": 1440,
+      "h": 1460,
+      "title": "更多图表",
+      "is_interactive": true
+    },
+    "MotionUi.dc.html": {
+      "x": 3040,
+      "y": 9280,
+      "w": 1440,
+      "h": 1524,
+      "title": "界面动效",
+      "is_interactive": true
+    },
+    "Workbench.dc.html": {
+      "x": 0,
+      "y": 10980,
+      "w": 1440,
+      "h": 900,
+      "title": "工作台 · 桌面端",
+      "is_interactive": true
+    },
+    "WorkbenchTui.dc.html": {
+      "x": 1520,
+      "y": 10980,
+      "w": 1440,
+      "h": 900,
+      "title": "工作台 · TUI",
+      "is_interactive": true
+    },
+    "SplitDesktop.dc.html": {
+      "x": 0,
+      "y": 12000,
+      "w": 1440,
+      "h": 900,
+      "title": "会话分屏 · 桌面端",
+      "is_interactive": true
+    },
+    "SplitTui.dc.html": {
+      "x": 1520,
+      "y": 12000,
+      "w": 1440,
+      "h": 900,
+      "title": "会话分屏 · TUI",
+      "is_interactive": true
+    },
+    "SessionMap.dc.html": {
+      "x": 0,
+      "y": 13500,
+      "w": 1440,
+      "h": 900,
+      "title": "会话地图 · 桌面端",
+      "is_interactive": true
+    },
+    "SessionMapTui.dc.html": {
+      "x": 1520,
+      "y": 13500,
+      "w": 1440,
+      "h": 900,
+      "title": "会话地图 · TUI",
+      "is_interactive": true
+    },
+    "SessionMapHow.dc.html": {
+      "x": 3040,
+      "y": 13500,
+      "w": 1440,
+      "h": 900,
+      "title": "会话地图：怎么做出来"
+    },
+    "WorkflowGantt.dc.html": {
+      "x": 0,
+      "y": 15000,
+      "w": 1440,
+      "h": 900,
+      "title": "工作流收成甘特图",
+      "is_interactive": true
+    },
+    "PeekTui.dc.html": {
+      "x": 1520,
+      "y": 15000,
+      "w": 1440,
+      "h": 900,
+      "title": "实时弹出 · TUI",
+      "is_interactive": true
+    },
+    "SessionDock.dc.html": {
+      "x": 0,
+      "y": 16020,
+      "w": 1440,
+      "h": 900,
+      "title": "大会话缩进右栏 · 桌面端",
+      "is_interactive": true
+    },
+    "SessionDockTui.dc.html": {
+      "x": 1520,
+      "y": 16020,
+      "w": 1440,
+      "h": 900,
+      "title": "大会话缩进右栏 · TUI",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Foundations.dc.html",
+    "TuiTheme.dc.html",
+    "Primitives.dc.html",
+    "Agent.dc.html",
+    "DesktopScreen.dc.html",
+    "TuiScreen.dc.html",
+    "DagParts.dc.html",
+    "DagDesktop.dc.html",
+    "DagTui.dc.html",
+    "Content.dc.html",
+    "Charts.dc.html",
+    "Motion.dc.html",
+    "Build.dc.html",
+    "ChartsMore.dc.html",
+    "MotionUi.dc.html",
+    "Workbench.dc.html",
+    "WorkbenchTui.dc.html",
+    "SplitDesktop.dc.html",
+    "SplitTui.dc.html",
+    "SessionMap.dc.html",
+    "SessionMapTui.dc.html",
+    "SessionMapHow.dc.html",
+    "WorkflowGantt.dc.html",
+    "PeekTui.dc.html",
+    "SessionDock.dc.html",
+    "SessionDockTui.dc.html"
+  ],
+  "notes": {
+    "row1": {
+      "x": 0,
+      "y": -300,
+      "text": "设计语言",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row2": {
+      "x": 0,
+      "y": 1340,
+      "text": "组件",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row3": {
+      "x": 0,
+      "y": 3240,
+      "text": "同一时刻，两端",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row4": {
+      "x": 0,
+      "y": 4740,
+      "text": "DAG",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row5": {
+      "x": 0,
+      "y": 6820,
+      "text": "内容",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row6": {
+      "x": 0,
+      "y": 8980,
+      "text": "动作",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row7": {
+      "x": 0,
+      "y": 10680,
+      "text": "工作台与分屏",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row8": {
+      "x": 0,
+      "y": 13200,
+      "text": "会话地图",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row9": {
+      "x": 0,
+      "y": 14700,
+      "text": "工作流与常驻",
+      "kind": "title1",
+      "maxW": 2960
+    }
+  },
+  "designSystems": [],
+  "_public_archive_note": "公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 仅设计画布或合成主题配置。"
+}

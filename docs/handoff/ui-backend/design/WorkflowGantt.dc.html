@@ -1,0 +1,162 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>工作流收成甘特图</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--ok:#22C55E;--err:#F25A5A;--s1:#4F8AF2;--s2:#0FA696}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--ok:#22C55E;--err:#EC1313;--s1:#2F5FCC;--s2:#008F7F}
+button{font-family:inherit}
+.rw{position:relative;display:flex;align-items:center;overflow:hidden;transition:height 300ms var(--ease),opacity 200ms var(--ease)}
+.lab{flex:none;overflow:hidden;white-space:nowrap;transition:width 300ms var(--ease)}
+.fade{transition:opacity 200ms var(--ease)}
+.bar{position:absolute;top:50%;height:8px;margin-top:-4px;border-radius:4px;transition:left 300ms var(--ease),width 120ms linear}
+.tu{box-sizing:border-box;padding:10px 14px;border-radius:10px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2);white-space:pre;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.btn{height:32px;padding:0 12px;border:0;border-radius:8px;background:var(--l1);box-shadow:0 0 0 0.5px var(--line);color:var(--t1);font-size:13px;line-height:20px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.rw,.lab,.fade,.bar{transition:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 48px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; align-items: flex-end; gap: 12px">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">工作流收成甘特图</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">跑的时候展开看每个成员。跑完自动收成一张甘特图，留在对话里，占地小，还能看出谁并行、谁拖了时间。</p>
+    </div>
+    <button type="button" class="btn" onClick="{{toggle}}" aria-pressed="{{ganttOn}}">{{toggleLabel}}</button>
+    <button type="button" class="btn" onClick="{{replay}}">重放</button>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; flex: 1; min-height: 0">
+
+    <section aria-label="桌面端" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">桌面端：行高收窄，名字退场，时间条留下</p>
+      <div style="align-self: flex-end; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1); font-size: 14px; line-height: 22px">帮我把 PR #128 全面审一遍。</div>
+      <div role="group" aria-label="工作流运行" style="display: flex; flex-direction: column; padding: 8px 12px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+        <div style="height: 32px; flex: none; display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 20px"><span style="font-family: var(--mono); color: {{runTone}}">{{runGlyph}}</span><strong style="font-weight: 600">审查 PR #128</strong><span style="color: var(--t3)">{{memberCount}}</span><span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">{{counts}}</span><span style="font-size: 12px; line-height: 18px; color: var(--t3); font-family: var(--mono)">{{clock}}</span></div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="12">
+          <div class="rw" style="height: {{r.h}}px; opacity: {{r.alpha}}">
+            <div class="lab" style="position: relative; width: {{labW}}px; height: 100%; font-size: 13px; line-height: 20px">
+              <span class="fade" style="position: absolute; left: {{r.indent}}px; top: 50%; margin-top: -10px; display: flex; gap: 6px; color: {{r.fg}}; font-weight: {{r.weight}}; opacity: {{treeAlpha}}"><span style="font-family: var(--mono); color: {{r.tone}}">{{r.glyph}}</span>{{r.name}}</span>
+              <span class="fade" style="position: absolute; left: 0; top: 50%; margin-top: -8px; font-size: 11px; line-height: 16px; color: var(--t3); opacity: {{ganttAlpha}}">{{r.phase}}</span>
+            </div>
+            <div style="position: relative; flex: 1; height: 100%; min-width: 0"><span class="bar" style="display: {{r.barShow}}; left: {{r.left}}%; width: {{r.width}}%; background: {{r.fill}}"></span></div>
+            <span class="fade" style="width: 40px; flex: none; text-align: right; font-size: 12px; line-height: 18px; color: var(--t3); opacity: {{treeAlpha}}">{{r.time}}</span>
+          </div>
+        </sc-for>
+        <div class="fade" style="display: flex; height: 20px; align-items: flex-end; padding-left: {{labW}}px; font-family: var(--mono); font-size: 11px; line-height: 16px; color: var(--t4); opacity: {{ganttAlpha}}"><span style="flex: 1">0s</span><span>72s</span></div>
+      </div>
+      <p style="margin: 0; display: {{afterShow}}; font-size: 14px; line-height: 22px; color: var(--t2)">审查完了。跑闸失败 1 项，其余通过，详情在甘特图里点开。</p>
+    </section>
+
+    <section aria-label="TUI" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">TUI：成员行逐行收掉，每个阶段留一行</p>
+      <div class="tu" style="flex: 1; min-height: 0">
+        <div style="padding: 0 6px; background: var(--l1); color: var(--t1)"><span style="color: var(--accent-t); font-weight: 700">❯</span> 帮我把 PR #128 全面审一遍。</div>
+        <div> </div>
+        <div style="display: flex"><span style="color: {{runTone}}">{{runGlyph}}</span><span style="color: var(--t1); font-weight: 700"> 审查 PR #128</span><span style="flex: 1"></span><span style="color: var(--t3)">{{counts}}  {{clock}}</span></div>
+        <sc-for list="{{tuiRows}}" as="l" hint-placeholder-count="12"><div style="display: flex"><span style="color: var(--t4)">{{l.edge}}</span><span style="color: {{l.tone}}">{{l.glyph}}</span><span style="color: {{l.fg}}">{{l.name}}</span><span style="flex: 1"></span><span style="color: {{l.barFg}}">{{l.bar}}</span><span style="color: var(--t3)">{{l.time}}</span></div></sc-for>
+        <div> </div>
+        <div style="display: {{afterShow}}; color: var(--t1); white-space: pre-wrap">审查完了。跑闸失败 1 项，其余通过。</div>
+        <div style="flex: 1"></div>
+        <div style="color: var(--t4)">Ctrl+O 展开成员   Ctrl+T 看轨迹</div>
+      </div>
+    </section>
+  </div>
+
+  <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">失败的成员用状态色加 ✕，别的条都用同一个系列色。焦点还在展开区里时先不收，等焦点离开，和现有工作流节点的规矩一样。</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { t: 0, gantt: false, manual: false };
+  total = 72;
+  phases = [
+    { n: '收集', m: [['读改动', 0, 8]] },
+    { n: '审查', m: [['安全', 8, 22], ['性能', 8, 30], ['样式', 8, 16]] },
+    { n: '验证', m: [['跑测试', 38, 24], ['跑闸', 38, 14, true]] },
+    { n: '汇总', m: [['写报告', 62, 10]] }
+  ];
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still) { this.setState({ t: this.total, gantt: true }); return; }
+    this.timer = setInterval(() => {
+      if (document.hidden) return;
+      const { t, gantt, manual } = this.state;
+      if (t < this.total) this.setState({ t: Math.min(this.total, t + 0.8) });
+      else if (!gantt && !manual) {
+        this.hold = (this.hold || 0) + 1;
+        if (this.hold > 7) { this.hold = 0; this.setState({ gantt: true }); }
+      }
+    }, 100);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const { t, gantt } = this.state;
+    const look = (s) => ({ wait: ['○', 'var(--t4)'], run: ['◐', 'var(--accent)'], ok: ['●', 'var(--ok)'], fail: ['✕', 'var(--err)'] }[s]);
+    const stat = ([, a, d, f]) => (t < a ? 'wait' : t < a + d ? 'run' : f ? 'fail' : 'ok');
+    const all = this.phases.flatMap((p) => p.m);
+    const st = all.map(stat);
+    const n = (k) => st.filter((x) => x === k).length;
+    const done = t >= this.total;
+    const counts = [n('run') && `运行中 ${n('run')}`, n('ok') && `已完成 ${n('ok')}`, n('fail') && `失败 ${n('fail')}`].filter(Boolean).join(' · ');
+    const rows = [], tuiRows = [];
+    const W = 28;
+    this.phases.forEach((p, pi) => {
+      const ms = p.m.map(stat);
+      const ps = ms.includes('run') ? 'run' : ms.every((x) => x === 'wait') ? 'wait' : ms.includes('fail') ? 'fail' : ms.every((x) => x === 'ok') ? 'ok' : 'run';
+      rows.push({ h: gantt ? 0 : 26, alpha: gantt ? 0 : 1, indent: 0, name: p.n, glyph: look(ps)[0], tone: look(ps)[1], fg: 'var(--t1)', weight: 600, phase: '', barShow: 'none', left: 0, width: 0, fill: 'transparent', time: `${p.m.length} 个` });
+      p.m.forEach((m, i) => {
+        const s = stat(m), [g, c] = look(s);
+        const seen = Math.max(0, Math.min(t - m[1], m[2]));
+        rows.push({
+          h: gantt ? 12 : 26, alpha: 1, indent: 18, name: m[0], glyph: g, tone: c, fg: s === 'wait' ? 'var(--t4)' : 'var(--t2)', weight: 400,
+          phase: i === 0 ? p.n : '', barShow: 'block',
+          left: (m[1] / this.total) * 100, width: (seen / this.total) * 100,
+          fill: s === 'fail' ? 'var(--err)' : s === 'run' ? 'var(--accent)' : pi % 2 ? 'var(--s2)' : 'var(--s1)',
+          time: s === 'wait' ? '' : `${Math.round(seen)}s`
+        });
+      });
+      const cell = (a, d) => ' '.repeat(Math.round((a / this.total) * W)) + '█'.repeat(Math.max(1, Math.round((d / this.total) * W)));
+      if (gantt) {
+        const a = Math.min(...p.m.map((m) => m[1])), z = Math.max(...p.m.map((m) => m[1] + m[2]));
+        const bar = cell(a, z - a).padEnd(W, ' ');
+        tuiRows.push({ edge: '  ', glyph: look(ps)[0], tone: look(ps)[1], name: ` ${p.n}`, fg: 'var(--t2)', bar, barFg: ps === 'fail' ? 'var(--err)' : pi % 2 ? 'var(--s2)' : 'var(--s1)', time: `  ${String(z - a).padStart(2)}s` });
+      } else {
+        tuiRows.push({ edge: '  ', glyph: look(ps)[0], tone: look(ps)[1], name: ` ${p.n}`, fg: 'var(--t1)', bar: '', barFg: 'var(--t3)', time: '' });
+        p.m.forEach((m, i) => {
+          const s = stat(m), [g, c] = look(s), seen = Math.max(0, Math.min(t - m[1], m[2]));
+          tuiRows.push({ edge: i === p.m.length - 1 ? '  └ ' : '  ├ ', glyph: g, tone: c, name: ` ${m[0]}`, fg: s === 'wait' ? 'var(--t4)' : 'var(--t2)', bar: s === 'wait' ? '' : cell(m[1], Math.max(0.1, seen)).padEnd(W, ' '), barFg: s === 'fail' ? 'var(--err)' : s === 'run' ? 'var(--accent)' : pi % 2 ? 'var(--s2)' : 'var(--s1)', time: s === 'wait' ? '' : `  ${String(Math.round(seen)).padStart(2)}s` });
+        });
+      }
+    });
+    if (gantt) tuiRows.push({ edge: '', glyph: '', tone: 'var(--t4)', name: '', fg: 'var(--t4)', bar: '0s'.padEnd(W - 3, ' ') + '72s', barFg: 'var(--t4)', time: '     ' });
+    const [rg, rc] = !done ? look('run') : look('fail');
+    return {
+      theme: this.props.theme ?? 'dark',
+      rows, tuiRows, counts,
+      runGlyph: rg, runTone: rc,
+      memberCount: `${all.length} 个成员`,
+      clock: `${Math.round(t)}s`,
+      labW: gantt ? 48 : 150,
+      treeAlpha: gantt ? 0 : 1, ganttAlpha: gantt ? 1 : 0,
+      afterShow: done ? 'block' : 'none',
+      ganttOn: gantt ? 'true' : 'false',
+      toggleLabel: gantt ? '展开成员' : '收成甘特图',
+      toggle: () => this.setState({ gantt: !gantt, manual: true, t: this.total }),
+      replay: () => { this.hold = 0; this.setState({ t: 0, gantt: false, manual: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

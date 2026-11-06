@@ -1,0 +1,252 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>构建动效</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#2F5FCC}
+canvas{display:block;width:640px;height:480px}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; align-items: flex-end; gap: 24px">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">构建动效</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">点阵一直变，表示还在算。数据齐了才成型，线上有真数据走时才流动。点一下画面直接跳到画完。</p>
+    </div>
+    <div role="group" aria-label="阶段" style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+      <sc-for list="{{phases}}" as="p" hint-placeholder-count="4">
+        <button type="button" onClick="{{p.pick}}" aria-pressed="{{p.pressed}}" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: {{p.bg}}; color: {{p.fg}}; font-family: var(--sans); font-size: 13px; line-height: 20px; cursor: pointer">{{p.label}}</button>
+      </sc-for>
+    </div>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+    <section style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">桌面端：每颗点逐点变形，合成卡和线</p>
+      <div style="width: 640px; height: 480px; border-radius: 12px; overflow: hidden; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line)"><canvas data-build="desk" ref="{{setDesk}}" onClick="{{finish}}" width="1280" height="960" role="img" aria-label="桌面端点阵合成影响面图"></canvas></div>
+    </section>
+    <section style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+      <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">TUI：字符逐格变化，长成同一张图的树形写法</p>
+      <div style="width: 640px; height: 480px; border-radius: 12px; overflow: hidden; background: var(--term); box-shadow: 0 0 0 0.5px var(--line)"><canvas data-build="tui" ref="{{setTui}}" onClick="{{finish}}" width="1280" height="960" role="img" aria-label="TUI 字符点阵长成影响面树形图"></canvas></div>
+    </section>
+  </div>
+
+  <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">点阵只表示在忙，事实都在状态位。形变只出现在还没有字的阶段。系统开了减少动态效果时，直接显示画完的图。</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { phase: 'wait', loop: true };
+  setDesk = (el) => { this.desk = el; };
+  setTui = (el) => { this.tui = el; };
+
+  cards = [
+    { x: 32, y: 208, w: 144, h: 64, name: 'view.py', sub: '你要改的' },
+    { x: 256, y: 64, w: 144, h: 64, name: 'main', sub: '52_graph_anchors' },
+    { x: 256, y: 208, w: 144, h: 64, name: 'build_rows', sub: 'summary.py' },
+    { x: 256, y: 352, w: 144, h: 64, name: '_cards', sub: 'service.py' },
+    { x: 464, y: 208, w: 144, h: 64, name: '_write', sub: '59_graph_view' }
+  ];
+  edges = [
+    [[176, 240], [216, 240], [216, 96], [256, 96]],
+    [[176, 240], [256, 240]],
+    [[176, 240], [216, 240], [216, 384], [256, 384]],
+    [[400, 240], [464, 240]]
+  ];
+  tree = [
+    [5, '❯ 文件 view.py'],
+    [6, '  │'],
+    [7, '  ├──▶ 1 main 52_graph_anchors.py'],
+    [8, '  ├──▶ 2 build_rows summary.py'],
+    [9, '  ├──▶ 3 _cards service.py'],
+    [10, '  │'],
+    [11, '  └──▶ 4 跳 _write 59_graph_view.py']
+  ];
+  flowPath = [[2, 6], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7]];
+
+  componentDidMount() {
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.t0 = performance.now();
+    if (this.reduce) this.setState({ phase: 'done', loop: false });
+    const frame = (now) => {
+      this.raf = requestAnimationFrame(frame);
+      if (document.hidden) return;
+      this.tick(now);
+    };
+    this.raf = requestAnimationFrame(frame);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+
+  go(phase, loop) { this.t0 = performance.now(); this.setState({ phase, loop }); }
+
+  tick(now) {
+    const t = (now - this.t0) / 1000;
+    const { phase, loop } = this.state;
+    const span = { wait: 3.6, form: 1.4, flow: 3.2, done: 1.4 };
+    if (loop && t > span[phase]) {
+      this.go({ wait: 'form', form: 'flow', flow: 'done', done: 'wait' }[phase], true);
+      return;
+    }
+    const desk = this.desk || document.querySelector('[data-build="desk"]');
+    const tui = this.tui || document.querySelector('[data-build="tui"]');
+    if (!desk || !tui) return;
+    const css = getComputedStyle(desk);
+    const c = (k) => css.getPropertyValue(k).trim();
+    const colors = { bg: c('--bg'), term: c('--term'), l1: c('--l1'), t1: c('--t1'), t2: c('--t2'), t3: c('--t3'), t4: c('--t4'), accent: c('--accent'), line: c('--line') };
+    this.drawDesk(desk, colors, phase, t);
+    if (!this.lastTui || now - this.lastTui > 83) {
+      this.lastTui = now;
+      this.drawTui(tui, colors, phase, t);
+    }
+  }
+
+  inCard(x, y) { return this.cards.find((k) => x >= k.x && x < k.x + k.w && y >= k.y && y < k.y + k.h); }
+
+  polylineLen(p) { let s = 0; for (let i = 1; i < p.length; i++) s += Math.abs(p[i][0] - p[i - 1][0]) + Math.abs(p[i][1] - p[i - 1][1]); return s; }
+  pointAt(p, d) {
+    for (let i = 1; i < p.length; i++) {
+      const l = Math.abs(p[i][0] - p[i - 1][0]) + Math.abs(p[i][1] - p[i - 1][1]);
+      if (d <= l) { const r = l ? d / l : 0; return [p[i - 1][0] + (p[i][0] - p[i - 1][0]) * r, p[i - 1][1] + (p[i][1] - p[i - 1][1]) * r]; }
+      d -= l;
+    }
+    return p[p.length - 1];
+  }
+
+  drawDesk(cv, col, phase, t) {
+    const g = cv.getContext('2d');
+    g.setTransform(2, 0, 0, 2, 0, 0);
+    g.clearRect(0, 0, 640, 480);
+    const form = phase === 'wait' ? 0 : phase === 'form' ? Math.min(1, t / 1.0) : 1;
+    const ease = 1 - Math.pow(1 - form, 3);
+    for (let y = 8; y < 480; y += 16) for (let x = 8; x < 640; x += 16) {
+      const hit = this.inCard(x, y);
+      const d = Math.hypot(x - 104, y - 240);
+      const w = phase === 'wait' ? Math.sin(d * 0.02 - t * 2.2) * 0.5 + 0.5 : 0;
+      const size = 1.5 + w * 4;
+      const seed = hit && hit.name === 'view.py';
+      g.save();
+      g.translate(x, y);
+      if (form > 0 && hit) {
+        const s = 2 + ease * 14;
+        g.globalAlpha = 1;
+        g.fillStyle = col.l1;
+        g.fillRect(-s / 2, -s / 2, s, s);
+      } else {
+        g.globalAlpha = (phase === 'wait' ? 0.28 + w * 0.5 : 0.28) * (1 - ease * 0.45);
+        g.fillStyle = seed ? col.accent : col.t3;
+        g.rotate(w * Math.PI * 0.75);
+        if (w < 0.33) { g.beginPath(); g.arc(0, 0, size / 2, 0, 7); g.fill(); }
+        else if (w < 0.66) { g.rotate(Math.PI / 4); g.fillRect(-size / 2, -size / 2, size, size); }
+        else { g.fillRect(-size / 2, -0.9, size, 1.8); g.fillRect(-0.9, -size / 2, 1.8, size); }
+      }
+      g.restore();
+    }
+    g.globalAlpha = 1;
+    if (form >= 1 || phase === 'form') {
+      const reveal = phase === 'form' ? Math.max(0, (t - 0.5) / 0.7) : 1;
+      g.lineWidth = 1.25; g.strokeStyle = col.t3;
+      this.edges.forEach((p) => {
+        const len = this.polylineLen(p) * Math.min(1, reveal);
+        g.beginPath(); g.moveTo(p[0][0], p[0][1]);
+        for (let d = 8; d < len; d += 8) { const q = this.pointAt(p, d); g.lineTo(q[0], q[1]); }
+        const e = this.pointAt(p, len); g.lineTo(e[0], e[1]); g.stroke();
+      });
+      this.cards.forEach((k, i) => {
+        g.globalAlpha = Math.min(1, reveal);
+        g.fillStyle = col.l1; g.fillRect(k.x, k.y, k.w, k.h);
+        g.strokeStyle = i === 0 ? col.t1 : col.line; g.lineWidth = i === 0 ? 2 : 1;
+        g.strokeRect(k.x + 0.5, k.y + 0.5, k.w - 1, k.h - 1);
+        g.fillStyle = col.t1; g.font = '600 13px "JetBrains Mono", Menlo, monospace'; g.fillText(k.name, k.x + 12, k.y + 26);
+        g.fillStyle = col.t3; g.font = '11px "JetBrains Mono", Menlo, "PingFang SC", monospace'; g.fillText(k.sub, k.x + 12, k.y + 46);
+      });
+      g.globalAlpha = 1;
+    }
+    if (phase === 'flow') {
+      this.edges.forEach((p, i) => {
+        const len = this.polylineLen(p);
+        const d = (((t * 180) + i * 60) % (len + 120));
+        if (d > len) return;
+        g.strokeStyle = col.accent; g.lineWidth = 2;
+        g.beginPath();
+        const from = Math.max(0, d - 48), a = this.pointAt(p, from); g.moveTo(a[0], a[1]);
+        for (let s = from + 6; s < d; s += 6) { const q = this.pointAt(p, s); g.lineTo(q[0], q[1]); }
+        const e = this.pointAt(p, d); g.lineTo(e[0], e[1]); g.stroke();
+        g.fillStyle = col.accent; g.beginPath(); g.arc(e[0], e[1], 4, 0, 7); g.fill();
+      });
+    }
+  }
+
+  drawTui(cv, col, phase, t) {
+    const g = cv.getContext('2d');
+    const CW = 10, CH = 20, COLS = 64, ROWS = 24;
+    g.setTransform(2, 0, 0, 2, 0, 0);
+    g.fillStyle = col.term; g.fillRect(0, 0, 640, 480);
+    g.textBaseline = 'middle';
+    g.font = '14px "JetBrains Mono", Menlo, "PingFang SC", monospace';
+    const form = phase === 'wait' ? 0 : phase === 'form' ? Math.min(1, t / 1.0) : 1;
+    const ramp = ['·', '∘', '○', '◇', '◆', '✦'];
+    const occupied = new Map();
+    this.tree.forEach(([row, text]) => {
+      let c = 2;
+      for (const ch of text) { occupied.set(`${c},${row}`, ch); c += ch.charCodeAt(0) > 0x2E80 ? 2 : 1; }
+    });
+    for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+      const key = `${c},${r}`;
+      const px = c * CW, py = r * CH + CH / 2;
+      const d = Math.hypot(c - 4, (r - 8) * 2);
+      const revealAt = d / 70;
+      if (occupied.has(key) && form > revealAt) {
+        const ch = occupied.get(key);
+        if (ch === ' ') continue;
+        g.fillStyle = '─│├└▶'.includes(ch) ? col.t3 : col.t1;
+        g.fillText(ch, px, py);
+        continue;
+      }
+      const w = Math.sin(d * 0.28 - t * 2.2) * 0.5 + 0.5;
+      const lv = phase === 'wait' ? Math.min(5, Math.floor(w * 6)) : 0;
+      g.globalAlpha = phase === 'wait' ? 0.3 + w * 0.55 : Math.max(0.12, 0.3 - form * 0.18);
+      g.fillStyle = col.t3;
+      if (c % 2 === 0) g.fillText(ramp[lv], px, py);
+      g.globalAlpha = 1;
+    }
+    if (phase === 'flow') {
+      const k = Math.floor(t * 8) % (this.flowPath.length + 4);
+      if (k < this.flowPath.length) {
+        const [c, r] = this.flowPath[k];
+        g.fillStyle = col.term; g.fillRect(c * CW + 20, r * CH, CW, CH);
+        g.fillStyle = col.accent;
+        g.fillText('●', (c + 2) * CW, r * CH + CH / 2);
+      }
+    }
+  }
+
+  renderVals() {
+    const { phase, loop } = this.state;
+    const seg = (on) => ({ bg: on ? 'var(--l3)' : 'transparent', fg: on ? 'var(--t1)' : 'var(--t3)', pressed: on ? 'true' : 'false' });
+    return {
+      theme: this.props.theme ?? 'dark',
+      setDesk: this.setDesk, setTui: this.setTui,
+      finish: () => this.go('done', false),
+      phases: [['wait', '在等'], ['form', '成型'], ['flow', '流动'], ['loop', '循环']].map(([id, label]) => ({
+        label,
+        ...seg(id === 'loop' ? loop : !loop && phase === id),
+        pick: () => (id === 'loop' ? this.go('wait', true) : this.go(id, false))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

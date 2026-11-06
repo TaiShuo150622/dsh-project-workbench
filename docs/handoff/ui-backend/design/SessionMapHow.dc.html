@@ -1,0 +1,81 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>怎么做出来</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--l1:#232324;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--ok:#4ED17E;--warn:#F7AD31}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--l1:#F5F6F7;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--ok:#15803D;--warn:#A35F0A}
+h2{margin:0 0 8px;font-size:18px;line-height:26px;font-weight:600}
+.tr{display:grid;column-gap:16px;padding:7px 0;font-size:13px;line-height:20px;color:var(--t2);box-shadow:0 -0.5px 0 var(--line-soft)}
+.th{display:grid;column-gap:16px;padding-bottom:6px;font-size:12px;line-height:18px;color:var(--t3)}
+.t1{color:var(--t1)}
+code{font-family:var(--mono);font-size:12px}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 48px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">怎么做出来</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">后端做在 dsh-project-workbench 插件里，不改 DSH。项目、线程、工作树和总对话已经有，缺会话图载荷和几个读接口。</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; flex: 1; min-height: 0">
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+      <section>
+        <h2>数据从哪来</h2>
+        <div class="th" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span>地图上的</span><span>来源</span><span>现状</span></div>
+        <div class="tr" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span class="t1">卡片和状态</span><span>插件的线程 <code>phase</code>，加上会话里的审批事件</span><span style="color: var(--ok)">已有</span></div>
+        <div class="tr" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span class="t1">实线、双线的边</span><span>项目成员、<code>dependsOn</code>、<code>parentSession</code>、子智能体事件</span><span style="color: var(--ok)">已有</span></div>
+        <div class="tr" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span class="t1">目标</span><span>插件里新增项目级目标，和单会话的 <code>/goal</code> 分开</span><span style="color: var(--warn)">要新增</span></div>
+        <div class="tr" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span class="t1">虚线的边</span><span>两条工作树线程的改动文件取交集</span><span style="color: var(--warn)">要新算</span></div>
+        <div class="tr" style="grid-template-columns: 96px minmax(0, 1fr) 72px"><span class="t1">卡片一行字</span><span>线程最后一句和当前工具，新增 <code>thread-tail</code></span><span style="color: var(--warn)">要新增</span></div>
+      </section>
+      <section>
+        <h2>能复用什么</h2>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">卡片和展开</span><span><code>web/graph/components/card.js</code>、<code>open.js</code></span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">边和强调</span><span><code>edge.js</code>、<code>ui/layout/emphasis.js</code></span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">横排布局</span><span><code>ui/layout/route_lr.js</code> 和让位规则</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">卡片里的真会话</span><span>插件已有的 <code>EmbeddedConversation</code>，审批和发消息都走原生</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">TUI</span><span>插件用 dsh-tui 的 <code>tuiPanels</code> 注册侧栏面板</span></div>
+      </section>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+      <section>
+        <h2>分四步</h2>
+        <div class="tr" style="grid-template-columns: 56px minmax(0, 1fr)"><span class="t1">第 1 步</span><span>只读地图：卡片、状态、实线的边，点一下跳到会话。</span></div>
+        <div class="tr" style="grid-template-columns: 56px minmax(0, 1fr)"><span class="t1">第 2 步</span><span>卡片里对话：展开后能发消息、批准、回答。</span></div>
+        <div class="tr" style="grid-template-columns: 56px minmax(0, 1fr)"><span class="t1">第 3 步</span><span>在图上开分支、放进分屏，把目标挂到多个会话。</span></div>
+        <div class="tr" style="grid-template-columns: 56px minmax(0, 1fr)"><span class="t1">第 4 步</span><span>加虚线的推测边和流动动效，TUI 跟上。</span></div>
+      </section>
+      <section>
+        <h2>要守的规矩</h2>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">一份语义</span><span>会话图走现有图载荷的服务层，不另起一套。</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">同屏展开上限</span><span>沿用停靠 2 张、全屏 3 张，多开费内存也费注意力。</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">位置不乱跳</span><span>状态变化不改布局，只有增删会话才让位。</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">虚线不是事实</span><span>推测边只提示，不触发任何动作。</span></div>
+        <div class="tr" style="grid-template-columns: 136px minmax(0, 1fr)"><span class="t1">会话多了</span><span>已完成的折成“还有 N 个”，时间久的默认收起。</span></div>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>上限样例 · 地图</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--warn:#F7AD31;--c1:#4F8AF2;--c2:#0FA696;--c3:#A066F0;--c4:#DE4F92}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--warn:#A35F0A;--c1:#2F5FCC;--c2:#008F7F;--c3:#8A4FD0;--c4:#C43E7E}
+button{font-family:inherit}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.st{font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:nowrap}
+.st strong{font-weight:700;color:var(--t1)}
+.ty{display:grid;grid-template-columns:14px minmax(0,1fr) 76px;column-gap:8px;align-items:center;width:100%;height:28px;padding:0 6px;box-sizing:border-box;border:0;border-radius:6px;background:transparent;color:var(--t1);font-size:13px;line-height:20px;text-align:left;cursor:pointer}
+.ty:hover{background:var(--l1)}
+.rg{display:grid;grid-template-columns:minmax(0,1fr) 76px 64px;column-gap:8px;width:100%;height:26px;padding:0 6px;box-sizing:border-box;border:0;border-radius:4px;background:transparent;color:var(--t2);font-size:12px;line-height:26px;text-align:left;cursor:pointer}
+.rg:hover{background:var(--l1)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="position: absolute; left: 0; right: 0; top: 0; height: 44px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 12px; background: var(--side); box-shadow: 0 0.5px 0 var(--line)">
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">出行记录联动分析</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">空间 + 图表 + 表格 · 第二级渲染器 · 四个视图互相筛选</span>
+    <span style="flex: 1"></span><span class="st"><strong>{{fps}}</strong> 帧/秒 · 筛选 <strong>{{filterMs}}</strong>ms · <strong>{{picked}}</strong> / {{count}} 条</span>
+  </header>
+  <div style="position: absolute; left: 0; top: 44px; width: 1040px; height: 600px; overflow: hidden; background: var(--term)">
+    <canvas data-gl="map" width="1040" height="600" aria-label="出行点地图，拖动平移或框选，滚轮缩放" style="display: {{glShow}}; width: 1040px; height: 600px; cursor: {{cursor}}"></canvas>
+    <div style="display: {{boxShow}}; position: absolute; left: {{box.x}}px; top: {{box.y}}px; width: {{box.w}}px; height: {{box.h}}px; box-shadow: inset 0 0 0 1px var(--accent); pointer-events: none"></div>
+    <div style="display: {{tuiShow}}; box-sizing: border-box; height: 600px; padding: 12px 16px; font-family: var(--mono); font-size: 13px; line-height: 19px; color: var(--t2); white-space: pre; overflow: hidden"><sc-for list="{{tui}}" as="l" hint-placeholder-count="30"><div style="height: 19px; color: {{l.c}}">{{l.t}}</div></sc-for></div>
+    <div style="display: {{failShow}}; position: absolute; left: 24px; top: 24px; font-size: 14px; line-height: 22px; color: var(--warn)">这个环境没有 WebGL2，面板退到字符视图</div>
+  </div>
+  <div style="position: absolute; left: 0; top: 644px; width: 1040px; height: 188px; display: grid; grid-template-columns: 620px 420px; box-shadow: 0 -0.5px 0 var(--line)">
+    <div style="box-sizing: border-box; padding: 8px 12px"><div style="display: flex; font-size: 12px; line-height: 18px; color: var(--t3)"><span style="flex: 1">小时，拖动框选</span><span>{{hourText}}</span></div><canvas data-hist="hour" width="596" height="146" aria-label="每小时出行量直方图" style="width: 596px; height: 146px; cursor: crosshair"></canvas></div>
+    <div style="box-sizing: border-box; padding: 8px 12px; box-shadow: -0.5px 0 0 var(--line-soft)"><div style="display: flex; font-size: 12px; line-height: 18px; color: var(--t3)"><span style="flex: 1">距离，拖动框选</span><span>{{distText}}</span></div><canvas data-hist="dist" width="396" height="146" aria-label="出行距离直方图" style="width: 396px; height: 146px; cursor: crosshair"></canvas></div>
+  </div>
+  <aside aria-label="分类和排行" style="position: absolute; left: 1040px; right: 0; top: 44px; height: 788px; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; gap: 6px; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+    <div style="font-size: 12px; line-height: 18px; color: var(--t3)">方式，点一下开关</div>
+    <sc-for list="{{kinds}}" as="k" hint-placeholder-count="4"><button type="button" class="ty" onClick="{{k.pick}}" aria-pressed="{{k.on}}" style="opacity: {{k.op}}"><span style="color: {{k.c}}; font-family: var(--mono)">{{k.g}}</span><span>{{k.t}}</span><span style="text-align: right; font-family: var(--mono); font-size: 12px; color: var(--t2)">{{k.n}}</span></button></sc-for>
+    <div style="padding-top: 10px; font-size: 12px; line-height: 18px; color: var(--t3)">最热的区域，点一下框选</div>
+    <sc-for list="{{regions}}" as="r" hint-placeholder-count="10"><button type="button" class="rg" onClick="{{r.pick}}"><span style="color: var(--t1)">{{r.t}}</span><span style="text-align: right; font-family: var(--mono)">{{r.n}}</span><span style="text-align: right; color: var(--t3)">{{r.pct}}</span></button></sc-for>
+    <div style="flex: 1"></div>
+    <div style="font-size: 12px; line-height: 18px; color: var(--t3)">合成数据，一座虚构城市。真实场景要接瓦片底图，那需要声明联网。</div>
+  </aside>
+  <div style="position: absolute; left: 0; right: 0; top: 832px; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; box-shadow: 0 -0.5px 0 var(--line)">
+    <button type="button" class="opt" onClick="{{modePan}}" aria-pressed="{{pPan}}">平移</button><button type="button" class="opt" onClick="{{modeBox}}" aria-pressed="{{pBox}}">框选</button>
+    <button type="button" class="opt" onClick="{{togglePlay}}" aria-pressed="{{playOn}}">{{playLabel}}</button><button type="button" class="opt" onClick="{{clear}}">清除筛选</button>
+    <span style="flex: 1"></span><button type="button" class="opt" onClick="{{toggleTui}}" aria-pressed="{{tuiOn}}">看 TUI 退化</button>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; background: var(--side); box-shadow: 0 -0.5px 0 var(--line)">
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3); padding-right: 6px">数据行数</span><sc-for list="{{sizes}}" as="o" hint-placeholder-count="5"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">超过 16ms 拖动会变钝，这是筛选的上限；要再往上就得把计算挪到 Worker 或者预聚合</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  state = { N: 1000000, fps: 0, filterMs: 0, picked: 0, tui: false, rows: [], noGL: false, mode: 'pan', play: false, h: [0, 23], d: [0, 29], mask: 15, boxPx: null, kc: [0, 0, 0, 0], top: [] };
+  cx = 0.5; cy = 0.5; z = 1;
+  names = ['地铁', '公交', '打车', '单车'];
+  componentDidMount() { this.boot(); }
+  componentWillUnmount() { clearTimeout(this.bt); clearTimeout(this.vt); cancelAnimationFrame(this.raf); this.io && this.io.disconnect(); }
+  boot() {
+    const c = document.querySelector('[data-gl="map"]');
+    if (!c) { this.bt = setTimeout(() => this.boot(), 100); return; }
+    this.c = c; this.hc = { hour: document.querySelector('[data-hist="hour"]'), dist: document.querySelector('[data-hist="dist"]') };
+    let d = null;
+    c.addEventListener('mousedown', (e) => { const q = this.local(e, c, 1040, 600); d = { q, cx: this.cx, cy: this.cy }; });
+    window.addEventListener('mousemove', (e) => {
+      if (!d) return; const q = this.local(e, c, 1040, 600);
+      if (this.state.mode === 'pan') { this.cx = d.cx - (q[0] - d.q[0]) / 1040 / this.z; this.cy = d.cy - (q[1] - d.q[1]) / 600 / this.z; }
+      else this.setBox([Math.min(d.q[0], q[0]), Math.min(d.q[1], q[1]), Math.abs(q[0] - d.q[0]), Math.abs(q[1] - d.q[1])]);
+    });
+    window.addEventListener('mouseup', () => { d = null; });
+    c.addEventListener('wheel', (e) => { e.preventDefault(); this.z = Math.max(1, Math.min(60, this.z * Math.exp(-e.deltaY * 0.0012))); }, { passive: false });
+    Object.keys(this.hc).forEach((k) => { const h = this.hc[k]; if (!h) return; let b = null; const W = k === 'hour' ? 596 : 396, bins = k === 'hour' ? 24 : 30, at = (e) => Math.max(0, Math.min(bins - 1, Math.floor(this.local(e, h, W, 146)[0] / W * bins))); h.addEventListener('mousedown', (e) => { b = at(e); this.setRange(k, b, b); }); window.addEventListener('mousemove', (e) => { if (b !== null) { const v = at(e); this.setRange(k, Math.min(b, v), Math.max(b, v)); } }); window.addEventListener('mouseup', () => { b = null; }); });
+    const start = () => { this.vis = true; if (!this.gl && !this.state.noGL) this.init(); this.kick(); };
+    if (window.IntersectionObserver) { this.io = new IntersectionObserver((e) => { this.vis = e[0].isIntersecting; if (this.vis) start(); }); this.io.observe(c); } else start();
+    const wake = () => { if (!document.hidden && this.vis) this.kick(); this.vt = setTimeout(wake, 1000); }; wake();
+  }
+  local(e, el, W, H) { const r = el.getBoundingClientRect(); return [(e.clientX - r.left) * W / r.width, (e.clientY - r.top) * H / r.height]; }
+  setRange(k, a, b) { this.setState(k === 'hour' ? { h: [a, b] } : { d: [a, b] }); this.dirty = true; }
+  setBox(b) { this.setState({ boxPx: b }); this.dirty = true; }
+  prog(vs, fs) {
+    const gl = this.gl, p = gl.createProgram();
+    [[gl.VERTEX_SHADER, vs], [gl.FRAGMENT_SHADER, fs]].forEach(([t, src]) => { const s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); gl.attachShader(p, s); });
+    gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    return p;
+  }
+  init() {
+    const gl = this.c.getContext('webgl2', { antialias: false, alpha: false });
+    if (!gl) { this.setState({ noGL: true, tui: true }); return; }
+    this.gl = gl;
+    this.pp = this.prog(`#version 300 es
+      precision highp float; in vec2 p; in float k; in float s; uniform vec3 V; flat out float c; flat out float on; void main(){ c=k; on=s; gl_Position=vec4((p.x-V.x)*V.z*2.,-(p.y-V.y)*V.z*2.,0.,1.); gl_PointSize=1.+min(2.,V.z*.08); }`, `#version 300 es
+      precision mediump float; flat in float c; flat in float on; uniform vec3 C[4]; uniform vec2 AL; uniform vec3 DIM; out vec4 o; void main(){ if(on>.5)o=vec4(C[int(c+.5)],AL.x); else o=vec4(DIM,AL.y); }`);
+    this.pl = this.prog(`#version 300 es
+      precision highp float; in vec2 p; uniform vec3 V; void main(){ gl_Position=vec4((p.x-V.x)*V.z*2.,-(p.y-V.y)*V.z*2.,0.,1.); }`, `#version 300 es
+      precision mediump float; uniform vec4 C; out vec4 o; void main(){ o=C; }`);
+    this.bL = gl.createBuffer(); this.bP = gl.createBuffer(); this.bK = gl.createBuffer(); this.bS = gl.createBuffer();
+    const pts = [];
+    const rad = (t) => 0.4 + 0.035 * Math.sin(3 * t + 1) + 0.022 * Math.sin(5 * t + 2.2) + 0.012 * Math.sin(11 * t + 0.4); for (let i = 0; i < 180; i++) { const t0 = i / 180 * 6.2832, t1 = (i + 1) / 180 * 6.2832; pts.push(0.5 + Math.cos(t0) * rad(t0) * 1.05, 0.5 + Math.sin(t0) * rad(t0) * 1.05, 0.5 + Math.cos(t1) * rad(t1) * 1.05, 0.5 + Math.sin(t1) * rad(t1) * 1.05); }
+    for (let i = 1; i < 10; i++) { pts.push(i / 10, 0, i / 10, 1, 0, i / 10, 1, i / 10); }
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bL); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(pts), gl.STATIC_DRAW); this.nL = pts.length / 2;
+    this.make(this.state.N);
+  }
+  make(N) {
+    const gl = this.gl, lon = new Float32Array(N), lat = new Float32Array(N), xy = new Float32Array(N * 2), hour = new Uint8Array(N), dist = new Uint8Array(N), kind = new Uint8Array(N), kindF = new Float32Array(N), cell = new Uint16Array(N), sel = new Float32Array(N).fill(1), R = Math.random;
+    const city = [[0.5, 0.5, 0.05, 0.3], [0.32, 0.38, 0.035, 0.18], [0.66, 0.34, 0.03, 0.14], [0.38, 0.66, 0.035, 0.14], [0.7, 0.62, 0.03, 0.12], [0.2, 0.55, 0.024, 0.06], [0.82, 0.46, 0.02, 0.06]];
+    const gauss = () => Math.sqrt(-2 * Math.log(R() + 1e-9)) * Math.cos(6.2832 * R());
+    for (let i = 0; i < N; i++) {
+      let u = R(), c = 0; while (u > city[c][3] && c < city.length - 1) { u -= city[c][3]; c++; }
+      let x, y; if (R() < 0.2) { const a = city[c], b = city[(c + 2) % city.length], t = R(); x = a[0] + (b[0] - a[0]) * t + gauss() * 0.006; y = a[1] + (b[1] - a[1]) * t + gauss() * 0.006; } else { x = city[c][0] + gauss() * city[c][2]; y = city[c][1] + gauss() * city[c][2]; }
+      x = Math.max(0, Math.min(1, x)); y = Math.max(0, Math.min(1, y));
+      const k = R() < 0.42 ? 0 : R() < 0.5 ? 1 : R() < 0.6 ? 2 : 3, peak = R() < 0.46 ? 8 : R() < 0.6 ? 18 : 13, h = Math.max(0, Math.min(23, Math.round(peak + gauss() * (peak === 13 ? 3.6 : 1.5)))), d = Math.max(0, Math.min(29, Math.floor(Math.exp(1.6 + gauss() * 0.72) * (k === 3 ? 0.5 : 1))));
+      lon[i] = x; lat[i] = y; xy[i * 2] = x; xy[i * 2 + 1] = y; hour[i] = h; dist[i] = d; kind[i] = k; kindF[i] = k; cell[i] = Math.min(31, (x * 32) | 0) + 32 * Math.min(31, (y * 32) | 0);
+    }
+    Object.assign(this, { N, lon, lat, hour, dist, kind, cell, sel, hH: new Uint32Array(24), dH: new Uint32Array(30), kC: new Uint32Array(4), cC: new Uint32Array(1024), allH: new Uint32Array(24), allD: new Uint32Array(30) });
+    for (let i = 0; i < N; i++) { this.allH[hour[i]]++; this.allD[dist[i]]++; }
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bP); gl.bufferData(gl.ARRAY_BUFFER, xy, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bK); gl.bufferData(gl.ARRAY_BUFFER, kindF, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bS); gl.bufferData(gl.ARRAY_BUFFER, sel, gl.DYNAMIC_DRAW);
+    this.dirty = true;
+  }
+  recompute() {
+    const t0 = performance.now(), { N, lon, lat, hour, dist, kind, cell, sel, hH, dH, kC, cC } = this, { h, d, mask, boxPx } = this.state, [h0, h1] = h, [d0, d1] = d;
+    hH.fill(0); dH.fill(0); kC.fill(0); cC.fill(0); let total = 0, x0 = -1, x1 = 2, y0 = -1, y1 = 2;
+    if (boxPx && boxPx[2] > 2) { const w = (p) => ((p / 1040 - 0.5) / this.z + this.cx), v = (p) => ((p / 600 - 0.5) / this.z + this.cy); x0 = w(boxPx[0]); x1 = w(boxPx[0] + boxPx[2]); y0 = v(boxPx[1]); y1 = v(boxPx[1] + boxPx[3]); }
+    for (let i = 0; i < N; i++) {
+      const hv = hour[i], dv = dist[i], k = kind[i], x = lon[i], y = lat[i], a = hv >= h0 && hv <= h1, b = dv >= d0 && dv <= d1, c = (mask >> k) & 1, e = x >= x0 && x <= x1 && y >= y0 && y <= y1, fails = (a ? 0 : 1) + (b ? 0 : 1) + (c ? 0 : 1) + (e ? 0 : 1);
+      if (fails === 0) { sel[i] = 1; total++; hH[hv]++; dH[dv]++; kC[k]++; cC[cell[i]]++; }
+      else { sel[i] = 0; if (fails === 1) { if (!a) hH[hv]++; else if (!b) dH[dv]++; else if (!c) kC[k]++; else cC[cell[i]]++; } }
+    }
+    const gl = this.gl; gl.bindBuffer(gl.ARRAY_BUFFER, this.bS); gl.bufferSubData(gl.ARRAY_BUFFER, 0, sel);
+    const ms = performance.now() - t0, top = [...cC].map((n, i) => [n, i]).sort((p, q) => q[0] - p[0]).slice(0, 10);
+    this.drawHist(); this.fm = this.fm ? this.fm * 0.7 + ms * 0.3 : ms;
+    this.setState({ filterMs: this.fm.toFixed(1), picked: total, kc: [...kC], top, rows: this.state.tui ? this.tuiRows() : [] });
+  }
+  drawHist() {
+    const dark = (this.props.theme ?? 'dark') === 'dark', { h, d } = this.state, base = dark ? '#353638' : '#E1E5EE', on = dark ? '#7AAAFF' : '#2F5FCC';
+    [['hour', this.hH, this.allH, 596, h], ['dist', this.dH, this.allD, 396, d]].forEach(([k, H, A, W, r]) => { const c = this.hc[k]; if (!c) return; const g = c.getContext('2d'), n = H.length, bw = W / n, m = Math.max(...A) || 1; g.clearRect(0, 0, W, 146); for (let i = 0; i < n; i++) { const a = A[i] / m * 140, b = H[i] / m * 140; g.fillStyle = base; g.fillRect(i * bw + 1, 146 - a, bw - 2, a); if (i >= r[0] && i <= r[1]) { g.fillStyle = on; g.fillRect(i * bw + 1, 146 - b, bw - 2, b); } } });
+  }
+  kick() { if (this.raf || !this.gl) return; const loop = (t) => { this.raf = null; if (!this.vis || document.hidden) return; this.frame(t); this.raf = requestAnimationFrame(loop); }; this.raf = requestAnimationFrame(loop); }
+  frame(t) {
+    const gl = this.gl, dark = (this.props.theme ?? 'dark') === 'dark';
+    if (this.state.play && t - (this.lastP || 0) > 140) { this.lastP = t; const a = ((this.state.h[0] + 1) % 22); this.setState({ h: [a, a + 2] }); this.dirty = true; }
+    if (this.dirty) { this.dirty = false; this.recompute(); }
+    const V = [this.cx, this.cy, this.z], u = (p, n) => gl.getUniformLocation(p, n);
+    gl.viewport(0, 0, 1040, 600); gl.clearColor(...(dark ? [0.059, 0.067, 0.082, 1] : [0.976, 0.98, 0.984, 1])); gl.clear(gl.COLOR_BUFFER_BIT); gl.enable(gl.BLEND);
+    gl.useProgram(this.pl); gl.uniform3fv(u(this.pl, 'V'), V); gl.uniform4f(u(this.pl, 'C'), ...(dark ? [1, 1, 1, 0.14] : [0, 0, 0, 0.14])); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    const lp0 = gl.getAttribLocation(this.pl, 'p'); gl.bindBuffer(gl.ARRAY_BUFFER, this.bL); gl.enableVertexAttribArray(lp0); gl.vertexAttribPointer(lp0, 2, gl.FLOAT, false, 0, 0); gl.drawArrays(gl.LINES, 0, this.nL);
+    gl.useProgram(this.pp); gl.uniform3fv(u(this.pp, 'V'), V); if (dark) gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+    gl.uniform3fv(u(this.pp, 'C'), new Float32Array(dark ? [0.31, 0.54, 0.95, 0.06, 0.65, 0.59, 0.63, 0.4, 0.94, 0.87, 0.31, 0.57] : [0.18, 0.37, 0.8, 0, 0.56, 0.5, 0.54, 0.31, 0.82, 0.77, 0.24, 0.49])); gl.uniform3f(u(this.pp, 'DIM'), ...(dark ? [0.5, 0.52, 0.55] : [0.6, 0.62, 0.65]));
+    gl.uniform2f(u(this.pp, 'AL'), Math.min(0.7, 26000 / this.N + 0.05), Math.min(0.08, 4000 / this.N + 0.01));
+    [['p', this.bP, 2], ['k', this.bK, 1], ['s', this.bS, 1]].forEach(([n, b, sz]) => { const l = gl.getAttribLocation(this.pp, n); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, sz, gl.FLOAT, false, 0, 0); });
+    gl.drawArrays(gl.POINTS, 0, this.N); gl.flush();
+    this.fN = (this.fN || 0) + 1; if (!this.lastS) this.lastS = t;
+    if (t - this.lastS >= 500) { const fps = Math.round(this.fN * 1000 / (t - this.lastS)); this.fN = 0; this.lastS = t; this.setState({ fps }); }
+  }
+  tuiRows() {
+    const W = 92, H = 19, g = Array.from({ length: H }, () => new Array(W).fill(0)), step = Math.max(1, Math.floor(this.N / 300000));
+    for (let i = 0; i < this.N; i += step) if (this.sel[i]) { const x = Math.min(W - 1, (this.lon[i] * W) | 0), y = Math.min(H - 1, (this.lat[i] * H) | 0); g[y][x]++; }
+    const m = Math.max(...g.flat()) || 1, ramp = ' ·:+*#%@', spark = '▁▂▃▄▅▆▇█', hm = Math.max(...this.hH) || 1, out = g.map((r) => ({ t: r.map((v) => ramp[Math.min(7, Math.ceil(Math.sqrt(v / m) * 7))]).join(''), c: 'var(--t2)' }));
+    out.push({ t: ' ', c: 'var(--t3)' }, { t: `小时 ${[...this.hH].map((v) => spark[Math.min(7, Math.floor(v / hm * 7.99))]).join('')}`, c: 'var(--t1)' }, { t: `     0h${' '.repeat(18)}23h`, c: 'var(--t4)' }, { t: ' ', c: 'var(--t3)' });
+    this.state.kc.forEach((n, i) => out.push({ t: `${this.names[i]}  ${n.toLocaleString('en-US')}`, c: 'var(--t1)' }));
+    return out;
+  }
+  renderVals() {
+    const { N, fps, filterMs, picked, tui, rows, noGL, mode, play, h, d, mask, boxPx, kc, top } = this.state, fmt = (v) => v.toLocaleString('en-US'), name = (v) => (v >= 1e6 ? `${v / 1e6} 百万` : `${v / 1e4} 万`), glyphs = ['●', '◆', '■', '▲'], cc = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)'];
+    const mark = () => { this.dirty = true; }, press = (b) => (b ? 'true' : 'false'), sum = picked || 1;
+    return {
+      theme: this.props.theme ?? 'dark', fps, filterMs, picked: fmt(picked), count: fmt(N), glShow: tui ? 'none' : 'block', tuiShow: tui ? 'block' : 'none', failShow: noGL ? 'block' : 'none', tui: rows, cursor: mode === 'pan' ? 'grab' : 'crosshair',
+      boxShow: boxPx && boxPx[2] > 2 && !tui ? 'block' : 'none', box: boxPx ? { x: boxPx[0], y: boxPx[1], w: boxPx[2], h: boxPx[3] } : { x: 0, y: 0, w: 0, h: 0 }, hourText: `${h[0]}–${h[1] + 1} 时`, distText: `${d[0]}–${d[1] + 1} km`,
+      kinds: this.names.map((t, i) => { const on = (mask >> i) & 1; return { t, g: glyphs[i], c: cc[i], on: press(on), op: on ? 1 : 0.4, n: fmt(kc[i] || 0), pick: () => { this.setState((s) => ({ mask: s.mask ^ (1 << i) })); mark(); } }; }),
+      regions: top.map(([n, id]) => { const cx = id % 32, cy = id >> 5; return { t: `${String.fromCharCode(65 + Math.floor(cy / 2))}${cx + 1} 区`, n: fmt(n), pct: `${(n / sum * 100).toFixed(1)}%`, pick: () => { const w = (v) => ((v / 32 - this.cx) * this.z + 0.5) * 1040, y = (v) => ((v / 32 - this.cy) * this.z + 0.5) * 600; this.setBox([w(cx), y(cy), w(cx + 1) - w(cx), y(cy + 1) - y(cy)]); } }; }),
+      modePan: () => this.setState({ mode: 'pan' }), modeBox: () => this.setState({ mode: 'box' }), pPan: press(mode === 'pan'), pBox: press(mode === 'box'),
+      togglePlay: () => this.setState((s) => ({ play: !s.play, h: s.play ? [0, 23] : [6, 8] })), playOn: press(play), playLabel: play ? '停止播放' : '按小时播放',
+      clear: () => { this.setState({ h: [0, 23], d: [0, 29], mask: 15, boxPx: null, play: false }); mark(); },
+      toggleTui: () => { this.setState((s) => ({ tui: !s.tui })); mark(); }, tuiOn: press(tui),
+      sizes: [100000, 1000000, 3000000, 5000000, 10000000].map((v) => ({ t: name(v), on: press(N === v), pick: () => { this.setState({ N: v }); this.fm = 0; if (this.gl) this.make(v); } }))
+    };
+  }
+}
+</script>
+</body>
+</html>

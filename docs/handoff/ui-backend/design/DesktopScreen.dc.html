@@ -1,0 +1,116 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>桌面端成屏</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; min-height: 900px; box-sizing: border-box; background: var(--bg); color: var(--t1); font-family: var(--sans); font-size: 14px; line-height: 22px">
+
+  <nav aria-label="会话" style="flex: 1 1 248px; min-width: 0; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; gap: 4px; background: var(--l1); border-right: 0.5px solid var(--line)">
+    <div style="display: flex; align-items: center; height: 36px; padding: 0 8px; font-weight: 600">dsh-workbench</div>
+    <button type="button" style="display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 10px; margin-bottom: 8px; border: 0; border-radius: 8px; background: var(--l2); color: var(--t1); font-family: var(--sans); font-size: 13px; line-height: 20px">新会话 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">Ctrl+N</span></button>
+    <h2 style="margin: 0; padding: 8px 8px 4px; font-size: 12px; line-height: 18px; font-weight: 400; color: var(--t3)">今天</h2>
+    <a href="#" aria-current="page" style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 8px; border-radius: 8px; background: var(--l3); color: var(--t1); font-size: 13px; line-height: 20px; text-decoration: none"><span style="font-family: var(--mono); color: var(--accent)">◐</span>审批卡状态统一</a>
+    <a href="#" style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 8px; color: var(--t2); font-size: 13px; line-height: 20px; text-decoration: none"><span style="font-family: var(--mono); color: var(--ok)">●</span>侧栏终端字号</a>
+    <a href="#" style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 8px; color: var(--t2); font-size: 13px; line-height: 20px; text-decoration: none"><span style="font-family: var(--mono); color: var(--warn)">▲</span>文档站链接检查</a>
+    <h2 style="margin: 0; padding: 12px 8px 4px; font-size: 12px; line-height: 18px; font-weight: 400; color: var(--t3)">昨天</h2>
+    <a href="#" style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 8px; color: var(--t2); font-size: 13px; line-height: 20px; text-decoration: none"><span style="font-family: var(--mono); color: var(--idle)">○</span>模型选择器键位</a>
+    <a href="#" style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 8px; color: var(--t2); font-size: 13px; line-height: 20px; text-decoration: none"><span style="font-family: var(--mono); color: var(--idle)">○</span>TUI 主题生成脚本</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+    <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 24px; border-bottom: 0.5px solid var(--line-soft)">
+      <h1 style="margin: 0; font-size: 15px; line-height: 24px; font-weight: 600">审批卡状态统一</h1>
+      <span style="padding: 1px 8px; border-radius: 6px; background: var(--l2); color: var(--t2); font-family: var(--mono); font-size: 12px; line-height: 18px">feat/approval-card</span>
+    </header>
+
+    <div style="flex: 1; width: 100%; max-width: 780px; box-sizing: border-box; margin: 0 auto; padding: 20px 24px 16px; display: flex; flex-direction: column; gap: 12px">
+      <div style="align-self: flex-end; max-width: 80%; padding: 8px 12px; border-radius: 12px; background: var(--l2)">把审批卡的风险等级改成和 StateDot 同一套状态。</div>
+      <p style="margin: 0">我先看现有组件，再改状态映射。</p>
+
+      <div style="display: flex; flex-direction: column">
+        <div style="display: flex; align-items: center; gap: 8px; height: 28px; font-size: 13px; line-height: 20px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span>读取</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">RiskConfirmation.tsx</code><span style="font-size: 12px; color: var(--t3)">212 行</span></div>
+        <div style="display: flex; align-items: center; gap: 8px; height: 28px; font-size: 13px; line-height: 20px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span>搜索</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; color: var(--t1)">StateDot</code><span style="font-size: 12px; color: var(--t3)">14 处</span></div>
+      </div>
+
+      <article style="border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08); overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px"><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 12px; line-height: 20px">RiskConfirmation.tsx</code><span style="font-family: var(--mono); font-size: 12px; color: var(--ok-t)">+2</span><span style="font-family: var(--mono); font-size: 12px; color: var(--err-t)">−1</span></div>
+        <div style="font-family: var(--mono); font-size: 12px; line-height: 20px; overflow-x: auto; white-space: nowrap">
+          <div style="padding: 0 12px; background: var(--err-bg)">− const tone = risk === 'high' ? 'red' : 'amber';</div>
+          <div style="padding: 0 12px; background: var(--ok-bg)">+ const state = riskToState(risk);</div>
+          <div style="padding: 0 12px; background: var(--ok-bg)">+ return &lt;StateDot state={state} /&gt;;</div>
+        </div>
+      </article>
+
+      <article style="border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08); overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px"><span style="font-family: var(--mono); color: var(--ok)">●</span><code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 13px; line-height: 20px">pnpm vitest run ui-primitives</code><span style="font-size: 12px; line-height: 18px; color: var(--t3)">24s</span></div>
+        <div style="padding: 6px 12px; background: var(--l1); font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t2)">✓ 2 个文件，共 19 条</div>
+      </article>
+
+      <article style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08)">
+        <div style="display: flex; align-items: center; gap: 8px"><span style="font-family: var(--mono); color: var(--warn)">▲</span><strong style="flex: 1; font-weight: 600">要推送到远端吗？</strong><span style="padding: 1px 8px; border-radius: 6px; background: var(--warn-bg); color: var(--warn-t); font-size: 12px; line-height: 18px">需确认</span></div>
+        <code style="padding: 8px 10px; border-radius: 8px; background: var(--l1); font-family: var(--mono); font-size: 12px; line-height: 20px">git push origin feat/approval-card</code>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-family: var(--sans); font-size: 13px">允许一次 <span style="font-family: var(--mono); font-size: 12px">Y</span></button>
+          <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; box-shadow: inset 0 0 0 0.5px var(--line); color: var(--t1); font-family: var(--sans); font-size: 13px">本会话都允许 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">A</span></button>
+          <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: var(--t2); font-family: var(--sans); font-size: 13px">拒绝 <span style="font-family: var(--mono); font-size: 12px; color: var(--t3)">N</span></button>
+        </div>
+      </article>
+
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+        <textarea aria-label="输入消息" rows="1" placeholder="排队一条消息，这一轮结束后发送" style="width: 100%; box-sizing: border-box; padding: 0; border: 0; outline: 0; resize: none; background: transparent; color: var(--t1); font-family: var(--sans); font-size: 14px; line-height: 22px"></textarea>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+          <button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: var(--l2); color: var(--t2); font-family: var(--sans); font-size: 12px">deepseek-v4.1-flash</button>
+          <button type="button" style="height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: var(--t3); font-family: var(--sans); font-size: 12px">工作区写入</button>
+          <span style="flex: 1"></span>
+          <button type="button" aria-label="停止这一轮" style="width: 44px; height: 44px; margin: -8px -4px; border: 0; border-radius: 22px; background: transparent; display: flex; align-items: center; justify-content: center"><span style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 14px; background: var(--t1)"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--bg)"></span></span></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside aria-label="本轮进度" style="flex: 1 1 288px; min-width: 0; box-sizing: border-box; padding: 16px; display: flex; flex-direction: column; gap: 24px; border-left: 0.5px solid var(--line-soft)">
+    <section style="display: flex; flex-direction: column; gap: 4px">
+      <h2 style="margin: 0 0 4px; font-size: 13px; line-height: 20px; font-weight: 600">计划</h2>
+      <div style="display: flex; align-items: center; gap: 8px; height: 26px; font-size: 13px; line-height: 20px; color: var(--t3)"><span style="font-family: var(--mono); color: var(--ok)">●</span>读现有审批组件</div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 26px; font-size: 13px; line-height: 20px; color: var(--t3)"><span style="font-family: var(--mono); color: var(--ok)">●</span>改风险到状态的映射</div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 26px; font-size: 13px; line-height: 20px; color: var(--t3)"><span style="font-family: var(--mono); color: var(--ok)">●</span>跑组件测试</div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 26px; font-size: 13px; line-height: 20px; color: var(--t1); font-weight: 500"><span style="font-family: var(--mono); font-weight: 400; color: var(--warn)">▲</span>推分支并开 PR</div>
+    </section>
+    <section style="display: flex; flex-direction: column; gap: 4px">
+      <h2 style="margin: 0 0 4px; font-size: 13px; line-height: 20px; font-weight: 600">任务</h2>
+      <div style="display: flex; align-items: center; gap: 8px; height: 30px; font-size: 13px; line-height: 20px"><span style="font-family: var(--mono); color: var(--accent)">◐</span><span style="flex: 1">子代理：审查这次改动</span><span style="font-size: 12px; color: var(--t3)">42s</span></div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 30px; font-size: 13px; line-height: 20px; color: var(--t2)"><span style="font-family: var(--mono); color: var(--ok)">●</span><span style="flex: 1">后台：构建文档站</span><span style="font-size: 12px; color: var(--t3)">2 分钟前</span></div>
+    </section>
+    <section style="display: flex; flex-direction: column; gap: 8px">
+      <h2 style="margin: 0; font-size: 13px; line-height: 20px; font-weight: 600">上下文</h2>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <span role="meter" aria-label="上下文用量" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="display: block; flex: 1; height: 4px; border-radius: 2px; background: var(--l3); overflow: hidden"><span style="display: block; width: 62%; height: 4px; background: var(--accent)"></span></span>
+        <span style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t2)">62%</span>
+      </div>
+    </section>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark' };
+  }
+}
+</script>
+</body>
+</html>

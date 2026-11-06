@@ -1,0 +1,150 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DAG 面板 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--ok-t:#4ED17E;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A;--s1:#4F8AF2;--s2:#0FA696}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--ok-t:#15803D;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313;--s1:#2F5FCC;--s2:#008F7F}
+.lines{display:flex;flex-direction:column;min-width:0}
+.key{height:20px;padding:0;border:0;background:transparent;font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="display: flex; gap: 16px"><span style="color: var(--accent-t); font-weight: 700">dsh dag</span><span style="color: var(--t1); font-weight: 700">view.py</span><span style="color: var(--t3)">demo-project › demo.graph</span><span style="flex: 1"></span><span style="color: var(--ok)">●</span><span style="color: var(--t3)">索引 13577 节点</span></div>
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+
+    <div style="color: var(--t1); white-space: pre-wrap">改 view.py 会波及 <span style="font-weight: 700">11</span> 个函数，跨 <span style="font-weight: 700">6</span> 个文件，最远 <span style="font-weight: 700">4</span> 跳到 <span style="color: var(--accent-t); text-decoration: underline">59_graph_view._write</span>（这一跳可疑）。
+最该先看 <span style="color: var(--accent-t); text-decoration: underline">52_graph_anchors.py</span> 的 main 和 <span style="color: var(--accent-t); text-decoration: underline">summary.build_rows</span>。要跑图闸和整套测试。</div>
+    <div> </div>
+    <div style="display: flex; gap: 16px"><span><span style="background: var(--l3); color: var(--t1); font-weight: 700"> 影响面 </span>  一条线  名次表</span><span style="color: var(--t4)">│</span><span>会被波及 <span style="color: var(--t4)">它照着谁</span></span><span style="flex: 1"></span><span><span style="color: var(--warn)">▲</span> 图闸该重跑</span><span style="color: var(--t3)">测试 23 个 / 3 文件</span></div>
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+
+    <div style="flex: 1; min-height: 0; display: flex; gap: 24px">
+
+      <div class="lines" style="width: 560px; flex: none">
+        <div style="color: var(--t3)">你要改的</div>
+        <div style="background: var(--l2); color: var(--t1); font-weight: 700"><span style="color: var(--accent-t)">❯</span> 文件 view.py <span style="color: var(--t3); font-weight: 400">函数 9 · 类 2 · 导入我的 4</span></div>
+        <div style="color: var(--t4)">  │</div>
+        <div style="color: var(--t3)">  │ <span style="color: var(--t3)">直接用到它 · 第 1 跳</span>                画出 5 / 共 5</div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--accent-t)">1</span> <span style="color: var(--t1)">main</span> <span style="color: var(--t3)">52_graph_anchors.py 到入口</span></div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--accent-t)">2</span> <span style="color: var(--t1)">build_rows</span> <span style="color: var(--t3)">summary.py</span> <span style="color: var(--warn-t)">▲ 没看到测试</span></div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--accent-t)">3</span> <span style="color: var(--t1)">_cards</span> <span style="color: var(--t3)">service.py</span></div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--accent-t)">4</span> <span style="color: var(--t1)">_cards_for</span> <span style="color: var(--t3)">service.py</span></div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--accent-t)">5</span> <span style="color: var(--t1)">build_views.pack</span> <span style="color: var(--t3)">service.py</span></div>
+        <div style="color: var(--t4)">  │</div>
+        <div style="color: var(--t3)">  │ 第 2–4 跳                           共 6</div>
+        <div><span style="color: var(--t4)">  ├──▶ </span><span style="color: var(--t3)">3 跳</span> <span style="color: var(--t1)">main</span> <span style="color: var(--t3)">54_graph_snapshot.py 到入口</span></div>
+        <div><span style="color: var(--t4)">  ├┄┄▶ </span><span style="color: var(--warn-t)">4 跳 可疑</span> <span style="color: var(--t1)">_write</span> <span style="color: var(--t3)">59_graph_view.py</span></div>
+        <div><span style="color: var(--t4)">  └──▶ </span><span style="color: var(--t3)">还有 4 个，样例未给逐条名单</span></div>
+        <div> </div>
+        <div style="color: var(--t4)">边  ── 实   ══ 写   ┄┄ 推，还不是事实   ─╳─ 断口</div>
+        <div> </div>
+        <div style="color: var(--t3)">要复核的文字：挂上 0 · 搜到 1 · 任务卡 0 · 要求 0</div>
+        <div style="color: var(--t3)">另有 3 份记录提到它</div>
+      </div>
+
+      <div class="lines" style="flex: 1; padding-left: 16px; border-left: 1px solid var(--line)">
+        <div style="display: flex; gap: 16px">
+          <sc-for list="{{faces}}" as="f" hint-placeholder-count="5">
+            <button type="button" class="key" role="tab" aria-selected="{{f.pressed}}" onClick="{{f.pick}}" style="color: {{f.fg}}; font-weight: {{f.weight}}; background: {{f.bg}}"> {{f.key}} {{f.label}} </button>
+          </sc-for>
+        </div>
+        <div> </div>
+
+        <div class="lines" style="display: {{f0}}">
+          <div style="color: var(--t1); font-weight: 700">提纲</div>
+          <div style="display: flex"><span style="flex: 1">Card</span><span style="color: var(--t3)">45–88</span></div>
+          <div style="display: flex"><span style="flex: 1">build_card</span><span style="color: var(--t3)">194–219</span></div>
+          <div style="display: flex"><span style="flex: 1">_path_pairs</span><span style="color: var(--t3)">102–122</span></div>
+          <div> </div>
+          <div style="color: var(--t1); font-weight: 700">谁依赖它</div>
+          <div>包含我的 1 · 我包含的 11 · 导入我的 4 · 记录指向我的 3</div>
+          <div> </div>
+          <div style="color: var(--t1); font-weight: 700">该跑什么</div>
+          <div>图闸和整个测试套。直接盯着它的测试 10 个。</div>
+        </div>
+
+        <div class="lines" style="display: {{f1}}">
+          <div style="color: var(--t3)">demo/graph/view.py:102</div>
+          <div><span style="color: var(--accent-t)">def</span> <span style="color: var(--t1); font-weight: 700">_path_pairs</span>(index, node):</div>
+          <div style="color: var(--t4)">    """层级路径上的 `(节点 id, 名字)`"""</div>
+          <div>    parents: dict[str, str] = {}</div>
+          <div>    <span style="color: var(--accent-t)">for</span> e <span style="color: var(--accent-t)">in</span> index.edges:</div>
+          <div>        <span style="color: var(--accent-t)">if</span> e.kind == <span style="color: var(--ok-t)">"contains"</span>:</div>
+          <div>            parents.setdefault(e.dst, e.src)</div>
+          <div>    chain: list[str] = []</div>
+          <div>    cur, seen = node.id, set()</div>
+        </div>
+
+        <div class="lines" style="display: {{f2}}">
+          <div style="color: var(--accent-t); font-weight: 700; text-decoration: underline">这屏要回答的问题</div>
+          <div> </div>
+          <div style="white-space: pre-wrap">指一个文件或函数，图告诉我<span style="color: var(--t1); font-weight: 700">改它会碰到什么</span>、最该先看哪个、该跑哪些检查。</div>
+          <div> </div>
+          <div><span style="color: var(--t3)">1.</span> 改它会波及谁，多远</div>
+          <div><span style="color: var(--t3)">2.</span> 最该先看哪几个，为什么</div>
+          <div><span style="color: var(--t3)">3.</span> 哪些文字要跟着改，比如 <span style="color: var(--accent-t)">DAG_REBUILD_PLAN.md</span></div>
+          <div> </div>
+          <div style="border-left: 2px solid var(--line); padding-left: 8px; color: var(--t3)">「先坏哪个」图算不出来，界面只写「最该先看」。</div>
+        </div>
+
+        <div class="lines" style="display: {{f3}}">
+          <div style="display: flex"><span style="flex: 1; color: var(--t1)">受波及的函数按距离</span><span style="color: var(--t3)">共 11</span></div>
+          <div><span style="color: var(--s1)">█████████████████</span><span style="color: var(--s2)">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></div>
+          <div><span style="color: var(--s1)">█</span> 第 1 跳 5   <span style="color: var(--s2)">▓</span> 第 2–4 跳 6</div>
+          <div> </div>
+          <div style="display: flex"><span style="flex: 1; color: var(--t1)">要跑的测试</span><span style="color: var(--t3)">共 23，在 3 个文件</span></div>
+          <div><span style="color: var(--s1)">████████████████</span><span style="color: var(--s2)">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></div>
+          <div><span style="color: var(--s1)">█</span> 直接盯着 10   <span style="color: var(--s2)">▓</span> 间接 13</div>
+        </div>
+
+        <div class="lines" style="display: {{f4}}">
+          <div style="display: flex; color: var(--t3)"><span style="width: 140px">检查</span><span style="flex: 1">范围</span><span style="width: 96px">状态</span></div>
+          <div style="color: var(--t4)">──────────────────────────────────────────────────</div>
+          <div style="display: flex"><span style="width: 140px; color: var(--t1)">图闸</span><span style="flex: 1">门禁、不变量、快照</span><span style="width: 96px; color: var(--warn-t)">▲ 该重跑</span></div>
+          <div style="display: flex"><span style="width: 140px; color: var(--t1)">整个测试套</span><span style="flex: 1">23 个，3 个文件</span><span style="width: 96px; color: var(--t3)">○ 没跑</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="display: flex; gap: 24px; color: var(--t4)"><span style="color: var(--t3)">↑↓ 选卡</span><span>Enter 展开</span><span>Tab 换面</span><span>1–5 跳到面</span><span>f 换焦点</span><span>/ 搜问</span><span style="flex: 1"></span><span>Esc 回聊天</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { face: 'docs' };
+  renderVals() {
+    const { face } = this.state;
+    const faces = [['overview', '1', '概览'], ['code', '2', '代码'], ['docs', '3', '文档'], ['chart', '4', '图'], ['table', '5', '材料']];
+    const show = (k) => (face === k ? 'flex' : 'none');
+    return {
+      theme: this.props.theme ?? 'dark',
+      f0: show('overview'), f1: show('code'), f2: show('docs'), f3: show('chart'), f4: show('table'),
+      faces: faces.map(([id, key, label]) => ({
+        key, label,
+        fg: face === id ? 'var(--t1)' : 'var(--t3)',
+        bg: face === id ? 'var(--l3)' : 'transparent',
+        weight: face === id ? 700 : 400,
+        pressed: face === id ? 'true' : 'false',
+        pick: () => this.setState({ face: id })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

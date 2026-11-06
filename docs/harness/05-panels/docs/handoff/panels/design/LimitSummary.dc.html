@@ -1,0 +1,97 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>系统上限</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--bar:#4F8AF2;--bar2:#34415B;--ok:#4ED17E;--no:#ADB2B8}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--bar:#2F5FCC;--bar2:#C9D8F6;--ok:#15803D;--no:#61666B}
+h2{margin:0 0 8px;font-size:18px;line-height:26px;font-weight:600}
+.lad{display:grid;grid-template-columns:136px minmax(0,1fr) 148px;column-gap:12px;align-items:center;height:30px;font-size:13px;line-height:20px;color:var(--t2)}
+.tk{position:absolute;top:0;bottom:0;width:1px;background:var(--line-soft)}
+.th{display:grid;column-gap:12px;padding-bottom:4px;font-size:12px;line-height:18px;color:var(--t3)}
+.tr{display:grid;column-gap:12px;padding:6px 0;font-size:13px;line-height:20px;color:var(--t2);box-shadow:0 -0.5px 0 var(--line-soft)}
+.t1{color:var(--t1)}
+.num{font-family:var(--mono);font-size:12px}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 48px 72px; display: flex; flex-direction: column; gap: 22px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">系统上限</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">一句话：同一块面板里，百万个点、百万个构件、十万节点的图谱都能流畅操作，这是一台 2020 年的 M1。再往上要分块加载。</p>
+    <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">测试环境：Apple M1，16GB，Chrome 156 无头模式走 Metal，运行在 sandbox=allow-scripts 的 iframe 里。已在 DSH 0.2.1-rc.3 网页模式复测，100 万点和空页面都是 60 帧；桌面窗口还没跑。</p>
+  </header>
+
+  <section aria-label="每种画法能画多少">
+    <h2>每种画法能画多少</h2>
+    <div class="lad" style="height: 22px; font-size: 12px; line-height: 18px; color: var(--t3)"><span></span><span style="position: relative; height: 18px"><sc-for list="{{ticks}}" as="t" hint-placeholder-count="6"><span style="position: absolute; left: {{t.x}}%; font-family: var(--mono); font-size: 11px">{{t.t}}</span></sc-for></span><span>实测</span></div>
+    <sc-for list="{{ladder}}" as="r" hint-placeholder-count="6">
+      <div class="lad" title="{{r.title}}"><span class="t1">{{r.name}}</span><span style="position: relative; height: 16px"><sc-for list="{{ticks}}" as="t" hint-placeholder-count="6"><span class="tk" style="left: {{t.x}}%"></span></sc-for><span style="position: absolute; left: 0; top: 2px; height: 12px; width: {{r.can}}%; border-radius: 0 3px 3px 0; background: var(--bar2)"></span><span style="position: absolute; left: 0; top: 2px; height: 12px; width: {{r.good}}%; border-radius: 0 3px 3px 0; background: var(--bar)"></span></span><span class="num">{{r.text}}</span></div>
+    </sc-for>
+    <div style="display: flex; gap: 20px; padding-top: 6px; font-size: 12px; line-height: 18px; color: var(--t2)"><span><span style="display: inline-block; width: 12px; height: 8px; border-radius: 2px; background: var(--bar)"></span> 流畅，50 帧以上</span><span><span style="display: inline-block; width: 12px; height: 8px; border-radius: 2px; background: var(--bar2)"></span> 能用，24 帧以上</span></div>
+  </section>
+
+  <section aria-label="四个样例">
+    <h2>四个样例实测</h2>
+    <div class="th" style="grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)"><span>样例</span><span>流畅</span><span>能用</span><span>开始不行</span></div>
+    <sc-for list="{{samples}}" as="r" hint-placeholder-count="4"><div class="tr" style="grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)"><span class="t1">{{r.a}}</span><span>{{r.b}}</span><span>{{r.c}}</span><span>{{r.d}}</span></div></sc-for>
+  </section>
+
+  <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px">
+    <section aria-label="数据和计算"><h2>数据和计算</h2><sc-for list="{{compute}}" as="r" hint-placeholder-count="6"><div class="tr" style="grid-template-columns: minmax(0, 1fr) 96px"><span>{{r.a}}</span><span class="num t1" style="text-align: right">{{r.b}}</span></div></sc-for></section>
+    <section aria-label="沙箱能力"><h2>沙箱里有什么</h2><sc-for list="{{caps}}" as="r" hint-placeholder-count="7"><div class="tr" style="grid-template-columns: 20px minmax(0, 1fr)"><span class="num" style="color: {{r.c}}">{{r.g}}</span><span>{{r.t}}</span></div></sc-for></section>
+    <section aria-label="三级上限"><h2>放到三级里看</h2><sc-for list="{{tiers}}" as="r" hint-placeholder-count="7"><div class="tr" style="grid-template-columns: 68px minmax(0, 1fr)"><span class="t1">{{r.a}}</span><span>{{r.b}}</span></div></sc-for></section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const lo = 3, hi = 8, pos = (n) => (Math.log10(n) - lo) / (hi - lo) * 100;
+    const ladder = [
+      ['网页元素', 5000, 20000, '5 千 60 帧，2 万 25 帧'],
+      ['SVG 图形', 20000, 50000, '2 万 59 帧，5 万 48 帧'],
+      ['Canvas 2D', 10000, 100000, '1 万 52 帧，10 万 26 帧'],
+      ['WebGL 立方体', 100000, 500000, '10 万 60 帧，50 万 44 帧'],
+      ['WebGL 线段', 1000000, 1000000, '100 万 54 帧，500 万 11 帧'],
+      ['WebGL 点', 1000000, 2000000, '100 万 60 帧，200 万 54 帧']
+    ].map(([name, good, can, text]) => ({ name, good: pos(good), can: pos(can), text, title: `${name}：${text}` }));
+    return {
+      theme: this.props.theme ?? 'dark', ladder,
+      ticks: [[1e3, '1 千'], [1e4, '1 万'], [1e5, '10 万'], [1e6, '100 万'], [1e7, '1000 万'], [1e8, '1 亿']].map(([n, t]) => ({ x: pos(n), t })),
+      samples: [
+        ['天体', '100 万小天体 60 帧', '200 万 54 帧', '500 万 21 帧'],
+        ['设计图', '97 万构件、1170 万三角形 60 帧', '194 万构件 29 帧', '再往上要按视野裁剪'],
+        ['知识图谱', '10 万节点 60 帧，布局 7.9 秒', '30 万节点 28 帧', '100 万节点 9 帧，布局算不完'],
+        ['地图联动', '100 万行，筛选 7ms', '500 万行，筛选 37ms，23 帧', '1000 万行，筛选 66ms，13 帧']
+      ].map(([a, b, c, d]) => ({ a, b, c, d })),
+      compute: [
+        ['JSON 解析 91MB', '0.67 秒'], ['磁盘读到页面 512MB', '1.2–2.5 秒'], ['同上，忘关压缩', '6–16 秒'], ['转交给沙箱 512MB', '0.62 秒'], ['筛选 1000 万行', '75ms'], ['力导向一轮 5 万节点', '1ms'], ['力导向一轮 20 万节点', '14ms']
+      ].map(([a, b]) => ({ a, b })),
+      caps: [
+        [1, 'WebGL2，走 Metal，纹理 16384'], [1, 'Web Worker，能放重计算'], [1, 'WebAssembly，能接 C++ 解析库'], [0, 'WebGPU 两次结果不一致，不依赖'], [0, 'SharedArrayBuffer 没有，只能转交'], [0, 'localStorage 没有，状态要存宿主'], [0, 'CSP 能断网，挡不住 WebRTC 和页面跳转']
+      ].map(([y, t]) => ({ g: y ? '●' : '○', c: y ? 'var(--ok)' : 'var(--no)', t })),
+      tiers: [
+        ['第一级', '内置渲染器。建议 5000 个要素以内，表格靠虚拟滚动可以到百万行。'],
+        ['第二级', '就是这四个样例的水平。百万量级。第一次运行要人点一下，联网要批准。'],
+        ['第三级', '和第二级同样的渲染能力，多了宿主接入，比如后台预聚合。'],
+        ['终端', '约 150 × 40 字符，12 帧。不比规模，退成摘要、字符图或图片。'],
+        ['再往上', '全球瓦片、亿级点云要分块加载，这套外壳能装，渲染器要另写。'],
+        ['多面板', '4 个 100 万点同屏，每个约 10 帧。'],
+        ['没测', '桌面窗口、长时间内存、低配机器和 Intel 显卡。']
+      ].map(([a, b]) => ({ a, b }))
+    };
+  }
+}
+</script>
+</body>
+</html>

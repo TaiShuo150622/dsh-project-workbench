@@ -1,0 +1,118 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>大会话缩进右栏 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A}
+.lines{display:flex;flex-direction:column;min-width:0}
+.pane{display:flex;flex-direction:column;min-width:0;overflow:hidden;flex-basis:0;transition:flex-grow 250ms steps(3)}
+.key{height:20px;padding:0 6px;border:0;background:transparent;font:inherit;cursor:pointer}
+.r{display:flex;flex-direction:column;width:100%;padding:0 6px;box-sizing:border-box;border:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;white-space:pre;animation:ri 250ms steps(3)}
+@keyframes ri{from{transform:translateX(-24ch);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.pane{transition:none}.r{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="flex: 1; min-height: 0; display: flex">
+      <div style="flex: 1; min-width: 0; display: flex">
+        <sc-for list="{{panes}}" as="p" hint-placeholder-count="6">
+          <section class="pane" aria-label="{{p.title}}" style="flex-grow: {{p.grow}}; padding-right: {{p.pad}}; border-right: {{p.rule}}">
+            <div style="display: flex; gap: 8px; padding: 0 6px; background: var(--l2); color: var(--t1); font-weight: 700"><span style="color: {{p.tone}}">{{p.glyph}}</span><span style="flex: 1; min-width: 0; overflow: hidden">{{p.title}}</span><button type="button" class="key" onClick="{{p.dock}}" style="padding: 0; color: var(--t3); font-weight: 400">m 缩小</button></div>
+            <div> </div>
+            <div style="padding: 0 6px; background: var(--l1); color: var(--t1); white-space: pre-wrap"><span style="color: var(--accent-t); font-weight: 700">❯</span> {{p.ask}}</div>
+            <div> </div>
+            <div style="color: var(--t1); white-space: pre-wrap">{{p.reply}}</div>
+            <div> </div>
+            <div style="white-space: pre-wrap"><span style="color: {{p.tone}}">{{p.glyph}}</span> {{p.line}}</div>
+            <div style="flex: 1"></div>
+            <div style="padding: 0 6px; background: var(--l1); color: var(--t4)"><span style="color: var(--accent-t); font-weight: 700">dsh</span> 继续这个会话</div>
+          </section>
+        </sc-for>
+        <div style="display: {{emptyShow}}; flex: 1; align-items: center; justify-content: center; color: var(--t3)">都缩到右边了，Enter 恢复选中的会话</div>
+      </div>
+
+      <aside class="lines" aria-label="常驻会话" style="width: 380px; flex: none; padding-left: 12px; border-left: 1px solid var(--line)">
+        <div style="display: flex"><span style="flex: 1; color: var(--t1); font-weight: 700">常驻 · {{dockCount}}</span><span style="color: var(--warn-t)">{{needText}}</span></div>
+        <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+        <sc-for list="{{docked}}" as="d" hint-placeholder-count="3">
+          <button type="button" class="r" onClick="{{d.restore}}"><span style="display: flex; gap: 8px; color: var(--t1)"><span style="color: {{d.tone}}">{{d.glyph}}</span><span style="flex: 1; min-width: 0; overflow: hidden">{{d.title}}</span><span style="color: {{d.statusFg}}">{{d.status}}</span></span><span style="padding-left: 22px; color: var(--t3)">{{d.line}}</span></button>
+        </sc-for>
+      </aside>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="display: flex; gap: 12px; align-items: center; color: var(--t4)">
+      <button type="button" class="key" onClick="{{dockAll}}" style="color: var(--t3)">M 全部缩小</button>
+      <button type="button" class="key" onClick="{{reset}}" style="color: var(--t3)">= 摊开三个</button>
+      <span>m 缩小这一格</span><span>Ctrl+B 进右栏</span><span>Enter 恢复</span><span style="flex: 1"></span><span>12 帧，3 步到位</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { big: ['a', 'b', 'c'], order: ['d', 'e', 'f'], beat: 0, f: 0 };
+  frames = ['◐', '◓', '◑', '◒'];
+  list = [
+    { id: 'a', title: '审批卡状态统一', st: 'run', ask: '把审批卡的风险等级改成同一套状态。', reply: '我先看现有组件，再改状态映射。', lines: ['正在读 RiskConfirmation.tsx', '正在改 riskToState', '正在跑组件测试'] },
+    { id: 'b', title: '修复 MCP 重连', st: 'wait', ask: 'GitHub 连接器断了不会自动重连。', reply: '修好了，需要重启服务验证。', lines: ['要重启 MCP 服务  y 允许'] },
+    { id: 'c', title: '发布说明草稿', st: 'ask', ask: '根据这周合并的 PR 写发布说明。', reply: '审批卡的改动要写进破坏性改动吗？', lines: ['要不要写破坏性改动'] },
+    { id: 'd', title: '每周因子周报', st: 'run', ask: '生成这周的因子周报。', reply: '正在算这周的表现。', lines: ['算 IC', '算分层收益', '画回撤图'] },
+    { id: 'e', title: '整理快捷键表', st: 'done', ask: '把快捷键整理成一张表。', reply: '整理好了，放在 docs 里。', lines: ['写好了 docs/shortcuts.md'] },
+    { id: 'f', title: '升级依赖', st: 'run', ask: '把 pnpm 依赖升到最新。', reply: '正在逐个升级。', lines: ['升级 vite', '升级 vitest', '跑构建'] }
+  ];
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!still) this.timer = setInterval(() => {
+      if (document.hidden) return;
+      const { f, beat } = this.state;
+      this.tick = (this.tick || 0) + 1;
+      this.setState({ f: (f + 1) % 4, beat: this.tick % 10 === 0 ? beat + 1 : beat });
+    }, 166);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const { big, order, beat, f } = this.state;
+    const look = { run: { c: 'var(--accent)', t: '进行中', x: 'var(--t3)' }, wait: { g: '▲', c: 'var(--warn)', t: '等待审批', x: 'var(--warn-t)' }, ask: { g: '?', c: 'var(--warn)', t: '等待回答', x: 'var(--warn-t)' }, done: { g: '●', c: 'var(--ok)', t: '已完成', x: 'var(--t3)' } };
+    const view = (n) => ({ ...n, glyph: look[n.st].g || this.frames[f], tone: look[n.st].c, status: look[n.st].t, statusFg: look[n.st].x, line: n.lines[beat % n.lines.length] });
+    const dock = (id) => this.setState((s) => ({ big: s.big.filter((x) => x !== id), order: [id, ...s.order.filter((x) => x !== id)] }));
+    const restore = (id) => this.setState((s) => {
+      const b = [...s.big.filter((x) => x !== id), id], out = b.length > 3 ? b.shift() : null, o = s.order.filter((x) => x !== id);
+      return { big: b, order: out ? [out, ...o] : o };
+    });
+    const lastBig = big[big.length - 1];
+    const need = order.filter((id) => ['wait', 'ask'].includes(this.list.find((n) => n.id === id).st)).length;
+    return {
+      theme: this.props.theme ?? 'dark',
+      dockCount: order.length,
+      needText: need ? `${need} 个要你处理` : '',
+      emptyShow: big.length ? 'none' : 'flex',
+      dockAll: () => this.setState((s) => ({ big: [], order: [...s.big, ...s.order] })),
+      reset: () => this.setState({ big: ['a', 'b', 'c'], order: ['d', 'e', 'f'] }),
+      panes: this.list.map((n) => ({
+        ...view(n),
+        grow: big.includes(n.id) ? 1 : 0.0001,
+        pad: big.includes(n.id) ? '10px' : '0',
+        rule: big.includes(n.id) && n.id !== lastBig ? '1px solid var(--line)' : '0 none',
+        dock: () => dock(n.id)
+      })),
+      docked: order.map((id) => { const n = view(this.list.find((v) => v.id === id)); return { ...n, restore: () => restore(id) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

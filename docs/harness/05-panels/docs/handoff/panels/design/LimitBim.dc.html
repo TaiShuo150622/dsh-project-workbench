@@ -1,0 +1,196 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>上限样例 · 设计图</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--err:#F25A5A;--warn:#F7AD31}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--err:#EC1313;--warn:#A35F0A}
+button,input{font-family:inherit}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.kv{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:8px;font-size:12px;line-height:22px;color:var(--t2)}
+.kv span:first-child{color:var(--t3)}
+.st{font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:nowrap}
+.st strong{font-weight:700;color:var(--t1)}
+.cl{display:flex;gap:8px;width:100%;height:24px;padding:0 6px;box-sizing:border-box;border:0;border-radius:4px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;text-align:left;cursor:pointer}
+.cl:hover{background:var(--l1)}
+.sl{display:flex;align-items:center;gap:6px;font-size:12px;line-height:18px;color:var(--t3);white-space:nowrap}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="position: absolute; left: 0; right: 0; top: 0; height: 44px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 12px; background: var(--side); box-shadow: 0 0.5px 0 var(--line)">
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">建筑模型审查</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">立体 + 平面联动 · 第二级渲染器 · 碰撞按包围盒实算</span>
+    <span style="flex: 1"></span><span class="st"><strong>{{fps}}</strong> 帧/秒 · {{ms}}ms · <strong>{{count}}</strong> 个构件 · {{tris}} 三角形</span>
+  </header>
+  <div style="position: absolute; left: 0; top: 44px; width: 1076px; height: 788px; overflow: hidden; background: var(--term)">
+    <canvas data-gl="bim" width="1076" height="788" aria-label="建筑三维视图，拖动旋转，滚轮缩放" style="display: {{glShow}}; width: 1076px; height: 788px; cursor: grab"></canvas>
+    <div style="display: {{tuiShow}}; box-sizing: border-box; height: 788px; padding: 16px 20px; font-family: var(--mono); font-size: 13px; line-height: 19px; color: var(--t2); white-space: pre; overflow: hidden"><sc-for list="{{tui}}" as="l" hint-placeholder-count="36"><div style="height: 19px; color: {{l.c}}">{{l.t}}</div></sc-for></div>
+    <div style="display: {{failShow}}; position: absolute; left: 24px; top: 24px; font-size: 14px; line-height: 22px; color: var(--warn)">这个环境没有 WebGL2，面板退到平面视图</div>
+  </div>
+  <aside aria-label="平面和检查器" style="position: absolute; left: 1076px; right: 0; top: 44px; height: 788px; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+    <div style="font-size: 12px; line-height: 18px; color: var(--t3)">平面 · 标高 {{cutText}} m，点构件定位</div>
+    <canvas data-plan="cut" width="340" height="250" aria-label="当前标高的平面图" style="width: 340px; height: 250px; border-radius: 6px; background: var(--term); cursor: crosshair"></canvas>
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">{{ins.name}}</strong>
+    <sc-for list="{{ins.rows}}" as="r" hint-placeholder-count="5"><div class="kv"><span>{{r.k}}</span><span>{{r.v}}</span></div></sc-for>
+    <div style="padding-top: 6px; font-size: 12px; line-height: 18px; color: var(--t3)">碰撞 <strong style="font-weight: 600; color: var(--err)">{{clashN}}</strong> 处，管线穿梁</div>
+    <div style="flex: 1; min-height: 0; overflow: hidden"><sc-for list="{{clashes}}" as="c" hint-placeholder-count="8"><button type="button" class="cl" onClick="{{c.pick}}"><span style="color: var(--err); font-family: var(--mono)">✕</span><span style="flex: 1">{{c.t}}</span><span style="color: var(--t3)">{{c.d}}</span></button></sc-for></div>
+  </aside>
+  <div style="position: absolute; left: 0; right: 0; top: 832px; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 16px; box-shadow: 0 -0.5px 0 var(--line)">
+    <label class="sl">剖切高度 <input type="range" min="1" max="48" step="0.1" value="{{cut}}" onChange="{{setCut}}" style="width: 220px"></label>
+    <label class="sl">分层拉开 <input type="range" min="0" max="8" step="0.1" value="{{ex}}" onChange="{{setEx}}" style="width: 160px"></label>
+    <span style="flex: 1"></span>
+    <sc-for list="{{cats}}" as="o" hint-placeholder-count="4"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <button type="button" class="opt" onClick="{{toggleTui}}" aria-pressed="{{tuiOn}}">看 TUI 退化</button>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; background: var(--side); box-shadow: 0 -0.5px 0 var(--line)">
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3); padding-right: 6px">园区规模</span><sc-for list="{{sizes}}" as="o" hint-placeholder-count="5"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">程序生成的示例建筑。真实模型要先转成实例化数据，这里没有接 IFC 解析器</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  state = { B: 9, cut: 30, ex: 0, off: { 1: true }, sel: null, fps: 0, ms: 0, tui: false, rows: [], noGL: false, count: 0, clashN: 0, clashes: [] };
+  yaw = 0.75; pitch = 0.42; dist = 150; F = 12; FH = 3.9; BAY = 7.2; NX = 8; NZ = 6;
+  catName = ['结构', '幕墙', '机电', '内装', '碰撞'];
+  componentDidMount() { this.boot(); }
+  componentWillUnmount() { clearTimeout(this.bt); clearTimeout(this.vt); cancelAnimationFrame(this.raf); this.io && this.io.disconnect(); }
+  boot() {
+    const c = document.querySelector('[data-gl="bim"]');
+    if (!c) { this.bt = setTimeout(() => this.boot(), 100); return; }
+    this.c = c; this.p = document.querySelector('[data-plan="cut"]');
+    let d = null;
+    c.addEventListener('mousedown', (e) => { d = { x: e.clientX, y: e.clientY, yaw: this.yaw, pitch: this.pitch }; });
+    window.addEventListener('mousemove', (e) => { if (!d) return; this.yaw = d.yaw + (e.clientX - d.x) * 0.006; this.pitch = Math.max(0.03, Math.min(1.5, d.pitch + (e.clientY - d.y) * 0.006)); });
+    window.addEventListener('mouseup', () => { d = null; });
+    c.addEventListener('wheel', (e) => { e.preventDefault(); this.dist = Math.max(30, Math.min(1400, this.dist * Math.exp(e.deltaY * 0.001))); }, { passive: false });
+    if (this.p) this.p.addEventListener('click', (e) => this.pickPlan(e));
+    const start = () => { this.vis = true; if (!this.gl && !this.state.noGL) this.init(); this.kick(); };
+    if (window.IntersectionObserver) { this.io = new IntersectionObserver((e) => { this.vis = e[0].isIntersecting; if (this.vis) start(); }); this.io.observe(c); } else start();
+    const wake = () => { if (!document.hidden && this.vis) this.kick(); this.vt = setTimeout(wake, 1000); }; wake();
+  }
+  prog(vs, fs) {
+    const gl = this.gl, p = gl.createProgram();
+    [[gl.VERTEX_SHADER, vs], [gl.FRAGMENT_SHADER, fs]].forEach(([t, src]) => { const s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); gl.attachShader(p, s); });
+    gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    return p;
+  }
+  init() {
+    const gl = this.c.getContext('webgl2', { antialias: true, alpha: false });
+    if (!gl) { this.setState({ noGL: true, tui: true }); return; }
+    this.gl = gl;
+    this.pg = this.prog(`#version 300 es
+      precision highp float; in vec3 p; in vec3 n; in vec3 ip; in vec3 is; in vec2 m; uniform mat4 VP; uniform float EX; uniform vec4 HID; uniform float H5; out vec3 N; out float wy; flat out float cat; flat out float own;
+      void main(){ cat=m.x; float h=cat<.5?HID.x:cat<1.5?HID.y:cat<2.5?HID.z:cat<3.5?HID.w:H5; vec3 w=ip+p*.5*is; wy=w.y; w.y+=m.y*EX; N=n; own=(gl_InstanceID==-1)?1.:0.; gl_Position=h>.5?vec4(2.,2.,2.,1.):VP*vec4(w,1.); }`, `#version 300 es
+      precision highp float; in vec3 N; in float wy; flat in float cat; uniform float CUT; uniform vec3 CC[5]; uniform vec3 BG; out vec4 o;
+      void main(){ if(wy>CUT)discard; float l=.55+.45*max(0.,dot(normalize(N),normalize(vec3(.4,.8,.5)))); vec3 c=CC[int(cat+.5)]*l; o=vec4(c,1.); }`);
+    const f = [[0, 0, 1], [0, 0, -1], [1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0]], v = [];
+    f.forEach((n) => { const u = n[2] ? [1, 0, 0] : [0, 0, 1], w = n[1] ? [1, 0, 0] : [0, 1, 0], t = n[1] ? [0, 0, 1] : w, q = [[-1, -1], [1, -1], [1, 1], [-1, -1], [1, 1], [-1, 1]]; q.forEach(([a, b]) => { const ab = n[1] ? [u, t] : [u, w]; v.push(n[0] + ab[0][0] * a + ab[1][0] * b, n[1] + ab[0][1] * a + ab[1][1] * b, n[2] + ab[0][2] * a + ab[1][2] * b, ...n); }); });
+    this.vao = gl.createVertexArray(); gl.bindVertexArray(this.vao);
+    const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(v), gl.STATIC_DRAW);
+    const lp = gl.getAttribLocation(this.pg, 'p'), ln = gl.getAttribLocation(this.pg, 'n');
+    gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 3, gl.FLOAT, false, 24, 0); gl.enableVertexAttribArray(ln); gl.vertexAttribPointer(ln, 3, gl.FLOAT, false, 24, 12);
+    this.bi = gl.createBuffer();
+    this.build(this.state.B);
+  }
+  build(B) {
+    const gl = this.gl, F = this.F, FH = this.FH, BAY = this.BAY, NX = this.NX, NZ = this.NZ, W = NX * BAY, D = NZ * BAY, cols = Math.ceil(Math.sqrt(B)), gap = W + 22, gapZ = D + 22;
+    const estimate = 28000 * B, data = new Float32Array(estimate * 8); let n = 0, clashN = 0; const list0 = [], clashes = [];
+    const add = (x, y, z, sx, sy, sz, cat, fl, name) => { if (n >= estimate) return; data.set([x, y, z, sx, sy, sz, cat, fl], n * 8); n++; if (bi === 0) list0.push([x, y, z, sx, sy, sz, cat, fl, name]); };
+    let bi = 0;
+    for (; bi < B; bi++) {
+      const ox = (bi % cols) * gap - (cols - 1) * gap / 2 - W / 2, oz = Math.floor(bi / cols) * gapZ - (Math.ceil(B / cols) - 1) * gapZ / 2 - D / 2, floors = bi === 0 ? F : 6 + (bi * 7) % 7;
+      for (let f = 0; f < floors; f++) {
+        const y0 = f * FH, beamY = y0 + FH - 0.35, beams = [];
+        for (let i = 0; i <= NX; i++) for (let k = 0; k <= NZ; k++) add(ox + i * BAY, y0 + FH / 2, oz + k * BAY, 0.7, FH, 0.7, 0, f, `柱 C${i}-${k}`);
+        for (let k = 0; k <= NZ; k++) add(ox + W / 2, beamY, oz + k * BAY, W, 0.7, 0.35, 0, f, `梁 X${k}`);
+        for (let i = 0; i <= NX; i++) { add(ox + i * BAY, beamY, oz + D / 2, 0.35, 0.7, D, 0, f, `梁 Z${i}`); beams.push([ox + i * BAY, beamY]); }
+        for (let i = 0; i < NX; i++) for (let k = 0; k < NZ; k++) add(ox + (i + 0.5) * BAY, y0 + 0.08, oz + (k + 0.5) * BAY, BAY - 0.2, 0.16, BAY - 0.2, 0, f, '楼板');
+        const step = 1.2, per = (a, len, fx) => { for (let s = 0.6; s < len; s += step) fx(s); };
+        per(0, W, (s) => { add(ox + s, y0 + FH / 2, oz - 0.3, 0.08, FH, 0.14, 1, f, '竖框'); add(ox + s, y0 + FH / 2, oz + D + 0.3, 0.08, FH, 0.14, 1, f, '竖框'); add(ox + s, y0 + FH / 2, oz - 0.3, 1.1, FH - 0.5, 0.03, 1, f, '玻璃'); add(ox + s, y0 + FH / 2, oz + D + 0.3, 1.1, FH - 0.5, 0.03, 1, f, '玻璃'); });
+        per(0, D, (s) => { add(ox - 0.3, y0 + FH / 2, oz + s, 0.14, FH, 0.08, 1, f, '竖框'); add(ox + W + 0.3, y0 + FH / 2, oz + s, 0.14, FH, 0.08, 1, f, '竖框'); add(ox - 0.3, y0 + FH / 2, oz + s, 0.03, FH - 0.5, 1.1, 1, f, '玻璃'); add(ox + W + 0.3, y0 + FH / 2, oz + s, 0.03, FH - 0.5, 1.1, 1, f, '玻璃'); });
+        for (let k = 0; k < 3; k++) {
+          const z = oz + BAY * (1.5 + k * 1.5), low = ((f * 3 + k * 5 + bi) % 4) === 0, py = y0 + FH - (low ? 1.0 : 0.42), r = 0.3;
+          for (let s = 0; s < NX * 2; s++) add(ox + BAY * (s + 0.5) / 2, py, z, BAY / 2 - 0.05, r, r, 2, f, `水管 P${k}`);
+          beams.forEach(([bx, by]) => { if (bx > ox && bx < ox + W && Math.abs(py - by) < (0.35 + r / 2)) { clashN++; add(bx, py, z, 0.8, 0.8, 0.8, 4, f, '碰撞'); if (clashes.length < 400) clashes.push({ t: `${bi + 1} 号楼 ${f + 1} 层`, d: `穿 ${(0.35 + r / 2 - Math.abs(py - by)).toFixed(2)} m`, x: bx, y: py, z, f }); } });
+        }
+        for (let i = 0; i < NX * 3; i++) for (let k = 0; k < NZ * 3; k++) add(ox + (i + 0.5) * BAY / 3, y0 + FH - 0.8, oz + (k + 0.5) * BAY / 3, 0.12, 0.35, 0.12, 2, f, '喷头');
+        for (let i = 0; i < NX * 2; i++) for (let k = 0; k < NZ * 2; k++) { add(ox + (i + 0.5) * BAY / 2, y0 + 0.55, oz + (k + 0.5) * BAY / 2, 1.5, 0.05, 0.8, 3, f, '工位'); add(ox + (i + 0.5) * BAY / 2, y0 + 0.9, oz + (k + 0.5) * BAY / 2 + 0.5, 0.5, 0.7, 0.5, 3, f, '座椅'); }
+      }
+    }
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bi); gl.bufferData(gl.ARRAY_BUFFER, data.subarray(0, n * 8), gl.STATIC_DRAW);
+    const a = (nm, size, off) => { const l = gl.getAttribLocation(this.pg, nm); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, size, gl.FLOAT, false, 32, off); gl.vertexAttribDivisor(l, 1); };
+    a('ip', 3, 0); a('is', 3, 12); a('m', 2, 24);
+    this.n = n; this.list0 = list0; this.ox0 = -(cols - 1) * gap / 2 - W / 2; this.oz0 = -(Math.ceil(B / cols) - 1) * gapZ / 2 - D / 2; this.span = Math.max(cols * gap, Math.ceil(B / cols) * gapZ);
+    this.dist = Math.min(1400, Math.max(110, this.span * 1.12));
+    this.setState({ count: n, clashN, clashes: clashes.slice(0, 12), B }); this.drawPlan();
+  }
+  mats() {
+    const w = 1076, h = 788, f = 1 / Math.tan(0.42), a = w / h, n = 1, r = 3000, cy = Math.cos(this.yaw), sy = Math.sin(this.yaw), cp = Math.cos(this.pitch), sp = Math.sin(this.pitch), d = this.dist;
+    const P = [f / a, 0, 0, 0, 0, f, 0, 0, 0, 0, (r + n) / (n - r), -1, 0, 0, 2 * r * n / (n - r), 0], cyT = -18;
+    const V = [cy, -sy * sp, sy * cp, 0, 0, cp, sp, 0, -sy, -cy * sp, cy * cp, 0, 0, cyT * cp, -d + cyT * sp, 1];
+    const M = new Float32Array(16);
+    for (let c = 0; c < 4; c++) for (let row = 0; row < 4; row++) { let s = 0; for (let k = 0; k < 4; k++) s += P[k * 4 + row] * V[c * 4 + k]; M[c * 4 + row] = s; }
+    return M;
+  }
+  kick() { if (this.raf || !this.gl) return; const loop = (t) => { this.raf = null; if (!this.vis || document.hidden) return; this.frame(t); this.raf = requestAnimationFrame(loop); }; this.raf = requestAnimationFrame(loop); }
+  frame(t) {
+    const gl = this.gl, dark = (this.props.theme ?? 'dark') === 'dark', t0 = performance.now(), { cut, ex, off } = this.state, loc = (n) => gl.getUniformLocation(this.pg, n);
+    gl.viewport(0, 0, 1076, 788); gl.enable(gl.DEPTH_TEST); gl.enable(gl.CULL_FACE); gl.clearColor(...(dark ? [0.059, 0.067, 0.082, 1] : [0.976, 0.98, 0.984, 1])); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.useProgram(this.pg); gl.bindVertexArray(this.vao); gl.uniformMatrix4fv(loc('VP'), false, this.mats()); gl.uniform1f(loc('CUT'), cut); gl.uniform1f(loc('EX'), ex);
+    gl.uniform4f(loc('HID'), off[0] ? 1 : 0, off[1] ? 1 : 0, off[2] ? 1 : 0, off[3] ? 1 : 0); gl.uniform1f(loc('H5'), 0);
+    gl.uniform3fv(loc('CC'), new Float32Array(dark ? [0.72, 0.74, 0.78, 0.31, 0.54, 0.95, 0.06, 0.65, 0.59, 0.63, 0.4, 0.94, 0.95, 0.35, 0.35] : [0.55, 0.58, 0.62, 0.18, 0.37, 0.8, 0, 0.56, 0.5, 0.54, 0.31, 0.82, 0.92, 0.07, 0.07]));
+    gl.drawArraysInstanced(gl.TRIANGLES, 0, 36, this.n); gl.flush();
+    this.fN = (this.fN || 0) + 1; this.msSum = (this.msSum || 0) + performance.now() - t0; if (!this.lastS) this.lastS = t;
+    if (t - this.lastS >= 500) { const fps = Math.round(this.fN * 1000 / (t - this.lastS)), ms = (this.msSum / this.fN).toFixed(1); this.fN = 0; this.msSum = 0; this.lastS = t; this.setState({ fps, ms }); }
+  }
+  planAt() { const { cut, off } = this.state, F = this.FH, out = []; (this.list0 || []).forEach((e, i) => { const y0 = e[1] - e[4] / 2, y1 = e[1] + e[4] / 2; if (cut >= y0 && cut <= y1 && !off[e[6]]) out.push(i); }); return out; }
+  drawPlan() {
+    const c = this.p; if (!c || !this.list0) return;
+    const g = c.getContext('2d'), dark = (this.props.theme ?? 'dark') === 'dark', W = this.NX * this.BAY, D = this.NZ * this.BAY, s = Math.min(320 / (W + 4), 230 / (D + 4)), X = (x) => 10 + (x - this.ox0 + 2) * s, Y = (z) => 10 + (z - this.oz0 + 2) * s;
+    g.clearRect(0, 0, 340, 250);
+    const css = ['#B8BCC7', '#4F8AF2', '#0FA696', '#A066F0', '#F25A5A'], ids = this.planAt();
+    this.planIds = ids;
+    ids.forEach((i) => { const e = this.list0[i]; g.fillStyle = i === this.state.sel ? '#FFFFFF' : dark ? css[e[6]] : css[e[6]]; g.fillRect(X(e[0] - e[3] / 2), Y(e[2] - e[5] / 2), Math.max(1, e[3] * s), Math.max(1, e[5] * s)); });
+    if (this.state.tui) this.setState({ rows: this.tuiRows(ids) });
+  }
+  tuiRows(ids) {
+    const W = 96, H = 36, g = Array.from({ length: H }, () => new Array(W).fill(' ')), Wm = this.NX * this.BAY, Dm = this.NZ * this.BAY, sx = (W - 2) / (Wm + 2), sy = (H - 2) / (Dm + 2);
+    ids.forEach((i) => { const e = this.list0[i], x0 = Math.round((e[0] - e[3] / 2 - this.ox0 + 1) * sx), x1 = Math.round((e[0] + e[3] / 2 - this.ox0 + 1) * sx), y0 = Math.round((e[2] - e[5] / 2 - this.oz0 + 1) * sy), y1 = Math.round((e[2] + e[5] / 2 - this.oz0 + 1) * sy), ch = ['█', '┃', '·', '▫', '✕'][e[6]]; for (let y = y0; y <= y1 && y < H; y++) for (let x = x0; x <= x1 && x < W; x++) if (y >= 0 && x >= 0) g[y][x] = ch; });
+    return g.map((r) => ({ t: r.join(''), c: 'var(--t2)' }));
+  }
+  pickPlan(e) {
+    if (!this.planIds) return;
+    const r = this.p.getBoundingClientRect(), k = 340 / r.width, mx = (e.clientX - r.left) * k, my = (e.clientY - r.top) * k, W = this.NX * this.BAY, D = this.NZ * this.BAY, s = Math.min(320 / (W + 4), 230 / (D + 4));
+    const x = (mx - 10) / s + this.ox0 - 2, z = (my - 10) / s + this.oz0 - 2; let best = null, bd = 1e9;
+    this.planIds.forEach((i) => { const q = this.list0[i], d = Math.hypot(q[0] - x, q[2] - z) - Math.min(q[3], q[5]) / 2; if (d < bd) { bd = d; best = i; } });
+    this.setState({ sel: best }, () => this.drawPlan()); this.drawPlan();
+  }
+  renderVals() {
+    const { B, cut, ex, off, sel, fps, ms, tui, rows, noGL, count, clashN, clashes } = this.state, e = sel !== null && this.list0 ? this.list0[sel] : null;
+    const rebuilt = (v) => () => { this.setState({ B: v, sel: null }); if (this.gl) this.build(v); };
+    return {
+      theme: this.props.theme ?? 'dark', fps, ms, count: count.toLocaleString('en-US'), tris: `${(count * 12 / 1e6).toFixed(1)}M`, cut, ex, cutText: Number(cut).toFixed(1), clashN: clashN.toLocaleString('en-US'),
+      clashes: clashes.map((c) => ({ ...c, pick: () => { this.setState({ cut: Math.min(48, c.y + 0.2), ex: 0 }, () => this.drawPlan()); this.drawPlan(); } })),
+      glShow: tui ? 'none' : 'block', tuiShow: tui ? 'block' : 'none', failShow: noGL ? 'block' : 'none', tui: rows,
+      ins: e ? { name: e[8], rows: [{ k: '类别', v: this.catName[e[6]] }, { k: '楼层', v: `${e[7] + 1} 层` }, { k: '尺寸', v: `${e[3].toFixed(2)} × ${e[4].toFixed(2)} × ${e[5].toFixed(2)} m` }] } : { name: '没有选中', rows: [{ k: '提示', v: '在平面图上点一个构件' }] },
+      setCut: (v) => { this.setState({ cut: Number(v.target.value) }, () => this.drawPlan()); this.drawPlan(); }, setEx: (v) => this.setState({ ex: Number(v.target.value) }),
+      cats: ['结构', '幕墙', '机电', '内装'].map((t, i) => ({ t, on: off[i] ? 'false' : 'true', pick: () => { this.setState((s) => ({ off: { ...s.off, [i]: !s.off[i] } }), () => this.drawPlan()); this.drawPlan(); } })),
+      sizes: [[1, '1 栋'], [9, '9 栋'], [30, '30 栋'], [60, '60 栋'], [120, '120 栋'], [240, '240 栋']].map(([v, t]) => ({ t, on: B === v ? 'true' : 'false', pick: rebuilt(v) })),
+      toggleTui: () => { this.setState((s) => ({ tui: !s.tui }), () => this.drawPlan()); this.drawPlan(); }, tuiOn: tui ? 'true' : 'false'
+    };
+  }
+}
+</script>
+</body>
+</html>

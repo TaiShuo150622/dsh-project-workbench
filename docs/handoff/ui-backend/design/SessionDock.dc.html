@@ -1,0 +1,154 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>大会话缩进右栏</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A}
+button{font-family:inherit}
+.s{position:absolute;box-sizing:border-box;overflow:hidden;background:var(--bg);transition:left 300ms var(--ease),top 300ms var(--ease),width 300ms var(--ease),height 300ms var(--ease),border-radius 300ms var(--ease),box-shadow 300ms var(--ease)}
+.big,.mini{position:absolute;left:0;top:0;transition:opacity 150ms var(--ease)}
+.spin{display:inline-block;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tick{animation:tick 200ms var(--ease)}
+@keyframes tick{from{opacity:.3}to{opacity:1}}
+.btn{height:30px;padding:0 10px;border:0;border-radius:8px;background:var(--l1);box-shadow:0 0 0 0.5px var(--line);color:var(--t1);font-size:13px;line-height:20px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.s,.big,.mini{transition:none}.spin,.tick{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 900px; background: var(--bg); color: var(--t1); font-family: var(--sans); overflow: hidden">
+
+  <aside aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 56px; display: flex; flex-direction: column; align-items: center; padding-top: 16px; box-sizing: border-box; background: var(--side); box-shadow: 0.5px 0 0 var(--line); font-family: var(--mono); font-size: 14px; color: var(--t2)">☰</aside>
+
+  <header style="position: absolute; left: 56px; right: 0; top: 0; height: 48px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 0.5px 0 var(--line); font-size: 13px; line-height: 20px">
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">{{bigCount}} 个大会话</strong>
+    <span style="flex: 1"></span>
+    <button type="button" class="btn" onClick="{{dockAll}}">全部缩小</button>
+    <button type="button" class="btn" onClick="{{reset}}">摊开三个</button>
+  </header>
+
+  <div style="position: absolute; left: 1120px; right: 0; top: 48px; bottom: 0; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+    <div style="height: 36px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3)"><span style="flex: 1">常驻 · {{dockCount}}</span><span>{{needText}}</span></div>
+  </div>
+
+  <div style="display: {{emptyShow}}; position: absolute; left: 56px; width: 1064px; top: 48px; bottom: 0; align-items: center; justify-content: center; font-size: 14px; line-height: 22px; color: var(--t3)">都缩到右边了，点一张卡片就恢复</div>
+
+  <sc-for list="{{sessions}}" as="n" hint-placeholder-count="6">
+    <article class="s" aria-label="{{n.title}}" style="left: {{n.x}}px; top: {{n.y}}px; width: {{n.w}}px; height: {{n.h}}px; border-radius: {{n.radius}}; box-shadow: {{n.shadow}}; z-index: {{n.z}}">
+      <div class="big" style="width: {{n.fullW}}px; height: 852px; display: flex; flex-direction: column; opacity: {{n.bigAlpha}}; pointer-events: {{n.bigEvents}}">
+        <div style="height: 44px; flex: none; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 8px; background: var(--l1)"><span class="{{n.spin}}" style="font-family: var(--mono); font-size: 13px; color: {{n.tone}}">{{n.glyph}}</span><strong style="flex: 1; min-width: 0; font-size: 13px; line-height: 20px; font-weight: 600; white-space: nowrap; overflow: hidden">{{n.title}}</strong><span style="font-size: 12px; line-height: 18px; color: {{n.statusFg}}; white-space: nowrap">{{n.status}}</span><button type="button" onClick="{{n.dock}}" aria-label="缩到右栏" style="height: 28px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; color: var(--t2); font-size: 12px; line-height: 18px; cursor: pointer; white-space: nowrap">缩小 ⇥</button></div>
+        <div style="flex: 1; box-sizing: border-box; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 22px; overflow: hidden">
+          <div style="align-self: flex-end; max-width: 88%; box-sizing: border-box; padding: 8px 12px; border-radius: 12px; background: var(--l1)">{{n.ask}}</div>
+          <p style="margin: 0; color: var(--t2)">{{n.reply}}</p>
+          <p class="tick" style="margin: 0; color: var(--t1)">{{n.line}}</p>
+        </div>
+        <div style="flex: none; padding: 0 16px 16px"><div style="height: 56px; box-sizing: border-box; padding: 8px 12px; border-radius: 16px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-size: 14px; line-height: 22px; color: var(--t4)">继续这个会话</div></div>
+      </div>
+
+      <div class="mini" style="width: 296px; height: 100%; opacity: {{n.miniAlpha}}; pointer-events: {{n.miniEvents}}">
+        <button type="button" onClick="{{n.restore}}" aria-label="恢复 {{n.title}}" style="display: flex; flex-direction: column; justify-content: center; width: 296px; height: {{n.miniH}}px; box-sizing: border-box; padding: 0 12px; border: 0; background: transparent; color: var(--t1); text-align: left; cursor: pointer">
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 20px"><span class="{{n.spin}}" style="font-family: var(--mono); color: {{n.tone}}">{{n.glyph}}</span><span style="flex: 1; min-width: 0; font-weight: 500; white-space: nowrap; overflow: hidden">{{n.title}}</span><span style="font-size: 11px; line-height: 16px; color: {{n.statusFg}}; white-space: nowrap">{{n.status}}</span></span>
+          <span class="tick" style="display: {{n.lineShow}}; padding-left: 22px; font-size: 12px; line-height: 18px; color: var(--t3); white-space: nowrap; overflow: hidden">{{n.line}}</span>
+        </button>
+        <div style="display: {{n.quickShow}}; gap: 6px; padding: 0 12px 10px 34px"><button type="button" onClick="{{n.allow}}" style="height: 26px; padding: 0 8px; border: 0; border-radius: 6px; background: var(--accent-btn); color: var(--on-accent); font-size: 12px; line-height: 18px; cursor: pointer">允许一次 Y</button><button type="button" onClick="{{n.restore}}" style="height: 26px; padding: 0 8px; border: 0; border-radius: 6px; background: var(--l3); color: var(--t1); font-size: 12px; line-height: 18px; cursor: pointer">看详情</button></div>
+      </div>
+    </article>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = {
+    big: ['a', 'b', 'c'], order: ['d', 'e', 'f'], beat: 0, over: {}
+  };
+  list = [
+    { id: 'a', title: '审批卡状态统一', st: 'run', ask: '把审批卡的风险等级改成同一套状态。', reply: '我先看现有组件，再改状态映射。', lines: ['正在读 RiskConfirmation.tsx', '正在改 riskToState', '正在跑组件测试', '子智能体在审查'] },
+    { id: 'b', title: '修复 MCP 重连', st: 'wait', ask: 'GitHub 连接器断了不会自动重连。', reply: '修好了，需要重启服务验证。', lines: ['要重启 MCP 服务'] },
+    { id: 'c', title: '发布说明草稿', st: 'ask', ask: '根据这周合并的 PR 写发布说明。', reply: '审批卡的改动要写进破坏性改动吗？', lines: ['要不要写破坏性改动'] },
+    { id: 'd', title: '每周因子周报', st: 'run', ask: '生成这周的因子周报。', reply: '正在算这周的表现。', lines: ['算 IC', '算分层收益', '画回撤图'] },
+    { id: 'e', title: '整理快捷键表', st: 'done', ask: '把快捷键整理成一张表。', reply: '整理好了，放在 docs 里。', lines: ['写好了 docs/shortcuts.md'] },
+    { id: 'f', title: '升级依赖', st: 'run', ask: '把 pnpm 依赖升到最新。', reply: '正在逐个升级。', lines: ['升级 vite', '升级 vitest', '跑构建'] }
+  ];
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!still) this.timer = setInterval(() => { if (!document.hidden) this.setState({ beat: this.state.beat + 1 }); }, 1800);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  dock(id) {
+    this.setState((s) => ({ big: s.big.filter((x) => x !== id), order: [id, ...s.order.filter((x) => x !== id)] }));
+  }
+  restore(id) {
+    this.setState((s) => {
+      const big = [...s.big.filter((x) => x !== id), id];
+      const out = big.length > 3 ? big.shift() : null;
+      const order = s.order.filter((x) => x !== id);
+      return { big, order: out ? [out, ...order] : order };
+    });
+  }
+  renderVals() {
+    const { big, order, beat, over } = this.state;
+    const look = {
+      run: { g: '◐', c: 'var(--accent)', t: '进行中', f: 'var(--t3)' }, wait: { g: '▲', c: 'var(--warn)', t: '等待审批', f: 'var(--warn-t)' },
+      ask: { g: '?', c: 'var(--warn)', t: '等待回答', f: 'var(--warn-t)' }, done: { g: '●', c: 'var(--ok)', t: '已完成', f: 'var(--t3)' }
+    };
+    const MAIN_X = 56, MAIN_W = 1064, TOP = 48, H = 852, RAIL_X = 1132, RAIL_W = 296;
+    const compact = order.length > 4;
+    const paneW = big.length ? MAIN_W / big.length : MAIN_W;
+    let y = TOP + 36;
+    const dockPos = {};
+    order.forEach((id) => {
+      const n = this.list.find((v) => v.id === id), st = (over[id] || n).st;
+      const h = st === 'wait' || st === 'ask' ? 104 : compact ? 44 : 68;
+      dockPos[id] = { y, h };
+      y += h + 8;
+    });
+    const list = this.list.map((n) => ({ ...n, ...(over[n.id] || {}) }));
+    const need = list.filter((n) => ['wait', 'ask'].includes(n.st) && order.includes(n.id)).length;
+    return {
+      theme: this.props.theme ?? 'dark',
+      bigCount: big.length, dockCount: order.length,
+      needText: need ? `${need} 个要你处理` : '',
+      emptyShow: big.length ? 'none' : 'flex',
+      dockAll: () => this.setState((s) => ({ big: [], order: [...s.big, ...s.order] })),
+      reset: () => this.setState({ big: ['a', 'b', 'c'], order: ['d', 'e', 'f'] }),
+      sessions: list.map((n) => {
+        const isBig = big.includes(n.id), L = look[n.st], d = dockPos[n.id];
+        const need2 = n.st === 'wait' || n.st === 'ask';
+        return {
+          ...n, glyph: L.g, tone: L.c, status: L.t, statusFg: L.f,
+          spin: n.st === 'run' ? 'spin' : '',
+          line: n.lines[beat % n.lines.length],
+          x: isBig ? MAIN_X + big.indexOf(n.id) * paneW : RAIL_X,
+          y: isBig ? TOP : d.y,
+          w: isBig ? paneW : RAIL_W,
+          h: isBig ? H : d.h,
+          radius: isBig ? '0' : '12px',
+          shadow: isBig ? '-0.5px 0 0 var(--line)' : '0 0 0 0.5px var(--line)',
+          z: isBig ? 1 : 2,
+          fullW: paneW,
+          bigAlpha: isBig ? 1 : 0, bigEvents: isBig ? 'auto' : 'none',
+          miniAlpha: isBig ? 0 : 1, miniEvents: isBig ? 'none' : 'auto',
+          miniH: isBig ? 68 : (need2 ? 66 : d.h),
+          lineShow: !isBig && (need2 || !compact) ? 'block' : 'none',
+          quickShow: !isBig && need2 ? 'flex' : 'none',
+          dock: () => this.dock(n.id),
+          restore: () => this.restore(n.id),
+          allow: () => this.setState((s) => ({ over: { ...s.over, [n.id]: { st: 'run', lines: ['已批准，继续处理'] } } }))
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

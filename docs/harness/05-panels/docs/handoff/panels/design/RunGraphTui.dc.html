@@ -1,0 +1,341 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>运行图 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31;--err:#F25A5A;--s1:#4F8AF2;--s2:#0FA696;--s2-t:#2DC5B3}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A;--err:#EC1313;--s1:#2F5FCC;--s2:#008F7F;--s2-t:#007366}
+.row{display:flex;height:20px;white-space:pre}
+.seg{flex:none;overflow:visible;white-space:pre}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-family:var(--sans);font-size:12px;line-height:18px;cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--ground); font-family: var(--mono)">
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; justify-content: center; align-items: center">
+    <div aria-label="终端" style="width: {{termW}}; flex: none; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; overflow: hidden">
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="40"><div class="row"><sc-for list="{{r.segs}}" as="s" hint-placeholder-count="12"><span class="seg" onClick="{{s.pick}}" style="width: {{s.w}}; transform: {{s.tf}}; color: {{s.c}}; font-weight: {{s.fw}}; background: {{s.bg}}; cursor: {{s.cur}}">{{s.text}}</span></sc-for></div></sc-for>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 44px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 4px; background: var(--term); box-shadow: 0 -0.5px 0 var(--line); font-family: var(--sans); font-size: 13px; line-height: 20px">
+    <span style="color: var(--t3); padding-right: 8px">终端宽度</span>
+    <button type="button" class="opt" onClick="{{w158}}" aria-pressed="{{p158}}">158 列</button><button type="button" class="opt" onClick="{{w110}}" aria-pressed="{{p110}}">110 列</button><button type="button" class="opt" onClick="{{w72}}" aria-pressed="{{p72}}">72 列，退成树</button>
+    <span style="flex: 1"></span><span style="color: var(--t3); padding-right: 8px">状态</span>
+    <button type="button" class="opt" onClick="{{mRun}}" aria-pressed="{{pRun}}">运行中</button><button type="button" class="opt" onClick="{{mWait}}" aria-pressed="{{pWait}}">等你批准</button><button type="button" class="opt" onClick="{{mErr}}" aria-pressed="{{pErr}}">同一错误两次</button><button type="button" class="opt" onClick="{{mDone}}" aria-pressed="{{pDone}}">跑完</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  state = { t: 24, f: 0, mode: 'run', W: 158, sel: null };
+  frames = ['◐', '◓', '◑', '◒'];
+  pool = { 收集: ['读改动'], 审查: ['安全', '性能', '样式', '接口', '依赖', '文案', '可访问性', '测试覆盖', '错误处理', '并发', '日志', '配置', '迁移', '国际化', '权限', '缓存'], 验证: ['跑测试', '跑闸', '类型检查', '构建', '端到端', '截图对比', '性能基线', '包体积', '覆盖率', '安全扫描', '许可证', '文档'], 修复: ['修失败测试', '修类型', '修样式', '补文档', '补测试', '改接口', '清日志', '调依赖', '改配置'], 汇总: ['写报告'] };
+  acts = ['读取 auth/session.ts', '搜索 verifyToken', '读取 middleware.ts', '读取 diff 第 3 段', '运行 pnpm lint', '读取 api/routes.ts', '搜索 TODO', '读取 package.json', '运行 tsc --noEmit', '读取 styles.css', '搜索 useEffect', '读取 i18n/zh.json'];
+  tools = ['pnpm lint', 'tsc --noEmit', 'rg verifyToken', 'git diff --stat', 'pnpm vitest run', 'cat README.md'];
+  noop = () => {};
+  componentDidMount() {
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.timer = setInterval(() => {
+      if (document.hidden || still || this.state.mode !== 'run') return;
+      const T = this.flow(14).total;
+      this.setState((s) => ({ f: s.f + 1, t: s.t + 0.25 > T + 6 ? 0 : s.t + 0.25 }));
+    }, 166);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  hash(a, b) { let h = (a * 73856093) ^ (b * 19349663); h = Math.imul(h ^ (h >>> 13), 1274126177); return (h ^ (h >>> 16)) >>> 0; }
+  // 和「运行条 · TUI」的甘特图同一个工作流：同样的成员、同样的起止
+  flow(N) {
+    if (this.cache && this.cache.N === N) return this.cache;
+    const a = Math.max(2, Math.round(N * 0.42)), b = Math.max(1, Math.round(N * 0.3)), c = Math.max(0, N - 2 - a - b);
+    const plan = [['收集', 1], ['审查', a], ['验证', b], ['修复', c], ['汇总', 1]].filter((p) => p[1] > 0);
+    let t0 = 0, id = 0;
+    const phases = plan.map(([name, cnt], pi) => {
+      const list = this.pool[name], lanes = Math.min(cnt, name === '审查' ? 6 : 4), free = Array(lanes).fill(t0), m = [];
+      for (let i = 0; i < cnt; i++) {
+        const lane = free.indexOf(Math.min(...free)), d = 8 + this.hash(i, pi * 3 + 1) % 18, s = free[lane];
+        free[lane] = s + d;
+        m.push({ id: id++, name: list[i % list.length], s, d, fail: name === '验证' && i === 1, phase: name });
+      }
+      const end = Math.max(...m.map((x) => x.s + x.d)), start = t0;
+      t0 = end;
+      return { name, pi, m, start, end };
+    });
+    this.cache = { N, phases, total: t0, count: phases.reduce((x, p) => x + p.m.length, 0) };
+    return this.cache;
+  }
+  wd(ch) { return ch.charCodeAt(0) > 0x2e80 ? 2 : 1; }
+  disp(s) { let w = 0; for (const ch of s) w += this.wd(ch); return w; }
+  pad(s, w) { return s + ' '.repeat(Math.max(0, w - this.disp(s))); }
+  fit(s, w) { if (this.disp(s) <= w) return s; let o = '', n = 0; for (const ch of s) { if (n + this.wd(ch) > w - 1) break; o += ch; n += this.wd(ch); } return o + '…'; }
+  bar(frac, w) { const k = Math.max(0, Math.min(w, Math.round(frac * w))); return '█'.repeat(k) + '░'.repeat(w - k); }
+  clock(sec) { const x = 14 * 3600 + 6 * 60 + Math.max(0, Math.floor(sec)); return [Math.floor(x / 3600), Math.floor(x / 60) % 60, x % 60].map((v) => String(v).padStart(2, '0')).join(':'); }
+
+  // 终端是一张字符格子：每次 put 是一段，渲染时一段一个定宽 span，中文和框线不会错位
+  grid(W, H) { this.g = Array.from({ length: H }, () => Array(W).fill(null)); this.k = 0; }
+  put(x, y, s, c, o = {}) {
+    const row = this.g[y]; if (!row) return x;
+    const tok = ++this.k, st = { c, b: o.b ? 700 : 400, bg: o.bg || 'transparent', node: o.node || null };
+    for (const ch of s) {
+      const w = this.wd(ch); if (x + w > row.length) break;
+      if (x >= 0) { row[x] = { ch, st, tok }; if (w === 2) row[x + 1] = { skip: true, st, tok }; }
+      x += w;
+    }
+    return x;
+  }
+  line(x, y, parts, max, node) {
+    const end = x + max;
+    for (const [s, c, b] of parts) { if (x >= end) break; x = this.put(x, y, this.fit(s, end - x), c, { b, node }); }
+    return x;
+  }
+  box(x, y, w, h, col, title, node, o = {}) {
+    const [tl, tr, bl, br, hz, vt] = [...(o.heavy ? '┏┓┗┛━┃' : '┌┐└┘─│')], bc = o.heavy ? 'var(--t1)' : col;
+    this.put(x, y, tl + hz.repeat(w - 2) + tr, bc, { node });
+    for (let r = 1; r < h - 1; r++) { this.put(x, y + r, vt, bc, { node }); this.put(x + 1, y + r, ' '.repeat(w - 2), 'inherit', { node }); this.put(x + w - 1, y + r, vt, bc, { node }); }
+    this.put(x, y + h - 1, bl + hz.repeat(w - 2) + br, bc, { node });
+    if (title) this.put(x + 2, y, ` ${this.fit(title, w - 6)} `, o.tc || col, { node, b: true });
+    if (o.right) this.put(x + w - 3 - this.disp(o.right), y, ` ${o.right} `, 'var(--t3)', { node });
+  }
+  out() {
+    return this.g.map((row) => {
+      const segs = []; let cur = null;
+      for (let x = 0; x < row.length; x++) {
+        const cell = row[x], tok = cell ? cell.tok : 0;
+        if (!cur || cur.tok !== tok) { cur = { tok, text: '', n: 0, st: cell ? cell.st : null }; segs.push(cur); }
+        cur.n++;
+        if (cell && !cell.skip) cur.text += cell.ch;
+      }
+      // 纯框线的段纵向拉满一行，和真终端一样连成实线
+      return { segs: segs.map((s) => ({ text: s.text, w: `${s.n}ch`, tf: /^[─-╿ ]+$/.test(s.text) && s.text.trim() ? 'scaleY(1.5)' : 'none', c: s.st ? s.st.c : 'inherit', fw: s.st ? s.st.b : 400, bg: s.st ? s.st.bg : 'transparent', cur: s.st && s.st.node ? 'pointer' : 'default', pick: s.st && s.st.node ? () => this.setState({ sel: s.st.node }) : this.noop })) };
+    });
+  }
+
+  renderVals() {
+    const { f, mode, W, sel } = this.state, H = 40;
+    const fl = this.flow(14), T = fl.total, all = fl.phases.flatMap((p) => p.m), failM = all.find((m) => m.fail);
+    const t = mode === 'wait' ? T + 0.5 : mode === 'done' ? T + 3 : mode === 'err' ? failM.s + failM.d + 1 : this.state.t;
+    const C = { main: 'var(--accent)', mainT: 'var(--accent-t)', sub: 'var(--s2)', subT: 'var(--s2-t)', you: 'var(--warn)', youT: 'var(--warn-t)', tool: 'var(--t3)' };
+    const spin = this.frames[f % 4];
+    // 失败那一格在「修复」段之后算过了：只在出错态和运行途中显示红
+    const st = (m) => (t < m.s ? 'idle' : t < m.s + m.d ? 'run' : m.fail && (mode === 'err' || t < T) ? 'err' : 'done');
+    const vis = (m) => Math.max(0, Math.min(t - m.s, m.d));
+    const G = { run: [spin, 'var(--accent)'], done: ['●', 'var(--ok)'], err: ['✕', 'var(--err)'], idle: ['○', 'var(--t4)'] };
+    const word = (m) => ({ run: '运行中', done: `完成 ${1 + this.hash(m.id, 5) % 4} 条`, err: '失败 2 次', idle: '排队' })[st(m)];
+    const recent = (m, k = 0) => this.acts[(this.hash(m.id, 7) + Math.floor(vis(m) / 3) + this.acts.length - k) % this.acts.length];
+    const cp = mode === 'err' ? fl.phases.find((p) => p.name === '验证') : fl.phases.find((p) => t < p.end) || fl.phases[fl.phases.length - 1];
+    const running = all.filter((m) => st(m) === 'run').length, doneN = all.filter((m) => ['done', 'err'].includes(st(m))).length;
+    const ctx = Math.min(78, Math.round(30 + Math.min(t, T) / T * 40)), toolsN = 180 + Math.floor(Math.min(t, T) * 2);
+    const pst = (p) => { const s = p.m.map(st); return s.includes('err') ? 'err' : s.includes('run') ? 'run' : s.every((x) => x === 'done') ? 'done' : s.every((x) => x === 'idle') ? 'idle' : 'run'; };
+
+    // 事件：子代理起止、工具调用、主会话分派、你的批准
+    const ev = [{ at: -4, who: '你', role: 'you', text: '批准方案：分 5 段并行审' }, { at: -1, who: '主会话', role: 'main', text: '拆成 14 个成员，并行上限 6' }];
+    fl.phases.forEach((p) => {
+      ev.push({ at: p.start, who: '主会话', role: 'main', text: `分派「${p.name}」${p.m.length} 个` });
+      p.m.forEach((m) => {
+        ev.push({ at: m.s + 1, who: m.name, role: 'sub', text: this.acts[this.hash(m.id, 7) % this.acts.length] });
+        ev.push({ at: m.s + m.d / 2, who: '工具', role: 'tool', text: `${this.tools[this.hash(m.id, 3) % this.tools.length]}  ${(0.4 + this.hash(m.id, 9) % 30 / 10).toFixed(1)}s` });
+        ev.push({ at: m.s + m.d, who: m.name, role: m.fail ? 'err' : 'sub', text: m.fail ? '✕ tsc 同一个错误第 2 次，停下' : `● 完成，提 ${1 + this.hash(m.id, 5) % 4} 条` });
+      });
+    });
+    if (mode === 'wait' || mode === 'done') ev.push({ at: T + 0.3, who: '主会话', role: 'main', text: '改完、测试全绿，推送前等你批准' });
+    if (mode === 'done') ev.push({ at: T + 1, who: '你', role: 'you', text: '批准推送到 origin' }, { at: T + 2, who: '主会话', role: 'main', text: '● 已推送，交付说明写好了' });
+    const roleC = { you: C.youT, main: C.mainT, sub: C.subT, tool: C.tool, err: 'var(--err)' };
+    const log = ev.filter((e) => e.at <= t).sort((a, b) => a.at - b.at).slice(-4);
+
+    const mainState = mode === 'wait' ? '等你批准' : mode === 'err' ? '停下等你' : mode === 'done' ? '完成' : t < T ? '调度中' : '改代码';
+    const youState = mode === 'wait' ? '要你批' : mode === 'err' ? '要你看' : '待命';
+    const headGlyph = mode === 'wait' ? ['▲', C.you] : mode === 'err' ? ['✕', 'var(--err)'] : mode === 'done' ? ['●', 'var(--ok)'] : [spin, C.main];
+
+    this.grid(W, H);
+    const tree = W < 100, wide = W >= 140;
+    // 头、图例
+    this.put(0, 0, 'dsh', C.mainT, { b: true }); this.put(4, 0, '运行图', 'var(--t1)', { b: true }); this.put(12, 0, tree ? '审查 PR #128' : '审查 PR #128 · 有问题就修', 'var(--t2)');
+    const el = Math.floor(Math.min(t, T + 3) + 4), head = `${running} 并行  ${doneN}/${fl.count}  ${String(Math.floor(el / 60)).padStart(2, '0')}:${String(el % 60).padStart(2, '0')}`;
+    this.put(W - this.disp(head) - 2, 0, headGlyph[0], headGlyph[1], { b: true }); this.put(W - this.disp(head), 0, head, 'var(--t3)');
+    this.put(0, 1, '─'.repeat(W), 'var(--l3)');
+    let lx = this.put(0, 2, '■ ', C.main); lx = this.put(lx, 2, '主会话 · deepseek-v4   ', 'var(--t2)');
+    lx = this.put(lx, 2, '■ ', C.sub); lx = this.put(lx, 2, '子代理 · flash   ', 'var(--t2)');
+    lx = this.put(lx, 2, '■ ', C.tool); lx = this.put(lx, 2, '工具   ', 'var(--t2)');
+    lx = this.put(lx, 2, '■ ', C.you); this.put(lx, 2, '你 · 检查点', 'var(--t2)');
+    if (wide) this.put(W - 24, 2, '甘特看时间，这里看谁等谁', 'var(--t4)');
+
+    if (tree) {
+      this.put(0, 3, '终端 72 列放不下框图，退成树；≥100 列自动换回。', 'var(--t3)');
+      let y = 5;
+      this.line(0, y++, [['主会话 · deepseek-v4', C.mainT, true], [`   第 3 轮  上下文 ${ctx}%  `, 'var(--t3)'], [mainState, mode === 'err' ? 'var(--err)' : mode === 'wait' ? C.youT : 'var(--t2)']], W);
+      this.put(0, y++, '│', 'var(--t4)');
+      fl.phases.forEach((p, i) => {
+        const ps = pst(p), last = i === fl.phases.length - 1, d = p.m.filter((m) => ['done', 'err'].includes(st(m))).length;
+        const g = ps === 'done' ? ['✓', 'var(--ok)'] : ps === 'run' ? ['▸', C.main] : ps === 'err' ? ['✕', 'var(--err)'] : [' ', 'var(--t4)'];
+        this.line(0, y++, [[last ? '└─ ' : '├─ ', 'var(--t4)'], [g[0] + ' ', g[1]], [this.pad(p.name, 8), ps === 'idle' ? 'var(--t4)' : 'var(--t1)', ps === 'run' || ps === 'err'], [`${d}/${p.m.length}`, 'var(--t3)']], W);
+        if (p === cp && ps !== 'done' && ps !== 'idle') p.m.forEach((m, j) => {
+          const s = st(m), lastM = j === p.m.length - 1;
+          this.line(0, y++, [[last ? '   ' : '│  ', 'var(--t4)'], [lastM ? '└─ ' : '├─ ', 'var(--t4)'], [G[s][0] + ' ', G[s][1]], [this.pad(m.name, 10), s === 'idle' ? 'var(--t4)' : 'var(--t2)'], [this.bar(vis(m) / m.d, 10), s === 'err' ? 'var(--err)' : s === 'run' ? C.main : C.sub], [` ${String(Math.round(vis(m) / m.d * 100)).padStart(3)}%  `, 'var(--t3)'], [s === 'run' ? recent(m) : word(m), 'var(--t3)']], W);
+        });
+      });
+      y++;
+      const ck = mode === 'err' ? [['◆ 同一错误两次', 'var(--err)', true]] : mode === 'wait' ? [['◆ 推送前', C.youT, true]] : mode === 'done' ? [['✓ 交付前', 'var(--t2)']] : [['◇ 同错两次  ◇ 推送前', 'var(--t3)']];
+      this.line(0, y++, [['你 · 检查点  ', C.youT, true], ['✓ 定方案  ', 'var(--t3)'], ...ck], W);
+    } else {
+      const LW = wide ? 28 : 26, gx0 = LW + 2, RX = wide ? W - 34 : W, gx1 = wide ? RX - 3 : W - 1, GW = gx1 - gx0 + 1, cx = gx0 + Math.floor(GW / 2);
+      // 槽位：放得下就全摆，放不下留一格「另 N 个」
+      const gap = 3, maxSlots = Math.max(1, Math.floor((GW + gap) / (16 + gap)));
+      const rank = { err: 0, run: 1, done: 2, idle: 3 };
+      let shown = cp.m, rest = [];
+      if (cp.m.length > maxSlots) { const pri = [...cp.m].sort((a, b) => rank[st(a)] - rank[st(b)] || a.id - b.id); shown = pri.slice(0, maxSlots - 1); rest = pri.slice(maxSlots - 1); }
+      shown = [...shown].sort((a, b) => (st(a) === 'err' ? -1 : st(b) === 'err' ? 1 : a.id - b.id));
+      const n = shown.length + (rest.length ? 1 : 0), sw = Math.min(22, Math.floor((GW - gap * (n - 1)) / n)), sx0 = gx0 + Math.floor((GW - (n * sw + gap * (n - 1))) / 2);
+      const slots = Array.from({ length: n }, (_, i) => ({ x: sx0 + i * (sw + gap), c: sx0 + i * (sw + gap) + Math.floor(sw / 2), m: shown[i] || null }));
+      const autoSel = (shown.find((m) => st(m) === 'err') || shown.find((m) => st(m) === 'run'));
+      const cur = sel || (autoSel ? `m${autoSel.id}` : 'main');
+      const E = 'var(--t4)';
+
+      // 主会话
+      const mw = 44, mx = cx - Math.floor(mw / 2);
+      this.box(mx, 4, mw, 4, C.main, '主会话 · deepseek-v4', 'main', { heavy: cur === 'main', tc: C.mainT, right: mainState });
+      this.line(mx + 2, 5, [['拆任务 · 分派 · 汇总 · 改代码', 'var(--t2)']], mw - 4, 'main');
+      this.line(mx + 2, 6, [['第 3 轮  上下文 ', 'var(--t3)'], [this.bar(ctx / 100, 12), C.main], [` ${ctx}%`, 'var(--t3)']], mw - 4, 'main');
+      this.put(cx, 8, '│', E); this.put(cx, 9, '│', E);
+
+      // 工作流：五段的进度
+      const fw = Math.min(60, GW), fx = cx - Math.floor(fw / 2);
+      this.box(fx, 10, fw, 7, 'var(--t3)', '工作流 · 审查 PR #128', 'flow', { heavy: cur === 'flow', tc: 'var(--t1)', right: `${fl.count} 个成员` });
+      fl.phases.forEach((p, i) => {
+        const ps = pst(p), d = p.m.filter((m) => ['done', 'err'].includes(st(m))).length, r = p.m.filter((m) => st(m) === 'run').length;
+        const g = ps === 'done' ? ['✓', 'var(--ok)'] : ps === 'run' ? ['▸', C.main] : ps === 'err' ? ['✕', 'var(--err)'] : [' ', E];
+        const gc = ps === 'err' ? 'var(--err)' : ps === 'run' ? C.main : ps === 'done' ? 'var(--s1)' : E;
+        this.line(fx + 2, 11 + i, [[g[0] + ' ', g[1]], [this.pad(p.name, 6), ps === 'idle' ? E : 'var(--t1)', ps === 'run' || ps === 'err'], [`${String(p.m.length).padStart(2)}  `, 'var(--t3)'], [this.bar(d / p.m.length, Math.max(8, fw - 34)), gc], [`  ${d}/${p.m.length}`, 'var(--t3)'], [r ? `  ${r} 并行` : '', C.mainT]], fw - 4, 'flow');
+      });
+      this.put(cx, 17, '│', E);
+      const lab = cp.m.length > 1 ? `分派给子代理 · ${cp.name} ${cp.m.length} 个` : `交给子代理 · ${cp.name}`;
+      this.put(cx - Math.floor(this.disp(lab) / 2), 18, lab, 'var(--t3)');
+
+      // 分叉、子代理、汇合
+      const c0 = slots[0].c, cN = slots[n - 1].c;
+      const bus = (y, a, b, mid, top) => {
+        if (n === 1) { this.put(c0, y, '│', E); if (cx !== c0) { const lo = Math.min(cx, c0), hi = Math.max(cx, c0); this.put(lo, y, '─'.repeat(hi - lo + 1), E); this.put(c0, y, top ? (c0 < cx ? '┌' : '┐') : (c0 < cx ? '└' : '┘'), E); this.put(cx, y, top ? (c0 < cx ? '┘' : '└') : (c0 < cx ? '┐' : '┌'), E); } return; }
+        this.put(c0, y, '─'.repeat(cN - c0 + 1), E);
+        slots.forEach((s, i) => this.put(s.c, y, i === 0 ? a : i === n - 1 ? b : mid, E));
+        const hit = slots.some((s) => s.c === cx); this.put(cx, y, hit ? '┼' : top ? '┴' : '┬', E);
+      };
+      bus(19, '┌', '┐', '┬', true);
+      slots.forEach((s) => { this.put(s.c, 20, '│', E); this.put(s.c, 27, '│', E); });
+      bus(28, '└', '┘', '┴', false);
+
+      slots.forEach((s) => {
+        const iw = sw - 4;
+        if (s.m) {
+          const m = s.m, k = st(m), col = k === 'err' ? 'var(--err)' : k === 'idle' ? E : C.sub, node = `m${m.id}`;
+          this.box(s.x, 21, sw, 6, col, m.name, node, { heavy: cur === node, tc: k === 'err' ? 'var(--err)' : k === 'idle' ? 'var(--t3)' : C.subT });
+          this.line(s.x + 2, 22, [[`flash · ${m.phase}`, 'var(--t3)']], iw, node);
+          const pct = Math.round(vis(m) / m.d * 100);
+          this.line(s.x + 2, 23, [[this.bar(pct / 100, iw - 5), k === 'err' ? 'var(--err)' : k === 'run' ? C.main : k === 'done' ? C.sub : E], [` ${String(pct).padStart(3)}%`, 'var(--t3)']], iw, node);
+          this.line(s.x + 2, 24, [[G[k][0] + ' ', G[k][1]], [word(m), k === 'err' ? 'var(--err)' : k === 'idle' ? E : 'var(--t2)']], iw, node);
+          this.line(s.x + 2, 25, [[k === 'run' ? recent(m) : k === 'err' ? 'tsc: token 不存在' : k === 'done' ? '已回到主会话' : '等空出并行位', 'var(--t3)']], iw, node);
+        } else {
+          this.box(s.x, 21, sw, 6, 'var(--t3)', `另 ${rest.length} 个`, 'more', { heavy: cur === 'more', tc: 'var(--t2)' });
+          rest.slice(0, rest.length > 4 ? 3 : 4).forEach((m, i) => this.line(s.x + 2, 22 + i, [[G[st(m)][0] + ' ', G[st(m)][1]], [m.name, 'var(--t2)']], iw, 'more'));
+          if (rest.length > 4) this.line(s.x + 2, 25, [[`… 还有 ${rest.length - 3} 个`, 'var(--t3)']], iw, 'more');
+        }
+      });
+
+      // 回到主会话
+      const bw = Math.min(48, GW), bx = cx - Math.floor(bw / 2);
+      const back = mode === 'wait' ? [['▲ ', C.you], ['推送到 origin 前等你批准  y / n', C.youT, true]] : mode === 'err' ? [['✕ ', 'var(--err)'], ['同一个错误第 2 次，停下等你看', 'var(--err)', true]] : mode === 'done' ? [['● ', 'var(--ok)'], ['已推送，交付说明写好了', 'var(--t2)']] : t < T ? [['○ ', E], [`等子代理回来 ${doneN}/${fl.count}，再改代码跑测试`, 'var(--t3)']] : [[spin + ' ', C.main], ['改代码、跑测试', 'var(--t2)']];
+      this.box(bx, 29, bw, 3, mode === 'wait' ? C.you : mode === 'err' ? 'var(--err)' : C.main, '回到主会话', 'back', { heavy: cur === 'back', tc: C.mainT });
+      this.line(bx + 2, 30, back, bw - 4, 'back');
+
+      // 流动点：只在运行中、只沿正在流的边走
+      if (mode === 'run') {
+        const path = (s) => { const p = [[cx, 8], [cx, 9], [cx, 17]]; const dir = s.c >= cx ? 1 : -1; for (let x = cx; x !== s.c + dir; x += dir) p.push([x, 19]); p.push([s.c, 20]); return p; };
+        const ret = (s) => { const p = [[s.c, 27]]; const dir = cx >= s.c ? 1 : -1; for (let x = s.c; x !== cx + dir; x += dir) p.push([x, 28]); return p; };
+        slots.forEach((s, i) => {
+          if (!s.m) return;
+          const k = st(s.m);
+          if (k === 'run') { const p = path(s), [x, y] = p[(f + i * 4) % p.length]; this.put(x, y, '●', C.main, { b: true }); }
+          if (k === 'done' && t < cp.end) { const p = ret(s), [x, y] = p[(f + i * 2) % p.length]; this.put(x, y, '●', C.sub, { b: true }); }
+        });
+      }
+
+      // 左栏：你只在这四处被打断，位置对着图里那一层
+      this.box(0, 4, LW, 29, C.you, '你 · 检查点', 'you', { tc: C.youT });
+      const iw = LW - 4, L = (y, parts) => this.line(2, y, parts, iw, 'you');
+      L(5, [['只在这四处打断你', 'var(--t3)']]);
+      L(7, [['✓ ', C.you], ['定方案前', 'var(--t1)', true]]); L(8, [['  14:05:56 批了方案', 'var(--t3)']]);
+      L(10, [['看得到整段对话、', E]]); L(11, [['每次工具调用和结果', E]]);
+      L(13, [['◇ ', C.you], ['写文件 / 跑命令', 'var(--t1)', true]]); L(14, [[`  按权限放行 ${38 + Math.floor(Math.min(t, T) / 3)} 次`, 'var(--t3)']]);
+      L(17, [['上次你说：', 'var(--t3)']]); L(18, [['» 先别动 lockfile', C.youT, true]]); L(19, [['» 测试红了就停', C.youT, true]]);
+      L(23, mode === 'err' ? [['◆ ', 'var(--err)'], ['同一错误两次', 'var(--err)', true]] : [['◇ ', C.you], ['同一错误两次', 'var(--t1)', true]]);
+      L(24, mode === 'err' ? [[`  ${failM.name} · 同一处连错`, 'var(--err)']] : [['  还没出现', E]]);
+      L(26, [['不替它写代码，', E]]); L(27, [['你的话回主会话执行', E]]);
+      L(30, mode === 'wait' ? [['◆ ', C.you], ['推送 / 交付前', C.youT, true]] : mode === 'done' ? [['✓ ', C.you], ['推送 / 交付前', 'var(--t1)', true]] : [['◇ ', C.you], ['推送 / 交付前', 'var(--t1)', true]]);
+      L(31, mode === 'wait' ? [['  等你：推送到 origin', C.youT]] : mode === 'done' ? [['  你批了推送', 'var(--t3)']] : [['  还没到', E]]);
+      const link = (y, to, col) => { this.put(LW, y, '┄'.repeat(Math.max(0, to - LW - 1)), col); this.put(to - 1, y, '●', col, { b: true }); };
+      if (mode === 'err') link(23, slots[0].x, 'var(--err)');
+      if (mode === 'wait') link(30, bx, C.you);
+
+      // 右栏：选中的那个
+      if (wide) {
+        for (let y = 4; y <= 32; y++) this.put(RX - 2, y, '│', 'var(--l3)');
+        const R = (y, k, v, c = 'var(--t2)', b = false) => this.line(RX, y, [[this.pad(k, 8), 'var(--t3)'], [v, c, b]], W - RX);
+        const sm = cur.startsWith('m') ? all.find((m) => `m${m.id}` === cur) : null;
+        let y = 4;
+        if (sm) {
+          const k = st(sm), v = vis(sm);
+          this.line(RX, y, [['选中  ', 'var(--t3)'], [sm.name, C.subT, true]], W - RX); y += 2;
+          R(y++, '角色', `子代理 · ${sm.phase}`); R(y++, '模型', 'deepseek-v4.1-flash');
+          R(y++, '状态', `${G[k][0]} ${word(sm)}`, k === 'err' ? 'var(--err)' : 'var(--t2)'); R(y++, '用时', `${Math.round(v)}s`);
+          R(y++, '读了', `${3 + this.hash(sm.id, 2) % 9 + Math.floor(v / 3)} 个文件`); R(y++, '工具', `${4 + Math.floor(v * 1.4)} 次`);
+          this.line(RX, y++, [[this.pad('上下文', 8), 'var(--t3)'], [this.bar(Math.min(1, 0.1 + v / 60), 10), C.sub], [` ${12 + Math.floor(v * 1.6)}k`, 'var(--t3)']], W - RX);
+          if (k === 'err') { y++; R(y++, '错误', 'tsc：token 不存在', 'var(--err)'); R(y++, '', '同一处第 2 次', 'var(--err)'); }
+          y++; this.put(RX, y++, '最近', 'var(--t3)');
+          if (k === 'idle') this.put(RX, y++, '  还没开始', E); else [0, 1, 2].forEach((j) => this.line(RX, y++, [['  ' + recent(sm, j), j ? 'var(--t3)' : 'var(--t1)']], W - RX));
+        } else if (cur === 'main' || cur === 'back') {
+          this.line(RX, y, [['选中  ', 'var(--t3)'], [cur === 'main' ? '主会话' : '回到主会话', C.mainT, true]], W - RX); y += 2;
+          R(y++, '模型', 'deepseek-v4'); R(y++, '轮次', '第 3 轮'); R(y++, '状态', mainState); R(y++, '工具', `${toolsN} 次`);
+          this.line(RX, y++, [[this.pad('上下文', 8), 'var(--t3)'], [this.bar(ctx / 100, 10), C.main], [` ${ctx}%`, 'var(--t3)']], W - RX);
+          if (cur === 'back') { y++; R(y++, '下一步', '改代码 · 跑测试'); R(y++, '', '推送要你批'); }
+          y++; this.put(RX, y++, '最近', 'var(--t3)');
+          ev.filter((e) => e.at <= t && e.role === 'main').slice(-3).reverse().forEach((e, j) => this.line(RX, y++, [['  ' + e.text, j ? 'var(--t3)' : 'var(--t1)']], W - RX));
+        } else if (cur === 'flow') {
+          this.line(RX, y, [['选中  ', 'var(--t3)'], ['工作流', 'var(--t1)', true]], W - RX); y += 2;
+          R(y++, '成员', `${fl.count} 个 · 5 段`); R(y++, '并行', '上限 6'); R(y++, '完成', `${doneN}`); R(y++, '失败', `${all.filter((m) => st(m) === 'err').length}`);
+          y++; this.line(RX, y++, [['甘特看时间，这里看谁等谁', E]], W - RX); this.line(RX, y++, [['g 换到甘特', E]], W - RX);
+        } else {
+          this.line(RX, y, [['选中  ', 'var(--t3)'], [`另 ${rest.length} 个`, 'var(--t1)', true]], W - RX); y += 2;
+          (rest.length ? rest : cp.m).slice(0, 12).forEach((m) => this.line(RX, y++, [[G[st(m)][0] + ' ', G[st(m)][1]], [this.pad(m.name, 10), 'var(--t2)'], [word(m), 'var(--t3)']], W - RX));
+        }
+        this.put(RX, 31, 'Enter 看它的完整输出', E);
+      }
+    }
+
+    // 事件日志、状态栏、按键
+    this.put(0, 33, '─'.repeat(W), 'var(--l3)'); this.put(2, 33, ' 事件 ', 'var(--t3)');
+    log.forEach((e, i) => this.line(0, 34 + i, [[this.clock(e.at) + '  ', 'var(--t4)'], [this.pad(e.who, 10), roleC[e.role], e.role !== 'tool'], [e.text, e.role === 'err' ? 'var(--err)' : 'var(--t2)']], W));
+    const sb = (k, v, c) => [[k + ' ', 'var(--t3)'], ['[', 'var(--t4)'], [v, c, true], [']   ', 'var(--t4)']];
+    this.line(0, 38, [...sb('主会话', mainState, mode === 'err' ? 'var(--err)' : C.mainT), ...sb('子代理', `${running} 并行 · ${doneN}/${fl.count}`, C.subT), ...(tree ? [] : sb('工具', `${toolsN} 次`, 'var(--t2)')), ...sb('你', youState, mode === 'wait' || mode === 'err' ? C.youT : 'var(--t3)')], W);
+    this.line(0, 39, [[tree ? 'g 甘特  ↑↓ 选  Esc 回聊天' : 'g 看甘特   ←→ 选节点   Enter 看输出   e 只看事件   Esc 回聊天', 'var(--t4)']], W);
+    this.put(W - this.disp(`${W}×${H}`), 39, `${W}×${H}`, 'var(--t4)');
+
+    const set = (m) => () => this.setState({ mode: m, sel: null }), press = (m) => (mode === m ? 'true' : 'false');
+    const setW = (w) => () => this.setState({ W: w });
+    return {
+      theme: this.props.theme ?? 'dark', termW: `calc(${W}ch + 28px)`, rows: this.out(),
+      w158: setW(158), w110: setW(110), w72: setW(72), p158: W === 158 ? 'true' : 'false', p110: W === 110 ? 'true' : 'false', p72: W === 72 ? 'true' : 'false',
+      mRun: set('run'), mWait: set('wait'), mErr: set('err'), mDone: set('done'), pRun: press('run'), pWait: press('wait'), pErr: press('err'), pDone: press('done')
+    };
+  }
+}
+</script>
+</body>
+</html>

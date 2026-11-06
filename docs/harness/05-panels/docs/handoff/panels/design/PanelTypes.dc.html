@@ -1,0 +1,102 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>面板类型</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--c1:#4F8AF2;--c2:#0FA696;--c3:#A066F0;--c4:#DE4F92}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--c1:#2F5FCC;--c2:#008F7F;--c3:#8A4FD0;--c4:#C43E7E}
+h2{margin:0;font-size:18px;line-height:26px;font-weight:600}
+.card{display:flex;flex-direction:column;gap:6px;box-sizing:border-box;padding:12px 14px;border-radius:12px;background:var(--l1);box-shadow:0 0 0 0.5px var(--line);font-size:12px;line-height:18px;color:var(--t2)}
+.card strong{font-size:15px;line-height:22px;font-weight:600;color:var(--t1)}
+.k{color:var(--t3)}
+.tr{display:grid;grid-template-columns:128px 96px minmax(0,1fr);column-gap:12px;font-size:12px;line-height:24px;color:var(--t2);box-shadow:0 -0.5px 0 var(--line-soft)}
+.tr b{font-weight:400;color:var(--t1)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1180px; box-sizing: border-box; padding: 48px 72px; display: flex; flex-direction: column; gap: 20px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">面板类型</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">不按场景分，按数据的形状分。八族覆盖绝大多数内容，地图、星图、平面图、模型都是“空间”这一族的不同坐标系。</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+    <sc-for list="{{fam}}" as="f" hint-placeholder-count="8">
+      <section class="card" aria-label="{{f.name}}">
+        <svg viewBox="0 0 284 92" width="100%" height="92" aria-hidden="true"><path d="{{f.a}}" fill="{{f.af}}" stroke="{{f.as}}" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="{{f.b}}" fill="{{f.bf}}" stroke="{{f.bs}}" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <strong>{{f.name}}</strong>
+        <span><span class="k">数据　</span>{{f.shape}}</span>
+        <span><span class="k">例子　</span>{{f.ex}}</span>
+        <span><span class="k">操作　</span>{{f.ops}}</span>
+        <span><span class="k">终端　</span>{{f.tui}}</span>
+      </section>
+    </sc-for>
+  </div>
+
+  <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 520px; gap: 40px">
+    <section>
+      <h2>每一族都要有的七件事</h2>
+      <div style="padding-top: 8px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px">
+        <sc-for list="{{rules}}" as="r" hint-placeholder-count="8"><div style="padding: 8px 0; box-shadow: 0 -0.5px 0 var(--line-soft); font-size: 13px; line-height: 20px; color: var(--t2)"><strong style="display: block; font-weight: 600; color: var(--t1)">{{r.t}}</strong>{{r.d}}</div></sc-for>
+      </div>
+    </section>
+    <section>
+      <h2>没列出来的东西放哪</h2>
+      <div style="padding-top: 8px">
+        <sc-for list="{{map}}" as="m" hint-placeholder-count="10"><div class="tr"><b>{{m.a}}</b><span>{{m.b}}</span><span>{{m.c}}</span></div></sc-for>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const dots = (l) => l.map(([x, y]) => `M${x} ${y}l0 0`).join('');
+    const fam = [
+      { name: '空间', shape: '坐标系 + 图层 + 要素', ex: '地图、星图、平面图、立体模型、版图、点云', ops: '平移、缩放、旋转、图层、测量', tui: '图片协议，退字符画', a: 'M30 60L70 20L140 14L210 30L250 66L190 80L90 82Z', af: 'var(--l2)', as: 'var(--t3)', b: dots([[100, 40], [160, 56], [200, 38]]), bf: 'none', bs: 'var(--c1)' },
+      { name: '关系', shape: '节点 + 边', ex: '知识图谱、DAG、调用图、组织架构、思维导图', ops: '展开邻居、路径、筛选、布局切换', tui: '邻接树', a: 'M142 46L60 22M142 46L60 70M142 46L224 22M142 46L224 70M224 22L224 70', af: 'none', as: 'var(--t3)', b: dots([[142, 46], [60, 22], [60, 70], [224, 22], [224, 70]]), bf: 'none', bs: 'var(--c3)' },
+      { name: '时序', shape: '时间 + 区间或事件', ex: '甘特、轨迹、日历、波形、基因组浏览', ops: '时间窗、缩放、折叠分组', tui: '字符条', a: 'M20 20H110M60 42H190M150 64H264', af: 'none', as: 'var(--c1)', b: 'M20 84H264', bf: 'none', bs: 'var(--t4)' },
+      { name: '图表', shape: '表 + 编码', ex: '折线、柱状、散点、K 线、桑基', ops: '悬停读数、筛选、时间范围', tui: '字符图，附数值', a: 'M12 76L60 54L108 62L156 30L204 40L272 14', af: 'none', as: 'var(--c2)', b: 'M12 84H272', bf: 'none', bs: 'var(--t4)' },
+      { name: '表格', shape: '行 + 列', ex: '表、矩阵、进程表、批量网格、基因表', ops: '排序、筛选、冻结列、选行', tui: '定宽表', a: 'M12 12H272V80H12ZM12 34H272M12 58H272M90 12V80M180 12V80', af: 'none', as: 'var(--t3)', b: '', bf: 'none', bs: 'none' },
+      { name: '文档', shape: '有结构的文本', ex: 'Markdown、PDF、代码、差异、公式', ops: '目录、搜索、标注、对比', tui: '分页文本', a: 'M24 16H180M24 34H260M24 50H240M24 66H200', af: 'none', as: 'var(--t3)', b: '', bf: 'none', bs: 'none' },
+      { name: '媒体', shape: '文件 + 标注', ex: '图片、视频、音频、医学影像、卫星图', ops: '播放、逐帧、框选标注', tui: '图片协议，退元数据', a: 'M60 10H224V82H60Z', af: 'var(--l2)', as: 'var(--t3)', b: 'M112 30H172V62H112Z', bf: 'none', bs: 'var(--c4)' },
+      { name: '实时与控制', shape: '事件流 + 字段', ex: '日志、操作磁带、仪表、表单、参数台', ops: '暂停、回放、填写、提交', tui: '滚动行和表单', a: 'M24 18H120M24 34H200M24 50H150M24 66H230', af: 'none', as: 'var(--t3)', b: 'M250 16V76', bf: 'none', bs: 'var(--accent)' }
+    ];
+    const rules = [
+      { t: '统一外壳', d: '标题、来源、图层、检查器、状态条位置相同。' },
+      { t: '五种状态', d: '加载、空、出错、过期、正常，每族都有。' },
+      { t: '选中能回到对话', d: '任何标记都能引用进输入框，带上下文。' },
+      { t: 'AI 能指', d: '模型按编号点亮要素，不改数据。' },
+      { t: '三档尺寸', d: '卡片、右栏、全屏用同一份数据。' },
+      { t: '终端有退路', d: '图片协议、字符画、列表，至少有一档。' },
+      { t: '数据留在本地', d: '要联网取数据必须声明，人同意后才连。' },
+      { t: '可以组合', d: '一个面板可以叠两族，比如地图加时间轴。' }
+    ];
+    const map = [
+      ['地铁线路图', '关系 + 空间', '站点是节点，图层是地理底图'],
+      ['电路图、管线图', '关系 + 空间', '元件有坐标，连线是边'],
+      ['分子结构、点云', '空间', '三维坐标系'],
+      ['棋盘、车间排布', '空间', '网格坐标系'],
+      ['股票 K 线', '图表', '时间轴加四值编码'],
+      ['乐谱、基因组', '时序', '轨道加区间'],
+      ['白板、设计稿', '空间', '自由坐标加图层'],
+      ['家谱、组织架构', '关系', '树形布局'],
+      ['医学影像切片', '媒体 + 空间', '切片序列加测量'],
+      ['完全没见过的', '自定义渲染器', '沙箱里自己画，外壳照旧']
+    ].map(([a, b, c]) => ({ a, b, c }));
+    return { theme: this.props.theme ?? 'dark', fam, rules, map };
+  }
+}
+</script>
+</body>
+</html>

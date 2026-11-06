@@ -1,0 +1,143 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DSH 组件库总览</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--ok-bg:#233C2C;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--ok-bg:#E6FAED;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+a{color:#7AAAFF}a:hover{color:#93C5FD}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 960px; box-sizing: border-box; padding: 64px 72px; display: flex; flex-direction: column; gap: 36px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 10px">
+    <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t4); font-family: var(--mono)">DSH 组件库 v0.1 · 桌面端 / TUI</p>
+    <h1 style="margin: 0; font-size: 44px; line-height: 56px; font-weight: 600; letter-spacing: 0">一份语义，两种介质</h1>
+    <p style="margin: 0; font-size: 16px; line-height: 26px; color: var(--t2)">同一个组件吃同一份数据。名字、颜色、符号、快捷键两端相同，形状各用各的介质来表达。</p>
+  </header>
+
+  <section aria-label="同一个组件的五种状态" style="display: flex; flex-direction: column; gap: 16px">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <span style="font-size: 13px; line-height: 20px; color: var(--t3)">切一个状态，三栏一起变</span>
+      <div style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)">
+        <sc-for list="{{states}}" as="item" hint-placeholder-count="5">
+          <button type="button" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}" style="display: flex; align-items: center; gap: 6px; height: 32px; min-width: 76px; padding: 0 12px; border: 0; border-radius: 8px; background: {{item.bg}}; color: {{item.fg}}; font-family: var(--sans); font-size: 13px; line-height: 20px; cursor: pointer"><span style="font-family: var(--mono); color: {{item.tone}}">{{item.glyph}}</span>{{item.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+      <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+        <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">组件吃的数据</p>
+        <pre style="margin: 0; height: 248px; box-sizing: border-box; padding: 16px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-family: var(--mono); font-size: 13px; line-height: 21px; color: var(--t2); overflow: hidden; white-space: pre-wrap">TerminalBlock {
+  state:   <span style="color: {{cur.textTone}}">"{{cur.key}}"</span>
+  command: "pnpm vitest run ui"
+  elapsed: "{{cur.meta}}"
+  tail:    ["{{cur.line1}}",
+            "{{cur.line2}}"]
+  actions: {{cur.actionsJson}}
+}</pre>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+        <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">桌面端：圆角、0.5px 线、按钮</p>
+        <div style="height: 248px; box-sizing: border-box; padding: 16px; border-radius: 12px; background: var(--l2); display: flex; flex-direction: column; justify-content: center">
+          <article style="border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line), 0 3px 8px rgba(0,0,0,.08); overflow: hidden">
+            <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px">
+              <span aria-hidden="true" style="font-family: var(--mono); font-size: 14px; line-height: 20px; color: {{cur.tone}}">{{cur.glyph}}</span>
+              <code style="flex: 1; min-width: 0; font-family: var(--mono); font-size: 13px; line-height: 20px; color: var(--t1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis">pnpm vitest run ui</code>
+              <span style="font-size: 12px; line-height: 18px; color: var(--t3)">{{cur.meta}}</span>
+            </div>
+            <div style="padding: 10px 12px; background: var(--l1); font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--t2)">
+              <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{cur.line1}}</div>
+              <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{cur.line2}}</div>
+            </div>
+            <sc-if value="{{cur.hasAction}}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; justify-content: flex-end; gap: 8px; padding: 8px 12px">
+                <button type="button" style="height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--accent-btn); color: var(--on-accent); font-family: var(--sans); font-size: 13px; line-height: 20px; cursor: pointer">{{cur.actionLabel}} <span style="font-family: var(--mono); font-size: 12px">{{cur.actionKey}}</span></button>
+              </div>
+            </sc-if>
+          </article>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+        <p style="margin: 0; font-size: 13px; line-height: 20px; color: var(--t3)">TUI：左边条、底色、字符</p>
+        <div style="height: 248px; box-sizing: border-box; padding: 16px; border-radius: 12px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line); display: flex; flex-direction: column; justify-content: center; font-family: var(--mono); font-size: 13px; line-height: 20px">
+          <div style="border-left: 2px solid {{cur.tone}}; padding-left: 8px; color: var(--t2)">
+            <div style="display: flex; gap: 8px; white-space: nowrap"><span style="color: {{cur.tone}}">{{cur.glyph}}</span><span style="flex: 1; min-width: 0; font-weight: 700; color: var(--t1); overflow: hidden">pnpm vitest run ui</span><span style="color: var(--t4)">{{cur.meta}}</span></div>
+            <div style="display: flex; gap: 8px; white-space: nowrap"><span style="color: var(--t4)">≡</span><span style="flex: 1; min-width: 0; overflow: hidden">{{cur.line1}}</span></div>
+            <div style="display: flex; gap: 8px; white-space: nowrap"><span style="color: var(--t4)"> </span><span style="flex: 1; min-width: 0; overflow: hidden">&nbsp;{{cur.line2}}</span></div>
+            <sc-if value="{{cur.hasAction}}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 4px; color: var(--t3)"><span style="color: var(--accent-t); font-weight: 700">{{cur.actionKeyTui}}</span> {{cur.actionLabel}}</div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="统一的五条规则" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding-top: 24px; border-top: 0.5px solid var(--line)">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600">同名</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 21px; color: var(--t2)">组件名和状态键两端完全一样，沿用 ui-primitives 现有的名字。</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600">同色</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 21px; color: var(--t2)">TUI 直接用桌面端的色值，再按 256 色、16 色逐级降。</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600">同符号</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 21px; color: var(--t2)">状态靠形状区分：◐ ● ◎ ▲ ✕ ○。去掉颜色也读得出来。</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600">同键</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 21px; color: var(--t2)">一个动作一个键。桌面按钮上也写出来，换端不用重学。</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 600">异形</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 21px; color: var(--t2)">圆角和阴影只属于桌面端。TUI 用左边条、底色、字重表达层次。</p>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  state = { s: 'ongoing' };
+
+  renderVals() {
+    const theme = this.props.theme ?? 'dark';
+    const data = {
+      ongoing: { glyph: '◐', label: '运行中', tone: 'var(--accent)', textTone: 'var(--accent-t)', meta: '18s', line1: '✓ StateDot.test.tsx (6)', line2: '… RiskConfirmation.test.tsx', actionsJson: '[取消 Esc]', hasAction: true, actionLabel: '取消', actionKey: 'Esc', actionKeyTui: 'Esc' },
+      done: { glyph: '●', label: '完成', tone: 'var(--ok)', textTone: 'var(--ok-t)', meta: '24s', line1: '✓ 2 个文件，共 19 条', line2: '退出码 0', actionsJson: '[]', hasAction: false, actionLabel: '', actionKey: '', actionKeyTui: '' },
+      warning: { glyph: '▲', label: '警告', tone: 'var(--warn)', textTone: 'var(--warn-t)', meta: '24s', line1: '✓ 19 条通过', line2: '3 条跳过', actionsJson: '[查看 V]', hasAction: true, actionLabel: '查看', actionKey: 'V', actionKeyTui: 'v' },
+      error: { glyph: '✕', label: '失败', tone: 'var(--err)', textTone: 'var(--err-t)', meta: '11s', line1: '✕ RiskConfirmation.test.tsx', line2: '退出码 1', actionsJson: '[重试 R]', hasAction: true, actionLabel: '重试', actionKey: 'R', actionKeyTui: 'r' },
+      idle: { glyph: '○', label: '空闲', tone: 'var(--idle)', textTone: 'var(--t3)', meta: '排队中', line1: '等待上一条命令结束', line2: '队列第 2 位', actionsJson: '[]', hasAction: false, actionLabel: '', actionKey: '', actionKeyTui: '' }
+    };
+    const current = this.state.s;
+    const states = Object.keys(data).map((key) => ({
+      glyph: data[key].glyph,
+      label: data[key].label,
+      tone: data[key].tone,
+      pressed: key === current ? 'true' : 'false',
+      bg: key === current ? 'var(--l3)' : 'transparent',
+      fg: key === current ? 'var(--t1)' : 'var(--t3)',
+      pick: () => this.setState({ s: key })
+    }));
+    return { theme, states, cur: { key: current, ...data[current] } };
+  }
+}
+</script>
+</body>
+</html>

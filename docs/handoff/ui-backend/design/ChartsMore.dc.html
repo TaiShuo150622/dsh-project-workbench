@@ -1,0 +1,195 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>更多图表</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--s1:#4F8AF2;--s2:#0FA696;--s3:#A066F0;--s4:#DE4F92;--fill1:rgba(79,138,242,.22);--fill4:rgba(222,79,146,.22)}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--s1:#2F5FCC;--s2:#008F7F;--s3:#8A4FD0;--s4:#C43E7E;--fill1:rgba(47,95,204,.16);--fill4:rgba(196,62,126,.16)}
+.cell{display:flex;flex-direction:column;gap:6px;min-width:0}
+.plot{position:relative;width:296px;height:120px}
+.mk{position:absolute;display:flex;align-items:center;overflow:hidden;box-sizing:border-box;font-size:11px;line-height:16px;color:var(--t1);white-space:nowrap}
+.tui{box-sizing:border-box;height:112px;padding:6px 8px;border-radius:6px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:12px;line-height:16px;color:var(--t2);white-space:pre;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1460px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">更多图表</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">十六种图，上面是桌面端，下面是 TUI。数都是示例。悬停看读数；TUI 用块字符和密度字符，少于 256 色时也分得开。</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 296px); gap: 24px 37px">
+    <sc-for list="{{charts}}" as="c" hint-placeholder-count="16">
+      <section class="cell" aria-label="{{c.title}}">
+        <div style="display: flex; flex-direction: column"><strong style="font-size: 13px; line-height: 20px; font-weight: 600">{{c.title}}</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">{{c.read}}</span></div>
+        <div class="plot" onMouseLeave="{{c.leave}}">
+          <svg viewBox="0 0 296 120" width="296" height="120" aria-hidden="true" style="position: absolute; left: 0; top: 0; overflow: visible"><path d="{{c.d1}}" fill="{{c.f1}}" stroke="{{c.s1}}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><path d="{{c.d2}}" fill="{{c.f2}}" stroke="{{c.s2}}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><path d="{{c.d3}}" fill="{{c.f3}}" stroke="{{c.s3}}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+          <sc-for list="{{c.marks}}" as="m" hint-placeholder-count="6"><span class="mk" title="{{m.read}}" onMouseEnter="{{m.enter}}" style="left: {{m.x}}px; top: {{m.y}}px; width: {{m.w}}px; height: {{m.h}}px; background: {{m.fill}}; border-radius: {{m.r}}; box-shadow: {{m.bd}}; padding-left: {{m.pad}}px">{{m.t}}</span></sc-for>
+        </div>
+        <div class="tui"><sc-for list="{{c.lines}}" as="l" hint-placeholder-count="5"><div style="height: 16px"><sc-for list="{{l}}" as="s" hint-placeholder-count="2"><span style="color: {{s.c}}">{{s.t}}</span></sc-for></div></sc-for></div>
+      </section>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1460}}'>
+class Component extends DCLogic {
+  state = { read: {} };
+  renderVals() {
+    const W = 296, H = 120, S = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)'];
+    const T3 = 'var(--t3)', T4 = 'var(--t4)';
+    const seg = (t, c = 'var(--t2)') => ({ t, c });
+    const blocks = ' ▁▂▃▄▅▆▇█';
+    const spark = (a, hi) => a.map((v) => blocks[Math.max(1, Math.round((v / hi) * 8))]).join('');
+    const bar = (n, ch = '█') => ch.repeat(Math.max(0, Math.round(n)));
+    const scaleX = (i, n) => 4 + (i / (n - 1)) * (W - 8);
+    const line = (a, hi, lo = 0) => a.map((v, i) => `${i ? 'L' : 'M'}${scaleX(i, a.length).toFixed(1)} ${(H - 4 - ((v - lo) / (hi - lo)) * (H - 8)).toFixed(1)}`).join(' ');
+    const area = (top, base) => `${top} L${scaleX(1, 2)} ${base} L${scaleX(0, 2)} ${base} Z`;
+    const band = (up, lo, hi) => {
+      const f = (v) => (H - 4 - (v / hi) * (H - 8)).toFixed(1);
+      const a = up.map((v, i) => `${i ? 'L' : 'M'}${scaleX(i, up.length).toFixed(1)} ${f(v)}`).join(' ');
+      const b = lo.map((v, i) => `L${scaleX(lo.length - 1 - i, lo.length).toFixed(1)} ${f(lo[lo.length - 1 - i])}`).join(' ');
+      return `${a} ${b} Z`;
+    };
+    const box = (o) => ({ fill: 'transparent', r: '0', bd: 'none', pad: 0, t: '', read: '', ...o });
+    const columns = (n, fn) => Array.from({ length: n }, (_, i) => box({ x: scaleX(i, n) - W / n / 2, y: 0, w: W / n, h: H, read: fn(i) }));
+    const none = { d1: 'M0 0', f1: 'none', s1: 'none', d2: 'M0 0', f2: 'none', s2: 'none', d3: 'M0 0', f3: 'none', s3: 'none' };
+    const charts = [];
+    const add = (id, title, summary, o) => charts.push({ id, title, summary, marks: [], lines: [], ...none, ...o });
+
+    const eq = [100, 103, 101, 106, 110, 108, 113, 117, 115, 121, 126, 124, 130, 134, 131, 138];
+    add('area', '面积图', '累计净值 · 现在 138', {
+      d1: area(line(eq, 140, 90), H), f1: 'var(--fill1)', s1: 'none', d2: line(eq, 140, 90), f2: 'none', s2: S[0],
+      marks: columns(eq.length, (i) => `第 ${i + 1} 周 · 净值 ${eq[i]}`),
+      lines: [[seg('140 ', T4), seg('              ▂▄▆█', S[0])], [seg('    ', T4), seg('      ▂▄▆█████████', S[0])], [seg('    ', T4), seg('▁▃▅██████████████', S[0])], [seg('100 ', T4), seg('█████████████████', S[0])]]
+    });
+
+    const st = [[30, 32, 34, 33, 36, 38, 40, 39, 42, 44], [20, 22, 26, 30, 28, 34, 36, 40, 42, 46], [10, 12, 12, 16, 20, 18, 22, 26, 24, 28]];
+    const s1 = st[0], s2 = st[1].map((v, i) => v + s1[i]), s3 = st[2].map((v, i) => v + s2[i]);
+    add('stack', '堆叠面积', '上下文用量 · 系统、对话、工具', {
+      d1: band(s3, s2, 124), f1: S[2], s1: 'none', d2: band(s2, s1, 124), f2: S[1], s2: 'none', d3: band(s1, s1.map(() => 0), 124), f3: S[0], s3: 'none',
+      marks: columns(10, (i) => `第 ${i + 1} 轮 · 系统 ${st[0][i]} · 对话 ${st[1][i]} · 工具 ${st[2][i]}`),
+      lines: [[seg('      ▁▂▃', S[2]), seg('  ░ 工具', T3)], [seg('▂▃▄▅▆███', S[1]), seg('  ▓ 对话', T3)], [seg('████████', S[0]), seg('  █ 系统', T3)]]
+    });
+
+    const gv = [[62, 80], [48, 66], [72, 58], [38, 44]], gn = ['读', '写', '搜', '跑'];
+    add('group', '分组柱状', '两周对比 · 四类工具', {
+      marks: gv.flatMap((p, i) => p.map((v, k) => box({ x: 16 + i * 70 + k * 24, y: H - v - 18, w: 20, h: v, fill: S[k], r: '4px 4px 0 0', read: `${gn[i]} · ${k ? '本周' : '上周'} ${v}` }))).concat(gn.map((t, i) => box({ x: 16 + i * 70, y: H - 16, w: 44, h: 16, t, pad: 16 }))),
+      lines: gn.map((t, i) => [seg(`${t} `, T3), seg(bar(gv[i][0] / 6), S[0]), seg(` ${gv[i][0]}`, T4)]).concat([[seg('  ', T3), seg(bar(gv[0][1] / 6, '▓'), S[1]), seg(' 80 本周', T4)]])
+    });
+
+    const rk = [['momentum_20', 0.082], ['vol_ratio', 0.064], ['funding_z', 0.051], ['oi_change', 0.037], ['skew_30', 0.021]];
+    add('rank', '排序条形', '因子 IC 排名', {
+      marks: rk.flatMap(([n, v], i) => [box({ x: 0, y: i * 24, w: 96, h: 20, t: n, read: `${n} ${v}` }), box({ x: 100, y: i * 24 + 3, w: v * 1800, h: 14, fill: S[0], r: '0 4px 4px 0', read: `${n} ${v}` })]),
+      lines: rk.map(([n, v]) => [seg(n.padEnd(12), T3), seg(bar(v * 180), S[0]), seg(` ${v}`, T4)])
+    });
+
+    const sb = [[40, 30, 20], [52, 24, 18], [36, 38, 16], [60, 20, 12], [44, 34, 26]];
+    add('stackbar', '堆叠柱状', '五次检查 · 通过、跳过、失败', {
+      marks: sb.flatMap((r, i) => { let y = H; return r.map((v, k) => { y -= v + 2; return box({ x: 20 + i * 54, y, w: 36, h: v, fill: S[k], r: k === 2 ? '4px 4px 0 0' : '0', read: `第 ${i + 1} 次 · ${['通过', '跳过', '失败'][k]} ${v}` }); }); }),
+      lines: sb.map((r, i) => [seg(`${i + 1} `, T4), seg(bar(r[0] / 4), S[0]), seg(bar(r[1] / 4, '▓'), S[1]), seg(bar(r[2] / 4, '▒'), S[2])])
+    });
+
+    const hs = [4, 9, 16, 28, 44, 58, 52, 40, 26, 14, 8, 3];
+    add('hist', '直方图', '单轮耗时分布 · 峰值 12–14s', {
+      marks: hs.map((v, i) => box({ x: i * 24.6, y: H - v * 1.9, w: 22.6, h: v * 1.9, fill: S[0], r: '2px 2px 0 0', read: `${i * 2}–${i * 2 + 2}s · ${v} 轮` })),
+      lines: [[seg('      ▂▅█▇▅', S[0])], [seg('   ▂▅█████████▂', S[0])], [seg('0s            24s', T4)]]
+    });
+
+    const pts = Array.from({ length: 26 }, (_, i) => { const a = (i * 37 % 100) / 100, b = (i * 61 % 100) / 100; return { x: a, y: Math.min(1, a * 0.7 + b * 0.3), g: i % 2 }; });
+    const grid = Array.from({ length: 5 }, () => Array(24).fill(' '));
+    pts.forEach((p) => { grid[4 - Math.floor(p.y * 4.99)][Math.floor(p.x * 23.99)] = p.g ? '◆' : '●'; });
+    add('scatter', '散点图', 'IC 和换手的关系 · 两组', {
+      marks: pts.map((p, i) => box({ x: p.x * (W - 12), y: (1 - p.y) * (H - 12), w: 9, h: 9, fill: p.g ? 'transparent' : S[0], bd: p.g ? `inset 0 0 0 2px ${S[3]}` : 'none', r: p.g ? '1px' : '50%', read: `换手 ${(p.x * 100).toFixed(0)}% · IC ${(p.y / 10).toFixed(3)}` })),
+      lines: grid.map((r) => [seg(r.join(''), S[0])])
+    });
+
+    const ohlc = [[52, 60, 48, 57], [57, 62, 54, 55], [55, 58, 49, 51], [51, 56, 47, 54], [54, 66, 53, 64], [64, 70, 60, 62], [62, 65, 56, 58], [58, 63, 55, 61], [61, 74, 60, 72], [72, 76, 66, 68], [68, 72, 62, 70], [70, 82, 69, 79]];
+    const ky = (v) => H - ((v - 44) / 42) * H;
+    const kRows = Array.from({ length: 5 }, () => []);
+    ohlc.forEach(([o, h, l, c]) => { const up = c >= o; for (let r = 0; r < 5; r++) { const top = 84 - r * 8, bot = top - 8; const body = Math.max(o, c) >= bot && Math.min(o, c) <= top; const wick = h >= bot && l <= top; kRows[r].push(seg(body ? (up ? '█' : '▒') + ' ' : wick ? '│ ' : '  ', up ? S[0] : S[3])); } });
+    add('candle', 'K 线', '蓝色实心涨，粉色空心跌', {
+      marks: ohlc.flatMap(([o, h, l, c], i) => { const up = c >= o, x = 8 + i * 24, col = up ? S[0] : S[3], rd = `第 ${i + 1} 根 · 开 ${o} 高 ${h} 低 ${l} 收 ${c}`; return [box({ x: x + 6.5, y: ky(h), w: 1.5, h: ky(l) - ky(h), fill: col, read: rd }), box({ x, y: ky(Math.max(o, c)), w: 14, h: Math.max(2, Math.abs(ky(o) - ky(c))), fill: up ? col : 'var(--bg)', bd: up ? 'none' : `inset 0 0 0 1.5px ${col}`, read: rd })]; }),
+      lines: kRows
+    });
+
+    const dd = [0, -2, -1, -5, -8, -6, -3, 0, -2, -7, -12, -15, -11, -6, -2, 0];
+    const ddY = (v) => (Math.abs(v) / 16) * (H - 8) + 2;
+    const ddP = dd.map((v, i) => `${i ? 'L' : 'M'}${scaleX(i, dd.length).toFixed(1)} ${ddY(v).toFixed(1)}`).join(' ');
+    add('drawdown', '回撤图', '最大回撤 −15%', {
+      d1: `${ddP} L${scaleX(1, 2)} 2 L${scaleX(0, 2)} 2 Z`, f1: 'var(--fill4)', s1: 'none', d2: ddP, f2: 'none', s2: S[3],
+      marks: columns(dd.length, (i) => `第 ${i + 1} 周 · ${dd[i]}%`),
+      lines: [[seg('  0% ', T4), seg('▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀', S[3])], [seg('     ', T4), seg('   ▀▀▀    ▀▀▀▀', S[3])], [seg('−15% ', T4), seg('           ▀▀', S[3])]]
+    });
+
+    const wf = [['基准', 40, 0], ['选币', 24, 40], ['择时', 12, 64], ['成本', -18, 76], ['滑点', -8, 58], ['净值', 50, 0]];
+    add('waterfall', '瀑布图', '收益归因 · 从 40 到 50', {
+      marks: wf.map(([n, v, b], i) => { const a = Math.abs(v), top = Math.max(b, b + v); return box({ x: 6 + i * 49, y: H - 16 - top * 1.1, w: 38, h: a * 1.1, fill: i === 0 || i === 5 ? 'var(--t3)' : v > 0 ? S[0] : S[3], r: '2px', read: `${n} ${v > 0 ? '+' : ''}${v}` }); }).concat(wf.map(([n], i) => box({ x: 6 + i * 49, y: H - 15, w: 44, h: 15, t: n }))),
+      lines: wf.map(([n, v, b]) => [seg(`${n} `, T3), seg(' '.repeat(Math.round((v < 0 ? b + v : b) / 5))), seg(bar(Math.abs(v) / 5, v < 0 ? '▒' : '█'), v < 0 ? S[3] : S[0]), seg(` ${v > 0 ? '+' : ''}${v}`, T4)]).slice(0, 5)
+    });
+
+    const gt = [['读组件', 0, 18], ['改映射', 14, 30], ['跑测试', 40, 22], ['审查', 46, 34], ['开 PR', 78, 16]];
+    add('gantt', '甘特图', '一轮里的并行任务', {
+      marks: gt.flatMap(([n, a, b], i) => [box({ x: 0, y: i * 24, w: 56, h: 20, t: n, read: `${n} ${a}–${a + b}s` }), box({ x: 60 + a * 2.2, y: i * 24 + 3, w: b * 2.2, h: 14, fill: i === 3 ? S[1] : S[0], r: '4px', read: `${n} ${a}–${a + b}s` })]),
+      lines: gt.map(([n, a, b]) => [seg(n.padEnd(6), T3), seg(' '.repeat(Math.round(a / 5))), seg(bar(b / 5), S[0])])
+    });
+
+    const tm = [['ui-chat', 0, 0, 150, 120, 0], ['ui-tool', 152, 0, 144, 70, 1], ['ui-theme', 152, 72, 80, 48, 2], ['ui-goal', 234, 72, 62, 48, 3]];
+    add('treemap', '矩形树图', '各包代码量', {
+      marks: tm.map(([n, x, y, w, h, k]) => box({ x, y, w, h, fill: S[k], t: n, pad: 6, r: '2px', read: `${n} · 占 ${Math.round((w * h) / 355)}%` })),
+      lines: [[seg('████████████', S[0]), seg(' ▓▓▓▓▓▓▓▓▓▓▓', S[1])], [seg('████████████', S[0]), seg(' ▓▓▓▓▓▓▓▓▓▓▓', S[1])], [seg('████████████', S[0]), seg(' ▒▒▒▒▒', S[2]), seg(' ░░░░░', S[3])], [seg('ui-chat 42%  ui-tool 29% theme goal', T3)]]
+    });
+
+    const cn = ['mom', 'vol', 'fund', 'oi', 'skew'];
+    const cr = [[1, 0.42, -0.18, 0.31, -0.52], [0.42, 1, 0.12, 0.56, -0.24], [-0.18, 0.12, 1, 0.38, 0.09], [0.31, 0.56, 0.38, 1, -0.11], [-0.52, -0.24, 0.09, -0.11, 1]];
+    const dens = (v) => ' ░▒▓█'[Math.min(4, Math.round(Math.abs(v) * 4))];
+    add('corr', '相关矩阵', '蓝为正，粉为负，灰为零', {
+      marks: cr.flatMap((r, i) => r.map((v, k) => box({ x: 40 + k * 50, y: i * 24, w: 48, h: 22, fill: `color-mix(in srgb, ${v >= 0 ? S[0] : S[3]} ${Math.round(Math.abs(v) * 100)}%, var(--l3))`, r: '2px', t: v.toFixed(1), pad: 12, read: `${cn[i]} × ${cn[k]} · ${v}` }))).concat(cn.map((t, i) => box({ x: 0, y: i * 24, w: 38, h: 22, t }))),
+      lines: cr.map((r, i) => [seg(cn[i].padEnd(5), T3)].concat(r.map((v) => seg(dens(v).repeat(3) + ' ', v >= 0 ? S[0] : S[3]))))
+    });
+
+    const fn = [['候选', 219], ['过预注册', 118], ['过样本外', 54], ['入库', 17]];
+    add('funnel', '漏斗图', '从候选到入库 · 留下 8%', {
+      marks: fn.flatMap(([n, v], i) => [box({ x: 60, y: i * 30, w: (v / 219) * 200, h: 26, fill: S[0], r: '2px', read: `${n} ${v}` }), box({ x: 0, y: i * 30, w: 58, h: 26, t: n }), box({ x: 64 + (v / 219) * 200, y: i * 30, w: 32, h: 26, t: String(v) })]),
+      lines: fn.map(([n, v]) => [seg(n.padEnd(5), T3), seg(bar(v / 13), S[0]), seg(` ${v}`, T4)])
+    });
+
+    const bx = [['周一', 8, 12, 15, 19, 26], ['周二', 6, 10, 14, 17, 22], ['周三', 10, 14, 18, 22, 30], ['周四', 7, 11, 13, 16, 21], ['周五', 9, 13, 16, 20, 28]];
+    const by = (v) => H - 18 - (v / 32) * (H - 22);
+    add('boxplot', '箱线图', '每日耗时分布', {
+      marks: bx.flatMap(([n, lo, q1, m, q3, hi], i) => { const x = 16 + i * 56, rd = `${n} · 中位 ${m}s · 区间 ${lo}–${hi}s`; return [box({ x: x + 15, y: by(hi), w: 1.5, h: by(lo) - by(hi), fill: 'var(--t3)', read: rd }), box({ x, y: by(q3), w: 32, h: by(q1) - by(q3), fill: S[0], r: '2px', read: rd }), box({ x, y: by(m) - 1, w: 32, h: 2, fill: 'var(--bg)', read: rd }), box({ x: x - 2, y: H - 16, w: 38, h: 16, t: n, pad: 6 })]; }),
+      lines: bx.map(([n, lo, q1, m, q3, hi]) => [seg(`${n} `, T3), seg(' '.repeat(Math.round(lo / 2))), seg('─'.repeat(Math.round((q1 - lo) / 2)), T4), seg(bar((m - q1) / 2), S[0]), seg('│', 'var(--t1)'), seg(bar((q3 - m) / 2), S[0]), seg('─'.repeat(Math.round((hi - q3) / 2)), T4)])
+    });
+
+    const dn = [['系统', 20], ['对话', 45], ['思考', 13], ['工具', 22]];
+    let acc = 0;
+    const stops = dn.map(([, v], i) => { const a = acc; acc += v; return `${S[i]} ${a}% ${acc - 0.6}%, var(--bg) ${acc - 0.6}% ${acc}%`; }).join(', ');
+    add('donut', '环形图', '构成，只用四段以内', {
+      marks: [box({ x: 0, y: 0, w: 120, h: 120, fill: `radial-gradient(circle closest-side, var(--bg) 62%, transparent 63%), conic-gradient(${stops})`, r: '50%', read: '系统 20 · 对话 45 · 思考 13 · 工具 22' })].concat(dn.map(([n, v], i) => box({ x: 140, y: 12 + i * 24, w: 150, h: 20, t: `${n} ${v}%`, pad: 16, bd: `inset 8px 0 0 -2px ${S[i]}`, read: `${n} ${v}%` }))),
+      lines: dn.map(([n, v], i) => [seg(`${n} `, T3), seg(bar(v / 3, '█▓▒░'[i]), S[i]), seg(` ${v}%`, T4)])
+    });
+
+    return {
+      theme: this.props.theme ?? 'dark',
+      charts: charts.map((c) => ({
+        ...c,
+        read: this.state.read[c.id] || c.summary,
+        leave: () => this.setState({ read: {} }),
+        marks: c.marks.map((m) => ({ ...m, enter: () => m.read && this.setState({ read: { [c.id]: m.read } }) }))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

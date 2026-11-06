@@ -1,0 +1,99 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>冷灰主题</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent-t:#7AAAFF}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent-t:#2F5FCC}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 24px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">冷灰主题</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">TUI 的中性色统一成桌面端的冷灰。主题文件放进 <code style="font-family: var(--mono); font-size: 14px">~/.dsh-tui/themes/</code> 就能在 <code style="font-family: var(--mono); font-size: 14px">/theme</code> 里选，不用改 dsh-tui 的代码。</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 40px; flex: 1; min-height: 0">
+
+    <section style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <h2 style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600">换掉的暖色</h2>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 112px 112px; column-gap: 12px; height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); box-shadow: 0 0.5px 0 var(--line)"><span>颜色键</span><span>现在</span><span>冷灰</span></div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 112px 112px; column-gap: 12px; height: 38px; align-items: center; font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t2); box-shadow: 0 0.5px 0 var(--line-soft)">
+            <span style="min-width: 0; overflow-wrap: anywhere">{{r.key}}</span>
+            <span style="display: flex; align-items: center; gap: 6px"><span style="width: 16px; height: 16px; border-radius: 4px; background: {{r.from}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{r.from}}</span>
+            <span style="display: flex; align-items: center; gap: 6px"><span style="width: 16px; height: 16px; border-radius: 4px; background: {{r.to}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{r.to}}</span>
+          </div>
+        </sc-for>
+      </div>
+      <h2 style="margin: 16px 0 0; font-size: 18px; line-height: 26px; font-weight: 600">落地时要知道</h2>
+      <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 22px; color: var(--t2)">
+        <li>用 dsh-tui 0.16.1 自带的解析器校验过，键名全部有效，正文对比度都在 4.5:1 以上。</li>
+        <li><code style="font-family: var(--mono); font-size: 13px">auto</code> 只在内置主题里切，自定义主题要自己选深色或浅色，不跟随系统。</li>
+        <li><code style="font-family: var(--mono); font-size: 13px">permission</code> 同时管 H2 和行内代码，所以留在蓝色系，不改成警告色。</li>
+        <li>吉祥物橙和快速模式橙是品牌色，不算中性色，保留。</li>
+      </ul>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <h2 style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600"><span style="font-family: var(--mono); font-size: 15px">{{fileName}}</span></h2>
+      <pre style="flex: 1; min-height: 0; margin: 0; box-sizing: border-box; padding: 16px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line); font-family: var(--mono); font-size: 13px; line-height: 21px; color: var(--t2); overflow: auto; white-space: pre">{{json}}</pre>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const theme = this.props.theme ?? 'dark';
+    const dark = {
+      accent: '#7AAAFF', activity: '#7AAAFF', suggestion: '#7AAAFF', userPromptLabel: '#7AAAFF',
+      text: '#F9FAFB', subagentDescription: '#F9FAFB', inverseText: '#0F1115',
+      inactive: '#ADB2B8', subagentModel: '#ADB2B8', subagentElapsed: '#ADB2B8', subtle: '#81858C',
+      success: '#22C55E', warning: '#F59E0B', error: '#F25A5A',
+      promptBorder: '#353638', inputBackground: '#232324',
+      toolCardBackground: '#232324', toolCardBackgroundDim: '#151517',
+      messageActionsBackground: '#2C2C2E', bashMessageBackgroundColor: '#2C2C2E', memoryBackgroundColor: '#2C2C2E',
+      rate_limit_fill: '#7AAAFF', rate_limit_empty: '#353638',
+      selectionBg: '#34415B', diffAdded: '#233C2C', diffRemoved: '#3F2223'
+    };
+    const light = {
+      accent: '#2F5FCC', activity: '#2F5FCC', suggestion: '#2F5FCC', userPromptLabel: '#2F5FCC', permission: '#2F5FCC',
+      text: '#0F1115', subagentDescription: '#0F1115', syntaxVariable: '#0F1115', inverseText: '#FFFFFF',
+      inactive: '#61666B', subagentModel: '#61666B', subagentElapsed: '#61666B', subtle: '#6B7076',
+      success: '#15803D', warning: '#A35F0A', error: '#C81010',
+      promptBorder: '#E1E5EE', inputBackground: '#F5F6F7',
+      toolCardBackground: '#F5F6F7', toolCardBackgroundDim: '#FFFFFF',
+      messageActionsBackground: '#E9ECF2', bashMessageBackgroundColor: '#E9ECF2', memoryBackgroundColor: '#E9ECF2',
+      rate_limit_fill: '#2F5FCC', rate_limit_empty: '#E1E5EE',
+      selectionBg: '#E4EDFD', diffAdded: '#E6FAED', diffRemoved: '#FEE2E2'
+    };
+    const isDark = theme === 'dark';
+    const name = isDark ? 'dsh-cool-dark' : 'dsh-cool-light';
+    const body = { name, displayName: isDark ? 'DSH Cool Dark' : 'DSH Cool Light', base: isDark ? 'dark' : 'light', colors: isDark ? dark : light };
+    const rows = isDark
+      ? [['text', '#E8E6E0', '#F9FAFB'], ['subagentDescription', '#E8E6E0', '#F9FAFB'], ['inverseText', '#22262E', '#0F1115'], ['toolCardBackground', '#242B3A', '#232324'], ['inputBackground', '#000000', '#232324'], ['bashMessageBackgroundColor', '#2C3038', '#2C2C2E'], ['userPromptLabel', '#D77757', '#7AAAFF'], ['rate_limit_empty', '#3C414B', '#353638']]
+      : [['inputBackground', '#F6F3ED', '#F5F6F7'], ['inverseText', '#F6F3ED', '#FFFFFF'], ['bashMessageBackgroundColor', '#EAE1D3', '#E9ECF2'], ['rate_limit_empty', '#DDD5C7', '#E1E5EE'], ['memoryBackgroundColor', '#E4D9E5', '#E9ECF2'], ['messageActionsBackground', '#E4D9E5', '#E9ECF2'], ['text', '#343945', '#0F1115'], ['userPromptLabel', '#C96442', '#2F5FCC']];
+    return {
+      theme,
+      fileName: `${name}.json`,
+      json: JSON.stringify(body, null, 2),
+      rows: rows.map(([key, from, to]) => ({ key, from, to }))
+    };
+  }
+}
+</script>
+</body>
+</html>

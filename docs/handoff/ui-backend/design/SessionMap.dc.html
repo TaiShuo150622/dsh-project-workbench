@@ -1,0 +1,205 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>会话地图 · 桌面端</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei';--ease:cubic-bezier(.4,0,.2,1)}
+.dsh[data-theme="dark"]{--bg:#151517;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--dot:rgba(255,255,255,.08);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--dot:rgba(15,17,21,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7}
+button,input{font-family:inherit}
+.node{position:absolute;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden;background:var(--l1);transition:left 200ms var(--ease),top 200ms var(--ease),width 200ms var(--ease),height 200ms var(--ease),opacity 300ms var(--ease);animation:born 200ms var(--ease)}
+@keyframes born{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.seg{position:absolute;box-sizing:border-box;transition:left 200ms var(--ease),top 200ms var(--ease),width 200ms var(--ease),height 200ms var(--ease),opacity 300ms var(--ease)}
+.flow{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--accent);animation:flow 1.2s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes flow{from{transform:translateX(0);opacity:1}to{transform:translateX(38px);opacity:0}}
+.spin{display:inline-block;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.head{flex:none;box-sizing:border-box;width:100%;height:80px;padding:10px 12px;border:0;background:transparent;color:var(--t1);text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center}
+.msg{animation:born 200ms var(--ease)}
+.btn{height:28px;padding:0 10px;border:0;border-radius:8px;font-size:12px;line-height:18px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.node,.seg{transition:none;animation:none}.flow,.spin,.msg{animation:none}}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; display: flex; background: var(--bg); color: var(--t1); font-family: var(--sans); overflow: hidden">
+
+  <aside aria-label="导航" style="width: 56px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding-top: 16px; box-sizing: border-box; background: var(--side); box-shadow: 0.5px 0 0 var(--line); font-family: var(--mono); font-size: 14px; line-height: 20px"><span aria-hidden="true" style="color: var(--t2); margin-bottom: 8px">☰</span><span aria-hidden="true" style="color: var(--accent)">◈</span><span aria-hidden="true" style="color: var(--t3)">▣</span><span aria-hidden="true" style="color: var(--t3)">◷</span></aside>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <header style="height: 48px; flex: none; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 0.5px 0 var(--line); font-size: 13px; line-height: 20px">
+      <strong style="font-size: 14px; line-height: 22px; font-weight: 600">会话地图</strong>
+      <span style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t3)">dsh-workbench</span>
+      <div role="group" aria-label="筛选" style="display: flex; gap: 2px; padding: 2px; margin-left: 8px; border-radius: 8px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)"><sc-for list="{{filters}}" as="f" hint-placeholder-count="3"><button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="height: 26px; padding: 0 10px; border: 0; border-radius: 6px; background: {{f.bg}}; color: {{f.fg}}; font-size: 13px; line-height: 20px; cursor: pointer">{{f.label}}</button></sc-for></div>
+      <span style="flex: 1"></span>
+      <span style="font-size: 12px; line-height: 18px; color: var(--t2)">{{summary}}</span>
+    </header>
+
+    <div aria-label="画布" style="position: relative; flex: 1; min-height: 0; overflow: auto; background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0); background-size: 16px 16px">
+      <sc-for list="{{segs}}" as="s" hint-placeholder-count="20"><div class="seg" aria-hidden="true" style="left: {{s.x}}px; top: {{s.y}}px; width: {{s.w}}px; height: {{s.h}}px; background: {{s.bg}}; border-top: {{s.bt}}; border-bottom: {{s.bb}}; border-left: {{s.bl}}; border-right: {{s.br}}; opacity: {{s.alpha}}"></div></sc-for>
+      <sc-for list="{{flows}}" as="d" hint-placeholder-count="1"><span class="flow" aria-hidden="true" style="left: {{d.x}}px; top: {{d.y}}px"></span></sc-for>
+      <sc-for list="{{labels}}" as="l" hint-placeholder-count="1"><span style="position: absolute; left: {{l.x}}px; top: {{l.y}}px; padding: 0 4px; background: var(--bg); font-size: 11px; line-height: 16px; color: var(--t3); white-space: nowrap">{{l.t}}</span></sc-for>
+
+      <sc-for list="{{nodes}}" as="n" hint-placeholder-count="9">
+        <article class="node" aria-label="{{n.title}}" style="left: {{n.x}}px; top: {{n.y}}px; width: {{n.w}}px; height: {{n.h}}px; box-shadow: {{n.ring}}; outline: {{n.frame}}; outline-offset: 2px; opacity: {{n.alpha}}; border-radius: {{n.radius}}">
+          <button type="button" class="head" onClick="{{n.toggle}}" aria-expanded="{{n.expanded}}">
+            <span style="display: flex; align-items: center; gap: 6px; font-size: 11px; line-height: 16px; color: var(--t3)"><span style="padding: 0 4px; border-radius: 4px; background: var(--l3); color: var(--t2)">{{n.kindLabel}}</span><span style="flex: 1"></span><span style="color: {{n.statusFg}}">{{n.statusText}}</span></span>
+            <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; line-height: 20px; font-weight: 600"><span class="{{n.spin}}" style="font-family: var(--mono); color: {{n.tone}}">{{n.glyph}}</span><span style="min-width: 0; white-space: nowrap; overflow: hidden">{{n.title}}</span></span>
+            <span style="font-size: 11px; line-height: 16px; color: var(--t2); white-space: nowrap; overflow: hidden">{{n.note}}</span>
+          </button>
+          <div style="display: {{n.bodyShow}}; flex: 1; min-height: 0; flex-direction: column; box-shadow: 0 -0.5px 0 var(--line)">
+            <div style="flex: 1; min-height: 0; box-sizing: border-box; padding: 10px 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; overflow: hidden; font-size: 13px; line-height: 20px">
+              <sc-for list="{{n.msgs}}" as="m" hint-placeholder-count="2"><div class="msg" style="align-self: {{m.side}}; max-width: 92%; box-sizing: border-box; padding: {{m.pad}}; border-radius: 10px; background: {{m.bg}}; color: {{m.fg}}">{{m.t}}</div></sc-for>
+              <div style="display: {{n.approveShow}}; flex-direction: column; gap: 6px; padding: 8px 10px; border-radius: 10px; background: var(--warn-bg)"><div style="font-weight: 600"><span style="font-family: var(--mono); color: var(--warn)">▲</span> 要重启 MCP 服务吗？</div><code style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t2)">dsh mcp restart github</code><div style="display: flex; gap: 6px"><button type="button" class="btn" onClick="{{n.allow}}" style="background: var(--accent-btn); color: var(--on-accent); font-weight: 500">允许一次 Y</button><button type="button" class="btn" onClick="{{n.deny}}" style="background: var(--l3); color: var(--t1)">拒绝 N</button></div></div>
+            </div>
+            <div style="flex: none; padding: 0 12px 8px; display: flex; gap: 6px"><input type="text" aria-label="发给这个会话" placeholder="发给这个会话" value="{{n.draft}}" onChange="{{n.type}}" onKeyDown="{{n.key}}" style="flex: 1; min-width: 0; height: 32px; box-sizing: border-box; padding: 0 10px; border: 0; border-radius: 8px; background: var(--bg); box-shadow: 0 0 0 0.5px var(--line); color: var(--t1); font-size: 13px; line-height: 20px; outline-color: var(--accent)"><button type="button" class="btn" onClick="{{n.send}}" style="height: 32px; background: var(--l3); color: var(--t1)">发送</button></div>
+            <div style="flex: none; height: 32px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 12px; font-size: 12px; line-height: 18px; color: var(--t3); box-shadow: 0 -0.5px 0 var(--line)"><button type="button" onClick="{{n.branch}}" style="padding: 0; border: 0; background: transparent; color: var(--accent-t); font-size: 12px; line-height: 18px; cursor: pointer">＋ 开分支</button><a href="SplitDesktop.dc.html" style="color: var(--t2); text-decoration: none">放进分屏</a><span style="flex: 1"></span><span>{{n.meta}}</span></div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <footer style="height: 32px; flex: none; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 24px; font-size: 12px; line-height: 18px; color: var(--t3); box-shadow: 0 -0.5px 0 var(--line)"><span style="display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 24px; height: 1.25px; background: var(--t3)"></span>分支</span><span style="display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 24px; height: 4px; box-sizing: border-box; border-top: 1px solid var(--t3); border-bottom: 1px solid var(--t3)"></span>子智能体</span><span style="display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 24px; height: 0; border-top: 1.25px dashed var(--t3)"></span>推测：改了同一个文件</span><span style="flex: 1"></span><span>点卡片展开，直接在卡片里对话。每张卡都是一个独立会话。</span></footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = {
+    open: ['b'], filter: 'all', drafts: {}, seq: 0,
+    nodes: [
+      { id: 'g', parent: null, kind: 'goal', title: '本周发布 0.3', st: 'run', note: '4 个会话 · 3 个线程要你看', meta: '' },
+      { id: 'a', parent: 'g', kind: 'session', title: '审批卡状态统一', st: 'run', note: '子智能体审查这次改动', meta: '62% · 2 个文件', msgs: [{ me: 1, t: '把风险等级改成和 StateDot 同一套状态。' }, { t: '改完了，测试 19 条通过，在等审查。' }] },
+      { id: 'a1', parent: 'a', kind: 'agent', title: '审查这次改动', st: 'run', note: '读到第 3 个文件', meta: '42s · 8.2K', msgs: [{ t: '正在看 RiskConfirmation.tsx。' }] },
+      { id: 'a2', parent: 'a', kind: 'agent', title: '查 StateDot 用法', st: 'done', note: '找到 14 处', meta: '18s · 2.1K', msgs: [{ t: '一共 14 处，都走 state 属性。' }] },
+      { id: 'a3', parent: 'a', kind: 'fork', title: '换成图标方案', st: 'idle', note: '从第 6 轮分出来', meta: '昨天', msgs: [{ t: '这个分支试的是图标，还没合回去。' }] },
+      { id: 'b', parent: 'g', kind: 'session', title: '修复 MCP 重连', st: 'wait', note: '等你批准重启服务', meta: '31% · 1 个文件', msgs: [{ me: 1, t: 'GitHub 连接器断了不会自动重连。' }, { t: '修好了，需要重启服务验证。' }], approval: true },
+      { id: 'b1', parent: 'b', kind: 'agent', title: '写重连回归测试', st: 'review', note: '加了 3 条，等你看 PR', meta: '1 分钟', msgs: [{ t: '加了 3 条测试，都通过。' }] },
+      { id: 'c', parent: 'g', kind: 'session', title: '发布说明草稿', st: 'ask', note: '问你：要不要写破坏性改动', meta: '12% · 1 个文件', msgs: [{ t: '审批卡的改动要写进破坏性改动吗？' }] },
+      { id: 'd', parent: 'g', kind: 'session', title: '整理快捷键表', st: 'idle', note: '2 天前', meta: '8%', msgs: [{ t: '上次停在 TUI 那一列。' }] }
+    ],
+    links: [{ from: 'a', to: 'c', label: '都提到 RiskConfirmation' }]
+  };
+  timers = [];
+  componentWillUnmount() { this.timers.forEach(clearTimeout); }
+
+  patch(id, fn) { this.setState((s) => ({ nodes: s.nodes.map((n) => (n.id === id ? fn(n) : n)) })); }
+  say(id, text) {
+    this.patch(id, (n) => ({ ...n, st: 'run', approval: false, note: '正在处理', msgs: [...(n.msgs || []), { me: 1, t: text }] }));
+    this.timers.push(setTimeout(() => this.patch(id, (n) => ({ ...n, st: 'done', note: '刚刚完成', msgs: [...n.msgs, { t: '好，这一步做完了。' }] })), 1600));
+  }
+  toggle(id) {
+    const { open } = this.state;
+    const next = open.includes(id) ? open.filter((x) => x !== id) : [...open, id].slice(-2);
+    this.setState({ open: next });
+  }
+  branch(id) {
+    const seq = this.state.seq + 1, nid = `n${seq}`;
+    this.setState((s) => ({ seq, nodes: [...s.nodes, { id: nid, parent: id, kind: 'fork', title: `新分支 ${seq}`, st: 'idle', note: '刚从这里分出来', meta: '刚刚', msgs: [] }] }));
+  }
+
+  layout(nodes, open) {
+    const CARD_W = 216, CARD_H = 80, OPEN_W = 380, OPEN_H = 332, GAP_Y = 12, GUTTER = 88, PAD = 24;
+    const kids = {};
+    nodes.forEach((n) => { (kids[n.parent] = kids[n.parent] || []).push(n); });
+    const size = (n) => (open.includes(n.id) && n.kind !== 'goal' ? [OPEN_W, OPEN_H] : [CARD_W, CARD_H]);
+    const depth = {}, colW = [];
+    const walk = (n, d) => { depth[n.id] = d; colW[d] = Math.max(colW[d] || 0, size(n)[0]); (kids[n.id] || []).forEach((k) => walk(k, d + 1)); };
+    const root = kids[null][0];
+    walk(root, 0);
+    const colX = [PAD];
+    for (let i = 1; i < colW.length; i++) colX[i] = colX[i - 1] + colW[i - 1] + GUTTER;
+    const span = (n) => { const k = kids[n.id] || []; const inner = k.reduce((a, c, i) => a + span(c) + (i ? GAP_Y : 0), 0); return Math.max(size(n)[1], inner); };
+    const pos = {};
+    const place = (n, top) => {
+      const [w, h] = size(n), total = span(n), k = kids[n.id] || [];
+      pos[n.id] = { x: colX[depth[n.id]], y: Math.round(top + (total - h) / 2), w, h };
+      const inner = k.reduce((a, c, i) => a + span(c) + (i ? GAP_Y : 0), 0);
+      let y = top + (total - inner) / 2;
+      k.forEach((c) => { place(c, y); y += span(c) + GAP_Y; });
+    };
+    place(root, PAD);
+    return pos;
+  }
+
+  renderVals() {
+    const { nodes, links, open, filter, drafts } = this.state;
+    const look = {
+      run: { g: '◐', c: 'var(--accent)', t: '进行中', f: 'var(--t3)' },
+      wait: { g: '▲', c: 'var(--warn)', t: '等待审批', f: 'var(--warn-t)' },
+      ask: { g: '?', c: 'var(--warn)', t: '等待回答', f: 'var(--warn-t)' },
+      review: { g: '◎', c: 'var(--ok)', t: '待审核', f: 'var(--t3)' },
+      done: { g: '●', c: 'var(--ok)', t: '已完成', f: 'var(--t3)' },
+      idle: { g: '○', c: 'var(--t4)', t: '空闲', f: 'var(--t3)' }
+    };
+    const kindLabel = { goal: '目标', session: '会话', agent: '子智能体', fork: '分支' };
+    const match = (n) => filter === 'all' || n.kind === 'goal' || (filter === 'me' ? ['wait', 'ask', 'review'].includes(n.st) : n.st === 'run');
+    const pos = this.layout(nodes, open);
+    const byId = Object.fromEntries(nodes.map((n) => [n.id, n]));
+    const line = 'var(--t3)';
+    const none = { bg: 'transparent', bt: '0 none', bb: '0 none', bl: '0 none', br: '0 none' };
+    const segs = [], flows = [], labels = [];
+    const h = (x, y, w, kind, alpha) => segs.push(kind === 'agent' ? { ...none, x, y: y - 2, w, h: 4, bt: `1px solid ${line}`, bb: `1px solid ${line}`, alpha } : { ...none, x, y, w, h: 1.25, bg: line, alpha });
+    const v = (x, y, l, kind, alpha) => segs.push(kind === 'agent' ? { ...none, x: x - 2, y, w: 4, h: l, bl: `1px solid ${line}`, br: `1px solid ${line}`, alpha } : { ...none, x, y, w: 1.25, h: l, bg: line, alpha });
+    nodes.forEach((n) => {
+      if (!n.parent) return;
+      const a = pos[n.parent], b = pos[n.id];
+      const px = a.x + a.w, py = a.y + a.h / 2, cx = b.x, cy = b.y + b.h / 2, mx = px + 32;
+      const alpha = match(n) ? 1 : 0.42;
+      h(px, py, mx - px, n.kind, alpha);
+      v(mx, Math.min(py, cy), Math.abs(cy - py) + 1, n.kind, alpha);
+      h(mx, cy, cx - mx, n.kind, alpha);
+      if (n.kind === 'agent' && n.st === 'run') flows.push({ x: mx + 2, y: cy });
+    });
+    links.forEach((l) => {
+      const a = pos[l.from], b = pos[l.to];
+      const x = a.x - 16, ya = a.y + a.h / 2, yb = b.y + b.h / 2, dash = `1.25px dashed ${line}`;
+      segs.push({ ...none, x, y: ya, w: 16, h: 0, bt: dash, alpha: 1 });
+      segs.push({ ...none, x, y: Math.min(ya, yb), w: 0, h: Math.abs(yb - ya), bl: dash, alpha: 1 });
+      segs.push({ ...none, x, y: yb, w: 16, h: 0, bt: dash, alpha: 1 });
+    });
+    const need = nodes.filter((n) => ['wait', 'ask', 'review'].includes(n.st)).length;
+    const running = nodes.filter((n) => n.st === 'run' && n.kind !== 'goal').length;
+    return {
+      theme: this.props.theme ?? 'dark',
+      summary: `${need} 个要你处理 · ${running} 个在跑`,
+      filters: [['all', '全部'], ['me', '要我处理'], ['run', '在跑']].map(([id, label]) => ({ label, pressed: filter === id ? 'true' : 'false', bg: filter === id ? 'var(--l3)' : 'transparent', fg: filter === id ? 'var(--t1)' : 'var(--t3)', pick: () => this.setState({ filter: id }) })),
+      segs, flows, labels,
+      nodes: nodes.map((n) => {
+        const p = pos[n.id], L = look[n.st], isOpen = open.includes(n.id) && n.kind !== 'goal';
+        const send = () => { const t = (this.state.drafts[n.id] || '').trim(); if (!t) return; this.setState((s) => ({ drafts: { ...s.drafts, [n.id]: '' } })); this.say(n.id, t); };
+        return {
+          ...n, ...p,
+          kindLabel: kindLabel[n.kind], glyph: L.g, tone: L.c, statusText: L.t, statusFg: L.f,
+          spin: n.st === 'run' ? 'spin' : '',
+          ring: n.st === 'run' && n.kind !== 'goal' ? '0 0 0 1px var(--line), 0 0 0 4px var(--bg), 0 0 0 5.5px var(--t4)' : `0 0 0 1px ${n.kind === 'goal' ? 'var(--t3)' : 'var(--line)'}`,
+          frame: isOpen ? '2px solid var(--t1)' : '0 none',
+          radius: n.kind === 'agent' ? '12px' : '0',
+          alpha: match(n) ? 1 : 0.42,
+          expanded: isOpen ? 'true' : 'false',
+          bodyShow: isOpen ? 'flex' : 'none',
+          approveShow: n.approval ? 'flex' : 'none',
+          msgs: (n.msgs || []).slice(-3).map((m) => ({ t: m.t, side: m.me ? 'flex-end' : 'flex-start', bg: m.me ? 'var(--l3)' : 'transparent', fg: m.me ? 'var(--t1)' : 'var(--t2)', pad: m.me ? '4px 10px' : '0' })),
+          draft: drafts[n.id] || '',
+          toggle: () => n.kind !== 'goal' && this.toggle(n.id),
+          type: (e) => { const v2 = e.target.value; this.setState((s) => ({ drafts: { ...s.drafts, [n.id]: v2 } })); },
+          key: (e) => { if (e.key === 'Enter') send(); },
+          send,
+          branch: () => this.branch(n.id),
+          allow: () => this.say(n.id, '允许一次'),
+          deny: () => this.patch(n.id, (x) => ({ ...x, st: 'idle', approval: false, note: '你拒绝了重启', msgs: [...x.msgs, { me: 1, t: '拒绝' }] }))
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

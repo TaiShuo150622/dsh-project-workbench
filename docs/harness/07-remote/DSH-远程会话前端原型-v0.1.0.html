@@ -1,0 +1,90 @@
+<!-- 公开整理版；源版本：0.1.0；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSH 远程会话 · 前端评审原型</title>
+<style>
+:root{color-scheme:light;--bg:#f8f9fc;--panel:#fff;--ink:#202430;--muted:#687080;--line:#e5e8ef;--blue:#5267df;--soft:#eef1ff;--warn:#8d5b11}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9fafff;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.5}.shell{min-height:780px;display:grid;grid-template-columns:244px minmax(0,1fr)}.sidebar{background:#f0f2f7;border-right:1px solid var(--line);padding:24px 16px}.brand{font-size:18px;font-weight:720;letter-spacing:-.4px;margin-bottom:24px}.brand small{display:block;font-size:11px;font-weight:500;letter-spacing:1px;color:var(--muted);margin-top:4px}.primary{border:0;border-radius:10px;background:var(--blue);color:white;padding:10px 16px;font-weight:600}.new{width:100%;text-align:left;margin-bottom:24px}.label{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}.sessions{display:grid;gap:6px;margin-top:10px}.session{text-align:left;border:1px solid transparent;background:none;padding:12px 10px;border-radius:10px;color:var(--ink);width:100%}.session.active{background:white;border-color:var(--line)}.session-title{display:block;font-weight:600}.session-meta{display:block;font-size:11px;color:var(--muted);margin-top:5px}.sidebar-note{margin-top:36px;font-size:12px;color:var(--muted)}.main{min-width:0;display:flex;flex-direction:column}.topbar{min-height:64px;padding:16px 26px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--panel)}.badge{display:inline-flex;align-items:center;gap:6px;background:var(--soft);border:1px solid #dce2ff;color:#4b5bb0;border-radius:6px;padding:3px 8px;font-size:11px;white-space:nowrap}.draft-badge{background:#f3f4f7;border-color:var(--line);color:var(--muted)}.content{width:100%;max-width:1000px;margin:auto;padding:34px 38px}.eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--blue);font-weight:650}h1{font-size:28px;line-height:1.25;margin:8px 0 10px;letter-spacing:-.6px}h2{font-size:15px;margin:0}.muted{color:var(--muted)}.lead{margin:0 0 26px}.chooser{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 5px 24px #22283c04}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.mode-card{text-align:left;border:1px solid var(--line);border-radius:12px;background:white;padding:16px;min-height:138px;color:var(--ink)}.mode-card.active{border:2px solid var(--blue);background:#f7f8ff;padding:15px}.mode-card strong{display:block;font-size:14px;margin:8px 0 5px}.mode-card small{display:block;color:var(--muted);font-size:12px;line-height:1.55}.mode-mark{font-size:11px;color:var(--blue);font-weight:650}.fields{display:grid;grid-template-columns:1fr 1.5fr;gap:16px;margin-top:20px}.field{display:block;font-size:12px;color:var(--muted)}.field select,.field input{display:block;width:100%;margin-top:7px;padding:10px 11px;background:white;color:var(--ink);border:1px solid #d9dfea;border-radius:8px;min-width:0}.field select:disabled{background:#f6f7fa}.tabs{display:flex;gap:8px;margin:19px 0 10px}.tab,.quiet{border:1px solid var(--line);border-radius:7px;background:white;color:var(--muted);padding:6px 10px;font-size:12px}.tab[aria-pressed=true]{background:var(--soft);border-color:#cdd6ff;color:#4354b4}.repo{display:none;margin-top:12px}.repo.visible{display:block}.help{font-size:12px;line-height:1.7;color:var(--muted);padding:12px 14px;background:#f7f8fb;border-radius:8px;margin:16px 0 0}.composer{margin-top:18px;background:white;border:1px solid var(--line);border-radius:14px;padding:16px}.composer textarea{width:100%;border:0;resize:vertical;min-height:74px;color:var(--ink);outline-offset:4px}.composer-footer{display:flex;justify-content:space-between;align-items:center;gap:16px}.footnote{font-size:11px;color:var(--muted)}.demo-toolbar{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.demo-toolbar span{font-size:11px;color:var(--muted);margin-right:8px}.notice{padding:13px 15px;border-radius:10px;background:#fff7e9;border:1px solid #f0dfbc;margin-bottom:20px;color:var(--warn);font-size:12px}.notice button{margin-left:8px}.thread-header{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:24px}.thread-header h1{font-size:24px}.thread-location{font-size:12px;color:var(--muted);overflow-wrap:anywhere}.message{padding:16px 18px;border:1px solid var(--line);border-radius:12px;margin:14px 0;background:white}.message.user{background:var(--soft);border:0;margin-left:56px}.message .who{font-size:11px;font-weight:650;color:var(--muted);margin-bottom:7px}.message p{margin:0}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.detail{border:1px solid var(--line);border-radius:10px;background:white;padding:14px}.detail strong{font-size:12px}.detail code{display:block;background:#f5f6fa;border-radius:5px;padding:8px;margin-top:10px;font:11px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.approval{border:1px solid #d8dff9;background:#f4f6ff;border-radius:10px;padding:16px;margin:16px 0}.approval p{font-size:12px}.approval .quiet{margin-right:8px}.toast{margin-top:12px;color:#3e5c96;font-size:12px;min-height:18px}[hidden]{display:none!important}
+@media(max-width:1000px){.shell{grid-template-columns:204px minmax(0,1fr)}.sidebar{padding:20px 12px}.content{padding:26px 22px}.cards{grid-template-columns:1fr}.mode-card{min-height:0;padding:12px 14px}.mode-card.active{padding:11px 13px}.mode-card strong{margin:2px 0}.mode-card small{font-size:11px}.fields{grid-template-columns:1fr}}
+@media(max-width:620px){.shell{display:block}.sidebar{border-right:0;border-bottom:1px solid var(--line);padding:14px}.brand{margin-bottom:10px}.brand small,.sidebar-note{display:none}.new{width:auto;margin:0}.sessions{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.sidebar>.label{margin-top:12px}.session{padding:9px 6px}.session-title{font-size:11px}.session-meta{font-size:10px}.content{padding:24px 16px}.topbar{padding:12px 16px}.detail-grid{grid-template-columns:1fr}.thread-header{display:block}.message.user{margin-left:20px}.composer-footer{align-items:flex-start}.composer-footer .footnote{max-width:60%}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="会话列表">
+    <div class="brand">DeepSeek Harness<small>REMOTE WORKSPACES / CONCEPT</small></div>
+    <button class="primary new" id="new-session">＋ 新建会话</button>
+    <div class="label">最近会话 · 演示数据</div>
+    <div class="sessions" id="session-list"></div>
+    <p class="sidebar-note">每个会话拥有自己的环境。<br>切换查看，不改变运行位置。</p>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span id="top-title">新建会话</span><span class="badge draft-badge">设计原型 · 未连接服务器</span></header>
+    <div class="content">
+      <section id="new-view" aria-labelledby="new-title">
+        <div class="eyebrow">START A SESSION</div><h1 id="new-title">这次在哪里工作？</h1>
+        <p class="lead muted">选择环境和项目，然后像平时一样开始对话。</p>
+        <div class="chooser">
+          <div class="section-head"><h2>运行方式</h2><span class="footnote">仅影响这次新会话</span></div>
+          <div class="cards" aria-label="选择运行方式">
+            <button class="mode-card" data-mode="local" aria-pressed="false"><span class="mode-mark">LOCAL</span><strong>本机</strong><small>Agent、文件和命令<br>都在这台电脑上。</small></button>
+            <button class="mode-card" data-mode="ssh" aria-pressed="false"><span class="mode-mark">MODE A · SSH</span><strong>本机 Agent · 远程目录</strong><small>在本机对话与调度，<br>使用服务器上的文件和工具。</small></button>
+            <button class="mode-card active" data-mode="remote" aria-pressed="true"><span class="mode-mark">MODE B · REMOTE DSH</span><strong>远程 Agent · 远程目录</strong><small>Agent 在服务器上工作，<br>本机只负责交互和查看。</small></button>
+          </div>
+          <div class="fields">
+            <label class="field">执行环境<select id="environment"><option value="local" hidden>这台电脑</option><option value="ssh" selected>dev-linux · SSH 服务器</option><option value="codespaces">Codespaces · 演示环境</option></select></label>
+            <label class="field">工作目录<input id="directory" value="/workspaces/demo-project" aria-describedby="mode-help"></label>
+          </div>
+          <div class="tabs" aria-label="项目来源"><button class="tab" data-source="existing" aria-pressed="true">已有目录</button><button class="tab" data-source="github" aria-pressed="false">从 GitHub 克隆</button></div>
+          <label class="field repo" id="repo-field">GitHub 仓库<input id="repository" value="example/private-repo" placeholder="owner/repository"></label>
+          <p class="help" id="mode-help"></p>
+        </div>
+        <div class="composer"><label class="field" for="prompt">任务</label><textarea id="prompt" placeholder="描述这次要完成的任务…">查看项目结构，整理下一步修改计划。</textarea><div class="composer-footer"><span class="footnote">原型仅模拟创建会话。<br>不会克隆代码或执行命令。</span><button class="primary" id="start">开始会话（演示）</button></div></div>
+      </section>
+      <section id="thread-view" hidden aria-labelledby="thread-title">
+        <div class="thread-header"><div><div class="eyebrow">SESSION WORKSPACE</div><h1 id="thread-title"></h1><div class="thread-location" id="thread-location"></div></div><span class="badge" id="thread-badge"></span></div>
+        <div class="notice" id="connection-notice" hidden role="status"><span id="notice-copy"></span><button class="quiet" id="reconnect">重新连接（演示）</button></div>
+        <div class="message user"><div class="who">你 · 演示消息</div><p id="user-prompt"></p></div>
+        <div class="message"><div class="who">DSH · 演示响应</div><p id="agent-copy"></p></div>
+        <div class="detail-grid"><div class="detail"><strong id="file-label"></strong><code>demo-project/
+  src/
+  tests/
+  README.md</code></div><div class="detail"><strong id="terminal-label"></strong><code id="terminal-copy"></code></div></div>
+        <div class="approval" id="approval" hidden><h2>需要你确认 · 演示审批</h2><p id="approval-copy"></p><button class="primary" id="approve">批准本次（演示）</button> <button class="quiet" id="deny">拒绝（演示）</button></div>
+        <div class="composer"><label class="field" for="followup">继续对话</label><textarea id="followup" placeholder="继续描述任务…"></textarea><div class="composer-footer"><span class="footnote" id="thread-footnote">这个会话的运行环境已经固定。</span><button class="primary" id="send">发送（演示）</button></div></div>
+      </section>
+      <div class="demo-toolbar"><span>评审场景</span><button class="quiet" id="demo-local">本机会话</button><button class="quiet" id="demo-ssh">模式 A 会话</button><button class="quiet" id="demo-remote">模式 B 会话</button><button class="quiet" id="demo-offline">模拟断线</button><button class="quiet" id="demo-approval">模拟待审批</button></div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+  </main>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const labels={local:'本机',ssh:'本机 Agent · SSH',remote:'远程 DSH'};
+const descriptions={local:'Agent、文件和命令都在本机。退出应用后，Agent 不继续工作。',ssh:'Agent 留在本机，文件、Git 和命令在选定服务器。本机休眠或断线后，Agent 无法继续推进；受管进程的状态需要重新核实。',remote:'Agent 和会话记录留在远端。本机离线时，只要远程服务正常且没有等待审批，任务可以继续。重连后读取实际状态。'};
+let mode='remote',source='existing',current=null;
+const sessions=[{id:'demo-1',title:'梳理前端布局',mode:'local',env:'这台电脑',path:'/demo/local-project',status:'已完成',prompt:'梳理前端布局，整理可改进的地方。'},{id:'demo-2',title:'验证项目测试',mode:'ssh',env:'dev-linux',path:'/workspaces/demo-tests',status:'已完成',prompt:'在远程环境验证项目测试。'},{id:'demo-3',title:'整理接口文档',mode:'remote',env:'dev-linux',path:'/workspaces/demo-api',status:'处理中',prompt:'根据项目代码整理接口文档。'}];
+function notify(message){$('toast').textContent=message;}
+function sidebar(){const container=$('session-list');container.replaceChildren();sessions.forEach(s=>{const b=document.createElement('button');b.className='session'+(s.id===current?.id?' active':'');b.setAttribute('aria-current',s.id===current?.id?'true':'false');const title=document.createElement('span');title.className='session-title';title.textContent=s.title;const meta=document.createElement('span');meta.className='session-meta';meta.textContent=s.env+' · '+labels[s.mode]+' · '+s.status;b.append(title,meta);b.onclick=()=>openSession(s);container.append(b);});}
+function setMode(value){const selector=$('environment');if(value==='local')selector.value='local';else if(selector.value==='local')selector.value='ssh';mode=value;selector.querySelector('option[value="local"]').hidden=mode!=='local';document.querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});selector.disabled=mode==='local';$('directory').value=mode==='local'?'/demo/local-project':'/workspaces/demo-project';$('mode-help').textContent=descriptions[mode]+(selector.value==='codespaces'&&mode!=='local'?' Codespaces 还受到环境停止和计费规则约束。':'');}
+function saveDraft(){if(current)current.draft=$('followup').value;}
+function newSession(){saveDraft();current=null;$('new-view').hidden=false;$('thread-view').hidden=true;$('top-title').textContent='新建会话';notify('');sidebar();}
+function openSession(s){saveDraft();current=s;$('followup').value=s.draft||'';$('new-view').hidden=true;$('thread-view').hidden=false;$('top-title').textContent=s.title;$('thread-title').textContent=s.title;$('thread-location').textContent=s.env+' / '+s.path;$('thread-badge').textContent=labels[s.mode];$('user-prompt').textContent=s.prompt;$('file-label').textContent='文件 · '+s.env;$('terminal-label').textContent='终端 · '+s.env;$('terminal-copy').textContent='示例工作目录：'+s.path+'\n命令目标：'+s.env+'\n此处没有真实终端连接。';$('agent-copy').textContent=s.status==='连接中断'?'连接中断，当前任务状态待核实。':s.status==='待审批'?'等待你确认当前会话的操作。':'这是该会话的演示视图。文件、终端和审批都随会话绑定到 '+s.env+'，不会影响其他会话。';$('connection-notice').hidden=s.status!=='连接中断';$('notice-copy').textContent=s.mode==='remote'?'与远程 DSH 的连接中断。任务状态待核实，重新连接不会重复提交任务。':s.mode==='ssh'?'SSH 连接中断。Agent 已停止发出新动作，受管命令的结果待核实。':'本机服务连接中断。任务状态待核实。';$('approval').hidden=s.status!=='待审批';$('approval-copy').textContent='会话「'+s.title+'」请求在 '+s.env+' / '+s.path+' 内安装测试依赖。原型不会执行此操作。';$('send').disabled=s.status==='连接中断';$('followup').disabled=s.status==='连接中断';$('thread-footnote').textContent=s.status==='连接中断'?'离线时保留草稿，重新连接后由你发送。':'这个会话的运行环境已经固定。';sidebar();notify('');}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('[data-source]').forEach(b=>b.onclick=()=>{source=b.dataset.source;document.querySelectorAll('[data-source]').forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.source===source)));$('repo-field').classList.toggle('visible',source==='github');});
+$('environment').onchange=()=>setMode(mode);$('new-session').onclick=newSession;
+$('start').onclick=()=>{if(!$('directory').value.trim()||!$('prompt').value.trim()||(source==='github'&&!$('repository').value.trim())){notify('请填写目录、任务，以及所选的仓库。');return;}const s={id:'demo-created-'+(sessions.length+1),title:'新任务 · '+labels[mode],mode,env:mode==='local'?'这台电脑':$('environment').value==='codespaces'?'Codespaces 示例':'dev-linux',path:$('directory').value.trim(),status:'处理中',prompt:$('prompt').value.trim()};sessions.unshift(s);openSession(s);notify('已创建演示会话；未建立任何真实连接。');};
+$('demo-local').onclick=()=>openSession(sessions.find(s=>s.id==='demo-1'));$('demo-ssh').onclick=()=>openSession(sessions.find(s=>s.id==='demo-2'));$('demo-remote').onclick=()=>openSession(sessions.find(s=>s.id==='demo-3'));
+$('demo-offline').onclick=()=>{const s=current||sessions.find(s=>s.id==='demo-3');s.previousStatus=s.status==='连接中断'?s.previousStatus:s.status;s.status='连接中断';openSession(s);};
+$('reconnect').onclick=()=>{if(!current)return;current.status=current.previousStatus||'处理中';openSession(current);notify('演示：重新读取状态，没有重新提交任务。');};
+$('demo-approval').onclick=()=>{const s=current||sessions.find(s=>s.id==='demo-3');if(s.status==='连接中断'){notify('请先模拟重连，再查看待审批场景。');return;}s.status='待审批';openSession(s);};
+$('approve').onclick=()=>{if(!current)return;current.status='处理中';openSession(current);notify('演示：只批准当前会话的本次操作，没有执行真实命令。');};
+$('deny').onclick=()=>{if(!current)return;current.status='等待输入';openSession(current);notify('演示：拒绝当前操作，保留会话。');};
+$('send').onclick=()=>{if(!$('followup').value.trim()){notify('请输入演示消息。');return;}notify('演示消息仅发送到当前会话「'+current.title+'」，实际未调用后端。');$('followup').value='';};
+setMode('remote');sidebar();
+</script>
+</body>
+</html>

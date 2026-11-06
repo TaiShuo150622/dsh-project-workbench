@@ -1,0 +1,139 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>基础映射</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-bg:#34415B;--ok:#22C55E;--warn:#F59E0B;--err:#F25A5A}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-bg:#E4EDFD;--ok:#22C55E;--warn:#F59E0B;--err:#EC1313}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 32px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">基础映射</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">token 名沿用桌面端的 <code style="font-family: var(--mono); font-size: 14px">--dsw-alias-*</code>，TUI 主题从同一张表生成。</p>
+  </header>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600">颜色</h2>
+    <div role="table" aria-label="颜色映射" style="display: flex; flex-direction: column">
+      <div role="row" style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 150px 150px 170px 190px; column-gap: 16px; height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); border-bottom: 0.5px solid var(--line)">
+        <span role="columnheader">角色</span>
+        <span role="columnheader">token</span>
+        <span role="columnheader">桌面 / TUI 深色</span>
+        <span role="columnheader">桌面 / TUI 浅色</span>
+        <span role="columnheader">256 色</span>
+        <span role="columnheader">16 色</span>
+      </div>
+      <sc-for list="{{colors}}" as="c" hint-placeholder-count="12">
+        <div role="row" style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 150px 150px 170px 190px; column-gap: 16px; height: 38px; align-items: center; font-size: 13px; line-height: 20px; border-bottom: 0.5px solid var(--line-soft)">
+          <span role="cell">{{c.role}}</span>
+          <code role="cell" style="font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t3)">{{c.token}}</code>
+          <span role="cell" style="display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--t2)"><span style="width: 16px; height: 16px; border-radius: 4px; background: {{c.dark}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{c.dark}}</span>
+          <span role="cell" style="display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--t2)"><span style="width: 16px; height: 16px; border-radius: 4px; background: {{c.light}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{c.light}}</span>
+          <span role="cell" style="display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--t2)"><span style="width: 16px; height: 16px; background: {{c.c256}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{c.idx}} {{c.c256}}</span>
+          <span role="cell" style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--t2)"><span style="width: 16px; height: 16px; background: {{c.c16}}; box-shadow: 0 0 0 0.5px var(--line)"></span>{{c.name16}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 40px; flex: 1; min-height: 0">
+
+    <section style="grid-column: span 5; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <h2 style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600">字</h2>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); border-bottom: 0.5px solid var(--line)">
+          <span>角色</span><span>桌面端</span><span>TUI</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 58px; align-items: center; border-bottom: 0.5px solid var(--line-soft)">
+          <span style="font-size: 13px; line-height: 20px">标题</span>
+          <div><div style="font-size: 16px; line-height: 24px; font-weight: 600">本轮计划</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">16/24 · 600</div></div>
+          <div style="font-family: var(--mono)"><div style="font-size: 13px; line-height: 20px; font-weight: 700">本轮计划</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">粗体 + 主文字</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 58px; align-items: center; border-bottom: 0.5px solid var(--line-soft)">
+          <span style="font-size: 13px; line-height: 20px">正文</span>
+          <div><div style="font-size: 14px; line-height: 22px">先读组件再动手</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">14/22 · 400</div></div>
+          <div style="font-family: var(--mono)"><div style="font-size: 13px; line-height: 20px">先读组件再动手</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">常规 + 主文字</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 58px; align-items: center; border-bottom: 0.5px solid var(--line-soft)">
+          <span style="font-size: 13px; line-height: 20px">说明</span>
+          <div><div style="font-size: 12px; line-height: 18px; color: var(--t3)">已用 18 秒</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">12/18 · 说明文字</div></div>
+          <div style="font-family: var(--mono)"><div style="font-size: 13px; line-height: 20px; color: var(--t4)">已用 18 秒</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">常规 + 弱文字，不用 dim</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 58px; align-items: center; border-bottom: 0.5px solid var(--line-soft)">
+          <span style="font-size: 13px; line-height: 20px">代码</span>
+          <div><code style="display: block; font-family: var(--mono); font-size: 12px; line-height: 20px">StateDot.tsx</code><div style="font-size: 12px; line-height: 16px; color: var(--t3)">等宽 12/20</div></div>
+          <div style="font-family: var(--mono)"><div style="font-size: 13px; line-height: 20px; color: var(--t2)">StateDot.tsx</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">终端字体本身</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 58px; align-items: center">
+          <span style="font-size: 13px; line-height: 20px">链接</span>
+          <div><div style="font-size: 14px; line-height: 22px; font-weight: 500; color: var(--accent-t)">PR #128</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">500 · 强调色</div></div>
+          <div style="font-family: var(--mono)"><div style="font-size: 13px; line-height: 20px; color: var(--accent-t); text-decoration: underline">PR #128</div><div style="font-size: 12px; line-height: 16px; color: var(--t3)">强调色 + 下划线</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="grid-column: span 7; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <h2 style="margin: 0; font-size: 18px; line-height: 26px; font-weight: 600">几何</h2>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 34px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3); border-bottom: 0.5px solid var(--line)">
+          <span>语义</span><span>桌面端</span><span>TUI</span>
+        </div>
+        <sc-for list="{{geometry}}" as="g" hint-placeholder-count="7">
+          <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; height: 42px; align-items: center; font-size: 13px; line-height: 20px; border-bottom: 0.5px solid var(--line-soft)">
+            <span>{{g.name}}</span>
+            <span style="color: var(--t2)">{{g.desktop}}</span>
+            <span style="color: var(--t2)">{{g.tui}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const row = (role, token, dark, light, idx, c256, name16, c16) => ({ role, token, dark, light, idx, c256, name16, c16 });
+    return {
+      theme: this.props.theme ?? 'dark',
+      colors: [
+        row('底', 'bg-base', '#151517', '#FFFFFF', '233', '#121212', '终端默认背景', 'transparent'),
+        row('一层', 'bg-layer-1', '#232324', '#F5F6F7', '235', '#262626', '无底色，靠左边条', 'transparent'),
+        row('二层', 'bg-layer-2', '#2C2C2E', '#E9ECF2', '236', '#303030', '反显', '#CCCCCC'),
+        row('主文字', 'label-primary', '#F9FAFB', '#0F1115', '255', '#EEEEEE', '亮白', '#F2F2F2'),
+        row('次文字', 'label-secondary', '#CFD3D6', '#43454A', '252', '#D0D0D0', '白', '#CCCCCC'),
+        row('说明', 'label-tertiary', '#ADB2B8', '#61666B', '249', '#B2B2B2', '白', '#CCCCCC'),
+        row('弱文字', 'label-caption', '#81858C', '#6B7076', '244', '#808080', '亮黑', '#767676'),
+        row('强调', 'state-business-primary', '#7AAAFF', '#4176E6', '111', '#87AFFF', '亮蓝', '#3B78FF'),
+        row('成功', 'state-success-primary', '#22C55E', '#22C55E', '41', '#00D75F', '绿', '#16C60C'),
+        row('警告', 'state-warn-primary', '#F59E0B', '#F59E0B', '214', '#FFAF00', '黄', '#C19C00'),
+        row('错误', 'state-error-primary', '#F25A5A', '#EC1313', '203', '#FF5F5F', '红', '#E74856'),
+        row('空闲', 'state-idle-primary', '#81858C', '#6B7076', '244', '#808080', '亮黑', '#767676')
+      ],
+      geometry: [
+        { name: '角', desktop: '8 / 12 / 16，内层比外层小一档', tui: '只有浮层用 ╭╮╰╯，卡片不画框' },
+        { name: '线', desktop: '0.5px 中性线', tui: '─ 只用于分区；卡片之间空一行' },
+        { name: '层级', desktop: 'elevation-panel 阴影加描边', tui: '整行铺 layer-1 或 layer-2' },
+        { name: '间距', desktop: '4px 网格：8、12、16、24', tui: '1 列约 8px，1 行约 20px' },
+        { name: '焦点', desktop: '2px 焦点环', tui: '行首 ❯ 加整行底色' },
+        { name: '选中', desktop: 'layer-3 底色', tui: 'layer-2 底色加粗体' },
+        { name: '动效', desktop: '200ms 缓动，尊重减少动效', tui: '12 帧逐格走，同样尊重减少动效' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

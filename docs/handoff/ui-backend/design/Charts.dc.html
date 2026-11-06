@@ -1,0 +1,168 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>图表</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--s1:#4F8AF2;--s2:#0FA696;--s3:#A066F0;--s4:#DE4F92;--h0:#232C3F;--h1:#2C4472;--h2:#3C62A6;--h3:#5788E0;--h4:#7AAAFF}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--s1:#2F5FCC;--s2:#008F7F;--s3:#8A4FD0;--s4:#C43E7E;--h0:#E4EDFD;--h1:#BBD0F7;--h2:#8CAEF0;--h3:#5A86E3;--h4:#2F5FCC}
+.row{display:grid;grid-template-columns:168px minmax(0,1fr) minmax(0,1fr);column-gap:32px;padding:16px 0;box-shadow:0 -0.5px 0 var(--line-soft)}
+.name{font-size:13px;line-height:20px;font-weight:600;color:var(--t1)}
+.desc{margin:2px 0 0;font-size:12px;line-height:18px;color:var(--t3)}
+.tui{box-sizing:border-box;padding:8px 12px;border-radius:8px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2);white-space:pre;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.plot{line-height:16px;letter-spacing:0}
+.lg{display:flex;gap:16px;font-size:12px;line-height:18px;color:var(--t2)}
+.hit{position:absolute;top:0;bottom:0;padding:0;border:0;background:transparent;cursor:crosshair}
+.hit:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1320px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 16px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">图表</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">图上的数都是示例。状态色不进图表，系列色另起一组。桌面端悬停看读数，TUI 用字符画，读数写在标题行。</p>
+  </header>
+
+  <div class="row"><div><div class="name">LineChart</div><p class="desc">看趋势，单轴。TUI 用盲文点阵，一格 2×4 个点。</p>
+      <div role="group" aria-label="切换图或表" style="display: flex; gap: 4px; margin-top: 8px"><sc-for list="{{views}}" as="v" hint-placeholder-count="2"><button type="button" onClick="{{v.pick}}" aria-pressed="{{v.pressed}}" style="height: 24px; padding: 0 8px; border: 0; border-radius: 4px; background: {{v.bg}}; color: {{v.fg}}; font-family: var(--sans); font-size: 12px; line-height: 18px; cursor: pointer">{{v.label}}</button></sc-for></div>
+    </div>
+    <div style="min-width: 0; display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; align-items: baseline; gap: 12px"><span style="font-size: 13px; line-height: 20px; color: var(--t1)">整套检查耗时</span><span style="flex: 1"></span><span class="lg"><span><span aria-hidden="true" style="color: var(--s1)">━</span> 主检出</span><span><span aria-hidden="true" style="color: var(--s2)">━</span> 干净树</span></span></div>
+      <div style="display: {{showChart}}; position: relative; height: 200px">
+        <svg viewBox="0 0 520 200" width="520" height="200" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+          <line x1="36" y1="20" x2="516" y2="20" stroke="var(--line-soft)"></line><line x1="36" y1="80" x2="516" y2="80" stroke="var(--line-soft)"></line><line x1="36" y1="140" x2="516" y2="140" stroke="var(--line-soft)"></line><line x1="36" y1="180" x2="516" y2="180" stroke="var(--line)"></line>
+          <text x="0" y="24" fill="var(--t3)" font-size="11">240s</text><text x="0" y="84" fill="var(--t3)" font-size="11">160s</text><text x="0" y="144" fill="var(--t3)" font-size="11">80s</text>
+          <path d="{{d1}}" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="{{d2}}" fill="none" stroke="var(--s2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+          <line x1="{{hx}}" y1="12" x2="{{hx}}" y2="180" stroke="var(--t3)" stroke-width="1"></line>
+          <circle cx="{{hx}}" cy="{{hy1}}" r="4" fill="var(--s1)" stroke="var(--bg)" stroke-width="2"></circle>
+          <circle cx="{{hx}}" cy="{{hy2}}" r="4" fill="var(--s2)" stroke="var(--bg)" stroke-width="2"></circle>
+        </svg>
+        <sc-for list="{{hits}}" as="h" hint-placeholder-count="14"><button type="button" class="hit" aria-label="{{h.aria}}" onMouseEnter="{{h.enter}}" onFocus="{{h.enter}}" style="left: {{h.x}}px; width: {{h.w}}px"></button></sc-for>
+        <div style="position: absolute; left: {{tipX}}px; top: 8px; width: 132px; box-sizing: border-box; padding: 6px 8px; border-radius: 8px; background: var(--l2); box-shadow: 0 0 0 0.5px var(--line), 0 4px 12px rgba(0,0,0,.2); font-size: 12px; line-height: 18px; pointer-events: none"><div style="color: var(--t3)">{{tipDay}}</div><div style="display: flex"><span style="flex: 1; color: var(--t2)">主检出</span><span>{{tip1}}s</span></div><div style="display: flex"><span style="flex: 1; color: var(--t2)">干净树</span><span>{{tip2}}s</span></div></div>
+      </div>
+      <div style="display: {{showTable}}; flex-direction: column; height: 200px; overflow: hidden; font-size: 12px; line-height: 18px; color: var(--t2)">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; height: 28px; align-items: center; color: var(--t3); box-shadow: 0 0.5px 0 var(--line)"><span>日期</span><span>主检出</span><span>干净树</span></div>
+        <sc-for list="{{tableRows}}" as="t" hint-placeholder-count="6"><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; height: 28px; align-items: center"><span>{{t.day}}</span><span>{{t.a}}s</span><span>{{t.b}}s</span></div></sc-for>
+      </div>
+    </div>
+    <div class="tui"><div style="display: flex"><span style="flex: 1; color: var(--t1)">整套检查耗时</span><span style="color: var(--t3)">{{tipDay}}  <span style="color: var(--s1)">主检出 {{tip1}}s</span>  <span style="color: var(--s2)">干净树 {{tip2}}s</span></span></div><div> </div>
+      <div class="plot" style="display: flex; flex-direction: column"><sc-for list="{{braille}}" as="r" hint-placeholder-count="8"><div style="position: relative; height: 16px"><span style="color: var(--t4)">{{r.axis}}</span><span style="position: relative"><span style="color: var(--s1)">{{r.a}}</span><span style="position: absolute; left: 0; top: 0; color: var(--s2)">{{r.b}}</span></span></div></sc-for></div>
+      <div> </div>
+      <div style="color: var(--t3)"><span style="color: var(--s1)">⣿</span> 主检出   <span style="color: var(--s2)">⣿</span> 干净树   <span style="color: var(--t4)">←→ 移动读数</span></div>
+    </div>
+  </div>
+
+  <div class="row"><div><div class="name">BarChart</div><p class="desc">比大小。桌面端圆头细柱，TUI 用八级块字符，每根下面写值。</p></div>
+    <div style="min-width: 0; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 13px; line-height: 20px; color: var(--t1)">七道闸各用时</div>
+      <div style="display: flex; align-items: flex-end; gap: 16px; height: 150px; box-shadow: 0 0.5px 0 var(--line)"><sc-for list="{{bars}}" as="b" hint-placeholder-count="7"><button type="button" title="{{b.title}}" onMouseEnter="{{b.enter}}" onFocus="{{b.enter}}" style="flex: 1; height: 150px; padding: 0; border: 0; background: transparent; display: flex; flex-direction: column; justify-content: flex-end; cursor: default" aria-label="{{b.title}}"><span style="display: block; height: {{b.h}}px; border-radius: 4px 4px 0 0; background: {{b.fill}}"></span></button></sc-for></div>
+      <div style="display: flex; gap: 16px; font-size: 11px; line-height: 16px; color: var(--t3)"><sc-for list="{{bars}}" as="b" hint-placeholder-count="7"><span style="flex: 1; min-width: 0; text-align: center">{{b.short}}</span></sc-for></div>
+    </div>
+    <div class="tui"><div style="color: var(--t1)">七道闸各用时</div><div> </div><div style="color: var(--s1)">{{spark}}</div><sc-for list="{{bars}}" as="b" hint-placeholder-count="7"><div><span style="color: var(--t3)">{{b.pad}}</span><span style="color: var(--s1)">{{b.block}}</span> {{b.v}}s</div></sc-for></div>
+  </div>
+
+  <div class="row"><div><div class="name">StatTile</div><p class="desc">只有一个数时不画图。火花线只给走势。</p></div>
+    <div style="display: flex; gap: 40px"><div><div style="font-size: 12px; line-height: 18px; color: var(--t3)">本周整套检查</div><div style="font-size: 28px; line-height: 36px; font-weight: 600">37</div><div style="font-size: 12px; line-height: 18px; color: var(--t2)">比上周多 6 次</div></div><div><div style="font-size: 12px; line-height: 18px; color: var(--t3)">平均耗时</div><div style="font-size: 28px; line-height: 36px; font-weight: 600">182s</div><div style="font-size: 12px; line-height: 18px; color: var(--t2)">比上周快 14s</div></div></div>
+    <div class="tui"><div><span style="color: var(--t3)">本周整套检查</span>  <span style="color: var(--t1); font-weight: 700">37</span>   <span style="color: var(--s1)">▂▃▃▅▄▆▇</span>  <span style="color: var(--t3)">比上周多 6 次</span></div><div><span style="color: var(--t3)">平均耗时</span>      <span style="color: var(--t1); font-weight: 700">182s</span> <span style="color: var(--s1)">▇▆▆▅▄▄▃</span>  <span style="color: var(--t3)">比上周快 14s</span></div></div>
+  </div>
+
+  <div class="row"><div><div class="name">StackedMeter</div><p class="desc">上下文用量的构成。四段四色，段间留 2px。</p></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><div role="img" aria-label="系统 12%，对话 28%，思考 8%，工具 14%，空闲 38%" style="display: flex; gap: 2px; height: 12px"><span style="flex: 12; border-radius: 4px 0 0 4px; background: var(--s1)"></span><span style="flex: 28; background: var(--s2)"></span><span style="flex: 8; background: var(--s3)"></span><span style="flex: 14; background: var(--s4)"></span><span style="flex: 38; border-radius: 0 4px 4px 0; background: var(--l3)"></span></div>
+      <div class="lg"><span><span aria-hidden="true" style="color: var(--s1)">■</span> 系统 12%</span><span><span aria-hidden="true" style="color: var(--s2)">■</span> 对话 28%</span><span><span aria-hidden="true" style="color: var(--s3)">■</span> 思考 8%</span><span><span aria-hidden="true" style="color: var(--s4)">■</span> 工具 14%</span></div></div>
+    <div class="tui"><div><span style="color: var(--s1)">█████</span><span style="color: var(--s2)">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color: var(--s3)">▒▒▒</span><span style="color: var(--s4)">░░░░░░</span><span style="color: var(--t4)">···············</span> 62%</div><div style="color: var(--t3)"><span style="color: var(--s1)">█</span> 系统 12%  <span style="color: var(--s2)">▓</span> 对话 28%  <span style="color: var(--s3)">▒</span> 思考 8%  <span style="color: var(--s4)">░</span> 工具 14%</div></div>
+  </div>
+
+  <div class="row"><div><div class="name">Heatmap</div><p class="desc">单色相由浅到深。TUI 只有 16 色时换成 ░▒▓█ 的密度。</p></div>
+    <div style="display: flex; flex-direction: column; gap: 3px"><sc-for list="{{heat}}" as="r" hint-placeholder-count="5"><div style="display: flex; gap: 3px; align-items: center"><span style="width: 32px; font-size: 11px; line-height: 16px; color: var(--t3)">{{r.label}}</span><sc-for list="{{r.cells}}" as="c" hint-placeholder-count="24"><span title="{{c.title}}" style="width: 18px; height: 18px; border-radius: 3px; background: {{c.fill}}"></span></sc-for></div></sc-for></div>
+    <div class="tui"><sc-for list="{{heat}}" as="r" hint-placeholder-count="5"><div><span style="color: var(--t3)">{{r.label}}  </span><span style="color: var(--h4)">{{r.text}}</span></div></sc-for></div>
+  </div>
+
+  <div class="row"><div><div class="name">系列色</div><p class="desc">已过色觉和对比度校验。少于 256 色时靠填充字符区分，不只靠颜色。</p></div>
+    <div style="display: grid; grid-template-columns: 56px repeat(4, minmax(0, 1fr)); gap: 6px 8px; font-family: var(--mono); font-size: 12px; line-height: 18px; color: var(--t2)"><span style="color: var(--t3)">深色</span><span><span style="color: #4F8AF2">■</span> #4F8AF2</span><span><span style="color: #0FA696">■</span> #0FA696</span><span><span style="color: #A066F0">■</span> #A066F0</span><span><span style="color: #DE4F92">■</span> #DE4F92</span><span style="color: var(--t3)">浅色</span><span><span style="color: #2F5FCC">■</span> #2F5FCC</span><span><span style="color: #008F7F">■</span> #008F7F</span><span><span style="color: #8A4FD0">■</span> #8A4FD0</span><span><span style="color: #C43E7E">■</span> #C43E7E</span></div>
+    <div class="tui"><div style="color: var(--t3)">256 色   69     37     135    168</div><div style="color: var(--t3)">16 色    蓝 █   青 ▓   品红 ▒ 亮品红 ░</div></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1320}}'>
+class Component extends DCLogic {
+  state = { hover: 10, view: 'chart', bar: 0 };
+  renderVals() {
+    const { hover, view, bar } = this.state;
+    const days = ['10-12', '10-13', '10-14', '10-15', '10-16', '10-17', '10-18', '10-19', '10-20', '10-21', '10-22', '10-23', '10-24', '10-25'];
+    const a = [214, 208, 221, 198, 204, 192, 188, 196, 181, 176, 184, 172, 168, 162];
+    const b = [128, 132, 126, 139, 122, 118, 124, 116, 121, 112, 108, 114, 104, 101];
+    const x = (i) => 40 + i * (472 / 13);
+    const y = (v) => 180 - v * 0.75;
+    const path = (s) => s.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+
+    // 盲文点阵：两条线合成一张，每格 2×4 点
+    const W = 44, H = 8;
+    const dot = [[0x01, 0x08], [0x02, 0x10], [0x04, 0x20], [0x40, 0x80]];
+    const plot = (s) => {
+      const cells = Array.from({ length: H }, () => Array(W).fill(0));
+      for (let px = 0; px < W * 2; px++) {
+        const t = (px / (W * 2 - 1)) * 13, i = Math.min(12, Math.floor(t));
+        const v = s[i] + (s[i + 1] - s[i]) * (t - i);
+        const py = Math.max(0, Math.min(H * 4 - 1, Math.round((H * 4 - 1) * (1 - v / 240))));
+        cells[Math.floor(py / 4)][Math.floor(px / 2)] |= dot[py % 4][px % 2];
+      }
+      return cells;
+    };
+    const ca = plot(a), cb = plot(b);
+    const axisAt = { 0: '240s ', 3: '160s ', 6: ' 80s ' };
+    // 终端一格只有一种颜色：两条线同格时主检出优先
+    const braille = ca.map((r, i) => {
+      const line = r.map((m, c) => (m ? { ch: String.fromCharCode(0x2800 + m), s: 1 } : { ch: String.fromCharCode(0x2800 + cb[i][c]), s: 2 }));
+      const a1 = line.map((p) => (p.s === 1 ? p.ch : '⠀')).join('');
+      const a2 = line.map((p) => (p.s === 2 ? p.ch : '⠀')).join('');
+      return { axis: axisAt[i] || '     ', a: a1, b: a2 };
+    });
+
+    const gates = [['pytest', 'pytest', 142], ['kb_check', 'kb', 9], ['session_link', 'link', 4], ['doc_check', 'doc', 12], ['card_check', 'card', 6], ['record_doctor', 'record', 7], ['graph_check', 'graph', 31]];
+    const maxG = 142, blocks = ' ▁▂▃▄▅▆▇█';
+    const spark = gates.map((g) => blocks[Math.max(1, Math.round((g[2] / maxG) * 8))]).join(' ');
+
+    const rows = ['周一', '周二', '周三', '周四', '周五'];
+    const glyphs = ['·', '░', '▒', '▓', '█'];
+    const heat = rows.map((label, r) => {
+      const vals = Array.from({ length: 24 }, (_, c) => (Math.sin(r * 1.7 + c * 0.55) + Math.cos(c * 0.21 - r) + 2) / 4);
+      const lv = vals.map((v) => Math.min(4, Math.floor(v * 5)));
+      return { label, text: lv.map((l) => glyphs[l]).join(''), cells: lv.map((l, c) => ({ fill: `var(--h${l})`, title: `${label} ${c} 时 · ${l} 档` })) };
+    });
+
+    const seg = (on) => ({ bg: on ? 'var(--l3)' : 'transparent', fg: on ? 'var(--t1)' : 'var(--t3)', pressed: on ? 'true' : 'false' });
+    return {
+      theme: this.props.theme ?? 'dark',
+      d1: path(a), d2: path(b),
+      hx: x(hover).toFixed(1), hy1: y(a[hover]).toFixed(1), hy2: y(b[hover]).toFixed(1),
+      tipX: hover > 7 ? Math.round(x(hover)) - 144 : Math.round(x(hover)) + 12,
+      tipDay: days[hover], tip1: a[hover], tip2: b[hover],
+      showChart: view === 'chart' ? 'block' : 'none',
+      showTable: view === 'table' ? 'flex' : 'none',
+      views: [['chart', '图'], ['table', '表']].map(([id, label]) => ({ label, ...seg(view === id), pick: () => this.setState({ view: id }) })),
+      tableRows: days.slice(-6).map((day, i) => ({ day, a: a[8 + i], b: b[8 + i] })),
+      hits: days.map((d, i) => ({ x: Math.round(x(i) - 18), w: 36, aria: `${d} 主检出 ${a[i]} 秒，干净树 ${b[i]} 秒`, enter: () => this.setState({ hover: i }) })),
+      braille, spark,
+      bars: gates.map(([full, short, v], i) => ({
+        short, v, title: `${full} ${v} 秒`, h: Math.round((v / maxG) * 140),
+        fill: i === bar ? 'var(--s1)' : 'color-mix(in srgb, var(--s1) 62%, transparent)',
+        enter: () => this.setState({ bar: i }),
+        pad: full.padEnd(14, ' '), block: '█'.repeat(Math.max(1, Math.round((v / maxG) * 22)))
+      })),
+      heat
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DAG 组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--line-soft:rgba(255,255,255,.06);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-bg:#34415B;--ok:#22C55E;--ok-t:#4ED17E;--warn:#F59E0B;--warn-t:#F7AD31;--warn-bg:#3A2F1C;--err:#F25A5A;--err-t:#F25A5A;--err-bg:#3F2223;--idle:#81858C}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--line-soft:rgba(0,0,0,.06);--accent:#4176E6;--accent-t:#2F5FCC;--accent-bg:#E4EDFD;--ok:#22C55E;--ok-t:#15803D;--warn:#F59E0B;--warn-t:#A35F0A;--warn-bg:#FEF5E7;--err:#EC1313;--err-t:#C81010;--err-bg:#FEE2E2;--idle:#6B7076}
+.row{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1fr);column-gap:32px;padding:16px 0;box-shadow:0 -0.5px 0 var(--line-soft)}
+.name{font-size:14px;line-height:22px;font-weight:600;color:var(--t1)}
+.desc{margin:4px 0 0;font-size:12px;line-height:18px;color:var(--t3)}
+.tui{box-sizing:border-box;padding:8px 12px;border-radius:8px;background:var(--term);box-shadow:0 0 0 0.5px var(--line);font-family:var(--mono);font-size:13px;line-height:20px;color:var(--t2);white-space:pre;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.card{box-sizing:border-box;display:flex;flex-direction:column;padding:8px 12px;background:var(--l1);box-shadow:0 0 0 1px var(--line)}
+.ct{font-family:var(--mono);font-size:12px;line-height:16px;font-weight:600;color:var(--t1)}
+.cw{font-size:11px;line-height:16px;color:var(--t3)}
+.mk{width:16px;height:16px;flex:none;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;line-height:11px;font-weight:700}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 1480px; box-sizing: border-box; padding: 56px 72px; display: flex; flex-direction: column; gap: 16px; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+
+  <header style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 600">DAG 组件</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--t2)">名字沿用 DAG 的组件规格，组件接口不变，配色换成这套冷灰。</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; font-size: 12px; line-height: 18px; color: var(--t3)"><span>组件</span><span>桌面端</span><span>TUI</span></div>
+
+  <div style="display: flex; flex-direction: column">
+
+    <div class="row"><div><div class="name">Card</div><p class="desc">四档：芯片、名片、卡面、展开。档位只换内容多少，不缩字。</p></div>
+      <div style="display: flex; gap: 12px; align-items: flex-start">
+        <div class="card" style="width: 96px; height: 40px; justify-content: center"><span class="ct">build_rows</span></div>
+        <div class="card" style="width: 208px; height: 80px"><span class="cw" style="font-family: var(--mono)">summary.py</span><span class="ct">build_rows</span><span class="cw" style="color: var(--t2)">调用 build_card</span></div>
+        <div class="card" style="width: 176px; height: 120px"><span class="ct">view.py</span><span class="cw">函数 9 · 类 2</span><span class="cw">导入我的 4</span><span class="cw">该跑：图闸</span></div>
+      </div>
+      <div class="tui"><div style="color: var(--t1)">build_rows</div><div><span style="color: var(--t1)">build_rows</span> <span style="color: var(--t3)">summary.py 调用 build_card</span></div><div style="background: var(--l2); color: var(--t1); font-weight: 700"><span style="color: var(--accent-t)">❯</span> view.py <span style="color: var(--t3); font-weight: 400">函数 9 · 类 2 · 导入我的 4</span></div></div>
+    </div>
+
+    <div class="row"><div><div class="name">TypeBadge</div><p class="desc">桌面端用剪影加类型牌。TUI 没有剪影，靠类型词。</p></div>
+      <div style="display: flex; gap: 12px; font-size: 11px; line-height: 16px; color: var(--t2)">
+        <div class="card" style="width: 88px; height: 56px; justify-content: center; align-items: center">代码</div>
+        <div class="card" style="width: 88px; height: 56px; justify-content: center; align-items: center; border-radius: 12px">接口</div>
+        <div class="card" style="width: 88px; height: 56px; justify-content: center; align-items: center; border-radius: 0 0 12px 12px">检查</div>
+        <div class="card" style="width: 88px; height: 56px; justify-content: center; align-items: center; clip-path: polygon(0 0, 76px 0, 88px 12px, 88px 56px, 0 56px)">文档</div>
+        <div class="card" style="width: 88px; height: 56px; justify-content: center; align-items: center; box-shadow: 0 0 0 1px var(--t2), inset 0 0 0 2px var(--bg), inset 0 0 0 3px var(--t2)">结构</div>
+      </div>
+      <div class="tui"><div><span style="color: var(--t3)">代码</span> view.py    <span style="color: var(--t3)">接口</span> GET /api/demo-dag/health</div><div><span style="color: var(--t3)">检查</span> 图闸       <span style="color: var(--t3)">文档</span> DAG_REBUILD_PLAN.md</div><div><span style="color: var(--t3)">结构</span> demo.graph</div></div>
+    </div>
+
+    <div class="row"><div><div class="name">StatusMark</div><p class="desc">九态都有字符，两端同形。无事不画。颜色归到红、黄、灰三档。</p></div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 12px; font-size: 12px; line-height: 18px; color: var(--t2)">
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="background: var(--err); color: var(--bg)">✕</span>红了</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="color: var(--err); box-shadow: inset 0 0 0 1.5px var(--err)">⊘</span>被挡</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="color: var(--warn-t); box-shadow: inset 0 0 0 1.5px var(--warn)">≈</span>证据漂</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="background: var(--warn); color: #0F1115">?</span>待决</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="background: var(--warn-bg); color: var(--warn-t); box-shadow: inset 0 0 0 1px var(--warn)">!</span>待确认</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="color: var(--t3); box-shadow: inset 0 0 0 1px var(--t3)">…</span>待做</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="background: var(--l3); color: var(--t3)">~</span>判不出</span>
+        <span style="display: flex; gap: 6px; align-items: center"><span class="mk" style="color: var(--t4); box-shadow: inset 0 0 0 1px var(--line)">∅</span>已废</span>
+      </div>
+      <div class="tui"><div><span style="color: var(--err); font-weight: 700">✕</span> 红了    <span style="color: var(--err); font-weight: 700">⊘</span> 被挡    <span style="color: var(--warn-t); font-weight: 700">≈</span> 证据漂  <span style="color: var(--warn-t); font-weight: 700">?</span> 待决</div><div><span style="color: var(--warn-t); font-weight: 700">!</span> 待确认  <span style="color: var(--t3)">…</span> 待做    <span style="color: var(--t3)">~</span> 判不出  <span style="color: var(--t4)">∅</span> 已废</div></div>
+    </div>
+
+    <div class="row"><div><div class="name">Edge</div><p class="desc">线型就是证据档。桌面的线型在终端里都有对应字符。虚线只表示还不是事实。</p></div>
+      <div style="display: grid; grid-template-columns: 80px minmax(0, 1fr) 80px minmax(0, 1fr); gap: 12px 12px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t2)">
+        <span>实</span><span aria-hidden="true" style="height: 1.25px; background: var(--t2)"></span>
+        <span>写</span><span aria-hidden="true" style="height: 4px; box-sizing: border-box; border-top: 1px solid var(--t2); border-bottom: 1px solid var(--t2)"></span>
+        <span>推</span><span aria-hidden="true" style="height: 0; border-top: 1.25px dashed var(--t2)"></span>
+        <span>合并</span><span aria-hidden="true" style="height: 3px; background: var(--t2)"></span>
+        <span>断口</span><span aria-hidden="true" style="display: flex; align-items: center; gap: 4px; color: var(--err); font-family: var(--mono); font-size: 12px"><span style="flex: 1; height: 1.25px; background: var(--t2)"></span>✕<span style="flex: 1; height: 1.25px; background: var(--t2)"></span></span>
+        <span>强调</span><span aria-hidden="true" style="height: 2px; background: var(--accent)"></span>
+      </div>
+      <div class="tui"><div><span style="color: var(--t3)">实    </span>view.py ──▶ build_rows</div><div><span style="color: var(--t3)">写    </span>build   ══▶ graph.json</div><div><span style="color: var(--t3)">推    </span>_write  ┄┄▶ view</div><div><span style="color: var(--t3)">合并  </span>service ━━▶ 3 个函数</div><div><span style="color: var(--t3)">断口  </span>anchors ─<span style="color: var(--err)">✕</span>─ 图闸</div></div>
+    </div>
+
+    <div class="row"><div><div class="name">Emphasis</div><p class="desc">强调不借状态色。我点的用主文字色，AI 指的用强调色并带标记。</p></div>
+      <div style="display: flex; gap: 24px; align-items: center; padding-left: 4px">
+        <div class="card" style="width: 136px; height: 56px; justify-content: center; outline: 2px solid var(--t1); outline-offset: 2px"><span class="ct">view.py</span><span class="cw">我点的</span></div>
+        <div class="card" style="position: relative; width: 136px; height: 56px; justify-content: center; outline: 2px solid var(--accent); outline-offset: 2px"><span class="ct">build_rows</span><span class="cw">AI 指的</span><span style="position: absolute; right: 6px; top: 6px; padding: 0 4px; border-radius: 4px; background: var(--accent-bg); color: var(--accent-t); font-size: 11px; line-height: 16px">AI</span></div>
+        <div class="card" style="width: 136px; height: 56px; justify-content: center; opacity: .42"><span class="ct">_cards_for</span><span class="cw">压暗</span></div>
+      </div>
+      <div class="tui"><div style="background: var(--l2); color: var(--t1); font-weight: 700"><span>❯</span> view.py 我点的</div><div style="color: var(--accent-t); font-weight: 700"><span>❯</span> build_rows <span style="background: var(--accent-bg); font-weight: 400"> AI </span></div><div style="color: var(--t4)">  _cards_for 压暗</div></div>
+    </div>
+
+    <div class="row"><div><div class="name">StatusLine</div><p class="desc">答案区的主句位。记号、一句话、计时，再加最多三个动作。</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 20px">
+        <div style="display: flex; gap: 8px; align-items: center"><span style="font-family: var(--mono); color: var(--accent)">◐</span><span style="flex: 1">在算「待拍的决定」</span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">0.3s · 通常 1.3s</span></div>
+        <div style="display: flex; gap: 8px; align-items: center; padding: 6px 8px; border-radius: 8px; background: var(--warn-bg)"><span style="font-family: var(--mono); color: var(--warn)">▲</span><span style="flex: 1">比平时慢</span><span style="font-size: 12px; line-height: 18px; color: var(--accent-t)">细节 ▸</span></div>
+      </div>
+      <div class="tui"><div><span style="color: var(--accent)">◐</span> 在算「待拍的决定」 <span style="color: var(--t4)">0.3s · 通常 1.3s</span></div><div><span style="color: var(--warn)">▲</span> 比平时慢 <span style="color: var(--t4)">d 细节</span></div></div>
+    </div>
+
+    <div class="row"><div><div class="name">ConclusionCard</div><p class="desc">画布上没有图时的结论。零也是结论，标题写主句和动作。</p></div>
+      <div style="box-sizing: border-box; width: 360px; padding: 16px; display: flex; flex-direction: column; gap: 4px; border-radius: 12px; background: var(--l1); box-shadow: 0 0 0 0.5px var(--line)"><strong style="font-size: 14px; line-height: 22px; font-weight: 600">它不依赖仓内任何东西</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">view.py 只导入标准库。</span><span style="font-size: 12px; line-height: 18px; color: var(--accent-t)">看它被谁用 ▸</span></div>
+      <div class="tui" style="box-shadow: inset 2px 0 0 var(--t3), 0 0 0 0.5px var(--line)"><div style="color: var(--t1); font-weight: 700">它不依赖仓内任何东西</div><div style="color: var(--t3)">view.py 只导入标准库。</div><div style="color: var(--t4)">Enter 看它被谁用</div></div>
+    </div>
+
+    <div class="row"><div><div class="name">LensStrip · Pager</div><p class="desc">同一问题的几种看法。看法只在这条里切，空的写原因。</p></div>
+      <div style="display: flex; gap: 8px; align-items: center; font-size: 12px; line-height: 18px"><span style="padding: 3px 8px; border-radius: 4px; background: var(--l3); color: var(--t1)">一条一张</span><span style="color: var(--t3); padding: 0 8px">全部</span><span style="color: var(--t3); padding: 0 8px">依赖</span><span style="color: var(--t3); padding: 0 8px">清单</span><span style="flex: 1"></span><span style="color: var(--t2)">◀ 第 3 / 125 条 ▶</span></div>
+      <div class="tui"><div><span style="background: var(--l3); color: var(--t1); font-weight: 700"> 一条一张 </span>  全部  依赖  清单      <span style="color: var(--t3)">[ 第 3 / 125 条 ]</span></div></div>
+    </div>
+
+    <div class="row"><div><div class="name">Legend · Footer</div><p class="desc">页脚第一句永远说清箭头的意思，图例再展开。</p></div>
+      <div style="display: flex; gap: 16px; align-items: center; font-size: 12px; line-height: 18px; color: var(--t3)"><span>箭头 = 改了会波及到</span><span style="color: var(--accent-t)">图例 ▸</span><span style="flex: 1"></span><span>索引 13577 节点 · 20026 边</span></div>
+      <div class="tui"><div style="color: var(--t4)">箭头 = 改了会波及到   ? 图例   索引 13577 节点</div></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { theme: this.props.theme ?? 'dark' };
+  }
+}
+</script>
+</body>
+</html>

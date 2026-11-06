@@ -1,0 +1,91 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>会话分屏 · TUI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--ground:#2C2C2E;--term:#151517;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--accent-t:#7AAAFF;--accent-btn:#7AAAFF;--on-accent:#0F1115;--ok:#22C55E;--warn:#F59E0B;--warn-t:#F7AD31}
+.dsh[data-theme="light"]{--ground:#E9ECF2;--term:#FFFFFF;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--accent-t:#2F5FCC;--accent-btn:#2F5FCC;--on-accent:#FFFFFF;--ok:#22C55E;--warn:#F59E0B;--warn-t:#A35F0A}
+.lines{display:flex;flex-direction:column;min-width:0}
+.key{height:20px;padding:0 6px;border:0;background:transparent;font:inherit;cursor:pointer}
+.w{white-space:pre-wrap}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="width: 1440px; height: 900px; box-sizing: border-box; padding: 32px 40px; display: flex; background: var(--ground); font-family: var(--mono)">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 14px; border-radius: 10px; background: var(--term); box-shadow: 0 0 0 0.5px var(--line), 0 8px 24px rgba(0,0,0,.2); color: var(--t2); font-size: 14px; line-height: 20px; white-space: pre; overflow: hidden">
+
+    <div style="flex: 1; min-height: 0; display: flex">
+      <sc-for list="{{panes}}" as="p" hint-placeholder-count="3">
+        <section class="lines" aria-label="{{p.title}}" style="display: {{p.show}}; flex: 1 1 0; padding: 0 10px; border-left: {{p.rule}}">
+          <button type="button" onClick="{{p.focus}}" aria-pressed="{{p.focused}}" class="key" style="display: flex; gap: 8px; padding: 0 6px; background: {{p.headBg}}; color: {{p.headFg}}; font-weight: 700; text-align: left"><span style="color: {{p.tone}}">{{p.glyph}}</span><span style="flex: 1; min-width: 0; overflow: hidden">{{p.title}}</span><span style="font-weight: 400; color: {{p.statusFg}}">{{p.status}}</span></button>
+          <div> </div>
+          <div class="w" style="padding: 0 6px; background: var(--l1); color: var(--t1)"><span style="color: var(--accent-t); font-weight: 700">❯</span> {{p.ask}}</div>
+          <div> </div>
+          <div class="w" style="color: var(--t1)">{{p.reply}}</div>
+          <div> </div>
+          <sc-for list="{{p.tools}}" as="t" hint-placeholder-count="2"><div class="w"><span style="color: {{t.c}}">{{t.g}}</span> {{t.t}}</div></sc-for>
+          <div class="lines" style="display: {{p.approvalShow}}; margin-top: 20px; padding: 0 6px; border-left: 2px solid var(--warn); background: var(--l1)">
+            <div style="color: var(--t1); font-weight: 700"><span style="color: var(--warn)">▲</span> 要重启 MCP 服务吗？</div>
+            <div class="w" style="color: var(--t1)">  dsh mcp restart github</div>
+            <div><span style="background: var(--accent-btn); color: var(--on-accent); font-weight: 700"> y 允许一次 </span>  <span style="color: var(--t3)">n 拒绝</span></div>
+          </div>
+          <div style="flex: 1"></div>
+          <div style="padding: 0 6px; background: var(--l1); color: var(--t4); overflow: hidden"><span style="color: var(--accent-t); font-weight: 700">{{p.prompt}}</span> <span style="background: {{p.caret}}; color: var(--term)"> </span> {{p.hint}}</div>
+        </section>
+      </sc-for>
+    </div>
+
+    <div style="height: 10px; margin-bottom: 9px; border-bottom: 1px solid var(--line)"></div>
+    <div style="display: flex; gap: 12px; align-items: center; color: var(--t4)">
+      <sc-for list="{{counts}}" as="c" hint-placeholder-count="3"><button type="button" class="key" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="color: {{c.fg}}; background: {{c.bg}}">{{c.label}}</button></sc-for>
+      <span>Alt+← → 换格</span><span>/split 分屏</span><span>/close 收起这一格</span>
+      <span style="flex: 1"></span><span>{{widthNote}}</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  state = { n: 2, focus: 0 };
+  renderVals() {
+    const { n, focus } = this.state;
+    const data = [
+      { title: '审批卡状态统一', glyph: '◐', tone: 'var(--accent)', status: '1 个子智能体运行中', statusFg: 'var(--t3)', ask: '把审批卡的风险等级改成和 StateDot 同一套状态。', reply: '我先看现有组件，再改状态映射。', tools: [{ g: '●', c: 'var(--ok)', t: '读取 RiskConfirmation.tsx' }, { g: '●', c: 'var(--ok)', t: '修改 RiskConfirmation.tsx' }, { g: '◐', c: 'var(--accent)', t: '子智能体审查这次改动' }], approval: false },
+      { title: '修复 MCP 重连', glyph: '▲', tone: 'var(--warn)', status: '等待审批', statusFg: 'var(--warn-t)', ask: 'GitHub 连接器断了不会自动重连，帮我查一下。', reply: '重连逻辑在错误分支里被跳过了，修好后需要重启服务验证。', tools: [{ g: '●', c: 'var(--ok)', t: '搜索 reconnect，7 处' }], approval: true },
+      { title: '发布说明草稿', glyph: '●', tone: 'var(--ok)', status: '已完成', statusFg: 'var(--t3)', ask: '根据这周合并的 PR 写发布说明。', reply: '写好了，放在 docs/release-notes.md，共 12 条。', tools: [{ g: '●', c: 'var(--ok)', t: '读取 12 个 PR' }, { g: '●', c: 'var(--ok)', t: '写入 release-notes.md' }], approval: false }
+    ];
+    return {
+      theme: this.props.theme ?? 'dark',
+      counts: [1, 2, 3].map((v) => ({ label: `${v} 格`, pressed: n === v ? 'true' : 'false', fg: n === v ? 'var(--t1)' : 'var(--t3)', bg: n === v ? 'var(--l3)' : 'transparent', pick: () => this.setState({ n: v, focus: Math.min(focus, v - 1) }) })),
+      widthNote: '每格不少于 60 列，放不下就只留当前格',
+      panes: data.map((p, i) => {
+        const f = i === focus;
+        return {
+          ...p,
+          show: i < n ? 'flex' : 'none',
+          rule: i ? '1px solid var(--line)' : '0',
+          focused: f ? 'true' : 'false',
+          focus: () => this.setState({ focus: i }),
+          headBg: f ? 'var(--l3)' : 'transparent',
+          headFg: f ? 'var(--t1)' : 'var(--t3)',
+          approvalShow: p.approval ? 'flex' : 'none',
+          prompt: f ? 'dsh' : '   ',
+          caret: f ? 'var(--t1)' : 'transparent',
+          hint: f ? '输入进这一格' : '不在这一格'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

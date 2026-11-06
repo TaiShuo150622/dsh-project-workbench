@@ -1,0 +1,217 @@
+<!-- 公开整理版；源版本：未编号；整理日期：2026-11-06。保留原稿历史阶段，未重新运行或复测。内部项目实例、个人原话与私有地址不作为公开附件。 设计画板使用合成标签；缺少support.js，不能独立运行；不是产品代码。 -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>上限样例 · 天体</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+.dsh{--sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',Menlo,Consolas,'PingFang SC','Microsoft YaHei'}
+.dsh[data-theme="dark"]{--bg:#151517;--term:#0F1115;--side:#1B1B1D;--l1:#232324;--l2:#2C2C2E;--l3:#353638;--t1:#F9FAFB;--t2:#CFD3D6;--t3:#ADB2B8;--t4:#81858C;--line:rgba(255,255,255,.12);--accent:#7AAAFF;--warn:#F7AD31}
+.dsh[data-theme="light"]{--bg:#FFFFFF;--term:#F9FAFB;--side:#F5F6F7;--l1:#F5F6F7;--l2:#E9ECF2;--l3:#E1E5EE;--t1:#0F1115;--t2:#43454A;--t3:#61666B;--t4:#6B7076;--line:rgba(0,0,0,.12);--accent:#4176E6;--warn:#A35F0A}
+button{font-family:inherit}
+.opt{height:28px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:var(--t2);font-size:12px;line-height:18px;cursor:pointer;white-space:nowrap}
+.opt[aria-pressed="true"]{background:var(--l3);color:var(--t1)}
+.lb{position:absolute;left:0;top:0;height:20px;padding:0 4px;border:0;border-radius:4px;background:transparent;color:var(--t1);font-size:11px;line-height:20px;white-space:nowrap;cursor:pointer;will-change:transform}
+.kv{display:grid;grid-template-columns:80px minmax(0,1fr);column-gap:8px;font-size:12px;line-height:24px;color:var(--t2)}
+.kv span:first-child{color:var(--t3)}
+.st{font-family:var(--mono);font-size:12px;line-height:18px;color:var(--t2);white-space:nowrap}
+.st strong{font-weight:700;color:var(--t1)}
+</style>
+</helmet>
+<div class="dsh" data-theme="{{theme}}" style="position: relative; width: 1440px; height: 944px; overflow: hidden; background: var(--bg); color: var(--t1); font-family: var(--sans)">
+  <header style="position: absolute; left: 0; right: 0; top: 0; height: 44px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 12px; background: var(--side); box-shadow: 0 0.5px 0 var(--line)">
+    <strong style="font-size: 14px; line-height: 22px; font-weight: 600">太阳系与小天体</strong><span style="font-size: 12px; line-height: 18px; color: var(--t3)">空间 + 时序 · 第二级渲染器 · 轨道按开普勒方程在显卡上解</span>
+    <span style="flex: 1"></span><span class="st"><strong>{{fps}}</strong> 帧/秒 · {{ms}}ms · <strong>{{count}}</strong> 个天体</span>
+  </header>
+  <div style="position: absolute; left: 0; top: 44px; width: 1184px; height: 788px; overflow: hidden; background: var(--term)">
+    <canvas data-gl="sky" width="1184" height="788" aria-label="太阳系视图，拖动旋转，滚轮缩放" style="display: {{glShow}}; width: 1184px; height: 788px; cursor: grab"></canvas>
+    <sc-for list="{{bodies}}" as="b" hint-placeholder-count="9"><button type="button" class="lb" data-lb="{{b.i}}" onClick="{{b.pick}}" style="display: {{glShow}}; color: {{b.fg}}">{{b.name}}</button></sc-for>
+    <div style="display: {{tuiShow}}; box-sizing: border-box; height: 788px; padding: 16px 20px; font-family: var(--mono); font-size: 13px; line-height: 19px; color: var(--t2); white-space: pre; overflow: hidden"><sc-for list="{{tui}}" as="l" hint-placeholder-count="36"><div style="height: 19px; color: {{l.c}}">{{l.t}}</div></sc-for></div>
+    <div style="display: {{failShow}}; position: absolute; left: 24px; top: 24px; font-size: 14px; line-height: 22px; color: var(--warn)">这个环境没有 WebGL2，面板会退到字符视图</div>
+  </div>
+  <aside aria-label="检查器" style="position: absolute; left: 1184px; right: 0; top: 44px; height: 788px; box-sizing: border-box; padding: 14px; display: flex; flex-direction: column; gap: 6px; background: var(--side); box-shadow: -0.5px 0 0 var(--line)">
+    <strong style="font-size: 16px; line-height: 24px; font-weight: 600">{{ins.name}}</strong>
+    <sc-for list="{{ins.rows}}" as="r" hint-placeholder-count="7"><div class="kv"><span>{{r.k}}</span><span>{{r.v}}</span></div></sc-for>
+    <div style="flex: 1"></div>
+    <div style="font-size: 12px; line-height: 18px; color: var(--t3)">行星用 J2000 轨道根数实算。小天体是合成数据，按主带、柯克伍德空隙、特洛伊群和柯伊伯带的分布规律生成。</div>
+  </aside>
+  <div style="position: absolute; left: 0; right: 0; top: 832px; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; box-shadow: 0 -0.5px 0 var(--line)">
+    <span class="st" style="width: 132px"><strong>{{date}}</strong></span>
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3); padding: 0 6px">时间</span><sc-for list="{{speeds}}" as="o" hint-placeholder-count="5"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <span style="flex: 1"></span>
+    <button type="button" class="opt" onClick="{{toggleLog}}" aria-pressed="{{logOn}}">压缩外太阳系</button>
+    <button type="button" class="opt" onClick="{{toggleTui}}" aria-pressed="{{tuiOn}}">看 TUI 退化</button>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 4px; background: var(--side); box-shadow: 0 -0.5px 0 var(--line)">
+    <span style="font-size: 12px; line-height: 18px; color: var(--t3); padding-right: 6px">小天体数量</span><sc-for list="{{sizes}}" as="o" hint-placeholder-count="5"><button type="button" class="opt" onClick="{{o.pick}}" aria-pressed="{{o.on}}">{{o.t}}</button></sc-for>
+    <span style="flex: 1"></span><span style="font-size: 12px; line-height: 18px; color: var(--t3)">调大数量看帧率什么时候掉，这就是你这台机器的上限</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":944}}'>
+class Component extends DCLogic {
+  state = { N: 500000, speed: 1, log: true, sel: 3, fps: 0, ms: 0, date: '', tui: false, rows: [], noGL: false, info: null };
+  // 名字、a、e、i、L、近日点经度、升交点经度，J2000
+  planets = [['水星', 0.3871, 0.20563, 7.005, 252.25, 77.46, 48.33], ['金星', 0.72333, 0.00677, 3.395, 181.98, 131.6, 76.68], ['地球', 1, 0.01671, 0, 100.46, 102.94, 0], ['火星', 1.52371, 0.09339, 1.85, -4.55, -23.94, 49.56], ['木星', 5.20289, 0.04839, 1.304, 34.4, 14.73, 100.47], ['土星', 9.53668, 0.05386, 2.486, 49.95, 92.6, 113.66], ['天王星', 19.18916, 0.04726, 0.773, 313.24, 170.95, 74.02], ['海王星', 30.06992, 0.00859, 1.77, -55.12, 44.96, 131.78]];
+  T = 26.83; yaw = 0.6; pitch = 0.55; dist = 9;
+  componentDidMount() { this.boot(); }
+  componentWillUnmount() { clearTimeout(this.bt); clearTimeout(this.vt); cancelAnimationFrame(this.raf); this.io && this.io.disconnect(); }
+  boot() {
+    const c = document.querySelector('[data-gl="sky"]');
+    if (!c) { this.bt = setTimeout(() => this.boot(), 100); return; }
+    this.c = c;
+    this.bindInput(c);
+    const start = () => { this.vis = true; if (!this.gl && !this.state.noGL) this.init(); this.kick(); };
+    if (window.IntersectionObserver) { this.io = new IntersectionObserver((e) => { this.vis = e[0].isIntersecting; if (this.vis) start(); }); this.io.observe(c); } else start();
+    const wake = () => { if (!document.hidden && this.vis) this.kick(); this.vt = setTimeout(wake, 1000); }; wake();
+  }
+  bindInput(c) {
+    let d = null;
+    c.addEventListener('mousedown', (e) => { d = { x: e.clientX, y: e.clientY, yaw: this.yaw, pitch: this.pitch }; });
+    window.addEventListener('mousemove', (e) => { if (!d) return; this.yaw = d.yaw + (e.clientX - d.x) * 0.006; this.pitch = Math.max(-1.5, Math.min(1.5, d.pitch + (e.clientY - d.y) * 0.006)); });
+    window.addEventListener('mouseup', () => { d = null; });
+    c.addEventListener('wheel', (e) => { e.preventDefault(); this.dist = Math.max(1.5, Math.min(60, this.dist * Math.exp(e.deltaY * 0.001))); }, { passive: false });
+  }
+  prog(vs, fs) {
+    const gl = this.gl, p = gl.createProgram();
+    [[gl.VERTEX_SHADER, vs], [gl.FRAGMENT_SHADER, fs]].forEach(([t, src]) => { const s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); gl.attachShader(p, s); });
+    gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    return p;
+  }
+  init() {
+    const gl = this.c.getContext('webgl2', { antialias: true, alpha: false });
+    if (!gl) { this.setState({ noGL: true, tui: true }); return; }
+    this.gl = gl;
+    this.pa = this.prog(`#version 300 es
+      precision highp float; in vec4 a; in vec2 b; in float k; uniform float T; uniform mat4 VP; uniform float LK; flat out float cls;
+      void main(){ float A=a.x,E=a.y,I=a.z,O=a.w,W=b.x; float n=6.2831853/pow(A,1.5); float M=mod(b.y+n*T,6.2831853); float H=M+E*sin(M); H=H-(H-E*sin(H)-M)/(1.-E*cos(H)); H=H-(H-E*sin(H)-M)/(1.-E*cos(H));
+        float x=A*(cos(H)-E),y=A*sqrt(1.-E*E)*sin(H),cw=cos(W),sw=sin(W),co=cos(O),so=sin(O),ci=cos(I),si=sin(I);
+        vec3 p=vec3((cw*co-sw*so*ci)*x+(-sw*co-cw*so*ci)*y,(cw*so+sw*co*ci)*x+(-sw*so+cw*co*ci)*y,(sw*si)*x+(cw*si)*y); float r=length(p); p*=pow(r,LK-1.);
+        cls=k; gl_Position=VP*vec4(p.x,p.z,p.y,1.); gl_PointSize=1.3; }`, `#version 300 es
+      precision mediump float; flat in float cls; uniform vec3 C0; uniform vec3 C1; uniform vec3 C2; uniform float AL; out vec4 o; void main(){ vec3 c=cls<.5?C0:cls<1.5?C1:C2; o=vec4(c,AL); }`);
+    this.pl = this.prog(`#version 300 es
+      precision highp float; in vec3 p; in float s; uniform mat4 VP; void main(){ gl_Position=VP*vec4(p,1.); gl_PointSize=s; }`, `#version 300 es
+      precision mediump float; uniform vec4 C; uniform float RD; out vec4 o; void main(){ if(RD>.5&&length(gl_PointCoord-.5)>.5)discard; o=C; }`);
+    this.bufA = gl.createBuffer(); this.bufP = gl.createBuffer(); this.bufO = gl.createBuffer();
+    this.fill(this.state.N); this.orbits();
+  }
+  fill(N) {
+    const gl = this.gl, arr = new Float32Array(N * 7), R = Math.random, D = Math.PI / 180;
+    for (let i = 0; i < N; i++) {
+      const u = R(); let a, e, inc, k = 0, M = R() * 6.2832, node = R() * 6.2832, w = R() * 6.2832;
+      if (u < 0.78) {
+        do { a = 2.1 + R() * 1.25; } while (Math.abs(a - 2.5) < 0.035 || Math.abs(a - 2.82) < 0.03 || Math.abs(a - 2.95) < 0.025 || Math.abs(a - 3.27) < 0.04);
+        e = R() * R() * 0.34; inc = R() * R() * 30 * D;
+      } else if (u < 0.86) {
+        a = 5.2 + (R() - 0.5) * 0.3; e = R() * 0.12; inc = R() * 25 * D; k = 1; const jL = 34.4 * D, side = R() < 0.6 ? 1 : -1; M = jL + side * (1.047 + (R() - 0.5) * 0.5) - node - w;
+      } else { a = 39 + R() * 9.5 + (R() < 0.3 ? 0 : 3); e = R() * 0.2; inc = R() * R() * 32 * D; k = 2; }
+      arr.set([a, e, inc, node, w, M, k], i * 7);
+    }
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufA); gl.bufferData(gl.ARRAY_BUFFER, arr, gl.STATIC_DRAW);
+    this.arr = arr; this.count = N;
+  }
+  kep(p, T) {
+    const [, a, e, inc, L, wb, node] = p, D = Math.PI / 180, n = 360 / Math.pow(a, 1.5), M = ((L - wb + n * T) % 360) * D, w = (wb - node) * D, O = node * D, I = inc * D;
+    let E = M + e * Math.sin(M); for (let i = 0; i < 5; i++) E -= (E - e * Math.sin(E) - M) / (1 - e * Math.cos(E));
+    return this.orb(a, e, I, O, w, E);
+  }
+  orb(a, e, I, O, w, E) {
+    const x = a * (Math.cos(E) - e), y = a * Math.sqrt(1 - e * e) * Math.sin(E), cw = Math.cos(w), sw = Math.sin(w), co = Math.cos(O), so = Math.sin(O), ci = Math.cos(I), si = Math.sin(I);
+    return [(cw * co - sw * so * ci) * x + (-sw * co - cw * so * ci) * y, (cw * so + sw * co * ci) * x + (-sw * so + cw * co * ci) * y, sw * si * x + cw * si * y];
+  }
+  lk() { return this.state.log ? 0.5 : 1; }
+  sq(p) { const r = Math.hypot(...p) || 1, f = Math.pow(r, this.lk() - 1); return [p[0] * f, p[2] * f, p[1] * f]; }
+  orbits() {
+    const gl = this.gl, S = 256, v = new Float32Array(8 * S * 4), D = Math.PI / 180;
+    this.planets.forEach((p, i) => { const [, a, e, inc, , wb, node] = p; for (let k = 0; k < S; k++) { const q = this.sq(this.orb(a, e, inc * D, node * D, (wb - node) * D, k / S * 6.28319)); v.set([q[0], q[1], q[2], 1], (i * S + k) * 4); } });
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufO); gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
+  }
+  mats() {
+    const w = 1184, h = 788, f = 1 / Math.tan(0.45), a = w / h, n = 0.05, r = 500, cy = Math.cos(this.yaw), sy = Math.sin(this.yaw), cp = Math.cos(this.pitch), sp = Math.sin(this.pitch), d = this.dist;
+    const P = [f / a, 0, 0, 0, 0, f, 0, 0, 0, 0, (r + n) / (n - r), -1, 0, 0, 2 * r * n / (n - r), 0];
+    const V = [cy, -sy * sp, sy * cp, 0, 0, cp, sp, 0, -sy, -cy * sp, cy * cp, 0, 0, 0, -d, 1];
+    const M = new Float32Array(16);
+    for (let c = 0; c < 4; c++) for (let row = 0; row < 4; row++) { let s = 0; for (let k = 0; k < 4; k++) s += P[k * 4 + row] * V[c * 4 + k]; M[c * 4 + row] = s; }
+    return M;
+  }
+  kick() { if (this.raf || !this.gl) return; const loop = (t) => { this.raf = null; if (!this.vis || document.hidden) return; this.frame(t); this.raf = requestAnimationFrame(loop); }; this.raf = requestAnimationFrame(loop); }
+  frame(t) {
+    const gl = this.gl, dark = (this.props.theme ?? 'dark') === 'dark', t0 = performance.now(), dt = this.last ? Math.min(0.1, (t - this.last) / 1000) : 0.016; this.last = t;
+    this.T += dt * this.state.speed;
+    const VP = this.mats(), loc = (p, n) => gl.getUniformLocation(p, n);
+    gl.viewport(0, 0, 1184, 788); gl.disable(gl.DEPTH_TEST); gl.enable(gl.BLEND);
+    if (dark) { gl.clearColor(0.059, 0.067, 0.082, 1); gl.blendFunc(gl.SRC_ALPHA, gl.ONE); } else { gl.clearColor(0.976, 0.98, 0.984, 1); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); }
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(this.pa); gl.bindBuffer(gl.ARRAY_BUFFER, this.bufA);
+    const st = 28, ba = gl.getAttribLocation(this.pa, 'a'), bb = gl.getAttribLocation(this.pa, 'b'), bk = gl.getAttribLocation(this.pa, 'k');
+    gl.enableVertexAttribArray(ba); gl.vertexAttribPointer(ba, 4, gl.FLOAT, false, st, 0); gl.enableVertexAttribArray(bb); gl.vertexAttribPointer(bb, 2, gl.FLOAT, false, st, 16); gl.enableVertexAttribArray(bk); gl.vertexAttribPointer(bk, 1, gl.FLOAT, false, st, 24);
+    gl.uniform1f(loc(this.pa, 'T'), this.T); gl.uniform1f(loc(this.pa, 'LK'), this.lk()); gl.uniformMatrix4fv(loc(this.pa, 'VP'), false, VP);
+    gl.uniform3f(loc(this.pa, 'C0'), ...(dark ? [0.31, 0.54, 0.95] : [0.18, 0.37, 0.8])); gl.uniform3f(loc(this.pa, 'C1'), ...(dark ? [0.63, 0.4, 0.94] : [0.54, 0.31, 0.82])); gl.uniform3f(loc(this.pa, 'C2'), ...(dark ? [0.06, 0.65, 0.59] : [0, 0.56, 0.5]));
+    gl.uniform1f(loc(this.pa, 'AL'), dark ? Math.min(0.5, 26000 / this.count + 0.012) : Math.min(0.6, 60000 / this.count + 0.03)); gl.drawArrays(gl.POINTS, 0, this.count);
+    gl.disableVertexAttribArray(bk); gl.disableVertexAttribArray(bb);
+    gl.useProgram(this.pl); const lp = gl.getAttribLocation(this.pl, 'p'), ls = gl.getAttribLocation(this.pl, 's'); gl.uniformMatrix4fv(loc(this.pl, 'VP'), false, VP); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufO); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 3, gl.FLOAT, false, 16, 0); gl.disableVertexAttribArray(ls); gl.vertexAttrib1f(ls, 1);
+    gl.uniform1f(loc(this.pl, 'RD'), 0); gl.uniform4f(loc(this.pl, 'C'), ...(dark ? [1, 1, 1, 0.22] : [0, 0, 0, 0.25])); for (let i = 0; i < 8; i++) gl.drawArrays(gl.LINE_LOOP, i * 256, 256);
+    const pos = [[0, 0, 0], ...this.planets.map((p) => this.sq(this.kep(p, this.T)))], v = new Float32Array(9 * 4);
+    pos.forEach((q, i) => v.set([q[0], q[1], q[2], i === 0 ? 12 : i === this.state.sel ? 9 : 6], i * 4));
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufP); gl.bufferData(gl.ARRAY_BUFFER, v, gl.DYNAMIC_DRAW); gl.vertexAttribPointer(lp, 3, gl.FLOAT, false, 16, 0); gl.enableVertexAttribArray(ls); gl.vertexAttribPointer(ls, 1, gl.FLOAT, false, 16, 12);
+    gl.uniform1f(loc(this.pl, 'RD'), 1); gl.uniform4f(loc(this.pl, 'C'), ...(dark ? [0.98, 0.98, 1, 1] : [0.06, 0.07, 0.08, 1])); gl.drawArrays(gl.POINTS, 0, 9);
+    pos.forEach((q, i) => {
+      const el = document.querySelector(`[data-lb="${i}"]`); if (!el) return;
+      const x = VP[0] * q[0] + VP[4] * q[1] + VP[8] * q[2] + VP[12], y = VP[1] * q[0] + VP[5] * q[1] + VP[9] * q[2] + VP[13], w = VP[3] * q[0] + VP[7] * q[1] + VP[11] * q[2] + VP[15];
+      if (w <= 0) { el.style.opacity = 0; return; } el.style.opacity = 1; el.style.transform = `translate(${(x / w * 0.5 + 0.5) * 1184 + 6}px, ${(0.5 - y / w * 0.5) * 788 - 10}px)`;
+    });
+    gl.flush();
+    this.tick(t, performance.now() - t0);
+  }
+  tick(t, ms) {
+    this.fN = (this.fN || 0) + 1; this.msSum = (this.msSum || 0) + ms;
+    if (!this.lastS) this.lastS = t;
+    if (t - this.lastS >= 500) {
+      const fps = Math.round(this.fN * 1000 / (t - this.lastS)), avg = this.msSum / this.fN; this.fN = 0; this.msSum = 0; this.lastS = t;
+      const d = new Date(Date.UTC(2000, 0, 1) + this.T * 31557600000);
+      this.setState({ fps, ms: avg.toFixed(1), date: d.toISOString().slice(0, 10), info: this.infoOf(), rows: this.state.tui ? this.tuiRows() : [] });
+    }
+  }
+  infoOf() {
+    const i = this.state.sel; if (i === 0) return { name: '太阳', rows: [{ k: '类型', v: '恒星' }, { k: '小天体', v: `${this.count.toLocaleString('en-US')} 个` }] };
+    const p = this.planets[i - 1], q = this.kep(p, this.T), r = Math.hypot(...q), lon = (Math.atan2(q[1], q[0]) / Math.PI * 180 + 360) % 360;
+    return { name: p[0], rows: [{ k: '半长轴', v: `${p[1].toFixed(3)} AU` }, { k: '偏心率', v: p[2].toFixed(4) }, { k: '轨道倾角', v: `${p[3].toFixed(2)}°` }, { k: '公转周期', v: `${Math.pow(p[1], 1.5).toFixed(2)} 年` }, { k: '到太阳', v: `${r.toFixed(3)} AU` }, { k: '日心经度', v: `${lon.toFixed(1)}°` }, { k: '光行时', v: `${(r * 8.317).toFixed(1)} 分钟` }] };
+  }
+  tuiRows() {
+    const W = 92, H = 36, g = Array.from({ length: H }, () => new Array(W).fill(0)), a = this.arr, step = Math.max(1, Math.floor(this.count / 40000)), sc = 4.2;
+    for (let i = 0; i < this.count; i += step) {
+      const o = i * 7, A = a[o], e = a[o + 1], n = 6.2832 / Math.pow(A, 1.5), M = (a[o + 5] + n * this.T) % 6.2832, E = M + e * Math.sin(M), q = this.sq(this.orb(A, e, a[o + 2], a[o + 3], a[o + 4], E));
+      const x = Math.round(W / 2 + q[0] * sc * 1.9), y = Math.round(H / 2 + q[2] * sc * 0.9);
+      if (x >= 0 && x < W && y >= 0 && y < H) g[y][x]++;
+    }
+    const ramp = ' ·:+*#', rows = g.map((r) => r.map((v) => ramp[Math.min(5, v === 0 ? 0 : Math.ceil(Math.log2(v + 1)))]));
+    const P = [['☉', [0, 0, 0]], ...this.planets.map((p) => [p[0][0], this.sq(this.kep(p, this.T))])];
+    P.forEach(([c, q]) => { const x = Math.round(W / 2 + q[0] * sc * 1.9), y = Math.round(H / 2 + q[2] * sc * 0.9); if (x >= 0 && x < W && y >= 0 && y < H) { rows[y][x] = c; rows[y].splice(x + 1, 1); } });
+    return rows.map((r) => ({ t: r.join(''), c: 'var(--t2)' }));
+  }
+  renderVals() {
+    const { N, speed, log, sel, fps, ms, date, tui, rows, noGL, info } = this.state, name = (v) => (v >= 1e6 ? `${v / 1e6} 百万` : `${v / 1e4} 万`);
+    const setN = (v) => () => { this.setState({ N: v }); if (this.gl) this.fill(v); };
+    return {
+      theme: this.props.theme ?? 'dark', fps, ms, date: date || '2026-11-01', count: N.toLocaleString('en-US'),
+      glShow: tui ? 'none' : 'block', tuiShow: tui ? 'block' : 'none', failShow: noGL ? 'block' : 'none', tui: rows,
+      ins: info || { name: '地球', rows: [{ k: '状态', v: '正在载入' }] },
+      bodies: ['太阳', ...this.planets.map((p) => p[0])].map((n, i) => ({ i, name: n, fg: i === sel ? 'var(--accent)' : 'var(--t1)', pick: () => this.setState({ sel: i }) })),
+      speeds: [[0, '暂停'], [0.1, '1 月/秒'], [1, '1 年/秒'], [12, '12 年/秒'], [60, '60 年/秒']].map(([v, t]) => ({ t, on: speed === v ? 'true' : 'false', pick: () => this.setState({ speed: v }) })),
+      sizes: [100000, 500000, 1000000, 2000000, 5000000].map((v) => ({ t: name(v), on: N === v ? 'true' : 'false', pick: setN(v) })),
+      toggleLog: () => { this.setState((s) => ({ log: !s.log }), () => { if (this.gl) this.orbits(); }); }, logOn: log ? 'true' : 'false',
+      toggleTui: () => this.setState((s) => ({ tui: !s.tui })), tuiOn: tui ? 'true' : 'false'
+    };
+  }
+}
+</script>
+</body>
+</html>
