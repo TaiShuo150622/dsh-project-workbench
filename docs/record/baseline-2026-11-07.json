@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-07",
+  "scope": "existing workbench local baseline only",
+  "repository": "TaiShuo150622/dsh-project-workbench",
+  "code_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+  "node_version": "v24.6.0",
+  "dependency_install": {
+    "initial_result": "default cache write permission denied",
+    "resolution": "workspace-local npm cache",
+    "final_exit_code": 0
+  },
+  "tests": {
+    "command": "npm test",
+    "exit_code": 0,
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "exit_code": 0,
+    "build_id": "16aa0cd4d2c4",
+    "tracked_output_changed": false
+  },
+  "mutation_check": {
+    "command": "node scripts/mutation-check.mjs",
+    "exit_code": 0,
+    "total": 11,
+    "killed": 11,
+    "survived": 0
+  },
+  "github_ci_executed": false,
+  "sol_max_test_generation_executed": false,
+  "record_task_kernel_implemented": false,
+  "dsh_integration_validated": false
+}
