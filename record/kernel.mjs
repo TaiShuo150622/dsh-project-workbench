@@ -59,15 +59,15 @@ function evidence(value, expected) {
     && !value.parents.includes(value.mergeSha), 'INVALID_EVIDENCE', 'An actual ordinary merge observation is required');
   return copy(value);
 }
-function tokenFor(task) {
+function tokenFor(task, streamId) {
   const completed = currentCompletion(task), result = currentResult(task);
   need(task.status === 'completed' && completed && result?.available === true, 'RESULT_NOT_ACCEPTABLE');
-  return { taskId: task.id, specVersion: task.specVersion, completionId: completed.id, resultId: result.id,
+  return { streamId, taskId: task.id, specVersion: task.specVersion, completionId: completed.id, resultId: result.id,
     availabilityRevision: result.availabilityRevision, acceptanceRevision: task.acceptanceRevision };
 }
 function validateToken(token) {
-  shape(token, ['taskId', 'specVersion', 'completionId', 'resultId', 'availabilityRevision', 'acceptanceRevision']);
-  id(token.taskId); id(token.completionId); id(token.resultId);
+  shape(token, ['streamId', 'taskId', 'specVersion', 'completionId', 'resultId', 'availabilityRevision', 'acceptanceRevision']);
+  id(token.streamId); id(token.taskId); id(token.completionId); id(token.resultId);
   integer(token.specVersion, 1); integer(token.availabilityRevision, 1); integer(token.acceptanceRevision);
 }
 function complete(state, task, observed, sequence) {
@@ -268,7 +268,7 @@ export class RecordKernel {
       }
       case 'acceptResult': {
         roles(actor, ['user']); shape(payload, ['token'], ['reuseAcceptanceId']); validateToken(payload.token);
-        const current = tokenFor(task);
+        const current = tokenFor(task, state.streamId);
         need(canonical(payload.token) === canonical(current), 'ACCEPTANCE_CONFLICT');
         need(task.requiresAcceptance, 'ACCEPTANCE_NOT_REQUIRED');
         if (payload.reuseAcceptanceId !== undefined) {
@@ -297,6 +297,10 @@ export class RecordKernel {
         need(payload.connected && action.status === 'reserved' && task.status === 'open' && !task.paused
           && task.authorization.active && action.authorizationRevision === task.authorization.revision
           && action.specVersion === task.specVersion, 'ACTION_BLOCKED');
+        // A correction can revive another task's unresolved action after this
+        // reservation was granted. Recheck shared occupancy at final admission.
+        need(![...state.actions.values()].some(other => other.id !== action.id && activeAction(other)
+          && resourceKey(other.spec) === resourceKey(action.spec)), 'ACTION_BLOCKED');
         action.status = 'sent'; break;
       }
       case 'resolveAction': {
@@ -330,7 +334,7 @@ export class RecordKernel {
 
   task(taskId) { const task = this.#state.tasks.get(taskId); need(task, 'TASK_NOT_FOUND'); return copy(task); }
   action(actionId) { const action = this.#state.actions.get(actionId); need(action, 'ACTION_NOT_FOUND'); return copy(action); }
-  acceptanceToken(taskId) { return copy(tokenFor(this.task(taskId))); }
+  acceptanceToken(taskId) { return copy(tokenFor(this.task(taskId), this.#state.streamId)); }
   checkAction(taskId, options) {
     shape(options, ['connected', 'expectedRevision']); bool(options.connected); integer(options.expectedRevision, 1);
     return copy(actionDecision(this.#state, this.task(taskId), options.connected, options.expectedRevision));
