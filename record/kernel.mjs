@@ -70,16 +70,17 @@ function validateToken(token) {
   id(token.taskId); id(token.completionId); id(token.resultId);
   integer(token.specVersion, 1); integer(token.availabilityRevision, 1); integer(token.acceptanceRevision);
 }
-function complete(task, observed, sequence) {
+function complete(state, task, observed, sequence) {
   const fingerprint = digest({ spec: task.spec, mergeSha: observed.mergeSha });
   const old = currentCompletion(task);
   need(!old || task.results.find(item => item.id === old.resultId)?.fingerprint === fingerprint, 'COMPLETION_CONFLICT', 'Withdraw and resolve the conflicting completion explicitly');
-  let result = task.results.find(item => item.fingerprint === fingerprint);
+  let result = state.results.get(`result:${fingerprint}`);
   // A later positive historical merge observation cannot undo a known revert.
   if (!result) {
     result = { id: `result:${fingerprint}`, fingerprint, mergeSha: observed.mergeSha, available: true, availabilityRevision: 1 };
-    task.results.push(result);
+    state.results.set(result.id, result);
   }
+  if (!task.results.some(item => item.id === result.id)) task.results.push(result);
   if (old?.resultId === result.id) return old;
   const completed = { id: `completion:${sequence}`, resultId: result.id, specVersion: task.specVersion,
     evidence: copy(observed), valid: true, sequence };
@@ -109,7 +110,7 @@ export class RecordKernel {
   #requests = new Map();
   constructor({ streamId }) {
     id(streamId);
-    this.#state = { streamId, cursor: 0, tasks: new Map(), assignments: new Map(), actions: new Map() };
+    this.#state = { streamId, cursor: 0, tasks: new Map(), assignments: new Map(), definitionSources: new Set(), actions: new Map(), results: new Map() };
   }
 
   apply(command) {
@@ -147,6 +148,7 @@ export class RecordKernel {
         need(assignment.identity === identity, 'SOURCE_REUSED');
         return { taskId: assignment.taskId, revision: state.tasks.get(assignment.taskId).revision };
       }
+      need(!state.definitionSources.has(payload.sourceId), 'SOURCE_REUSED');
       if (payload.reissueOf !== undefined) {
         id(payload.reissueOf);
         need(state.tasks.get(payload.reissueOf)?.status === 'cancelled', 'REISSUE_REQUIRES_CANCELLED');
@@ -163,6 +165,7 @@ export class RecordKernel {
         attempts: [], reports: [], completions: [], completionId: null, results: [], acceptances: [], acceptanceRevision: 0,
         problems: [], notes: [] };
       state.tasks.set(task.id, task); state.assignments.set(payload.sourceId, { identity, taskId: task.id });
+      state.definitionSources.add(payload.sourceId);
       return { taskId: task.id, revision: task.revision };
     }
     id(command.taskId); const task = state.tasks.get(command.taskId);
@@ -209,21 +212,25 @@ export class RecordKernel {
         roles(actor, ['user']); shape(payload, ['sourceId', 'active']); id(payload.sourceId); bool(payload.active);
         need(task.status !== 'cancelled' && task.status !== 'completed', 'INVALID_TRANSITION');
         task.authorization = { sourceId: payload.sourceId, active: payload.active, revision: task.authorization.revision + 1 };
-        if (!payload.active) abortReservations(state, task); break;
+        // Every replacement grant invalidates unsent reservations of the old
+        // authorization revision, including active-to-active replacement.
+        abortReservations(state, task); break;
       }
       case 'reviseTask': {
         roles(actor, ['user']); shape(payload, ['spec', 'sourceId']); id(payload.sourceId);
         need(task.status === 'open' && ![...state.actions.values()].some(action => action.taskId === task.id && activeAction(action)), 'INVALID_TRANSITION');
         const definition = spec(payload.spec);
+        need(!state.definitionSources.has(payload.sourceId), 'SOURCE_REUSED');
         need(goalKey(definition) !== goalKey(task.spec), 'UNCHANGED_SPEC');
         need(![...state.tasks.values()].some(other => other.id !== task.id && other.status !== 'cancelled' && goalKey(other.spec) === goalKey(definition)), 'DUPLICATE_TASK');
         task.spec = definition; task.specVersion++;
+        state.definitionSources.add(payload.sourceId);
         task.authorization = { sourceId: payload.sourceId, active: true, revision: task.authorization.revision + 1 }; break;
       }
       case 'verifyCompletion': {
         roles(actor, ['verifier']); shape(payload, ['evidence']);
         need(task.status === 'open' || task.status === 'completed', 'INVALID_TRANSITION');
-        output.completionId = complete(task, evidence(payload.evidence, task.spec), sequence).id;
+        output.completionId = complete(state, task, evidence(payload.evidence, task.spec), sequence).id;
         abortReservations(state, task); break;
       }
       case 'withdrawCompletion': {
@@ -231,12 +238,21 @@ export class RecordKernel {
         const completed = currentCompletion(task);
         need(completed && completed.id === payload.completionId && task.status === 'completed', 'INVALID_TRANSITION');
         completed.valid = false; completed.withdrawal = { reason: payload.reason, sequence };
+        for (const action of state.actions.values()) {
+          if (action.status !== 'succeeded' || goalKey(action.spec) !== goalKey(task.spec) || action.evidence?.mergeSha !== completed.evidence.mergeSha) continue;
+          action.corrections ??= [];
+          action.corrections.push({ previousStatus: 'succeeded', completionId: completed.id, reason: payload.reason, sequence });
+          // Disproving success does not prove the sender terminated. Keep the
+          // resource occupied until a fresh trusted terminal result resolves it.
+          action.status = 'unknown'; action.evidenceValid = false;
+          if (action.taskId !== task.id) state.tasks.get(action.taskId).revision++;
+        }
         task.status = 'disputed'; task.problems.push({ kind: 'wrong-completion', reason: payload.reason, sequence }); break;
       }
       case 'resolveDispute': {
         roles(actor, ['verifier']); shape(payload, ['conclusion', 'reference'], ['evidence']); id(payload.reference);
         need(task.status === 'disputed', 'INVALID_TRANSITION');
-        if (payload.conclusion === 'met') output.completionId = complete(task, evidence(payload.evidence, task.spec), sequence).id;
+        if (payload.conclusion === 'met') output.completionId = complete(state, task, evidence(payload.evidence, task.spec), sequence).id;
         else {
           need(payload.conclusion === 'unmet' && !Object.hasOwn(payload, 'evidence'), 'INVALID_INPUT');
           task.status = 'open'; task.completionId = null;
@@ -247,6 +263,7 @@ export class RecordKernel {
         roles(actor, ['verifier']); shape(payload, ['resultId', 'reference']); id(payload.reference);
         const result = task.results.find(item => item.id === payload.resultId); need(result, 'RESULT_NOT_FOUND');
         result.available = false; result.availabilityRevision++;
+        for (const other of state.tasks.values()) if (other.id !== task.id && other.results.some(item => item.id === result.id)) other.revision++;
         task.problems.push({ kind: 'result-unavailable', resultId: result.id, reference: payload.reference, sequence }); break;
       }
       case 'acceptResult': {
@@ -293,9 +310,9 @@ export class RecordKernel {
         } else if (payload.outcome === 'succeeded') {
           roles(actor, ['verifier']); need(!Object.hasOwn(payload, 'proof'), 'INVALID_INPUT');
           const observed = evidence(payload.evidence, action.spec);
-          action.status = 'succeeded'; action.evidence = observed;
+          action.status = 'succeeded'; action.evidence = observed; action.evidenceValid = true;
           if (task.status !== 'cancelled' && task.status !== 'disputed' && task.specVersion === action.specVersion) {
-            output.completionId = complete(task, observed, sequence).id; abortReservations(state, task);
+            output.completionId = complete(state, task, observed, sequence).id; abortReservations(state, task);
           }
         } else {
           roles(actor, ['verifier']); need(payload.outcome === 'not_applied' && !Object.hasOwn(payload, 'evidence'), 'INVALID_INPUT');

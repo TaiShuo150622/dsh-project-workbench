@@ -23,6 +23,8 @@ The only task type is an ordinary PR merge, with exactly these spec fields:
 
 `repositoryId` is the target repository's stable identity; PR numbers alone and directory paths are not repository identities. The fixed source SHA binds the authorized batch. Revision changes require a new explicit scope source. A completed batch is not expanded in place. Cancellation ends an assignment; a new assignment has a new `sourceId` and `reissueOf`. Pausing and retries keep the task ID. Automatic fuzzy matching and task alias merging are deferred.
 
+Creation and scope revisions register their source IDs across the stream. An old source cannot be reinterpreted as a different assignment or revised scope; exact request redelivery remains idempotent.
+
 ## Command envelope
 
 `apply({type, requestId, actor, taskId, expectedRevision, payload})` publishes one successful command and its receipt atomically **within the synchronous model**. A thrown `RecordError` changes no state or journal. `requestId` identifies one exact command including actor and expected revision; identical retries return the original receipt, while reusing the ID for different content fails. The returned receipt is historical: read `task()` or `snapshot()` for current state.
@@ -58,11 +60,15 @@ Withdrawn completion keeps its acceptance history, but that acceptance no longer
 
 `markUnavailable` models a later revert: historical completion stays true while current result/acceptance dependencies fail. A repeated historical merged observation cannot reset current availability. Restoration uses a related new task/result; S1 has no automatic restore operation.
 
+Result availability is shared by fingerprint across assignments. A new task ID cannot reset a known unavailable result; a change increments the revisions of all tasks referencing that result, invalidating their dependent views and result tokens.
+
 ## Action model and read model
 
 `checkAction(taskId, {connected, expectedRevision})` returns `allow`, `skip`, `wait`, or `verify`. The model conservatively serializes merge actions by stable repository ID plus target ref, **across task IDs**. An old successful action for the same batch returns `verify` until the new task has adopted the actual completion evidence. Real callers must also bind actual tool arguments and authorization to the modeled action before sending; S1 does not intercept tools.
 
 Reservations progress `reserved → sent → succeeded / not_applied / unknown`. Unknown remains occupied, including after cancellation and reissue. Only a verifier's structured proof `{senderTerminated: true, notApplied: true, reference}` releases a negative result; querying “not found yet” is insufficient. These proof fields represent trusted simulation inputs, not proof that S1 fenced a real process. A successful action validates evidence and publishes completion in the same model transaction unless the task is cancelled/disputed. Resolve a disputed task explicitly.
+
+Replacing an authorization revision aborts every old unsent reservation, including replacement by another active grant, so unusable reservations cannot strand authorized work. Withdrawing the completion evidence behind a successful action retains its history but marks the action unknown again: a judgment that the goal is unmet is not a sender termination proof. A fresh trusted terminal result must resolve the action before retrying the shared modification.
 
 `dependency(taskId, kind)` supports `historical-completion`, `current-result`, `current-acceptance`. Snapshots carry a stream identity, cursor and content digest. `installSnapshot(current, incoming)` rejects cross-stream data and prevents a late old response from replacing newer state; equal-cursor contradictions fail. Digests detect accidental corruption, not forgery. `eventsSince(cursor)` returns one consistent event range and its upper cursor. `RecordKernel.replay(journal)` requires gap-free ordered events and matching receipts, retaining retry identities after round-trip JSON serialization.
 

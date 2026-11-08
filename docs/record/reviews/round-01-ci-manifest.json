@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "repository": "TaiShuo150622/dsh-project-workbench",
+  "commit": "82115a4bb8352ea24d31bc14552ae78c68d289f2",
+  "requestedHead": "82115a4bb8352ea24d31bc14552ae78c68d289f2",
+  "runId": "42428569198",
+  "runAttempt": "1",
+  "event": "pull_request",
+  "node": "v24.6.0",
+  "startedAt": "2026-11-08T00:10:58.067Z",
+  "workingTreeClean": true,
+  "status": "passed",
+  "steps": [
+    {
+      "name": "tests",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "log": "tests.log"
+    },
+    {
+      "name": "build",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "log": "build.log"
+    },
+    {
+      "name": "generated-files",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "log": "generated-files.log"
+    },
+    {
+      "name": "workbench-mutations",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "log": "workbench-mutations.log"
+    },
+    {
+      "name": "record-mutations",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "log": "record-mutations.log"
+    }
+  ],
+  "finishedAt": "2026-11-08T00:11:01.181Z"
+}
