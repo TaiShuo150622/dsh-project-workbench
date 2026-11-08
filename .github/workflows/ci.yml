@@ -1,0 +1,70 @@
+name: Record and workbench CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'record/**'
+      - 'server/**'
+      - 'client/**'
+      - 'index.js'
+      - 'client.js'
+      - 'build.json'
+      - 'config/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/ci.yml'
+  push:
+    branches: ['codex/dsh-project-workbench']
+    paths:
+      - 'record/**'
+      - 'server/**'
+      - 'client/**'
+      - 'index.js'
+      - 'client.js'
+      - 'build.json'
+      - 'config/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: record-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      RECORD_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.6.0'
+          cache: npm
+      - name: Install locked dependencies
+        run: |
+          mkdir -p .acceptance/ci
+          npm ci --ignore-scripts 2>&1 | tee .acceptance/ci/install.log
+      - name: Test, build and verify mutations
+        run: npm run ci
+      - name: Upload versioned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: record-ci-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .acceptance/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14

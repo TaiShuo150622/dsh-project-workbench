@@ -28,10 +28,10 @@ for (const [name, file, before, after, expected] of mutations) {
   if (!original.includes(before)) throw Error(`${name}: mutation target missing`);
   await writeFile(join(dir, file), original.replace(before, after));
   let output = '', exitCode = 0;
-  try { const result = await run(process.execPath, ['--test', 'tests/desktop-contract.test.mjs', 'tests/projects.test.mjs'], { cwd: dir }); output = result.stdout + result.stderr; }
+  try { const result = await run(process.execPath, ['--test', '--test-reporter=tap', '--test-timeout=15000', '--test-name-pattern', expected, 'tests/desktop-contract.test.mjs', 'tests/projects.test.mjs'], { cwd: dir, timeout: 30000 }); output = result.stdout + result.stderr; }
   catch (e) { exitCode = e.code; output = (e.stdout || '') + (e.stderr || ''); }
   const failures = output.split('\n').filter(line => /^✖|^not ok/.test(line));
-  const killed = exitCode !== 0 && failures.some(line => line.includes(expected));
+  const killed = Number.isInteger(exitCode) && exitCode !== 0 && !output.includes('testTimeoutFailure') && failures.some(line => line.includes(expected));
   runs.push({ name, killed, exitCode, failures, directory: dir });
   console.log(`${killed ? 'KILLED' : 'SURVIVED'} ${name}: ${failures[0] || 'no matching test failure'}`);
 }
