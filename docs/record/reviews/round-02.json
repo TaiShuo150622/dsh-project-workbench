@@ -1,0 +1,19 @@
+{
+  "round": 2,
+  "inputCommit": "0f8353ab1f4be72922bad7c479e1fb78b4b40896",
+  "ciRunId": 42429483715,
+  "ciRunAttempt": 1,
+  "ciConclusion": "success",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "max",
+  "independence": "separate context and work copy; no different-model claim",
+  "agents": ["s1_r2_system"],
+  "candidateTestFile": "tests/record-adversarial-r2-system.test.mjs",
+  "before": { "tests": 5, "passed": 3, "failed": 2 },
+  "after": { "tests": 5, "passed": 5, "failed": 0 },
+  "adoptedTests": 5,
+  "uniqueConfirmedDefects": 2,
+  "scopeClarifications": ["R2-S02 applies result-button identity to independent history streams; token contract clarified before adoption"],
+  "unchangedAssertions": true,
+  "fullProductAcceptance": false
+}

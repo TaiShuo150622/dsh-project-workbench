@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "round": 1,
+  "repository": "TaiShuo150622/dsh-project-workbench",
+  "pull_request": 1,
+  "input_commit": "82115a4bb8352ea24d31bc14552ae78c68d289f2",
+  "workflow_run_id": 42428569198,
+  "workflow_attempt": 1,
+  "ci_conclusion": "success",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "max",
+  "reviewers": ["s1_r1_identity", "s1_r1_protocol"],
+  "independence": "same model, independent contexts and work copies",
+  "original_candidate_claims": 5,
+  "unique_defect_classes": 4,
+  "adopted_tests": 9,
+  "adopted_tests_failing_on_input_commit": 5,
+  "positive_controls": 4,
+  "adopted_tests_passing_after_local_fix": 9,
+  "adjudication": [
+    {"id": "R1-I01", "status": "accepted", "fix": "register assignment and definition source identities"},
+    {"id": "R1-I02", "status": "accepted", "fix": "share result availability across task identities"},
+    {"id": "R1-P1", "status": "accepted", "fix": "abort obsolete unsent reservations on every authorization revision"},
+    {"id": "R1-P2", "status": "revised expectation accepted", "reason": "unmet objective is not a sender termination proof", "fix": "invalidated positive action returns to unknown; release requires terminal proof"},
+    {"id": "R1-P3", "status": "deduplicated", "duplicate_of": "R1-I01"}
+  ]
+}
