@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-08T10:10:08.320827+00:00",
+  "scope": "One W12 page actually inspected at mobile width 430, dark theme; title, body, first route diagram and original-size toggle. Tables and expanded diagram use local horizontal scrolling. Other four new pages had DOM/network checks only.",
+  "screenshots": [
+    {
+      "name": "w12-mobile-dark.png",
+      "local_location": "output/playwright/w12-mobile-dark.png",
+      "sha256": "f72951202d39076ea040a1ae63a363765cd4ccb1ad11e99e80f0dd8607b4d356"
+    },
+    {
+      "name": "w12-route-mobile-dark.png",
+      "local_location": "output/playwright/w12-route-mobile-dark.png",
+      "sha256": "a0570e31a33879facd32d65f224974cd124477e620ddc8bc9f9e73cb5260c6f0"
+    },
+    {
+      "name": "w12-route-mobile-dark-expanded.png",
+      "local_location": "output/playwright/w12-route-mobile-dark-expanded.png",
+      "sha256": "347fdc0051b368f4673c48cb42072b3b187759454cf7770987ba2e5395df88ff"
+    }
+  ],
+  "not_product_acceptance": true
+}

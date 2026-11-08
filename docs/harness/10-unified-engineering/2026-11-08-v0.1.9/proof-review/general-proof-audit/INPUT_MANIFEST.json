@@ -1,0 +1,83 @@
+{
+  "captured_at_utc": "2026-11-08T07:21:17.773351+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/IncrementalDag.lean",
+      "snapshot": "inputs/dag/IncrementalDag.lean",
+      "bytes": 8107,
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/README.md",
+      "snapshot": "inputs/dag/README.md",
+      "bytes": 4965,
+      "sha256": "831ba5400a0689c8c37c9651ed844edf4200fbe3dc97b3594d550e6a7d0e6639"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/compile.log",
+      "snapshot": "inputs/dag/compile.log",
+      "bytes": 172,
+      "sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/compile_receipt.json",
+      "snapshot": "inputs/dag/compile_receipt.json",
+      "bytes": 745,
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/BudgetSafety.lean",
+      "snapshot": "inputs/budget/BudgetSafety.lean",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/README.md",
+      "snapshot": "inputs/budget/README.md",
+      "bytes": 8930,
+      "sha256": "4877ae2efbf25742b3c27e926b04c389c036d229a267ae23fc351b00bd105ede"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/SHA256SUMS",
+      "snapshot": "inputs/budget/SHA256SUMS",
+      "bytes": 674,
+      "sha256": "53975cb313bd7d7097c655958e5d5de681ad301213e7572bfb51b2cfbac38f1b"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/compiler.stderr.txt",
+      "snapshot": "inputs/budget/compiler.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/compiler.stdout.txt",
+      "snapshot": "inputs/budget/compiler.stdout.txt",
+      "bytes": 391,
+      "sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/execution_receipt.json",
+      "snapshot": "inputs/budget/execution_receipt.json",
+      "bytes": 2030,
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/inputs/FORMAL_MODEL.md",
+      "snapshot": "inputs/budget/inputs/FORMAL_MODEL.md",
+      "bytes": 28118,
+      "sha256": "3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/inputs.json",
+      "snapshot": "inputs/budget/inputs.json",
+      "bytes": 496,
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/lean-toolchain.json",
+      "snapshot": "inputs/budget/lean-toolchain.json",
+      "bytes": 700,
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e"
+    }
+  ]
+}

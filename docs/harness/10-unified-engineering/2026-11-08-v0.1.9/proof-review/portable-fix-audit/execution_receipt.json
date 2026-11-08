@@ -1,0 +1,46 @@
+{
+  "executed_at_utc": "2026-11-08T09:55:36.926700+00:00",
+  "runs": [
+    {
+      "name": "positive",
+      "command": [
+        "python3",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/run_isolated.py",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/positive-open-audit.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "94184acfb1b57733deba90ef11f147c7432084f39fdd2d86b3f236031dc589ef"
+    },
+    {
+      "name": "negative_missing_local_FORMAL_MODEL",
+      "command": [
+        "python3",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/run_isolated.py",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/negative/isolated-reader",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/negative-open-audit.json"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "68464f35f3b8951c71df4a7f064037aa514cf5f846c8142b54ef302c957185bf"
+    }
+  ],
+  "indexes_before": {
+    "source-index.json": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+    "reading-observations.json": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+    "identity-opinion-bindings.json": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+    "url-index.json": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+    "scope-and-inputs.json": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd"
+  },
+  "indexes_after": {
+    "source-index.json": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+    "reading-observations.json": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+    "identity-opinion-bindings.json": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+    "url-index.json": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+    "scope-and-inputs.json": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd"
+  },
+  "five_indexes_unchanged": true,
+  "old_validation_receipt_unchanged": true,
+  "source_package_written": false,
+  "research_models_rerun": false,
+  "network_calls": 0
+}

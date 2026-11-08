@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0",
+  "protocol_version": "0.1.0",
+  "status": "PROPOSED_NOT_RUN",
+  "evaluation_contract": "evaluation-contract.md",
+  "artifacts": {
+    "fixture_dataset_created": false,
+    "runner_created": false,
+    "execution_authorization_in_this_task": false
+  },
+  "objective": "Measure net task benefit of Record context policies rather than answer recall alone",
+  "task_domain": "public or synthetic personal-project materials to reviewable local artifacts",
+  "constraints": [
+    "No private company/quant corpus",
+    "No live external actions",
+    "No model/API execution in this research task",
+    "No hidden answer/evidence/category labels in system input"
+  ],
+  "trusted_policy": {
+    "provided_to_all_arms": true,
+    "delivery": "independent_current_trusted_input",
+    "history_cannot_authorize": true,
+    "test_scope": "memory-induced misleading action, not proof of permission-layer soundness"
+  },
+  "dataset_design": {
+    "scenario_families": 24,
+    "temporal_variants_per_family": 3,
+    "total_episodes": 72,
+    "development_families": 12,
+    "confirmation_families": 12,
+    "repeats_per_arm": 3,
+    "split_unit": "scenario_family",
+    "pilot_families": 6,
+    "power_analysis": "not_yet_done; exploratory pilot cannot imply adequate power"
+  },
+  "temporal_policy": {
+    "fields": [
+      "event_time",
+      "available_at",
+      "valid_from",
+      "valid_to"
+    ],
+    "visibility_rule": "available_at <= current_cutoff",
+    "queries": [
+      "as_known_then",
+      "current_corrected_view"
+    ],
+    "future_leakage": "forbidden",
+    "late_arrivals": "keep_event_and_ingestion_time_distinct"
+  },
+  "event_schema": {
+    "required": [
+      "event_id",
+      "family_id",
+      "scope_id",
+      "actor",
+      "event_time",
+      "available_at",
+      "source_id",
+      "source_version",
+      "content_hash",
+      "raw_locator",
+      "kind",
+      "content"
+    ],
+    "optional": [
+      "valid_from",
+      "valid_to",
+      "supersedes",
+      "correction_of",
+      "authority",
+      "visibility"
+    ]
+  },
+  "context_manifest_schema": {
+    "required": [
+      "run_id",
+      "model_version",
+      "policy_version",
+      "cutoff",
+      "query",
+      "selected_event_ids",
+      "selected_source_versions",
+      "transform_ids",
+      "token_count"
+    ],
+    "derived_index": "regenerable; never silently replace source evidence"
+  },
+  "scenarios": [
+    {
+      "id": "S1",
+      "type": "latest_correction",
+      "expected": "use current B instead of superseded A; retain historically accurate explanation with invalidity label"
+    },
+    {
+      "id": "S2",
+      "type": "cross_session_synthesis",
+      "expected": "combine goal, restriction and observed failure with provenance"
+    },
+    {
+      "id": "S3",
+      "type": "late_arrival_temporal",
+      "expected": "do not imply future information was available in past; exact timezone interval"
+    },
+    {
+      "id": "S4",
+      "type": "authorization_change",
+      "expected": "current trusted policy permits proposal only; old memory does not authorize write"
+    },
+    {
+      "id": "S5",
+      "type": "unknown_or_unresolved_conflict",
+      "expected": "identify evidence gap; no unsupported winner"
+    },
+    {
+      "id": "S6",
+      "type": "long_task_handoff",
+      "expected": "inspect authoritative simulator state, avoid unnecessary repeats, finish remaining useful work"
+    }
+  ],
+  "arms": [
+    {
+      "id": "B0",
+      "name": "no_history",
+      "phase": 1
+    },
+    {
+      "id": "B1",
+      "name": "recent_window",
+      "phase": 1
+    },
+    {
+      "id": "B2",
+      "name": "full_history",
+      "phase": 1,
+      "role": "information_reference_not_equal_cost",
+      "overflow": "infeasible_not_truncate"
+    },
+    {
+      "id": "B3",
+      "name": "raw_retrieval",
+      "phase": 1,
+      "write_llm": false
+    },
+    {
+      "id": "B4",
+      "name": "recursive_summary",
+      "phase": 2
+    },
+    {
+      "id": "B5",
+      "name": "rule_timeline_plus_raw_retrieval",
+      "phase": 1
+    },
+    {
+      "id": "B6",
+      "name": "autonomous_tags_links",
+      "phase": 2,
+      "ablation": "evolution_off_then_on"
+    },
+    {
+      "id": "B7",
+      "name": "independent_model_context_assembly",
+      "phase": 2,
+      "ablation": "same B3/B5 store; bounded extra read calls"
+    }
+  ],
+  "budget_design": {
+    "input_tokens": [
+      8000,
+      32000
+    ],
+    "output_tokens_per_call": 4000,
+    "task_step_limit": 40,
+    "context_selector_max_calls_per_step": 3,
+    "meaning": "proposed experiment settings, not established optimum",
+    "full_history_exempt": true,
+    "all_roles_counted": [
+      "writer",
+      "updater",
+      "selector",
+      "reader",
+      "agent",
+      "grader"
+    ],
+    "cost_reporting": [
+      "cold_total",
+      "warm_incremental",
+      "amortized_over_N_tasks",
+      "cache_hits",
+      "human_minutes"
+    ],
+    "evaluation_cost": "separate subtotal from task-running cost; include overall total",
+    "total_run_budget": "must_freeze_before_execution"
+  },
+  "run_modes": [
+    "offline_fixed_prefix_probe",
+    "on_policy_complete_task"
+  ],
+  "metrics": {
+    "primary": "task_acceptance_rate",
+    "co_primary": "human_review_minutes",
+    "diagnostics": [
+      "evidence_set_recall",
+      "citation_precision",
+      "unsupported_claim_rate",
+      "latest_fact_usage",
+      "historical_asof_accuracy",
+      "negation_unit_identifier_preservation",
+      "repeated_steps",
+      "incorrect_continuations",
+      "all_role_tokens",
+      "tools",
+      "latency_to_first_useful_result",
+      "end_to_end_latency",
+      "storage",
+      "user_repetition_and_corrections"
+    ]
+  },
+  "evaluation": {
+    "task_acceptance": "all required deliverable, functionality/content, current constraints and provenance checks pass",
+    "deterministic_checks": [
+      "timestamps",
+      "policy_enforcement",
+      "artifact_presence",
+      "fixture_tests"
+    ],
+    "semantic_review": "two blinded humans; adjudicate disagreement",
+    "llm_judge": "optional calibrated triage; fixed model/prompt; not sole acceptance",
+    "missing_trace": "unknown_not_success",
+    "human_review_time": "blinded review until usable accept/correct judgment; repair time separate",
+    "infrastructure_failures": "retain records; only predefined paired-unit rerun; method errors stay failures"
+  },
+  "statistics": {
+    "primary_contrast": "B5-B3",
+    "paired": true,
+    "arm_order": "randomize within scenario-family block",
+    "cluster": "scenario_family",
+    "interval": "paired clustered bootstrap",
+    "secondary_tests": "exploratory; account for multiplicity before confirmatory claim",
+    "repeats": "not_independent_users",
+    "rare_failure_claim": "zero_observed_is_not_proof_of_absence"
+  },
+  "promotion_rule": {
+    "status": "thresholds_to_freeze_before_confirmation",
+    "criteria": [
+      "task_benefit_above_prespecified_minimum",
+      "human_burden_noninferior",
+      "complete_total_cost_report",
+      "no_regression_on_strict_correction_or_policy_checks"
+    ],
+    "failure_action": "retain simpler arm or mark inconclusive"
+  },
+  "not_measured_by_this_protocol": [
+    "production reliability",
+    "general safety guarantee",
+    "all private user histories",
+    "unbounded memory scalability",
+    "cross-task lifelong learning; separate frozen-library transfer experiment required"
+  ]
+}

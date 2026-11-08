@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "purpose": "Proposed evidence-preserving adapter contract, not an implemented protocol bridge or a wire schema",
+  "profiles": {
+    "MCP_2026_07_28": {
+      "core": "2026-07-28",
+      "tasks_extension": "io.modelcontextprotocol/tasks@2026-07-28",
+      "transport": "streamable-http or stdio; select explicitly"
+    },
+    "A2A_1_0": {
+      "specification_patch": "1.0.1",
+      "wire_version": "1.0",
+      "binding": "select JSON-RPC / HTTP+JSON / gRPC explicitly",
+      "binding_discrepancy": "Published spec POST subscribe vs proto GET; immediate-return summary vs default-blocking configuration. Actual adapter must freeze binding source/configuration and resolve or explicitly report this uncertainty."
+    },
+    "DSH_WORKBENCH": {
+      "workbench_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "dsh_context_commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "note": "Native interface statically reviewed; not a MCP/A2A bridge"
+    }
+  },
+  "loss_values": [
+    "EXACT_SCOPED",
+    "COARSENED",
+    "UNKNOWN",
+    "UNSUPPORTED"
+  ],
+  "envelope_fields": {
+    "origin": [
+      "provider_ref",
+      "endpoint_ref",
+      "transport",
+      "protocol_version",
+      "extension_version",
+      "tenant_or_authorization_partition_ref",
+      "incarnation_if_known"
+    ],
+    "identity": [
+      "request_id",
+      "message_id",
+      "task_id",
+      "context_id",
+      "session_id",
+      "thread_id",
+      "generation",
+      "artifact_id",
+      "business_operation_key_if_agreed"
+    ],
+    "observation": [
+      "observed_at",
+      "source_timestamp_if_present",
+      "raw_claim_ref",
+      "coverage_gap",
+      "source_revision"
+    ],
+    "lifecycle": [
+      "raw_status",
+      "terminal_claim",
+      "terminal_scope",
+      "method_outcome",
+      "business_acceptance"
+    ],
+    "control": [
+      "cancel_requested",
+      "cancel_ack",
+      "provider_cancelled_claim",
+      "effect_resolution",
+      "unresolved_obligation_refs"
+    ],
+    "authority": [
+      "transport_principal_ref",
+      "resource_audience_ref",
+      "approval_ref",
+      "approval_bound_action_digest",
+      "approval_expiry_if_known"
+    ],
+    "delivery": [
+      "ack_kind",
+      "recovery_handle_ref",
+      "retention_if_known",
+      "retry_idempotency_scope_if_agreed"
+    ],
+    "artifact": [
+      "artifact_ref",
+      "content_digest_if_observed",
+      "content_version_if_known",
+      "assembly_completeness",
+      "availability",
+      "verification_ref"
+    ],
+    "translation": [
+      "adapter_policy_revision",
+      "losses",
+      "new_evidence_refs"
+    ]
+  },
+  "sensitive_data_policy": "Only references are recorded here. No actual tokens, bearer handles, personal messages or secret credentials in examples.",
+  "rules": [
+    {
+      "id": "IC01",
+      "dimension": "version_and_capability",
+      "from": [
+        "MCP_2026_07_28",
+        "MCP_TASKS_2026_07_28",
+        "A2A_1_0"
+      ],
+      "to": "UnifiedEvidenceEnvelope",
+      "observed": [
+        "protocol revision",
+        "extension support on this request",
+        "transport",
+        "provider endpoint"
+      ],
+      "preserve": [
+        "raw version and extension revision",
+        "capability source and observation time",
+        "selected binding source/configuration and unresolved published-spec discrepancies"
+      ],
+      "mapping": "Require an explicit negotiated profile. MCP per-request task capability and A2A AgentCard streaming support cannot be inferred from a previous successful call.",
+      "loss": "UNSUPPORTED if a required capability is absent; UNKNOWN if capability evidence is unavailable",
+      "forbid": [
+        "Silent mapping of 2025 experimental Tasks fields to 2026 extension",
+        "Calling A2A v1.0 SubscribeToTask by legacy tasks/resubscribe without a 0.3 profile"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S05",
+        "S09"
+      ]
+    },
+    {
+      "id": "IC02",
+      "dimension": "identity",
+      "from": [
+        "MCP taskId/request id",
+        "A2A taskId/contextId/messageId/artifactId",
+        "DSH sessionId/workbench threadId/generation/relay id"
+      ],
+      "to": "origin_scoped_identifiers",
+      "observed": [
+        "origin endpoint",
+        "authorization partition",
+        "raw IDs",
+        "known lifecycle generation"
+      ],
+      "preserve": [
+        "separate opaque IDs and their origin",
+        "business operation key only when explicitly agreed"
+      ],
+      "mapping": "Reference by local provider_ref plus tenant/authorization partition and raw identifier kind/value; include incarnation/generation only if known. Unknown incarnation prevents claims about reuse safety.",
+      "loss": "UNKNOWN incarnation, retention window or dedup scope is recorded, never replaced by a guessed global UUID equivalence",
+      "forbid": [
+        "Equating session=context=task=attempt",
+        "Treating A2A messageId or JSON-RPC id as a universal business idempotency key",
+        "Publishing real bearer-capability task handles"
+      ],
+      "sources": [
+        "S01",
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "id": "IC03",
+      "dimension": "completion",
+      "from": [
+        "MCP completed + CallToolResult.isError=true",
+        "A2A TASK_STATE_COMPLETED",
+        "workbench review/completed"
+      ],
+      "to": "terminal_claim + method_outcome + business_acceptance",
+      "observed": [
+        "raw status",
+        "raw result discriminator",
+        "isError when present",
+        "scope of local accept action"
+      ],
+      "preserve": [
+        "MCP request returned ordinary tool result",
+        "A2A provider claims task success",
+        "workbench worker report vs local accept transition"
+      ],
+      "mapping": "Separate terminal claim from tool/domain outcome and independent acceptance. A policy may map tool error to an A2A wrapper-task failure only with an explicit wrapper success criterion; it is not an exact status alias.",
+      "loss": "COARSENED for wrapper status mapping; business_acceptance=UNASSESSED without criterion/actor/artifact evidence",
+      "forbid": [
+        "MCP completed always maps to A2A COMPLETED",
+        "A2A COMPLETED implies customer acceptance",
+        "workbench review implies completed"
+      ],
+      "sources": [
+        "S01",
+        "S06",
+        "S08"
+      ]
+    },
+    {
+      "id": "IC04",
+      "dimension": "cancellation",
+      "from": [
+        "MCP tasks/cancel resultType=complete empty acknowledgment",
+        "MCP HTTP response-stream disconnect",
+        "A2A CancelTask returned Task",
+        "DSH Native.stop"
+      ],
+      "to": "cancel_requested + cancel_ack + terminal_claim + effect_resolution",
+      "observed": [
+        "cancel operation response",
+        "provider status snapshot if any",
+        "external effect observation only if separately supplied"
+      ],
+      "preserve": [
+        "request-level vs task-level scope",
+        "provider cooperative behavior",
+        "unknown external effects"
+      ],
+      "mapping": "MCP tasks/cancel acknowledgment confirms cancellation request acknowledgment only. A2A CancelTask returns updated state, which may or may not be terminal. Observed cancelled/canceled is a provider task claim, not rollback evidence.",
+      "loss": "effect_resolution=UNKNOWN absent scoped target evidence; no inferred quiescence from request completion",
+      "forbid": [
+        "Fabricating A2A CANCELED from MCP empty cancel ack",
+        "Releasing action-specific resource obligation solely because cancel request returned",
+        "Treating cancel as compensation"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S05",
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "id": "IC05",
+      "dimension": "delivery_and_recovery",
+      "from": [
+        "MCP CreateTaskResult/tasks/get",
+        "A2A SendMessage",
+        "DSH Native.deliver"
+      ],
+      "to": "ack_kind + recovery_handle + retry_policy",
+      "observed": [
+        "handle received and retained",
+        "task lookup result",
+        "documented operation-specific idempotency",
+        "Native return branch when externally observable"
+      ],
+      "preserve": [
+        "MCP created-handle promise",
+        "A2A SendMessage MAY idempotent",
+        "Native return branch may be unknown to caller"
+      ],
+      "mapping": "Known durable-created task handle supports polling subject to access/retention. Lost creation reply is a different case. Retry of an effectful initiating operation requires agreed idempotency, effect query or explicit risk decision; a fresh transport request ID does not supply them. A2A direct Message responses carry no implied Task handle; a bridge must not fabricate task recovery capability.",
+      "loss": "UNKNOWN if no handle/effect query/target dedup; Native void return has weaker public acknowledgment than a task handle",
+      "forbid": [
+        "Retrying side effects simply because SSE replay is unavailable",
+        "Claiming Native duplicate return freshly flushed state",
+        "Inventing a durable task handle from an in-memory mapping"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S05",
+        "S07"
+      ]
+    },
+    {
+      "id": "IC06",
+      "dimension": "stream_history",
+      "from": [
+        "A2A SubscribeToTask Task snapshot + subsequent deltas",
+        "legacy A2A resubscribe concept",
+        "MCP HTTP SSE"
+      ],
+      "to": "snapshot + observation_log + coverage",
+      "observed": [
+        "first Task snapshot",
+        "subsequent received events",
+        "disconnect intervals",
+        "GetTask result"
+      ],
+      "preserve": [
+        "snapshot observation time",
+        "stream coverage gap",
+        "partial history and message omissions"
+      ],
+      "mapping": "A2A 1.0 subscription starts with current Task, not guaranteed full history replay; terminal tasks require GetTask instead of SubscribeToTask. 2026 MCP SSE offers no Last-Event-ID resumption. Record stores observed evidence with explicit gaps.",
+      "loss": "UNKNOWN completeness of missed status/history; unsupported mandatory full-log replication without additional agreed capability",
+      "forbid": [
+        "Synthesizing missed event order",
+        "Treating GetTask history as a complete audit journal",
+        "Using latest remote timestamp as a global world clock"
+      ],
+      "sources": [
+        "S02",
+        "S05"
+      ]
+    },
+    {
+      "id": "IC07",
+      "dimension": "artifact",
+      "from": [
+        "A2A Artifact + append/lastChunk",
+        "MCP CallToolResult content",
+        "workbench report text"
+      ],
+      "to": "artifact_claim + content_observation + acceptance_binding",
+      "observed": [
+        "task-scoped artifact id",
+        "received parts/chunks",
+        "actual fetch bytes if permitted",
+        "digest/version if supplied or measured"
+      ],
+      "preserve": [
+        "source artifact identity and append semantics",
+        "partial/unfetched state",
+        "observed content digest distinct from provider id"
+      ],
+      "mapping": "Represent artifacts as claims. lastChunk means final chunk, not proof that earlier chunks were received. A URL is a locator, not verified immutable content. Critical verification binds actual content/version and criterion outside protocol default.",
+      "loss": "UNKNOWN content completeness/availability after gaps; UNASSESSED validity without check",
+      "forbid": [
+        "A2A artifactId equals a digest",
+        "lastChunk implies fully assembled artifact",
+        "A later URL fetch retroactively verifies the earlier accepted bytes"
+      ],
+      "sources": [
+        "S05",
+        "S06",
+        "S08"
+      ]
+    },
+    {
+      "id": "IC08",
+      "dimension": "authorization_and_role",
+      "from": [
+        "MCP OAuth principal/audience/scope",
+        "A2A ROLE_USER and AUTH_REQUIRED",
+        "DSH role=user source.kind=agent-message"
+      ],
+      "to": "authenticated_channel + provenance + action_approval",
+      "observed": [
+        "verified transport principal reference",
+        "resource audience",
+        "message source role",
+        "task authorization request",
+        "approval evidence if any"
+      ],
+      "preserve": [
+        "originator vs forwarding agent",
+        "authorization request vs grant",
+        "binding to action/arguments/resource/version/deadline"
+      ],
+      "mapping": "No credential forwarding by default. AUTH_REQUIRED is a request for authorization and may be fulfilled out of band; MCP authentication is transport/resource access, not an exact-action grant. Client role does not assert a human author.",
+      "loss": "UNKNOWN action approval when no binding evidence; UNSUPPORTED for requested secure in-band credential delegation without negotiated mechanism",
+      "forbid": [
+        "Promoting ROLE_USER or relay role=user to human authorization",
+        "Reusing approval after effectful argument changes",
+        "Forwarding original token merely because an adapter can parse it"
+      ],
+      "sources": [
+        "S01",
+        "S04",
+        "S05",
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "id": "IC09",
+      "dimension": "composition",
+      "from": [
+        "adapter A to B",
+        "adapter B to C"
+      ],
+      "to": "composed claims with provenance",
+      "observed": [
+        "original claims",
+        "each transformation policy revision",
+        "each loss record",
+        "new independent observations if any"
+      ],
+      "preserve": [
+        "loss chain",
+        "claim scope",
+        "source references",
+        "observation timestamps"
+      ],
+      "mapping": "Pure translation cannot strengthen evidence. Later new evidence can resolve an unknown, but must be appended as new provenance, not attributed to an earlier acknowledgment. Required downstream guarantees missing from upstream return UNSUPPORTED; optional missing facts stay UNKNOWN.",
+      "loss": "Accumulate typed losses; never erase them by round-trip renaming",
+      "forbid": [
+        "B UNKNOWN becomes C EXACT without new evidence",
+        "Treating conformance success as business recovery success"
+      ],
+      "sources": [
+        "S01",
+        "S05",
+        "S07"
+      ]
+    }
+  ]
+}

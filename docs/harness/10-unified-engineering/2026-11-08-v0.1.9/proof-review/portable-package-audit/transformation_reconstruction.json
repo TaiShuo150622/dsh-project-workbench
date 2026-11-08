@@ -1,0 +1,3120 @@
+{
+  "scope": "independently replay declared link mappings and environment-path replacements on original bytes; no exporter executed",
+  "files": [
+    {
+      "file": "ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "BASELINE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "DESIGN_RECONCILIATION.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "EIGHTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ELEVENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "EVIDENCE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FIFTEENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FIFTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FIRST_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FOURTEENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "FOURTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "NINTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "READING_ENTRY_CHECK.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "REPRODUCE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_2.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_3.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_4.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_5.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_6.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "SECOND_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "SEVENTEENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "SEVENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "SIXTEENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "SIXTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "TENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "THIRD_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "THIRTEENTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "TWELFTH_PASS_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "baseline-github.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/inputs/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/model_check.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/bounded-models/results.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/BudgetSafety.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "china/budget-proof/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/compiler.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/compiler.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/budget-proof/lean-toolchain.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/build_index.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/identity-opinion-bindings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/china/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/foundations/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/reading-observations.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/reproducibility_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/scope-and-inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/source-index.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/url-index.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/validate_index.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/consolidated-sources/validation_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/audit_sources.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/catalog-inventory.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/dedup-plan.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/field-issues.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/identity-opinion-bindings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/china/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/foundations/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/cordis-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/lifecycle-migration/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/work-improvement/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/authority-scope/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/context-evaluation/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/practitioner-views/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/root-cross-review-index.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/source-inventory.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/evidence-catalog-audit/validation_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/README-current.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/REPORT-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/REPORT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/build-matrix.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/existing-tests.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/existing-tests.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/record/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/record/kernel.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/ADAPTER_CONTRACT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/catalog.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-kernel.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/support/record-fixture.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/integration-corrections-v0.1.1.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/probes.initial.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/probes.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/probes.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/refinement-matrix.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/refinement-probes.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/record-refinement/validation_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "dag-proof/IncrementalDag.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "dag-proof/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "dag-proof/compile.log",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "dag-proof/compile_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/EffectContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/ExpiryContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/RELAY_README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/cancel-is-not-rollback.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/combined.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/dedupe-only.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/dedupe-property.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-admission.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-checked-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-checked-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-checked-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-checked-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-commit.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-none.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/initial-parse-failure/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/initial-parse-failure/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/initial-parse-failure/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/feature-results/dedupe-property.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/feature-results/fence-property.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/feature-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/fence-only.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/fence-property.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-results/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-results/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-results/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/results/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/results/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/results/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/results/cancel-is-not-rollback.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/results/combined.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/results/dedupe-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/results/fence-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/results/unstable-key.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/results/world-is-not-ledger.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "formal-spec/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/run_tlc.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/unstable-key.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "formal-spec/world-is-not-ledger.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "foundations/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/conformance/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/conformance/catalog.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/conformance/review.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/conformance/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/cordis-boundary/READING_COVERAGE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/cordis-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/cordis-boundary/status.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/durability-boundary/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/durability-boundary/crash-cuts.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/durability-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/durability-boundary/validation.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/formal-model-review.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/contracts.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/fault-scenarios.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/validation.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/input-manifest.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/inputs/native.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/inputs/projects.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/results.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/run-probes.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/relay-code-probes/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/work-improvement/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/work-improvement/minimal-experiments.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/work-improvement/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/work-improvement/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "mechanisms/机制对照与反例讨论稿-v0.1.0-阅读构建.reading-build.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/TASK.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/REPAIR_INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/REPAIR_REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/ExpiryContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-admission.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-commit.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-none.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair_verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/ExpiryContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-admission.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-commit.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-none.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/run_expiry.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner_probe_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/build_witnesses.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile/budget.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile/budget.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile/dag.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile/dag.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/BudgetSafety.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/compiler.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/compiler.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/lean-toolchain.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/IncrementalDag.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/compile.log",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/compile_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witness_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/BudgetWitness.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/BudgetWitness.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/BudgetWitness.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/DagWitness.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/DagWitness.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/DagWitness.stdout",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/inputs/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/inputs/BASELINE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/inputs/MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/TLC_RECEIPT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/inputs/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/model_check.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/results.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/EffectContract.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/cancel-is-not-rollback.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/combined.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/dedupe-only.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/fence-only.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/unstable-key.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/world-is-not-ledger.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/cancel-is-not-rollback.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/combined.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/dedupe-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/fence-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/unstable-key.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/world-is-not-ledger.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/model-audit/rerun/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/rerun/results.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/rerun.stderr",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/model-audit/rerun.stdout",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/EVIDENCE_INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/china/budget-proof/BudgetSafety.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/china/budget-proof/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/china/record-refinement/REPORT-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/china/record-refinement/REPORT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/dag-proof/IncrementalDag.lean",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/dag-proof/compile_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/admission.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/commit.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/none.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/dedupe-property.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/fence-property.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/cancel-is-not-rollback.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/combined.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/dedupe-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/fence-only.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/unstable-key.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/world-is-not-ledger.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/EVIDENCE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/REPRODUCE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/design-v0.1.1.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/design.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/review.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/slice-checklist.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/validation.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/inputs/统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/reader-claims-audit/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/REPORT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/build-matrix.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/existing-tests.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/existing-tests.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/record/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/record/kernel.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/ADAPTER_CONTRACT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/ARCHITECTURE.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/catalog.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-kernel.test.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/support/record-fixture.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/probes.initial.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/probes.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/probes.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/refinement-matrix.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/refinement-probes.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/validation_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/record-mapping-audit/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/execution_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/RELAY_README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/crash-cuts.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/validation.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-rerun/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-rerun/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-rerun/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-rerun/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/rerun/durable.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/rerun/error.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/rerun/memory.log",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/rerun/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/DurableRelay.tla",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-durable.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-error.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-memory.cfg",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/run_relay.py",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/runner.stderr.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/runner.stdout.txt",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/agent.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/inbox.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/session/src/index.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/handle.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/index.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/index.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/storage.ts",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/native.js",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/projects.js",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/store.js",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/relay-durability-audit/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/REPORT.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/record/kernel.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/specifications/FORMAL_MODEL.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/tests/support/record-fixture.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/probes.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/refinement-probes.mjs",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/INPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/work-policy-audit/OUTPUT_MANIFEST.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/findings.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/minimal-experiments.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/design.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/review.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "proof-review/work-policy-audit/verification_receipt.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "root-model-replay/TRACES.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "root-model-replay/results.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "third-party-notices/deepseek-harness/LICENSE",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/architecture-reader-review/READING_ROUTE.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/architecture-reader-review/REVIEW.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/architecture-reader-review/review-inputs.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/authority-scope/amendments.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/authority-scope/contract-cases.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/authority-scope/review-packet.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/authority-scope/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/evaluation-contract.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/protocol.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/review-packet.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/context-evaluation/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/decision-brief/MEMO.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/decision-brief/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/decision-brief/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/evaluation-design-review/design-v0.1.1.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/evaluation-design-review/design.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/evaluation-design-review/review.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/historical-coverage/COVERAGE.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/historical-coverage/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/historical-coverage/coverage.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/historical-coverage/validation.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/implementation-taskbook/SHA256SUMS",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/implementation-taskbook/inputs.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/implementation-taskbook/slice-checklist.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/implementation-taskbook/validation.json",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/practitioner-views/review-packet.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/practitioner-views/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/review-packet.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/sources.json",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "适配契约与贯穿场景讨论稿-v0.1.0.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    },
+    {
+      "file": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html",
+      "reconstructed_exactly": true,
+      "changed": true
+    },
+    {
+      "file": "适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "reconstructed_exactly": true,
+      "changed": false
+    }
+  ]
+}

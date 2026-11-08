@@ -1,0 +1,11 @@
+{
+  "executed_at_utc": "2026-11-08T09:44:16.652615+00:00",
+  "code_sha256": "8761570473b51482393ea0b2dad114c80f6bcd495f0597f278da5e5f70ebc5c7",
+  "results_sha256": "c0f24296f8b0e0a9d6dbf344bc31c67fe74b5bdec7d7712f73d52b810781e20e",
+  "assignments": 23328,
+  "admitted": 7803,
+  "reference_states": 180,
+  "mutant_states": 656,
+  "product_execution": false,
+  "external_calls": 0
+}

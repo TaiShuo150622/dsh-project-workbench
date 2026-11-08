@@ -1,0 +1,53 @@
+{
+  "review_round": "R-06",
+  "review_type": "independent_model_statement_review",
+  "declared_model": "gpt-6-astra",
+  "runtime_model_attested": false,
+  "human_review_claimed": false,
+  "experiment_execution": false,
+  "findings": [
+    {
+      "id": "WP01",
+      "severity": "medium",
+      "classification": "preimplementation_specification_gap",
+      "location": [
+        "west/evaluation-design-review/design.json:scenarios[A].stop",
+        "west/evaluation-design-review/design.json:scenarios[A].families",
+        "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md:75-85"
+      ],
+      "claim": "Current-version acceptance alone does not specify the final endpoint of a staged revision/handoff episode.",
+      "counterexample": [
+        "v1 deliverable accepted",
+        "episode terminates under accepted-current-version rule",
+        "required note/revision/handoff stage never released"
+      ],
+      "status": "conceptual_trace_not_executed",
+      "minimal_fix": "Separate stage_accepted from required_stages_completed AND final_stage_accepted; retain early-cap/failure outcomes."
+    },
+    {
+      "id": "WP02",
+      "severity": "low",
+      "classification": "optional_clarification_not_established_error",
+      "location": [
+        "统一Harness工程与形式化基础讨论稿-v0.1.1.md:229"
+      ],
+      "claim": "Review-trigger language should not be implemented as automatic cancellation of obligation-serving queries.",
+      "counterexample": [
+        "only one work route",
+        "mandatory audit confirms unchanged state",
+        "information does not separate routes but discharges obligation"
+      ],
+      "status": "boundary_example_not_violation_of_frozen_text",
+      "minimal_fix": "Clarify that review does not itself revoke obligations, or gate the trigger on absence of all declared decision/obligation uses."
+    }
+  ],
+  "substantive_gaps": 1,
+  "optional_clarifications": 1,
+  "not_findings": [
+    "finite candidates do not claim global completeness",
+    "heldout and grader contamination already prohibited but not implemented",
+    "all-group cost and zero-acceptance semantics stated",
+    "product unknown and task completion separated",
+    "12-run pilot explicitly nonconfirmatory"
+  ]
+}

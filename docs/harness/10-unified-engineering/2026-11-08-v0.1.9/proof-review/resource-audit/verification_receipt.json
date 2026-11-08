@@ -1,0 +1,42 @@
+{
+  "checked_at_utc": "2026-11-08T09:46:23.379654+00:00",
+  "source_unchanged": true,
+  "source_changes": [],
+  "input_snapshot_sha256": "1e472b39aaf511f6805c2708264041f4c8647bdb66b3c7b14a7d1fca31491303",
+  "historical_identity_checks": [
+    {
+      "copy": "historical-inputs/CONTRACT.md",
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b",
+      "matches_authors_historical_input": true
+    },
+    {
+      "copy": "historical-inputs/BACKEND-PLAN-DRAFT.md",
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766",
+      "matches_authors_historical_input": true
+    },
+    {
+      "copy": "historical-inputs/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "matches_authors_historical_input": true
+    }
+  ],
+  "script_execution": {
+    "command": [
+      "python3",
+      "check_conditions.py"
+    ],
+    "exit_code": 0,
+    "code_sha256": "8761570473b51482393ea0b2dad114c80f6bcd495f0597f278da5e5f70ebc5c7",
+    "receipt": "execution_receipt.json"
+  },
+  "truncation_note": "Combined historical read was truncated; BACKEND-PLAN-DRAFT lines 80-196 were read again separately; selected 718-907 architecture range and CONTRACT 1-159 read, not entire architecture.",
+  "not_performed": [
+    "product tests",
+    "memory benchmarks",
+    "real process release",
+    "path authorization execution",
+    "new proof compilation",
+    "network documentation revalidation"
+  ],
+  "model_review_not_human_review": true
+}

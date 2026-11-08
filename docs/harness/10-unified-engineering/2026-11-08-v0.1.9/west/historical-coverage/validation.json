@@ -1,0 +1,450 @@
+{
+  "task": "W09",
+  "validated_at_utc": "2026-11-08T08:48:33.895858+00:00",
+  "status": "PASS",
+  "summary": {
+    "indexed_entries": 192,
+    "topic_counts": {
+      "00": 49,
+      "01": 5,
+      "02": 6,
+      "03": 5,
+      "04": 8,
+      "05": 45,
+      "06": 16,
+      "07": 5,
+      "08": 49,
+      "09": 4
+    },
+    "reading_records": 20,
+    "current_full_archived": 9,
+    "current_selected_archived": 1,
+    "prior_hash_confirmed_archived": 4,
+    "index_only": 178,
+    "excluded_activity_entries": 2,
+    "bridge_proposals": 4,
+    "markdown_links": 25
+  },
+  "errors": [],
+  "source_and_target_checks": [
+    {
+      "type": "source_hash",
+      "path": "docs/harness/INDEX.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/CONTENTS.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/05-panels/docs/design/overall-discussion.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "source_hash",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/evaluation-design-review/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/mechanisms/lifecycle-migration/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/context-evaluation/review-packet.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/china/record-refinement/README-current.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/architecture-reader-review/READING_ROUTE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/FORMAL_MODEL.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/dag-proof/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/mechanisms/lifecycle-migration/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/mechanisms/conformance/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "ok": true
+    },
+    {
+      "type": "topic_target",
+      "path": "docs/research/harness-20261107/west/context-evaluation/review-packet.md",
+      "ok": true
+    }
+  ],
+  "markdown_link_checks": [
+    {
+      "document": "README.md",
+      "href": "COVERAGE.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "coverage.json",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "reading-list.json",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "validation.json",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../implementation-taskbook/README.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../../../harness/INDEX.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "README.md",
+      "href": "../../../../harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/INDEX.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "reading-list.json",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../ARCHITECTURE.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../DESIGN_RECONCILIATION.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../implementation-taskbook/README.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "coverage.json",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "exists_in_current_or_assembly_context": true
+    },
+    {
+      "document": "COVERAGE.md",
+      "href": "../../../../harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "exists_in_current_or_assembly_context": true
+    }
+  ],
+  "output_sha256": {
+    "reading-list.json": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962",
+    "README.md": "7375f2fb1982441a905f3a1106e3aaa1f444e9d61fdfcb1d3c83213c86298c73",
+    "coverage.json": "2c8b4e88d897b4de5196a1b0c261798907b832fbae573f1e3646f634cbd18f07",
+    "COVERAGE.md": "d95d6371afb12b1632367723a46ef5c0004ef2f105ac3fc1c0680686d8879d54"
+  },
+  "limits": [
+    "Checks validate counts, paths, recorded hash identity and citation range containment only.",
+    "Assembly-context links resolve against integration worktree; this does not copy files or alter that worktree.",
+    "No HTML rendering or product/runtime/benchmark validation.",
+    "No product files, historical inputs or other worktrees changed by W09."
+  ]
+}

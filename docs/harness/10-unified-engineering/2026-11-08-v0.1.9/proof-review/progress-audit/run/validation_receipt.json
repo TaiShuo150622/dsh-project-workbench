@@ -1,0 +1,103 @@
+{
+  "validated_at_utc": "2026-11-08T09:08:22.502904+00:00",
+  "program_exit": 0,
+  "deterministic_results_same_sha": true,
+  "draft_check_exit": 0,
+  "draft_check_summary": "自主推进与终止条件讨论稿-v0.1.0.md：版本 v0.1.0，8 个章节，3 张图，0 个错误，0 个警告",
+  "render_exit": 0,
+  "html_external_assets": [],
+  "diagram_rendering": "offline Mermaid source text; no browser visual claim",
+  "reader_links": [
+    {
+      "file": "README.md",
+      "target": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "check_progress.py",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "results.json",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "TRACES.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "execution_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "inputs.json",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "sources.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "inputs.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "sources.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "../budget-proof/BudgetSafety.lean",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "inputs.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "check_progress.py",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "TRACES.md",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "results.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "execution_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "../../mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "自主推进与终止条件讨论稿-v0.1.0.md",
+      "target": "../../west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "exists": true
+    }
+  ],
+  "original_inputs_changed_since_capture": [],
+  "input_count": 9,
+  "models_not_product_tests": true,
+  "errors": [],
+  "status": "PASS",
+  "render_metadata_paths": "relative filenames; helper invoked from artifact directory"
+}

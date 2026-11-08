@@ -1,0 +1,21 @@
+{
+  "completed_at_utc": "2026-11-08T07:24:48.360560+00:00",
+  "cases": [
+    {
+      "file": "witnesses/DagWitness.lean",
+      "sha256": "a8175a485724591412e74e87c0531ff335b21cf97d6680b30da66beafca764e1",
+      "exit_code": 0,
+      "elapsed_seconds": 12.272321582999998,
+      "stdout": "'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]\n'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]\n__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/witnesses/DagWitness.lean:247:20: warning: This simp argument is unused:\n  h0\n\nHint: Omit it from the simp argument list.\n  [apply] simp [newRules, h1, h2, equal]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/witnesses/DagWitness.lean:247:24: warning: This simp argument is unused:\n  h1\n\nHint: Omit it from the simp argument list.\n  [apply] simp [newRules, h0, h2, equal]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'DagAudit.changed_read_set_instance' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "file": "witnesses/BudgetWitness.lean",
+      "sha256": "12cfbb9d13556b2b240cc60525c86b336ef943202c22ad1bdfaf88dfb75963b6",
+      "exit_code": 0,
+      "elapsed_seconds": 12.434496875,
+      "stdout": "'HarnessBudget.step_preserves' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.run_preserves' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.actual_spent_le_exposure' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.finite_run_budget_safety' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.from_empty_finite_run_safe' depends on axioms: [propext, Quot.sound]\n'BudgetAudit.nonzeroRun' does not depend on any axioms\n'BudgetAudit.concreteSafe' depends on axioms: [propext, Quot.sound]\n'BudgetAudit.same_numeric_certificate_reused' does not depend on any axioms\n'BudgetAudit.pair_final_safe' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "status": "SOURCE_REVIEW_ONLY",
+  "read_at": "2026-11-08T10:13:07.134736+00:00",
+  "new_papers_added": 0,
+  "primary_sources_reused_from_previous_rounds": 2,
+  "runtime_experiments": false,
+  "sources": [
+    {
+      "id": "I01",
+      "title": "统一 Harness 形式模型工作稿",
+      "author": "七小时研究主线",
+      "date": "2026-11-07",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/FORMAL_MODEL.md",
+      "sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+      "read_coverage": "§1–3、§6；M09整合后的版本",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ],
+      "date_basis": "document attribution line; current read snapshot fixed by hash"
+    },
+    {
+      "id": "I02",
+      "title": "统一 Harness 架构与切片工作稿",
+      "author": "七小时研究主线",
+      "date": "2026-11-08",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+      "read_coverage": "§3–4、§6–7；覆盖目标、水位、披露及当前授权",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ]
+    },
+    {
+      "id": "I03",
+      "title": "Record 证据争议与修正讨论稿 v0.1.0",
+      "author": "Codex west 研究线",
+      "date": "2026-11-08",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "read_coverage": "全文；命题键、coverage、评估政策、可见性与 NOT_COMPUTED",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ]
+    },
+    {
+      "id": "I04",
+      "title": "Record 上下文与任务收益评价讨论稿 v0.1.0",
+      "author": "Codex west 研究线",
+      "date": "2026-11-08",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "sha256": "fbe5f707e58f3536e842b9bb1190d01fc7a007434adcffb10204dd043f70df3b",
+      "read_coverage": "正文；必要证据召回、按时间切分、当前政策独立输入；未重读其全部论文",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ]
+    },
+    {
+      "id": "I05",
+      "title": "上下文实验验收约定 v0.1.0",
+      "author": "Codex west 研究线",
+      "date": null,
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/context-evaluation/evaluation-contract.md",
+      "sha256": "c0a8bf6f846435b8baf4d78b0dd877fb0c43c3da25011cec6ab7be880ec2e44d",
+      "read_coverage": "全文；固定证据集合、缺trace记unknown、表示与实际任务分开",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ],
+      "date_basis": "No explicit date in this source; collection read_at is recorded separately"
+    },
+    {
+      "id": "I06",
+      "title": "主体权限与结果可见性讨论稿 v0.1.0",
+      "author": "Codex west 研究线",
+      "date": "2026-11-08",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c",
+      "read_coverage": "全文；重点§4、§5.2–5.3的消费语境、独立发布和祖先可读性",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ]
+    },
+    {
+      "id": "I07",
+      "title": "Record 智能记忆与自主上下文组装 v0.1.2 公开整理版",
+      "author": "个人 Harness 公开讨论材料；不另判单一作者",
+      "date": "2026-11-06",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "read_coverage": "L8–14、L145–165、L273–298、L370–379；三时序、manifest、尾部与非语义充分性",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ],
+      "date_basis": "public curation date, not a new experiment or rereview date"
+    },
+    {
+      "id": "I08",
+      "title": "M09 跨专题组合审查 v0.1.0",
+      "author": "Codex mechanisms 研究线",
+      "date": "2026-11-08",
+      "source_kind": "existing_personal_research_document",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/mechanisms/composition-review/REVIEW.md",
+      "sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+      "read_coverage": "全文；coverage需要绑定范围、版本、政策与水位",
+      "limitations": [
+        "设计/评审材料，不是宿主实际测量、模型实验或现成产品保证。"
+      ]
+    },
+    {
+      "id": "P01",
+      "title": "LoCoMo QA evaluation source",
+      "author": "snap-research / repository authors",
+      "date": "2024-08-13",
+      "date_basis": "fixed source snapshot/release, not a new experiment date",
+      "source_kind": "pinned_primary_source",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "repository": "snap-research/locomo",
+      "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "file": "task_eval/evaluation.py",
+      "sha256": "8e3be5d57ff2ff9ec5cd05939592f468c5f3f1fd95d13e431932bdf6bf0fd6fd",
+      "read_coverage": "L189–239；重点228–237",
+      "supports": [
+        "缺_context轨迹或不满足evidence分支时，all_recall可append(1)；是评分默认行为，不能当作有迹可核的真实召回。"
+      ],
+      "limitations": [
+        "只支持该窄边界；未运行作者代码、协议服务或模型。",
+        "不将其默认值/接口语义解释成本提案已经实现。"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "A2A v1.0.1 specification",
+      "author": "A2A Protocol Working Group / contributors",
+      "date": "2026-05-28",
+      "date_basis": "fixed source snapshot/release, not a new experiment date",
+      "source_kind": "pinned_primary_source",
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+      "repository": "a2aproject/A2A",
+      "commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "file": "docs/specification.md",
+      "sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb",
+      "read_coverage": "§3.7 L747–764；本轮复核；其余已在M08定向读取",
+      "supports": [
+        "Task history可遗漏消息；断线重连可丢status messages，critical可靠信息不能仅依靠Messages。"
+      ],
+      "limitations": [
+        "只支持该窄边界；未运行作者代码、协议服务或模型。",
+        "不将其默认值/接口语义解释成本提案已经实现。"
+      ]
+    }
+  ],
+  "derivation_limits": [
+    "完整覆盖是明确有限声明域下的处理合同，不是世界真值或全相关信息完备证明。",
+    "域选择、来源诚信、认证、披露和输入采集的可信性仍需具体权威/宿主承担。",
+    "本轮不重跑历史实验，也不扩大其证据等级。"
+  ]
+}

@@ -1,0 +1,28 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 26 and seed 1600463255524062165 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 60136] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/ExpiryContract.tla
+***Parse Error***
+
+  Precedence conflict between ops ENABLED in block line 70, col 44 to line 70, col 50 of module ExpiryContract and =.
+
+Residual stack trace follows:
+ExtendableExpr starting at line 70, column 52.
+ExtendableExpr starting at line 70, column 32.
+ExtendableExpr starting at line 70, column 25.
+Expression starting at line 70, column 25.
+Definition starting at line 70, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file ExpiryContract
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module ExpiryContract
+
+Could not parse module ExpiryContract from file ExpiryContract.tla
+
+
+Starting... (2026-11-07 23:31:52)
+Error: Parsing or semantic analysis failed.
+Finished in 00s at (2026-11-07 23:31:52)

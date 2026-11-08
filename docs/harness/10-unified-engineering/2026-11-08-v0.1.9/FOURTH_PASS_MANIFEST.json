@@ -1,0 +1,65 @@
+{
+  "copied_at_utc": "2026-11-08T07:43:56.782128+00:00",
+  "files": [
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/README.md",
+      "bytes": 2662,
+      "sha256": "aab8b8f0402158aac427da7b2d74b89de5a6046bf5442c878a39ff8f519a8ef5"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/minimal-experiments.json",
+      "bytes": 23380,
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/sources.json",
+      "bytes": 17301,
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/validation.json",
+      "bytes": 1249,
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "bytes": 34956,
+      "sha256": "2fa1c97c26eb9919b88084090aac43ca2c80b9d6348aec108b69898cf15f501d"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "bytes": 21536,
+      "sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/evaluation-design-review/README.md",
+      "bytes": 4185,
+      "sha256": "53fdab4fb63a8a689b22261f5f3ce7b2dce56bf4acd4e71d898c7bd5a161e7c8"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/evaluation-design-review/design.json",
+      "bytes": 24497,
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/evaluation-design-review/review.md",
+      "bytes": 6010,
+      "sha256": "7da7b5f5f320d3305e82e08d948aac1741221a8308dfc1039aa67e145a6fec15"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "bytes": 17383,
+      "sha256": "659c7f777345520baf7729c30caad296a51e824961aa5d7dc28d30b1fd2539ab"
+    }
+  ]
+}

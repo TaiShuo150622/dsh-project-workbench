@@ -1,0 +1,10 @@
+{
+  "source_markdown_sha1": "3e4ba72de1e5",
+  "source_html_sha256": "600f444dc86728a95731cad67960e28ffe2bd62f25c28ef4d928d3516b47d305",
+  "capture_light_sha256": "e74fa095cf863ea82ee12b7e1b9fc3e812bc8ad123c29bf0b9eaa411bdfd450a",
+  "capture_dark_sha256": "150830a5287160b45f7114a9eb6747cd0424722447d84e486f8b62a08868f236",
+  "output_sha256": "c447bf432c62863496469e3e26f62f047a06d86a9379d075c8a83c1a12920989",
+  "diagrams": 3,
+  "external_script_count": 0,
+  "status": "GENERATED_PENDING_OFFLINE_BROWSER_CHECK"
+}

@@ -1,0 +1,215 @@
+{
+  "copied_at_utc": "2026-11-08T09:41:59.421616+00:00",
+  "files": [
+    {
+      "path": "mechanisms/interop-contracts/README.md",
+      "source_worktree": "mechanisms",
+      "bytes": 3521,
+      "sha256": "320064eb8fb9c4e1996ba430a98fdcc0914c06110d7b804ef3eadf819669494a"
+    },
+    {
+      "path": "mechanisms/interop-contracts/acceptance.json",
+      "source_worktree": "mechanisms",
+      "bytes": 19702,
+      "sha256": "b254e5c943467cf264c036bd1b09d45de19992f17d4b3fdae7ee83e68a4152ad"
+    },
+    {
+      "path": "mechanisms/interop-contracts/mapping.json",
+      "source_worktree": "mechanisms",
+      "bytes": 14533,
+      "sha256": "768ed292c8dc826e45a1fc5bd1d312b4fae9fc1658cdc24045a198616b412e66"
+    },
+    {
+      "path": "mechanisms/interop-contracts/sources.json",
+      "source_worktree": "mechanisms",
+      "bytes": 17936,
+      "sha256": "7fcdfeec5424650791b564a10a669bf0fe0bedc557cfab74fb9b170c2409cef0"
+    },
+    {
+      "path": "mechanisms/interop-contracts/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 2096,
+      "sha256": "be93db4d37edef29450e08351fe223d65db2b21281931286d65a7f51b7c39f3c"
+    },
+    {
+      "path": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.html",
+      "source_worktree": "mechanisms",
+      "bytes": 30733,
+      "sha256": "07329cc7224aa383bd8acf8089aaf7fd9bbb223748ca85c38f681c5f0265647f"
+    },
+    {
+      "path": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.md",
+      "source_worktree": "mechanisms",
+      "bytes": 18097,
+      "sha256": "1b08a43a8e6d682c1be06c0d9556e8a9ae1d70cb2a37b4cd52053584fe1662e4"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/INPUT_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 1640,
+      "sha256": "76f988150817d65137c14169a1000a9c92622e76b6ba0a0c575e80fe6f690cb2"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/OUTPUT_HASHES.json",
+      "source_worktree": "proof-review",
+      "bytes": 824,
+      "sha256": "9e2b5117f62061c8aeba3e45db5401e6923cc0a64e5cb92087e58f951e1e8e3e"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 6548,
+      "sha256": "58a547abf98dcc7652600d20faaaedc911ae3b7d47128f023cd1b7ce4b1de093"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 543,
+      "sha256": "3f2dfdadb3ebf909c950de4dedfd71632ebd80c60b7554b2a03ad33ceb823ad4"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 955,
+      "sha256": "745db34b80502e5e7582b857d814774d5e80a076d1830bad4ff06d0c7a85e1c9"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 1617,
+      "sha256": "dcafed377994e8eb7ada26fba928e96df4053caf372f4715953220bc910a13c9"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/Record证据争议与修正讨论稿-v0.1.0.html",
+      "source_worktree": "proof-review",
+      "bytes": 30004,
+      "sha256": "230c3641d993d3924e92930a170f03ec25fd4092d189cd5ce7722533542f6e31"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/Record证据争议与修正讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 16436,
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/bounded_check.py",
+      "source_worktree": "proof-review",
+      "bytes": 15561,
+      "sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/check-results.json",
+      "source_worktree": "proof-review",
+      "bytes": 10016,
+      "sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/literature.json",
+      "source_worktree": "proof-review",
+      "bytes": 3103,
+      "sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/sources.json",
+      "source_worktree": "proof-review",
+      "bytes": 6803,
+      "sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/state-definition.json",
+      "source_worktree": "proof-review",
+      "bytes": 7164,
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/inputs/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 9079,
+      "sha256": "6ffe0d916598a2e8a7d032f6cfe5fe0111ab5d2d77aa3c54805e8cbce32b3033"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/oracle_check.py",
+      "source_worktree": "proof-review",
+      "bytes": 7111,
+      "sha256": "e22e347ef910c2b31e3f2c44894b640c36addc7fbfd30be91c3dafa68c3f116f"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/oracle_results.json",
+      "source_worktree": "proof-review",
+      "bytes": 1463,
+      "sha256": "1476ad0377798eba59be3981fd9938e3574b10ae88f6185d1d56a6ade96a1ae1"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/rerun.stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/rerun.stdout.json",
+      "source_worktree": "proof-review",
+      "bytes": 10016,
+      "sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 1617,
+      "sha256": "dcafed377994e8eb7ada26fba928e96df4053caf372f4715953220bc910a13c9"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/Record证据争议与修正讨论稿-v0.1.0.html",
+      "source_worktree": "proof-review",
+      "bytes": 30004,
+      "sha256": "230c3641d993d3924e92930a170f03ec25fd4092d189cd5ce7722533542f6e31"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/Record证据争议与修正讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 16436,
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/bounded_check.py",
+      "source_worktree": "proof-review",
+      "bytes": 15561,
+      "sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/check-results.json",
+      "source_worktree": "proof-review",
+      "bytes": 10016,
+      "sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/literature.json",
+      "source_worktree": "proof-review",
+      "bytes": 3103,
+      "sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/sources.json",
+      "source_worktree": "proof-review",
+      "bytes": 6803,
+      "sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/state-definition.json",
+      "source_worktree": "proof-review",
+      "bytes": 7164,
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/run/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 9079,
+      "sha256": "6ffe0d916598a2e8a7d032f6cfe5fe0111ab5d2d77aa3c54805e8cbce32b3033"
+    },
+    {
+      "path": "proof-review/evidence-dispute-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 713,
+      "sha256": "4388398651e947934f436305697622b1f82760d962aa63ed9d91d58bfcda74a7"
+    }
+  ]
+}

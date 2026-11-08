@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-08T08:41:18.894962+00:00",
+  "frozen_regeneration_exit_code": 0,
+  "stable_index_outputs": {
+    "source-index.json": true,
+    "reading-observations.json": true,
+    "identity-opinion-bindings.json": true,
+    "url-index.json": true,
+    "scope-and-inputs.json": true
+  },
+  "index_sha256": {
+    "source-index.json": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+    "reading-observations.json": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+    "identity-opinion-bindings.json": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+    "url-index.json": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+    "scope-and-inputs.json": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd"
+  },
+  "C05_prior_manifest_files_checked": 24,
+  "C05_prior_manifest_mismatches": [],
+  "network_requests": 0,
+  "scope": "Frozen-index deterministic regeneration and prior C05 artifact integrity; no source-content rereading."
+}

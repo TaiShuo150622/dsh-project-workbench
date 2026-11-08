@@ -1,0 +1,179 @@
+{
+  "task": "W-07",
+  "checked_at_utc": "2026-11-08T08:12:24+00:00",
+  "scope": "DOCUMENT_STRUCTURE_JSON_LINKS_AND_FIXED_SOURCE_IDENTITY_ONLY",
+  "product_execution": false,
+  "proof_or_prior_tests_rerun": false,
+  "browser_visual_review": false,
+  "draft_checker": {
+    "exit_code": 0,
+    "stdout": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md：版本 v0.1.0，8 个章节，3 张图，0 个错误，0 个警告",
+    "sections": 8,
+    "diagrams": 3,
+    "errors": 0,
+    "warnings": 0
+  },
+  "html": {
+    "parse_ok": true,
+    "h2_count": 8,
+    "mermaid_blocks": 3,
+    "note": "HTML generated; Mermaid browser rendering not independently tested"
+  },
+  "json": {
+    "slices": 7,
+    "acceptance_checks": 29,
+    "all_checks_proposed_not_run": true,
+    "dependency_graph_acyclic": true,
+    "execution_ready": false,
+    "phase_gated_finality": true
+  },
+  "fixed_product_files": 7,
+  "source_inputs": 19,
+  "links": [
+    {
+      "from": "README.md",
+      "target": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "slice-checklist.json",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.html",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "../../china/record-refinement/REPORT.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "../../proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "inputs.json",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "SHA256SUMS",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "README.md",
+      "target": "validation.json",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../record/kernel.mjs",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../index.js",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../server/native.js",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../client/app.js",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../server/projects.js",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../../server/store.js",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../china/record-refinement/REPORT.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "inputs.json",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "slice-checklist.json",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md#journeys",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    },
+    {
+      "from": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "exists": true,
+      "validation_scope": "local_or_assembled_integration"
+    }
+  ],
+  "missing_links": []
+}

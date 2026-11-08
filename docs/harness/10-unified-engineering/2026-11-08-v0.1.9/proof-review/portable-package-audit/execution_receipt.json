@@ -1,0 +1,55 @@
+{
+  "executions": [
+    {
+      "name": "record",
+      "command": [
+        "node",
+        "refinement-probes.mjs"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-package-audit/runnable-copy/china/record-refinement",
+      "started_at_utc": "2026-11-08T09:00:00.614916+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "m07",
+      "command": [
+        "node",
+        "run-probes.mjs"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-package-audit/runnable-copy/mechanisms/relay-code-probes",
+      "started_at_utc": "2026-11-08T09:00:00.814645+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "c7c0e0d7e4b768c3bb9e46a503fac71cad7750b3c62d8a8e065b3c8076af48a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "c07-build",
+      "command": [
+        "python3",
+        "build_index.py",
+        "--frozen"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-package-audit/runnable-copy/china/consolidated-sources",
+      "started_at_utc": "2026-11-08T09:00:00.867391+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "ce83f4224374641970e27bd3c45553c4eadc243a4922ccf568bfbc12209efab8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "c07-validate",
+      "command": [
+        "python3",
+        "validate_index.py"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-package-audit/runnable-copy/china/consolidated-sources",
+      "started_at_utc": "2026-11-08T09:00:00.951152+00:00",
+      "exit_code": 1,
+      "stdout_sha256": "7eef57b844e8b2e75b7564c61abc4149f08a97f766e2e6837f4f8b73b85886f4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "network_requests": 0,
+  "product_or_real_host_execution": false
+}

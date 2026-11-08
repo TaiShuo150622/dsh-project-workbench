@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="fe68cc8d6c06">
+<title>复跑说明与工具边界</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#环境与版本">环境与版本</a></li><li class="l2"><a href="#两项一般证明">两项一般证明</a></li><li class="l2"><a href="#python-有限模型">Python 有限模型</a></li><li class="l2"><a href="#tla-模型">TLA+ 模型</a></li><li class="l2"><a href="#固定-record-探针">固定 Record 探针</a></li><li class="l2"><a href="#条件代码探针">条件代码探针</a></li><li class="l2"><a href="#推进与终止的有限图">推进与终止的有限图</a></li><li class="l2"><a href="#如何比较新旧回执">如何比较新旧回执</a></li><li class="l3"><a href="#争议证据-接管与资源条件">争议证据、接管与资源条件</a></li><li class="l3"><a href="#回执比较纪律">回执比较纪律</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>复跑说明与工具边界</h1>
+</header>
+<p>本页给出研究核查的最短复跑路径。建议先读 <a href="EVIDENCE-离线阅读版.html">EVIDENCE.md</a>，再选一项核查；不必为了阅读重跑全部枚举。所有命令在解包后的研究根目录执行，新的输出放在单独目录，不覆盖本轮原始回执。</p>
+<h2 id="环境与版本">环境与版本</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">工具</th><th style="text-align:left">本轮实际版本</th><th style="text-align:left">用途与获取依据</th></tr></thead><tbody><tr><td style="text-align:left">Python</td><td style="text-align:left">3.9.0，标准库</td><td style="text-align:left">有限模型、运行器和研究回执；脚本不需要模型 API</td></tr><tr><td style="text-align:left">Lean</td><td style="text-align:left">4.35.0，commit <code>eb6cafb7290e8bd5f2937522d8d804f58f02bafc</code></td><td style="text-align:left"><a href="https://github.com/leanprover/lean4/releases/tag/v4.35.0">官方发行</a>；本轮用 macOS arm64，其他平台选同版对应包</td></tr><tr><td style="text-align:left">Java</td><td style="text-align:left">17.0.6</td><td style="text-align:left">运行 TLC；保留实际 java -version 输出</td></tr><tr><td style="text-align:left">TLC</td><td style="text-align:left">tla2tools 官方 release v1.7.4；启动横幅为 TLC2 Version 2.19</td><td style="text-align:left"><a href="https://github.com/tlaplus/tlaplus/releases/tag/v1.7.4">官方 jar</a>；release 标签与引擎横幅不是同一编号</td></tr><tr><td style="text-align:left">Node</td><td style="text-align:left">v24.6.0</td><td style="text-align:left">运行固定 Record 输入与派生探针，不启动服务器</td></tr></tbody></table></div>
+<p>TLC jar SHA-256：<code>936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88</code>。本轮 Lean macOS arm64 归档 SHA-256：<code>c0c6f34f35ba1dcc5c4a5fd106fefab9eb5e8469712624dd2c868d51b63177c2</code>。不同平台的 Lean 归档有不同哈希，应核对其对应官方资产；不要把 macOS 哈希当成所有平台值。包内不携带工具二进制。</p>
+<p>下面假定 <code>LEAN_BIN</code> 和 <code>TLC_JAR</code> 已由使用者指向实际工具文件；它们没有内置本机私有路径。<code>research-rerun</code> 是新的输出目录。先确认该目录不会覆盖已有成果。</p>
+<h2 id="两项一般证明">两项一般证明</h2>
+<pre data-lang="sh"><code>&quot;$LEAN_BIN&quot; dag-proof/IncrementalDag.lean
+&quot;$LEAN_BIN&quot; china/budget-proof/BudgetSafety.lean</code></pre>
+<p>预期退出码均为 0，打印的公理依赖中没有 <code>sorryAx</code>。DAG 使用 <code>propext</code>、<code>Classical.choice</code>、<code>Quot.sound</code>；预算使用 <code>propext</code>、<code>Quot.sound</code>。阅读自然语言假设和形式陈述仍不可省略；编译不证明真实系统满足前提。</p>
+<p>原回执见 <a href="dag-proof/compile_receipt.json">DAG</a>、<a href="china/budget-proof/execution_receipt.json">预算</a>，独立实例见 <a href="proof-review/general-proof-audit/REVIEW-离线阅读版.html">审查说明</a>。文件末尾的具体例子是辅助说明，一般结论来自定理本身。</p>
+<h2 id="python-有限模型">Python 有限模型</h2>
+<pre data-lang="sh"><code>python3 china/bounded-models/model_check.py --output-dir research-rerun/python-models</code></pre>
+<p>程序先核对两份规格快照的哈希，再枚举有限图。预期退出码为 0；<code>checks_passed=true</code> 表示正确规则在固定域内通过，且预先设定的坏规则出现反例。原始结果和轨迹位于 <a href="china/bounded-models/README-离线阅读版.html">bounded-models</a>。达到程序状态上限属于失败，不能删去限制后把未结束运行当作通过。</p>
+<h2 id="tla-模型">TLA+ 模型</h2>
+<pre data-lang="sh"><code>python3 formal-spec/run_tlc.py --jar &quot;$TLC_JAR&quot; --output-dir research-rerun/effects
+python3 formal-spec/run_expiry.py --jar &quot;$TLC_JAR&quot; --output research-rerun/expiry
+python3 formal-spec/run_relay.py --jar &quot;$TLC_JAR&quot; --output research-rerun/relay</code></pre>
+<p>这三条运行器命令覆盖 6 + 3 + 3 个配置，均应退出 0；底层 TLC 在预期反例配置会退出 12。运行器必须同时确认目标不变量，不能只比较退出码。另两个分项正向配置在独立的新 metadir 运行：</p>
+<pre data-lang="sh"><code>java -Xmx512m -cp &quot;$TLC_JAR&quot; tlc2.TLC -workers 1 -config formal-spec/fence-property.cfg -metadir research-rerun/fence-state formal-spec/EffectContract.tla
+java -Xmx512m -cp &quot;$TLC_JAR&quot; tlc2.TLC -workers 1 -config formal-spec/dedupe-property.cfg -metadir research-rerun/dedupe-state formal-spec/EffectContract.tla</code></pre>
+<p>这两个应退出 0，显示完整检查结束及队列为零。加起来才是主稿所说的 14 个主配置。若不同版本 TLC 的日志格式改变，应先解释差异，不能悄悄放宽运行器使其“通过”。配置、完整日志和 SHA 比较比状态数单独相同更有信息。</p>
+<p>原始入口为 <a href="formal-spec/README-离线阅读版.html">效果和期限模型</a>、<a href="formal-spec/RELAY_README-离线阅读版.html">接纳模型</a>。首次解析失败、修复后的重跑与错误不变量负对照均保留，不能拿失败前的空结果替代完成核查。</p>
+<h2 id="固定-record-探针">固定 Record 探针</h2>
+<pre data-lang="sh"><code>node china/record-refinement/refinement-probes.mjs</code></pre>
+<p>探针只导入 <code>inputs/</code> 中固定的个人项目源码，先验证输入 SHA，结果输出到 stdout。预期 8 个 case、0 个 harness assertion failure；五个映射差异和三个控制各有具体含义。RF03 的原始探针字节保留，但解释以 <a href="china/record-refinement/REPORT-v0.1.1-离线阅读版.html">REPORT-v0.1.1.md</a> 为准。若需要复跑那 20 条既有测试，准确的 Node argv 和文件清单在 <a href="china/record-refinement/execution_receipt.json">execution_receipt.json</a>；不要把整个其他版本测试集的结果混进这 20 条。</p>
+<h2 id="条件代码探针">条件代码探针</h2>
+<p><a href="mechanisms/relay-code-probes/README-离线阅读版.html">relay-code-probes</a> 的脚本会写同目录 <code>results.json</code>，请先复制整个目录到新的复跑位置再执行 <code>node run-probes.mjs</code>，保留原回执。它验证固定 Native/Projects 的方法控制流，预期 5 个探针、22 个断言通过；持久层及宿主接口是明确的 fake。即使 PASS，也没有在真实 DSH 后端复现数据丢失。</p>
+<h2 id="推进与终止的有限图">推进与终止的有限图</h2>
+<p>将整个 <code>china/progress-conditions/</code> 复制到一个新的复跑目录，再执行其中的 <code>python3 check_progress.py</code>；程序会写同目录结果与回执，不能直接覆盖保管的原件。预期为 21 个配置、162 个状态、239 条显式边，11 个公平闭环反例和 6 个错误前缀，所有预设判据满足。这不是原 14 项 TLC 的新增配置，也不是实际调度器测试。</p>
+<p>如需核对独立搜索算法，另复制 <code>proof-review/progress-audit/</code> 并运行其中 <code>python3 oracle_check.py</code>。它使用冻结输入图，以 SCC 方法核对存在性、直接枚举核对最短见证，并检查 1,200 个固定种子随机小图及针对性变异。输入图和事件含义仍与原模型共享；不能据两个算法一致声称产品模型完整。<a href="proof-review/progress-audit/REVIEW-离线阅读版.html">独立方法与边界</a></p>
+<h2 id="如何比较新旧回执">如何比较新旧回执</h2>
+<h3 id="争议证据-接管与资源条件">争议证据、接管与资源条件</h3>
+<p>下面三组使用 Python 标准库，分别属于独立的小模型，不加入原 14 项 TLC 配置或两项 Lean 证明计数：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">核查</th><th style="text-align:left">新目录中执行的入口</th><th style="text-align:left">应比较的结果</th></tr></thead><tbody><tr><td style="text-align:left">四态证据</td><td style="text-align:left"><code>west/evidence-disputes/bounded_check.py</code></td><td style="text-align:left">stdout 中 14 个定向检查、81 赋值、24 排列、240 异键对、18 政策检查与 5 错误策略反例；行动权限仍 NOT_COMPUTED</td></tr><tr><td style="text-align:left">责任与费用接管</td><td style="text-align:left">先复制 <code>proof-review/handoff-composition/</code>，再运行 <code>check_handoff.py</code> 和 <code>verify_handoff.py</code></td><td style="text-align:left">5 配置、5076 状态、14172 边及指定反例；R=0，只覆盖终态观察授权，其他主体/Grant 未表示</td></tr><tr><td style="text-align:left">资源条件</td><td style="text-align:left">先复制 <code>proof-review/resource-audit/</code>，再运行 <code>check_conditions.py</code></td><td style="text-align:left">7803 个满足准入的合成快照；正确引用模型 180 状态/304 边；重复扣数反例不属于真实内存测量</td></tr></tbody></table></div>
+<p>接管及资源脚本写同目录的结果/回执，必须先复制，保管原件不运行原地覆盖。争议证据脚本只向 stdout 打印，可重定向到新复跑目录；不能把名字与输出字段中的 independent 误读成真实权限或世界真值 oracle。</p>
+<p>进一步核查可分别复制 <a href="proof-review/evidence-dispute-audit/REVIEW-离线阅读版.html">争议证据独立审查</a>或<a href="china/handoff-audit/README-离线阅读版.html">接管审查</a>所在整目录，使用其中列明的程序与输入。前者独立构造事件集投影，后者保留原转移并另写账目/边与反向路径检查；各自共享的部分在审查中说明。M08 的协议六见证、M09 的三条跨层构造轨迹和资源六类真实场景仍未运行，不能用这些小模型代替。</p>
+<h3 id="回执比较纪律">回执比较纪律</h3>
+<p>先比较源码与配置 SHA，再比较命题、固定输入、状态/转移计数、实际反例及退出原因，最后比较输出字节。时间、临时路径和工具横幅可能使完整日志哈希变化；不要为了哈希相同改写原始输出。若分享副本替换了个人路径，使用派生映射核对其身份，原回执字段记录的是历史输入，未自动更新成新执行证据。</p>
+<p>不要从这些命令得到以下结论：真实 DSH 后端崩溃已复现、任意目标效果仅一次、权限服务线性一致、全部实际成本可硬封顶，或长期任务必定完成。要取得这些证据，需要按 <a href="west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">实施任务书</a>接入实际观察与目标系统。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-08T10:55:18.741716+00:00",
+  "page": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.html",
+  "scope": "Three screenshot visual inspections only; full DOM/theme checks recorded separately",
+  "images": [
+    {
+      "screenshot": "main-v017-desktop-light.png",
+      "sha256": "282c2032f3aae62b433400ff2e2a61c54843ed2a466448cec41a6a642fa66d65",
+      "viewport": "1200x900",
+      "theme": "light",
+      "observation": "Title, table, source links and desktop navigation visible; no clipping in inspected top viewport."
+    },
+    {
+      "screenshot": "main-v017-mobile-dark.png",
+      "sha256": "c7111e222bdcad49245fdca5d5e993fc5eb0e51ee737581ef2ae878ec3374b16",
+      "viewport": "430x932",
+      "theme": "dark",
+      "observation": "Title/metadata wrap within mobile width; body readable, table of contents collapsed; version-history paragraph is long, so shallow START_HERE remains first entry."
+    },
+    {
+      "screenshot": "main-v017-record-mobile-dark.png",
+      "sha256": "915575c9c798f9ba721f7166715c14883301387b1505f83cf71c2108faba581a",
+      "viewport": "430x932",
+      "theme": "dark",
+      "observation": "Record prose and links readable; wide diagram fits small by scaling and provides original-size horizontal view, not a claim that all fitted labels are readable."
+    }
+  ]
+}

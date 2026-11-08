@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "scope": "foundations and root-verified representative sources",
+  "sources": [
+    {
+      "id": "F-01",
+      "title": "Time, Clocks, and the Ordering of Events in a Distributed System",
+      "authors": "Leslie Lamport",
+      "published": "1978",
+      "url": "https://lamport.azurewebsites.net/pubs/time-clocks.pdf",
+      "location": "happened-before definition; logical clocks",
+      "claim": "因果偏序与逻辑时钟，不能由时钟大小反推因果。",
+      "limit": "不提供外部效果原子性，也不等于真实世界总时间。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-02",
+      "title": "Distributed Snapshots: Determining Global States of Distributed Systems",
+      "authors": "K. Mani Chandy; Leslie Lamport",
+      "published": "1985",
+      "url": "https://lamport.azurewebsites.net/pubs/chandy.pdf",
+      "location": "§1 stable property; §2 channel assumptions; §3 snapshot",
+      "claim": "一致全局状态需考虑通道中消息；其模型假设无差错、按发送顺序交付及有限延迟。",
+      "limit": "不能直接把所有异步API的当前状态拼成一致快照；任务完成知识可被纠正，不自动是稳定世界性质。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-03",
+      "title": "Linearizability: A Correctness Condition for Concurrent Objects",
+      "authors": "Maurice Herlihy; Jeannette Wing",
+      "published": "1990",
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "location": "definition of linearizability",
+      "claim": "对象操作表现为在调用与响应间某点生效，并遵守顺序规格和真实先后约束。",
+      "limit": "局部日志线性化不把外部服务自动纳入同一事务。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-04",
+      "title": "The Semiring Framework for Database Provenance",
+      "authors": "Val Tannen",
+      "published": "2017-05-15",
+      "url": "https://www.cis.upenn.edu/~val/15MayPODS.pdf",
+      "location": "slides 11–13, 21–24, 27",
+      "claim": "多项式表示推导来源；递归查询涉及最小不动点和额外代数结构。",
+      "limit": "作者回顾演讲，非本系统时态/撤回语义的证明；不声称本文提出来源代数。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-05",
+      "title": "Provenance Analysis and Semiring Semantics for First-Order Logic",
+      "authors": "Erich Grädel; Val Tannen",
+      "published": "2024-12-10",
+      "url": "https://arxiv.org/html/2412.07986v1",
+      "location": "abstract and §8 Other Approaches to Modeling Negation",
+      "claim": "已有否定和一阶逻辑的provenance研究；所用结构与等价关系有条件。",
+      "limit": "本轮只核主线与否定边界，未把完整理论实现或精化到Harness撤回协议。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-06",
+      "title": "On the Limitations of Provenance for Queries With Difference",
+      "authors": "Yael Amsterdamer; Daniel Deutch; Val Tannen",
+      "published": "2011-05-11",
+      "url": "https://arxiv.org/abs/1105.2255",
+      "location": "author abstract",
+      "claim": "差集扩展在某些半环上不能同时保留所列期望等价律。",
+      "limit": "此条仅读作者摘要；不作为具体定理推导的充分依据。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_author_abstract_only",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-07",
+      "title": "SAGAS",
+      "authors": "Hector Garcia-Molina; Kenneth Salem",
+      "published": "1987",
+      "url": "https://www.cs.cornell.edu/courses/cs530/2005sp/papers/sagas.pdf",
+      "location": "§3 saving code reliably; §6 discussion of compensation",
+      "claim": "长事务可拆成可交错事务与补偿；恢复代码也需可靠保存，现实动作并非总可逆。",
+      "limit": "研究假设和补偿契约需要具体实现；不能把框架恢复宣称成撤销所有外部作用。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-08",
+      "title": "How to do distributed locking",
+      "authors": "Martin Kleppmann",
+      "published": "2016-02-08",
+      "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+      "location": "Protecting a resource with a lock; fencing tokens",
+      "claim": "旧执行者可以在租约过期后恢复；fencing需要资源端拒绝旧token。",
+      "limit": "作者工程分析；本稿只使用机制条件，不扩展成对所有锁服务的性能判断。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "research_primary"
+    },
+    {
+      "id": "F-09",
+      "title": "Human-in-the-loop",
+      "authors": "OpenAI Agents SDK maintainers",
+      "published": null,
+      "version": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "location": "Keep approval state on the server; Recovering after a crash",
+      "claim": "审批/序列化不认证提交者或保证效果只执行一次；未知效果需要目标幂等或权威对账。",
+      "limit": "文档契约，未运行示例或目标适配器。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "official_documentation"
+    },
+    {
+      "id": "F-10",
+      "title": "Session budgets",
+      "authors": "Anthropic",
+      "published": null,
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "location": "When a session reaches its budget; Events accepted at the cap; Budgets in multiagent sessions",
+      "claim": "阈值限制新模型请求；在途请求和其工具可继续；允许结算事件。",
+      "limit": "动态Beta文档；预算是list cost阈值，不等于精确最终花费上限。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "official_documentation"
+    },
+    {
+      "id": "F-11",
+      "title": "Workflow runs",
+      "authors": "Anthropic",
+      "published": null,
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "location": "Run events; interrupt behavior",
+      "claim": "工作流completed、线程结果和阶段完成属于不同状态。",
+      "limit": "未做运行验证；不能由一个状态推出端到端业务验收。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "official_documentation"
+    },
+    {
+      "id": "F-12",
+      "title": "Define outcomes",
+      "authors": "Anthropic",
+      "published": null,
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "location": "grader outcomes; artifact availability after idle",
+      "claim": "已有独立上下文grader与有限迭代目标机制；评分结果和产物可取得需要分别处理。",
+      "limit": "grader判断受rubric/模型约束，不等同任意业务客观真值。",
+      "accessed_at": "2026-11-08",
+      "verification": "root_read_primary_source",
+      "kind": "official_documentation"
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://repository.upenn.edu/bitstreams/b598c0a7-0d24-4162-8279-5f51a17d29c2/download",
+      "status": "search-discovered; direct body access 403; not used as read full text",
+      "replacement": "F-04"
+    },
+    {
+      "url": "https://www.cs.princeton.edu/techreports/1987/070.pdf",
+      "status": "direct access 403",
+      "replacement": "F-07 original paper hosted by Cornell"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/model-audit/inputs/python/model_check.py",
+    "--output-dir",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/model-audit/rerun"
+  ],
+  "python_version": "3.9.0 (v3.9.0:9cf6752276, Oct  5 2020, 11:29:23) \n[Clang 6.0 (clang-600.0.57)]",
+  "started_at_utc": "2026-11-08T06:57:02.246393+00:00",
+  "finished_at_utc": "2026-11-08T06:57:23.665657+00:00",
+  "elapsed_seconds": 21.418045334,
+  "returncode": 0,
+  "artifacts": [
+    {
+      "file": "rerun/TRACES.md",
+      "sha256": "0ad67a9053b3b257452e752868c1d947e2e67f96880ddc5d449819d72c322b46",
+      "bytes": 15894
+    },
+    {
+      "file": "rerun/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745
+    }
+  ]
+}

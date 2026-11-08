@@ -1,0 +1,65 @@
+{
+  "captured_at_utc": "2026-11-08T08:31:05.382295+00:00",
+  "files": [
+    {
+      "source": "git:7264be10387963f4d575d8688ed8573f4c16c8c4:server/native.js",
+      "snapshot": "source-inputs/workbench/server/native.js",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "git_blob": "798d5ce8ecbf9d4073e75f3a54a272e4f86c0f8c"
+    },
+    {
+      "source": "git:7264be10387963f4d575d8688ed8573f4c16c8c4:server/projects.js",
+      "snapshot": "source-inputs/workbench/server/projects.js",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "git_blob": "081109c113313cb1ea656de436d80b888cb39dcb"
+    },
+    {
+      "source": "git:7264be10387963f4d575d8688ed8573f4c16c8c4:server/store.js",
+      "snapshot": "source-inputs/workbench/server/store.js",
+      "sha256": "7cbe2a3c1f2a35f3b152cb07219918824a7e8e8fc156d115d63a895e5f79933c",
+      "git_blob": "bd37da931a3eb09ae4a0ddf2c6c4493fee3c3f82"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+      "snapshot": "source-inputs/dsh/packages/session/session-persistence/src/index.ts",
+      "sha256": "15d2feeaa8876d4be1c87234ac92e50d819c500444588e497d5228aed1876fc7",
+      "bytes": 8863
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+      "snapshot": "source-inputs/dsh/packages/session/session-persistence/src/handle.ts",
+      "sha256": "2fd8b5c5188ffdf5adee78a260b3dd0a9be97e5eb9fcdb5aafae5a8ed5471a31",
+      "bytes": 5319
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+      "snapshot": "source-inputs/dsh/packages/session/session-persistence-jsonl/src/storage.ts",
+      "sha256": "57d5fa1d7efd17789d6a223f6aa5e06b79092665bea13f8a23d3bab644d066c3",
+      "bytes": 24212
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+      "snapshot": "source-inputs/dsh/packages/session/session-persistence-jsonl/src/index.ts",
+      "sha256": "1475457333ca86a01f7ea72dcf33de25b02be8b9c670fb32e8b99d8efb54cd81",
+      "bytes": 75727
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+      "snapshot": "source-inputs/dsh/packages/core/agent-loop/src/agent.ts",
+      "sha256": "ad9ee0778c0a93dec40363f88b53f442add9b033837b9ff049675a1ada3df61f",
+      "bytes": 31142
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+      "snapshot": "source-inputs/dsh/packages/core/agent-loop/src/inbox.ts",
+      "sha256": "336e10096a4899cdbef71e68da6896c5ed84c17a95c56729d17b8ba607bac1ca",
+      "bytes": 8873
+    },
+    {
+      "source": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+      "snapshot": "source-inputs/dsh/packages/core/session/src/index.ts",
+      "sha256": "343eeb693620bf3de6d21fcecb685fb7288b623c0bd4f655f29a23e92ce2f634",
+      "bytes": 67103
+    }
+  ]
+}

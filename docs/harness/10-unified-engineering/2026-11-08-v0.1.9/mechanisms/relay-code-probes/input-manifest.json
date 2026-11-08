@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "source_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "repository": "TaiShuo150622/dsh-project-workbench",
+  "created_at_utc": "2026-11-08T08:37:42.371257+00:00",
+  "files": [
+    {
+      "source_path": "server/native.js",
+      "copied_path": "inputs/native.mjs",
+      "git_blob": "798d5ce8ecbf9d4073e75f3a54a272e4f86c0f8c",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "bytes": 3044,
+      "content_modified": false,
+      "extension_changed_only": true
+    },
+    {
+      "source_path": "server/projects.js",
+      "copied_path": "inputs/projects.mjs",
+      "git_blob": "081109c113313cb1ea656de436d80b888cb39dcb",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "bytes": 19203,
+      "content_modified": false,
+      "extension_changed_only": true
+    }
+  ],
+  "copy_method": "git show fixed commit; byte-for-byte copy; .mjs extension selects ESM without changing content",
+  "scope": "Research copies only. Product sources and M06 unchanged."
+}

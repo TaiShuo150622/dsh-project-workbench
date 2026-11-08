@@ -1,0 +1,96 @@
+{
+  "copied_at_utc": "2026-11-08T10:39:18.601939+00:00",
+  "import_scope": "C12 selective receipt import per IMPORT_SCOPE; no execution tree or local driver; M11/W16 full small artifacts",
+  "files": [
+    {
+      "path": "china/portable-reproduction/REVIEW.md",
+      "source_worktree": "china",
+      "bytes": 6867,
+      "sha256": "de2b4684ff8467ac768df3d08a8b78e02e70fb1beb8a5661ae06f7ede3083ef7"
+    },
+    {
+      "path": "china/portable-reproduction/IMPORT_SCOPE.md",
+      "source_worktree": "china",
+      "bytes": 1815,
+      "sha256": "b34afcdd9d33d974d3a782e7c9d3f445ffc84aea037fa067d2dd2996f78fea93"
+    },
+    {
+      "path": "china/portable-reproduction/input-manifest.json",
+      "source_worktree": "china",
+      "bytes": 115840,
+      "sha256": "43ce772c952d961709eb6179c1c3db6a44e7a6aeb089212ccfdc5c35360dc6e3"
+    },
+    {
+      "path": "china/portable-reproduction/execution-receipt.json",
+      "source_worktree": "china",
+      "bytes": 10147,
+      "sha256": "5fae7673766312d5e849eb2bb5366ece8db6ee9bdcabf6b548e43d98ff907120"
+    },
+    {
+      "path": "china/portable-reproduction/launch-receipt.json",
+      "source_worktree": "china",
+      "bytes": 999,
+      "sha256": "a909525d8c52a4047bac81b684acf26443202bf30be992c6d4b4e263dfb462c3"
+    },
+    {
+      "path": "china/portable-reproduction/tool-versions.json",
+      "source_worktree": "china",
+      "bytes": 703,
+      "sha256": "0a74e9c1416eb110b2972e505eac0537acb653198fc6c82287539571c35f1238"
+    },
+    {
+      "path": "china/portable-reproduction/comparison.json",
+      "source_worktree": "china",
+      "bytes": 19034,
+      "sha256": "a5c1fb305715f42d9b74ea8dba820222628a49287a38c259ff7b6dd4f8289d64"
+    },
+    {
+      "path": "china/portable-reproduction/final-validation.json",
+      "source_worktree": "china",
+      "bytes": 1177,
+      "sha256": "dd108599c7e8a85043cf88953f75cf42b6abfa6628b7d4806946cd420ba610e8"
+    },
+    {
+      "path": "china/portable-reproduction/IMPORT_SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 674,
+      "sha256": "ba7a973fc874d96ad130e3a37b194baa02f10c79d83cc030e657178aa9eaff0d"
+    },
+    {
+      "path": "mechanisms/adoption-cost-review/MEMO.md",
+      "source_worktree": "mechanisms",
+      "bytes": 11186,
+      "sha256": "57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e"
+    },
+    {
+      "path": "mechanisms/adoption-cost-review/sources.json",
+      "source_worktree": "mechanisms",
+      "bytes": 21577,
+      "sha256": "1308990819a50a40afde8c1d27038b37b6340f9478831de20ad955d46ceda032"
+    },
+    {
+      "path": "mechanisms/adoption-cost-review/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 4550,
+      "sha256": "d91a355360bd21dbad54845f56d2570995a0e2c8b54e493317d5224ca7cf39bd"
+    },
+    {
+      "path": "west/semantic-glossary/GLOSSARY.md",
+      "source_worktree": "west",
+      "bytes": 4867,
+      "sha256": "7aa65ef833a5df6c5e94c0a3d23f87d44b1c8b6c5d78999225b36fb57cc44586"
+    },
+    {
+      "path": "west/semantic-glossary/inputs.json",
+      "source_worktree": "west",
+      "bytes": 3644,
+      "sha256": "612e8b332e116cd3605fe34c0fae94a60d65456fb50a3a060e58d200a796691f"
+    },
+    {
+      "path": "west/semantic-glossary/validation.json",
+      "source_worktree": "west",
+      "bytes": 3711,
+      "sha256": "9d4d97c73e6872f0a3391c4451f19df08c188ae7af83308c7f5de6c70f9a0257"
+    }
+  ]
+}

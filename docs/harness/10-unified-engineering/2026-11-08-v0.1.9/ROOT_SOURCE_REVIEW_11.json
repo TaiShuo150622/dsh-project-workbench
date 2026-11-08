@@ -1,0 +1,15 @@
+{
+  "read_at_utc": "2026-11-08T10:40:50.895629+00:00",
+  "scope": "Root review of one reused M11 official source; no new benchmark",
+  "items": [
+    {
+      "title": "Scale to many tools with tool search",
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search#how-tool-search-works",
+      "source_kind": "mutable official documentation",
+      "version": "page as accessed; not a frozen deployed SDK version",
+      "read_scope": "How tool search works, web-rendered lines 104–107; nearby overview and configuration context",
+      "claim": "Official documentation describes an added search round trip and notes that a small comfortably fitting tool set may be faster when loaded upfront. This is a conditional vendor description, not a measured result for this project.",
+      "not_used": "No tool-count optimal threshold, current product compatibility promise, or benchmark extrapolation is adopted."
+    }
+  ]
+}

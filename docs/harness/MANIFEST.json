@@ -1,7 +1,7 @@
 {
   "collection_date": "2026-11-06",
   "scope": "个人 Harness 相关讨论稿、公开整理版及关联设计附件",
-  "notice": "文件哈希对应本次公开副本。索引不代表功能已实现；历史测试未因收录而重新验证。",
+  "notice": "首批 files 保留 192 个源文档及附件的身份；新增冻结研究由 research_collections 单独引用。研究文件数含视图、清单、历史输入与隔离验证记录，不是独立文章数。公开归档不等于产品实现。",
   "files": [
     {
       "path": "docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
@@ -1730,6 +1730,22 @@
       "kind": "公开整理版",
       "treatment": "公开整理；保留原稿历史语境",
       "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403"
+    }
+  ],
+  "updated_date": "2026-11-08",
+  "research_collections": [
+    {
+      "path": "docs/harness/10-unified-engineering/2026-11-08-v0.1.9",
+      "title": "统一 Harness 工程研究",
+      "current_main_version": "v0.1.9",
+      "collection_date": "2026-11-08",
+      "file_count": 1422,
+      "manifest_path": "docs/harness/10-unified-engineering/2026-11-08-v0.1.9/PACKAGE_MANIFEST.json",
+      "manifest_sha256": "f8586fb9720e1950ce27206ad47d74dab97c9707a732dc938f6be0b8eade9c09",
+      "reading_guide": "docs/harness/10-unified-engineering/README.md",
+      "file_index": "docs/harness/10-unified-engineering/FILE_INDEX.md",
+      "publication_record": "docs/harness/10-unified-engineering/PUBLICATION.json",
+      "treatment": "已脱敏研究包按原字节冻结；新增公开导航，保留历史证据时点；公司及量化内部材料排除"
     }
   ]
 }

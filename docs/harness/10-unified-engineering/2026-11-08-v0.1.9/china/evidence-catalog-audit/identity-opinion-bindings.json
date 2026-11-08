@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "bindings": [
+    {
+      "opinion_or_attribution_source": "china/sources.json#/sources/49",
+      "relationship_field": "affiliation_sources",
+      "identity_reference": "CN-PE-DS-02",
+      "resolved_identity_occurrence": "china/sources.json#/sources/50",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "china/sources.json#/sources/49",
+      "relationship_field": "affiliation_sources",
+      "identity_reference": "CN-PE-DS-03",
+      "resolved_identity_occurrence": "china/sources.json#/sources/51",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "china/sources.json#/sources/52",
+      "relationship_field": "affiliation_sources",
+      "identity_reference": "CN-PE-QW-02",
+      "resolved_identity_occurrence": "china/sources.json#/sources/53",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "china/sources.json#/sources/54",
+      "relationship_field": "affiliation_sources",
+      "identity_reference": "CN-PE-TX-02",
+      "resolved_identity_occurrence": "china/sources.json#/sources/55",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "mechanisms/cordis-boundary/sources.json#/sources/0",
+      "relationship_field": "affiliations_from_pdf_title_page",
+      "author_affiliations": {
+        "Yifan Shi": [
+          "Peking University",
+          "DeepSeek-AI"
+        ],
+        "Wei Zhang": [
+          "Peking University"
+        ],
+        "Tianyi Cui": [
+          "DeepSeek-AI"
+        ]
+      },
+      "scope": "paper title page at the identified version; joint paper is not each author individual statement",
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/context-evaluation/sources.json#/sources/16",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": "原文写明Labs team成员，限发文时",
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/0",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P02",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/1",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/1",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P02",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/1",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": true,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/2",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P03",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/2",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": true,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/3",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P04",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/3",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": true,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/3",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P05",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/4",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/5",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P06",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/5",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": true,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/6",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P07",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/6",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": true,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/6",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P08",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/7",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/8",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P10",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/9",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/practitioner-views/sources.json#/sources/8",
+      "relationship_field": "identity_sources",
+      "identity_reference": "P12",
+      "resolved_identity_occurrence": "west/practitioner-views/sources.json#/sources/11",
+      "resolution_rule": "same catalog ID only",
+      "self_reference": false,
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/sources.json#/sources/0",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "官方作者栏注明 Member of Technical Staff；仅证明发文时归属"
+      },
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/sources.json#/sources/1",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": {
+        "url": "https://openai.com/index/unlocking-the-codex-harness/",
+        "text": "官方作者栏注明 Member of Technical Staff"
+      },
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/sources.json#/sources/3",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": {
+        "url": "https://openai.com/index/harness-engineering/",
+        "text": "官方作者栏注明 Member of the Technical Staff"
+      },
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/sources.json#/sources/15",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "OpenAI 2026-01-23 官方作者栏标 Michael Bolin 为 Member of Technical Staff；采访方称开源Codex负责人"
+      },
+      "not_current_employment_proof": true
+    },
+    {
+      "opinion_or_attribution_source": "west/sources.json#/sources/18",
+      "relationship_field": "identity_basis",
+      "inline_identity_evidence": {
+        "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+        "text": "正文作者介绍为 Anthropic Labs team 成员；仅发文时归属"
+      },
+      "not_current_employment_proof": true
+    }
+  ],
+  "view_groups": [
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/0",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V1",
+        "person": "Michael Bolin",
+        "company_scope": "OpenAI at January 2026 official byline; March interview continuity supported but not November role",
+        "date": "2026-03-14",
+        "source_ids": [
+          "P01",
+          "P02"
+        ],
+        "status": "core_personal_interview_with_official_identity_support",
+        "decisions": [
+          "D1",
+          "D2"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/0",
+        "west/practitioner-views/sources.json#/sources/1"
+      ],
+      "identity_edges_separate": true
+    },
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/1",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V2",
+        "person": "Ryan Lopopolo",
+        "company_scope": "OpenAI; contemporaneous official staff byline",
+        "date": "2026-02-11",
+        "source_ids": [
+          "P03"
+        ],
+        "status": "core_official_signed_engineering_experience",
+        "decisions": [
+          "D2",
+          "D3"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/2"
+      ],
+      "identity_edges_separate": true
+    },
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/2",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V3",
+        "person": "Justin Young",
+        "company_scope": "Anthropic official engineering authorship at date; exact title date unverified",
+        "date": "2025-11-26",
+        "source_ids": [
+          "P04",
+          "P05"
+        ],
+        "status": "core_official_authorship_title_temporal_limit",
+        "decisions": [
+          "D3",
+          "D4"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/3",
+        "west/practitioner-views/sources.json#/sources/4"
+      ],
+      "identity_edges_separate": true
+    },
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/3",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V4",
+        "person": "Prithvi Rajasekaran",
+        "company_scope": "Anthropic Labs; contemporaneous official byline",
+        "date": "2026-03-24",
+        "source_ids": [
+          "P06"
+        ],
+        "status": "core_official_signed_engineering_experiment",
+        "decisions": [
+          "D3",
+          "D5"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/5"
+      ],
+      "identity_edges_separate": true
+    },
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/4",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V5",
+        "people": [
+          "Yifan Shi",
+          "Wei Zhang",
+          "Tianyi Cui"
+        ],
+        "company_scope": "paper-declared affiliation: Shi PKU+DeepSeek-AI, Zhang PKU, Cui DeepSeek-AI",
+        "date": "2026-08-26",
+        "source_ids": [
+          "P07",
+          "P08"
+        ],
+        "status": "core_joint_research_not_individual_statement",
+        "decisions": [
+          "D6"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/6",
+        "west/practitioner-views/sources.json#/sources/7"
+      ],
+      "identity_edges_separate": true
+    },
+    {
+      "view_occurrence_id": "west/practitioner-views/sources.json#/views/5",
+      "original_file": "west/practitioner-views/sources.json",
+      "raw_view": {
+        "id": "V6",
+        "person": "Junyang Lin",
+        "company_scope": "past Qwen affiliation verified at 2025-01-26; company at essay date unconfirmed",
+        "date": "2026-03-26",
+        "source_ids": [
+          "P09",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "status": "supplement_personal_not_counted_as_qwen_employee_view",
+        "decisions": [
+          "D2",
+          "D3",
+          "D5"
+        ]
+      },
+      "resolved_source_occurrences": [
+        "west/practitioner-views/sources.json#/sources/8",
+        "west/practitioner-views/sources.json#/sources/9",
+        "west/practitioner-views/sources.json#/sources/10",
+        "west/practitioner-views/sources.json#/sources/11"
+      ],
+      "identity_edges_separate": true
+    }
+  ],
+  "rules": [
+    "Resolve bare source IDs only within their original catalog.",
+    "A source can supply both identity and opinion evidence, but roles and claims remain separate.",
+    "Historical official bylines/paper affiliations do not prove current employment.",
+    "Joint paper authorship is not an individually attributed employee statement.",
+    "An issue collaborator label does not by itself prove employment.",
+    "A personal essay with unconfirmed affiliation at publication stays personal; old affiliation does not fix it."
+  ]
+}

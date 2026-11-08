@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "validated_at_utc": "2026-11-08T08:23:45.263955+00:00",
+  "documentation_validation_executed": true,
+  "actual_execution": false,
+  "product_or_host_execution": false,
+  "model_enumeration_execution": false,
+  "crash_or_power_fault_execution": false,
+  "checks": {
+    "json_and_refs": true,
+    "source_groups": 4,
+    "refinement_obligations": 6,
+    "unrun_cuts": 6,
+    "local_markdown_links": 7,
+    "draft_check": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md：版本 v0.1.0，8 个章节，3 张图，0 个错误，0 个警告",
+    "html_generated": true,
+    "html_mermaid_blocks": 3,
+    "visual_inspection": false,
+    "scoped_sensitive_pattern_hits": {
+      "private_home_path": [],
+      "private_key_header": [],
+      "credential_assignment": []
+    }
+  },
+  "limitations": [
+    "Basic pattern scan is not a security audit.",
+    "No implementation refinement, runtime acceptance or incident reproduction is claimed."
+  ],
+  "artifact_sha256": {
+    "README.md": "4b71ddef904c7feafebe7b6b68abe52ca4b3af02aa32f4f776f5cf3e5da5c601",
+    "crash-cuts.json": "fd79d786d2f2d35a9e71b1bad6885b15627db6b15a653500ac58e27ae628cefa",
+    "sources.json": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+    "持久状态与发送效果边界讨论稿-v0.1.0.html": "e8847e0bfa582fadbefd1c6d6473c7705c4f0c4219d467379bdc14ccbfb590da",
+    "持久状态与发送效果边界讨论稿-v0.1.0.md": "7b5e1e55384ba9a61e3378a13e63d8685d784022bff9d4cd346a00647c86aa69"
+  }
+}

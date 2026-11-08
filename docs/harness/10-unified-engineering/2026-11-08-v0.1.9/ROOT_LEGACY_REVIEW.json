@@ -1,0 +1,44 @@
+{
+  "read_at_utc": "2026-11-08T10:46:48.363108+00:00",
+  "kind": "local public archive decision continuity; not additional external reading count",
+  "items": [
+    {
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "archive_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "read_range": "L357–425",
+      "claim_scope": "Adopted desktop and both A/B modes, per-session choice, SSH before Codespaces; old prototype and compatibility checks not rerun."
+    },
+    {
+      "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "archive_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+      "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+      "read_range": "L345–405",
+      "claim_scope": "Adopted integration into dsh-chrome, Keychain/reference approach, model-visible metadata limits, deferred export and staged migration; historic implementation and unverified security claims not adopted as current guarantees."
+    },
+    {
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "archive_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "read_range": "L644–669 and L1035–1102",
+      "claim_scope": "No final host selected; product identities independent of host session IDs; single lifecycle authority as entry condition for durable workflow; memory deletion residuals remain storage follow-up."
+    },
+    {
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "archive_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "read_range": "L270–307",
+      "claim_scope": "Storage is proposed and versioned; replay must not silently resurrect revoked/deleted/corrected material; source proposal does not automatically invalidate independently authorized derivative publications.",
+      "additional_read_range": "L208–236: stable class IDs, rename/merge/split mappings, pending reclassification, query regression and prefill input-control condition"
+    },
+    {
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "archive_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+      "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71",
+      "read_range": "L28–44 and L164–184",
+      "claim_scope": "Historical H0 proposes a single ledger authority and write entrance, with project records derived. Exact old locking/pin/schedule/threshold implementation is not adopted or rerun."
+    }
+  ],
+  "boundary": "Only cited public design selections reused; no private company or quantitative code, no current runtime or credential operation",
+  "additional_read_at_utc": "2026-11-08T10:54:44.679778+00:00"
+}

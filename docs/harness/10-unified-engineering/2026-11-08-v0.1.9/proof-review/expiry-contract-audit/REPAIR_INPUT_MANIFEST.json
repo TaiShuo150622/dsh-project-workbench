@@ -1,0 +1,107 @@
+{
+  "captured_at_utc": "2026-11-08T07:49:30.445677+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/admission.log",
+      "snapshot": "repair-inputs/expiry-checked-results/admission.log",
+      "sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557",
+      "bytes": 3276
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/commit.log",
+      "snapshot": "repair-inputs/expiry-checked-results/commit.log",
+      "sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45",
+      "bytes": 1529
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/none.log",
+      "snapshot": "repair-inputs/expiry-checked-results/none.log",
+      "sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3",
+      "bytes": 3277
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/receipt.json",
+      "snapshot": "repair-inputs/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "bytes": 2637
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "bytes": 112
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "bytes": 109
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "bytes": 93
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/fixture/run_expiry.py",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/fixture/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "bytes": 3234
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/receipt.json",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/receipt.json",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/results/admission.log",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/results/admission.log",
+      "sha256": "fb2ad298d8bd42396f4931c6bc92628050209c9031add4084a175b0ab295fdf5",
+      "bytes": 3315
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/results/commit.log",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/results/commit.log",
+      "sha256": "5da451bd7025ef4150434a424a4f3865d661e55a3be49b4cf2662fd8b5040a3c",
+      "bytes": 1569
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/results/none.log",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/results/none.log",
+      "sha256": "59ecf74105349c59612888d6bf576a388d88751cecf32737fda893f06af70208",
+      "bytes": 1623
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/results/receipt.json",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/results/receipt.json",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/stderr.txt",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/stderr.txt",
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b",
+      "bytes": 37
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/stdout.txt",
+      "snapshot": "repair-inputs/expiry-runner-negative-control/stdout.txt",
+      "sha256": "92200317ff361d7e7cd9b6fae514ed8476e45395141846c7e961c73a4fb08e52",
+      "bytes": 890
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/run_expiry.py",
+      "snapshot": "repair-inputs/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "bytes": 3234
+    }
+  ]
+}

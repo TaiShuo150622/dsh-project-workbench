@@ -1,0 +1,53 @@
+{
+  "copied_at_utc": "2026-11-08T10:52:49.081435+00:00",
+  "files": [
+    {
+      "path": "china/legacy-closure/COVERAGE.md",
+      "source_worktree": "china",
+      "bytes": 12501,
+      "sha256": "5ea9655f14660da6b291e3573a75e67dbf151180b2138f440ef92c7c8efef44e"
+    },
+    {
+      "path": "china/legacy-closure/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 562,
+      "sha256": "f73e0a3cd4a643fdd0b49a72c161e7899e60b743136c75e5cc72a90129cc73fe"
+    },
+    {
+      "path": "china/legacy-closure/decisions.json",
+      "source_worktree": "china",
+      "bytes": 30775,
+      "sha256": "2678ce0ca7ff581f8068268640b6be8e1b7bd71ea6686137e338a72746d06b5f"
+    },
+    {
+      "path": "china/legacy-closure/inputs.json",
+      "source_worktree": "china",
+      "bytes": 11596,
+      "sha256": "91ac6578658d0ba49a5a665b8ddfd2cf3f044795ee0778f141dff1c15cb3b825"
+    },
+    {
+      "path": "china/legacy-closure/reading-list.json",
+      "source_worktree": "china",
+      "bytes": 14346,
+      "sha256": "27c7fa52042e671e2078454b22c4a743fd5ab663f71a4ed577fb767610a4da02"
+    },
+    {
+      "path": "china/legacy-closure/selection.json",
+      "source_worktree": "china",
+      "bytes": 91403,
+      "sha256": "bf098375143be2a52e02611519340e47e8da8280187f961a64040219f3f3e57c"
+    },
+    {
+      "path": "china/legacy-closure/validate.py",
+      "source_worktree": "china",
+      "bytes": 5189,
+      "sha256": "9640b6591f3cc8d7e8b88b2d57e71718ace240cc62f2f6cdba21da9f999707e0"
+    },
+    {
+      "path": "china/legacy-closure/validation.json",
+      "source_worktree": "china",
+      "bytes": 30513,
+      "sha256": "adc75cb6ef03eb4f1e37a00a530a5d540c3557852f96744e186022e253e0759c"
+    }
+  ]
+}

@@ -1,0 +1,1194 @@
+{
+  "schema_version": 1,
+  "research": "harness-20261107/mechanisms",
+  "baseline": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "accessed_at_utc": "2026-11-08T06:25:00Z",
+  "projects": [
+    {
+      "repo": "earendil-works/pi",
+      "sha": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "tree": "8cb80920ff1ea60ef3427ee7219c7c87461b8737",
+      "date": "2026-11-07T23:51:39Z"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "sha": "9c7212c99a69b9d1c644fc30ad79068124aab1a7",
+      "tree": "4346a1dfc94d5345df5469e0d5188a5e5363dd9b",
+      "date": "2026-11-08T06:04:30Z"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "sha": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "tree": "f0e87e34a6a41514dc3fb312db01fa610df9fa4b",
+      "date": "2026-11-06T16:08:12Z"
+    },
+    {
+      "repo": "pydantic/pydantic-ai",
+      "sha": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "tree": "448c80f2abafed1ff408d42cdbfbdb65bb1ebbc5",
+      "date": "2026-11-08T02:07:26Z"
+    },
+    {
+      "repo": "letta-ai/letta-code",
+      "sha": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "tree": "55877b5d513163871dd438d75c72e0aa710536ed",
+      "date": "2026-11-07T07:03:51Z"
+    },
+    {
+      "repo": "agno-agi/agno",
+      "sha": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "tree": "ac3bc3d775fb25cdc252a50358705bd8077ccd17",
+      "date": "2026-11-06T11:44:20Z"
+    },
+    {
+      "repo": "temporalio/sdk-typescript",
+      "sha": "615a684ac41a22c881df11157775e326843f7b04",
+      "tree": "6d1ab35c505ee413d1f9ed7e7cbddc96b45521ee",
+      "date": "2026-11-06T20:46:36Z"
+    },
+    {
+      "repo": "dbos-inc/dbos-transact-py",
+      "sha": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "tree": "60c81cb0aaa0f0e89071af364ff53d138d09a072",
+      "date": "2026-11-04T01:18:15Z"
+    }
+  ],
+  "sources": [
+    {
+      "id": "PI-01",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/README.md#L269-L333",
+      "title": "durable tool replay contract",
+      "author_organization": "earendil-works maintainers",
+      "repository": "earendil-works/pi",
+      "commit": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "commit_date": "2026-11-07T23:51:39Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/durable/README.md",
+      "line_ranges": [
+        [
+          269,
+          333
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "工具调用意图先持久化；重启后只有 replay:safe 工具可重跑；嵌套调用使用稳定调用位置/键匹配。",
+        "外部副作用仍需目标自己的幂等机制。"
+      ],
+      "limits": "README 范围是 packages/durable；不代表经典 agent、P2/Chord 或所有工具自动具备效果去重。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PI-02",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246",
+      "title": "tool initial dispatch and restart",
+      "author_organization": "earendil-works maintainers",
+      "repository": "earendil-works/pi",
+      "commit": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "commit_date": "2026-11-07T23:51:39Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/durable/src/harness/tool.ts",
+      "line_ranges": [
+        [
+          130,
+          246
+        ],
+        [
+          555,
+          572
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "初次调用先跑 beforeTool 并重验参数，再保存 execute phase 和 replay 标记。",
+        "恢复 execute phase 要求保存的和当前工具策略均为 safe，然后直接 run；未满足则以可能部分执行的失败结束。"
+      ],
+      "limits": "beforeTool-only 授权在恢复路径是否再次检查属于适配器条件；这不是已证明的上游权限漏洞。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PI-03",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/types.ts#L1175-L1190",
+      "title": "Storage durability receipt contract",
+      "author_organization": "earendil-works maintainers",
+      "repository": "earendil-works/pi",
+      "commit": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "commit_date": "2026-11-07T23:51:39Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/durable/src/types.ts",
+      "line_ranges": [
+        [
+          1175,
+          1190
+        ],
+        [
+          1317,
+          1364
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "每个 batch 原子，首个拒绝点前的 batch 可已持久化；receive 是耐久回执而非发布通知。",
+        "Storage 信任 Session 的语义合法性；Session 序列化提交；deferred 提交可先内存可见。"
+      ],
+      "limits": "单 Session 协议不等于跨主机租约；此处没有证明多写者 fencing。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PI-04",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/session/session.ts#L193-L217",
+      "title": "Session single mutation line and deferred visibility",
+      "author_organization": "earendil-works maintainers",
+      "repository": "earendil-works/pi",
+      "commit": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "commit_date": "2026-11-07T23:51:39Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/durable/src/session/session.ts",
+      "line_ranges": [
+        [
+          193,
+          217
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "单 mutation line 排序；deferred commit 可先采用和展示，再于后续触发持久化。"
+      ],
+      "limits": "需要明确 UI 中哪些进度是暂态；未运行崩溃测试。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PI-05",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/agent/README.md#L1-L400",
+      "title": "classic Agent loop and context transforms",
+      "author_organization": "earendil-works maintainers",
+      "repository": "earendil-works/pi",
+      "commit": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "commit_date": "2026-11-07T23:51:39Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/agent/README.md",
+      "line_ranges": [
+        [
+          1,
+          400
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "经典 Agent 运行时分离 transformContext 与 convertToLlm；工具支持并行执行及 pre/post hooks。"
+      ],
+      "limits": "与同仓 durable package 是不同层；未检查所有宿主如何接入 hooks。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "OC-01",
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/run-coordinator.ts#L1-L170",
+      "title": "process-local run coordinator",
+      "author_organization": "anomalyco maintainers",
+      "repository": "anomalyco/opencode",
+      "commit": "9c7212c99a69b9d1c644fc30ad79068124aab1a7",
+      "commit_date": "2026-11-08T06:04:30Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/core/src/session/run-coordinator.ts",
+      "line_ranges": [
+        [
+          1,
+          170
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "interrupt 返回是否接受取消，不等待清理；awaitIdle 单独等待。",
+        "pendingWake 消除结尾检查到 idle 的唤醒丢失窗口；stop 后新 wake 可启动后继。"
+      ],
+      "limits": "锁定范围是单进程 coordinator Map；不据此声称跨主机执行唯一。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "OC-02",
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/permission.ts#L94-L101",
+      "title": "permission evaluation and pending approval",
+      "author_organization": "anomalyco maintainers",
+      "repository": "anomalyco/opencode",
+      "commit": "9c7212c99a69b9d1c644fc30ad79068124aab1a7",
+      "commit_date": "2026-11-08T06:04:30Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/core/src/permission.ts",
+      "line_ranges": [
+        [
+          94,
+          101
+        ],
+        [
+          184,
+          209
+        ],
+        [
+          306,
+          365
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "规则按最后匹配项判断，默认 ask；configured deny 优先于保存 allow。",
+        "批准引用服务端 pending request；always grant 后重评其他 pending。"
+      ],
+      "limits": "没有完整追踪最终工具适配器；不宣称回复时的规则重评已构成全链路撤权保证。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "OC-03",
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/context.ts#L44-L54",
+      "title": "session context selection snapshot",
+      "author_organization": "anomalyco maintainers",
+      "repository": "anomalyco/opencode",
+      "commit": "9c7212c99a69b9d1c644fc30ad79068124aab1a7",
+      "commit_date": "2026-11-08T06:04:30Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/core/src/session/context.ts",
+      "line_ranges": [
+        [
+          44,
+          54
+        ],
+        [
+          126,
+          184
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "select 固定会话/agent/工具及指令来源；load 用该 selection 装配模型与历史。",
+        "session 权限用于收窄工具、skills、MCP 指令发现。"
+      ],
+      "limits": "请求快照有助一致性，但不是工具 dispatch 的永久授权凭据。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LG-01",
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/types.py#L99-L104",
+      "title": "durability modes and interrupt restart",
+      "author_organization": "langchain-ai maintainers",
+      "repository": "langchain-ai/langgraph",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "commit_date": "2026-11-06T16:08:12Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/langgraph/langgraph/types.py",
+      "line_ranges": [
+        [
+          99,
+          104
+        ],
+        [
+          467,
+          468
+        ],
+        [
+          913,
+          935
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "sync/async/exit 分别表示不同持久化时机。",
+        "interrupt 恢复会从节点开始重跑，中断前代码可再次执行；超时依赖 asyncio 协作取消。"
+      ],
+      "limits": "节点恢复不是指令指针续跑；阻塞代码和外部效果需独立处置。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LG-02",
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_retry.py#L131-L143",
+      "title": "late-write guard for timed attempts",
+      "author_organization": "langchain-ai maintainers",
+      "repository": "langchain-ai/langgraph",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "commit_date": "2026-11-06T16:08:12Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/langgraph/langgraph/pregel/_retry.py",
+      "line_ranges": [
+        [
+          131,
+          143
+        ],
+        [
+          214,
+          274
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "timed attempt close 与 guarded send 使用同一锁；关闭后不再持久化该路径的写入。",
+        "自定义 stream writer 在锁外回调，属于 best effort；child task scheduling 在关闭后拒绝。"
+      ],
+      "limits": "保护 LangGraph 内部写入路径；无法取消已提交到外部系统的 I/O。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LG-03",
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/channels/last_value.py#L46-L71",
+      "title": "concurrent channel update contract",
+      "author_organization": "langchain-ai maintainers",
+      "repository": "langchain-ai/langgraph",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "commit_date": "2026-11-06T16:08:12Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/langgraph/langgraph/channels/last_value.py",
+      "line_ranges": [
+        [
+          46,
+          71
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "同一步对 LastValue 多次更新抛 INVALID_CONCURRENT_GRAPH_UPDATE，要求合适 reducer。"
+      ],
+      "limits": "reducer 合并语义需应用定义，不能等同对外资源互斥。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LG-04",
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_loop.py#L463-L559",
+      "title": "pending writes and ordered checkpoint persistence",
+      "author_organization": "langchain-ai maintainers",
+      "repository": "langchain-ai/langgraph",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "commit_date": "2026-11-06T16:08:12Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/langgraph/langgraph/pregel/_loop.py",
+      "line_ranges": [
+        [
+          463,
+          559
+        ],
+        [
+          1742,
+          1757
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "非 exit 模式可保存任务 pending writes；checkpoint 保存等待相关 delta writes 和前一个 checkpoint future。"
+      ],
+      "limits": "具体 crash 保证随 checkpointer 与 durability 模式而异；未测试分布式后端。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-01",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/overview.md#L1-L44",
+      "title": "durability versus step persistence",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "docs/durable_execution/overview.md",
+      "line_ranges": [
+        [
+          1,
+          44
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "settled-step snapshot 与 engine crash-inflight durability 是两个层次；每个 agent 仅绑定一个 durable engine。",
+        "外部读取驱动的动态指令需在 durable operation 中固定。"
+      ],
+      "limits": "工具/MCP/stream 覆盖随 engine，不应从框架名称推断所有操作持久化。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-02",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/deferred-tools.md#L95-L137",
+      "title": "tool approval is not authorization",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "docs/deferred-tools.md",
+      "line_ranges": [
+        [
+          95,
+          137
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "官方明确工具审批不是不可信客户端的认证授权边界。",
+        "审批展示模型参数；恢复时 hooks/validation 可再次改写实际参数。"
+      ],
+      "limits": "最终有效参数与授权需服务端绑定和复核；不是把框架的审批功能认定为漏洞。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-03",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/toolsets/approval_required.py#L1-L33",
+      "title": "approval-required toolset implementation",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "pydantic_ai_slim/pydantic_ai/toolsets/approval_required.py",
+      "line_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "tool_call_approved 控制是否抛 ApprovalRequired，随后委托工具调用。"
+      ],
+      "limits": "ctx 的可信度由使用方提供；本文件不验证身份或持久授权版本。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-04",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/message-history.md#L681-L729",
+      "title": "history trust and usage continuity",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "docs/message-history.md",
+      "line_ranges": [
+        [
+          681,
+          729
+        ],
+        [
+          788,
+          807
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "仅恢复消息历史不会带回 usage 与 deferred requests；预算可因此每次 run 重置。",
+        "客户端历史与 compaction 标记要按信任边界清理；Conversation 打包更完整恢复状态。"
+      ],
+      "limits": "清理消息结构不等同历史来源认证；费用账本仍需应用持久化。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-05",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605",
+      "title": "budget checks and missing usage",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "pydantic_ai_slim/pydantic_ai/usage.py",
+      "line_ranges": [
+        [
+          548,
+          605
+        ],
+        [
+          633,
+          674
+        ],
+        [
+          704,
+          724
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "request/tool-call 预算可在下一次调用前检查。",
+        "响应缺失 usage 时已知累计是下界；默认不保证请求前精确输入 token 计数。"
+      ],
+      "limits": "预算检查依赖供应商计量和跨 run 传递；不是全球消费硬限额。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "PA-06",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/temporal.md#L267-L274",
+      "title": "replay listeners and external payload retention",
+      "author_organization": "pydantic maintainers",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "commit_date": "2026-11-08T02:07:26Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "docs/durable_execution/temporal.md",
+      "line_ranges": [
+        [
+          267,
+          274
+        ],
+        [
+          366,
+          367
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "部分审批/文件写事件在 workflow 中触发，replay 可再次调用监听器，监听器效果须幂等。",
+        "外部 payload 缺失或过期可使历史无法解码与重放。"
+      ],
+      "limits": "保存结果引用不等于结果永久可用；需按历史可重放期保留。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-00",
+      "url": "https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md#L1-L39",
+      "title": "Letta repository retirement notice",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta",
+      "commit": "8816d3a8516893bfdc0fa14bfb1235226012e295",
+      "commit_date": "2026-10-18T22:28:01Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "README.md",
+      "line_ranges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "原 letta 仓说明 V1 API 已退役，当前代码转到 letta-code。"
+      ],
+      "limits": "只用于样本归属；不把旧 MemGPT 架构当成当前实现。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-01",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/README.md#L1-L82",
+      "title": "Letta Code memory and local/cloud modes",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "README.md",
+      "line_ranges": [
+        [
+          1,
+          82
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "MemFS 使用 Git 管理上下文；支持云端默认与本地选项。"
+      ],
+      "limits": "产品自述不是跨主机同效果互斥的验证。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-02",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533",
+      "title": "bounded abort grace with stragglers",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "src/agent/approval-execution.ts",
+      "line_ranges": [
+        [
+          446,
+          533
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "批量工具取消后等待短暂 grace；忽略 abort 的工具可继续 detached，调用者先退出。",
+        "实际已完成 partial results 优先于合成中断结果。"
+      ],
+      "limits": "迟到输出可被丢弃或归入恢复证据；不说明外部副作用已停止。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-03",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution-abort-race.test.ts#L39-L70",
+      "title": "abort-race regression cases",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "src/agent/approval-execution-abort-race.test.ts",
+      "line_ranges": [
+        [
+          39,
+          70
+        ],
+        [
+          187,
+          303
+        ]
+      ],
+      "evidence_type": "test_source",
+      "claims": [
+        "测试覆盖 hanging task 不阻塞取消返回、grace 内真实结果、迟到 chunk 抑制。"
+      ],
+      "limits": "仅阅读测试源码，未运行；mock 工具不是实际进程终止证明。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-04",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/memory-operation.ts#L1-L60",
+      "title": "memory writer lock scope",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "src/agent/memory-operation.ts",
+      "line_ranges": [
+        [
+          1,
+          60
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "harness-owned memory writers 用 PID 和进程 start-time 锁，只回收死 owner；不按年龄驱逐。",
+        "主 agent 的普通编辑不被此锁包住，冲突依靠提示和 Git。"
+      ],
+      "limits": "本机进程约束不等于所有 writer 或远程主机线性化。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-05",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/recovery-authority-guard.ts#L8-L74",
+      "title": "recovery revision guard",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "src/websocket/listener/recovery-authority-guard.ts",
+      "line_ranges": [
+        [
+          8,
+          74
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "恢复 action 在文件锁内读取 lineage 对应 revision，匹配 expectedRevision 后执行。"
+      ],
+      "limits": "action 同步局部临界区；不能据此推断网络目标原子授权或撤回已发请求。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "LT-06",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/interrupted-turn-record.ts#L435-L518",
+      "title": "late exact results and successor preservation",
+      "author_organization": "letta-ai maintainers",
+      "repository": "letta-ai/letta-code",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "commit_date": "2026-11-07T07:03:51Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "src/websocket/listener/interrupted-turn-record.ts",
+      "line_ranges": [
+        [
+          435,
+          518
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "lineage 必须仍匹配；若已有 independent successor，则把前驱 exact result 写入 sidecar；不覆盖主 successor revision。"
+      ],
+      "limits": "结果来自工具执行链，并非独立目标端证明；本轮未证明全部调用路径覆盖。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-01",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/cancellation_management/redis_cancellation_manager.py#L198-L227",
+      "title": "Redis cancellation fail-open policy",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/agno/agno/run/cancellation_management/redis_cancellation_manager.py",
+      "line_ranges": [
+        [
+          198,
+          227
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "Redis cancellation 查询故障返回未取消，以协调通道故障不打断健康 run 为设计取舍。"
+      ],
+      "limits": "控制面的可用性策略；不适合直接充当 fail-closed 权限或资源效果围栏。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-02",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/cookbook/02_agents/18_checkpointing/README.md#L1-L48",
+      "title": "tool-batch checkpoint granularity",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "cookbook/02_agents/18_checkpointing/README.md",
+      "line_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "evidence_type": "documentation",
+      "claims": [
+        "tool-batch 在整批工具 gather 后 checkpoint；默认 runs 仅终态保存。",
+        "逐工具 tools 模式明确尚未实现。"
+      ],
+      "limits": "cookbook 示例不证明真实掉电恢复；中间外部效果仍可能缺结果记录。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-03",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/concurrency.py#L1-L17",
+      "title": "per-loop admission and ownership scope",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/agno/agno/run/concurrency.py",
+      "line_ranges": [
+        [
+          1,
+          17
+        ],
+        [
+          73,
+          141
+        ],
+        [
+          144,
+          172
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "background limiter 限开始执行，接受和 PENDING backlog 仍无界；每 event loop 独立额度。",
+        "worker ownership 包含 worker_id/attempt/取消原因。"
+      ],
+      "limits": "不是全局资源预算；改变上限不改变已等待者所用 semaphore。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-04",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/status_persist.py#L254-L335",
+      "title": "worker-owned persistence fence routing",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/agno/agno/run/status_persist.py",
+      "line_ranges": [
+        [
+          254,
+          335
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "worker-owned save 携带 attempt，拒绝 stale/terminal 后不退回无围栏写入。"
+      ],
+      "limits": "缺原子 primitive 的 adapter 仍有回退路径，不能统一宣称所有 backend 等价。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-05",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990",
+      "title": "Postgres attempt fence and session transaction",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/agno/agno/db/postgres/async_postgres.py",
+      "line_ranges": [
+        [
+          4892,
+          4990
+        ],
+        [
+          5324,
+          5354
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "run 更新用行锁拒绝旧 attempt，终态限制，session metadata 同事务。",
+        "queue settle 匹配 worker_id 和 attempt。"
+      ],
+      "limits": "存储写入围栏没有阻止旧 worker 已发出的外部效果。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "AG-06",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/tests/integration/agents/test_external_session_fencing.py#L1-L155",
+      "title": "external session fence integration test source",
+      "author_organization": "agno-agi maintainers",
+      "repository": "agno-agi/agno",
+      "commit": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "commit_date": "2026-11-06T11:44:20Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "libs/agno/tests/integration/agents/test_external_session_fencing.py",
+      "line_ranges": [
+        [
+          1,
+          155
+        ]
+      ],
+      "evidence_type": "test_source",
+      "claims": [
+        "测试定义旧 attempt 不覆盖新 run/session、session 写失败回滚和 owner mismatch 拒绝。"
+      ],
+      "limits": "需要 PostgreSQL fixture，本轮仅读源码未运行；不可报告集成通过。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "TM-01",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60",
+      "title": "activity cancellation types",
+      "author_organization": "temporalio maintainers",
+      "repository": "temporalio/sdk-typescript",
+      "commit": "615a684ac41a22c881df11157775e326843f7b04",
+      "commit_date": "2026-11-06T20:46:36Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/common/src/activity-options.ts",
+      "line_ranges": [
+        [
+          13,
+          60
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "ABANDON/TRY_CANCEL/WAIT_CANCELLATION_COMPLETED 明确区分不传播、发请求即返回、等 activity 实际结束。",
+        "TRY_CANCEL 之后 activity 仍可能成功；等待模式可能长期阻塞。"
+      ],
+      "limits": "正常 activity 的取消接收依赖 heartbeat，local activities 有不同路径。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "TM-02",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/workflow/src/workflow.ts#L215-L277",
+      "title": "workflow cancellation command emission",
+      "author_organization": "temporalio maintainers",
+      "repository": "temporalio/sdk-typescript",
+      "commit": "615a684ac41a22c881df11157775e326843f7b04",
+      "commit_date": "2026-11-06T20:46:36Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/workflow/src/workflow.ts",
+      "line_ranges": [
+        [
+          215,
+          277
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "取消 scope 将 requestCancelActivity 命令写入 activator；schedule 中传入 cancellationType。"
+      ],
+      "limits": "SDK 还依赖 Core/server 执行语义；本轮未研究服务端全部状态机。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "TM-03",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/activity.ts#L86-L110",
+      "title": "activity cancellation is cooperative",
+      "author_organization": "temporalio maintainers",
+      "repository": "temporalio/sdk-typescript",
+      "commit": "615a684ac41a22c881df11157775e326843f7b04",
+      "commit_date": "2026-11-06T20:46:36Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/worker/src/activity.ts",
+      "line_ranges": [
+        [
+          86,
+          110
+        ],
+        [
+          206,
+          279
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "worker.cancel 发 AbortSignal 并 reject cancellation promise；run 仍 await 工具执行，成功值可完成。",
+        "只有抛出的相关异常被转为 cancelled，cancel request 不直接强杀 JavaScript。"
+      ],
+      "limits": "工具自行启动的独立子进程/远程工作是否结束，要工具适配器另外证明。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "TM-04",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/activity/src/index.ts#L16-L54",
+      "title": "heartbeat delivery and cooperative cancellation contract",
+      "author_organization": "temporalio maintainers",
+      "repository": "temporalio/sdk-typescript",
+      "commit": "615a684ac41a22c881df11157775e326843f7b04",
+      "commit_date": "2026-11-06T20:46:36Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/activity/src/index.ts",
+      "line_ranges": [
+        [
+          16,
+          54
+        ],
+        [
+          410,
+          431
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "活动通过 heartbeat 获得取消通知，除 local activity；heartbeat 与取消异常传播分开。"
+      ],
+      "limits": "heartbeat 记录进度不证明外部副作用未发生或停止。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "TM-05",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/worker-tuner.ts#L155-L210",
+      "title": "worker slots reserve used release",
+      "author_organization": "temporalio maintainers",
+      "repository": "temporalio/sdk-typescript",
+      "commit": "615a684ac41a22c881df11157775e326843f7b04",
+      "commit_date": "2026-11-06T20:46:36Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "packages/worker/src/worker-tuner.ts",
+      "line_ranges": [
+        [
+          155,
+          210
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "slot reserve、实际使用、release 是三步；预取轮询可预占但尚未使用。"
+      ],
+      "limits": "worker slot 是执行容量，不是业务资源或外部效果 occupancy 的同义词。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "DB-01",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326",
+      "title": "step cancellation and result journal ordering",
+      "author_organization": "dbos-inc maintainers",
+      "repository": "dbos-inc/dbos-transact-py",
+      "commit": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "commit_date": "2026-11-04T01:18:15Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "dbos/_core.py",
+      "line_ranges": [
+        [
+          2309,
+          2326
+        ],
+        [
+          2359,
+          2418
+        ],
+        [
+          2497,
+          2561
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "取消 watcher 先快照 waiters 再读状态，避免旧 CANCELLED 误伤后续恢复者。",
+        "异步 step 取消后等待清理；step 函数返回后才记结果；无记录会重新执行。"
+      ],
+      "limits": "外部效果与结果落库间存在未知窗口；不能从 step 重放去重推出外部 exactly-once。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "DB-02",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_sys_db.py#L1521-L1595",
+      "title": "workflow owner_xid terminal fence",
+      "author_organization": "dbos-inc maintainers",
+      "repository": "dbos-inc/dbos-transact-py",
+      "commit": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "commit_date": "2026-11-04T01:18:15Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "dbos/_sys_db.py",
+      "line_ranges": [
+        [
+          1521,
+          1595
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "提供 owner_xid 时终态只能由匹配 owner 的 PENDING 工作流更新；迟到 executor 被拒绝。"
+      ],
+      "limits": "未提供 owner_xid 的路径不使用此 fence；目标端效果不受这个数据库条件控制。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "DB-03",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_recovery.py#L1-L77",
+      "title": "recovery enqueue claim separation",
+      "author_organization": "dbos-inc maintainers",
+      "repository": "dbos-inc/dbos-transact-py",
+      "commit": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "commit_date": "2026-11-04T01:18:15Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "dbos/_recovery.py",
+      "line_ranges": [
+        [
+          1,
+          77
+        ]
+      ],
+      "evidence_type": "source",
+      "claims": [
+        "恢复先重新排队，依赖原子 ENQUEUED 到 PENDING claim 避免恢复器重复启动。"
+      ],
+      "limits": "claim 唯一性不是任意网络副作用的效果唯一性。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "DB-04",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_queue.py#L70-L131",
+      "title": "queue resource policy dimensions",
+      "author_organization": "dbos-inc maintainers",
+      "repository": "dbos-inc/dbos-transact-py",
+      "commit": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "commit_date": "2026-11-04T01:18:15Z",
+      "publication_date": null,
+      "date_note": "固定提交日期，不冒充该文件最初发布日期",
+      "accessed_at_utc": "2026-11-08T06:25:00Z",
+      "path": "dbos/_queue.py",
+      "line_ranges": [
+        [
+          70,
+          131
+        ]
+      ],
+      "evidence_type": "source_contract",
+      "claims": [
+        "区分全局/worker/partition 并发与时间窗启动速率。"
+      ],
+      "limits": "本轮仅核接口与构造约束，未验证所有调度后端或跨地区配置一致性。",
+      "attribution": "官方组织公开 GitHub 仓库；固定 commit 文件正文。测试条目仅为测试设计证据。"
+    },
+    {
+      "id": "GH-01",
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "title": "GitHub REST pull request async merge and result retention",
+      "author_organization": "GitHub",
+      "repository": null,
+      "commit": null,
+      "commit_date": null,
+      "publication_date": null,
+      "date_note": "动态官方文档；页内示例 API version 2026-03-10，访问快照非固定代码提交",
+      "accessed_at_utc": "2026-11-08T06:30:22Z",
+      "path": null,
+      "line_ranges": [
+        [
+          566,
+          645
+        ]
+      ],
+      "evidence_type": "official_api_documentation",
+      "claims": [
+        "202 表示后台接纳；enqueued 仅表示加入合并队列，不代表 PR 已合并。",
+        "enqueued 是队列请求结果的终态，不跟随后续实际合并更新；异步结果 UUID 在最后更新24小时后过期返回404。"
+      ],
+      "limits": "目标适配补充，非第9个开源样本；动态文档需实施时重验。不得把请求终态或结果引用404当效果结论。",
+      "attribution": "GitHub 官方 REST 文档，经 web open/find 读取正文。"
+    }
+  ],
+  "limits": [
+    "静态源码与官方文档研究；没有安装运行上游、执行测试或连接真实宿主。",
+    "默认分支固定为访问时 commit，未声称是稳定 release；仓库名称迁移已记录。",
+    "来源中的范围性承诺不扩大到外部效果、全部适配器或跨主机部署。"
+  ]
+}

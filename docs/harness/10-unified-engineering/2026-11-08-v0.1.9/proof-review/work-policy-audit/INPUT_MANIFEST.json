@@ -1,0 +1,71 @@
+{
+  "frozen_at_utc": "2026-11-08T08:04:48.050110+00:00",
+  "files": [
+    {
+      "path": "mechanisms/work-improvement/sources.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301
+    },
+    {
+      "path": "mechanisms/work-improvement/README.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+      "sha256": "aab8b8f0402158aac427da7b2d74b89de5a6046bf5442c878a39ff8f519a8ef5",
+      "bytes": 2662
+    },
+    {
+      "path": "mechanisms/work-improvement/minimal-experiments.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2",
+      "bytes": 23380
+    },
+    {
+      "path": "mechanisms/work-improvement/validation.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/validation.json",
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933",
+      "bytes": 1249
+    },
+    {
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867",
+      "bytes": 21536
+    },
+    {
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "sha256": "2fa1c97c26eb9919b88084090aac43ca2c80b9d6348aec108b69898cf15f501d",
+      "bytes": 34956
+    },
+    {
+      "path": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "sha256": "659c7f777345520baf7729c30caad296a51e824961aa5d7dc28d30b1fd2539ab",
+      "bytes": 17383
+    },
+    {
+      "path": "west/evaluation-design-review/README.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/README.md",
+      "sha256": "53fdab4fb63a8a689b22261f5f3ce7b2dce56bf4acd4e71d898c7bd5a161e7c8",
+      "bytes": 4185
+    },
+    {
+      "path": "west/evaluation-design-review/review.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/review.md",
+      "sha256": "7da7b5f5f320d3305e82e08d948aac1741221a8308dfc1039aa67e145a6fec15",
+      "bytes": 6010
+    },
+    {
+      "path": "west/evaluation-design-review/design.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497
+    },
+    {
+      "path": "统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "sha256": "7dab5eebe93a1cd7f32ad290e7ab5a26e2f49821cfb6e88e433101b536ad3dbe",
+      "bytes": 31509
+    }
+  ]
+}

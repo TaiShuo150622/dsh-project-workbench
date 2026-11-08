@@ -1,0 +1,482 @@
+{
+  "schema_version": "0.1.0",
+  "protocol_version": "0.1.0",
+  "artifact_kind": "proposed_minimal_evaluation_plan",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "execution_ready": false,
+  "artifact_state": {
+    "fixtures_created": false,
+    "runner_created": false,
+    "model_calls_made": 0,
+    "external_writes_made": 0
+  },
+  "reviewed_inputs": [
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/context-evaluation/protocol.json",
+      "sha256": "c637886c04746ddac6bb2b046db441221304bb50705c7f0e3509a0b87aa79082"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/context-evaluation/evaluation-contract.md",
+      "sha256": "c0a8bf6f846435b8baf4d78b0dd877fb0c43c3da25011cec6ab7be880ec2e44d"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/conformance/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "03be375768a615dbd71c38bdf81645a609c19f633fd85a0a456a6a4102516c1a",
+      "rechecked_sha256": "889b0bc82d7c2d7d7308aea9b99eab59d132c39a49ab904e5047787c7687d162",
+      "recheck_note": "Parent added authority/consumer/effective-action fields during this review. Reopened current body; three scenarios and evaluation conclusions remain unchanged. Initial read hash retained."
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "535905a83d363614fd0a8b60b47b6ec21e63c565be5dcfa5a168e237edba4f84"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "d054edabe839264de3497cca4ee45f09e4cd4403fb020d1bbb3829720d9c549c",
+      "read_scope": "Quick compatibility review of three protocols, limits, counts, task cards and experience contrasts."
+    }
+  ],
+  "evidence_scope": "Independent same-model design review of local proposals; no new product capability claims, experiment results or statistical power claims.",
+  "estimands": {
+    "task_success": "Current required deliverable accepted under frozen requirements, independent checks and blinded semantic review.",
+    "human_burden": "Active operator, first acceptance review, investigation and correction minutes; report components and total. Research adjudication and maintenance separately.",
+    "continuity": "Preserved necessary constraints and valid work after handoff/revision; omissions, erroneous reuse, unnecessary repetitions and time to next useful result.",
+    "recovery": "Under a specified fault/evidence model, time to safe status, actionable status and task completion; product unknown separate from each endpoint.",
+    "context_cost": "All build/update/retrieval/selector/reader costs, including inner retries, cache and failures; separate task cost, research evaluation cost, maintenance and total."
+  },
+  "outcome_vector": [
+    "task_acceptance",
+    "human_active_minutes",
+    "progress_and_completion",
+    "total_task_resources"
+  ],
+  "no_scalar_success_score": true,
+  "cost_denominators": {
+    "primary": "Total costs of all assigned/attempted work, including failed, timed-out, invalid and incomplete runs; report assigned and attempted counts separately.",
+    "per_accepted_delivery": "All group costs divided by accepted deliveries; undefined when accepted count is zero, with total cost still reported.",
+    "conditional_success_cost": "Mean cost restricted to successful runs is a separate selected-subset diagnostic, never a replacement for full cost.",
+    "historical_thresholds": "Do not inherit proposed sample sizes, gain thresholds or attribution-agreement targets from historical drafts as validated criteria; confirmation thresholds remain unfrozen."
+  },
+  "obligation_credit_rule": "A repeat query/check may be useful for a current or future decision or an explicit verification/audit/monitoring obligation. Confirmation of no change is not automatically waste; unnecessary repetition requires absence of these justifications.",
+  "old_proposal_cost": {
+    "episodes": 72,
+    "families": 24,
+    "variants_per_family": 3,
+    "arms_nominal": 8,
+    "repeats_per_arm": 3,
+    "input_budget_levels": 2,
+    "all_cells_task_runs": 3456,
+    "full_history_once_per_episode_repeat_task_runs": 3240,
+    "phase_1_five_arms_full_history_once_task_runs": 1944,
+    "primary_B5_B3_only_two_budgets_task_runs": 864,
+    "excluded_from_counts": [
+      "B6 evolution on/off expansion",
+      "dense sensitivity",
+      "compression variants",
+      "B7 equal-cost retrieval control",
+      "both fixed-prefix and on-policy task modes",
+      "offline index/lesson construction calls",
+      "grader calls"
+    ],
+    "cost_formula": "sum(all role input/output/cache/failed/retry usage at frozen rates)+tool resource cost; human and maintenance minutes reported alongside, with explicitly chosen conversion only if later needed",
+    "monetary_estimate": null,
+    "reason": "No measured usage distribution or frozen provider pricing; do not invent amounts."
+  },
+  "pilot": {
+    "purpose": "Measurement feasibility, cost distribution, fixture/oracle failures and directional counterexamples; not confirmation.",
+    "scenario_count": 3,
+    "families_per_scenario": 2,
+    "total_target_families": 6,
+    "episodes_per_family": 1,
+    "arms_per_family": 2,
+    "repeats_per_arm": 1,
+    "total_target_task_runs": 12,
+    "split": "All six families are development/pilot material; none reused as confirmation after inspection or tuning.",
+    "fixed_items": [
+      "one exact model/provider snapshot and parameters",
+      "same tool and target capabilities",
+      "same current authenticated policy",
+      "same source corpus prefix and release schedule",
+      "same frozen task requirements",
+      "independent environment copy per arm",
+      "same input and output caps",
+      "frozen checker/rubric versions"
+    ],
+    "randomized_unit": "Arm execution order within scenario-family block; seed and assignment list frozen before execution.",
+    "paired_unit": "Independent family and its full staged episode, not each time point, tool call, retry, or reviewer.",
+    "human_assignment": "Reviewer-block balanced across families/arms; a first-reviewer does not see both arm outputs of the same family. Hide labels, costs and self-ratings; UI may reveal condition, so not claimed double-blind.",
+    "model_randomness": "Fixed sampling setup and recorded seeds where supported do not make service behavior deterministic; one pilot repeat does not estimate full stochastic variance.",
+    "tentative_run_caps": {
+      "status": "engineering_initial_values_to_freeze_not_optimality_claim",
+      "total_input_tokens_per_model_call": 8000,
+      "output_tokens_per_model_call": 4000,
+      "tool_invocations_per_episode": 40,
+      "online_model_calls_per_episode": 40,
+      "wall_clock_seconds_per_episode": 1200,
+      "includes_online_roles": [
+        "agent",
+        "writer",
+        "updater",
+        "selector",
+        "diagnostic model",
+        "inner retries",
+        "failed requests"
+      ],
+      "offline_build_model_call_cap": null,
+      "evaluation_model_call_cap": null,
+      "total_spend_cap": null,
+      "active_human_minutes_cap": null,
+      "shared_budget_rule": "Offline construction and independent grading have separate frozen caps and costs, all within the overall authorized budget.",
+      "overflow_rule": "Mandatory instructions/tools/policy that exceed the input cap make the condition explicitly infeasible; never silently remove mandatory constraints."
+    },
+    "stop_rules": [
+      "Stop at 12 scheduled task runs; no optional sampling until a desired result appears.",
+      "Per episode stop at its final-stage accepted endpoint after all required staged interventions/handoffs, or frozen cap/mandatory-constraint violation; retain every incomplete/failure record.",
+      "On broken observation chain, fixture contamination or unobserved effect paths, stop affected configuration and investigate; do not label that evidence as an effect success.",
+      "Do not erase method-induced parse failures, budget excesses or missing traces.",
+      "Only predefined arm-independent shared infrastructure failure may trigger one complete paired-block rerun within budget; retain original pair and all costs."
+    ],
+    "analysis": {
+      "report": "Per-family paired outcome vectors, descriptive deltas, completion status, oracle coverage and full cost accounting.",
+      "no_inferential_claims": [
+        "no pilot power guarantee",
+        "no population noninferiority",
+        "no p-value or bootstrap-based universal gain from two families per scenario",
+        "no rare-failure absence claim"
+      ],
+      "denominator": "All preregistered attempted episodes remain in the outcome ledger. Missing evidence is not acceptance; an inability to observe effects is not fabricated evidence of wrong effects.",
+      "intervals": "No inferential confidence intervals for this pilot; confirmation interval method to be specified after design choices are frozen.",
+      "quality_gate": "Required requirements cannot be offset by lower tokens. Operational tradeoffs and minimum meaningful benefit must be separately frozen before confirmation."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "name": "Coding revision to reviewable delivery",
+      "claim_under_test": "Version-bound state/evidence and handoff bundle improve valid continuity or lower human burden without degrading current functional delivery.",
+      "baseline": "Competent Git-based workflow with task checklist, raw tool/test logs, current requirements and identical enforcement.",
+      "candidate": "Same inputs/tools/model plus version-bound Record/evidence view and explicit handoff bundle.",
+      "treatment_scope": "Bundle-level effect only; cannot attribute separately to DAG, schema or UI.",
+      "families": [
+        {
+          "id": "A1",
+          "condition": "Relevant requirement revision between attempts; old evidence remains historical."
+        },
+        {
+          "id": "A2",
+          "condition": "Irrelevant note after valid evidence; no unrelated time/policy changes."
+        }
+      ],
+      "unit": "One feature family and staged revision trajectory on cloned independent workspaces.",
+      "observables": [
+        "current-spec function acceptance",
+        "source/artifact version matched by checks",
+        "stale evidence reused incorrectly",
+        "necessary constraints omitted",
+        "valid work needlessly repeated",
+        "time after handoff to useful artifact",
+        "active operator minutes",
+        "first-review minutes",
+        "correction minutes",
+        "all task and maintenance resources"
+      ],
+      "independent_oracle": "Frozen requirement-level tests and review rubric produced independently of the candidate checker; negative controls included.",
+      "stop": "Normal completion iff required_stages_completed AND final_stage_accepted; mandatory-constraint violation or frozen cap are early incomplete/failure exits. Earlier acceptance is an intermediate observation, never the episode endpoint.",
+      "confounds": [
+        "scope expansion by candidate",
+        "treating necessary new-spec verification as waste",
+        "reviewer carryover",
+        "extra raw information in candidate metadata",
+        "UI transparency versus underlying reasoning improvement"
+      ],
+      "attribution": "Information missing / selection omission / reasoning-action error / state-binding error / checker mismatch / environment failure may coexist; preserve evidence and uncertainty.",
+      "conformance_links": [
+        "C01",
+        "C02",
+        "C03",
+        "C14",
+        "C16"
+      ],
+      "allowed_conclusion": "Local effect of the tested state/evidence/handoff bundle on these feature families with this model and review procedure.",
+      "prohibited_conclusions": [
+        "all coding efficiency improved",
+        "DAG alone caused improvement",
+        "all stale evidence errors eliminated",
+        "UI correctness implies production acceptance"
+      ],
+      "stage_protocol": {
+        "status": "PROPOSED_NOT_RUN",
+        "freeze_before_run": [
+          "family-specific required stage list and intervention trigger",
+          "handoff identity and visible material at each stage",
+          "meaning of final_stage_accepted under final applicable specification",
+          "run horizon and rule for a stage never reached"
+        ],
+        "stages": [
+          {
+            "id": "A-S0",
+            "purpose": "initial specification and initial implementation/evidence",
+            "endpoint": "intermediate observation only, even if initially accepted"
+          },
+          {
+            "id": "A-S1",
+            "purpose": "apply frozen A1 relevant revision or A2 unrelated note at its logical trigger",
+            "endpoint": "intervention receipt plus handoff to the designated continuation actor/session"
+          },
+          {
+            "id": "A-S2",
+            "purpose": "continue under final applicable specification, inspect impact, preserve or update evidence, final review",
+            "endpoint": "final acceptance after required stages are witnessed"
+          }
+        ],
+        "unreached_stage": "Keep episode in assigned/attempted denominator; report last stage and missing intervention separately. Failure before trigger is not silently excluded.",
+        "a2_rule": "An unrelated note does not by itself invalidate evidence; final review may reuse still-applicable evidence without rerunning unchanged checks.",
+        "no_extra_runs": "Stages are within each existing paired episode; target run count remains 12."
+      }
+    },
+    {
+      "id": "B",
+      "name": "Long-running work under disconnect and recovery",
+      "claim_under_test": "Explicit action/effect state and reconciliation reduce incorrect repetition or human investigation while preserving progress when authoritative recovery evidence becomes available.",
+      "baseline": "Durable checkpoints, ordinary logs and authoritative target-query runbook; no intentionally naive blind replay.",
+      "candidate": "Same target idempotency/fencing/query abilities plus action/effect separation, unknown liabilities and structured reconciliation.",
+      "families": [
+        {
+          "id": "B1",
+          "condition": "Target committed; response lost; authoritative committed evidence later available."
+        },
+        {
+          "id": "B2",
+          "condition": "Authoritative termination and not-applied proof available after fault; remaining work can safely continue."
+        }
+      ],
+      "unit": "Task family plus target world and logical fault barrier; each arm has cloned target state and same evidence-release schedule.",
+      "fault_injection": "Use verified target/egress logical barriers, not elapsed wall-clock seconds. Arm failing before barrier stays in pre-fault outcome ledger.",
+      "observables": [
+        "contract_verdict",
+        "product_action_state",
+        "task_completed_by_horizon",
+        "coverage_of_target_audit",
+        "new_write_attempts",
+        "duplicate_covered_effects",
+        "preserved_work",
+        "investigation_minutes",
+        "time_from_recovery_request_to_safe_status",
+        "time_from_evidence_available_to_progress",
+        "time_to_completion",
+        "unsettled_resource_liability"
+      ],
+      "independent_oracle": "Target audit plus controlled egress and fault receipts; adapter's own success message is not the effect oracle.",
+      "stop": "Remaining work completed or frozen observation/run horizon; a correctly unresolved outcome remains incomplete rather than a claimed bounded-liveness violation.",
+      "diagnostic_extension": {
+        "included_in_12_run_pilot": false,
+        "condition": "Authoritative outcome evidence remains unavailable.",
+        "oracle": "Correct preservation of product unknown and actionable next step; conformance may succeed.",
+        "excluded_claim": "Cannot count as task completion or automatic recovery-speed benefit."
+      },
+      "confounds": [
+        "different target idempotency capabilities",
+        "different fault phases",
+        "external evidence release delay",
+        "late unobserved effects",
+        "excluding arms that fail before injection",
+        "conflating conformance SUCCESS with task completion"
+      ],
+      "conformance_links": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C12",
+        "C15",
+        "C16"
+      ],
+      "allowed_conclusion": "Specified finite fault traces under the declared capabilities and observation coverage; task progress and contract preservation reported separately.",
+      "prohibited_conclusions": [
+        "arbitrary exactly-once guarantee",
+        "unconditional liveness",
+        "all production disconnects recover",
+        "no duplicate effect outside observed scope or retention window"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Research evidence changes to an actionable decision",
+      "claim_under_test": "B5 rule timeline plus raw retrieval gives net task benefit over B3 raw retrieval for temporal correction, uncertainty handling and usable next action.",
+      "baseline": "B3 fixed lexical retrieval over the raw corpus.",
+      "candidate": "B5 same retrieval/corpus plus deterministic timeline derived only from observable event fields.",
+      "families": [
+        {
+          "id": "C1",
+          "condition": "Latest correction supersedes an earlier premise before final decision."
+        },
+        {
+          "id": "C2",
+          "condition": "Late-arriving information with unresolved conflict; as-known-then differs from current view."
+        }
+      ],
+      "unit": "Topic family with a full three-cutoff source-release trajectory, not each cutoff as an independent observation.",
+      "observables": [
+        "required final research decision acceptance",
+        "correct next action under current constraints",
+        "source/version citation support",
+        "correction use in actual artifact",
+        "unsupported claims",
+        "preserved uncertainty",
+        "human fact-check and correction minutes",
+        "index build and incremental update resources",
+        "retrieval and context costs"
+      ],
+      "independent_oracle": "Frozen requirement/evidence rubric permits alternative sufficient evidence sets; hidden answer and future source updates excluded from all inputs.",
+      "visibility": "available_at <= cutoff for raw data, metadata, summaries and indices.",
+      "stop": "Final fixed cutoff deliverable accepted or frozen budget/horizon; do not stop early when an arm appears better.",
+      "confounds": [
+        "hidden temporal/gold labels in metadata",
+        "future information indexed early",
+        "candidate corpus richer than baseline",
+        "better recall without better action",
+        "condition chosen after seeing result"
+      ],
+      "conformance_links": [
+        "C03",
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "allowed_conclusion": "Tested B5/B3 comparison for this temporal research-task sample and budget.",
+      "prohibited_conclusions": [
+        "autonomous ontology is necessary",
+        "independent selector is better",
+        "long-term learning established",
+        "full-history residence universally inferior"
+      ]
+    }
+  ],
+  "failure_attribution": {
+    "labels_nonexclusive": [
+      "unavailable_required_information",
+      "retrieval_or_selection_omission",
+      "summary_or_index_corruption",
+      "reasoning_or_action_error",
+      "authority_or_version_binding_error",
+      "recovery_protocol_error",
+      "oracle_or_requirement_mismatch",
+      "fixture_or_infrastructure_error",
+      "budget_exhaustion",
+      "unknown_due_to_missing_trace"
+    ],
+    "method": "Use frozen event/input/manifest/output trace and independent oracle; record multiple hypotheses and adjudication. A later diagnostic replay is separate from the primary paired result.",
+    "prevents": "Do not relabel all candidate failures as infrastructure or force every failure into one causal label."
+  },
+  "transfer_extension": {
+    "status": "OPTIONAL_PROPOSED_NOT_RUN_NOT_IN_12_RUN_PILOT",
+    "purpose": "Frozen experience reuse, not online lifelong-learning proof.",
+    "development_families": 2,
+    "minimum_development_trajectory_runs": 2,
+    "target_families": 6,
+    "target_types": [
+      "similar transferable task",
+      "surface similarity with changed constraints",
+      "obsolete tool/version experience"
+    ],
+    "families_per_type": 2,
+    "arms": [
+      "no_prior_experience",
+      "raw_prior_trace_retrieval",
+      "frozen_summarized_lesson_retrieval"
+    ],
+    "target_runs": 18,
+    "repeats_per_arm": 1,
+    "budget_note": "At least two development task runs plus separate library generation/indexing calls in addition to 18 target runs; no hidden free build.",
+    "isolation": [
+      "split by source/task family not paraphrase",
+      "freeze rule library and trace library",
+      "freeze indices and caches",
+      "same current target materials across arms",
+      "no target results or judge feedback in library",
+      "no within-round prompt/rule/model selection using target outcomes",
+      "rebuild new version only for later development, never overwrite evaluation inputs"
+    ],
+    "contrasts": {
+      "raw_vs_none": "Overall value of additional prior experience under the fixed budget.",
+      "summary_vs_raw": "Value/cost of experience representation from the same development facts."
+    },
+    "measures": [
+      "positive transfer",
+      "negative transfer",
+      "incorrect experience reuse",
+      "human correction",
+      "withdrawal handling time",
+      "build plus task costs"
+    ],
+    "allowed_conclusion": "Transfer from a particular frozen library to the preregistered unseen sample.",
+    "online_growth_separate": {
+      "randomization_unit": "independent task sequence",
+      "feedback": "each arm's own prior trajectories and same declared operational feedback; hidden evaluation labels withheld until block end",
+      "outcome": "sequence-level learning curves and cumulative cost with matched difficulty/order",
+      "not_assumed": "Tasks are independent samples or later tasks are naturally easier."
+    }
+  },
+  "complexity_ablation": {
+    "principle": "Candidate complexity earns inclusion only through a scoped contrast; delete components that no longer improve the outcome vector.",
+    "initial_components_not_required": [
+      "autonomous ontology",
+      "multiagent planner",
+      "model-based context selector",
+      "graph database",
+      "complete cross-host workflow engine"
+    ],
+    "later_comparison": "One component removed at a time with same task/requirements/model; if dependencies prevent isolation, label the compared bundle.",
+    "model_upgrade": "Re-freeze exact models and repeat scoped ablations; old model results do not rank newer models or harnesses.",
+    "costs": [
+      "candidate generation",
+      "diagnosis",
+      "validation",
+      "migration",
+      "ongoing maintenance",
+      "human effort",
+      "all inner model calls"
+    ]
+  },
+  "confirmation_prerequisites": [
+    "independent fixtures and oracle cover required behavior",
+    "measurement pilot reveals no unresolved data contamination",
+    "precise primary contrast and task population",
+    "minimum meaningful task benefit and human-burden/quality margins chosen before confirmation",
+    "cluster/family-aware sample design and interval method",
+    "frozen total budget and actual execution authorization",
+    "new untouched holdout families",
+    "defined multiplicity and rerun rules"
+  ],
+  "not_supported_by_this_plan": [
+    "production reliability",
+    "unbounded memory scalability",
+    "all users or domains",
+    "semantic non-disclosure proof",
+    "statistical power from the pilot size",
+    "universal benefit from a more complex harness"
+  ],
+  "validation_scope": "JSON/document structural checks only; no fixture execution or benefit evidence.",
+  "relationship_to_mechanisms": {
+    "default_start": "W-05 12-target-run calibration pilot only; not an effect-size confirmation",
+    "automatic_additional_runs": false,
+    "conformance": "Selected relevant contract checks may serve as fixture preflight; do not add all C01-C16 as default model task runs.",
+    "W01": "Optional later decision/replanning bundle study: 12 task cards x 2 conditions x 2 repeats = 48 episodes; task cards are not 12 completed runs.",
+    "W02": "Optional larger experience-package study: 72 heldout episodes plus separate training/development/library costs.",
+    "W03": "Optional candidate-search ablation after an already acceptable baseline; not a prerequisite of W-05.",
+    "alternate_small_transfer": "W-05 optional 18 target runs plus at least 2 development trajectory runs and separate library calls can calibrate the transfer question before any larger W02 study.",
+    "caps": "Profiles differ: mechanisms has 8 model calls/64000 total input, W-05 proposes 40 online model calls/8000 input per call. Freeze one explicit profile for any borrowed card; never combine permissive maxima or compare as if equal budgets.",
+    "estimand_difference": "W02 success-only raw traces versus lessons including counterexamples is a package contrast. W-05 raw versus summarized transfer conditions use the same complete development facts to isolate representation more closely.",
+    "future_decision": "Select one optional follow-up based on calibration and intended claim; do not concatenate all experiments into a mandatory campaign."
+  },
+  "revision": "0.1.1",
+  "revision_note": "Root integration correction for R06 WP01; no execution or budget change.",
+  "prior_design": {
+    "file": "design.json",
+    "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438"
+  }
+}

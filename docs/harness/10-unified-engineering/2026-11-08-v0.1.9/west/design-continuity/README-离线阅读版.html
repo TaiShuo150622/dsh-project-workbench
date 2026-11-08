@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="b2b0f53bb909">
+<title>W12 · 旧设计到统一工程的决定沿革</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>W12 · 旧设计到统一工程的决定沿革</h1>
+</header>
+<p>先读<a href="旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">决定沿革讨论稿</a>，或打开同正文的 <a href="旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">HTML 阅读版</a>。原产品顺序仍是完整 P01–P15 面板平台，再接 B01–B12 工作台；H/I 是语义验证路线，不自动改排期。</p>
+<ul><li><a href="continuity.json">十条映射与八问导览</a>：保留决定、需重决/冻结、历史事实不继承分列。</li><li><a href="task-entries.json">27 张任务卡入口</a>：原路径、目标、依赖、verify 与实际读取深度。</li><li><a href="READING-离线阅读版.html">便读清单</a>和<a href="reading-list.json">完整路径/行/SHA</a>：38 份公开旧档案、5 份新研究输入；没有声称读完 192 附件。</li><li><a href="validation.json">自查回执</a>：格式、引用行号、整合路径、输入及输出摘要。</li></ul>
+<p>只写本专题，没有改变 W09 覆盖快照、旧稿、契约或产品。没有运行卡片、宿主或外部调研，也没有提交、推送或发布。资源主线由总稿负责；这里仅记录其旧任务/环境约束来源。</p>
+<p>相对源链接按整合研究树组织；本工作树未复制原文，校验读取 integration 的只读对应文件。正文中的八问是后续决策导览，本轮不等待答复，也不替用户决定入口、底座、投入或远程模式。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

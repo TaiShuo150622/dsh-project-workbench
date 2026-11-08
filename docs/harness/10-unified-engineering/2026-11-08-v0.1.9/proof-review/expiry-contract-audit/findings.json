@@ -1,0 +1,70 @@
+{
+  "review_id": "R-04",
+  "review_type": "independent_model_review_and_tlc_execution",
+  "model_declared_by_dispatcher": "gpt-6-astra",
+  "human_review": false,
+  "input_manifest": "INPUT_MANIFEST.json",
+  "verification_receipt": "verification_receipt.json",
+  "runner_probe_receipt": "runner_probe_receipt.json",
+  "overall": "Original TTL finite-model results independently reproduced. No type, assignment, or stated finite-guarantee error found. One concrete runner outcome-matching gap demonstrated. No material conflation found in the targeted v0.1.1 contract topics.",
+  "findings": [
+    {
+      "id": "EA01",
+      "classification": "checker_expected_outcome_validation_gap",
+      "severity": "medium",
+      "location": "inputs/formal-spec/run_expiry.py:27,36-43",
+      "title": "Exit code 12 does not identify the expected NoDuplicate violation",
+      "probe": "Change only isolated expiry-none.cfg to INVARIANTS Init. Original runner returns 0 for the suite even though none violates Init after one transition instead of NoDuplicate.",
+      "probe_runner_exit_code": 0,
+      "observed_wrong_violation": "Init",
+      "expected_violation": "NoDuplicate",
+      "original_model_results_invalidated": false,
+      "recommendation": "Check observed invariant names per mode; reject other errors; for commit also require clean completed exploration and an empty queue. Keep a wrong-invariant negative control.",
+      "root_repair_status": "Resolved by read-only review of revised runner and root positive/negative evidence; original finding remains tied to its frozen SHA.",
+      "fixed_runner_sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "repair_review": "REPAIR_REVIEW.md",
+      "repair_evidence": "repair_verification_receipt.json"
+    }
+  ],
+  "model_review": {
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "unassigned_primed_variables_found": false,
+    "type_violation_found": false,
+    "finite_reachable_domain": true,
+    "parameters": {"Deadline": 2, "messages": 2},
+    "scope": [
+      "One immutable business intent and one monotone target clock",
+      "Absolute business deadline shared with the record-eviction cutoff",
+      "Atomic expiry check and effect commit in commit mode",
+      "No early key loss, crash recovery, dynamic deadline extension, distributed clock proof, or liveness guarantee",
+      "Not a generic proof of all TTL-based idempotency protocols"
+    ]
+  },
+  "independent_tlc_results": [
+    {"mode": "none", "exit_code": 12, "violation": "NoDuplicate", "generated": 109, "distinct": 59, "queue_remaining": 3, "trace_transitions": 9, "complete": false},
+    {"mode": "admission", "exit_code": 12, "violation": "NoDuplicate", "generated": 131, "distinct": 81, "queue_remaining": 8, "trace_transitions": 9, "complete": false},
+    {"mode": "commit", "exit_code": 0, "violation": null, "generated": 115, "distinct": 66, "queue_remaining": 0, "trace_transitions": null, "complete": true}
+  ],
+  "trace_assessment": {
+    "both_original_counterexamples_have_predeadline_sends_and_receives": true,
+    "second_effect_occurs_at_expired_now_2_after_evict": true,
+    "minimum_length_argument": "Two Send, two Receive, two Commit, two Tick, and one Evict require at least nine model transitions, attained by both traces.",
+    "historical_parse_failures_excluded": true
+  },
+  "contract_review": {
+    "contract_sha256": "32e2fc71df489af9d8558743fff51ff5966a92a7f69f2acf7e363671345ab7bd",
+    "formal_model_sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+    "product_unknown_vs_test_UNKNOWN": "Explicitly distinguished; per-scenario SUCCESS is not business completion",
+    "unbounded_wait_vs_progress": "Timeout alone need not violate a protocol without a progress bound; no liveness success or eventual completion follows",
+    "usable_q": "consumer, operation, and recipients explicit; global content state and scoped access are separated",
+    "derived_publication": "Authorized scoped summary use separated from source access and independent reverification",
+    "current_authority": "Final semantic operation and current trusted policy are required; historical context does not grant new authority",
+    "material_confusion_found": false,
+    "real_adapter_scenarios_executed": false
+  },
+  "author_sources_modified": false,
+  "prior_review_outputs_modified": false,
+  "product_changes": false,
+  "model_api_or_network_calls": false,
+  "commit_or_push": false
+}

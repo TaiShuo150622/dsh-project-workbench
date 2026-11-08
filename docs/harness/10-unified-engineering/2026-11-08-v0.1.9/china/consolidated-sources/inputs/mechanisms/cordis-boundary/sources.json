@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "topic": "Cordis local lifecycle and external-effect boundaries",
+  "created_at": "2026-11-08",
+  "evidence_status": "selected proof reading and pinned-source static inspection; no implementation execution",
+  "sources": [
+    {
+      "id": "C-PAPER",
+      "type": "primary_research_paper",
+      "title": "A Programming Paradigm for Spatiotemporal Composability",
+      "authors": [
+        "Yifan Shi",
+        "Wei Zhang",
+        "Tianyi Cui"
+      ],
+      "affiliations_from_pdf_title_page": {
+        "Yifan Shi": [
+          "Peking University",
+          "DeepSeek-AI"
+        ],
+        "Wei Zhang": [
+          "Peking University"
+        ],
+        "Tianyi Cui": [
+          "DeepSeek-AI"
+        ]
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "full_text_url": "https://arxiv.org/pdf/2608.25512v1",
+      "version": "v1",
+      "published_at": "2026-08-26T08:22:19Z",
+      "accessed_at": "2026-11-08",
+      "pdf_sha256": "390775dbc9debdcf2ed1b076eed013387ca057630be3cb594617b2b742e48cf0",
+      "pdf_pages": 92,
+      "claims": [
+        {
+          "locator": "Def. 8; Thm. 7/15/16; PDF pp. 11–16",
+          "claim": "Witnessed inverse and local recovery/LIFO definitions and proofs inspected."
+        },
+        {
+          "locator": "Def. 19–22/29–34/42/44/46; Thm. 43/45/47; PDF pp. 17–30",
+          "claim": "Controlled coeffect interface and independence obligations inspected."
+        },
+        {
+          "locator": "Def. 52–58; Lemma 57/59/66/67; Thm. 68/70/71/73; Cor. 69; PDF pp. 35–50",
+          "claim": "Relevant operational rules and selected recovery, ordering, coherence and progress proofs inspected."
+        },
+        {
+          "locator": "§4.4; §5.1; PDF pp. 55–64",
+          "claim": "Async/failure extension and lifecycle pseudocode compared with implementation."
+        },
+        {
+          "locator": "§6.1–6.3; PDF pp. 70–73",
+          "claim": "External emission, compensation, and language-level access-control boundaries."
+        },
+        {
+          "locator": "§7.3 PDF pp.79–80; §8 PDF p.83",
+          "claim": "Reload does not automatically preserve component memory; DSU-style migration and self-evolving harness validation remain future work."
+        }
+      ],
+      "limitations": [
+        "Not a complete proof audit of all 92 pages.",
+        "Thm. 80 confluence proof and all prerequisite lemmas were not fully audited.",
+        "Runtime inverse/commutativity witnesses are author obligations; no claim every DSH API satisfies them.",
+        "Algorithm 1 composition orientation appears inconsistent with its local convention; PDF p.59 was visually checked; author confirmation not obtained.",
+        "Paper has no proven refinement relation to the pinned DSH version in this study."
+      ],
+      "reading_coverage": "READING_COVERAGE.md"
+    },
+    {
+      "id": "C-FIBER",
+      "type": "primary_source_code",
+      "title": "vendor/cordis/src/fiber.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Focused ranges 69–145, 240–305, 362–567, 580–645, 681–759",
+      "claims": [
+        {
+          "lines": [
+            110,
+            116
+          ],
+          "claim": "Structural owners can join already-started cleanup via effectInertia."
+        },
+        {
+          "lines": [
+            271,
+            303
+          ],
+          "claim": "Child disposal is parent-owned and waits lifecycle inertia."
+        },
+        {
+          "lines": [
+            362,
+            405
+          ],
+          "claim": "Async next is guarded before invocation; a pending next is awaited and its disposer collected."
+        },
+        {
+          "lines": [
+            424,
+            566
+          ],
+          "claim": "Effect wrapper registration precedes setup; same effect group cleanup reverses and chains; errors may short-circuit a chain."
+        },
+        {
+          "lines": [
+            681,
+            746
+          ],
+          "claim": "Committed providers retained until dependent cleanup; top-level disposers start through Promise.all; cleanup errors are logged before lifecycle releases dependents."
+        }
+      ],
+      "limitations": [
+        "Error-to-settlement trace assumes logger itself does not throw.",
+        "No real resource cleanup, external termination, or crash recovery proved.",
+        "Grouped reverse cleanup is not global sequential completion."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-EVENTS",
+      "type": "primary_source_code",
+      "title": "vendor/cordis/src/events.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/events.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "162–324",
+      "claims": [
+        {
+          "lines": [
+            162,
+            170
+          ],
+          "claim": "Dispatch obtains a callback-array snapshot."
+        },
+        {
+          "lines": [
+            214,
+            260
+          ],
+          "claim": "serial/bail/waterfall are ordered and observable; serial awaits callback results."
+        },
+        {
+          "lines": [
+            263,
+            306
+          ],
+          "claim": "Registration is effect-owned and unregistration removes live hook entry."
+        }
+      ],
+      "limitations": [
+        "Static late-callback trace is not a DSH tool-wide exploit or executed test.",
+        "Ordered interface counterexample assumes returned values are in the observation interface."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-REFLECT",
+      "type": "primary_source_code",
+      "title": "vendor/cordis/src/reflect.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/reflect.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Service access portions; 274–326 and 410–434 fully read",
+      "claims": [
+        {
+          "lines": [
+            291,
+            326
+          ],
+          "claim": "Provider registration and removal are tracked effects with dependent cleanup wait."
+        },
+        {
+          "lines": [
+            426,
+            434
+          ],
+          "claim": "Listener bind proxy traces receiver/arguments but does not check fiber activity."
+        }
+      ],
+      "limitations": [
+        "No complete sandbox or proxy-security audit.",
+        "Declared inject dependencies do not include arbitrary raw aliases or closure-held external references."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-UTILS",
+      "type": "primary_source_code",
+      "title": "vendor/cordis/src/utils.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/utils.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "1–140",
+      "claims": [
+        {
+          "lines": [
+            4,
+            40
+          ],
+          "claim": "DisposableList clear empties and reverses registration order."
+        },
+        {
+          "lines": [
+            117,
+            125
+          ],
+          "claim": "Tracing wrapper only wraps tracked objects."
+        }
+      ],
+      "limitations": [
+        "Reverse start order does not serialize asynchronous completion."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-PACKAGE",
+      "type": "primary_source_code",
+      "title": "vendor/cordis/package.json",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/package.json",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Whole file",
+      "claims": [
+        {
+          "claim": "Vendored package identifies @deepseek-ai/cordis version 4.1.0; author field Shigma; MIT license."
+        }
+      ],
+      "limitations": [
+        "Package author metadata is not employment proof or an alias-to-legal-name mapping."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-TUTORIAL",
+      "type": "primary_source_code",
+      "title": "docs/cordis-tutorial/02-lifecycle-and-effects.md",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/cordis-tutorial/02-lifecycle-and-effects.md",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Whole file",
+      "claims": [
+        {
+          "lines": [
+            88,
+            99
+          ],
+          "claim": "Context API registrations are tracked; multiple async disposers can run concurrently; ordered cleanup should be placed in one awaited disposer."
+        }
+      ],
+      "limitations": [
+        "Tutorial's broad cleanup language is not external-effect evidence."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-PIPELINE",
+      "type": "primary_source_code",
+      "title": "packages/core/tools/src/pipeline.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Preparation/dispatch/completion excerpts and source search",
+      "claims": [
+        {
+          "lines": [
+            190,
+            285
+          ],
+          "claim": "Prepare checks policies and cancellation; dispatch fuses signals, resolves tool again, tracks bodyInvoked and waits tool.execute."
+        },
+        {
+          "lines": [
+            336,
+            420
+          ],
+          "claim": "Complete/finalize/notify publish a materialized local result, with observer error containment."
+        }
+      ],
+      "limitations": [
+        "Promise settlement is not proof of no remote effect or remote job termination.",
+        "No audit of every policy wrapper or every tool implementation."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-CONTRACTS",
+      "type": "primary_source_code",
+      "title": "packages/core/tools/src/contracts.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/contracts.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "58–78, 258–283; type definitions searched",
+      "claims": [
+        {
+          "lines": [
+            63,
+            78
+          ],
+          "claim": "timeoutMs declares cooperative signal/quiescence behavior; parallel metadata has shared-state obligations."
+        },
+        {
+          "lines": [
+            263,
+            267
+          ],
+          "claim": "Separate cancellation codes before and after body invocation."
+        }
+      ],
+      "limitations": [
+        "A declared contract is not automatically enforced against arbitrary uncooperative code or external services."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-TOOLS",
+      "type": "primary_source_code",
+      "title": "packages/core/tools/src/index.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Registration and selection portions; 264–296, 380–402",
+      "claims": [
+        {
+          "lines": [
+            264,
+            296
+          ],
+          "claim": "Late activation results cannot resurrect removed definitions because returned view rechecks definition and registration identity."
+        },
+        {
+          "lines": [
+            380,
+            402
+          ],
+          "claim": "Monotonic guard API exposes denials, evaluated through checkGuards."
+        }
+      ],
+      "limitations": [
+        "Definition identity recheck does not prove all authorization revocations are fenced at remote execution.",
+        "No execution of API or test suite."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-LIFECYCLE-TEST",
+      "type": "primary_source_code",
+      "title": "scripts/cordis-core-lifecycle.spec.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors; vendored Cordis package credits Shigma where applicable",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/scripts/cordis-core-lifecycle.spec.ts",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned repository commit date, not a claim about this file's last modification or individual authorship.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "26–100 fully read; remaining test names scanned",
+      "claims": [
+        {
+          "lines": [
+            27,
+            71
+          ],
+          "claim": "Tests express desired behavior for superseded loading/update and startup cleanup."
+        },
+        {
+          "lines": [
+            74,
+            100
+          ],
+          "claim": "Test asserts dependent teardown sees retained isolated service before provider cleanup."
+        }
+      ],
+      "limitations": [
+        "Read assertions only; this study did not run them or claim their result."
+      ],
+      "validation": "Static read only; no third-party repository code or test executed."
+    },
+    {
+      "id": "C-SAGAS",
+      "type": "primary_research_paper",
+      "title": "SAGAS",
+      "authors": [
+        "Hector Garcia-Molina",
+        "Kenneth Salem"
+      ],
+      "organization": "Princeton University; ACM SIGMOD 1987",
+      "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "publication_date": "1987",
+      "accessed_at": "2026-11-08",
+      "claims": [
+        {
+          "locator": "Printed p.250, §1",
+          "claim": "Compensation is semantic, need not restore earlier database state, and need not undo observations by other transactions."
+        },
+        {
+          "locator": "Printed pp.254–255, §6",
+          "claim": "Failed compensation may leave recovery stuck and require alternate procedures or manual repair."
+        }
+      ],
+      "limitations": [
+        "Read selected portions only, not complete implementation/proof coverage.",
+        "The Princeton technical-report PDF returned 403 through the web tool; the cited source is the original ACM paper hosted by Cornell.",
+        "No transfer of DBMS transaction assumptions to arbitrary remote tools."
+      ],
+      "read_scope": "§1 relevant introduction; backward recovery excerpt; §6 Other Errors; §7 implementation excerpt"
+    },
+    {
+      "id": "C-RECORD",
+      "type": "local_primary_design_and_code_boundary",
+      "title": "Record S1 task kernel README",
+      "url": "../../../../../record/README.md",
+      "baseline_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "authors_or_organization": "Personal dsh-project-workbench / Record workstream",
+      "accessed_at": "2026-11-08",
+      "claims": [
+        "S1 is a deterministic synchronous state model with synthetic trusted evidence inputs.",
+        "No DSH interception, authentication, durable persistence, cross-process locking or actual remote effect proof in S1."
+      ],
+      "limitations": [
+        "Read scope is README and prior mechanisms research baseline; no new product tests run.",
+        "Current proposal does not add adapter functionality to S1."
+      ]
+    },
+    {
+      "id": "C-COMMIT",
+      "type": "primary_repository_metadata",
+      "title": "Pinned deepseek-harness commit metadata",
+      "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "published_at": "2026-11-04T08:40:00Z",
+      "accessed_at": "2026-11-08",
+      "claims": [
+        "Pinned SHA, repository and commit date independently retrieved from GitHub API."
+      ],
+      "limitations": [
+        "Commit timestamp is not per-file publication date."
+      ]
+    },
+    {
+      "id": "C-TOOL-EVENTS",
+      "type": "primary_source_code",
+      "title": "packages/core/tools/src/events.ts",
+      "authors_or_organization": "DeepSeek-AI / deepseek-harness contributors",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/events.ts",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "revision_date": "2026-11-04T08:40:00Z",
+      "date_note": "Pinned commit date, not individual file attribution.",
+      "accessed_at": "2026-11-08",
+      "read_scope": "Whole file, especially lines20–29",
+      "claims": [
+        "Around-dispatch wrappers must restore their signal and reach quiescence; the contract is an obligation on wrappers."
+      ],
+      "limitations": [
+        "No claim every built-in wrapper violates or satisfies the contract; no wrapper execution.",
+        "Counterexample C9 deliberately breaks the declared contract and is statically derived."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "accessed_at_utc": "2026-11-08T08:55:23.289552+00:00",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "AUTH-root-standard-api-admission",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+      "location": "130–173",
+      "blob_sha": "d563cd40e83f6048dd993f297650f821f6921d62",
+      "root_review_note": "标准 /api route 在进入 bridge 前调用 connection.admit 并拒绝未授权/不可信请求；不是插件 HTTP 文件独自提供全部身份边界。",
+      "status": "fixed_primary_source_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-root-owner-fetch-gate",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+      "location": "110–233",
+      "blob_sha": "88e7b48baa54df58392b0f1bcec6d4416cb30c7a",
+      "root_review_note": "admit 核 Host/Origin、browser/API 凭据和 live Peer；exact fetch route 仅允许 owner 后调用 route.fetch(request)。owner 为宿主实例级主体，callback 只收 Request；未验证实际宿主版本或所有carrier。",
+      "status": "fixed_primary_source_reopened",
+      "runtime_tested": false
+    }
+  ]
+}

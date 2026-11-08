@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="15d30da9be74">
+<title>权限作用域契约用例（未运行）</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#测试所需最小夹具">测试所需最小夹具</a></li><li class="l2"><a href="#待决定项">待决定项</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">4 项待办</span></div>
+<h1>权限作用域契约用例（未运行）</h1>
+</header>
+<p>2026-11-08 UTC。本表是可执行协议的输入/转移/oracle 设计，不是测试结果。不存在测试 runner、攻击样本或产品改动。</p>
+<p>每个用例使用虚构资源 r、主体 A/B、测试 Grant 和无敏感数据的目标适配器。测试应分三层记录：纯判定、实际交付、目标效果；纯判定通过不升级成目标效果证明。失败状态保留 reason code 和依据版本。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">ID</th><th style="text-align:left">初始条件与转移</th><th style="text-align:left">正向 oracle</th><th style="text-align:left">必须拒绝的错误实现</th></tr></thead><tbody><tr><td style="text-align:left">T01 / C14a</td><td style="text-align:left">A、B 各有独立有效 read Grant；撤回 A Grant</td><td style="text-align:left">Usable(r,qA) 不成立且 reason=denied；B 的策略/材料输入未变时仍成立；Recorded/Supported 不变</td><td style="text-align:left">全局 result.available=false 让 B 同时失败</td></tr><tr><td style="text-align:left">T02 / C14b</td><td style="text-align:left">已确认唯一原件副本 m 存在；权威来源确认 m 删除</td><td style="text-align:left">要求原件的 qA/qB 均 missing；完成声明保留；若保留证据仍足以支持完成，Supported 不被自动撤回</td><td style="text-align:left">把删除等同历史从未完成，或凭历史存在跳过当前读回</td></tr><tr><td style="text-align:left">T03</td><td style="text-align:left">m1 删除；m2 为同一内容版本且当前授权允许</td><td style="text-align:left">若 q 接受任一等价副本，仍可用；若 q 固定 m1，则不可用</td><td style="text-align:left">任一副本删除即删除抽象结果，或擅自替换 q 指定位置</td></tr><tr><td style="text-align:left">T04</td><td style="text-align:left">A 读取返回拒绝/隐藏存在性的响应；B 有独立读权限</td><td style="text-align:left">A reason 按适配契约为 denied/unknown；无全局删除事件；B 的读回独立记录</td><td style="text-align:left">将任意 403/404 当所有主体的删除证明</td></tr><tr><td style="text-align:left">T05</td><td style="text-align:left">原件 A 可读；已有授权发布决定 d 将摘要 s 给 B；B 无原文权</td><td style="text-align:left">B 可读 s，原件读取拒绝；UI 标 B 无原始证据重验能力</td><td style="text-align:left">要求所有祖先对 B 可读才允许 s，或放开原件</td></tr><tr><td style="text-align:left">T06</td><td style="text-align:left">A 生成摘要 s，但无允许扩大接收范围的发布决定</td><td style="text-align:left">s 保留输入披露限制；B 未获准不能交付</td><td style="text-align:left">LLM 摘要自动洗成公共材料</td></tr><tr><td style="text-align:left">T07</td><td style="text-align:left">同一个调用 callId 的参数/目标/接收者从 v1 变成 v2；v1 已批准</td><td style="text-align:left">v1 的单次批准不匹配 v2；得到新决定或明确授权的变换证明后才能发送</td><td style="text-align:left">只按 callId、toolName 或一句“已批准”沿用</td></tr><tr><td style="text-align:left">T08</td><td style="text-align:left">审批权威允许参数收窄变换 R；展示 v1 并声明 R；最终 v2 满足 R</td><td style="text-align:left">记录 R 与最终 v2 的绑定，不必重复问；v2 超出 R 必须重判</td><td style="text-align:left">任意修改都复用批准，或无语义 JSON 键排序变化也强制新审批</td></tr><tr><td style="text-align:left">T09</td><td style="text-align:left">Grant 在审批后、Dispatch 前撤回；选用准入时撤回契约</td><td style="text-align:left">本次新 Dispatch 被拒；reservation 不能保留旧通行证；若撤回尚未到达缓存，仅按声明快照保证报告</td><td style="text-align:left">把审批成功当永久执行权，或承诺未配置的跨服务即时撤回</td></tr><tr><td style="text-align:left">T10</td><td style="text-align:left">父拥有可委派 read(r)；子请求 write(r) 或 read(s)</td><td style="text-align:left">父链不能生成该权利；独立新授权必须另有 issuer 和 grantId</td><td style="text-align:left">以子代理任务文字、工具出现、同名主体自动扩权</td></tr><tr><td style="text-align:left">T11</td><td style="text-align:left">授权管理者有 delegate(read r) 但无自身 read r；合法委派给 B</td><td style="text-align:left">可产生 B 的有界 Grant，管理者自身仍不能读 r</td><td style="text-align:left">将能委派等同能执行，或一律要求父可亲自读取全部对象</td></tr><tr><td style="text-align:left">T12</td><td style="text-align:left">上下文含历史批准；工具/子代理返回成功与批准叙述；当前无 Grant</td><td style="text-align:left">内容可留作历史证据，当前执行仍拒绝；记录无新增 Grant</td><td style="text-align:left">从摘要、compaction 或结果文字恢复授权</td></tr><tr><td style="text-align:left">T13</td><td style="text-align:left">A 缓存了允许结果；B 查询同 resource；或者 A 的策略依赖改变</td><td style="text-align:left">不复用错主体/用途/接收范围的授权判断；重算或使对应缓存失效</td><td style="text-align:left">只以资源 hash 作授权缓存键</td></tr><tr><td style="text-align:left">T14</td><td style="text-align:left">审批者在 τ1 有权，τ2 失去角色；规则只要求决定时有权</td><td style="text-align:left">历史批准仍可审计；其现时适用性按明确规则判断，不直接删除历史</td><td style="text-align:left">默认把现时角色丢失当 τ1 从未有权；反向默认所有旧批准永不失效</td></tr><tr><td style="text-align:left">T15</td><td style="text-align:left">子代理专用 MCP 工具父面不可见，但子拥有独立且有效的资源授权</td><td style="text-align:left">依契约可使用；返回给父仍检查父接收范围</td><td style="text-align:left">将父看不到工具等同子越权，或父因能调用子代理便取得子全部数据权</td></tr></tbody></table></div>
+<h2 id="测试所需最小夹具">测试所需最小夹具</h2>
+<p>固定两主体命名空间、两种 operation、两个副本、一个可共享摘要和一个有向委派链。每个决策记录完整读取依赖，至少包含 Grant、policy、结果/表示版本和 q。声明一个不依赖墙钟的离散 ClockObserved 输入；需要过期时推进该输入。纯重放不访问真实网络和实时策略。</p>
+<p>目标适配器另有“按已接纳策略”“发送时查权威”“目标执行点检查”三种能力配置。分别跑其能够承诺的 oracle，不能把第一种配置的失败当第三种已实现。即使目标拒绝了权限不足的写入，也不由此推论在途旧动作从未生效。</p>
+<h2 id="待决定项">待决定项</h2>
+<ul class=task-list><li><input type="checkbox" disabled> 原件删除后已发布汇总是继续有效、到期失效还是立即停止发布？逐类 releaseDecision 定义。</li><li><input type="checkbox" disabled> Approval 默认逐次；哪些持续授权必须显式升级成 Grant，哪些现有宿主 sticky decision 需要适配隔离？</li><li><input type="checkbox" disabled> 策略依赖能否精确记录？不能时先采用较粗 epoch 失效并报告成本。</li><li><input type="checkbox" disabled> 首版是否支持代理跨主体代办；若不支持，显式固定 actor=onBehalfOf，不省略类型边界。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

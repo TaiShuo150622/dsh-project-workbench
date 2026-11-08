@@ -1,0 +1,29 @@
+[
+  {
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/handoff/ui-backend/CONTRACT.md",
+    "copy": "historical-inputs/CONTRACT.md",
+    "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b",
+    "read_lines": [
+      1,
+      159
+    ]
+  },
+  {
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+    "copy": "historical-inputs/BACKEND-PLAN-DRAFT.md",
+    "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766",
+    "read_lines": [
+      1,
+      205
+    ]
+  },
+  {
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+    "copy": "historical-inputs/Harness 底座架构重评讨论稿 v0.1.6.md",
+    "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+    "read_lines": [
+      718,
+      907
+    ]
+  }
+]

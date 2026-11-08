@@ -1,0 +1,22 @@
+{
+  "audit": "R13-W11",
+  "input_snapshot_sha256": "76f988150817d65137c14169a1000a9c92622e76b6ba0a0c575e80fe6f690cb2",
+  "verdict": "No substantive defect found in frozen stated scope.",
+  "findings": [],
+  "verified_boundaries": [
+    "Four states express eligible reports, not world truth.",
+    "Canonical roots deduplicate but do not establish independence.",
+    "Mixed corrections/withdrawals retain tombstones and immutable records.",
+    "Operation policy is separate from permission and truth.",
+    "Coverage is a synthetic caller input; restricted counterevidence and ACL are explicitly unimplemented."
+  ],
+  "independent_checks": {
+    "mixed_event_permutations": 5040,
+    "prefix_key_projections": 70560,
+    "qualified_status_assignments": 20736,
+    "six_field_key_isolation_pairs": 4032,
+    "operation_policy_cases": 48,
+    "mutation_traps": 4
+  },
+  "implementation_status": "NOT_RUN; no actual publication, authentication or ACL."
+}

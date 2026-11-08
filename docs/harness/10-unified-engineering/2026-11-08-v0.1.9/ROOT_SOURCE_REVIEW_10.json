@@ -1,0 +1,25 @@
+{
+  "read_at_utc": "2026-11-08T10:22:39.275698+00:00",
+  "scope": "Root cross-review of two reused fixed sources in M10; selected ranges only; no product execution",
+  "items": [
+    {
+      "repository": "snap-research/locomo",
+      "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "path": "task_eval/evaluation.py",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py#L228-L237",
+      "sha256": "8e3be5d57ff2ff9ec5cd05939592f468c5f3f1fd95d13e431932bdf6bf0fd6fd",
+      "read_range": "actual raw source lines 220–242, especially 228–237",
+      "claim": "Missing _context or nonpositive evidence length falls through to all_recall.append(1); cannot treat that default as measured coverage."
+    },
+    {
+      "repository": "a2aproject/A2A",
+      "commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "path": "docs/specification.md",
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md#L747-L764",
+      "sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb",
+      "read_range": "actual raw source lines 740–767, section 3.7",
+      "claim": "History may omit messages; reconnect may miss status messages; reliable critical delivery cannot rely on Messages without an extra contract."
+    }
+  ],
+  "method_note": "Opened both through web tool, then fetched exact raw bytes in memory to match actual source line numbers and SHA. Tool-rendered line numbers omit some blank lines; fixed Git anchors refer to original bytes. No new papers and no claim of rereading full files."
+}

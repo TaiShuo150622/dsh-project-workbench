@@ -1,0 +1,127 @@
+{
+  "round": "R18",
+  "completed_at_utc": "2026-11-08T10:41:06.890916+00:00",
+  "frozen_checks": [
+    {
+      "path": "inputs/M11/MEMO.md",
+      "expected_sha256": "57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/M11/sources.json",
+      "expected_sha256": "1308990819a50a40afde8c1d27038b37b6340f9478831de20ad955d46ceda032",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/M11/validation.json",
+      "expected_sha256": "d91a355360bd21dbad54845f56d2570995a0e2c8b54e493317d5224ca7cf39bd",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/W16/GLOSSARY.md",
+      "expected_sha256": "7aa65ef833a5df6c5e94c0a3d23f87d44b1c8b6c5d78999225b36fb57cc44586",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/W16/inputs.json",
+      "expected_sha256": "612e8b332e116cd3605fe34c0fae94a60d65456fb50a3a060e58d200a796691f",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/W16/validation.json",
+      "expected_sha256": "9d4d97c73e6872f0a3391c4451f19df08c188ae7af83308c7f5de6c70f9a0257",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/root/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "expected_sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/root/FORMAL_MODEL.md",
+      "expected_sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/root/ARCHITECTURE.md",
+      "expected_sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/rpc-host.ts",
+      "expected_sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/app.js",
+      "expected_sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/index.js",
+      "expected_sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/TASKBOOK.md",
+      "expected_sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/TRUSTED_MAP.md",
+      "expected_sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "evidence-inputs/kernel.mjs",
+      "expected_sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "matches": true,
+      "live_source_matches": true
+    }
+  ],
+  "all_frozen_match": true,
+  "author_output_hash_checks": [
+    {
+      "path": "inputs/M11/sources.json",
+      "matches": true
+    },
+    {
+      "path": "inputs/M11/MEMO.md",
+      "matches": true
+    },
+    {
+      "path": "inputs/W16/GLOSSARY.md",
+      "matches": true
+    },
+    {
+      "path": "inputs/W16/inputs.json",
+      "matches": true
+    }
+  ],
+  "semantic_review": "independent scoped model reasoning; static selected-source reads",
+  "root_review_method": "all diffs against R16 plus selected relevant sections; not a new full re-review of all unchanged material",
+  "executed_product_or_research_tests": 0,
+  "network_calls": 0,
+  "cost_measurements": 0,
+  "human_review_claimed": false,
+  "not_reviewed": [
+    "all 16 M11 historical inputs in full",
+    "current external documentation revisions",
+    "full authentication/sandbox/durability implementation",
+    "runtime host and current installed product"
+  ]
+}

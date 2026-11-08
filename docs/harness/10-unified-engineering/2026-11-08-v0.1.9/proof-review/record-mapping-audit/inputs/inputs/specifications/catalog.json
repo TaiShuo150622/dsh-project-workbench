@@ -1,0 +1,1331 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_kind": "proposed_conformance_catalog",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "oracle_language": "controlled_prose_not_executable",
+  "reviewed_source": {
+    "path": "integration/docs/research/harness-20261107/适配契约与贯穿场景讨论稿-v0.1.0.md",
+    "git_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+    "sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b",
+    "note": "Line references address this content hash, not later edits.",
+    "captured_before_or_at": "2026-11-08T07:08:09Z",
+    "timestamp_note": "Clock read immediately after source capture; exact source read timestamp was not retained."
+  },
+  "capability_vocabulary": [
+    "versioned_judgments",
+    "audit_history",
+    "declared_rule_inputs",
+    "dependency_views",
+    "cycle_rejection",
+    "atomic_admission",
+    "dispatch_revalidation",
+    "action_effect_separation",
+    "target_fencing",
+    "target_idempotency",
+    "parameter_binding",
+    "trusted_observation",
+    "trusted_authorization",
+    "policy_context_separation",
+    "budget_liability_accounting",
+    "hard_cost_bound",
+    "explicit_time_validity",
+    "principal_scoped_availability",
+    "durable_command_receipts",
+    "attempt_identity",
+    "fault_control"
+  ],
+  "observation_channels": {
+    "judgment_view": "公开 API 或导出视图中的判断及 binding/version/reason；不能代替未公开的内部读取集合。",
+    "history_view": "带 stream/history incarnation 和事件身份的审计历史；读取水位与实际世界时间分列。",
+    "admission_read": "已公开的动作、占位与准入决定；查询值只代表指定水位。",
+    "target_state": "指定权威目标、资源版本、主体与一致性条件下的读回；未找到默认不证明未生效。",
+    "target_audit": "覆盖声明效果集合的权威提交/拒绝记录；记录范围、保留期限与完整性证明必须独立说明。",
+    "egress_capture": "只有已证明所有相关出站路径都经过的受控代理才可支持未发送结论；普通客户端日志不具此能力。",
+    "policy_authority": "认证的授权/撤回记录，含主体、scope、epoch、有效期与实际动作绑定。",
+    "clock_authority": "适配器声明的可信时间源/事件及不确定区间；测试时钟与生产时钟语义需对应。",
+    "storage_recovery": "按声明故障域重新连接或重启后，从权威持久存储读取，不借用旧客户端缓存。",
+    "billing_authority": "指定费用源的权威增量及覆盖水位；未上报费用与未来费用分开。",
+    "fixture_receipt": "隔离目标或受控代理给出的扰动屏障回执，明确是已到达、已提交、已安装围栏还是仅排队。",
+    "artifact_read": "用指定 principal 读取确定 artifact version；认证失败、无访问权、未找到、网络故障分别记录。"
+  },
+  "shared_contract": {
+    "required_profile_fields": [
+      "adapter_id/version/config_digest",
+      "protocol_profile_id/version",
+      "stream_id/history_incarnation",
+      "tenant/principal/issuer",
+      "target_system/target_tenant/stable_resource_id/operation/effect_set",
+      "authoritative_admission_domain",
+      "grant_scope/epoch/expiry/semantics",
+      "canonical_action_descriptor_version",
+      "observation_deadline_ms",
+      "evidence_max_age_ms_or_explicit_unbounded",
+      "clock_source/units/skew_bound/expiry_boundary",
+      "read_consistency_and_audit_coverage",
+      "fault_model_and_fault_control",
+      "declared_progress_bounds_or_none"
+    ],
+    "binding_rules": [
+      "最终动作描述必须覆盖目标稳定身份、操作、有效参数、引用产物 digest 及会改变目标的运行期解析结果；不保存凭据值。",
+      "命名空间至少分开 history incarnation、tenant、target、operation 与 business intent；不可把重试 attemptId 当 businessIntentId。",
+      "每次原始观察携带来源、作用域、观察时间/不确定区间、版本、水位、原文摘要或可保留的内容摘要。",
+      "测试观察窗口结束不是物理终态证据；只有声明的有限进展承诺被完整观察反驳时才因超时判 FAILURE。",
+      "没有独立观察到实际目标效果的能力时，不能用适配器自己的成功/失败回执作效果 oracle。",
+      "所有夹具使用合成身份和无破坏目标；后续执行仍需独立授权，目录不授权外部动作。"
+    ],
+    "verdicts": {
+      "SUCCESS": "仅在后续实际执行中，列明的条件、扰动与覆盖范围成立，所有必需 oracle 得到外部可观察证据支持；只适用于该配置与有限轨迹。",
+      "FAILURE": "观察到明确违反所声明契约的行为，或在已覆盖的观察条件下违反明确有限进展期限；不能由一次未知目标状态推断失败。",
+      "UNSUPPORTED": "执行前确认适配器在指定配置明确不声明所需能力；只跳过依赖该能力的断言，不能伪装为通过。",
+      "UNKNOWN": "能力声称存在但观察/扰动/来源/时序覆盖不足，证据矛盾，或观察期限结束仍不能判断；不等于产品动作状态 unknown。",
+      "NOT_RUN": "本目录全部场景的当前状态；没有实际结果。"
+    },
+    "all_case_evidence": "原始输入/最终有效动作描述/授权与绑定版本/配置 digest/扰动屏障/每次原始观察/观察窗口/判定规则版本；禁止用摘要覆盖原始证据。"
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "title": "相关规格变更使旧验收失去当前适用性",
+      "source_row_line": 111,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "versioned_judgments",
+        "audit_history"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "old_spec_version,new_spec_version,changed_rule_input",
+        "acceptance_policy_version",
+        "mutation_mode=revision_or_successor_task"
+      ],
+      "initial_state": [
+        "用公开接口创建任务 v1、结果 r1 与有效验收 a1；保存绑定和读取水位。",
+        "若宿主禁止修改已完成任务，预先约定用显式 successor/reissue 建立 v2。"
+      ],
+      "disturbance": [
+        "只修改一个已声明参与验收的规格字段，建立 v2；不复用旧 sourceId 表示新意图。",
+        "读取 v1 历史与 v2 当前判断。"
+      ],
+      "observations": [
+        {
+          "channel": "history_view",
+          "purpose": "a1 及 v1 绑定仍可定位"
+        },
+        {
+          "channel": "judgment_view",
+          "purpose": "v2 的当前适用性及原因"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "旧验收作为历史保留，且未被隐式绑定到 v2。",
+          "若 mutation_mode 要求拒绝原地修改，则拒绝可见且 successor 路径没有继承旧通过。"
+        ],
+        "failure": [
+          "v2 在没有新判定的情况下因 a1 被标为当前已验收。",
+          "历史 a1 被覆写成 v2 的决定，或同 sourceId 被静默解释成新意图。"
+        ],
+        "unsupported": [
+          "不声明版本化判断/历史能力；记录缺失项，不把场景标通过。"
+        ],
+        "unknown": [
+          "v2 建立失败且原因不可区分，或查询看不到绑定信息。"
+        ]
+      },
+      "variants": [],
+      "must_not_infer": [
+        "不得要求现有 S1 对 completed task 支持原地 revise。"
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "无关备注不使验收失效",
+      "source_row_line": 112,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "versioned_judgments",
+        "declared_rule_inputs"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "frozen_rule_input_manifest",
+        "note_field_not_in_transitive_read_set",
+        "fixed_clock_or_unchanged_validity_interval",
+        "same_policy/principal/evidence_versions"
+      ],
+      "initial_state": [
+        "建立仍适用的 a1；规则作者提供审查过的完整输入声明。",
+        "固定或证明本轨迹内时间、策略、授权及证据新鲜度不会同时变化。"
+      ],
+      "disturbance": [
+        "添加明确不在声明传递读取集合内的备注。",
+        "再次读取当前判断及绑定。"
+      ],
+      "observations": [
+        {
+          "channel": "judgment_view",
+          "purpose": "a1 的适用性与相关绑定"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "只出现备注变化"
+        },
+        {
+          "channel": "clock_authority",
+          "purpose": "其他期限条件保持"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "其他相关输入保持不变时 a1 仍适用；审计历史可新增备注。"
+        ],
+        "failure": [
+          "相关输入确实未变且 a1 无由失效。",
+          "备注被当作授权或新的验收事实。"
+        ],
+        "unsupported": [
+          "不声明读取集合或版本适用性契约。"
+        ],
+        "unknown": [
+          "无法证明输入声明完整，或期限/权限同时改变。"
+        ]
+      },
+      "variants": [],
+      "must_not_infer": [
+        "黑盒结果不能证明内部从未读取备注；完整读取集合是被审查的前提。"
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "AND/OR 支持撤回后的语义正确性",
+      "source_row_line": 113,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "dependency_views",
+        "versioned_judgments",
+        "audit_history"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "typed_dependency_graph_revision",
+        "finite_acyclic_graph",
+        "distinct_support_ids/authorities",
+        "frozen_truth_table"
+      ],
+      "initial_state": [
+        "建立两个有效来源 w1,w2，分别支持 AND 节点和 OR 节点；另有无关节点 u。",
+        "冻结人工可核的真值表及目标判断，不依赖被测解释器生成 oracle。"
+      ],
+      "disturbance": [
+        "撤回 w1 的指定证据版本。",
+        "查询 AND、OR、u 当前判断及仍被引用的支持。"
+      ],
+      "observations": [
+        {
+          "channel": "judgment_view",
+          "purpose": "AND/OR/u 结果与绑定"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "撤回对象和理由"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "若判断驱动动作，相关依赖门是否随之变化"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "AND 失去该组合支持；OR 仍有独立有效 w2 时保持成立；u 的语义结果保持。"
+        ],
+        "failure": [
+          "用已经撤回的 w1 支持当前成立，或无理由清掉有效替代 w2。"
+        ],
+        "unsupported": [
+          "不声明 AND/OR 类型依赖；相应变体 unsupported。"
+        ],
+        "unknown": [
+          "看不到支持身份或 w2 的独立有效性无法核实。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C03.and",
+          "purpose": "AND 一个必要来源撤回"
+        },
+        {
+          "id": "C03.or",
+          "purpose": "OR 保留独立替代来源"
+        },
+        {
+          "id": "C03.work",
+          "purpose": "可选性能遥测；不纳入语义 SUCCESS，需单独可观察计数"
+        }
+      ],
+      "must_not_infer": [
+        "不凭判断结果断言内部只重算了受影响节点；不得把工作量优化作为黑盒正确性条件。"
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "首版拒绝自支持验收循环",
+      "source_row_line": 114,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "cycle_rejection",
+        "dependency_views"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "dependency_edge_type=acceptance_support",
+        "graph_namespace/graph_revision",
+        "batch_or_incremental_edge_submission",
+        "transaction_boundary"
+      ],
+      "initial_state": [
+        "在同一验收支持 namespace 建立两个未获外部证据支持的节点 A,B。"
+      ],
+      "disturbance": [
+        "通过公开更新接口提交 A 支持 B、B 支持 A；另做单节点自环变体。",
+        "读取提交回执与提交后的图。"
+      ],
+      "observations": [
+        {
+          "channel": "history_view",
+          "purpose": "图更新接受/拒绝事实"
+        },
+        {
+          "channel": "judgment_view",
+          "purpose": "当前图 revision 与判断"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "首版在明确边类型上拒绝循环，且没有留下被误标为有效的部分循环或无源验收。"
+        ],
+        "failure": [
+          "循环被接纳为当前有效支持并自行得出通过。",
+          "拒绝回执与实际持久图不一致。"
+        ],
+        "unsupported": [
+          "声明的是另有定义的递归语义而非首版无环 profile；应转相应协议，不强判失败。"
+        ],
+        "unknown": [
+          "图更新事务/读回水位不清或无法确认被测边类型。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C04.self",
+          "purpose": "单节点自环"
+        },
+        {
+          "id": "C04.pair",
+          "purpose": "两节点循环"
+        }
+      ],
+      "must_not_infer": [
+        "不能把执行重试环、历史因果图或任意图中的环一律判为不合规。"
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "纠错后再次检查已预留动作的冲突",
+      "source_row_line": 115,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "atomic_admission",
+        "dispatch_revalidation",
+        "action_effect_separation"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "same_stable_resource_conflict_key",
+        "authority_stream_and_consistency",
+        "A_action_id/B_action_id",
+        "withdrawal_accepted_barrier",
+        "B_not_yet_dispatched_barrier"
+      ],
+      "initial_state": [
+        "A 曾被认定 succeeded，B 已合法 reserved；两者声明冲突于同一目标资源。",
+        "通过受控出站屏障确认 B 尚未发送。"
+      ],
+      "disturbance": [
+        "可信主体撤回 A 的终态证据；等到权威状态接纳该撤回。",
+        "请求发送 B，并持续观察出站与权威占位。"
+      ],
+      "observations": [
+        {
+          "channel": "admission_read",
+          "purpose": "A unknown 与 B 占位/准入结果"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "撤回接纳水位"
+        },
+        {
+          "channel": "egress_capture",
+          "purpose": "B 的完整出站范围"
+        },
+        {
+          "channel": "fixture_receipt",
+          "purpose": "撤回先于 B 发送检查的屏障"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "A 未决事实保留；B 的发送被 wait/verify 等明确拒绝发送的结果阻止。",
+          "核心 preserve_reserved 变体必须保留 B reserved；显式撤销 B 只能计入另行声明的 explicit_cancel 变体，不能冒充核心行为通过。"
+        ],
+        "failure": [
+          "已知冲突撤回先于发送检查，B 仍被派发；或为凑 active<=1 删除 A unknown。"
+        ],
+        "unsupported": [
+          "不能提供同一权威准入边界或动态 dispatch 重检。"
+        ],
+        "unknown": [
+          "无法建立撤回与发送的先后，或出站观测不完整。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C05.preserve_reserved",
+          "purpose": "root 核心 profile：保留 B reserved，拒绝派发"
+        },
+        {
+          "id": "C05.explicit_cancel",
+          "purpose": "另行声明的更窄安全 profile；不算 preserve_reserved 变体通过"
+        }
+      ],
+      "must_not_infer": [
+        "不把两条活跃记录同时存在当作失败；若 B 已发后才撤回，另属迟到纠错场景。"
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "断连后取消不得消除未知效果",
+      "source_row_line": 116,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "action_effect_separation",
+        "fault_control"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "action_identity/target_effect_set",
+        "disconnect_phase=before_target_commit_or_after_target_commit",
+        "cancel_ack_semantics",
+        "observation_deadline_ms"
+      ],
+      "initial_state": [
+        "动作已进入发送阶段；目标与代理可控制响应丢失，不要求读取宿主内存。"
+      ],
+      "disturbance": [
+        "在两个变体中分别阻滞目标提交或允许提交，丢弃返回通道。",
+        "提交取消请求；收集 ACK 与恢复视图，不自动重发。"
+      ],
+      "observations": [
+        {
+          "channel": "history_view",
+          "purpose": "cancelRequested 与动作身份"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "未知动作及资源负担"
+        },
+        {
+          "channel": "target_audit",
+          "purpose": "独立掌握的目标世界"
+        },
+        {
+          "channel": "fixture_receipt",
+          "purpose": "故障阶段与取消 ACK 的真实含义"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "取消 ACK 不被提升为 not_applied；无足够证据时动作保持 unknown，相关占位保留。",
+          "如目标返回有范围的终止+未应用证明，可按声明规则结束未知。"
+        ],
+        "failure": [
+          "仅凭取消 ACK/本地结束清除未知占位或宣布未生效。"
+        ],
+        "unsupported": [
+          "适配器不声明外部动作恢复或证据分层能力。"
+        ],
+        "unknown": [
+          "故障未命中目标阶段，或状态可见性不足以识别是否误释放。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C06.uncommitted",
+          "purpose": "尚未提交但仍可能迟到"
+        },
+        {
+          "id": "C06.committed",
+          "purpose": "已提交且回包丢失"
+        },
+        {
+          "id": "C06.terminal_proof",
+          "purpose": "额外的终止与未应用证明路径",
+          "additional_requires": [
+            "trusted_observation"
+          ]
+        }
+      ],
+      "must_not_infer": [
+        "产品正确保持 unknown 时，测试可为 SUCCESS；这不同于测试 verdict UNKNOWN。"
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "已安装的新围栏拒绝迟到旧代际",
+      "source_row_line": 117,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "target_fencing",
+        "trusted_observation",
+        "fault_control"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "fence_namespace=tenant/target/resource/operation",
+        "token_issuer/order/reuse_policy",
+        "old_epoch/new_epoch",
+        "target_install_linearization_point",
+        "covered_effect_set"
+      ],
+      "initial_state": [
+        "目标接受 old_epoch；旧请求已到受控队列但未提交。"
+      ],
+      "disturbance": [
+        "在目标权威域安装 new_epoch，取得对应安装提交证据。",
+        "释放 old_epoch 请求，使其到目标提交检查点；另外发送合法 new_epoch 请求。"
+      ],
+      "observations": [
+        {
+          "channel": "fixture_receipt",
+          "purpose": "新围栏已经在目标提交域安装"
+        },
+        {
+          "channel": "target_audit",
+          "purpose": "旧请求拒绝及新请求结果"
+        },
+        {
+          "channel": "target_state",
+          "purpose": "覆盖效果集合的变化"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "旧请求不在 new_epoch 安装后提交受覆盖效果；新请求可按其他前提执行。"
+        ],
+        "failure": [
+          "在目标安装证据之后，旧请求仍提交受覆盖效果。"
+        ],
+        "unsupported": [
+          "仅有本地数据库 lease/fencing 而没有该目标提交检查能力。"
+        ],
+        "unknown": [
+          "只有控制器 ACK，没有目标安装屏障，或读回不覆盖提交时间/效果。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C07.same_namespace",
+          "purpose": "相同围栏域的旧代际"
+        },
+        {
+          "id": "C07.other_namespace",
+          "purpose": "另一租户/资源域不能被无关围栏误拒绝"
+        }
+      ],
+      "must_not_infer": [
+        "同代际重复仍需幂等契约；旧请求在安装前已提交不违反本场景。"
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "幂等键的身份、参数、并发与保留期",
+      "source_row_line": 118,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "target_idempotency",
+        "parameter_binding",
+        "trusted_observation",
+        "fault_control"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "business_intent_id_allocator",
+        "idempotency_namespace",
+        "canonical_parameter_digest_version",
+        "dedup_retention_duration_and_start",
+        "retry_cutoff_and_max_delivery_delay",
+        "target_atomic_effect_set"
+      ],
+      "initial_state": [
+        "建立一个不可变意图 I，多个 attempt 共享 I 的业务键；明确去重起算事件与期限。",
+        "目标可按独立身份和子效果提供权威观察。"
+      ],
+      "disturbance": [
+        "在期限内顺序和并发发送同意图同参数。",
+        "提交同键改参数、不同意图同参数、跨 namespace 同局部键、到期恢复变体。",
+        "把一条到期前已发送的重复请求延迟到去重保留期后再释放；与恢复器主动重试分开。"
+      ],
+      "observations": [
+        {
+          "channel": "egress_capture",
+          "purpose": "业务键与最终参数"
+        },
+        {
+          "channel": "target_audit",
+          "purpose": "去重冲突与实际效果身份"
+        },
+        {
+          "channel": "target_state",
+          "purpose": "覆盖子效果数量及内容"
+        },
+        {
+          "channel": "clock_authority",
+          "purpose": "保留期内外边界"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "在声明窗口和效果范围内，同一意图重复不会产生第二个覆盖效果；相同结果按身份读回。",
+          "不同意图或 namespace 不误合并；同键不同有效参数按约定拒绝/显式冲突，不静默执行变更。",
+          "到期旧未决请求不再自动获得安全重试结论，转对账/unknown 或目标更强契约。",
+          "对到期后迟到请求只使用 profile 明示的保证；没有最大迟到界/目标过期拒绝时，不声称持续无重复。"
+        ],
+        "failure": [
+          "重复覆盖效果、独立意图误合并、同键改参数静默执行，或期限外仍无依据承诺重复安全。"
+        ],
+        "unsupported": [
+          "目标没有在声明范围内原子去重，或无法说明保留期/命名空间。"
+        ],
+        "unknown": [
+          "只有响应相同而不能观察效果；无法定位去重起点、到期或迟到请求范围。",
+          "若声称覆盖到期迟到但无法证明最大迟到界或目标拒绝条件，不能由本次未见重复判通过。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C08.sequential",
+          "purpose": "期限内顺序重复"
+        },
+        {
+          "id": "C08.concurrent",
+          "purpose": "同键并发"
+        },
+        {
+          "id": "C08.parameters",
+          "purpose": "同键改变有效参数"
+        },
+        {
+          "id": "C08.distinct_intent",
+          "purpose": "独立意图使用相同参数"
+        },
+        {
+          "id": "C08.namespace",
+          "purpose": "跨租户/操作的局部键碰撞"
+        },
+        {
+          "id": "C08.expired",
+          "purpose": "保留期过后恢复旧未决意图"
+        },
+        {
+          "id": "C08.subeffects",
+          "purpose": "主记录以外通知/后台工作覆盖"
+        },
+        {
+          "id": "C08.late_after_expiry",
+          "purpose": "到期前已发送的重复请求在去重条目到期后才到目标；核对到达/提交界和目标过期拒绝"
+        }
+      ],
+      "must_not_infer": [
+        "有限重复样本不能证明任意并发或无限保留；一次主记录去重不代表所有子效果去重。"
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "目标已提交而本地结果丢失",
+      "source_row_line": 119,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "action_effect_separation",
+        "durable_command_receipts",
+        "fault_control"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "stable_action_and_intent_ids",
+        "target_authority_and_read_consistency",
+        "loss_point=response_or_local_result_commit",
+        "covered_effect_set",
+        "observation_deadline_ms"
+      ],
+      "initial_state": [
+        "目标和动作身份固定，动作身份在声明持久边界已有记录。"
+      ],
+      "disturbance": [
+        "目标提交后，通过独立屏障确认提交；丢失响应，或使本地结果写入失败。",
+        "恢复读取动作并按目标契约对账，观察是否重发。"
+      ],
+      "observations": [
+        {
+          "channel": "target_audit",
+          "purpose": "独立目标提交记录"
+        },
+        {
+          "channel": "storage_recovery",
+          "purpose": "恢复后的动作记录"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "unknown/对账状态与占位"
+        },
+        {
+          "channel": "egress_capture",
+          "purpose": "恢复器是否发起新的覆盖动作"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "账本在尚无可信读回时不声称未应用；可以保持 unknown。",
+          "若获得绑定正确的权威观察，则接纳原动作效果而不杜撰新的执行。"
+        ],
+        "failure": [
+          "仅凭缺失本地结果把动作当 not_applied 并无保护重发；或本地成功日志被当唯一世界真值。"
+        ],
+        "unsupported": [
+          "没有动作持久身份或可信目标观察路径；按缺失能力报告。"
+        ],
+        "unknown": [
+          "不能证明目标确已提交、故障点未命中，或结果日志只是查询延迟。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C09.response_lost",
+          "purpose": "目标提交后响应丢失"
+        },
+        {
+          "id": "C09.result_write_lost",
+          "purpose": "目标提交后本地结果提交失败"
+        },
+        {
+          "id": "C09.reconciled",
+          "purpose": "可信目标读回后接纳原动作效果",
+          "additional_requires": [
+            "trusted_observation"
+          ]
+        }
+      ],
+      "must_not_infer": [
+        "正确保持 unknown 可以通过此有限场景；不要求无条件自动恢复成功。"
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "审批绑定最终有效动作",
+      "source_row_line": 120,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "trusted_authorization",
+        "parameter_binding",
+        "dispatch_revalidation"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "authenticated_approver/subject",
+        "grant_epoch/expiry/scope/decision_id",
+        "semantic_action_descriptor_and_canonicalization",
+        "resource_resolution_policy",
+        "approval_required_after_mutation_rule"
+      ],
+      "initial_state": [
+        "有权主体对描述 D1 授权；保留已批准内容和授权语义（精确参数或明确范围）。"
+      ],
+      "disturbance": [
+        "包装器/参数解析把动作改成 D2，至少包含目标或效果范围超出原授权的变体。",
+        "在控制发送点观察最终参数；另测在原授权范围内的允许变化。"
+      ],
+      "observations": [
+        {
+          "channel": "policy_authority",
+          "purpose": "有效授权与批准的动作范围"
+        },
+        {
+          "channel": "egress_capture",
+          "purpose": "最终出站描述及解析后的目标"
+        },
+        {
+          "channel": "target_audit",
+          "purpose": "真正生效的资源和参数"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "超出授权的 D2 被拒绝或等待新的有效授权；未授权写入没有发生。",
+          "若 D2 仍严格在原 grant 范围内，可直接执行且审计匹配，不强制重复审批。"
+        ],
+        "failure": [
+          "只核审批前 hash，实际超范围 D2 已生效；或把模型文字当授权。"
+        ],
+        "unsupported": [
+          "不能在声明派发点认证和绑定有效动作。"
+        ],
+        "unknown": [
+          "无法观察最终有效参数、重定向目标/账户/路径解析结果，或未能证实出站覆盖。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C10.target",
+          "purpose": "目标稳定身份变更"
+        },
+        {
+          "id": "C10.parameters",
+          "purpose": "有效参数/效果范围变更"
+        },
+        {
+          "id": "C10.resolution",
+          "purpose": "相对路径、别名、重定向或账号解析改变资源"
+        },
+        {
+          "id": "C10.in_scope",
+          "purpose": "原授权明确允许的变化"
+        }
+      ],
+      "must_not_infer": [
+        "byte-wise JSON 相等不是语义范围相等；不得把相同参数误当同一授权主体/目标。"
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "历史上下文不能重建已失效授权",
+      "source_row_line": 121,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "trusted_authorization",
+        "policy_context_separation"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "history_incarnation/session_id",
+        "expired_or_revoked_grant_id",
+        "current_policy_version/issuer",
+        "write_operation",
+        "synthetic_history_material"
+      ],
+      "initial_state": [
+        "旧会话材料包含曾有效的授权表述；当前可信 authority 已撤回或过期。"
+      ],
+      "disturbance": [
+        "恢复会话并放入旧材料，提出相同写入动作。",
+        "通过可信通道独立提供当前策略并观察动作准入。"
+      ],
+      "observations": [
+        {
+          "channel": "policy_authority",
+          "purpose": "当前授权状态"
+        },
+        {
+          "channel": "egress_capture",
+          "purpose": "是否发生受控写入"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "策略输入与历史材料来源分离"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "旧材料不产生新 grant；未授权写入被拒绝/等待，历史原文仍可保存为材料。"
+        ],
+        "failure": [
+          "因旧聊天、工具结果或摘要自称授权而执行当前禁止的动作。"
+        ],
+        "unsupported": [
+          "只提供模型提示而没有可信授权执行边界。"
+        ],
+        "unknown": [
+          "当前策略来源无法认证，或无法观察写入路径。"
+        ]
+      },
+      "variants": [],
+      "must_not_infer": [
+        "不要求模型一定生成某句话；评分以准入和实际效果边界为准。"
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "延迟计量期间保留未结算负担",
+      "source_row_line": 122,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "budget_liability_accounting",
+        "trusted_observation"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "budget_currency/unit/window/namespace",
+        "cost_source_coverage",
+        "spent_unbilled_upper_bound",
+        "future_liability_bound",
+        "settlement_idempotency_key",
+        "hard_cap_claim_optional"
+      ],
+      "initial_state": [
+        "预算限额 B、已结算 S、已花未报上界 U、未来负担 F 的口径已明确，且不重复计数。",
+        "有一项已消费但计量回报延迟的动作。"
+      ],
+      "disturbance": [
+        "使调用/本地任务结束而延迟费用报告；随后申请另一动作。",
+        "再提交真实费用增量，并重复投递同一结算记录。"
+      ],
+      "observations": [
+        {
+          "channel": "billing_authority",
+          "purpose": "费用增量与覆盖水位"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "预算占用及新动作决定"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "结算与释放是否关联"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "任务结束不会自动释放仍覆盖已花未报费用的 U；接纳结算后按同一口径减少对应负担。",
+          "重复结算不会重复记费或重复释放。",
+          "仅硬上限变体要求总支出界；必须具备可信上界或目标强制配额。"
+        ],
+        "failure": [
+          "仅因结束释放未结算负担并按错误余额准入，或同一结算重复释放。",
+          "声称硬上限但实际覆盖费用超过该界。"
+        ],
+        "unsupported": [
+          "无负担账本则基础变体 unsupported；无可信上界/配额则仅 hard_cap 变体 unsupported。"
+        ],
+        "unknown": [
+          "费用源覆盖不全、不能区分已花与未来负担，或计量延迟无法控制。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C12.liability",
+          "purpose": "基础负担/结算一致性，可用于软预算"
+        },
+        {
+          "id": "C12.hard_cap",
+          "purpose": "额外能力 hard_cost_bound 才适用",
+          "additional_requires": [
+            "hard_cost_bound"
+          ]
+        }
+      ],
+      "must_not_infer": [
+        "账本预算守恒不等于真实费用有硬上限；晚报费用不可直接置零。"
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "期限跨越后的适用性重判",
+      "source_row_line": 123,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "explicit_time_validity",
+        "trusted_authorization",
+        "versioned_judgments"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "expiry_timestamp/time_domain",
+        "boundary_rule=before_or_at_expiry",
+        "clock_skew_bound",
+        "evidence_ttl_origin",
+        "revocation_propagation_bound_or_none",
+        "evaluation_and_dispatch_check_points"
+      ],
+      "initial_state": [
+        "授权或证据在所声明时间语义下仍有效；记录其 expiry、policy 和时间源。"
+      ],
+      "disturbance": [
+        "通过允许的测试时钟推进或等待跨过期限，保持其他输入不变。",
+        "在过期前/边界/过期后三个点查询判断或请求动作；另测时钟回拨及不确定区间。"
+      ],
+      "observations": [
+        {
+          "channel": "clock_authority",
+          "purpose": "时间值、误差区间与时钟事件"
+        },
+        {
+          "channel": "judgment_view",
+          "purpose": "适用性重判"
+        },
+        {
+          "channel": "egress_capture",
+          "purpose": "声明检查点后的动作"
+        },
+        {
+          "channel": "policy_authority",
+          "purpose": "期限语义"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "在已声明检查点按期限规则重判；模糊时钟区间按 profile 的保守规则处理。",
+          "历史决定保留，但不能作为过期后的当前许可。"
+        ],
+        "failure": [
+          "越过确定过期边界和声明传播期限后仍允许受该期限限制的动作，或回拨复活已撤回授权。"
+        ],
+        "unsupported": [
+          "无显式时钟/有效期语义，无法提供此期限保证。"
+        ],
+        "unknown": [
+          "时钟不确定区间跨越边界、观察延迟无界，或只能改变测试器时钟而适配器时间源不变。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C13.before",
+          "purpose": "过期前"
+        },
+        {
+          "id": "C13.boundary",
+          "purpose": "边界定义"
+        },
+        {
+          "id": "C13.after",
+          "purpose": "确定过期后"
+        },
+        {
+          "id": "C13.rollback",
+          "purpose": "时钟回拨/偏差"
+        }
+      ],
+      "must_not_infer": [
+        "不同机器墙钟不自动可比较；睡眠一段时间不证明目标已看到撤权。"
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "全局产物失效与主体访问撤回分离",
+      "source_row_line": 124,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "principal_scoped_availability",
+        "versioned_judgments",
+        "trusted_observation"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "result_id/artifact_version",
+        "principal_p1/principal_p2",
+        "availability_scope=global_or_principal",
+        "acceptance_requires_access_rule",
+        "authority_observation_and_freshness"
+      ],
+      "initial_state": [
+        "同一确定产物已有历史完成和验收；P1/P2 初始均可按各自权限访问。"
+      ],
+      "disturbance": [
+        "分开执行全局删除/版本替换，与仅撤回 P1 访问权两种变体。",
+        "按各主体读回，接纳带作用域的观察，查询结果与验收适用性。"
+      ],
+      "observations": [
+        {
+          "channel": "artifact_read",
+          "purpose": "P1/P2 对同版本的访问结果"
+        },
+        {
+          "channel": "policy_authority",
+          "purpose": "是否仅 P1 被撤权"
+        },
+        {
+          "channel": "judgment_view",
+          "purpose": "历史完成、当前使用条件与当前验收"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "原完成与验收未被抹除"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "删除/版本失效与特定主体无权限分开表达；历史完成保留。",
+          "仅 P1 撤权不令 P2 或全局存在性自动变假；要求可访问性的判断只在相应主体范围失效。"
+        ],
+        "failure": [
+          "把 403 当全局删除，或把单个 principal 失权扩散成全部任务结果不存在。",
+          "用历史验收无条件绕过当前访问要求。"
+        ],
+        "unsupported": [
+          "未声明主体范围可用性则权限变体 unsupported；只有全局存在性可运行删除变体。"
+        ],
+        "unknown": [
+          "读回是网络故障/陈旧缓存，或来源无法区分未找到与无权限。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C14.deleted",
+          "purpose": "确定版本全局删除"
+        },
+        {
+          "id": "C14.access_revoked",
+          "purpose": "仅 P1 失去访问权"
+        },
+        {
+          "id": "C14.version_changed",
+          "purpose": "同 URL 指向新 artifact version"
+        }
+      ],
+      "must_not_infer": [
+        "已观察可用不保证使用时仍可用；需要使用点检查或稳定性前提。"
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "持久接纳与暂态回执区分",
+      "source_row_line": 125,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "durable_command_receipts",
+        "audit_history",
+        "fault_control"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "atomic_commit_set_and_derived_items=command/event/state/receipt 的实际提交与可重建关系",
+        "ack_levels",
+        "fault_domain=process_or_machine_or_storage",
+        "request_id_and_payload_identity",
+        "recovery_read_authority",
+        "durability_bound_if_any"
+      ],
+      "initial_state": [
+        "确定持久化承诺及回执级别；先保存命令身份与内容摘要。"
+      ],
+      "disturbance": [
+        "分别在持久提交前失败、提交后回执丢失、仅暂态可见三个屏障处故障。",
+        "按声明故障域恢复，重发完全相同命令并读取权威历史；再以同 requestId 不同参数重试。"
+      ],
+      "observations": [
+        {
+          "channel": "fixture_receipt",
+          "purpose": "故障屏障而非宿主内部内存"
+        },
+        {
+          "channel": "storage_recovery",
+          "purpose": "恢复后命令、事件、状态与收据"
+        },
+        {
+          "channel": "history_view",
+          "purpose": "同请求去重及当前状态"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "新命令接纳结果"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "未提交命令不被声称持久接纳；已提交但回执丢失的完全相同重试返回对应历史收据且不重复业务事件。",
+          "同 requestId 改内容不静默重解释；历史收据不覆盖当前更新后的状态。",
+          "允许由持久事实确定性重建状态/收据；必须说明哪些原子写入足以重建，不要求所有派生物物理同表存储。"
+        ],
+        "failure": [
+          "durable ACK 后在声明故障域丢失必需原子提交项，或同一命令重复生效。",
+          "暂态进度标为持久接纳，或改参数重试沿用旧收据假装已授权。"
+        ],
+        "unsupported": [
+          "适配器明确只有内存状态或未声明该故障域的持久性。"
+        ],
+        "unknown": [
+          "崩溃点无法证实、恢复仍读客户端缓存，或底层存储故障超出声明范围。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C15.before_commit",
+          "purpose": "提交前故障"
+        },
+        {
+          "id": "C15.after_commit",
+          "purpose": "提交后回执丢失"
+        },
+        {
+          "id": "C15.transient",
+          "purpose": "仅暂态可见"
+        },
+        {
+          "id": "C15.changed_request",
+          "purpose": "相同请求 id 不同内容"
+        }
+      ],
+      "must_not_infer": [
+        "仅进程重启通过不能推出断电/磁盘损坏持久性；ACK 本身不作为唯一 durability oracle。"
+      ]
+    },
+    {
+      "id": "C16",
+      "title": "迟到尝试结果不覆盖当前尝试但仍可补充效果证据",
+      "source_row_line": 126,
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "verdict": "NOT_RUN",
+      "requires": [
+        "attempt_identity",
+        "action_effect_separation",
+        "trusted_observation",
+        "versioned_judgments"
+      ],
+      "environment": "隔离的合成任务与无破坏目标；所有身份及状态均由公开接口建立，故障控制能力另行声明。",
+      "parameters": [
+        "history_incarnation/task_id/spec_version",
+        "old_attempt_id/new_attempt_id/action_id",
+        "authority_epoch_and_current_attempt_binding",
+        "late_result_evidence_authority",
+        "result_freshness_and_scope"
+      ],
+      "initial_state": [
+        "同一任务已有旧尝试 A1 和后继 A2；保存各自绑定；原动作效果可能仍未解决。"
+      ],
+      "disturbance": [
+        "在 A2 当前状态建立后投递 A1 的迟到文本结果与独立目标端效果证据两个变体。",
+        "观察当前尝试投影、原动作状态、共享资源占位与历史。"
+      ],
+      "observations": [
+        {
+          "channel": "history_view",
+          "purpose": "A1/A2 及 action 身份"
+        },
+        {
+          "channel": "judgment_view",
+          "purpose": "当前尝试绑定和结果适用性"
+        },
+        {
+          "channel": "target_audit",
+          "purpose": "迟到但可信的原动作效果"
+        },
+        {
+          "channel": "admission_read",
+          "purpose": "共享资源冲突据新证据重新判断"
+        }
+      ],
+      "oracle": {
+        "language": "controlled_prose_not_executable",
+        "success": [
+          "旧尝试不冒充 A2，也不覆盖 A2 的当前状态。",
+          "对原动作适用且可信的迟到效果证据仍可被接纳，必要时影响共享资源或触发冲突复核；不能仅因 attempt 旧而丢弃。"
+        ],
+        "failure": [
+          "A1 结果覆盖 A2，或将原动作真实效果丢弃从而继续按错误空闲状态准入。",
+          "跨 history incarnation 的同名 id 被错误接纳。"
+        ],
+        "unsupported": [
+          "无尝试身份/效果证据分离能力。"
+        ],
+        "unknown": [
+          "迟到证据来源不可信、目标版本不匹配或历史 namespace 不可核实。"
+        ]
+      },
+      "variants": [
+        {
+          "id": "C16.report",
+          "purpose": "普通旧尝试汇报"
+        },
+        {
+          "id": "C16.effect_evidence",
+          "purpose": "原动作可信效果证据"
+        },
+        {
+          "id": "C16.cross_history",
+          "purpose": "同名 id 不同历史实例"
+        }
+      ],
+      "must_not_infer": [
+        "fencing 当前尝试写权限不等于抹去旧发送者已产生的物理效果。"
+      ]
+    }
+  ],
+  "execution_evidence": [],
+  "validation_scope": "Only JSON structure, IDs, references and local documentation links; not an executable test runner and not scenario execution.",
+  "capability_provider_roles": {
+    "versioned_judgments": "adapter_or_authority_service",
+    "audit_history": "adapter_or_authority_service",
+    "declared_rule_inputs": "adapter_or_authority_service",
+    "dependency_views": "adapter_or_authority_service",
+    "cycle_rejection": "adapter_or_authority_service",
+    "atomic_admission": "adapter_or_authority_service",
+    "dispatch_revalidation": "adapter_or_authority_service",
+    "action_effect_separation": "adapter_or_authority_service",
+    "target_fencing": "target_or_proven_target_adapter_protocol",
+    "target_idempotency": "target_or_proven_target_adapter_protocol",
+    "parameter_binding": "adapter_or_authority_service",
+    "trusted_observation": "authenticated_observer",
+    "trusted_authorization": "adapter_or_authority_service",
+    "policy_context_separation": "adapter_or_authority_service",
+    "budget_liability_accounting": "adapter_or_authority_service",
+    "hard_cost_bound": "target_or_proven_target_adapter_protocol",
+    "explicit_time_validity": "adapter_or_authority_service",
+    "principal_scoped_availability": "adapter_or_authority_service",
+    "durable_command_receipts": "adapter_or_authority_service",
+    "attempt_identity": "adapter_or_authority_service",
+    "fault_control": "isolated_test_environment"
+  }
+}

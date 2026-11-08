@@ -1,0 +1,101 @@
+{
+  "copied_at_utc": "2026-11-08T09:49:29.085085+00:00",
+  "files": [
+    {
+      "path": "proof-review/resource-audit/INPUT_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 848,
+      "sha256": "1e472b39aaf511f6805c2708264041f4c8647bdb66b3c7b14a7d1fca31491303"
+    },
+    {
+      "path": "proof-review/resource-audit/OUTPUT_HASHES.json",
+      "source_worktree": "proof-review",
+      "bytes": 736,
+      "sha256": "c33aa5398349ce9f7c053df579fd2557503c57d5ed56f1d039f5e7e6b5e6c18b"
+    },
+    {
+      "path": "proof-review/resource-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 7685,
+      "sha256": "c2c34f16838ef519360bf9675ceafbb0687ade570f292822b30ae74e087af636"
+    },
+    {
+      "path": "proof-review/resource-audit/check_conditions.py",
+      "source_worktree": "proof-review",
+      "bytes": 5606,
+      "sha256": "8761570473b51482393ea0b2dad114c80f6bcd495f0597f278da5e5f70ebc5c7"
+    },
+    {
+      "path": "proof-review/resource-audit/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 381,
+      "sha256": "4adffb4f0356577d9517c9d553d81f829531bb37bbb62a000e28e1c47872a4d0"
+    },
+    {
+      "path": "proof-review/resource-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 2059,
+      "sha256": "366d26cefefea46719c98bd7ca49268e9b1de57b5c64f570e60af8fa64231861"
+    },
+    {
+      "path": "proof-review/resource-audit/historical-inputs/BACKEND-PLAN-DRAFT.md",
+      "source_worktree": "proof-review",
+      "bytes": 31948,
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766"
+    },
+    {
+      "path": "proof-review/resource-audit/historical-inputs/CONTRACT.md",
+      "source_worktree": "proof-review",
+      "bytes": 7173,
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b"
+    },
+    {
+      "path": "proof-review/resource-audit/historical-inputs/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "source_worktree": "proof-review",
+      "bytes": 112450,
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b"
+    },
+    {
+      "path": "proof-review/resource-audit/historical-inputs.json",
+      "source_worktree": "proof-review",
+      "bytes": 1041,
+      "sha256": "44c1f5f240853ea240ac0168d5eb2a0254a483a58d94b7b88f152b3c1ba887ee"
+    },
+    {
+      "path": "proof-review/resource-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 490,
+      "sha256": "9b4d357a5f283c5029617a7c0493387b198baee631a2783e391ddfcc695dc7c6"
+    },
+    {
+      "path": "proof-review/resource-audit/inputs/inputs.json",
+      "source_worktree": "proof-review",
+      "bytes": 1423,
+      "sha256": "f53228fb0590ff4e241c3bae4c99f18fb5a19ff8b873457e3cf54f1970020b26"
+    },
+    {
+      "path": "proof-review/resource-audit/inputs/sources.json",
+      "source_worktree": "proof-review",
+      "bytes": 2299,
+      "sha256": "f3f5cf4a26dae71edd6db220d22b08071913bdc8f24543e595b25ff2f51815c2"
+    },
+    {
+      "path": "proof-review/resource-audit/inputs/资源归属与环境生命周期讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 14351,
+      "sha256": "ef58adcb57fa0c810d39a7e8c3acead46cbbcc8fd5136f90bc4f2ba1da0fb161"
+    },
+    {
+      "path": "proof-review/resource-audit/results.json",
+      "source_worktree": "proof-review",
+      "bytes": 5900,
+      "sha256": "c0f24296f8b0e0a9d6dbf344bc31c67fe74b5bdec7d7712f73d52b810781e20e"
+    },
+    {
+      "path": "proof-review/resource-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 1563,
+      "sha256": "134961728d38c74d366b1da3525a1c6045ce6f343936a8c1388d05ab4bcb023e"
+    }
+  ]
+}

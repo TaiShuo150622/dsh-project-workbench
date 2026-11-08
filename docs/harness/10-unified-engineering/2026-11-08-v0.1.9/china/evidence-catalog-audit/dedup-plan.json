@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "json_files_scanned": 110,
+    "primary_catalog_files": 10,
+    "root_cross_review_files": 4,
+    "excluded_other_json_files": 96,
+    "source_entry_count": 215,
+    "explicit_nested_primary_documents": 6,
+    "explicit_paired_primary_documents": 1,
+    "primary_document_url_occurrences": 222,
+    "source_entry_exact_url_unique": 200,
+    "source_entry_duplicate_url_excess": 15,
+    "primary_document_exact_url_unique": 205,
+    "primary_document_duplicate_url_excess": 17,
+    "primary_document_duplicate_url_groups": 12,
+    "all_catalog_url_string_occurrences": 247,
+    "all_catalog_exact_url_string_unique": 222,
+    "root_review_entries": 38,
+    "root_review_exact_url_unique": 37,
+    "root_only_url_candidates": 7,
+    "combined_primary_document_and_root_review_exact_url_unique": 225,
+    "excluded_or_failed_candidate_entries": 3,
+    "explicit_body_unread_or_inaccessible_records": 3,
+    "short_id_collision_groups": 1,
+    "identity_binding_edges": 21,
+    "explicit_person_view_groups": 6,
+    "missing_or_unspecified_fields": {
+      "publication_date": 140,
+      "entry_reading_status": 99,
+      "locator": 52,
+      "attribution": 1,
+      "evidence_nature": 6
+    },
+    "root_only_sources_without_catalog_or_same_work_match": 4,
+    "unadopted_candidates_inside_sources_array": 1,
+    "per_catalog_source_entries": {
+      "china/sources.json": 57,
+      "foundations/sources.json": 12,
+      "mechanisms/cordis-boundary/sources.json": 15,
+      "mechanisms/lifecycle-migration/sources.json": 6,
+      "mechanisms/sources.json": 41,
+      "mechanisms/work-improvement/sources.json": 10,
+      "west/authority-scope/sources.json": 5,
+      "west/context-evaluation/sources.json": 18,
+      "west/practitioner-views/sources.json": 12,
+      "west/sources.json": 39
+    }
+  },
+  "exact_url_duplicate_groups": [
+    {
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "occurrences": [
+        "china/sources.json#/sources/51",
+        "mechanisms/cordis-boundary/sources.json#/sources/0",
+        "mechanisms/lifecycle-migration/sources.json#/sources/4",
+        "west/practitioner-views/sources.json#/sources/7"
+      ],
+      "count": 4,
+      "distinct_binding_or_locator_shapes": 4,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "occurrences": [
+        "west/authority-scope/sources.json#/sources/3",
+        "west/authority-scope/sources.json#/sources/3/primary_documents/0"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "occurrences": [
+        "west/authority-scope/sources.json#/sources/4",
+        "west/sources.json#/sources/29"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "occurrences": [
+        "foundations/sources.json#/sources/8",
+        "west/authority-scope/sources.json#/sources/2",
+        "west/authority-scope/sources.json#/sources/2/primary_documents/0",
+        "west/sources.json#/sources/7"
+      ],
+      "count": 4,
+      "distinct_binding_or_locator_shapes": 4,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://openai.com/index/harness-engineering/",
+      "occurrences": [
+        "west/practitioner-views/sources.json#/sources/2",
+        "west/sources.json#/sources/3"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "occurrences": [
+        "west/practitioner-views/sources.json#/sources/1",
+        "west/sources.json#/sources/0"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "occurrences": [
+        "foundations/sources.json#/sources/9",
+        "west/sources.json#/sources/26"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "occurrences": [
+        "foundations/sources.json#/sources/11",
+        "west/sources.json#/sources/24"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "occurrences": [
+        "foundations/sources.json#/sources/10",
+        "west/sources.json#/sources/23"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "occurrences": [
+        "west/practitioner-views/sources.json#/sources/3",
+        "west/sources.json#/sources/17"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "occurrences": [
+        "west/context-evaluation/sources.json#/sources/16",
+        "west/practitioner-views/sources.json#/sources/5",
+        "west/sources.json#/sources/18"
+      ],
+      "count": 3,
+      "distinct_binding_or_locator_shapes": 3,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    },
+    {
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "occurrences": [
+        "west/practitioner-views/sources.json#/sources/0",
+        "west/sources.json#/sources/15"
+      ],
+      "count": 2,
+      "distinct_binding_or_locator_shapes": 2,
+      "merge_policy": "May share a URL index key; preserve every assertion, locator, version, read declaration and reviewer separately."
+    }
+  ],
+  "related_but_not_mergeable_groups": [
+    {
+      "family": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "reason": "URL fragments differ; may index one document, but read scopes and claim anchors remain distinct.",
+      "members": [
+        {
+          "occurrence_id": "mechanisms/cordis-boundary/sources.json#/sources/1",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+          "locators": {
+            "read_scope": "Focused ranges 69–145, 240–305, 362–567, 580–645, 681–759"
+          }
+        },
+        {
+          "occurrence_id": "mechanisms/lifecycle-migration/sources.json#/sources/5",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746",
+          "locators": {
+            "reading_coverage": "This round directly fetched fixed raw file, inspected 681–746; prior round read broader Fiber/tool integration. Fixed raw file has 820 lines; locators refer to raw source, not web parser line numbering."
+          }
+        }
+      ]
+    },
+    {
+      "family": "arxiv:2608.25512",
+      "reason": "Different or unpinned versions/representations. No content equivalence inferred; do not collapse reads or claims.",
+      "versions": [
+        "v1"
+      ],
+      "members": [
+        {
+          "occurrence_id": "china/sources.json#/sources/51",
+          "url": "https://arxiv.org/abs/2608.25512v1",
+          "version": "v1",
+          "locators": {}
+        },
+        {
+          "occurrence_id": "mechanisms/cordis-boundary/sources.json#/sources/0",
+          "url": "https://arxiv.org/abs/2608.25512v1",
+          "version": "v1",
+          "locators": {
+            "reading_coverage": "READING_COVERAGE.md",
+            "claim_locators": [
+              "Def. 8; Thm. 7/15/16; PDF pp. 11–16",
+              "Def. 19–22/29–34/42/44/46; Thm. 43/45/47; PDF pp. 17–30",
+              "Def. 52–58; Lemma 57/59/66/67; Thm. 68/70/71/73; Cor. 69; PDF pp. 35–50",
+              "§4.4; §5.1; PDF pp. 55–64",
+              "§6.1–6.3; PDF pp. 70–73",
+              "§7.3 PDF pp.79–80; §8 PDF p.83"
+            ]
+          }
+        },
+        {
+          "occurrence_id": "mechanisms/lifecycle-migration/sources.json#/sources/4",
+          "url": "https://arxiv.org/abs/2608.25512v1",
+          "version": "v1",
+          "locators": {
+            "reading_coverage": "This round re-read §7.3, PDF pages 79–80. Prior selected proof/implementation review is ../cordis-boundary/READING_COVERAGE.md; not repeated in full."
+          }
+        },
+        {
+          "occurrence_id": "west/practitioner-views/sources.json#/sources/6",
+          "url": "https://arxiv.org/pdf/2608.25512v1",
+          "version": "v1",
+          "locators": {
+            "locator": "PDF first-page affiliations; §1.2.2 printedp5; §3.4 closing printedp31; §5.1 inverse obligations printedp59; §6.1 printedpp70–71; §7.3 printedpp79–80; §8 printedpp82–83"
+          }
+        },
+        {
+          "occurrence_id": "west/practitioner-views/sources.json#/sources/7",
+          "url": "https://arxiv.org/abs/2608.25512v1",
+          "version": "v1",
+          "locators": {
+            "locator": "Submitted date and author affiliations"
+          }
+        }
+      ]
+    }
+  ],
+  "short_id_collisions": {
+    "P01": [
+      "west/practitioner-views/sources.json#/sources/0",
+      "west/sources.json#/sources/15"
+    ]
+  },
+  "recommended_entities": [
+    "SourceDocument indexed by exact URL plus pinned version/content identity where available.",
+    "SourceAssertion retains original catalog hash, JSON pointer, ID, claim, locator and limits.",
+    "ReadingObservation records author declaration and root cross-review separately, with scope and date.",
+    "IdentityEvidence links a dated affiliation claim to original evidence; OpinionEvidence links the person and claimed view without company-promise promotion."
+  ],
+  "never_merge_rules": [
+    "Same URL does not establish identical reading scope, claim, body version or independent corroboration.",
+    "Different commit, arXiv version, unversioned URL or representation stays separate until content equivalence is established.",
+    "Locators may share one document index but remain separate evidence assertions.",
+    "Do not count a root reread as a second independent source or promote a catalog-wide method into item-level full-text audit."
+  ]
+}

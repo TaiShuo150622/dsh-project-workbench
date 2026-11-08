@@ -1,0 +1,25 @@
+{
+  "verified_at_utc": "2026-11-08T07:57:05.278945+00:00",
+  "method": "Source review and hash/receipt consistency verification only; no kernel/test/probe execution by this reviewer",
+  "frozen_input_hashes_match": true,
+  "author_manifest_entries_checked": 13,
+  "author_log_hashes_match": true,
+  "prior_R01_to_R04_main_outputs_unchanged": true,
+  "artifacts": [
+    {
+      "file": "REVIEW.md",
+      "sha256": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "bytes": 8217
+    },
+    {
+      "file": "findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252
+    },
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943
+    }
+  ]
+}

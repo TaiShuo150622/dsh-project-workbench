@@ -1,0 +1,48 @@
+{
+  "captured_at_utc": "2026-11-08T07:00:28.446954+00:00",
+  "scope": [
+    "cancel-is-not-rollback",
+    "combined",
+    "dedupe-only",
+    "fence-only",
+    "unstable-key",
+    "world-is-not-ledger"
+  ],
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/receipt.json",
+      "snapshot": "inputs/tla-results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/combined.log",
+      "snapshot": "inputs/tla-results/combined.log",
+      "sha256": "4c4bb2d8354972620e9a6b8a3bd5c7a6df6110e2a708ac8220553a3015c66150"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/fence-only.log",
+      "snapshot": "inputs/tla-results/fence-only.log",
+      "sha256": "427077a89e06d259f53fb83b6f61fe9184e2bc75ef966a070a081642ec2205fb"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/dedupe-only.log",
+      "snapshot": "inputs/tla-results/dedupe-only.log",
+      "sha256": "a97e08820cff2e73df5c009c1bbbfbcc75abeb5c13c51ad72b1f4751266e0ef0"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/unstable-key.log",
+      "snapshot": "inputs/tla-results/unstable-key.log",
+      "sha256": "025becb9c8377e92f7ec7ab4d324cda0c0dc5633bab5b333326aea002c1d5820"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/cancel-is-not-rollback.log",
+      "snapshot": "inputs/tla-results/cancel-is-not-rollback.log",
+      "sha256": "a3c3160b6fbb039e7de5dfb3dd9bbdc9f668fbda14e95fd3ec67cd1d532d307f"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/world-is-not-ledger.log",
+      "snapshot": "inputs/tla-results/world-is-not-ledger.log",
+      "sha256": "2f7e49e26ca0472b13d2d946a665dc661d8ef05d444ef21b26cc5645d2c46d49"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-11-08T08:04:57.096899+00:00",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "WI-AFlow-inner-loop",
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+      "location": "110–190",
+      "root_review_note": "有限外层轮数不限制内部候选生成 while True 的总调用；未执行或估算费用。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false,
+      "blob_sha": "36a6cfc5e8774260ccf3036c059d536938b677c3"
+    },
+    {
+      "id": "WI-Reflexion-ablation",
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "location": "Table 3; result interpretation",
+      "root_review_note": "Rust50 60/52/60/68是作者有限消融结果；生成测试的假阳性可提前接受错误答案，不是形式保证。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "WI-ExpeL-ablation",
+      "url": "https://arxiv.org/html/2308.10144v3",
+      "location": "Table 3; limitations",
+      "root_review_note": "HotpotQA 28±1.4/29±0.4/39±1.7对照与纳入reflection提炼的退化；有限上下文和纯文字任务边界。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "WI-AFlow-results",
+      "url": "https://arxiv.org/html/2410.10762v4",
+      "location": "Table 1; Figure 4; experimental setup",
+      "root_review_note": "六数据集 GPT-4o-mini 76→80.3，测试三次；图中测试推理费用不覆盖搜索和人工成本。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "TOOLS-Anthropic-search",
+      "url": "https://www.anthropic.com/research/advanced-tool-use",
+      "location": "tool definitions, search, programmatic calls, examples",
+      "root_review_note": "官方58工具约55k及134k上下文为指定案例；发现/执行/示例分开，不视为任意工具规模的收益保证。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "TOOLS-Anthropic-code",
+      "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+      "location": "definition and intermediate-result context costs",
+      "root_review_note": "介绍工具声明与中间结果的上下文成本、代码环境内处理思路；未据此断言所有任务更优。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "TOOLS-Claude-SDK",
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+      "location": "97–114 and supported deployments",
+      "root_review_note": "默认最多返回5项、压缩后再发现、增加往返延迟；小目录提前给出可更快，数字不当通用最优。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "MIG-Temporal-pinned",
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "location": "99–253",
+      "root_review_note": "逐策略区分重启属性/状态完整性；对已关闭历史的相同reset命令会再次终止先前重置运行并新开；Visibility最终一致，特定Running查询幂等不代表目标效果无重复。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false,
+      "blob_sha": "d902efce1a62737c6ba4e90146c270461d85702b"
+    },
+    {
+      "id": "MIG-DBOS-patch",
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "location": "76–174",
+      "root_review_note": "patch由历史位置决定；提前开始但未经过该点也可走新分支；auto-upgrade Enterprise；旧PENDING进程可仍执行，仅一个结果记录不等于一个外部效果。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false,
+      "blob_sha": "d335b1917e4de41bdc787b89b5e40375bd87540d"
+    }
+  ]
+}

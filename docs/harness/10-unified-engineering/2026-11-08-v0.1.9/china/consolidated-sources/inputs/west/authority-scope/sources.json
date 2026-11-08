@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-11-08",
+  "status": "primary-body-and-static-source-review; no runtime tests",
+  "scope": "Fourth west round: principal, delegated authority, data visibility and approval binding",
+  "count_note": "Five source families. Each family lists separately reviewed primary documents; grouped for mechanism comparison, not represented as a single publication.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "MCP 2026-07-28 Authorization Security Considerations",
+      "author_organization": "Model Context Protocol maintainers",
+      "view_category": "official normative specification",
+      "published_date": null,
+      "specification_version": "2026-07-28",
+      "accessed_date": "2026-11-08",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "repository": "modelcontextprotocol/modelcontextprotocol",
+      "commit": "94f4ebc8ecb3764584bc30d5139d57c03692b734",
+      "commit_date": "2026-11-08T05:01:53Z",
+      "path": "docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "locators": [
+        "Token Audience Binding and Validation",
+        "Access Token Privilege Restriction"
+      ],
+      "supports": [
+        "Token must target the receiving MCP server; upstream API calls use separately issued tokens, not token passthrough."
+      ],
+      "limitations": [
+        "Normative requirements, not proof of deployed compliance.",
+        "Does not itself specify application artifact ACL, derived-data release rules, or distributed revocation consistency.",
+        "Specification version date is not asserted to be this file's original publication date."
+      ],
+      "read_status": "Relevant original body read via GitHub connector."
+    },
+    {
+      "id": "S02",
+      "title": "MCP 2026-07-28 TypeScript schema: annotations",
+      "author_organization": "Model Context Protocol maintainers",
+      "view_category": "official schema and normative comments",
+      "published_date": null,
+      "specification_version": "2026-07-28",
+      "accessed_date": "2026-11-08",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+      "repository": "modelcontextprotocol/modelcontextprotocol",
+      "commit": "94f4ebc8ecb3764584bc30d5139d57c03692b734",
+      "path": "schema/2026-07-28/schema.ts",
+      "locators": [
+        "L1900-L1908 ToolAnnotations hints",
+        "L2276-L2287 Annotations.audience"
+      ],
+      "supports": [
+        "Content audience annotation uses Role[] for user/assistant display/use context.",
+        "ToolAnnotations do not guarantee actual behavior and should not determine tool use when from untrusted servers."
+      ],
+      "limitations": [
+        "Do not conflate annotation audience with OAuth resource audience or application recipient ACL.",
+        "No runtime information-flow or side-effect enforcement proven."
+      ],
+      "read_status": "Relevant original source read."
+    },
+    {
+      "id": "S03",
+      "title": "OpenAI Agents Python HITL and invocation binding",
+      "author_organization": "OpenAI / openai-agents-python maintainers",
+      "view_category": "official SDK documentation and fixed-source mechanism",
+      "published_date": null,
+      "accessed_date": "2026-11-08",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "repository": "openai/openai-agents-python",
+      "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "path": "docs/human_in_the_loop.md",
+      "primary_documents": [
+        {
+          "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+          "path": "docs/human_in_the_loop.md",
+          "locators": [
+            "L49-L69 approval scope",
+            "Keep approval state on the server",
+            "Versioning pending tasks"
+          ]
+        },
+        {
+          "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+          "path": "src/agents/_tool_invocation.py",
+          "locators": [
+            "L165-L231 semantic invocation identity",
+            "L251-L304 approval scope and fingerprint"
+          ]
+        },
+        {
+          "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+          "path": "src/agents/run_context.py",
+          "locators": [
+            "L596-L604 reject changed invocation under same call ID",
+            "L1180-L1256 decision validation",
+            "L1341-L1415 approval entry and binding query"
+          ]
+        },
+        {
+          "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_state.py",
+          "path": "src/agents/run_state.py",
+          "locators": [
+            "L1110-L1180 detached pending items and identity comparison",
+            "L1380-L1396 approve resolution"
+          ]
+        }
+      ],
+      "supports": [
+        "Application must authenticate and authorize reviewers and retain trusted server-owned state.",
+        "Sticky function approvals are agent-scoped; sticky local shell/patch approvals can apply across agents sharing approval state.",
+        "Invocation identity includes semantic arguments; same ID with a different fingerprint is rejected in the inspected path.",
+        "Snapshot shape/fingerprint is not snapshot authentication."
+      ],
+      "limitations": [
+        "Static path review, not full security audit or runtime reproduction.",
+        "Do not claim all extensions or target executors have identical binding guarantees.",
+        "Application principal, recipient, executor permission scope and current external policy require explicit integration contracts.",
+        "Pinned commit reused from same-night first-round verification; not asserted as every installed client version."
+      ],
+      "read_status": "Relevant documentation and listed source ranges read."
+    },
+    {
+      "id": "S04",
+      "title": "Claude Agent SDK permission evaluation and approval input updates",
+      "author_organization": "Anthropic / Claude Code documentation",
+      "view_category": "official product documentation",
+      "published_date": null,
+      "accessed_date": "2026-11-08",
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "repository": null,
+      "commit": null,
+      "path": null,
+      "primary_documents": [
+        {
+          "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+          "title": "Configure permissions",
+          "locators": [
+            "How permissions are evaluated (web lines 102-148)"
+          ]
+        },
+        {
+          "url": "https://code.claude.com/docs/en/agent-sdk/user-input",
+          "title": "Handle approvals and user input",
+          "locators": [
+            "Respond to tool requests (web lines 278-358)"
+          ]
+        }
+      ],
+      "supports": [
+        "Several earlier permission stages may resolve a call before canUseTool.",
+        "Callback may approve with modified effective input; it may also persist suggested permission updates."
+      ],
+      "limitations": [
+        "Dynamic pages have no stable publication date in the inspected body; access date only.",
+        "No pinned Claude Code runtime source or execution trace was audited for this round.",
+        "The proposed final-effective-action binding and consistent revocation check are our requirements, not claimed SDK guarantees."
+      ],
+      "read_status": "Relevant original body read."
+    },
+    {
+      "id": "S05",
+      "title": "Claude Code custom subagents: permissions, dedicated tools and output authority",
+      "author_organization": "Anthropic / Claude Code documentation",
+      "view_category": "official product documentation",
+      "published_date": null,
+      "accessed_date": "2026-11-08",
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "repository": null,
+      "commit": null,
+      "path": null,
+      "locators": [
+        "Restrict which tools a subagent can use (web lines 452-483)",
+        "Scope MCP servers to a subagent (web lines 513-542)",
+        "Permission modes (web lines 560-575)",
+        "Subagent output scanning (web lines 908-914)"
+      ],
+      "supports": [
+        "A child can be configured with MCP servers unavailable in the main conversation, while managed restrictions still apply.",
+        "Tool access and permission-mode inheritance are distinct mechanisms with documented exceptions.",
+        "A subagent report's instruction/approval claims have no user authority; scanning does not replace permission checks or sandboxing."
+      ],
+      "limitations": [
+        "Dynamic documentation; no runtime attestation.",
+        "Not evidence that every child authority is a subset of the parent's visible tool list.",
+        "Our delegation algebra and result recipient controls are proposed application contracts, not stated as implemented Claude semantics.",
+        "No attack payloads collected or tested."
+      ],
+      "read_status": "Relevant original body read."
+    }
+  ],
+  "our_proposals_not_source_claims": [
+    "Usable_L(t,q,n) with scoped consumer, operation and recipients.",
+    "Artifact materialization separate from access revocation and evidence withdrawal.",
+    "Delegated effective scope bounded by parent delegable scope and current policy; separate CanDelegate from CanExecute.",
+    "Explicit derived-result release decisions and separate consume/evidence-read/revalidation permissions.",
+    "Application approval binding to final effective action, actor, recipients, executor scope and policy dependencies.",
+    "Fifteen proposed contract cases; none executed."
+  ],
+  "uncertainty": [
+    "Derived-data release invalidation policy remains a business design decision.",
+    "Whether any adapter can meet execution-point revocation must be verified independently.",
+    "A provenance/taint label is not a proof of model semantic non-disclosure."
+  ]
+}

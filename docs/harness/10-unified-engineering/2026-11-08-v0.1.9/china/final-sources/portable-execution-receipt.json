@@ -1,0 +1,240 @@
+{
+  "status": "PASS",
+  "executed_at_utc": "2026-11-08T10:06:29.872884+00:00",
+  "copy_name": "c11-portable-ex1pnctr",
+  "copy_outside_original_checkout": true,
+  "copied_scope": "entire research directory, excluding Python bytecode caches",
+  "original_catalogues_unchanged": 19,
+  "C07_original_directory_not_written": true,
+  "C07_portable_validator_passed": true,
+  "C11_portable_validator_passed": true,
+  "metadata_redaction_sample_passed": true,
+  "redacted_catalogues": [
+    "west/design-continuity/reading-list.json",
+    "west/evidence-disputes/sources.json",
+    "west/historical-coverage/reading-list.json",
+    "west/trusted-entry-map/sources.json"
+  ],
+  "final_share_package_status": "NOT_RUN_BY_C11; actual parent export must run validate_portable.py again",
+  "frozen_regeneration_byte_identical_across_seeds": [
+    11,
+    97
+  ],
+  "generated_file_hashes": {
+    "manifest.json": "f2bb4a361688299fbb1abc9d86fee9327a9291b75051052a99bc95991b4b047b",
+    "supplement-index.json": "a3510674cda5f3ebfcdfb4f4dc495ab1dadc7c53463f704b68572fe8f13f9317",
+    "union-url-index.json": "26bd837ec13fda4000dd01816307be7c33dcc4965c8aa30991d0deea99fcb2c3",
+    "representation-relations.json": "85cc778afd7957004d884e36e021529e8c5addb47ea02d6acbcb32640410e679",
+    "reading-relations.json": "7ddfa6ae028c13036112b2a5eb9007225d241ba21ebdd9d7ffd87cff98337323",
+    "counts.json": "3f1334e0ae8bea0dbd79ca375b3fc019b7aaf5bccef768f553334c4a4e1b5eb0",
+    "redaction-impact.json": "5af5a6d957bb49abbbd325efc4ea9e6ed071fe2a1c8affa52a4463d364e58ee0"
+  },
+  "negative_controls": [
+    {
+      "case": "C07_missing_topic_does_not_fallback_to_checkout",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "missing reader link SOURCE_INDEX.md -> ../中国Harness机制核查讨论稿-v0.1.0.md",
+        "missing reader link SOURCE_INDEX.md -> ../中国Harness机制核查讨论稿-v0.1.0.md"
+      ]
+    },
+    {
+      "case": "missing_catalogue",
+      "missing_relative_path": "ROOT_SOURCE_REVIEW_7.json",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "missing frozen input: ROOT_SOURCE_REVIEW_7.json"
+      ]
+    },
+    {
+      "case": "missing_reader_target",
+      "missing_relative_path": "west/trusted-entry-map/MAP.md",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "missing reader link: SOURCE_INDEX.md -> ../../west/trusted-entry-map/MAP.md"
+      ]
+    },
+    {
+      "case": "redacted_catalogues_without_DERIVATION",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "changed input without matching DERIVATION: west/design-continuity/reading-list.json",
+        "changed input without matching DERIVATION: west/evidence-disputes/sources.json",
+        "changed input without matching DERIVATION: west/historical-coverage/reading-list.json",
+        "changed input without matching DERIVATION: west/trusted-entry-map/sources.json"
+      ]
+    },
+    {
+      "case": "wrong_W12_derived_SHA",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "DERIVATION identity mismatch: west/design-continuity/reading-list.json"
+      ]
+    },
+    {
+      "case": "changed_read_scope_even_with_matching_derived_SHA",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "errors": [
+        "reading_declaration changed: west/design-continuity/reading-list.json#/files/0"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "validate_index_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/consolidated-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "build_supplement.py",
+        "--frozen"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "build_supplement.py",
+        "--frozen"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "97"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_index_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/consolidated-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_index_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/consolidated-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "shared-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "redacted-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "redacted-research/china/final-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "redacted-research/china/final-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "redacted-research/china/final-sources",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pythonhashseed": "11"
+    },
+    {
+      "command": [
+        "python3",
+        "validate_portable.py"
+      ],
+      "cwd_relative_to_test_root": "redacted-research/china/final-sources",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pythonhashseed": "11"
+    }
+  ],
+  "network_requests": 0,
+  "third_party_body_reading_or_product_tests": false,
+  "original_absolute_metadata_paths_not_used": true,
+  "preliminary_correction": "The first copied-package validation caught a nonexistent R08 README link; it was corrected to REVIEW.md before this final run.",
+  "generator_sha256": "0a75f92a2951e91ce7e37de6cf98513b25af448a6b52ef64529e339203a3dc84",
+  "validator_sha256": "39f0a51e895e4da47f7c8d47ac3d2c4079b44d480856e7c193f9c9d51685f4c2",
+  "C07_portable_validator_sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74",
+  "script_sha256": "7c68e1450580b25581cccff5856675e44a7ed44568d9598ab07e6cbf5392a236"
+}

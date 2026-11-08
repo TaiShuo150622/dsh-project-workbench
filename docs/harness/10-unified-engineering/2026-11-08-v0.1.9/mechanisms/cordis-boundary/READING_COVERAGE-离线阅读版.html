@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="c1b7b3d028af">
+<title>Cordis 定向阅读覆盖与验证边界</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#来源固定">来源固定</a></li><li class="l2"><a href="#论文覆盖">论文覆盖</a></li><li class="l2"><a href="#pdf-与公式核查方式">PDF 与公式核查方式</a></li><li class="l2"><a href="#源码覆盖与验证状态">源码覆盖与验证状态</a></li><li class="l2"><a href="#本文反例的证据级别">本文反例的证据级别</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">2026-11-07</span><span class="chip">Codex / mechanisms 研究线</span></div>
+<h1>Cordis 定向阅读覆盖与验证边界</h1>
+</header>
+<p>本轮完成相关定义、关键恢复证明与固定实现的定向阅读，未完成 92 页论文的全篇证明审计。下列“读完整证明”只表示逐段阅读该项原文及检查主要推理，不表示对所有引用引理完成递归审计或机械验证。</p>
+<h2 id="来源固定">来源固定</h2>
+<ul><li>原论文：Yifan Shi、Wei Zhang、Tianyi Cui，A Programming Paradigm for Spatiotemporal Composability，arXiv:2608.25512v1，2026-08-26；<a href="https://arxiv.org/pdf/2608.25512v1">原 PDF</a>。</li><li>PDF 共 92 页；本次读取字节的 SHA-256：<code>390775dbc9debdcf2ed1b076eed013387ca057630be3cb594617b2b742e48cf0</code>。</li><li>本文页码统一为 PDF 显示的 1-based 页码；web 工具的 P58 是 PDF 第 59 页。</li><li>DSH：<code>fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159</code>；commit 日期 2026-11-04T08:40:00Z；vendored Cordis package version 4.1.0。</li><li>所有在线访问均为 2026-11-08 UTC。研究材料署名日期按 America/Los_Angeles 为 2026-11-07。</li></ul>
+<h2 id="论文覆盖">论文覆盖</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">部分</th><th style="text-align:left">阅读深度</th><th style="text-align:left">具体内容与保留项</th></tr></thead><tbody><tr><td style="text-align:left">首页、摘要、目录</td><td style="text-align:left">已读</td><td style="text-align:left">核对三位作者及对应单位、版本与章节结构；不依据摘要的宽泛描述直接推工程保证</td></tr><tr><td style="text-align:left">§2 基础背景</td><td style="text-align:left">未系统读</td><td style="text-align:left">没有复核整段 monad、effect/coeffect 文献介绍及全部历史归属</td></tr><tr><td style="text-align:left">§3.1，pp. 9–16</td><td style="text-align:left">相关定义及证明已读</td><td style="text-align:left">Def. 1–3、6、8–9、17–18；Thm. 4/5/7/15/16 的证明逐段读；不是该节所有定义、推论完整审计</td></tr><tr><td style="text-align:left">§3.2，pp. 17–21</td><td style="text-align:left">定义已读、部分延伸读</td><td style="text-align:left">Def. 19–22 完整；isolation/interception 的相关定义和语义段落阅读；没有证明全部实现场景</td></tr><tr><td style="text-align:left">§3.3，pp. 21–25</td><td style="text-align:left">指定定义与一个引理证明已读</td><td style="text-align:left">Def. 29–34；Lemma 32 证明；没有完整递归核验 Def. 35–39 与全部后续引用关系</td></tr><tr><td style="text-align:left">§3.4，pp. 26–30</td><td style="text-align:left">本轮核心</td><td style="text-align:left">Def. 40/42/44/46；Lemma 41、Thm. 43/45/47 完整证明已读；核对 cross forward/inverse、outcome/continuation 条件及有序链反例</td></tr><tr><td style="text-align:left">§4.1，pp. 31–34</td><td style="text-align:left">部分定义定位</td><td style="text-align:left">状态/registry 单源规则用于理解后续规则；未逐项审计所有约束</td></tr><tr><td style="text-align:left">§4.2，pp. 35–39</td><td style="text-align:left">指定规则及证明已读</td><td style="text-align:left">Def. 52–58、L-Begin/L-Iter/L-Finish/L-Divert/L-Leave/L-Unload；Lemma 57 完整证明已读</td></tr><tr><td style="text-align:left">§4.3.1，pp. 40–44</td><td style="text-align:left">部分</td><td style="text-align:left">Table 1、Lemma 59 完整证明；Lemma 60 只读开头，未完整审计 60–64</td></tr><tr><td style="text-align:left">§4.3.2，pp. 44–47</td><td style="text-align:left">本轮核心</td><td style="text-align:left">Def. 65、Lemma 66/67、Thm. 68、Cor. 69 的声明与完整证明已读；核对比较域和 child-instantiation 的限定</td></tr><tr><td style="text-align:left">§4.3.3，pp. 47–48</td><td style="text-align:left">本轮核心</td><td style="text-align:left">Thm. 70/71 声明与完整证明已读；核对 provider 绑定持续期与 landing 后回收</td></tr><tr><td style="text-align:left">§4.3.4，pp. 49–50</td><td style="text-align:left">声明与完整证明已读</td><td style="text-align:left">Def. 72、Thm. 73；核对有限名字、迭代上界、无环和生命周期规则限定；未推出墙钟终止</td></tr><tr><td style="text-align:left">§4.3.5，pp. 50–55</td><td style="text-align:left">未完整审计</td><td style="text-align:left">只读开头主张和 Thm. 80 证明结尾/边界；未核完 Lemma 74–79 与 Thm. 80，不能声称验证合流</td></tr><tr><td style="text-align:left">§4.4，pp. 55–57</td><td style="text-align:left">相关扩展段落已读</td><td style="text-align:left">Asynchrony 与 Failure 完整；Isolation/Configuration 局部；没有证明任意异常、清理失败或永久 pending 均在模型内</td></tr><tr><td style="text-align:left">§5.1，pp. 57–64</td><td style="text-align:left">相关实现映射已读</td><td style="text-align:left">Table 2、§5.1.1–5.1.3 及 Algorithms 1–5；§5.1.4 部分；固定源码对照不是机械精化证明</td></tr><tr><td style="text-align:left">§5.2 loader、§5.3 case study</td><td style="text-align:left">未系统读</td><td style="text-align:left">仅定位案例与 threats-to-validity 段落；不报告性能、生产质量或跨生态验证</td></tr><tr><td style="text-align:left">§6.1–6.3，pp. 70–73</td><td style="text-align:left">本轮核心，相关全文已读</td><td style="text-align:left">system boundary、service broker/in-flight wait、access control/sandbox 边界</td></tr><tr><td style="text-align:left">§6.4–6.7</td><td style="text-align:left">少量上下文</td><td style="text-align:left">检索结果带出的部分段落；不作为本稿主要论据，不称系统审计</td></tr><tr><td style="text-align:left">§7 related work、§8 conclusion、bibliography</td><td style="text-align:left">指定补读，其余未系统读</td><td style="text-align:left">按 root 提示补读 §7.3 Stateful forward migration（pp. 79–80）与 §8 自进化 harness future validation（p. 83）；不作完整优先权/新颖性评价</td></tr><tr><td style="text-align:left">Sagas，原 ACM 论文 pp. 250、254–255</td><td style="text-align:left">指定段落已读</td><td style="text-align:left">compensation 的语义与观察历史；§6 清理失败和人工修复；不移植全部 DBMS 保证</td></tr></tbody></table></div>
+<h2 id="pdf-与公式核查方式">PDF 与公式核查方式</h2>
+<p>主要通过 arXiv PDF 的文字提取及本机 PyMuPDF 的内存解析阅读。web screenshot 接口返回不可用，因此没有把它当成视觉证据。</p>
+<p>为了排除组合符号被文字提取颠倒，对 <strong>PDF 第 59 页 Algorithm 1 与相邻组合约定</strong>进行了内存裁切渲染，并实际查看返回图片。该局部图确认第 6 行为 value∘inverse，而相邻文字采用先右后左的组合约定。仅这一局部做了视觉核验；未声称全部公式经过逐页图像检查。没有落盘保存论文 PDF 或图片。</p>
+<p>Algorithm 1 的局部方向疑点以最小数值例独立核对，保留“待作者确认”。它不替代主要定理的审计，也不作为固定 DSH 的已运行缺陷报告。</p>
+<h2 id="源码覆盖与验证状态">源码覆盖与验证状态</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">路径</th><th style="text-align:left">覆盖</th><th style="text-align:left">验证方式</th></tr></thead><tbody><tr><td style="text-align:left">vendor/cordis/src/fiber.ts</td><td style="text-align:left">effect runner、setup/dispose、epoch、reload/unload、committed、await</td><td style="text-align:left">静态调用链与异常路径</td></tr><tr><td style="text-align:left">vendor/cordis/src/events.ts</td><td style="text-align:left">snapshot、serial/bail/waterfall、register/unregister/on</td><td style="text-align:left">静态次序与函数引用分析</td></tr><tr><td style="text-align:left">vendor/cordis/src/reflect.ts</td><td style="text-align:left">provide、部分 service resolution、bind</td><td style="text-align:left">静态读取；未全代理安全审计</td></tr><tr><td style="text-align:left">vendor/cordis/src/utils.ts</td><td style="text-align:left">DisposableList、基础 tracing 入口</td><td style="text-align:left">静态读取</td></tr><tr><td style="text-align:left">vendor/cordis/src/context.ts、registry.ts</td><td style="text-align:left">背景读取</td><td style="text-align:left">未用于宣称完整 loader/HMR 验证</td></tr><tr><td style="text-align:left">vendor/cordis/package.json</td><td style="text-align:left">包名、版本、作者、license</td><td style="text-align:left">元数据核对</td></tr><tr><td style="text-align:left">docs/cordis-tutorial/02-lifecycle-and-effects.md</td><td style="text-align:left">全文</td><td style="text-align:left">与实现清理顺序对照</td></tr><tr><td style="text-align:left">docs/tool-execution-pipeline.md</td><td style="text-align:left">全文</td><td style="text-align:left">只作定位，主要取消主张进一步核到源码</td></tr><tr><td style="text-align:left">packages/core/tools/src/pipeline.ts</td><td style="text-align:left">prepare、dispatchToolBody、dispatch、complete、finish</td><td style="text-align:left">静态；不是每个策略插件的审计</td></tr><tr><td style="text-align:left">packages/core/tools/src/contracts.ts、events.ts</td><td style="text-align:left">cancellation/timeout/wrapper 契约</td><td style="text-align:left">区分 API 义务和实现强制能力</td></tr><tr><td style="text-align:left">packages/core/tools/src/index.ts</td><td style="text-align:left">register、admitted tool view、guard</td><td style="text-align:left">静态身份重检路径</td></tr><tr><td style="text-align:left">scripts/cordis-core-lifecycle.spec.ts</td><td style="text-align:left">26–100 行完整，其他测试名扫描</td><td style="text-align:left">只读断言，未运行</td></tr><tr><td style="text-align:left">scripts/cordis-core-api.spec.ts</td><td style="text-align:left">只读</td><td style="text-align:left">API 文档生成测试，不作资源释放证明</td></tr><tr><td style="text-align:left">本工作树 record/README.md</td><td style="text-align:left">全文</td><td style="text-align:left">重新确认 S1 模型/集成边界</td></tr></tbody></table></div>
+<p>GitHub connector 传输失败后，使用 GitHub 官方 raw URL 与 API 读取固定提交。没有从不明镜像取代码，没有运行下载的仓库代码，没有安装第三方依赖，没有提交或推送。</p>
+<h2 id="本文反例的证据级别">本文反例的证据级别</h2>
+<ul><li>P1 是带明确条件的本文代数示例。</li><li>P2/P3 是从指定控制流读出的正例，不是本轮集成测试结果。</li><li>C2/C4/C5/C9 是固定源码的静态执行轨迹；仍需后续最小运行验收。</li><li>C1/C3/C6/C7/C8 是本文用于检查契约边界的短场景，没有指控真实系统已发生事故。</li><li>数值例仅核对组合方向，不构成整个 calculus 的反驳。</li><li>root 仍须重新打开关键来源，决定哪些结论可进入统一 Harness 总稿。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

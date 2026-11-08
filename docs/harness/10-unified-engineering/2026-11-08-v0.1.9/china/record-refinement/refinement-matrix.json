@@ -1,0 +1,1204 @@
+{
+  "schema_version": 1,
+  "task": "R-04",
+  "frozen_product_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "scope": "deterministic synchronous single-instance S1 kernel for ordinary PR merge",
+  "status_definitions": {
+    "IMPLEMENTED_IN_MEMORY": "Specified narrow behavior exists and is examined in the synchronous model only.",
+    "PARTIAL_IN_MEMORY": "Some local behavior maps; essential general or real-adapter conditions are absent.",
+    "UNSUPPORTED_IN_S1": "The concrete S1 API/state lacks this capability; not a claim about all Record roadmap or host products.",
+    "DESIGN_ONLY": "Present in unified proposal; not executed by S1."
+  },
+  "real_adapter_cases_executed": false,
+  "objects": [
+    {
+      "model_object": "TaskDefinition",
+      "s1_representation": "task.id/spec/specVersion/sourceId; only pull_request_merge with mergeMethod=merge",
+      "relation": "NARROW_IMPLEMENTATION",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 34,
+          "end_line": 41,
+          "symbol": "spec",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 161,
+          "end_line": 166,
+          "symbol": "task creation",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 219,
+          "end_line": 228,
+          "symbol": "reviseTask",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Attempt / Host / Environment",
+      "s1_representation": "attempt{id,host enum,sessionId,actorId}; no definition/host/environment generation",
+      "relation": "PARTIAL_NOT_A_VERSIONED_ATTEMPT",
+      "probe": "RF01",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 183,
+          "end_line": 188,
+          "symbol": "beginAttempt",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "LogicalAction / ActionAttempt",
+      "s1_representation": "one action object with one reservation and modeled sent transition; no separate business intent and physical request identities",
+      "relation": "COLLAPSED_SINGLE_SEND_MODEL",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 282,
+          "end_line": 325,
+          "symbol": "action commands",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Observation / CompletionWitness",
+      "s1_representation": "strict ordinary-merge evidence nested in a completion; one current completion; raw command events retain repeated observations",
+      "relation": "NARROW_SINGLE_WITNESS",
+      "probe": "RF03",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 49,
+          "end_line": 60,
+          "symbol": "evidence",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 73,
+          "end_line": 88,
+          "symbol": "complete",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Recorded / Supported",
+      "s1_representation": "Recorded can be derived from journal/completions history; dependency historical-completion checks a currently valid completion",
+      "relation": "NAME_MISMATCH_REQUIRES_EXPLICIT_MAPPING",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 47,
+          "end_line": 48,
+          "symbol": "currentCompletion/currentResult",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 345,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Result / Usable_L(t,q,n)",
+      "s1_representation": "result ID hashes whole merge spec + mergeSha; global available defaults true until markUnavailable",
+      "relation": "NO_GENERAL_CONSUMPTION_MAPPING",
+      "probe": "RF05",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 73,
+          "end_line": 88,
+          "symbol": "complete",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 262,
+          "end_line": 267,
+          "symbol": "markUnavailable",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Acceptance / Applicable(B,D)",
+      "s1_representation": "token binds streamId/taskId/specVersion/completionId/resultId/availabilityRevision/acceptanceRevision; fixed built-in rule",
+      "relation": "CONDITIONAL_SHORT_BINDING",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 62,
+          "end_line": 71,
+          "symbol": "tokenFor/validateToken",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 269,
+          "end_line": 280,
+          "symbol": "acceptResult",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 348,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "binding_notes": [
+        "acceptanceRevision is a submission-concurrency version: accepted stores the old value, then task increments it. dependency does not compare the accepted value with the current counter.",
+        "resultId includes immutable spec+mergeSha in the narrow merge domain; absent explicit artifactVersion is not by itself a failure.",
+        "Fixed built-in policy can be modeled as constant only within this exact interpreter and trust contract. Mutable policy, time, principal and consumption q inputs are not implemented."
+      ]
+    },
+    {
+      "model_object": "Grant / Principal",
+      "s1_representation": "sourceId/active/revision; actor role and flat actorId supplied by trusted caller",
+      "relation": "AUTHENTICATION_AND_SCOPE_ASSUMED_EXTERNALLY",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 45,
+          "end_line": 45,
+          "symbol": "roles",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 116,
+          "end_line": 120,
+          "symbol": "apply",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 211,
+          "end_line": 217,
+          "symbol": "authorize",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "Reserve / DispatchIntent",
+      "s1_representation": "reserveAction and dispatchAction synchronous transitions; checkAction is only new-action precheck",
+      "relation": "LOCAL_LINEARIZATION_ONLY",
+      "probe": "RF04",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 90,
+          "end_line": 101,
+          "symbol": "actionDecision",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 282,
+          "end_line": 304,
+          "symbol": "reserveAction/dispatchAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "TargetCommit / senderTerminated",
+      "s1_representation": "no target implementation; verifier supplies observation or proof booleans",
+      "relation": "NO_WORLD_REFINEMENT",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 306,
+          "end_line": 325,
+          "symbol": "resolveAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "ContextManifest / budget liabilities / support DAG",
+      "s1_representation": "absent",
+      "relation": "DESIGN_ONLY_OUTSIDE_S1",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 113,
+          "end_line": 113,
+          "symbol": "state",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 182,
+          "end_line": 329,
+          "symbol": "command surface",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    },
+    {
+      "model_object": "L_h / deterministic replay / durable ACK",
+      "s1_representation": "in-memory command journal with schemaVersion 1; snapshots include stream/cursor/digest; no storage",
+      "relation": "REPLAY_IMPLEMENTED_DURABILITY_ABSENT",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 116,
+          "end_line": 135,
+          "symbol": "apply",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 350,
+          "end_line": 387,
+          "symbol": "journal/replay/installSnapshot",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "C01",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "A completed task cannot be revised in place. Use the catalog successor variant; a related new assignment has a new taskId, specVersion=1 and no inherited acceptance.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 219,
+          "end_line": 228,
+          "symbol": "#execute/reviseTask",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 140,
+          "end_line": 169,
+          "symbol": "#execute/createTask",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 269,
+          "end_line": 280,
+          "symbol": "#execute/acceptResult",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 72,
+          "name": "record spec revisions reject earlier evidence and need a new authorization source",
+          "evidence": "SOURCE_READ_NOT_RERUN"
+        },
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 88,
+          "name": "record old result button cannot accept a corrected different result",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF07"
+      ],
+      "limitations": [
+        "No generic task outcome or mutable acceptance-policy API.",
+        "The successor relation is only relatedTaskId; it is not automatic evidence reuse or a lineage-aware v2 transfer."
+      ],
+      "required_refinement_obligation": "Declare mutation_mode=reject_then_explicit_successor and map the new definition to a new task identity; do not expect a completed S1 task to become v2 in place.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "相关规格变更使旧验收失去当前适用性",
+      "catalog_required_capabilities": [
+        "versioned_judgments",
+        "audit_history"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P4"
+        ]
+      }
+    },
+    {
+      "case_id": "C02",
+      "s1_implementation_status": "IMPLEMENTED_IN_MEMORY",
+      "mapping": "Notes increment task revision but do not change the result token vector or dependency predicate inputs.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 62,
+          "end_line": 71,
+          "symbol": "tokenFor/validateToken",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 196,
+          "end_line": 198,
+          "symbol": "#execute/note",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 269,
+          "end_line": 280,
+          "symbol": "#execute/acceptResult",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 348,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 79,
+          "name": "record acceptance uses immutable result binding while unrelated notes stay valid",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-adversarial-r2-system.test.mjs",
+          "line": 92,
+          "name": "R2-S02 control same-history result tokens and submitted requests survive JSON replay",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [],
+      "limitations": [
+        "The existing test adds the note before acceptance and proves the shown token remains usable; source inspection also shows post-acceptance notes do not change dependency inputs.",
+        "No policy, clock, audience or authorization-expiry input exists in this S1 rule."
+      ],
+      "required_refinement_obligation": "Document the S1 rule read set. Adding policy/time/consumer dependencies later requires explicit versioning; the old short vector is not generally sufficient.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "无关备注不使验收失效",
+      "catalog_required_capabilities": [
+        "versioned_judgments",
+        "declared_rule_inputs"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P4"
+        ]
+      }
+    },
+    {
+      "case_id": "C03",
+      "s1_implementation_status": "UNSUPPORTED_IN_S1",
+      "mapping": "S1 has a single current completion, not a finite AND/OR support graph. Same-result verification returns the existing completion.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 73,
+          "end_line": 88,
+          "symbol": "complete",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 236,
+          "end_line": 250,
+          "symbol": "#execute/withdrawCompletion",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 348,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 101,
+          "name": "record wrong completion suspends acceptance and same result needs explicit reuse",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF03"
+      ],
+      "limitations": [
+        "Distinct observationRef strings are only synthetic observations; S1 does not represent independent authority or OR support.",
+        "The second observation remains in the command journal, but it is not an alternative active witness."
+      ],
+      "required_refinement_obligation": "Implement an explicit support formula and complete dependency extraction before applying the P5 DAG proof or claiming C03.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "AND/OR 支持撤回后的语义正确性",
+      "catalog_required_capabilities": [
+        "dependency_views",
+        "versioned_judgments",
+        "audit_history"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P3",
+          "P5"
+        ]
+      }
+    },
+    {
+      "case_id": "C04",
+      "s1_implementation_status": "UNSUPPORTED_IN_S1",
+      "mapping": "No support-edge insertion or cycle-checking API exists. Rejecting an unknown command is not a support-cycle implementation.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 182,
+          "end_line": 329,
+          "symbol": "#execute supported command switch",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 156,
+          "end_line": 166,
+          "symbol": "relatedTaskId creation",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [],
+      "derived_probe_ids": [],
+      "limitations": [
+        "relatedTaskId is an assignment link, not a proof-support edge."
+      ],
+      "required_refinement_obligation": "Do not adapt task links into support semantics. Add typed support relations with explicit finite-acyclic admission before claiming C04.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "首版拒绝自支持验收循环",
+      "catalog_required_capabilities": [
+        "cycle_rejection",
+        "dependency_views"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P5"
+        ]
+      }
+    },
+    {
+      "case_id": "C05",
+      "s1_implementation_status": "IMPLEMENTED_IN_MEMORY",
+      "mapping": "Withdrawal may restore A to unknown while B stays reserved. Dispatch checks other active actions again using the same repository/ref key.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 44,
+          "end_line": 46,
+          "symbol": "resourceKey/activeAction",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 90,
+          "end_line": 101,
+          "symbol": "actionDecision",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 236,
+          "end_line": 250,
+          "symbol": "#execute/withdrawCompletion",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 282,
+          "end_line": 304,
+          "symbol": "#execute/reserveAction and dispatchAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-adversarial-r2-system.test.mjs",
+          "line": 28,
+          "name": "R2-S01 final admission blocks an existing reservation after another success is withdrawn",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-adversarial-r2-system.test.mjs",
+          "line": 42,
+          "name": "R2-S01 control terminal proof releases the original reservation after replay",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF04"
+      ],
+      "limitations": [
+        "One synchronous RecordKernel instance only. No network sender, target fence, multi-process transaction or cross-stream conflict lock.",
+        "checkAction includes the caller task own reservation and is a new-action precheck; it is not the final dispatch predicate."
+      ],
+      "required_refinement_obligation": "Keep all conflicting actions in one authority domain and serialize conflict scan plus reservation/dispatch publication. Bind a real outbound operation to this exact dispatch boundary.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "纠错后再次检查已预留动作的冲突",
+      "catalog_required_capabilities": [
+        "atomic_admission",
+        "dispatch_revalidation",
+        "action_effect_separation"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P7"
+        ]
+      }
+    },
+    {
+      "case_id": "C06",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "Cancel aborts unsent reservations and leaves sent/unknown actions occupied. not_applied requires two true proof fields plus a reference.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 103,
+          "end_line": 104,
+          "symbol": "abortReservations",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 205,
+          "end_line": 209,
+          "symbol": "#execute/cancel",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 306,
+          "end_line": 325,
+          "symbol": "#execute/resolveAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 161,
+          "name": "record unknown sent action cannot be replaced after cancellation and reissue",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-adversarial-r1-correction.test.mjs",
+          "line": 39,
+          "name": "R1-P2 correction: only terminal not-applied proof releases the corrected action",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF08"
+      ],
+      "limitations": [
+        "cancel after sent leaves status sent until an explicit unknown observation; it is not a network cancellation ACK.",
+        "senderTerminated/notApplied are trusted simulation booleans; no process or target observation is performed."
+      ],
+      "required_refinement_obligation": "Preserve task cancellation, sender termination and effect outcome separately; authenticate and scope terminal evidence in the real adapter.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "断连后取消不得消除未知效果",
+      "catalog_required_capabilities": [
+        "action_effect_separation",
+        "fault_control"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P8",
+          "P9"
+        ]
+      }
+    },
+    {
+      "case_id": "C07",
+      "s1_implementation_status": "UNSUPPORTED_IN_S1",
+      "mapping": "authorizationRevision prevents a stale unsent reservation from passing local dispatch; no target-side monotone fencing token exists.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 211,
+          "end_line": 217,
+          "symbol": "#execute/authorize",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 293,
+          "end_line": 304,
+          "symbol": "#execute/dispatchAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-adversarial-r1-protocol.test.mjs",
+          "line": 8,
+          "name": "R1-P1 a replacement active authorization cannot strand an unsent reservation",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [],
+      "limitations": [
+        "No target epoch installation, commit check or old-sender exclusion."
+      ],
+      "required_refinement_obligation": "Require target cooperation and a separately tested fencing protocol; never rename authorizationRevision to a target fence.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "已安装的新围栏拒绝迟到旧代际",
+      "catalog_required_capabilities": [
+        "target_fencing",
+        "trusted_observation",
+        "fault_control"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P7",
+          "P8"
+        ]
+      }
+    },
+    {
+      "case_id": "C08",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "requestId deduplicates one exact command including actor and expectedRevision; duplicate task goals are rejected within this specialized merge domain.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 116,
+          "end_line": 135,
+          "symbol": "apply",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 145,
+          "end_line": 169,
+          "symbol": "#execute/createTask",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 33,
+          "name": "record same request retries return original receipt without another event",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 191,
+          "name": "record journal replay retains idempotency and rejects event gaps or altered receipts",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [],
+      "limitations": [
+        "No businessIntentId/actionAttemptId split, target dedup transaction or retention contract.",
+        "Historical dispatch receipt is not a fresh permission to send again. Exact-goal de-dup is appropriate only for the stated ordinary-merge task semantics."
+      ],
+      "required_refinement_obligation": "Define stable business intent and target namespace/parameter/retention semantics separately from command request identity.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "幂等键的身份、参数、并发与保留期",
+      "catalog_required_capabilities": [
+        "target_idempotency",
+        "parameter_binding",
+        "trusted_observation",
+        "fault_control"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P9"
+        ]
+      }
+    },
+    {
+      "case_id": "C09",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "Unknown and late trusted success can update the original action; cancelled assignment remains cancelled and a successor must verify the prior result.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 90,
+          "end_line": 101,
+          "symbol": "actionDecision",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 306,
+          "end_line": 325,
+          "symbol": "#execute/resolveAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 171,
+          "name": "record cancelled late success is reused through verification without another action",
+          "evidence": "SOURCE_READ_NOT_RERUN"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF08"
+      ],
+      "limitations": [
+        "No actual target commit, response-drop barrier or durable action intent.",
+        "The referenced existing test was read; RF08 exercises the narrow local trajectory."
+      ],
+      "required_refinement_obligation": "Persist the intent and preserve original effect identity; use independently authenticated target readback under a declared fault model.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "目标已提交而本地结果丢失",
+      "catalog_required_capabilities": [
+        "action_effect_separation",
+        "durable_command_receipts",
+        "fault_control"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P1",
+          "P8",
+          "P9"
+        ]
+      }
+    },
+    {
+      "case_id": "C10",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "Action copies the current merge spec and authorization revision; final dispatch rechecks local task status, grant and specVersion.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 34,
+          "end_line": 41,
+          "symbol": "spec",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 282,
+          "end_line": 304,
+          "symbol": "#execute/reserveAction and dispatchAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 186,
+          "name": "record actions are owned and task scope cannot change while a sender is unresolved",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF01"
+      ],
+      "limitations": [
+        "There are no actual tool arguments, resolved account/path/redirect targets or tool interception.",
+        "All user actors may perform user commands; caller authentication and actor namespace are external."
+      ],
+      "required_refinement_obligation": "Authenticate principals and bind final effective arguments to the exact allowed resource/operation; do not treat a spec copy as interception of a real tool.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "审批绑定最终有效动作",
+      "catalog_required_capabilities": [
+        "trusted_authorization",
+        "parameter_binding",
+        "dispatch_revalidation"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P7"
+        ]
+      }
+    },
+    {
+      "case_id": "C11",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "report/note store text without changing authorization; only role-checked commands change the local grant.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 45,
+          "end_line": 45,
+          "symbol": "roles",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 116,
+          "end_line": 120,
+          "symbol": "apply actor validation",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 190,
+          "end_line": 217,
+          "symbol": "#execute/report/note/authorize",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 15,
+          "name": "record reports and host attempts do not establish objective completion",
+          "evidence": "SOURCE_READ_NOT_RERUN"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF02"
+      ],
+      "limitations": [
+        "actor.kind and actor.id are unverified input strings; role checking is not authentication.",
+        "Commands have no historyId field. No context restoration or current-policy service exists."
+      ],
+      "required_refinement_obligation": "Route each authenticated command by history incarnation; maintain an authority-scoped subject identity and provide current policy outside model text.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "历史上下文不能重建已失效授权",
+      "catalog_required_capabilities": [
+        "trusted_authorization",
+        "policy_context_separation"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P2",
+          "P7"
+        ]
+      }
+    },
+    {
+      "case_id": "C12",
+      "s1_implementation_status": "UNSUPPORTED_IN_S1",
+      "mapping": "No settled/hidden/future/reserved-cost/closing quantities or budget guard exist.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 113,
+          "end_line": 113,
+          "symbol": "RecordKernel initial state",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 161,
+          "end_line": 166,
+          "symbol": "task state",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 288,
+          "end_line": 290,
+          "symbol": "action state",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [],
+      "derived_probe_ids": [],
+      "limitations": [
+        "Resource reservation here is a conflict slot, not a monetary liability reservation.",
+        "The separate P13 Lean theorem does not verify S1 cost accounting."
+      ],
+      "required_refinement_obligation": "Introduce and refine the budget protocol with honest billing and complete cost coverage before claiming either liability or hard-cap variants.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "延迟计量期间保留未结算负担",
+      "catalog_required_capabilities": [
+        "budget_liability_accounting",
+        "trusted_observation"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P12",
+          "P13"
+        ]
+      }
+    },
+    {
+      "case_id": "C13",
+      "s1_implementation_status": "UNSUPPORTED_IN_S1",
+      "mapping": "No clock, expiry, TTL, observedAt or freshness input exists in command state or judgment rules.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 49,
+          "end_line": 71,
+          "symbol": "evidence and tokens",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 164,
+          "end_line": 164,
+          "symbol": "authorization",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 348,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [],
+      "derived_probe_ids": [],
+      "limitations": [
+        "Event sequence is a commit ordering number, not a timestamp.",
+        "No acceptance-policy withdrawal or time-triggered re-evaluation API."
+      ],
+      "required_refinement_obligation": "Declare explicit time/expiry semantics and relevant judgment inputs; do not infer expiry safety from deterministic replay.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "期限跨越后的适用性重判",
+      "catalog_required_capabilities": [
+        "explicit_time_validity",
+        "trusted_authorization",
+        "versioned_judgments"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P4"
+        ]
+      }
+    },
+    {
+      "case_id": "C14",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "markUnavailable updates a shared result fingerprint and invalidates current-result/current-acceptance while retaining supported completion.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 73,
+          "end_line": 88,
+          "symbol": "complete",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 262,
+          "end_line": 267,
+          "symbol": "#execute/markUnavailable",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 342,
+          "end_line": 348,
+          "symbol": "dependency",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 123,
+          "name": "record revert keeps historical completion but invalidates current dependencies",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-adversarial-r2-system.test.mjs",
+          "line": 112,
+          "name": "R2-S03 control a revert learned through an old assignment invalidates its peer token after replay",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF05"
+      ],
+      "limitations": [
+        "New result.available defaults true from a historical merge observation without separate availability readback.",
+        "One global boolean cannot represent Usable_L(t,q,n), q=(consumer,operation,recipients), copies, access, purpose or disclosure.",
+        "Only identical spec+mergeSha fingerprints share availability; this is not a general artifact ontology."
+      ],
+      "required_refinement_obligation": "Interpret S1 current-result narrowly as supported and not marked unavailable. Add independently scoped artifact/copy/consumption observations before mapping to Usable_L.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "全局产物失效与主体访问撤回分离",
+      "catalog_required_capabilities": [
+        "principal_scoped_availability",
+        "versioned_judgments",
+        "trusted_observation"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P3",
+          "P4"
+        ]
+      }
+    },
+    {
+      "case_id": "C15",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "apply clones state, executes on draft, then synchronously publishes state/event/receipt. Replay verifies gap-free commands and receipts.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 116,
+          "end_line": 135,
+          "symbol": "apply",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 350,
+          "end_line": 368,
+          "symbol": "snapshot/eventsSince/journal/replay",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 41,
+          "name": "record failed writes are atomic and stale task revisions cannot overwrite state",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 179,
+          "name": "record successful action and completion publish atomically",
+          "evidence": "EXECUTED_PASS"
+        },
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 191,
+          "name": "record journal replay retains idempotency and rejects event gaps or altered receipts",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF06"
+      ],
+      "limitations": [
+        "Atomicity is for normal synchronous calls and validation errors; no crash persistence, external transaction or trusted storage is implemented.",
+        "Replay starts from a supplied full journal; it does not recover a lost process journal.",
+        "Journal schemaVersion=1 does not pin interpreter semantics across future code changes."
+      ],
+      "required_refinement_obligation": "Specify a durable commit set and ACK level, interpreter/schema migration rule and failure domain; prove conflict admission and receipts survive that domain.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "持久接纳与暂态回执区分",
+      "catalog_required_capabilities": [
+        "durable_command_receipts",
+        "audit_history",
+        "fault_control"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P1",
+          "P2"
+        ]
+      }
+    },
+    {
+      "case_id": "C16",
+      "s1_implementation_status": "PARTIAL_IN_MEMORY",
+      "mapping": "Distinct attempts and append-only reports exist. Late action evidence targets an action ID and does not change the cancelled task to completed.",
+      "code_refs": [
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 183,
+          "end_line": 194,
+          "symbol": "#execute/beginAttempt/report",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 282,
+          "end_line": 290,
+          "symbol": "#execute/reserveAction",
+          "input": "inputs/record/kernel.mjs"
+        },
+        {
+          "path": "record/kernel.mjs",
+          "start_line": 306,
+          "end_line": 320,
+          "symbol": "#execute/resolveAction",
+          "input": "inputs/record/kernel.mjs"
+        }
+      ],
+      "existing_test_evidence": [
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 15,
+          "name": "record reports and host attempts do not establish objective completion",
+          "evidence": "SOURCE_READ_NOT_RERUN"
+        },
+        {
+          "path": "tests/record-kernel.test.mjs",
+          "line": 171,
+          "name": "record cancelled late success is reused through verification without another action",
+          "evidence": "SOURCE_READ_NOT_RERUN"
+        },
+        {
+          "path": "tests/record-adversarial-r2-system.test.mjs",
+          "line": 74,
+          "name": "R2-S02 a result button from another history cannot accept an independent assignment",
+          "evidence": "EXECUTED_PASS"
+        }
+      ],
+      "derived_probe_ids": [
+        "RF01",
+        "RF02",
+        "RF08"
+      ],
+      "limitations": [
+        "Attempt has no specVersion, current-attempt pointer, host/environment incarnation or authority epoch.",
+        "An old attempt can reserve a newly authorized task spec with the current revision.",
+        "Cross-history token rejection is implemented only for acceptance; ordinary commands depend on adapter routing."
+      ],
+      "required_refinement_obligation": "Map attempt identity and authority explicitly. Retiring an attempt must not discard its late physical-effect evidence, but old attempts must not inherit new authority accidentally.",
+      "real_adapter_scenario_status": "NOT_RUN",
+      "catalog_title": "迟到尝试结果不覆盖当前尝试但仍可补充效果证据",
+      "catalog_required_capabilities": [
+        "attempt_identity",
+        "action_effect_separation",
+        "trusted_observation",
+        "versioned_judgments"
+      ],
+      "formal_model_refs": {
+        "input": "inputs/specifications/FORMAL_MODEL-q-update.md",
+        "properties": [
+          "P4",
+          "P7",
+          "P8"
+        ]
+      }
+    }
+  ],
+  "must_not_infer": [
+    "20 existing tests plus 8 probes are not real-network C01-C16 conformance.",
+    "No proof of arbitrary-trace implementation simulation, authenticated identity, target truth, durable storage or physical exactly-once effects.",
+    "Frozen input hashes identify each working draft separately from the shared git HEAD."
+  ]
+}

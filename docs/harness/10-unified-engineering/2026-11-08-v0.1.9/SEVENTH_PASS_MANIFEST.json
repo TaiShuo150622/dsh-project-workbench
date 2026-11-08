@@ -1,0 +1,47 @@
+{
+  "copied_at_utc": "2026-11-08T08:02:03.231233+00:00",
+  "files": [
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/README.md",
+      "sha256": "629854d1cad4cfd720557613613bcc3cfd405d89a2db2580b9abee24480a2684",
+      "bytes": 1976
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/contracts.json",
+      "sha256": "8416737af21f1cd046071ce19f9676f55dcab1bdf2c31a49e62e203b7263f60f",
+      "bytes": 10508
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/fault-scenarios.json",
+      "sha256": "c6e5cb625440f8494dbce2c820276c70fc1bce8e3b0e629b6d701eb8ebc587d6",
+      "bytes": 17829
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/sources.json",
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "bytes": 9903
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/validation.json",
+      "sha256": "2f4f303e43761ea70b7adc425888e423aa8472a98e224bc257df61e5a52f469e",
+      "bytes": 2110
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.html",
+      "sha256": "74ddd9a1e84d87b06e9dcd203e8c44fd972ab63de2154d036c0e4ed6ee962b1c",
+      "bytes": 29518
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "sha256": "c48f3b690ddcf923b1f8b548a99b7694d23035d71bc2e61a0bcaaea35ff85069",
+      "bytes": 17140
+    }
+  ]
+}

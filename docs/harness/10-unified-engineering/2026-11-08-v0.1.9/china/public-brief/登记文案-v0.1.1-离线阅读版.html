@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="8e38aa5c899f">
+<title>DeepSeek Harness 作者登记文案方案 v0.1.1</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#建议名称">建议名称</a></li><li class="l2"><a href="#简介">简介</a></li><li class="l2"><a href="#目前成果">目前成果</a></li><li class="l2"><a href="#尚未运行的七片计划">尚未运行的七片计划</a></li><li class="l2"><a href="#支持需求与合作想法">支持需求与合作想法</a></li><li class="l2"><a href="#拟向上游讨论的五个工程问题">拟向上游讨论的五个工程问题</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip ver">v0.1.1</span><span class="chip">2026-11-08</span><span class="chip">个人插件作者登记方向 · 供讨论，尚未提交</span></div>
+<h1>DeepSeek Harness 作者登记文案方案 v0.1.1</h1>
+</header>
+<h2 id="建议名称">建议名称</h2>
+<p><strong>Project Workbench｜项目工作台</strong></p>
+<p>定位：面向 DeepSeek Harness 的个人项目工作台，逐步探索远程执行、长期任务与小团队使用方式。</p>
+<h2 id="简介">简介</h2>
+<p>我主要以个人插件作者身份，围绕 DeepSeek Harness 开发项目工作台，同时探索小团队的使用方式。希望把项目、会话、工作树和交付产物放到同一条工作路径中，让用户能查看任务依据、当前结果和待处理问题，再逐步衔接远程环境与跨会话的长期任务。计划让 Record 管理任务、证据与验收的关系，用 DAG 呈现依赖和变更影响，二者属于同一工程。目前已有项目工作台代码，以及尚未接入工作台运行入口的 Record S1 研究内核；可信入口、远程接续和完整交付闭环仍为分阶段计划。我关注断连、需求变化和执行者切换后，怎样有依据地继续工作、保留未知效果并如实呈现结果，也关注如何让使用者少做重复解释和状态核对。下一步准备先做一个可复核的小任务，确认边界和实际价值，再逐步扩展。</p>
+<h2 id="目前成果">目前成果</h2>
+<p><strong>已有代码</strong></p>
+<ul><li>项目工作台已有项目与线程组织、原生会话及工作树衔接、基本状态和差异查看等代码。这里描述固定版本的实现范围；尚未据此完成全部宿主、远程和恢复组合的验收。</li><li>Record S1 已有独立研究实现，覆盖普通 PR merge 窄域的任务状态、确定性重放、精确请求重送、同步内存接纳和版本绑定验收。在本轮冻结输入中，它尚未接入工作台运行入口，不能与现有线程的 phase/accept 操作混为同一套验收。</li></ul>
+<p><strong>本轮完成的研究与验证</strong></p>
+<ul><li>已形成并通过 Lean 检查的两类条件证明：DAG 局部重算与全量重算的等价，以及保守预算在任意有限合法轨迹上的安全界；有独立编译与审读记录。它们依赖明确的输入、成本上界和转移条件。</li><li>已运行有限状态模型，检查准入、未知效果、支持撤回、验收绑定、预算、期限和接纳确认等边界，并保留故意削弱条件后的反例。这些结果属于有限模型，不能代替真实宿主和外部目标的运行验证。</li><li>对固定 Record 代码完成了选定既有测试、派生探针和实现映射；对宿主可信入口进行了静态调用链核对，明确了历史绑定、角色映射及状态投影的后续接线责任。可信入口尚未实施或验收。</li></ul>
+<p><strong>新增条件研究与有限检查</strong></p>
+<ul><li>C-08 已形成自主推进、终止、期限及责任交接的条件研究和小模型，并通过独立算法复核。它区分控制轮停止、最终验收、服务窗口与责任接纳；一般条件论证没有新增 Lean 证明，也没有证明真实长期任务必定交付。</li></ul>
+<h2 id="尚未运行的七片计划">尚未运行的七片计划</h2>
+<p>七片均为后续实施计划，按条件逐片决定是否推进，不作为七个已经完成的插件。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">切片</th><th style="text-align:left">计划交付</th></tr></thead><tbody><tr><td style="text-align:left">I01 可信入口与正确投影</td><td style="text-align:left">固定原历史和可信主体，区分历史收据、当前证据与验收状态；首片不接真实外部发送</td></tr><tr><td style="text-align:left">I02 选择、引用与影响查看</td><td style="text-align:left">把有版本的对象引用带入讨论，在改动前查看明确依赖和需要复核的检查</td></tr><tr><td style="text-align:left">I03 尝试绑定与持久接纳</td><td style="text-align:left">明确尝试、规格、历史代际及接纳/恢复之间的契约</td></tr><tr><td style="text-align:left">I04 真实交付与验收</td><td style="text-align:left">为一个明确目标接通执行、权威读回和绑定版本验收，保留未知效果</td></tr><tr><td style="text-align:left">I05 Record 与调用前组装</td><td style="text-align:left">连接轮后记录、后台整理和调用前材料选择，记录实际输入来源及缺口</td></tr><tr><td style="text-align:left">I06 一种远程模式与长任务续接</td><td style="text-align:left">先选定一种远程运行模式，验证会话、环境、进程和未决工作在断连后的归属</td></tr><tr><td style="text-align:left">I07 有边界的经验复用</td><td style="text-align:left">用固定任务和完整成本比较经验或工作方式变化，达到约定条件后再讨论采用</td></tr></tbody></table></div>
+<h2 id="支持需求与合作想法">支持需求与合作想法</h2>
+<p>希望与上游围绕一个小型、可复核的插件接入案例协作：先确认推荐的插件接口、会话与历史生命周期、可信调用来源，再逐步验证结果读回、断连恢复和跨版本续接。最需要的是接口边界与兼容计划的说明、适合插件作者的最小示例，以及对失败和恢复路径的技术反馈。我可以提供个人项目的最小复现、带版本的讨论稿、反例模型和接入记录，并在约定范围内整理成社区可复用的案例。合作可从一次设计评审或一个明确问题开始，后续再讨论小团队试用、远程执行和长期任务支持。希望先把宿主与插件各自承担的责任、验收方式和支持范围说清，再共同决定实施顺序与投入。</p>
+<h2 id="拟向上游讨论的五个工程问题">拟向上游讨论的五个工程问题</h2>
+<ol><li><strong>可信调用身份如何交给插件？</strong> 针对标准 HTTP owner 通道和 agent 工具通道，插件应从哪个受支持接口取得可信主体或权限域，并区分用户、agent 与宿主事件？能否提供把调用来源、原历史和命令身份绑定起来的最小示例？</li><li><strong>“消息已接纳”对应哪一层确认？</strong> 插件何时可以把返回值理解为重启后仍可核对的接纳？同一消息 ID 重试遇到内存命中或 flush 出错时，推荐通过哪些确认或查询路径区分临时可见与可恢复记录？</li><li><strong>远程续接有哪些稳定身份和生命周期事件？</strong> 会话恢复、宿主重启、远端环境重建时，哪些 ID、代际和状态事件可以作为插件契约？插件怎样保持任务尝试与执行环境的归属，避免断线恢复时把旧 prompt 或工具动作误当成新工作重发？</li><li><strong>长期任务到界后怎样收尾并交接责任？</strong> 对已发未决、取消中或接近预算/期限的任务，宿主能提供哪些可核对的执行、费用及效果观察？停止新增工作之后，结果收集、对账与责任交接有哪些明确支持的通道和权限约定，哪些需要具体目标适配器承担？</li><li><strong>插件与历史状态的兼容边界如何约定？</strong> 对项目状态、Record/DAG 引用和未决任务，升级时推荐采用什么版本绑定及迁移方式？是否可以先明确最小受支持版本范围、迁移示例，以及旧版停止支持时如何保存查询和接管未决事项的能力？</li></ol>
+<p>以上问题来自已读固定版本及研究设计，拟用于确认推荐契约与接入方式。具体代码基线、来源范围和措辞边界保留在配套依据文件中；本稿仅表达合作意向，登记材料当前未发出。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

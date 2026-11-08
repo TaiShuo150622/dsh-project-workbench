@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1.0",
+  "status": "STRUCTURE_CHECKED_ONLY",
+  "actual_execution": false,
+  "validation_execution": true,
+  "model_api_experiment_execution": false,
+  "scenario_execution": false,
+  "checked_at": "2026-11-08T07:42:29.756235+00:00",
+  "sources": 10,
+  "papers": 6,
+  "source_code_records": 4,
+  "experiment_protocols": 3,
+  "task_card_specs": 12,
+  "relative_markdown_links_checked": 8,
+  "html_generation": "COMPLETED_NOT_VISUALLY_INSPECTED",
+  "mermaid_blocks": 3,
+  "errors": [],
+  "artifacts": [
+    {
+      "file": "README.md",
+      "sha256": "aab8b8f0402158aac427da7b2d74b89de5a6046bf5442c878a39ff8f519a8ef5"
+    },
+    {
+      "file": "minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2"
+    },
+    {
+      "file": "sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f"
+    },
+    {
+      "file": "自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "sha256": "2fa1c97c26eb9919b88084090aac43ca2c80b9d6348aec108b69898cf15f501d"
+    },
+    {
+      "file": "自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867"
+    }
+  ]
+}

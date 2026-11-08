@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="ea12c3984c2f">
+<title>R14 资源归属与环境生命周期：独立模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#输入与定位">输入与定位</a></li><li class="l2"><a href="#rl1-上界-共享和并发">RL1：上界、共享和并发</a></li><li class="l2"><a href="#rl2-refs-是协议投影-不是使用事实本身">RL2：refs 是协议投影，不是使用事实本身</a></li><li class="l2"><a href="#路径授权与历史实施顺序">路径授权与历史实施顺序</a></li><li class="l2"><a href="#未核实与交接">未核实与交接</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R14 资源归属与环境生命周期：独立模型审查</h1>
+</header>
+<p><strong>未发现 RL1/RL2 在明列前提下的正文逻辑错误。</strong> RL1 是同一资源、同一管理域的逐项上界；RL2 是禁止新增引用后排空真实使用的安全条件。稿件没有把累计费用证明改名为物理内存证明，没有将共享文件换算成私有堆收益，也没有承诺资源安全即任务完成。</p>
+<p>建议补两条操作化说明：T 是并发瞬态的总上界；引用释放应绑定唯一 token 和资源代际，不能将普通 refs 计数直接等同实际使用结束。这两项是必要假设的落地及实现义务，<strong>不是找到满足原假设却否定结论的反例</strong>。</p>
+<p>本轮是不同执行上下文的模型审查与极小合成枚举，不是人类审核、真实内存实验或产品测试。仅本线目录有写入；原稿和历史输入未改，无进程停止、限额变更、产品改动、提交或外部调用。</p>
+<h2 id="输入与定位">输入与定位</h2>
+<p>四文件原始目录已固定到 <code>inputs/</code>，身份见 <a href="INPUT_SNAPSHOT.json">INPUT_SNAPSHOT.json</a>。附加冻结历史三个文件，实际读取范围见 <a href="historical-inputs.json">historical-inputs.json</a>；其 SHA 均与作者 inputs.json 相符。架构历史稿只读取 718–907 行，没有声称读完全文。来源收尾哈希未变，见 <a href="verification_receipt.json">verification_receipt.json</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">分类</th><th style="text-align:left">定位</th><th style="text-align:left">判断</th></tr></thead><tbody><tr><td style="text-align:left">正文正确</td><td style="text-align:left">新稿第 27、124 行</td><td style="text-align:left">P13 费用界与 RL1 瞬时资源界分开；RL1 明列清单、真实上界、瞬态和原子准入条件。</td></tr><tr><td style="text-align:left">正文正确</td><td style="text-align:left">第 62 行</td><td style="text-align:left">allocationId 与 logicalObjectId 分开；物理同一对象共享与内容相同的多个副本不同。PSS/RSS 等不同量不混加。</td></tr><tr><td style="text-align:left">必要假设建议明确</td><td style="text-align:left">第 124 行，RA01</td><td style="text-align:left">H、各 b、T 的覆盖须在相同时间/管理域成立；T 覆盖并发重叠总量。J 的未用预留与实际使用要定义转换，避免“预留数字”被误当实际交互占用上界。</td></tr><tr><td style="text-align:left">正文正确</td><td style="text-align:left">第 91、128 行</td><td style="text-align:left">结合 active→retiring→released 顺序，取得引用与 retiring 互斥、旧使用真实结束/迁移后释放，足以推出协议内不误释放。释放请求/ACK 和实际释放观察没有合并。</td></tr><tr><td style="text-align:left">实现未证</td><td style="text-align:left">第 91、128 行，RA02</td><td style="text-align:left">引用集合完整、计数更新幂等、代际一致、迁移后旧资源不再被使用，均须落实；普通计数归零不是这些事实的证明。</td></tr><tr><td style="text-align:left">范围正确</td><td style="text-align:left">第 13 行及验证路线</td><td style="text-align:left">六类未来场景仍 NOT_RUN；不恢复活跃度面板，不停止正常长任务，也不重排产品路线。</td></tr></tbody></table></div>
+<h2 id="rl1-上界-共享和并发">RL1：上界、共享和并发</h2>
+<p>对同一时刻，把真实占用按物理分配及额外开销分解，若各项均被相应上界覆盖，则对不等式逐项求和即可得到容量界。该推导没有证明上界如何取得，也没有证明内核或宿主遵守上界；原稿已保留这些缺口。若只在准入时观测一次，之后 b、H 或容量变化不再满足前提，不能沿用结论。</p>
+<p><strong>RA01 的最小补充建议</strong>：“T 覆盖所有同时在途准入/重建/复制操作的合计瞬态；J 为未用交互/收尾预留，实际使用时原子转记到已覆盖分配，或另有实际占用不超过 J 的约束。”两种 J 解释都可用，应选清楚。不要求将 J 永远额外计一次；重复保守占位虽影响利用率，却不会单独推翻上界。</p>
+<p>合成例子（数字为假设）：</p>
+<ul><li>两任务引用同一 2 单位物理分配，实际总量为 2；按任务各记 2 得 4 是保守重复计数，不能当精确测量或收益。</li><li>同内容的两份独立物理分配各占 2，若按 logicalObjectId 合并成 2，则真实为 4。它违反“不同物理分配清单完整”的前提；原稿第 62 行已经明确区分。</li><li>C=3，两个稳定分配各为 1，两个并发瞬态也各为 1；若把单操作瞬态 1 当全局 T，账为 3，实际峰值为 4。正确 T 至少为 2，或准入协议保证瞬态不重叠。原文的“瞬态不漏项”排除了这个错误，本建议使它更易实现。</li></ul>
+<p>本轮枚举三个物理分配的 <code>0≤a≤b≤2</code>、小域 H/T/J/容量，共 23328 个赋值，其中 7803 个满足容量准入，直接实际求和均不超界。这只复核给定上界的算术，不是新的物理内存证明；它也不测调度、尾延迟或共享收益。</p>
+<h2 id="rl2-refs-是协议投影-不是使用事实本身">RL2：refs 是协议投影，不是使用事实本身</h2>
+<p>原稿的充分条件包含“全部旧使用已结束/迁移”，所以不能用一个错误计数器把仍活跃的使用者叫成已经结束，再说命题被否定。实际需要证明每个使用都持有有效引用，释放回调只能消费它所对应的那个引用，重复回调不消费别人的引用，资源代际不能混淆。</p>
+<p>本轮小状态机使用两个用户、两代资源，Acquire/Retire/Release 原子，真实 users 与 token 集合分开记录。正确方案的 <code>(allocationGeneration, useToken)</code> 释放幂等，只有 retiring 且引用归零才释放；180 状态、304 边内没有“已释放资源仍被使用”等指定不变量违例。未保证每个用户最终结束，也未保证 OS 何时回收内存。</p>
+<p>错误变体仅把释放改为“每个 callback 都减少当前 count”，其余保留：656 状态、1908 边。最短 5 步使 count 与有效 token 数不一致；最短 7 步错误释放：</p>
+<p><code>Acquire(A) → Acquire(B) → EndUse(A) → Release(A) → Release(A) → Retire → ReleaseAllocation</code></p>
+<p>此时 B 仍使用资源。该变体满足“新 Acquire 只能 active、Retire 后禁止 Acquire”，但不满足“释放前所有旧使用确已结束”。这准确定位 refs→真实使用的精化义务，不是 RL2 本身错误。枚举也允许旧代 callback 晚到，正确方案按 token 代际无害忽略；不能只靠资源的可复用字符串 ID 扣减当前引用。</p>
+<p>见 <a href="check_conditions.py">check_conditions.py</a>、<a href="results.json">results.json</a>、<a href="execution_receipt.json">execution_receipt.json</a>。这是本审查线编写的合成检查，不是另一个作者独立实现的产品验证器；没有运行六类拟议真实场景。</p>
+<h2 id="路径授权与历史实施顺序">路径授权与历史实施顺序</h2>
+<p>历史 <code>CONTRACT.md:78</code> 要求解析真实路径后仍落在授权 root 内，符号链接逃逸算越界；<code>BACKEND-PLAN-DRAFT.md:45–46</code> 要求 library/live 共用路径校验，HTTP 与同进程 TUI 在内部服务执行权限检查。历史架构稿第 733、774、780、808 行另明确缓存不绕过授权、任意 shell 与仅工具读取边界不同、服务端绑定身份、内容寻址不替代访问控制。新稿未否定这些要求；共享服务/缓存仍须逐请求保持身份、视图和权限范围，不因物理页只存一份而授权所有引用者。</p>
+<p>历史后端稿第 6–8、197–205 行明确通用面板平台 P-01–P-15 在前，工作台 B01–B12 后续；B06/B08/B09 的业务状态和发布生命周期仍属工作台。本资源研究保持该顺序，也没有把原时间估算重新承诺为当前工期。这里的历史 P 卡不是统一形式命题 P1–P15，两者编号不能混用。</p>
+<h2 id="未核实与交接">未核实与交接</h2>
+<p>未重新联网验证三份官方文档、未测试本机 cgroup/Node/Docker 行为；没有内存基准、CPU/I/O 时限实验、文件路径执行探针、真实进程树释放、掉电恢复、并发迁移协议或一般机器证明。RL1/RL2 的数学条件与产品能否满足条件分别保留。</p>
+<p>正文错误列表为空；RA01 是可澄清的计量假设，RA02 是明确实施义务。建议将其作为后续隔离夹具的检查点，不扩大当前产品范围，也不将本轮合成状态数加入已有 TLC/Lean 或产品验收计数。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

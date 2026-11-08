@@ -1,0 +1,11 @@
+{
+  "release": "v4.35.0",
+  "source": "https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-darwin_aarch64.tar.zst",
+  "official_release_api": "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.35.0",
+  "archive_bytes": 570422530,
+  "expected_sha256": "c0c6f34f35ba1dcc5c4a5fd106fefab9eb5e8469712624dd2c868d51b63177c2",
+  "actual_sha256": "c0c6f34f35ba1dcc5c4a5fd106fefab9eb5e8469712624dd2c868d51b63177c2",
+  "version": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "completed_at": "2026-11-08T07:13:17.636132+00:00",
+  "scope": "Local isolated proof tooling; no global install, no product changes"
+}

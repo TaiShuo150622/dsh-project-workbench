@@ -1,0 +1,144 @@
+{
+  "scope": "Independent SCC existence oracle, direct finite walk enumeration for positive minima, layer search for bad minima; shared input graphs and action labels, no independent world model.",
+  "author_cases": [
+    {
+      "id": "C08-M01-zero-cost-loop",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 1,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M02-fair-deliver",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M03-busy-is-not-progress",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 2,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M04-intermittent-WF",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 2,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M05-intermittent-SF",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M06-unavailable-even-SF",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 1,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M07-fixed-goal",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M07-changing-goal",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 3,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M08-bounded-controller",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M08-query-cap-mutant",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 1,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M09-stopped-is-not-accepted",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 6,
+      "minimum_bad_prefix_edges": 5
+    },
+    {
+      "id": "C08-M10-ack-transfer",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M10-offer-transfer-mutant",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": 1
+    },
+    {
+      "id": "C08-M11-local-stop-is-not-handoff",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": 2
+    },
+    {
+      "id": "C08-M12-fair-but-late",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": 3
+    },
+    {
+      "id": "C08-M13-bounded-deadline",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M13-receiver-delay-mutant",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 5,
+      "minimum_bad_prefix_edges": 3
+    },
+    {
+      "id": "C08-M14-service-missed",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 6,
+      "minimum_bad_prefix_edges": 5
+    },
+    {
+      "id": "C08-M14-service-scheduled",
+      "scc_fair_counterexample": false,
+      "minimum_lasso_edges": null,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M15-finite-queue-open-closure",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 2,
+      "minimum_bad_prefix_edges": null
+    },
+    {
+      "id": "C08-M16-fair-attempts-can-all-fail",
+      "scc_fair_counterexample": true,
+      "minimum_lasso_edges": 2,
+      "minimum_bad_prefix_edges": null
+    }
+  ],
+  "random_graph_cases": 1200,
+  "random_seed": 20261108,
+  "two_petals": {
+    "shortest_fair_closed_walk": 4,
+    "simple_cycle_only_would_miss": true
+  },
+  "mutants_detected": [
+    "target-edge pruning corrupts enabled: M02",
+    "WF replaced by SF: M04",
+    "simple-cycle-only search: two-petal fixture"
+  ],
+  "program_sha256": "96f94ad790b402b2f3672cdfdc8c16d21fd72029bbf89b4650a2d547118e7790",
+  "subject_sha256": "548a4b6812609cc80967ef2eb8d4d6a47d09e6e3ccedceb02b445c4d58604d6b"
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="1ba8ff14225a">
+<title>west 第二轮交接与复核包</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#阅读顺序">阅读顺序</a></li><li class="l2"><a href="#root须重新打开的重点">root须重新打开的重点</a></li><li class="l2"><a href="#合并时建议保留的判断">合并时建议保留的判断</a></li><li class="l2"><a href="#尚未解决">尚未解决</a></li><li class="l2"><a href="#本线自查">本线自查</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>west 第二轮交接与复核包</h1>
+</header>
+<p>2026-11-08 UTC。状态：资料与协议已整理；原文/指定源码已读；未复现；root独立复核待做。</p>
+<h2 id="阅读顺序">阅读顺序</h2>
+<ol><li><code>Record上下文与任务收益评价讨论稿-v0.1.0.md</code>：六个样本、三组研究内数值对照、评分口径与候选架构。</li><li><code>evaluation-contract.md</code>：任务验收、分母、实验臂隔离、完整费用及经验转移定义。</li><li><code>protocol.json</code>：机器可读研究配置，8个候选臂分阶段，72个拟议episode；标记PROPOSED_NOT_RUN。</li><li><code>sources.json</code>：18个证据条目，其中6项原论文、11项固定作者代码/仓库文档、1项官方员工工程报告。</li><li>本文件：独立复核入口和未决项。</li></ol>
+<p>这些文件只属于研究交付，不包含数据集、runner、模型响应或产品实现。所有性能数字是原作者报告；本轮模型API调用为0，也未下载模型权重或数据集。</p>
+<h2 id="root须重新打开的重点">root须重新打开的重点</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">来源</th><th style="text-align:left">优先复核位置</th><th style="text-align:left">要核的界限</th></tr></thead><tbody><tr><td style="text-align:left"><a href="https://arxiv.org/html/2410.10813v2">LongMemEval v2</a></td><td style="text-align:left">3.3、5.2–5.4、Table 3、A.4</td><td style="text-align:left">Top-10 0.670→0.720是同研究按轮存原文、改变key的对比；不是全工作流程收益，也不是当前商业产品评分</td></tr><tr><td style="text-align:left"><a href="https://aclanthology.org/2024.acl-long.747.pdf">LoCoMo ACL终稿</a></td><td style="text-align:left">Table 5、3.4、4–5、C.1</td><td style="text-align:left">正式10段1,986题；合成+人工编辑；QA、事件摘要与多模态任务分开，不能和7512题旧设置混排</td></tr><tr><td style="text-align:left"><a href="https://arxiv.org/html/2310.08560v2">MemGPT v2</a></td><td style="text-align:left">3.1–3.2、6.1.2–6.1.5</td><td style="text-align:left">回忆基线的摘要输入与全历史可检索输入不等价；原文不等于当前Letta产品验证</td></tr><tr><td style="text-align:left"><a href="https://arxiv.org/html/2502.12110v11">A-Mem v11</a></td><td style="text-align:left">3、4.1、Table 3、A.5</td><td style="text-align:left">最终采用v11，前期v3只用于发现；链接/演化消融值得研究，但数据版本和按类调k限制解释</td></tr><tr><td style="text-align:left"><a href="https://arxiv.org/html/2403.12968v2">LLMLingua-2 v2</a></td><td style="text-align:left">Table 1、5、Appendix F</td><td style="text-align:left">970/3003是平均输入长度，86.92/87.75是该QA口径；不等于端到端总成本或语义无损</td></tr><tr><td style="text-align:left"><a href="https://arxiv.org/html/2610.33274v1">FlexA-Mem v1</a></td><td style="text-align:left">4–6、Table 3、Appendix B/E.1</td><td style="text-align:left">147确认任务4k：64.6/76.2/76.9；6k时间线增量未显著；LME汇总参与设计、每任务重置、模型/预算固定范围</td></tr></tbody></table></div>
+<p>三个评分器需直接读固定代码：</p>
+<ul><li><a href="https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py#L24">LongMemEval evaluate_qa.py</a>：lines24–42，更新题容许旧新同现，时间题容忍部分边界偏差。</li><li><a href="https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py#L189">LoCoMo evaluation.py</a>：lines189–237，拒答词串与无检索trace时recall默认值。</li><li><a href="https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/test_advanced.py#L129">A-Mem test_advanced.py</a>：lines129–198、421–423，题类prompt、候选式拒答及locomo10默认路径；不能当自由回答任务完全等价。</li></ul>
+<p>FlexA-Mem冻结声明另核<a href="https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/configs/splits/manifest_confirm.json">manifest</a>与<a href="https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/README.md">README研究日志说明</a>。有任务hash不等于已独立证明完整研发/运行时间顺序。</p>
+<h2 id="合并时建议保留的判断">合并时建议保留的判断</h2>
+<ul><li>Record的候选价值是减少重复说明、找回精确事实、保持连续工作轨迹和降低返工；这些结果应与读取成本一起测。</li><li>原始证据可追溯是研究基础；历史全部常驻、自主ontology、图数据库、独立selector均没有在本任务域证明必要。</li><li>同一模型/输入/工具下比较简单检索与规则时间线，再做标签、链接、演化及自主选择的增量实验；不要一次更换多个组件后给单组件记功。</li><li>当前可信策略独立提供给全部实验臂。测试旧记忆是否误导模型，不让记忆检索器充当授权来源。</li><li>短期episode成功不证明跨任务持续学习；经验迁移必须用冻结经验库与未见家族，测负迁移和撤回负担。</li><li><a href="https://www.anthropic.com/research/harness-design-long-running-apps">Rajasekaran工程报告</a>只支持模型升级后重测编排收益的案例判断，不能将其写为普遍统计规律。</li></ul>
+<h2 id="尚未解决">尚未解决</h2>
+<ul><li>A-Mem论文7512题与当前默认locomo10的具体对应、原运行数据hash未核实；主文没有照抄其表分数作公平比较。</li><li>MemGPT DMR总评测实例数未在已读段落核定，未猜测填充。</li><li>原论文及当前仓库快照不自动等于原运行快照；每个代码条目均标paper_version_equivalence未建立。</li><li>72episode只是初步设计，功效、最小有意义收益、非劣界限、具体模型、总费用及补跑规则尚待冻结。</li><li>本轮没有中文/真实个人项目用户试验，没有权限层验证、跨用户测试或生产恢复证明。</li><li>文档结构检查与JSON检查不能替代root重开来源；Mermaid已做结构检查，未宣称完成视觉渲染验收。</li></ul>
+<h2 id="本线自查">本线自查</h2>
+<ul><li>主讨论稿检查器：0错误、0警告，9章、3张Mermaid图。</li><li>sources/protocol：JSON可解析、来源ID唯一、固定提交格式、正文引用ID、场景算术与实验臂ID检查通过。</li><li>无模型API运行、无大数据下载、无凭据读取、无外部消息、无产品代码改动、无commit/push。</li><li>写入只在west工作树的<code>docs/research/harness-20261107/west/context-evaluation/</code>。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

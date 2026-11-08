@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "review_id": "R-01",
+  "review_type": "independent_model_critical_review",
+  "mechanical_proof": false,
+  "implementation_audit": false,
+  "reviewer_model_declared_by_task": "gpt-6-astra",
+  "model_runtime_attestation": false,
+  "independence": {
+    "context": "Standalone task and frozen inputs; no main discussion history, no other reviewer outputs, no revised main drafts",
+    "communications": "Reported findings to root after independent derivation; root acknowledged F01 and planned a separate finite-model check; this review remains against the frozen snapshot",
+    "network_used": false,
+    "memory_used": false
+  },
+  "input_snapshot": {
+    "captured_at_utc": "2026-11-08T06:34:00Z",
+    "manifest_hashes_verified": true,
+    "files": [
+      {"file": "inputs/FORMAL_MODEL.md", "sha256": "05cbe3a3aaffb057dbc18068396c45257027c755dcabfa22ad0b75907869f4ba"},
+      {"file": "inputs/ARCHITECTURE.md", "sha256": "4530c601c5e5333da6e42b76e684318ab1af44422962c2b59519d83b76b73260"},
+      {"file": "inputs/BASELINE.md", "sha256": "25c5e9be962597f1957e643f4339507a4bbe4e8eff1e4f60a0261c10c35e39b9"}
+    ]
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "title": "Recursive support can survive withdrawal of its only grounded premise",
+      "classification": "missing_assumption",
+      "priority": "medium",
+      "propositions": ["P5"],
+      "locations": [{"file": "inputs/FORMAL_MODEL.md", "lines": [81, 86]}, {"file": "inputs/ARCHITECTURE.md", "lines": [158]}],
+      "counterexample": ["y = a OR z; z = y", "a=true gives y=z=true", "Retract a", "Recompute from old values in either order, even repeatedly: y=z=true", "Least grounded fixed point is y=z=false"],
+      "conclusion_scope": "Does not refute P5's acyclic example; refutes unrestricted pointwise recomputation as a complete recursive-support algorithm",
+      "revised_claim": "For finite acyclic support formulas, affected nodes recomputed in topological order equal fresh evaluation. Positive recursion requires an explicitly selected least-fixed-point or grounded-proof semantics and an appropriate SCC algorithm.",
+      "acceptance": ["Retracting the only root removes both cyclic conclusions", "An independent surviving alternative root preserves support"],
+      "adoption_verified": false
+    },
+    {
+      "id": "F02",
+      "title": "P4's unchanged-binding premises omit explicit clock input",
+      "classification": "incorrect_statement_under_literal_premises",
+      "priority": "medium",
+      "propositions": ["P4"],
+      "locations": [{"file": "inputs/FORMAL_MODEL.md", "lines": [69, 70, 71]}],
+      "counterexample": ["Accepted = BindingMatches AND observedNow < 10", "At observedNow=9, Accepted=true", "Append ClockObserved(11); binding, permissions, policy, and retractions unchanged", "Accepted=false"],
+      "conclusion_scope": "The prose already recognizes explicit clocks; the theorem premises must match that recognition",
+      "revised_claim": "Applicability is preserved only when all inputs of the fixed applicability predicate are unchanged; unchanged version binding alone preserves binding compatibility, not temporal or authorization eligibility.",
+      "acceptance": ["Irrelevant note edit preserves acceptance", "Crossing expiry changes eligibility", "Identical log replay remains deterministic"],
+      "adoption_verified": false
+    },
+    {
+      "id": "F03",
+      "title": "Acceptance needs an explicit invariant binding result content version",
+      "classification": "implementation_obligation",
+      "priority": "medium",
+      "propositions": ["P4"],
+      "locations": [{"file": "inputs/FORMAL_MODEL.md", "lines": [23, 69, 71]}, {"file": "inputs/ARCHITECTURE.md", "lines": [57, 65, 118]}],
+      "counterexample": ["Accept resultId=r, artifactVersion=v1, availabilityRevision=7", "Change artifactVersion to v2 while resultId and availabilityRevision stay unchanged", "The displayed binding vector still matches an acceptance that only inspected v1"],
+      "conclusion_scope": "Conditional countermodel unless resultId or an immutable witness already fixes content version; no product defect asserted",
+      "revised_claim": "Acceptance binds immutable content identity, explicit artifactVersion/digest, or an enforced immutable witness reference; availability equivalence alone is insufficient.",
+      "acceptance": ["Content replacement invalidates or explicitly revalidates acceptance", "Access-only change follows distinct policy", "Recovery of identical content does not silently change content identity"],
+      "adoption_verified": false
+    },
+    {
+      "id": "F04",
+      "title": "Admission-time validity needs a specified authorization authority and revocation boundary",
+      "classification": "implementation_obligation",
+      "priority": "medium",
+      "propositions": ["P7"],
+      "locations": [{"file": "inputs/FORMAL_MODEL.md", "lines": [100, 102, 104, 114, 116, 117]}, {"file": "inputs/ARCHITECTURE.md", "lines": [55, 105, 106]}],
+      "counterexample": ["Kernel caches grant epoch=3 as valid", "External authorization authority revokes epoch=3; notification is delayed", "Kernel atomically checks local state and admits new work", "Local validity does not imply current external-authority validity"],
+      "conclusion_scope": "No counterexample to P7's conflict theorem; obligation when local admission claims external real-time authorization semantics",
+      "revised_claim": "Validity is guaranteed at a declared authoritative linearization point or within an explicit snapshot/lease policy. External revocation effect requires a specified serialization or propagation contract.",
+      "acceptance": ["Delayed revocation notifications behave according to declared semantics", "Revocation between reservation and dispatch triggers the contracted recheck"],
+      "adoption_verified": false
+    },
+    {
+      "id": "F05",
+      "title": "Idempotency and fencing are independent scoped capabilities",
+      "classification": "implementation_obligation",
+      "priority": "low",
+      "propositions": [],
+      "locations": [{"file": "inputs/ARCHITECTURE.md", "lines": [80, 87, 95]}],
+      "counterexample": ["A valid fencing token can authorize two duplicate increment requests", "An idempotent target can accept a new business key from a stale executor when it does not check epochs"],
+      "conclusion_scope": "Avoid interpreting the capability table as a totally ordered enum; the current warning against one safe boolean is sound",
+      "revised_claim": "Represent independent capabilities scoped to target, operation, identity domain, retention/window, adapter version, and transaction boundary; match required properties rather than ordinal level.",
+      "acceptance": ["A fencing-only adapter is not selected to satisfy duplicate suppression", "An idempotency-only adapter is not selected to satisfy stale-writer rejection"],
+      "adoption_verified": false
+    },
+    {
+      "id": "F06",
+      "title": "P15's universal untested-input sentence needs domain and hypothesis-class assumptions",
+      "classification": "overstrong_quantifier_in_supporting_argument",
+      "priority": "low",
+      "propositions": ["P15"],
+      "locations": [{"file": "inputs/FORMAL_MODEL.md", "lines": [174]}],
+      "counterexample": ["The full input domain is {0,1}; both inputs were tested, so no untested input exists", "A fixed semantically identical baseline and candidate cannot be forced to differ merely because testing was finite"],
+      "conclusion_scope": "Preserves the main warning that sampled regression evidence alone does not establish unrestricted future improvement",
+      "revised_claim": "If untested inputs remain and the candidate class permits different behavior there, tests alone cannot distinguish candidates agreeing on observed inputs but differing elsewhere; exhaustive coverage or structural proofs are legitimate additional evidence.",
+      "acceptance": ["The claim explicitly excludes complete finite-domain coverage", "Probability claims retain distribution and adaptive-selection assumptions"],
+      "adoption_verified": false
+    }
+  ],
+  "proposition_dispositions": {
+    "P1": "sound_under_stated_assumptions",
+    "P2": "sound_under_stated_assumptions",
+    "P3": "sound_under_stated_assumptions",
+    "P4": "revise_premises_F02_and_enforce_binding_F03",
+    "P5": "core_sound_recursive_extension_missing_semantics_F01",
+    "P6": "sound_under_stated_assumptions",
+    "P7": "sound_local_conflict_property_external_authority_obligation_F04",
+    "P8": "sound_under_stated_assumptions",
+    "P9": "sound_for_duplicate_sensitive_effects_with_indistinguishable_observations",
+    "P10": "sound_under_stated_assumptions",
+    "P11": "sound_with_minimum_joint_encoding_length",
+    "P12": "sound_under_stated_assumptions",
+    "P13": "conditionally_sound_make_initial_invariant_and_transfer_updates_explicit",
+    "P14": "sound_composition_obligations_require_actual_discharge",
+    "P15": "core_sound_refine_quantifier_F06"
+  },
+  "proof_clarifications": [
+    {"proposition": "P13", "detail": "State initial E=U+sum(r_i)+R_remaining<=B explicitly. For settlement c require c+r_i_next<=r_i; reserve any new cleanup obligation during admission. This clarifies the invariant proof and is not a demonstrated real-cost overrun counterexample."},
+    {"proposition": "P9", "detail": "Specify duplicate-sensitive effects and an environment in which a retried request can eventually succeed; permanent external unavailability is a different liveness failure."},
+    {"proposition": "P14", "detail": "Child guarantees need compatible versions and time windows. Separately observed world predicates do not necessarily hold simultaneously."}
+  ],
+  "accepted_tradeoffs": [
+    "Ledger knowledge is not instantaneous external-world truth",
+    "P7 is an admission-point property and not an all-times active-count invariant",
+    "Unknown effects remain unresolved until suitable evidence or a declared recovery policy",
+    "Threshold budgets are useful weaker contracts when no credible hard cost bound exists",
+    "Exploratory acceptance can retain human judgment",
+    "Finite acyclic support and a single authority are legitimate first-slice scope limits"
+  ],
+  "validation": {
+    "method": "model reasoning and traces that a human can check by hand; no human review performed",
+    "product_code_executed": false,
+    "mechanical_state_enumeration_performed_by_this_reviewer": false,
+    "remote_baseline_reverified": false,
+    "input_files_modified": false,
+    "commit_or_push_performed": false
+  }
+}

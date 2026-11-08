@@ -1,0 +1,2040 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-11-08T08:11:42.370337+00:00",
+  "source_root": "integration/docs/research/harness-20261107",
+  "classification_rules": [
+    "Include sources.json with sources[] as original primary catalogs, regardless of entry-level unread status. Exclude every inputs/ snapshot copy.",
+    "Keep ROOT_SOURCE_REVIEW*.json entries as separate reviewer observations; never overwrite author reading status.",
+    "Inventory all other JSON but exclude artifact hashes, test results, specifications and repository baseline metadata from bibliographic counts.",
+    "Expand explicit primary_documents[] and paired_file as additional primary document occurrences. Keep PDF/permalink/identity/auxiliary URLs in a separate occurrence index.",
+    "Exclude access_failures/excluded_candidates from adopted source entry count; retain them as discovery/access audit.",
+    "Exact URL equality uses the literal stored URL, including fragments; no redirects, case folding, query stripping, version guessing or network fetch."
+  ],
+  "summary": {
+    "json_files_scanned": 110,
+    "primary_catalog_files": 10,
+    "root_cross_review_files": 4,
+    "excluded_other_json_files": 96,
+    "source_entry_count": 215,
+    "explicit_nested_primary_documents": 6,
+    "explicit_paired_primary_documents": 1,
+    "primary_document_url_occurrences": 222,
+    "source_entry_exact_url_unique": 200,
+    "source_entry_duplicate_url_excess": 15,
+    "primary_document_exact_url_unique": 205,
+    "primary_document_duplicate_url_excess": 17,
+    "primary_document_duplicate_url_groups": 12,
+    "all_catalog_url_string_occurrences": 247,
+    "all_catalog_exact_url_string_unique": 222,
+    "root_review_entries": 38,
+    "root_review_exact_url_unique": 37,
+    "root_only_url_candidates": 7,
+    "combined_primary_document_and_root_review_exact_url_unique": 225,
+    "excluded_or_failed_candidate_entries": 3,
+    "explicit_body_unread_or_inaccessible_records": 3,
+    "short_id_collision_groups": 1,
+    "identity_binding_edges": 21,
+    "explicit_person_view_groups": 6,
+    "missing_or_unspecified_fields": {
+      "publication_date": 140,
+      "entry_reading_status": 99,
+      "locator": 52,
+      "attribution": 1,
+      "evidence_nature": 6
+    },
+    "root_only_sources_without_catalog_or_same_work_match": 4,
+    "unadopted_candidates_inside_sources_array": 1,
+    "per_catalog_source_entries": {
+      "china/sources.json": 57,
+      "foundations/sources.json": 12,
+      "mechanisms/cordis-boundary/sources.json": 15,
+      "mechanisms/lifecycle-migration/sources.json": 6,
+      "mechanisms/sources.json": 41,
+      "mechanisms/work-improvement/sources.json": 10,
+      "west/authority-scope/sources.json": 5,
+      "west/context-evaluation/sources.json": 18,
+      "west/practitioner-views/sources.json": 12,
+      "west/sources.json": 39
+    }
+  },
+  "files": [
+    {
+      "path": "EIGHTH_PASS_MANIFEST.json",
+      "sha256": "f6816ad3fead96999b5713ee5360bbe4fc24a52d9b978f372750a1436d7f535e",
+      "bytes": 4144,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "copied_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "FIFTH_PASS_MANIFEST.json",
+      "sha256": "fc743d0a70ce0b31c8166083805085d63cdfda1dffafcccdc118993de39f6f35",
+      "bytes": 6257,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "copied_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "FIRST_PASS_MANIFEST.json",
+      "sha256": "643a7a0cc26e89741805ba229e7873fe5e1cdc4528b0980eb22f7bbc2697169c",
+      "bytes": 1629,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "FOURTH_PASS_MANIFEST.json",
+      "sha256": "7119bc6579b1a0e3374351d1adaa61a4f8ade555ded50484a2adb877ab2f9f37",
+      "bytes": 2329,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "copied_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "ROOT_SOURCE_REVIEW.json",
+      "sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+      "bytes": 4886,
+      "classification": "ROOT_CROSS_REVIEW",
+      "reason": "Additional root reading receipts; kept separate from original source entries.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "description",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 9,
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW.json"
+    },
+    {
+      "path": "ROOT_SOURCE_REVIEW_2.json",
+      "sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+      "bytes": 6016,
+      "classification": "ROOT_CROSS_REVIEW",
+      "reason": "Additional root reading receipts; kept separate from original source entries.",
+      "top_level_keys": [
+        "schema_version",
+        "accessed_at",
+        "status",
+        "description",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 13,
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_2.json"
+    },
+    {
+      "path": "ROOT_SOURCE_REVIEW_3.json",
+      "sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+      "bytes": 3590,
+      "classification": "ROOT_CROSS_REVIEW",
+      "reason": "Additional root reading receipts; kept separate from original source entries.",
+      "top_level_keys": [
+        "schema_version",
+        "accessed_at",
+        "status",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 7,
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_3.json"
+    },
+    {
+      "path": "ROOT_SOURCE_REVIEW_4.json",
+      "sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+      "bytes": 4154,
+      "classification": "ROOT_CROSS_REVIEW",
+      "reason": "Additional root reading receipts; kept separate from original source entries.",
+      "top_level_keys": [
+        "schema_version",
+        "accessed_at",
+        "status",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 9,
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_4.json"
+    },
+    {
+      "path": "SECOND_PASS_MANIFEST.json",
+      "sha256": "6396840b1e045c2edd9319e974868f208b7add855c85cd928ae104042f712079",
+      "bytes": 13954,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "scope",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "SEVENTH_PASS_MANIFEST.json",
+      "sha256": "e337b1b8255508e9381664b11657614115a0da77447c94cbfb31313c9c341651",
+      "bytes": 1678,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "copied_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "SIXTH_PASS_MANIFEST.json",
+      "sha256": "867a938a3531375f6c591431c62a612029298a1597956d7c1993217a01c4b3dd",
+      "bytes": 23327,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "created_at",
+        "scope",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "THIRD_PASS_MANIFEST.json",
+      "sha256": "be8125719b81d6e98a71a6451e5c108e45262c3d088a612cbc29026ae4eeae5e",
+      "bytes": 10857,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "copied_at_utc",
+        "scope",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "baseline-github.json",
+      "sha256": "267a2a810ef7d97ef977b3f8bed8429f848ac56aad154b3246c435ce13e3ba7f",
+      "bytes": 5002,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "checked_at_utc",
+        "pr",
+        "workflow_runs",
+        "note"
+      ],
+      "exact_url_string_occurrences": 3,
+      "excluded_url_examples": [
+        {
+          "pointer": "/pr/url",
+          "url": "https://github.com/TaiShuo150622/dsh-project-workbench/pull/1"
+        },
+        {
+          "pointer": "/workflow_runs/0/jobs_url",
+          "url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/jobs"
+        },
+        {
+          "pointer": "/workflow_runs/0/logs_url",
+          "url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/logs"
+        }
+      ]
+    },
+    {
+      "path": "china/bounded-models/execution_receipt.json",
+      "sha256": "27339ecb14445f577c8f364cceaf614e297cdbd3a6eda1ec4623336675efd0a5",
+      "bytes": 1148,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "python",
+        "command",
+        "exit_code",
+        "artifact_integrity_checked",
+        "note",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/bounded-models/inputs.json",
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5",
+      "bytes": 896,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "source_worktree_head",
+        "captured_at_utc",
+        "note",
+        "inputs"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/bounded-models/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "kind",
+        "script_sha256",
+        "inputs",
+        "action_model",
+        "support_model",
+        "budget_model",
+        "acceptance_model",
+        "checks_passed",
+        "meaning_of_passed"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/budget-proof/execution_receipt.json",
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa",
+      "bytes": 2030,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "command",
+        "toolchain_version",
+        "toolchain_metadata",
+        "exit_code",
+        "kernel_checked",
+        "axiom_dependencies",
+        "scope",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/budget-proof/inputs.json",
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717",
+      "bytes": 496,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "source_worktree_head",
+        "captured_at_utc",
+        "source_worktree_relative_path",
+        "snapshot",
+        "sha256",
+        "bytes",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/budget-proof/lean-toolchain.json",
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e",
+      "bytes": 700,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "release",
+        "source",
+        "official_release_api",
+        "archive_bytes",
+        "expected_sha256",
+        "actual_sha256",
+        "version",
+        "completed_at",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 2,
+      "excluded_url_examples": [
+        {
+          "pointer": "/source",
+          "url": "https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-darwin_aarch64.tar.zst"
+        },
+        {
+          "pointer": "/official_release_api",
+          "url": "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.35.0"
+        }
+      ]
+    },
+    {
+      "path": "china/record-refinement/execution_receipt.json",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "bytes": 4351,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "task",
+        "base_commit",
+        "node_version",
+        "execution_kind",
+        "code_sha256",
+        "inputs_manifest_sha256",
+        "runs",
+        "real_adapter_conformance_cases_run",
+        "network_or_production_effects_invoked",
+        "note",
+        "product_source_unchanged_after_execution",
+        "post_execution_check_at_utc"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/inputs/specifications/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "oracle_language",
+        "reviewed_source",
+        "capability_vocabulary",
+        "observation_channels",
+        "shared_contract",
+        "cases",
+        "execution_evidence",
+        "validation_scope",
+        "capability_provider_roles"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "captured_at_utc",
+        "task",
+        "base_commit",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/probes.initial.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "execution_kind",
+        "base_commit",
+        "node_version",
+        "cases",
+        "summary",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "execution_kind",
+        "base_commit",
+        "node_version",
+        "cases",
+        "summary",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/refinement-matrix.json",
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2",
+      "bytes": 43772,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "task",
+        "frozen_product_commit",
+        "scope",
+        "status_definitions",
+        "real_adapter_cases_executed",
+        "objects",
+        "cases",
+        "must_not_infer"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/record-refinement/validation_receipt.json",
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a",
+      "bytes": 701,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "validated_at_utc",
+        "json_files_parsed",
+        "input_hashes_checked",
+        "frozen_product_and_test_files_unchanged",
+        "matrix_objects",
+        "matrix_cases",
+        "matrix_code_references_checked",
+        "local_document_links_checked",
+        "receipt_hashes_match",
+        "real_adapter_execution_claimed",
+        "all_checks_passed",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "china/sources.json",
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "bytes": 56172,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "research_line",
+        "version",
+        "as_of",
+        "status",
+        "method",
+        "sources"
+      ],
+      "exact_url_string_occurrences": 57,
+      "snapshot": "inputs/china/sources.json"
+    },
+    {
+      "path": "dag-proof/compile_receipt.json",
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e",
+      "bytes": 745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "started_at",
+        "completed_at",
+        "source_sha256",
+        "exit_code",
+        "stdout",
+        "lean_version",
+        "official_archive_sha256",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401",
+      "bytes": 3203,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/expiry-results/receipt.json",
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360",
+      "bytes": 3986,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/expiry-runner-negative-control/receipt.json",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "at_utc",
+        "purpose",
+        "mutation",
+        "runner_sha256",
+        "command",
+        "exit_code",
+        "control_passed",
+        "observed_none_violations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/expiry-runner-negative-control/results/receipt.json",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/feature-results/receipt.json",
+      "sha256": "dc3e2efaf1357a65f044d2ecd422f08f6283f2351e2474f0ac838a1dd2212ec8",
+      "bytes": 1264,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "model_sha256",
+        "jar_sha256",
+        "cases",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "formal-spec/results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f",
+      "bytes": 4094,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "started_at",
+        "tool_jar_sha256",
+        "model_sha256",
+        "runner_sha256",
+        "scope",
+        "cases",
+        "completed_at",
+        "all_expectations_matched"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "foundations/sources.json",
+      "sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+      "bytes": 8304,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "scope",
+        "sources",
+        "access_failures"
+      ],
+      "exact_url_string_occurrences": 14,
+      "snapshot": "inputs/foundations/sources.json"
+    },
+    {
+      "path": "mechanisms/conformance/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "oracle_language",
+        "reviewed_source",
+        "capability_vocabulary",
+        "observation_channels",
+        "shared_contract",
+        "cases",
+        "execution_evidence",
+        "validation_scope",
+        "capability_provider_roles"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/conformance/validation.json",
+      "sha256": "eb9262189be2ccb0c7019141db806570ab8ac124b82501eed87138670c766f93",
+      "bytes": 1253,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "actual_execution",
+        "validation_execution",
+        "scenario_execution",
+        "checked_at",
+        "catalog_sha256",
+        "case_count",
+        "variant_count",
+        "checks",
+        "errors",
+        "reviewed_source_sha256",
+        "current_source_sha256",
+        "reviewed_source_still_current",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/cordis-boundary/sources.json",
+      "sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+      "bytes": 21712,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "topic",
+        "created_at",
+        "evidence_status",
+        "sources"
+      ],
+      "exact_url_string_occurrences": 15,
+      "snapshot": "inputs/mechanisms/cordis-boundary/sources.json"
+    },
+    {
+      "path": "mechanisms/lifecycle-migration/contracts.json",
+      "sha256": "8416737af21f1cd046071ce19f9676f55dcab1bdf2c31a49e62e203b7263f60f",
+      "bytes": 10508,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "catalog_id",
+        "status",
+        "actual_execution",
+        "scope",
+        "required_profile_fields",
+        "identity_notes",
+        "contracts",
+        "measurement_boundary"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/lifecycle-migration/fault-scenarios.json",
+      "sha256": "c6e5cb625440f8494dbce2c820276c70fc1bce8e3b0e629b6d701eb8ebc587d6",
+      "bytes": 17829,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "catalog_id",
+        "status",
+        "actual_execution",
+        "created_at_utc",
+        "purpose",
+        "environment_policy",
+        "parameter_profile",
+        "result_definitions",
+        "global_observation_rule",
+        "scenarios",
+        "reporting"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/lifecycle-migration/sources.json",
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "bytes": 9903,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "topic",
+        "status",
+        "accessed_at_utc",
+        "actual_execution",
+        "source_group_count",
+        "evidence_policy",
+        "sources",
+        "proposal_only_topics"
+      ],
+      "exact_url_string_occurrences": 14,
+      "snapshot": "inputs/mechanisms/lifecycle-migration/sources.json"
+    },
+    {
+      "path": "mechanisms/lifecycle-migration/validation.json",
+      "sha256": "2f4f303e43761ea70b7adc425888e423aa8472a98e224bc257df61e5a52f469e",
+      "bytes": 2110,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "validated_at_utc",
+        "validation_execution",
+        "actual_execution",
+        "scenario_execution",
+        "third_party_code_execution",
+        "product_or_service_execution",
+        "checks",
+        "artifact_sha256",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/sources.json",
+      "sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+      "bytes": 51832,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "research",
+        "baseline",
+        "accessed_at_utc",
+        "projects",
+        "sources",
+        "limits"
+      ],
+      "exact_url_string_occurrences": 41,
+      "snapshot": "inputs/mechanisms/sources.json"
+    },
+    {
+      "path": "mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2",
+      "bytes": 23380,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "readiness",
+        "purpose",
+        "numbers_are",
+        "global_profile",
+        "experiments",
+        "task_card_specs",
+        "validation_scope",
+        "results",
+        "relationship_to_other_lines"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "actual_execution",
+        "scope",
+        "sources",
+        "inputs",
+        "coverage_note"
+      ],
+      "exact_url_string_occurrences": 20,
+      "snapshot": "inputs/mechanisms/work-improvement/sources.json"
+    },
+    {
+      "path": "mechanisms/work-improvement/validation.json",
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933",
+      "bytes": 1249,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "actual_execution",
+        "validation_execution",
+        "model_api_experiment_execution",
+        "scenario_execution",
+        "checked_at",
+        "sources",
+        "papers",
+        "source_code_records",
+        "experiment_protocols",
+        "task_card_specs",
+        "relative_markdown_links_checked",
+        "html_generation",
+        "mermaid_blocks",
+        "errors",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/INPUT_MANIFEST.json",
+      "sha256": "9e669b529391d265482684d1ca612f7344272df93885f606e31966689ae49cfa",
+      "bytes": 5770,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/OUTPUT_MANIFEST.json",
+      "sha256": "408aee9b2925c2db8e411a27f6753113d5dcfbb916a0f6adc3054b715fe44d1a",
+      "bytes": 1242,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "frozen_input_and_repair_snapshot_hashes_verified",
+        "prior_R01_R02_R03_main_outputs_unchanged",
+        "json_parse_passed",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/REPAIR_INPUT_MANIFEST.json",
+      "sha256": "247538a059e369ce93d2590378b54271f09e24c7d3251ba9209855164992a051",
+      "bytes": 6635,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/findings.json",
+      "sha256": "2da61a00fea21ed136ee2fce479d2bd2dc533c2ce8f1de11e9d0f51e3a47204b",
+      "bytes": 4527,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_id",
+        "review_type",
+        "model_declared_by_dispatcher",
+        "human_review",
+        "input_manifest",
+        "verification_receipt",
+        "runner_probe_receipt",
+        "overall",
+        "findings",
+        "model_review",
+        "independent_tlc_results",
+        "trace_assessment",
+        "contract_review",
+        "author_sources_modified",
+        "prior_review_outputs_modified",
+        "product_changes",
+        "model_api_or_network_calls",
+        "commit_or_push"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401",
+      "bytes": 3203,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/receipt.json",
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360",
+      "bytes": 3986,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/receipt.json",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "at_utc",
+        "purpose",
+        "mutation",
+        "runner_sha256",
+        "command",
+        "exit_code",
+        "control_passed",
+        "observed_none_violations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/receipt.json",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair_verification_receipt.json",
+      "sha256": "8cc3bf72af06054670291bb6a423b6298d761378285d56c40fea3c1e34cd34aa",
+      "bytes": 1615,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_method",
+        "runner_sha256",
+        "EA01_status",
+        "negative_runner_exit_code",
+        "checks"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun/receipt.json",
+      "sha256": "d92922d167b93373b3792b8d4caa28234aaf71f6dc97efca312b91e296ab805a",
+      "bytes": 4031,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe-results/receipt.json",
+      "sha256": "1193e3f250c2e9c31d717ba796cf55fb8fdd5903e54288f705fdd39cc5a26da3",
+      "bytes": 4065,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": null,
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner_probe_receipt.json",
+      "sha256": "82150211c7059c9214a3810a164bd5b76198a708338f53d928d40d3f94c9d00c",
+      "bytes": 2121,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "mutation",
+        "original_cfg_sha256",
+        "mutated_cfg_sha256",
+        "runner_sha256",
+        "command",
+        "runner_exit_code",
+        "stdout",
+        "stderr",
+        "meaning"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/verification_receipt.json",
+      "sha256": "cdf29df7dfe09ae386962776bd8f42a2fa42c764284764534a44f51e10b7f495",
+      "bytes": 3021,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "verified_at_utc",
+        "method",
+        "original_runner_exit_code_observed",
+        "cases",
+        "runner_wrong_invariant_probe_confirmed",
+        "historical_parse_failure_runs_excluded"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/findings.json",
+      "sha256": "81664987d29b2cff48c5783a25dc42cc3b28833c67a1af4f679ebb257c6acc1f",
+      "bytes": 10626,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "review_id",
+        "review_type",
+        "mechanical_proof",
+        "implementation_audit",
+        "reviewer_model_declared_by_task",
+        "model_runtime_attestation",
+        "independence",
+        "input_snapshot",
+        "findings",
+        "proposition_dispositions",
+        "proof_clarifications",
+        "accepted_tradeoffs",
+        "validation"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/INPUT_MANIFEST.json",
+      "sha256": "5e2926f1af0d442b68744a07f45e1973ac4677f9f887b533e6438863fb9ab3b6",
+      "bytes": 4347,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/OUTPUT_MANIFEST.json",
+      "sha256": "0c01853aab64a670e1514f733d1d9290d161a6b09cd4e36a966a2e834da9d532",
+      "bytes": 1262,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "frozen_input_hashes_verified",
+        "prior_R01_R02_main_outputs_unchanged",
+        "witnesses_have_exact_unmodified_source_prefix",
+        "json_parse_passed",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/compile_receipt.json",
+      "sha256": "aba6e348da37f2f84f39418a4dabc4542b7971aca6e8f211269dcbb8a4c2af40",
+      "bytes": 2442,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "lean_version",
+        "lean_binary_sha256",
+        "cases"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/findings.json",
+      "sha256": "28870564b54933fab007d5b07e101fe5258e2e19be3fb5b805fd65a02a00bc10",
+      "bytes": 4402,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_id",
+        "review_type",
+        "model_declared_by_dispatcher",
+        "human_review",
+        "input_manifest",
+        "original_compile_receipt",
+        "witness_compile_receipt",
+        "conclusion",
+        "findings",
+        "dag_assessment",
+        "budget_assessment",
+        "axioms",
+        "independent_compilation",
+        "author_sources_modified",
+        "prior_review_outputs_modified",
+        "product_execution_or_changes",
+        "network_or_model_api_calls",
+        "commit_or_push"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/inputs/budget/execution_receipt.json",
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa",
+      "bytes": 2030,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "command",
+        "toolchain_version",
+        "toolchain_metadata",
+        "exit_code",
+        "kernel_checked",
+        "axiom_dependencies",
+        "scope",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/inputs/budget/inputs.json",
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717",
+      "bytes": 496,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "source_worktree_head",
+        "captured_at_utc",
+        "source_worktree_relative_path",
+        "snapshot",
+        "sha256",
+        "bytes",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/inputs/budget/lean-toolchain.json",
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e",
+      "bytes": 700,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "release",
+        "source",
+        "official_release_api",
+        "archive_bytes",
+        "expected_sha256",
+        "actual_sha256",
+        "version",
+        "completed_at",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 2,
+      "excluded_url_examples": [
+        {
+          "pointer": "/source",
+          "url": "https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-darwin_aarch64.tar.zst"
+        },
+        {
+          "pointer": "/official_release_api",
+          "url": "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.35.0"
+        }
+      ]
+    },
+    {
+      "path": "proof-review/general-proof-audit/inputs/dag/compile_receipt.json",
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e",
+      "bytes": 745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "started_at",
+        "completed_at",
+        "source_sha256",
+        "exit_code",
+        "stdout",
+        "lean_version",
+        "official_archive_sha256",
+        "scope"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/general-proof-audit/witness_receipt.json",
+      "sha256": "56e9cef46a9258ab474dc784b04fae1ab9726298249cbecfa298b55d02b0b673",
+      "bytes": 2304,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "cases"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/inputs/MANIFEST.json",
+      "sha256": "4b29589d74479b585553edaa69807797e4ca2e98b8739d38e3e25df7b58611b9",
+      "bytes": 448,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/INPUT_MANIFEST.json",
+      "sha256": "5e5abd1f9886af1d836acbd636ed3b748bc66081cf54cc14df14b6165a5000a5",
+      "bytes": 5352,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/OUTPUT_MANIFEST.json",
+      "sha256": "565f3d49702070322659faab5f03b6bd9c995df0d8a38a280a0d4f57330ea756",
+      "bytes": 1201,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "json_parse_passed",
+        "frozen_snapshot_hashes_passed",
+        "first_round_outputs_unchanged",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/TLC_RECEIPT_MANIFEST.json",
+      "sha256": "8fa452f2d67d0c436c98ece4509ba7dc61088a3be3727e20389dd9da232c6111",
+      "bytes": 2490,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "scope",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/audit_checks.json",
+      "sha256": "f052487efe0cac50142308cc2176e7f7a49d946fac141570ba4e603689eb8061",
+      "bytes": 1260,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_type",
+        "source_script_sha256",
+        "audit_script_sha256",
+        "formula_truth_table_cases",
+        "independently_evaluated_fixed_point_cases",
+        "count_consistency_graphs",
+        "independent_acceptance_state_count",
+        "rerun_json_equal",
+        "common_mode_mutation_probe",
+        "elapsed_seconds",
+        "meaning"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/execution_receipt.json",
+      "sha256": "63313edb3fe89db2f5ad55467c77fabcda0d52bc9dd104fcb2a35e2d3542d3fc",
+      "bytes": 1034,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "command",
+        "python_version",
+        "started_at_utc",
+        "finished_at_utc",
+        "elapsed_seconds",
+        "returncode",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/findings.json",
+      "sha256": "34e4cf765a48a1b249041261338379556e02485b1b7a430971ac765a5bd4826d",
+      "bytes": 4942,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_id",
+        "review_type",
+        "model_declared_by_dispatcher",
+        "human_review_performed",
+        "input_manifest",
+        "tlc_receipt_manifest",
+        "first_round_outputs_modified",
+        "overall",
+        "findings",
+        "python_replay",
+        "additional_checks",
+        "tla_static_review",
+        "root_tlc_evidence_review",
+        "suggested_nontrivial_small_lemmas",
+        "product_changes",
+        "commit_or_push",
+        "network_or_model_api_calls"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/inputs/python/execution_receipt.json",
+      "sha256": "27339ecb14445f577c8f364cceaf614e297cdbd3a6eda1ec4623336675efd0a5",
+      "bytes": 1148,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "completed_at_utc",
+        "python",
+        "command",
+        "exit_code",
+        "artifact_integrity_checked",
+        "note",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/inputs/python/inputs.json",
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5",
+      "bytes": 896,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "source_worktree_head",
+        "captured_at_utc",
+        "note",
+        "inputs"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/inputs/python/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "kind",
+        "script_sha256",
+        "inputs",
+        "action_model",
+        "support_model",
+        "budget_model",
+        "acceptance_model",
+        "checks_passed",
+        "meaning_of_passed"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/inputs/tla-results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f",
+      "bytes": 4094,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "started_at",
+        "tool_jar_sha256",
+        "model_sha256",
+        "runner_sha256",
+        "scope",
+        "cases",
+        "completed_at",
+        "all_expectations_matched"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/model-audit/rerun/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "kind",
+        "script_sha256",
+        "inputs",
+        "action_model",
+        "support_model",
+        "budget_model",
+        "acceptance_model",
+        "checks_passed",
+        "meaning_of_passed"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/INPUT_MANIFEST.json",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "captured_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_id",
+        "review_type",
+        "human_review",
+        "input_manifest",
+        "independent_product_execution",
+        "existing_twenty_tests_rerun",
+        "original_eight_probes_rerun",
+        "overall",
+        "findings",
+        "probe_assessments",
+        "acceptance_revision_assessment",
+        "minimal_bridge_design",
+        "product_or_author_files_modified",
+        "commit_or_push",
+        "network_or_model_api_calls"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/execution_receipt.json",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "bytes": 4351,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "task",
+        "base_commit",
+        "node_version",
+        "execution_kind",
+        "code_sha256",
+        "inputs_manifest_sha256",
+        "runs",
+        "real_adapter_conformance_cases_run",
+        "network_or_production_effects_invoked",
+        "note",
+        "product_source_unchanged_after_execution",
+        "post_execution_check_at_utc"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "oracle_language",
+        "reviewed_source",
+        "capability_vocabulary",
+        "observation_channels",
+        "shared_contract",
+        "cases",
+        "execution_evidence",
+        "validation_scope",
+        "capability_provider_roles"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "captured_at_utc",
+        "task",
+        "base_commit",
+        "entries"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/probes.initial.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "execution_kind",
+        "base_commit",
+        "node_version",
+        "cases",
+        "summary",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "execution_kind",
+        "base_commit",
+        "node_version",
+        "cases",
+        "summary",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/refinement-matrix.json",
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2",
+      "bytes": 43772,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "task",
+        "frozen_product_commit",
+        "scope",
+        "status_definitions",
+        "real_adapter_cases_executed",
+        "objects",
+        "cases",
+        "must_not_infer"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/validation_receipt.json",
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a",
+      "bytes": 701,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "validated_at_utc",
+        "json_files_parsed",
+        "input_hashes_checked",
+        "frozen_product_and_test_files_unchanged",
+        "matrix_objects",
+        "matrix_cases",
+        "matrix_code_references_checked",
+        "local_document_links_checked",
+        "receipt_hashes_match",
+        "real_adapter_execution_claimed",
+        "all_checks_passed",
+        "limitations"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/verification_receipt.json",
+      "sha256": "2c8df7ebec5f71b172fad687ebcd0e462f68f40cd43b66653c8fde7090b82c30",
+      "bytes": 816,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "verified_at_utc",
+        "method",
+        "frozen_input_hashes_match",
+        "author_manifest_entries_checked",
+        "author_log_hashes_match",
+        "prior_R01_to_R04_main_outputs_unchanged",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/INPUT_MANIFEST.json",
+      "sha256": "564c702fcc4989aa9fcb2c772a201ece25869128a439a5bc7de08a2adf25b44b",
+      "bytes": 4206,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "frozen_at_utc",
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/OUTPUT_MANIFEST.json",
+      "sha256": "7f18add1b01361c22e6ad0d17d7f25b787dc8617eb011d7ceeec265c10fcf64d",
+      "bytes": 626,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "files"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/findings.json",
+      "sha256": "1f059d6f68caf1725fc96eaa1d3b45e4a3adce0a7a42e86f5351d9dcf0a87f7d",
+      "bytes": 2286,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review_round",
+        "review_type",
+        "declared_model",
+        "runtime_model_attested",
+        "human_review_claimed",
+        "experiment_execution",
+        "findings",
+        "substantive_gaps",
+        "optional_clarifications",
+        "not_findings"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2",
+      "bytes": 23380,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "readiness",
+        "purpose",
+        "numbers_are",
+        "global_profile",
+        "experiments",
+        "task_card_specs",
+        "validation_scope",
+        "results",
+        "relationship_to_other_lines"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "actual_execution",
+        "scope",
+        "sources",
+        "inputs",
+        "coverage_note"
+      ],
+      "exact_url_string_occurrences": 20,
+      "excluded_url_examples": [
+        {
+          "pointer": "/sources/0/url",
+          "url": "https://arxiv.org/abs/2305.16291v2"
+        },
+        {
+          "pointer": "/sources/0/pdf_url",
+          "url": "https://arxiv.org/pdf/2305.16291v2"
+        },
+        {
+          "pointer": "/sources/1/url",
+          "url": "https://arxiv.org/abs/2210.03629v3"
+        },
+        {
+          "pointer": "/sources/1/pdf_url",
+          "url": "https://arxiv.org/pdf/2210.03629v3"
+        },
+        {
+          "pointer": "/sources/2/url",
+          "url": "https://arxiv.org/abs/2305.16653v1"
+        }
+      ]
+    },
+    {
+      "path": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/validation.json",
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933",
+      "bytes": 1249,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "status",
+        "actual_execution",
+        "validation_execution",
+        "model_api_experiment_execution",
+        "scenario_execution",
+        "checked_at",
+        "sources",
+        "papers",
+        "source_code_records",
+        "experiment_protocols",
+        "task_card_specs",
+        "relative_markdown_links_checked",
+        "html_generation",
+        "mermaid_blocks",
+        "errors",
+        "artifacts"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "Frozen inputs/ copy; never count as a new original source catalog.",
+      "top_level_keys": [
+        "schema_version",
+        "protocol_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "execution_ready",
+        "artifact_state",
+        "reviewed_inputs",
+        "evidence_scope",
+        "estimands",
+        "outcome_vector",
+        "no_scalar_success_score",
+        "cost_denominators",
+        "obligation_credit_rule",
+        "old_proposal_cost",
+        "pilot",
+        "scenarios",
+        "failure_attribution",
+        "transfer_extension",
+        "complexity_ablation",
+        "confirmation_prerequisites",
+        "not_supported_by_this_plan",
+        "validation_scope",
+        "relationship_to_mechanisms"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "proof-review/work-policy-audit/verification_receipt.json",
+      "sha256": "b1400f2ba5773bceefd3797f97d8a56584caf90d79c3cb7e3e0c20a279a0cfe0",
+      "bytes": 2421,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "checked_at_utc",
+        "reviewer_executed",
+        "reviewer_not_executed",
+        "frozen_inputs",
+        "author_hashes",
+        "design_checks",
+        "all_pass",
+        "author_checks_are_not_independent_experiment_evidence"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "root-model-replay/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "kind",
+        "script_sha256",
+        "inputs",
+        "action_model",
+        "support_model",
+        "budget_model",
+        "acceptance_model",
+        "checks_passed",
+        "meaning_of_passed"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "west/architecture-reader-review/review-inputs.json",
+      "sha256": "9e12e30bbaa0deaf955eedaca40e400d9eba9902bbb93dd853c774f480005e92",
+      "bytes": 8140,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "review",
+        "reviewed_at_utc",
+        "status",
+        "finding_count",
+        "no_product_execution",
+        "no_new_web_research",
+        "inputs",
+        "numeric_checks",
+        "limits"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "west/authority-scope/sources.json",
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+      "bytes": 10432,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "generated_at_utc",
+        "status",
+        "scope",
+        "count_note",
+        "sources",
+        "our_proposals_not_source_claims",
+        "uncertainty"
+      ],
+      "exact_url_string_occurrences": 11,
+      "snapshot": "inputs/west/authority-scope/sources.json"
+    },
+    {
+      "path": "west/context-evaluation/protocol.json",
+      "sha256": "c637886c04746ddac6bb2b046db441221304bb50705c7f0e3509a0b87aa79082",
+      "bytes": 7447,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "protocol_version",
+        "status",
+        "evaluation_contract",
+        "artifacts",
+        "objective",
+        "task_domain",
+        "constraints",
+        "trusted_policy",
+        "dataset_design",
+        "temporal_policy",
+        "event_schema",
+        "context_manifest_schema",
+        "scenarios",
+        "arms",
+        "budget_design",
+        "run_modes",
+        "metrics",
+        "evaluation",
+        "statistics",
+        "promotion_rule",
+        "not_measured_by_this_protocol"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "west/context-evaluation/sources.json",
+      "sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+      "bytes": 18622,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "version",
+        "as_of",
+        "scope",
+        "runtime_experiments_run",
+        "datasets_downloaded",
+        "model_api_calls",
+        "sources"
+      ],
+      "exact_url_string_occurrences": 18,
+      "snapshot": "inputs/west/context-evaluation/sources.json"
+    },
+    {
+      "path": "west/evaluation-design-review/design-v0.1.1.json",
+      "sha256": "a340d5c4452ef26242cd88dd4e162dc7c996984843502f4c798fd028ea37c6b1",
+      "bytes": 26603,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "protocol_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "execution_ready",
+        "artifact_state",
+        "reviewed_inputs",
+        "evidence_scope",
+        "estimands",
+        "outcome_vector",
+        "no_scalar_success_score",
+        "cost_denominators",
+        "obligation_credit_rule",
+        "old_proposal_cost",
+        "pilot",
+        "scenarios",
+        "failure_attribution",
+        "transfer_extension",
+        "complexity_ablation",
+        "confirmation_prerequisites",
+        "not_supported_by_this_plan",
+        "validation_scope",
+        "relationship_to_mechanisms",
+        "revision",
+        "revision_note",
+        "prior_design"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497,
+      "classification": "EXCLUDED_NON_SOURCE_CATALOG",
+      "reason": "No source-catalog sources[] or root-review entries[] contract; artifact/experiment/input/baseline metadata, not a bibliography.",
+      "top_level_keys": [
+        "schema_version",
+        "protocol_version",
+        "artifact_kind",
+        "status",
+        "actual_execution",
+        "execution_ready",
+        "artifact_state",
+        "reviewed_inputs",
+        "evidence_scope",
+        "estimands",
+        "outcome_vector",
+        "no_scalar_success_score",
+        "cost_denominators",
+        "obligation_credit_rule",
+        "old_proposal_cost",
+        "pilot",
+        "scenarios",
+        "failure_attribution",
+        "transfer_extension",
+        "complexity_ablation",
+        "confirmation_prerequisites",
+        "not_supported_by_this_plan",
+        "validation_scope",
+        "relationship_to_mechanisms"
+      ],
+      "exact_url_string_occurrences": 0
+    },
+    {
+      "path": "west/practitioner-views/sources.json",
+      "sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+      "bytes": 16647,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "version",
+        "as_of",
+        "scope",
+        "runtime_experiments_run",
+        "model_api_calls",
+        "source_policy",
+        "views",
+        "sources",
+        "excluded_candidates"
+      ],
+      "exact_url_string_occurrences": 13,
+      "snapshot": "inputs/west/practitioner-views/sources.json"
+    },
+    {
+      "path": "west/sources.json",
+      "sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+      "bytes": 40680,
+      "classification": "PRIMARY_SOURCE_CATALOG",
+      "reason": "Contains explicit sources[] evidence entries.",
+      "top_level_keys": [
+        "schema_version",
+        "research_line",
+        "version",
+        "as_of",
+        "method",
+        "sources"
+      ],
+      "exact_url_string_occurrences": 44,
+      "snapshot": "inputs/west/sources.json"
+    }
+  ]
+}

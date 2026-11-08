@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="58f627211cbe">
+<title>west 首轮重点复核包</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#1-审批-恢复与外部效果">1. 审批、恢复与外部效果</a></li><li class="l2"><a href="#2-会话-执行与环境必须分开">2. 会话、执行与环境必须分开</a></li><li class="l2"><a href="#3-程序完成-评分通过和产物可取是三个事实">3. 程序完成、评分通过和产物可取是三个事实</a></li><li class="l2"><a href="#4-权限和上下文不是同一层">4. 权限和上下文不是同一层</a></li><li class="l2"><a href="#5-员工公开取舍与归属">5. 员工公开取舍与归属</a></li><li class="l2"><a href="#6-v0-1-1-新增优先复核">6. v0.1.1 新增优先复核</a></li><li class="l2"><a href="#7-供总稿直接核对的状态边界">7. 供总稿直接核对的状态边界</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>west 首轮重点复核包</h1>
+</header>
+<p>访问日期：2026-11-08 UTC。以下结论已读正文，等待 root 重新打开；不表示运行验证。</p>
+<h2 id="1-审批-恢复与外部效果">1. 审批、恢复与外部效果</h2>
+<p><a href="https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md">OpenAI Agents SDK HITL，固定提交</a>，定位 <code>Keep approval state on the server</code>、<code>Recovering after a crash</code>：RunState 反序列化不认证快照或提交人；审批不能保证 exactly-once。目标端原子幂等或权威对账仍由应用负责；结果未知时不自动重放。它直接反驳“持久审批快照足以安全重试”。</p>
+<p><a href="https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs">Codex 用户验证协议，固定提交</a>，定位 <code>UserVerificationCancelResponse</code>：ACK 仅确认取消信号，原生工作可能尚未退出，完成效果不回滚。<strong>只适用于该实验性原生用户验证 RPC</strong>，不能泛化成所有 Codex 工具取消协议。</p>
+<p><a href="https://developers.openai.com/api/docs/guides/agents-api/errors">OpenAI 托管 Agents API 恢复</a>，定位 <code>Recovery</code>：stream 断连不确定 turn 最终状态；失败 turn 可能已经改文件或调用外部工具，重试前应查已发生作用。</p>
+<h2 id="2-会话-执行与环境必须分开">2. 会话、执行与环境必须分开</h2>
+<p><a href="https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle">OpenAI sandbox lifecycle</a>，定位 <code>Keep the environment available or stop it</code>、<code>Reconnect after a disconnect</code>：idle 单个事件不足以安全关机；中途断连可能令工具失败但 turn 仍完成；不会自动重启被杀命令。环境控制器应处理签名 webhook，入队后回成功，再读当前状态，不能按过时事件直接启动资源。</p>
+<p><a href="https://www.anthropic.com/research/managed-agents">Anthropic Managed Agents 架构原文</a>，2026-04-08：session 日志、harness 和 sandbox 分离，harness 可从日志重建；sandbox 故障作为工具错误反馈后可另建。这里的可恢复不保证原进程继续或外部效果原子提交。</p>
+<h2 id="3-程序完成-评分通过和产物可取是三个事实">3. 程序完成、评分通过和产物可取是三个事实</h2>
+<p><a href="https://platform.claude.com/docs/en/managed-agents/workflow-runs">Claude Workflow runs</a>，定位 <code>Run events</code>、<code>Interrupt a session with runs open</code>：<code>completed</code> 只说明工作流结束，线程失败仍可被程序处理后完成；<code>phase_ended</code> 不证明通过；<code>workflow_run.error</code> 不是终止事件。主线程 interrupt 不结束 workflow run，后者可能继续或暂停。</p>
+<p><a href="https://platform.claude.com/docs/en/managed-agents/define-outcomes">Claude Define outcomes</a>：独立上下文 grader 按 rubric 评分，达到目标或用完有限迭代后结束。<code>satisfied</code> 是评分器输出；产物在 session idle 后可能仍需等待上传才可列出。我们的推断：验收应绑定可取得的产物、验收规则版本与证据，不能仅映射 <code>idle</code> 或 <code>satisfied</code>。</p>
+<h2 id="4-权限和上下文不是同一层">4. 权限和上下文不是同一层</h2>
+<p><a href="https://platform.claude.com/docs/en/managed-agents/permission-policies">Claude Managed Agents permission policies</a>：<code>auto</code> 不是人工检查点；自定义工具由应用执行，不受该策略代管。将不可信终端用户内容转为 <code>user.message</code> 会使自动评估视为调用方意图；要由应用守住身份与权限边界。</p>
+<p><a href="https://code.claude.com/docs/en/memory">Claude Code memory</a>：CLAUDE.md 与 auto memory 属上下文，不是强制配置。主题记忆按需读取，索引有启动读取上限。我们的推断：Record 上下文组装不能授予动作权限。</p>
+<h2 id="5-员工公开取舍与归属">5. 员工公开取舍与归属</h2>
+<p><a href="https://www.turingpost.com/p/bolincodex">Michael Bolin 原始访谈转录</a>，2026-03-14，定位访谈正文的 <code>Repositories in an Agentic World</code>、<code>What Is the Harness?</code>：工具和模型训练分布协同；模型行为判断与宿主 OS 权限限制分层。此条为员工公开个人解释，不是 API 合同。身份交叉依据：<a href="https://openai.com/index/unrolling-the-codex-agent-loop/">OpenAI 官方 2026-01-23 作者栏</a>标其为 Member of Technical Staff；访谈主持方称其开源 Codex 负责人。未据此断言其截至 11 月仍任同一职位。</p>
+<p><a href="https://www.anthropic.com/research/harness-design-long-running-apps">Prithvi Rajasekaran 官方署名实验报告</a>，2026-03-24，正文注明 Labs team：逐个消融 harness 组件；模型升级后撤去 sprint 结构，保留有收益的 planner/evaluator。属于署名官方工程报告，不冒充独立个人发布或普适收益证明。</p>
+<h2 id="6-v0-1-1-新增优先复核">6. v0.1.1 新增优先复核</h2>
+<ul><li><a href="https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals">OpenAI automatic review</a>：核对“Choose a review mode”和“Change the review mode”。默认none不转人工；模式变更要求idle和输入稳定，仍应处理竞态409；root/subagent均适用。</li><li><a href="https://developers.openai.com/api/docs/guides/agents-api/environments/security">OpenAI sandbox security</a>：核对“Separate credentials”。托管控制面有应用权限与executor连接凭据区分，不能写成只提供session/runtime；最终用户业务对象授权仍是另一层。</li><li><a href="https://platform.claude.com/docs/en/managed-agents/memory">Claude managed memory</a>：核对“Safe content edits”“Audit memory changes”“Redact a version”。已有版本/CAS/审计和历史内容清除；别把这些写成Record独有，也别把正文immutable解读为内容永久不可删。</li><li><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory">Claude self-hosted memory</a>：核对“How the worker handles memory”和“Read-only stores and conflicts”，尤其工具成功但同步冲突覆盖且代理不收错；仅适用自托管副本。</li><li><a href="https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/transcript_mirror_batcher.py#L188">Claude mirror固定源码</a>：timeout可能迟到落库故不重试；一般异常另有最多3次尝试；不能写成所有失败都不重试。</li><li><a href="https://www.anthropic.com/research/harness-design-long-running-apps">Rajasekaran全文</a>：复核“The architecture”“Removing the sprint construct”“Results from the updated harness”。v0.1.1正文已列公开样例和局限；没有宣称可复现统计基准。末尾QA是取消每sprint检查，不是整个任务只一次检查。</li></ul>
+<h2 id="7-供总稿直接核对的状态边界">7. 供总稿直接核对的状态边界</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">已收到信号</th><th style="text-align:left">不能直接推出</th><th style="text-align:left">应补的关联观察或契约</th></tr></thead><tbody><tr><td style="text-align:left">取消ACK</td><td style="text-align:left">worker已退出 / effect已回滚</td><td style="text-align:left">停止确认、效果对账各自记录；O12仅验证特定RPC</td></tr><tr><td style="text-align:left">工具timeout</td><td style="text-align:left">目标尚未提交</td><td style="text-align:left">A21有取消后IO仍落库的代码解释；未知状态不得自动重复</td></tr><tr><td style="text-align:left">memory write成功</td><td style="text-align:left">权威store已接受该版本</td><td style="text-align:left">A20本地同步冲突反例；需要服务端版本确认</td></tr><tr><td style="text-align:left">session持久化</td><td style="text-align:left">文件/进程/外部效果可恢复</td><td style="text-align:left">分别声明恢复范围；A01/O10</td></tr><tr><td style="text-align:left">workflow completed</td><td style="text-align:left">必需thread与目标全部通过</td><td style="text-align:left">查看内部失败处理及目标证据；A08</td></tr><tr><td style="text-align:left">grader satisfied</td><td style="text-align:left">人或业务已接受</td><td style="text-align:left">规则版本、可取产物和接受主体；A09；此设计是我们的推断</td></tr><tr><td style="text-align:left">API身份认证成功</td><td style="text-align:left">当前用户可操作业务对象</td><td style="text-align:left">应用授权入口；O17/A10</td></tr><tr><td style="text-align:left">记忆版本被清除</td><td style="text-align:left">所有依赖结论自动失效</td><td style="text-align:left">本轮未核到该契约，不能当产品不支持的证明</td></tr></tbody></table></div>
+<p>这些表项中“应补”属于设计推断，不是上游接口保证。固定源码取消注释正确位置为 <code>user_verification.rs:166–167</code>。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

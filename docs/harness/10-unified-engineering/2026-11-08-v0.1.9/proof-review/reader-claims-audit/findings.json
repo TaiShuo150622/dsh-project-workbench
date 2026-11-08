@@ -1,0 +1,87 @@
+{
+  "round": "R09",
+  "review_type": "frozen_reader_claims_model_review",
+  "declared_model": "gpt-6-astra",
+  "human_review_claimed": false,
+  "new_experiments": false,
+  "later_M07_C07_edits_reviewed": false,
+  "categories": {
+    "应修": 2,
+    "可澄清": 2,
+    "正确": 4
+  },
+  "items": [
+    {
+      "id": "RC01",
+      "category": "应修",
+      "severity": "medium",
+      "location": "主稿 v0.1.3:107",
+      "claim": "再次读回不能单独保障提交时条件",
+      "evidence_or_counterexample": "先读到有效，之后撤权/删除，再提交；与 FORMAL:65 不一致。",
+      "minimal_action": "将读回限为更新观察；强保证需目标原子条件检查或稳定性假设。"
+    },
+    {
+      "id": "RC02",
+      "category": "应修",
+      "severity": "low",
+      "location": "FORMAL_MODEL.md:216; W07 taskbook:51",
+      "claim": "当前解释入口仍指向原勘误报告",
+      "evidence_or_counterexample": "主稿与 EVIDENCE 已指修正版，这两条未标历史链接仍回旧 REPORT。",
+      "minimal_action": "补当前修正版入口，原报告标历史保留，不追改 inputs/hash。"
+    },
+    {
+      "id": "RC03",
+      "category": "可澄清",
+      "severity": "low",
+      "location": "ARCHITECTURE.md:157",
+      "claim": "点击依据不授予全部原件读取权",
+      "evidence_or_counterexample": "合法汇总消费者可能没有原文访问权；原句可解释为受限依据页。",
+      "minimal_action": "注明可授权依据/验证结论与不可读范围。"
+    },
+    {
+      "id": "RC04",
+      "category": "可澄清",
+      "severity": "low",
+      "location": "主稿 v0.1.3:281; EVIDENCE.md:13,17",
+      "claim": "安全检查完成不等于业务完成",
+      "evidence_or_counterexample": "安全性可以容许永久等待；文本现有无活性限定正确。",
+      "minimal_action": "首次术语附一句有限图坏状态检查，非最终送达/产品验收。"
+    },
+    {
+      "id": "RC05",
+      "category": "正确",
+      "severity": "none",
+      "location": "主稿:186,280; EVIDENCE:9-10; FORMAL:98-102,170-176",
+      "claim": "两项 Lean 一般证明前提与结论相称",
+      "evidence_or_counterexample": "源码 SHA 与既有独立编译对象相同，世界精化/费用/依赖提取边界保留。",
+      "minimal_action": "保留限定，无需重跑。"
+    },
+    {
+      "id": "RC06",
+      "category": "正确",
+      "severity": "none",
+      "location": "主稿:281; EVIDENCE:12-19; REPRODUCE:TLA+",
+      "claim": "14=5+9口径准确",
+      "evidence_or_counterexample": "14原始日志 hash 一致；3+1+1 正向、5+2+2 反例。",
+      "minimal_action": "不相加状态作为产品覆盖率。"
+    },
+    {
+      "id": "RC07",
+      "category": "正确",
+      "severity": "none",
+      "location": "主稿:282,286; FORMAL:216,218; W07:51,101",
+      "claim": "RF01/RF03是映射差异而非一概产品缺陷",
+      "evidence_or_counterexample": "不可变尝试/rebind是语义选择；整体撤回探针不是独立 OR 撤回反例。",
+      "minimal_action": "保持适配责任与表达能力分类。"
+    },
+    {
+      "id": "RC08",
+      "category": "正确",
+      "severity": "none",
+      "location": "主稿:316-318,336-340; W05:67,85,95; W07:11,35-37,96-107",
+      "claim": "阶段终点/成本分母/七切片状态正确",
+      "evidence_or_counterexample": "12-run未执行；7片29检查全proposed，正常终点覆盖干预和交接，失败成本不丢。",
+      "minimal_action": "保持未运行与非确认性口径。"
+    }
+  ]
+}

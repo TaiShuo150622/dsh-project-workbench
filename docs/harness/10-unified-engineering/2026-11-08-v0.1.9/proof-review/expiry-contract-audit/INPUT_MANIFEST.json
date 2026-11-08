@@ -1,0 +1,101 @@
+{
+  "captured_at_utc": "2026-11-08T07:43:36.515463+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "snapshot": "inputs/FORMAL_MODEL.md",
+      "bytes": 31904,
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/ExpiryContract.tla",
+      "snapshot": "inputs/formal-spec/ExpiryContract.tla",
+      "bytes": 2637,
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/README.md",
+      "snapshot": "inputs/formal-spec/README.md",
+      "bytes": 5287,
+      "sha256": "65981f634c8f4d109d34fc64257184f7de569cb8e4bfdbae2751bec4d78f863d"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-admission.cfg",
+      "snapshot": "inputs/formal-spec/expiry-admission.cfg",
+      "bytes": 112,
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-commit.cfg",
+      "snapshot": "inputs/formal-spec/expiry-commit.cfg",
+      "bytes": 109,
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-none.cfg",
+      "snapshot": "inputs/formal-spec/expiry-none.cfg",
+      "bytes": 107,
+      "sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/admission.log",
+      "snapshot": "inputs/formal-spec/expiry-results/admission.log",
+      "bytes": 3277,
+      "sha256": "303ed36a305da6187d8b21384a6c73ca9cbccb576ef13afcde8fe95bf7441c43"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/commit.log",
+      "snapshot": "inputs/formal-spec/expiry-results/commit.log",
+      "bytes": 1531,
+      "sha256": "0581996803e4c67811795c0af849d5e4853b5de0205fb914836f08c726df2ce9"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/initial-parse-failure/admission.log",
+      "snapshot": "inputs/formal-spec/expiry-results/initial-parse-failure/admission.log",
+      "bytes": 1188,
+      "sha256": "9922ee8230b07e853b70a651ce0c123c8c081a52bf99970df8b94f45076beecf"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/initial-parse-failure/commit.log",
+      "snapshot": "inputs/formal-spec/expiry-results/initial-parse-failure/commit.log",
+      "bytes": 1186,
+      "sha256": "b50a76ddac60ffecd098b4cfd7ea1e7841754afa3fa5cb6e18db9106cc02d2c0"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/initial-parse-failure/none.log",
+      "snapshot": "inputs/formal-spec/expiry-results/initial-parse-failure/none.log",
+      "bytes": 1187,
+      "sha256": "009e2e572bb1bc7099d6c0602e88269e5406a742e863e1e7c80b627a8eff4b0a"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "snapshot": "inputs/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "bytes": 3203,
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/none.log",
+      "snapshot": "inputs/formal-spec/expiry-results/none.log",
+      "bytes": 3277,
+      "sha256": "3b1380f323a2f219ceadeba59392ac4cbfe8d0aa2a6645d553306f37329894db"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/receipt.json",
+      "snapshot": "inputs/formal-spec/expiry-results/receipt.json",
+      "bytes": 3986,
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/run_expiry.py",
+      "snapshot": "inputs/formal-spec/run_expiry.py",
+      "bytes": 2151,
+      "sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "snapshot": "inputs/适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "bytes": 19729,
+      "sha256": "32e2fc71df489af9d8558743fff51ff5966a92a7f69f2acf7e363671345ab7bd"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "review_id": "R-05",
+  "review_type": "independent_model_source_and_refinement_statement_review",
+  "human_review": false,
+  "input_manifest": "INPUT_MANIFEST.json",
+  "independent_product_execution": false,
+  "existing_twenty_tests_rerun": false,
+  "original_eight_probes_rerun": false,
+  "overall": "Narrow mappings and acceptanceRevision analysis are accurate. RF03 needs representation-gap classification; the whole-completion withdrawal trace is not a source-only OR-retraction counterexample. No demonstrated production/authentication/world-effect claim is supported by these synthetic probes.",
+  "findings": [
+    {
+      "id": "RM01",
+      "classification": "counterexample_label_requires_typed_operation_alignment",
+      "severity": "low",
+      "locations": ["inputs/refinement-probes.mjs:75-93", "inputs/REPORT.md:60-66", "inputs/inputs/record/kernel.mjs:236-250"],
+      "title": "RF03 withdraws the conclusion, not only the first observation source",
+      "reason": "The reason string has no typed source-retraction semantics. Withdrawing a whole completion may legitimately invalidate it even in a system with alternative support.",
+      "supported_conclusion": "The S1 native API/projection does not materialize independently retractable OR witnesses; the second observation remains journal data rather than another active native support item.",
+      "unsupported_conclusion": "An implemented OR algorithm incorrectly invalidated w2 when only w1 was withdrawn.",
+      "recommendation": "Describe five observed mapping differences, with RF03 explicitly a representation gap. Do not count it as a product bug or an OR algorithm failure.",
+      "root_response": "Root agreed to use the narrower classification in the synthesis; author files were not modified by this reviewer."
+    }
+  ],
+  "probe_assessments": {
+    "RF01": "Creation-spec binding is absent. Automatic retirement on every newer attempt is a separate policy choice, not an inherent general-model requirement.",
+    "RF02": "Ordinary command history binding depends on the adapter route; a correctly bound adapter is not refuted by direct wrong-instance calls.",
+    "RF03": "Native support representation gap; whole-conclusion withdrawal is not source-only retraction.",
+    "RF04": "New-action precheck and existing-reservation dispatch are distinct stages; adapter naming and use can preserve both.",
+    "RF05": "Default current-result does not establish independently observed q-scoped usability; the probe does not show a real artifact was unavailable."
+  },
+  "acceptance_revision_assessment": {
+    "submission_compare_and_set_counter": true,
+    "accepted_record_stores_preincrement_value": true,
+    "current_applicability_compares_counter": false,
+    "report_distinction_accurate": true,
+    "derivation": "Accept token counter 0; store acceptance counter 0; increment task counter to 1; current-acceptance remains true while a new request using token 0 is stale.",
+    "historical_exact_retry_is_new_authorization": false
+  },
+  "minimal_bridge_design": {
+    "name": "History-bound authenticated command gateway",
+    "scope": "One host, one history, one private synchronous S1 kernel instance; no real external write in this slice",
+    "kernel_change_required": false,
+    "contracts": ["historyId and exact request binding", "trusted host principal and current role mapping", "historical receipt versus current query distinction", "new-action precheck versus dispatch-intent distinction"],
+    "acceptance_checks": ["Reject colliding task IDs in the wrong history before apply", "Reject caller-supplied role spoofing", "Exact retry creates no second admission/dispatch intent", "Existing reservation can follow dispatch semantics despite new-action precheck waiting", "Acceptance CAS increment does not invalidate the just-stored decision"],
+    "blockers": ["No selected trusted host identity source", "Kernel bypass paths remain", "History ownership and current role policy undefined"],
+    "not_claimed": ["immutable versioned attempts", "general OR support", "q-scoped usability", "crash durability", "real target effects"]
+  },
+  "product_or_author_files_modified": false,
+  "commit_or_push": false,
+  "network_or_model_api_calls": false
+}

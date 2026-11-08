@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="ac9512cd2e24">
+<title>R12 精确前提与迁移检查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R12 精确前提与迁移检查</h1>
+</header>
+<p>以下是方案成立所需条件，不是程序证明了现实条件成立。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">项目</th><th style="text-align:left">有限模型采用的语义</th><th style="text-align:left">真实迁移要检查什么</th></tr></thead><tbody><tr><td style="text-align:left">身份</td><td style="text-align:left">单一固定 o1/action1/generation1，无 ID 重放</td><td style="text-align:left">handoff/transfer ID、义务身份与 ownerEpoch，禁止同 ID 换 payload</td></tr><tr><td style="text-align:left">owner</td><td style="text-align:left">一处原子变更，模型仅当前 owner 可发起终态观察</td><td style="text-align:left">原 owner 的管理命令需 fencing/CAS；旧外部请求不因此停止</td></tr><tr><td style="text-align:left">budgetId</td><td style="text-align:left">内部可重新归属的政策额度；U 不迁移</td><td style="text-align:left">原政策是否允许移动全部未结算费用；不允许则只换 owner</td></tr><tr><td style="text-align:left">世界负担</td><td style="text-align:left">unknown 时总未结算真上界固定为 2；隐藏消费可从 0 增到 2</td><td style="text-align:left">r 覆盖已花未报与仍可能发生的未来消费；上界变动需先准入</td></tr><tr><td style="text-align:left">预留</td><td style="text-align:left">源/目标 claim 持久；目标 claim 只有提交前可 abort</td><td style="text-align:left">不可被独立 TTL、重启或错误清理释放；绑定 boundVersion</td></tr><tr><td style="text-align:left">提交</td><td style="text-align:left">一处权威原子切换有效预算；已提交不回滚</td><td style="text-align:left">与目标预留取消有共同排序或等价协议；跨服务未实现</td></tr><tr><td style="text-align:left">结算</td><td style="text-align:left">转移期间暂停；结算一次，旧 U 只增不改归属</td><td style="text-align:left">部分结算、迟到账单与并发迁移需新精化；不能直接套此模型</td></tr><tr><td style="text-align:left">Grant</td><td style="text-align:left">receiver_resolve 是固定义务/操作的当前有效能力位；源能力假定有效</td><td style="text-align:left">身份认证、Grant 链、操作/资源范围、有效期、政策依赖、消费语境</td></tr><tr><td style="text-align:left">终态</td><td style="text-align:left">授权后的原子动作直接取得排除未来费用的权威终态事实</td><td style="text-align:left">Grant 不产生事实；真实目标查询或终止证据必须具有该语义</td></tr><tr><td style="text-align:left">crash</td><td style="text-align:left">控制器全部字段持久恢复，旧世界消费仍可继续</td><td style="text-align:left">不是磁盘/掉电证明；真实日志/事务需专门验证</td></tr><tr><td style="text-align:left">进展</td><td style="text-align:left">无 fairness/期限；允许容量不足、安全等待</td><td style="text-align:left">收尾容量、接收能力、超时/转派及下一触发由 C08 条件另保障</td></tr></tbody></table></div>
+<p>最小实施建议仅为设计：同 budgetId 更新 owner/接纳类型，保留 obligationId、claim、证据水位与未决效果；按当前操作检查 Grant。先不要引入跨预算变更。验收至少包含：接管前后原预留不变，unknown 费用上报归于原义务，撤权后不执行，对方只能保管/转派时不声称有解决能力。所有产品实施仍为 NOT_RUN。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "scope": "Final reading-build outputs and pre-export render receipt to packaged view identity mappings only",
+  "generated_receipts": 70,
+  "offline_view_identities": 18,
+  "errors": [],
+  "pass": true
+}

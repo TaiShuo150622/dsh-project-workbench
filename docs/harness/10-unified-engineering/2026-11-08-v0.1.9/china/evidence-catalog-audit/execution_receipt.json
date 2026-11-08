@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-11-08T08:11:42.370337+00:00",
+  "finished_at_utc": "2026-11-08T08:11:42.547893+00:00",
+  "command": [
+    "python3",
+    "audit_sources.py",
+    "<integration>/docs/research/harness-20261107"
+  ],
+  "network_requests": 0,
+  "source_json_modified": false,
+  "captured_catalog_or_review_files": 14,
+  "source_files_changed_during_audit": [],
+  "script_sha256": "0f0c047f0b1b0d29d1b10dca798a48806df22e37b665ccbd3e3f8e3a8952377a",
+  "summary": {
+    "json_files_scanned": 110,
+    "primary_catalog_files": 10,
+    "root_cross_review_files": 4,
+    "excluded_other_json_files": 96,
+    "source_entry_count": 215,
+    "explicit_nested_primary_documents": 6,
+    "explicit_paired_primary_documents": 1,
+    "primary_document_url_occurrences": 222,
+    "source_entry_exact_url_unique": 200,
+    "source_entry_duplicate_url_excess": 15,
+    "primary_document_exact_url_unique": 205,
+    "primary_document_duplicate_url_excess": 17,
+    "primary_document_duplicate_url_groups": 12,
+    "all_catalog_url_string_occurrences": 247,
+    "all_catalog_exact_url_string_unique": 222,
+    "root_review_entries": 38,
+    "root_review_exact_url_unique": 37,
+    "root_only_url_candidates": 7,
+    "combined_primary_document_and_root_review_exact_url_unique": 225,
+    "excluded_or_failed_candidate_entries": 3,
+    "explicit_body_unread_or_inaccessible_records": 3,
+    "short_id_collision_groups": 1,
+    "identity_binding_edges": 21,
+    "explicit_person_view_groups": 6,
+    "missing_or_unspecified_fields": {
+      "publication_date": 140,
+      "entry_reading_status": 99,
+      "locator": 52,
+      "attribution": 1,
+      "evidence_nature": 6
+    },
+    "root_only_sources_without_catalog_or_same_work_match": 4,
+    "unadopted_candidates_inside_sources_array": 1,
+    "per_catalog_source_entries": {
+      "china/sources.json": 57,
+      "foundations/sources.json": 12,
+      "mechanisms/cordis-boundary/sources.json": 15,
+      "mechanisms/lifecycle-migration/sources.json": 6,
+      "mechanisms/sources.json": 41,
+      "mechanisms/work-improvement/sources.json": 10,
+      "west/authority-scope/sources.json": 5,
+      "west/context-evaluation/sources.json": 18,
+      "west/practitioner-views/sources.json": 12,
+      "west/sources.json": 39
+    }
+  },
+  "source_root_absolute_not_stored": true
+}

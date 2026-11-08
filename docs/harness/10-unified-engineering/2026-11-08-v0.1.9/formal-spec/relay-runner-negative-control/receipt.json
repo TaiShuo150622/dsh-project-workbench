@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-11-08T08:26:41.319658+00:00",
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "isolated_config_mutation": "memory INVARIANTS TypeOK NoLostSent -> INVARIANTS Init",
+  "observed_invariant": [
+    "Init"
+  ],
+  "runner_rejected_wrong_invariant": true,
+  "runner_sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3"
+}

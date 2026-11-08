@@ -1,0 +1,1114 @@
+{
+  "generated_metadata_count": 70,
+  "generated_metadata": [
+    {
+      "html": "ARCHITECTURE-离线阅读版.html",
+      "metadata": "ARCHITECTURE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "BASELINE-离线阅读版.html",
+      "metadata": "BASELINE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "DESIGN_RECONCILIATION-离线阅读版.html",
+      "metadata": "DESIGN_RECONCILIATION-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "EVIDENCE-离线阅读版.html",
+      "metadata": "EVIDENCE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "FORMAL_MODEL-离线阅读版.html",
+      "metadata": "FORMAL_MODEL-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "README-离线阅读版.html",
+      "metadata": "README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "REPRODUCE-离线阅读版.html",
+      "metadata": "REPRODUCE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "SOURCE_UPDATES-离线阅读版.html",
+      "metadata": "SOURCE_UPDATES-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/bounded-models/README-离线阅读版.html",
+      "metadata": "china/bounded-models/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/bounded-models/TRACES-离线阅读版.html",
+      "metadata": "china/bounded-models/TRACES-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/budget-proof/README-离线阅读版.html",
+      "metadata": "china/budget-proof/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/consolidated-sources/README-离线阅读版.html",
+      "metadata": "china/consolidated-sources/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/consolidated-sources/SOURCE_INDEX-离线阅读版.html",
+      "metadata": "china/consolidated-sources/SOURCE_INDEX-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/evidence-catalog-audit/README-离线阅读版.html",
+      "metadata": "china/evidence-catalog-audit/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/progress-conditions/README-离线阅读版.html",
+      "metadata": "china/progress-conditions/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/progress-conditions/TRACES-离线阅读版.html",
+      "metadata": "china/progress-conditions/TRACES-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/public-brief/README-current-离线阅读版.html",
+      "metadata": "china/public-brief/README-current-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/public-brief/README-离线阅读版.html",
+      "metadata": "china/public-brief/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/public-brief/登记文案-v0.1.0-离线阅读版.html",
+      "metadata": "china/public-brief/登记文案-v0.1.0-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/public-brief/登记文案-v0.1.1-离线阅读版.html",
+      "metadata": "china/public-brief/登记文案-v0.1.1-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/public-brief/编写依据与状态边界-离线阅读版.html",
+      "metadata": "china/public-brief/编写依据与状态边界-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/record-refinement/README-current-离线阅读版.html",
+      "metadata": "china/record-refinement/README-current-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/record-refinement/README-离线阅读版.html",
+      "metadata": "china/record-refinement/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/record-refinement/REPORT-v0.1.1-离线阅读版.html",
+      "metadata": "china/record-refinement/REPORT-v0.1.1-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/record-refinement/REPORT-离线阅读版.html",
+      "metadata": "china/record-refinement/REPORT-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "china/record-refinement/TRACES-离线阅读版.html",
+      "metadata": "china/record-refinement/TRACES-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "dag-proof/README-离线阅读版.html",
+      "metadata": "dag-proof/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "formal-spec/README-离线阅读版.html",
+      "metadata": "formal-spec/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "formal-spec/RELAY_README-离线阅读版.html",
+      "metadata": "formal-spec/RELAY_README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/conformance/README-离线阅读版.html",
+      "metadata": "mechanisms/conformance/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/conformance/review-离线阅读版.html",
+      "metadata": "mechanisms/conformance/review-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/cordis-boundary/READING_COVERAGE-离线阅读版.html",
+      "metadata": "mechanisms/cordis-boundary/READING_COVERAGE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/cordis-boundary/status-离线阅读版.html",
+      "metadata": "mechanisms/cordis-boundary/status-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/durability-boundary/README-离线阅读版.html",
+      "metadata": "mechanisms/durability-boundary/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/formal-model-review-离线阅读版.html",
+      "metadata": "mechanisms/formal-model-review-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/lifecycle-migration/README-离线阅读版.html",
+      "metadata": "mechanisms/lifecycle-migration/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/relay-code-probes/README-离线阅读版.html",
+      "metadata": "mechanisms/relay-code-probes/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "mechanisms/work-improvement/README-离线阅读版.html",
+      "metadata": "mechanisms/work-improvement/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/TASK-离线阅读版.html",
+      "metadata": "proof-review/TASK-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/expiry-contract-audit/REPAIR_REVIEW-离线阅读版.html",
+      "metadata": "proof-review/expiry-contract-audit/REPAIR_REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/expiry-contract-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/expiry-contract-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/general-proof-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/general-proof-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/model-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/model-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/portable-package-audit/README-离线阅读版.html",
+      "metadata": "proof-review/portable-package-audit/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/portable-package-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/portable-package-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/progress-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/progress-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/reader-claims-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/reader-claims-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/record-mapping-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/record-mapping-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/relay-durability-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/relay-durability-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/snapshot-errata-check/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/snapshot-errata-check/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "proof-review/work-policy-audit/REVIEW-离线阅读版.html",
+      "metadata": "proof-review/work-policy-audit/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "rendering/README-离线阅读版.html",
+      "metadata": "rendering/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "root-model-replay/TRACES-离线阅读版.html",
+      "metadata": "root-model-replay/TRACES-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/architecture-reader-review/READING_ROUTE-离线阅读版.html",
+      "metadata": "west/architecture-reader-review/READING_ROUTE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/architecture-reader-review/REVIEW-离线阅读版.html",
+      "metadata": "west/architecture-reader-review/REVIEW-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/authority-scope/amendments-离线阅读版.html",
+      "metadata": "west/authority-scope/amendments-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/authority-scope/contract-cases-离线阅读版.html",
+      "metadata": "west/authority-scope/contract-cases-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/authority-scope/review-packet-离线阅读版.html",
+      "metadata": "west/authority-scope/review-packet-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/context-evaluation/evaluation-contract-离线阅读版.html",
+      "metadata": "west/context-evaluation/evaluation-contract-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/context-evaluation/review-packet-离线阅读版.html",
+      "metadata": "west/context-evaluation/review-packet-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/decision-brief/MEMO-离线阅读版.html",
+      "metadata": "west/decision-brief/MEMO-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/evaluation-design-review/README-离线阅读版.html",
+      "metadata": "west/evaluation-design-review/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/evaluation-design-review/review-离线阅读版.html",
+      "metadata": "west/evaluation-design-review/review-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/historical-coverage/COVERAGE-离线阅读版.html",
+      "metadata": "west/historical-coverage/COVERAGE-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/historical-coverage/README-离线阅读版.html",
+      "metadata": "west/historical-coverage/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/implementation-taskbook/README-离线阅读版.html",
+      "metadata": "west/implementation-taskbook/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/practitioner-views/review-packet-离线阅读版.html",
+      "metadata": "west/practitioner-views/review-packet-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/review-packet-离线阅读版.html",
+      "metadata": "west/review-packet-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    },
+    {
+      "html": "west/trusted-entry-map/README-离线阅读版.html",
+      "metadata": "west/trusted-entry-map/README-离线阅读版.reading-build.json",
+      "final_sha_matches": true,
+      "source_sha_matches": true,
+      "stage_role_correct": true,
+      "has_pre_transform_sha": true,
+      "post_transforms": [
+        "data favicon",
+        "internal reader links resolved to available HTML views"
+      ]
+    }
+  ],
+  "all_reading_build_count": 133,
+  "other_historical_reading_metadata": [
+    "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-阅读构建.reading-build.json",
+    "mechanisms/机制对照与反例讨论稿-v0.1.0-阅读构建.reading-build.json",
+    "proof-review/portable-package-audit/inputs/ARCHITECTURE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/BASELINE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/DESIGN_RECONCILIATION-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/EVIDENCE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/FORMAL_MODEL-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/REPRODUCE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/bounded-models/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/bounded-models/TRACES-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/budget-proof/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/consolidated-sources/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/consolidated-sources/SOURCE_INDEX-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/evidence-catalog-audit/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/record-refinement/README-current-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/record-refinement/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/record-refinement/REPORT-v0.1.1-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/record-refinement/REPORT-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/china/record-refinement/TRACES-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/dag-proof/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/formal-spec/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/formal-spec/RELAY_README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/conformance/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/conformance/review-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/cordis-boundary/READING_COVERAGE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/cordis-boundary/status-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/durability-boundary/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/formal-model-review-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/lifecycle-migration/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/relay-code-probes/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/work-improvement/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/mechanisms/机制对照与反例讨论稿-v0.1.0-阅读构建.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/TASK-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/expiry-contract-audit/REPAIR_REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/expiry-contract-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/general-proof-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/model-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/reader-claims-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/record-mapping-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/relay-durability-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/snapshot-errata-check/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/proof-review/work-policy-audit/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/root-model-replay/TRACES-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/architecture-reader-review/READING_ROUTE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/architecture-reader-review/REVIEW-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/authority-scope/amendments-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/authority-scope/contract-cases-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/authority-scope/review-packet-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/context-evaluation/evaluation-contract-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/context-evaluation/review-packet-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/decision-brief/MEMO-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/evaluation-design-review/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/evaluation-design-review/review-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/historical-coverage/COVERAGE-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/historical-coverage/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/implementation-taskbook/README-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/practitioner-views/review-packet-离线阅读版.reading-build.json",
+    "proof-review/portable-package-audit/inputs/west/review-packet-离线阅读版.reading-build.json",
+    "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-阅读构建.reading-build.json",
+    "west/trusted-entry-map/MAP-阅读构建.reading-build.json",
+    "统一Harness工程与形式化基础讨论稿-v0.1.4-阅读构建.reading-build.json"
+  ],
+  "view_identity_count": 18,
+  "views": [
+    {
+      "receipt": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "e9f1822adbaa94a65f54eabb3c2ed9a8709b49b9f9c04cb9584b9415e847b92b",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "3440d04610e4ba394e109d105aaf5b2a7bd6db5c9282c3ce16ad28984675e6f9",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "d69a5ae716c6f3798ba438c7a2aa88d98a5d59ae6ec3c0f6c9f33a981318eea9",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "31bf5ed3c242d214aa34efcbb2c0df965328cd83c25e6512f59f90a500e7c734",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "dbce4d52cbe2bdf0cf40567485c4c6d0e6e3828de7ceced0dc68907f3d60346b",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "8300819cc8e7bf3f76733aaaecfd8f838e72add6ca00a94bfb69223770d6a8a0",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "00f87e33be7de082cbfe1c639e40f7933f52156c6a7b5ce8873edc8a53031317",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "8f55a8bf908c07463be65f213213661a8785eaa62fd4ac173a55fcecd5fa2413",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "0814280fb5bfb4ea302803b73912a06779cc8301008740d8b646951d6ab8aea1",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "html": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "947e6595c3c5258226e0a836d12a841db1b332719e3341d2a975885e9fde85ca",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "109ec00e5d2160045d5c954a40f647b217ab1eef68f72a0073ece58a4ed509cb",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "html": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "6a2ba09cea22fca6fe3c63edc49893f3521b66fd4ec69f1733253e5f805f745e",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "html": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "29380b17e6915b858bb7e482da2e2665e30edaaa49077f788141d0f4d11f27e0",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/trusted-entry-map/MAP-离线阅读版.render-receipt.json",
+      "html": "west/trusted-entry-map/MAP-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8",
+      "final_differs_from_original": false,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "html": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "d8868ccf5e1d26a1f5641c564959ab788e05ece4eb46b8cd40cc67707fd96ced",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.render-receipt.json",
+      "html": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "44e6e88ebea403440c8127ff9d25cec2355f85e6f6f68cc059894d5e927d3954",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.render-receipt.json",
+      "html": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "53e5ba88236921f610adab1c8d46572666d78245d40f8f5fbd2477d1f6d69aa6",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    },
+    {
+      "receipt": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "html": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html",
+      "package_html_sha_matches": true,
+      "receipt_pre_export_sha_matches": true,
+      "pre_export_matches_derivation_original_html": true,
+      "original_html_available_and_matches": true,
+      "original_html_sha256": "c35e0acd5c6969b6ef12df0afd1a3dc9daf3d224bdc226d36c4edefa5456900e",
+      "final_differs_from_original": true,
+      "role": "historical_pre_export_render_stage"
+    }
+  ],
+  "all_18_receipts_covered_by_view_mapping": true,
+  "render_receipt_count": 18
+}

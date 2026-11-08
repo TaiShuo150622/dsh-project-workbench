@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="f4e6084b7734">
+<title>R-02：有限模型程序与 TLA+ 契约的独立模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#固定输入和执行证据">固定输入和执行证据</a></li><li class="l2"><a href="#唯一需修订的验证表述-ma01">唯一需修订的验证表述：MA01</a></li><li class="l2"><a href="#python-忠实性-计数和最短性">Python：忠实性、计数和最短性</a></li><li class="l2"><a href="#tla-动作赋值-有限性与效果语义">TLA+：动作赋值、有限性与效果语义</a></li><li class="l2"><a href="#核对-root-的六份-tlc-日志">核对 root 的六份 TLC 日志</a></li><li class="l2"><a href="#可选的下一步小证明">可选的下一步小证明</a></li><li class="l2"><a href="#完成边界">完成边界</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-02：有限模型程序与 TLA+ 契约的独立模型审查</h1>
+</header>
+<p>结论：在本次固定读取的文件中，<strong>没有发现原模型违反所声明有限域结论的反例，也没有发现 TLA+ 动作漏赋值或六份配置导致无限状态的问题</strong>。Python 独立复跑与原结果逐字节相同。发现一项具体的验证边界：支持模型的两种固定点算法共享公式解释器，因此“独立 oracle”只能指固定点求解层独立，不能指 AND/OR 语义也被独立验证。审查进程中的语义突变证实了这一共同失误风险；额外独立位掩码检查则确认原解释器在本次有限域内正确。</p>
+<p>这是不同模型、独立上下文开展的模型审查与本地规格检查，没有人类审核，没有产品代码执行，没有调用模型 API、网络或生产资源。首轮输出保持原样。本轮只写 <code>proof-review/model-audit/</code>。TLC 由 root 执行，本线核查其原始日志与 SHA，没有冒称独立重跑 TLC。</p>
+<h2 id="固定输入和执行证据">固定输入和执行证据</h2>
+<p>本轮在 <code>2026-11-08T06:56:50.063128+00:00</code> 保存了输入副本。完整路径、大小及 SHA 见 <a href="INPUT_MANIFEST.json">INPUT_MANIFEST.json</a>。两个规格快照与首轮不同，已比较并阅读修订：P4 增加 D/时钟与 artifactVersion，P5 限制首版支持图，P7 补授权边界，P13 补初态/结算规则，P15 修订量词；架构相应收紧。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">主要输入</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">Python model_check.py</td><td style="text-align:left"><code>d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89</code></td></tr><tr><td style="text-align:left">Python 绑定 FORMAL_MODEL.md</td><td style="text-align:left"><code>17b53da7356e0c50bd28ebde33fd2c0ece0460c6a0507b89de6a726b4b9977b2</code></td></tr><tr><td style="text-align:left">Python 绑定 ARCHITECTURE.md</td><td style="text-align:left"><code>c82c879ee28d080ff623acbc22eb58db356269ed90617a982af11443c4827ce1</code></td></tr><tr><td style="text-align:left">原 results.json</td><td style="text-align:left"><code>4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35</code></td></tr><tr><td style="text-align:left">EffectContract.tla</td><td style="text-align:left"><code>b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54</code></td></tr></tbody></table></div>
+<p>在本线副本运行 <code>python3 inputs/python/model_check.py --output-dir rerun</code>，Python 3.9.0，耗时 21.418 秒，退出码 0；详见 <a href="execution_receipt.json">execution_receipt.json</a>。新生成的 results.json 和 TRACES.md 均与原产物 SHA 完全一致。</p>
+<p>额外检查由 <a href="audit_checks.py">audit_checks.py</a> 执行，结果见 <a href="audit_checks.json">audit_checks.json</a>，本次耗时 10.414 秒、退出码 0。它不修改冻结解释器文件，故意突变只存在于自己的 Python 进程内。</p>
+<p>root 原始六个 TLC 配置的日志及执行收据另固定于 <code>inputs/tla-results/</code>，完整 SHA 见 <a href="TLC_RECEIPT_MANIFEST.json">TLC_RECEIPT_MANIFEST.json</a>。模型、六 cfg 与日志均和收据散列相符。审查范围不包括此后新增的配置或证明文件。</p>
+<h2 id="唯一需修订的验证表述-ma01">唯一需修订的验证表述：MA01</h2>
+<p><strong>分类：共同语义依赖导致的检查边界；不是原解释器的已知语义错误。</strong> 对应 <code>inputs/python/model_check.py:196–227</code> 和 README 对“独立 oracle”的描述。</p>
+<p>迭代算法 <code>iterate_support</code> 与枚举全部固定点的 <code>least_fixed_point_oracle</code> 最终都调用 <code>step_support → formula_value</code>。两者能交叉检查固定点选择及旧值初始化问题，但不能互相发现共享解释器把 AND 写成 OR 的错误。</p>
+<p>本线做了一个可重复的具体探针：只在审查进程中将每个合取分支的 <code>all</code> 改为 <code>any</code>，其他两套固定点算法均不变。</p>
+<pre data-lang="text"><code>公式 a AND b，输入 a=true、b=false：
+规格期望 false；突变解释器返回 true。
+完整 check_support() 仍无异常返回，遍历 14,641 个网络。
+旧值初始化、清空后代两个指定坏变体仍有反例，故存在坏变体并不能排除共同语义错误。</code></pre>
+<p>这个结果没有证明原模型错；它证明原来的交叉验证没有独立检查这一层。为核实当前原文件，本线使用独立位掩码表达：每个 AND 分支是必须同时置位的 mask，OR 是存在某个满足 mask 的分支，不调用原 <code>formula_value</code>。结果如下：</p>
+<ul><li>121 个语法公式 × 32 个完整原子赋值，共 <strong>3,872 项真值检查全部一致</strong>。</li><li>14,641 个网络 × 8 个根赋值，共 <strong>117,128 项固定点检查全部一致</strong>。独立检查枚举四种派生位向量并以位包含关系选最小固定点。</li></ul>
+<p>建议把文案改成“固定点求解算法独立，公式解释器共享”；若将程序作为长期回归工具，纳入一个不调用原解释器的真值表/位掩码检查。无需废弃当前算法、否定现有结果或将这项问题称作产品缺陷。</p>
+<h2 id="python-忠实性-计数和最短性">Python：忠实性、计数和最短性</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">部分</th><th style="text-align:left">本轮判断及边界</th></tr></thead><tbody><tr><td style="text-align:left">BFS</td><td style="text-align:left">使用 FIFO 队列与首次发现父边；每条出边均先检查再合并状态，故不会漏掉到达旧状态的坏边。失败后仍穷尽；达到状态上限抛异常。没有发现把截断当通过的问题。</td></tr><tr><td style="text-align:left">动作</td><td style="text-align:left">send 性质读取原子转移前的另一动作占位。坏变体确实删除该条件。success/no-effect 是可撤回的接纳观察，模型没有假装证明世界真相。每动作只发送一次，不覆盖网络重试；文档明确。</td></tr><tr><td style="text-align:left">支持</td><td style="text-align:left">公式为正 DNF，不含空合取/常真分支，有限格上从 bottom 求最小固定点。独立枚举求解层有效；语义共享限制见 MA01。正递归是扩展反例，不误写成首版已采纳。</td></tr><tr><td style="text-align:left">预算</td><td style="text-align:left">h/f/r 分开；坏变体损坏 r 时，h 和 f 不被同步改坏，物理性质仍能揭露超额。真实账单即使超预留也记入 U，不通过拒收账单隐藏成本。可信停止、固定价格和费用上界属于模型假设。</td></tr><tr><td style="text-align:left">验收</td><td style="text-align:left">版本比较与事件失效监视器是两种判定表达；不是调用同一个 applicable 计算两次。它们共享九字段及相关/无关事件分类，故不证明字段在业务上完备。D 只由 true 到 false、每次一次验收、无 ABA，文档均已限定。</td></tr></tbody></table></div>
+<p>计数核对不是只抄输出：10 个 BFS 图的深度直方图和均等于状态数，操作覆盖和均等于转移边数，反例数组长度均等于报告长度加初态。这里转移数是带事件标签的出边数，例如四个 D 失效原因可能指向同一后继；它不是不同状态对的数量。</p>
+<p>支持域独立计算为 <code>1 + 15 + C(15,2) = 121</code> 个语法公式、<code>121² = 14,641</code> 个网络；根赋值 8 个、每次 3 种单根翻转，得到 117,128 项稳定输入及 351,384 次更新。语法不同但语义相同的公式可能被分别计数；报告没有把这些数称为互异布尔函数数或故障率。</p>
+<p>验收状态数也可独立推导。存在验收时，每个当前/绑定字段有 <code>(0,0),(1,0),(1,1)</code> 三种组合；备注的验收时/当前值也有三种，D 和撤回各两种，共 <code>3^9 × 3 × 2 × 2</code>。尚未验收时有 <code>2^9 × 2 × 2</code>。合计 <strong>238,244</strong>，与枚举完全相同。</p>
+<p>最短性结论限于模型事件数：</p>
+<ul><li>动作及预算、验收、两个聚焦支持网络的第一条失败边具有 BFS 最短路径保证。它不保证真实网络调用数、耗时或工具操作数最少。</li><li>全公式域的支持反例不伪装成同一 BFS。由于无真根时最小固定点全 false，旧值自支持至少需一次增加及一次撤回；错误删除替代支持至少需两个真根及一次撤回。所列 2/3 步达到该下界。构造前缀只有根增加，两种坏算法在该前缀与正确最小固定点一致。</li><li>指定 <code>18 &gt; 10</code> 轨迹明确只是额外场景，未声称全局最短。一般预算坏变体在 <code>B=4,R=1</code> 中的最终超额最短为 8 步，且更早的负担覆盖违例在 3 步即出现。</li></ul>
+<p>没有从这些计数推出任意节点数、无限重试、任意费用或任意版本演化的正确性。README 中相应范围说明与程序一致。</p>
+<h2 id="tla-动作赋值-有限性与效果语义">TLA+：动作赋值、有限性与效果语义</h2>
+<p>七个变量是 <code>targetEpoch, sent, messages, seenKeys, effects, cancelled, confirmed</code>。逐动作检查如下：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">动作</th><th style="text-align:left">更新</th><th style="text-align:left">其余变量</th></tr></thead><tbody><tr><td style="text-align:left">Send</td><td style="text-align:left">messages、sent</td><td style="text-align:left">全部 UNCHANGED</td></tr><tr><td style="text-align:left">InstallNewEpoch</td><td style="text-align:left">targetEpoch</td><td style="text-align:left">全部 UNCHANGED</td></tr><tr><td style="text-align:left">Cancel</td><td style="text-align:left">cancelled</td><td style="text-align:left">全部 UNCHANGED</td></tr><tr><td style="text-align:left">Deliver 拒旧分支</td><td style="text-align:left">messages</td><td style="text-align:left">seenKeys/effects 分支内 UNCHANGED，另四项共同 UNCHANGED</td></tr><tr><td style="text-align:left">Deliver 去重分支</td><td style="text-align:left">messages</td><td style="text-align:left">同上</td></tr><tr><td style="text-align:left">Deliver 应用分支</td><td style="text-align:left">messages、seenKeys、effects</td><td style="text-align:left">另四项共同 UNCHANGED</td></tr><tr><td style="text-align:left">ObserveSuccess</td><td style="text-align:left">confirmed</td><td style="text-align:left">全部 UNCHANGED</td></tr></tbody></table></div>
+<p>没有发现未约束的 primed 变量。Send 只读取旧 messages 的现有定义域，新增条目由单独分支提供；空函数初态与 <code>DOMAIN messages=1..sent</code> 相容。</p>
+<p>六 cfg 都固定 <code>MaxSends=3</code> 和布尔能力值。targetEpoch 仅 1→2；消息 ID 至多三个、状态四种；key 范围有限；effects 从空集开始，仅加入有限 record 域中的元素；seenKeys 也是有限域子集。<code>[][Next]_vars</code> 可无限停顿，但不产生无限个不同状态。因此 stuttering 与未声明公平性不会破坏本次安全状态枚举的有限性，也不能据此承诺最终执行/确认。</p>
+<p>目标去重将查询 key、记录 key 与增加效果放在同一 Deliver 原子步，这是模型的强假设，未被伪装成“检查器证明真实目标已原子”。effects 在应用分支增加与消息 ID 关联的 record，两个同 key 的不同发送可以明确记录成两个效果，因此集合存储没有偷偷吞掉重复效果。</p>
+<p>需要保留的范围说明：Send 总是取当前 <code>targetEpoch</code>。旧 epoch 情形通过“先发送旧消息，再安装新 epoch，最后交付旧消息”产生；模型<strong>没有</strong>另设旧执行者在新 epoch 安装后继续生成旧 token 消息的 Send 动作，也不建模同一消息 ID 的再次交付。已有反例足以否定幂等等同 fencing，但不应把此模型称为完整旧进程接管或消息中间件重投模型。</p>
+<p>NoStaleCommit 使用 <code>sentEpoch=commitEpoch</code>。在此模型中 token 不来自未来，故该等式正确表达未以旧 token 提交；对允许任意 token 或多个资源的扩展须重新定义，不直接搬用名字。</p>
+<h2 id="核对-root-的六份-tlc-日志">核对 root 的六份 TLC 日志</h2>
+<p>日志明确显示单 worker BFS。原始日志中的 trace_states 包含初态，事件步数需减一。以下仅表示读取并核对 root 执行证据，本线没有另跑 TLC。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">cfg</th><th style="text-align:left">结果</th><th style="text-align:right">已发现状态数</th><th style="text-align:left">性质解释</th></tr></thead><tbody><tr><td style="text-align:left">combined</td><td style="text-align:left">退出 0，队列空，1360 generated</td><td style="text-align:right">624 distinct</td><td style="text-align:left">本有限域内 NoDuplicateEffect 与 NoStaleCommit 均未违反</td></tr><tr><td style="text-align:left">fence-only</td><td style="text-align:left">NoDuplicateEffect，4 步反例</td><td style="text-align:right">39，未穷尽</td><td style="text-align:left">两次合法 epoch 的消息仍可产生两个效果</td></tr><tr><td style="text-align:left">dedupe-only</td><td style="text-align:left">NoStaleCommit，3 步反例</td><td style="text-align:right">18，未穷尽</td><td style="text-align:left">一个尚未使用的稳定 key 不能阻止旧 epoch 消息提交</td></tr><tr><td style="text-align:left">unstable-key</td><td style="text-align:left">NoDuplicateEffect，4 步反例</td><td style="text-align:right">39，未穷尽</td><td style="text-align:left">每次发送换 key 使原子去重无法识别同一业务意图</td></tr><tr><td style="text-align:left">cancel-is-not-rollback</td><td style="text-align:left">NoCommitAfterLocalCancel，3 步反例</td><td style="text-align:right">19，未穷尽</td><td style="text-align:left">本地取消保留已发消息，之后仍可提交</td></tr><tr><td style="text-align:left">world-is-not-ledger</td><td style="text-align:left">WorldEffectAlwaysKnown，2 步反例</td><td style="text-align:right">8，未穷尽</td><td style="text-align:left">Deliver 已应用而 ObserveSuccess 尚未发生</td></tr></tbody></table></div>
+<p>五份反例配置在首次违例处停止，剩余队列均非零。不能依据这些运行宣称同一 cfg 中其他不变量已穷尽通过。要给出“fence-only 仍保持无旧提交”和“dedupe-only 仍保持不重复”的独立正向有限结果，应另用只检查该正向性质的 cfg 跑到队列空；root 已表示将补，此处不预记结果。</p>
+<p>这些反例证明能力不可互换，不证明 combined 能在任意故障、key 过期、参数篡改、目标崩溃或多个业务动作之间提供同样保证。</p>
+<h2 id="可选的下一步小证明">可选的下一步小证明</h2>
+<p>如果主线要补机器证明，优先以下两条，不让有限枚举代替一般证明：</p>
+<ol><li><strong>有限 DAG 局部重算等于全量重算。</strong> 从旧状态全局一致、变更根集、完整影响闭包和任意拓扑序出发，证明闭包外结果不变，闭包内一次局部重算等于新输入全量求值。证明需真正使用拓扑顺序和依赖局部性，不把“局部结果等于全量结果”直接作为前提。此引理允许任意确定性局部函数；正性只在递归扩展中另需。</li><li><strong>显式费用转移的有限前缀预算安全。</strong> 定义 settled、hidden、future、reserved、closing 的独立域，从各具体 Reserve/Spend/Settle/Release/Close 转移证明负担覆盖与总额不变式保持，再推出实际已花 <code>U+Σh≤B</code>。不要将“每步总额≤B”直接作为归纳假设之外的转移公理；应由准入、非负性、负担解除和结算转移推出来。一般化动作数与费用域时应保留有限求和的明确含义。</li></ol>
+<p>这两条分别保护增量更新算法与账本/真实负担的连接，比机械重述“相同输入的确定函数输出相同”更有价值。本线未撰写或运行上述机器证明。</p>
+<h2 id="完成边界">完成边界</h2>
+<p>本轮完成了指定 Python 程序、README、结果、轨迹和两个输入快照的审读及副本复跑；完成了 EffectContract.tla、原六 cfg 和对应 root 原始 TLC 日志的审读。唯一新发现 MA01 已用具体进程内突变复现，其对当前冻结原程序的风险又通过独立有限语义检查加以限定。没有发现应阻止本次有限模型结论交付的新模型反例。</p>
+<p>结论只适用于两个清单中固定的 SHA；没有证明产品实现精化、目标端真实效果、无限域安全或活性。没有改 china/integration 文件、首轮输出、产品代码，也没有提交或推送。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

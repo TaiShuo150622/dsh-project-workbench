@@ -1,0 +1,17 @@
+'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]
+__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/witnesses/DagWitness.lean:247:20: warning: This simp argument is unused:
+  h0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [newRules, h1, h2, equal]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/witnesses/DagWitness.lean:247:24: warning: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [newRules, h0, h2, equal]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'DagAudit.changed_read_set_instance' depends on axioms: [propext, Classical.choice, Quot.sound]

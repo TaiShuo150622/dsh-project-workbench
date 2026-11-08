@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "status": "DOCUMENT_CHECKS_PASSED",
+  "checked_at": "2026-11-08T10:18:05.352805+00:00",
+  "scope": "Document/schema/reference checks only; no implementation, coverage algorithm, finite semantic checker, model/API experiment or real-host execution",
+  "checks": {
+    "body_unicode_characters": 3489,
+    "body_han_characters": 1951,
+    "body_total_within_3500": true,
+    "h2": 8,
+    "mermaid": 3,
+    "draft_structure_errors": 0,
+    "draft_structure_warnings": 0,
+    "clauses": 8,
+    "paper_counterexamples": 3,
+    "sources": 10,
+    "new_papers": 0,
+    "candidate_collection_profiles": 2,
+    "references_resolve": true,
+    "all_cases_not_run": true,
+    "local_link_count": 5,
+    "html_generated": true,
+    "html_visually_verified": false,
+    "prior_M08_M09_fingerprints_unchanged": true,
+    "product_tracked_diff_empty": true
+  },
+  "file_hashes": {
+    "README.md": "ba83aae63a40ead364920ca03f4314a1e927dd53c76a4e2fce6a3614b1991785",
+    "contract.json": "c6a524ee2527ae570c85a1a12aa69e3bc596d48ccba716b95a4776c1b63b0b85",
+    "counterexamples.json": "6b270c2e8141bf044b9ef14cfb79fee6c8d1ff41f5f414cb08ccbf38a11ad2a2",
+    "sources.json": "631176905be87105a155d48fe8ec54008dd56060da48ed1ab6ad96ddbc55e299",
+    "有限声明域覆盖契约讨论稿-v0.1.0.html": "fdf39d8359dc67a428e6a151000edd5b2936da11f88f03995422896f86f68a9c",
+    "有限声明域覆盖契约讨论稿-v0.1.0.md": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc"
+  },
+  "explicit_limits": [
+    "complete is restricted to the exact declared target/domain/snapshot, not world truth, semantic completeness or business completion.",
+    "The proposed check relations still depend on concrete authenticated collection, enumeration, disclosure and handling contracts.",
+    "Synthetic paper-case booleans are assumptions, not the production trust interface."
+  ]
+}

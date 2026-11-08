@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-11-08T09:59:08.071484+00:00",
+  "scope": "R15 fixes only for 0926 intermediate package",
+  "package_files": 965,
+  "manifest_entries": 964,
+  "source_package_unchanged": true,
+  "changed_source_files": [],
+  "input_snapshot_sha256": "93caeaf4462bcfafad17a85fe6905cdcc34a1920242da7eafff0f6f6665f84bd",
+  "tool_shas": {
+    "build_reader_package.py": "c3b79a98e26ad9081f56bc0cacacb2722b9c041f82117213ccf6250682d2905a",
+    "validate_index_portable.py": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74"
+  },
+  "workspace_open_events": 87,
+  "all_validator_workspace_opens_inside_relocated_copy": true,
+  "negative_control_exit_code": 1,
+  "generated_final_metadata_pass_count": 70,
+  "view_mappings_pass_count": 18,
+  "current_pages_checked": 14,
+  "current_links_checked": 205,
+  "current_missing_links": 0,
+  "frozen_missing_link_occurrences": 229,
+  "author_results_read_after_oracle": true,
+  "no_research_models_rerun": true,
+  "no_product_execution": true,
+  "network_calls": 0
+}

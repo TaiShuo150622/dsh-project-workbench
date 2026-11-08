@@ -1,0 +1,90 @@
+{
+  "scope": "mobile light DOM/render/network check with external HTTPS mocked unavailable; not a visual or product acceptance",
+  "viewport": [
+    430,
+    932
+  ],
+  "rows": [
+    {
+      "file": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "8d8e4b7435f21850ff98694cd68ac09a7cee54ea92de010656d35a3dcdc9056b",
+      "checked_at_utc": "2026-11-08T08:51:09.918841+00:00",
+      "observed": {
+        "title": "西方 Harness 机制核查讨论稿 v0.1.1",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "855f03ef3b69851a2c37159b3f0e52ccfe8f0b31310cb477b520c85593d2986c",
+      "checked_at_utc": "2026-11-08T08:51:14.810038+00:00",
+      "observed": {
+        "title": "中国 Harness 机制核查讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "475e07d9f4c153fd8f6e743d81a06b1749f6ddf136ed410a25f0f5bce022da3d",
+      "checked_at_utc": "2026-11-08T08:51:19.496654+00:00",
+      "observed": {
+        "title": "统一 Harness 开源机制研究讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 1093,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": false,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": false
+    }
+  ]
+}

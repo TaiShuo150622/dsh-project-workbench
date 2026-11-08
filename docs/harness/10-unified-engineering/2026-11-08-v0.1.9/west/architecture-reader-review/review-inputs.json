@@ -1,0 +1,145 @@
+{
+  "review": "W-06 architecture reader review",
+  "reviewed_at_utc": "2026-11-08T07:55:47+00:00",
+  "status": "DOCUMENT_REVIEW_ONLY",
+  "finding_count": 7,
+  "no_product_execution": true,
+  "no_new_web_research": true,
+  "inputs": [
+    {
+      "role": "primary",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "sha256": "7dab5eebe93a1cd7f32ad290e7ab5a26e2f49821cfb6e88e433101b536ad3dbe",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "primary",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "889b0bc82d7c2d7d7308aea9b99eab59d132c39a49ab904e5047787c7687d162",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "primary",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "535905a83d363614fd0a8b60b47b6ec21e63c565be5dcfa5a168e237edba4f84",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "primary",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/INDEX.md",
+      "sha256": "57f8c2b9907064642b750de5015452956acbac050cca7157deb9138b757c322c",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "historical_design",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "historical_design",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "historical_design",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "historical_design",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "historical_design_optional",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "existing_research",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "sha256": "334580e90656d9853cc79f3fe0bd3146ccfa39296aef30e2de75790078ed7a87",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "existing_research",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/sources.json",
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "existing_research",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "sha256": "2ee67c821ce38c2b948cc75861677db1aaad7cd50d5f3757204093982c6414ec",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/README.md",
+      "sha256": "1a0b76066d4755b96468dafb590cb9e79486cae7cf6963aaeceff371b98459e6",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/README.md",
+      "sha256": "1a5c582b2e71c1718c19171a46001c9f404cd5d8f65be5de67912ad959882013",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/budget-proof/README.md",
+      "sha256": "32aac0b0822b1c526bc5dae140282d61d198747d2ee4d49a69258d07c0f2ffa3",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/proof-review/general-proof-audit/REVIEW.md",
+      "sha256": "1925948305bd3e4f5d9867895e711791f0fa3fe25e597821021625d49d341282",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/conformance/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "quantity_check",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/context-evaluation/protocol.json",
+      "sha256": "c637886c04746ddac6bb2b046db441221304bb50705c7f0e3509a0b87aa79082",
+      "read_scope": "relevant sections; not an independent rerun"
+    },
+    {
+      "role": "existing_research",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+      "sha256": "aab8b8f0402158aac427da7b2d74b89de5a6046bf5442c878a39ff8f519a8ef5",
+      "read_scope": "relevant sections; not an independent rerun"
+    }
+  ],
+  "numeric_checks": {
+    "general_lean_proofs": 2,
+    "tla_configurations": 11,
+    "tla_safe_configurations": 4,
+    "tla_expected_counterexamples": 7,
+    "conformance_cases": 16,
+    "conformance_variants": 43,
+    "pilot_task_runs": 12,
+    "expanded_context_task_runs": 3456
+  },
+  "limits": [
+    "Source identity claims were located in existing research; original external sources not re-opened in W-06.",
+    "Historical design and historical compatibility checks are not current product verification.",
+    "No proof or benchmark was rerun in W-06."
+  ]
+}

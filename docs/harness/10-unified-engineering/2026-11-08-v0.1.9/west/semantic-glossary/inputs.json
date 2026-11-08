@@ -1,0 +1,89 @@
+{
+  "task": "W16 semantic glossary",
+  "status": "READING_AID_NOT_API_SCHEMA",
+  "frozen_at_utc": "2026-11-08T10:35:52.532928+00:00",
+  "scope": "只写 west/semantic-glossary；不修改正式模型、产品或其他研究稿。",
+  "sources": [
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "read_ranges_inclusive": [
+        [
+          1,
+          132
+        ],
+        [
+          156,
+          198
+        ]
+      ],
+      "read_status": "SELECTED_BODY_READ",
+      "notes": "对象、世界/日志、完成谓词、带类型关系、当前准入、上下文及接管结算；未宣称本轮全文重读。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "read_ranges_inclusive": [
+        [
+          35,
+          78
+        ],
+        [
+          120,
+          134
+        ]
+      ],
+      "read_status": "SELECTED_BODY_READ",
+      "notes": "四种材料、公共工作契约及动作链；另用标题/术语检索定位。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "read_ranges_inclusive": [
+        [
+          90,
+          140
+        ]
+      ],
+      "read_status": "SELECTED_BODY_READ",
+      "notes": "核心对象、完成语义、争议与上下文段；没有声称全文审阅 v0.1.7。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "read_ranges_inclusive": [
+        [
+          1,
+          121
+        ]
+      ],
+      "read_status": "FULL_BODY_READ",
+      "notes": "M10 有限声明域覆盖契约；仅解释纸面提案，没有重跑或实现。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/worked-example/EXAMPLE.md",
+      "sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "read_ranges_inclusive": [
+        [
+          1,
+          33
+        ]
+      ],
+      "read_status": "PRIOR_FULL_READ_HASH_RECONFIRMED",
+      "notes": "W14 全文已在 W15 核读；本轮哈希相同，复用该已读例子，不把假想情境当真实执行。"
+    }
+  ],
+  "not_done": [
+    "未新增 schema 或正式契约",
+    "未运行代码、证明、模型或外部 API",
+    "未执行假想链接检查器情境",
+    "未新增外部来源核查",
+    "未承诺每次小编辑创建全部对象"
+  ],
+  "key_boundaries": [
+    "四态的正支持只表示正证据存在；Supported 另受任务完成判据约束。",
+    "coverage complete 只在已声明有限域、切点和处理义务下成立，不等于任务 complete。",
+    "Usable 针对消费者、操作和接收范围，是账本可用依据，不是当前世界永远可用。",
+    "接管不改变原动作、代际、未知效果或未结算负担；结算证据与存在性观察分开。"
+  ]
+}

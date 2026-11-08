@@ -1,0 +1,448 @@
+{
+  "task": "W13",
+  "started_at_utc": "2026-11-08T09:48:43Z",
+  "captured_at_utc": "2026-11-08T09:57:10.179094+00:00",
+  "scope": "PUBLIC_ARCHIVE_ONLY; 8 newly selected bodies; no product/runtime/external source research",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "coverage": {
+    "inventoried_markdown": 96,
+    "exact_duplicate_groups": 0,
+    "new_body_selected": 8,
+    "new_full_body": 7,
+    "new_selected_body": 1,
+    "excluded_activity_bodies": 2,
+    "note": "96 是所选七目录 Markdown 元数据条目，包含导航；不是192附件全读。复用先前已读只限原范围。"
+  },
+  "files": [
+    {
+      "id": "V3",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/01-vision/harness-discussion-v0.3.md",
+      "repository_relative_path": "docs/harness/01-vision/harness-discussion-v0.3.md",
+      "link": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "version": "v0.3",
+      "role": "new_archive_body_selection",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          312
+        ],
+        [
+          373,
+          512
+        ],
+        [
+          862,
+          907
+        ]
+      ],
+      "line_count": 907,
+      "sha256": "673e7c5f272d4209cb7332d89e746f56c70c4ebd92a712dfef7385edc74b3ec1",
+      "matches_fixed_commit": true,
+      "notes": "当前总体方向；只核读决定、循环、能力沉淀、复核与推进段；外部调研/资源数字未重验"
+    },
+    {
+      "id": "H0",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "link": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "version": "v1 / 2026-10-19",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          394
+        ]
+      ],
+      "line_count": 394,
+      "sha256": "fe0554a572cb807fae2fd711b1c5466ac346198ebf362baf90319ce88e77922d",
+      "matches_fixed_commit": true,
+      "notes": "历史已拍板的 H0 计划；不作为当前开工/完成或最新宿主证据"
+    },
+    {
+      "id": "ASK",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "link": "../../../../harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "version": "v0.1.1",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          58
+        ]
+      ],
+      "line_count": 58,
+      "sha256": "1c0618747f40732104f71f59579bfeec8a83f461428867e74f95a39739734098",
+      "matches_fixed_commit": true,
+      "notes": "公开交互原则与未运行对照；私人样本未公开"
+    },
+    {
+      "id": "TOOLS",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "link": "../../../../harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "version": "v0.1.0",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          251
+        ]
+      ],
+      "line_count": 251,
+      "sha256": "63f59f0d7c347a09bf9f6ed254cfdd83c915bc04c51a7840073666f8e9ca57f6",
+      "matches_fixed_commit": true,
+      "notes": "工具面策略与未运行实验；本文不复核旧外部数字"
+    },
+    {
+      "id": "REC0",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "repository_relative_path": "docs/harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "link": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "version": "源 v0.1 / 历史",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          265
+        ]
+      ],
+      "line_count": 265,
+      "sha256": "b9f2859a5e7496770d7e545988d18149c197b9a53e562d8161c4d1eff5b9e88d",
+      "matches_fixed_commit": true,
+      "notes": "早期捕获设想；永久全量保留与推断人工作者等过强表述不继承"
+    },
+    {
+      "id": "DAG11",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "link": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "version": "v0.1.0 / 2026-11-01",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          387
+        ]
+      ],
+      "line_count": 387,
+      "sha256": "4e2a489f520196d89f833778395edddad8183c78484b711581650fae96812280",
+      "matches_fixed_commit": true,
+      "notes": "L329 明说全是提案；未把三方转述的数字当本轮原始研究证据"
+    },
+    {
+      "id": "DAG08",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "link": "../../../../harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "version": "协议 v2 / 源未编号",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          136
+        ]
+      ],
+      "line_count": 136,
+      "sha256": "9b38bbbe3eda3209313b3663061406cb35cbb7a623ed688fa32ef88c5723877a",
+      "matches_fixed_commit": true,
+      "notes": "历史面板交互协议，非当前完整注册表；延迟数字是历史示意"
+    },
+    {
+      "id": "BRPL",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "link": "../../../../harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "version": "源未编号 / 2026-10-17",
+      "role": "new_archive_body_selection",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          128
+        ]
+      ],
+      "line_count": 128,
+      "sha256": "81e0bee853e3be6d02dbffefc6ba3ac7886159e7eeebbf4b138a69a8283db040",
+      "matches_fixed_commit": true,
+      "notes": "平台扩展路线建议；旧版本、工具数、工期和测试矩阵不作为现状"
+    },
+    {
+      "id": "REC12",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "link": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "role": "prior_body_reading_reused",
+      "read_mode": "PRIOR_HASH_CONFIRMED",
+      "prior_report": "../historical-coverage/reading-list.json",
+      "prior_read_ranges_1_based": [
+        [
+          1,
+          145
+        ]
+      ],
+      "this_round": "Matched-line confirmation only for REC12; no new full reading of remote or realtime.",
+      "line_count": 413,
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "matches_prior_hash": true,
+      "notes": "不声称本轮重新通读；原覆盖范围照 W09 保留。",
+      "this_round_matched_lines": [
+        12,
+        38,
+        46,
+        148,
+        155,
+        159,
+        298,
+        362,
+        376
+      ]
+    },
+    {
+      "id": "REM",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "link": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "role": "prior_body_reading_reused",
+      "read_mode": "PRIOR_HASH_CONFIRMED",
+      "prior_report": "../historical-coverage/reading-list.json",
+      "prior_read_ranges_1_based": [
+        [
+          1,
+          130
+        ]
+      ],
+      "this_round": "Matched-line confirmation only for REC12; no new full reading of remote or realtime.",
+      "line_count": 423,
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "matches_prior_hash": true,
+      "notes": "不声称本轮重新通读；原覆盖范围照 W09 保留。"
+    },
+    {
+      "id": "REALTIME",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "repository_relative_path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "link": "../../../../harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "role": "prior_body_reading_reused",
+      "read_mode": "PRIOR_HASH_CONFIRMED",
+      "prior_report": "../historical-coverage/reading-list.json",
+      "prior_read_ranges_1_based": [
+        [
+          1,
+          57
+        ]
+      ],
+      "this_round": "Matched-line confirmation only for REC12; no new full reading of remote or realtime.",
+      "line_count": 57,
+      "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403",
+      "matches_prior_hash": true,
+      "notes": "不声称本轮重新通读；原覆盖范围照 W09 保留。"
+    },
+    {
+      "id": "MAIN",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "link": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "role": "current_comparison",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          428
+        ]
+      ],
+      "line_count": 428,
+      "sha256": "28d373e48c8305e2ccb51c77e9c4bcf1f2b1c11c9e58215c2f0af9453ea813af",
+      "notes": "当前工作副本冻结输入；不是 Git 发布版本。选段之外的搜索命中不扩大正文覆盖声明。",
+      "change_review": {
+        "prior_sha256": "111d26e735c88757612307cedcf7d5532cdd70077ac14206c35f0d11c4fad020",
+        "prior_lines": 426,
+        "new_lines": 428,
+        "change": "Added paragraph at L119 plus blank line; exact byte hash of remaining body matches prior input. Added paragraph read in W13.",
+        "checked_at_utc": "2026-11-08T10:02:45.081309+00:00"
+      }
+    },
+    {
+      "id": "RECON",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "link": "../../DESIGN_RECONCILIATION.md",
+      "role": "current_comparison",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          95
+        ]
+      ],
+      "line_count": 97,
+      "sha256": "4f7520919fe64e1493a8c714c098501fb9b47c057593e42ee86731618d3b68a1",
+      "notes": "当前工作副本冻结输入；不是 Git 发布版本。选段之外的搜索命中不扩大正文覆盖声明。"
+    },
+    {
+      "id": "ARCH",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "link": "../../ARCHITECTURE.md",
+      "role": "current_comparison",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          56
+        ],
+        [
+          125,
+          160
+        ]
+      ],
+      "line_count": 206,
+      "sha256": "d93a425e9246516e7c70ad05edaf5580a4e08cdf142a58aa8086571aec720a6f",
+      "notes": "当前工作副本冻结输入；不是 Git 发布版本。选段之外的搜索命中不扩大正文覆盖声明。"
+    },
+    {
+      "id": "I",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "link": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "role": "current_comparison",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          94,
+          147
+        ]
+      ],
+      "line_count": 171,
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "notes": "当前工作副本冻结输入；不是 Git 发布版本。选段之外的搜索命中不扩大正文覆盖声明。"
+    },
+    {
+      "id": "NAV-01-vision",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/01-vision/CONTENTS.md",
+      "repository_relative_path": "docs/harness/01-vision/CONTENTS.md",
+      "link": "../../../../harness/01-vision/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          9
+        ]
+      ],
+      "line_count": 9,
+      "sha256": "ff1476f66e676dab7cc8dd1ba5320aa07bb88c65fefd3b072baf93b2c206682e",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "NAV-02-methods",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/02-methods/CONTENTS.md",
+      "repository_relative_path": "docs/harness/02-methods/CONTENTS.md",
+      "link": "../../../../harness/02-methods/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          10
+        ]
+      ],
+      "line_count": 10,
+      "sha256": "1436ba6bca25dfc2fac21c56508215b3301a67c76b7fbbec792e5189ff92bfd1",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "NAV-04-memory",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/CONTENTS.md",
+      "repository_relative_path": "docs/harness/04-memory/CONTENTS.md",
+      "link": "../../../../harness/04-memory/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          12
+        ]
+      ],
+      "line_count": 12,
+      "sha256": "ed8606d654f8ae6a2b71d8aa5f52a70ddbc0e8453d3e4504bb73429acae9a50f",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "NAV-06-dag",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/CONTENTS.md",
+      "repository_relative_path": "docs/harness/06-dag/CONTENTS.md",
+      "link": "../../../../harness/06-dag/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          20
+        ]
+      ],
+      "line_count": 20,
+      "sha256": "025901ca7d0be881482c4d737171c281f99dac245c3b03d27601d6135ac720c9",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "NAV-07-remote",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/07-remote/CONTENTS.md",
+      "repository_relative_path": "docs/harness/07-remote/CONTENTS.md",
+      "link": "../../../../harness/07-remote/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          9
+        ]
+      ],
+      "line_count": 9,
+      "sha256": "b8926d402b7c80e9bce2dd59a36291323f05a40f07b316f668cb803fc13cafa0",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "NAV-09-extensions",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/09-extensions/CONTENTS.md",
+      "repository_relative_path": "docs/harness/09-extensions/CONTENTS.md",
+      "link": "../../../../harness/09-extensions/CONTENTS.md",
+      "role": "navigation",
+      "read_mode": "FULL_METADATA_INDEX",
+      "read_ranges_1_based": [
+        [
+          1,
+          8
+        ]
+      ],
+      "line_count": 8,
+      "sha256": "e08229a428e7fd3bf7dd1a5524026703fb45de221a3a7460609707d3129f9a64",
+      "notes": "读标题、版本与归档状态，不表示逐页通读索引所列正文。09 activity 仅导航标题出现，不读正文。"
+    },
+    {
+      "id": "PRIOR-historical-coverage",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/historical-coverage/reading-list.json",
+      "link": "../historical-coverage/reading-list.json",
+      "role": "prior_reading_manifest",
+      "read_mode": "READING_MANIFEST_INSPECTED",
+      "sha256": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962",
+      "notes": "W09 清单全文曾读，W12 清单结构与摘要读取并程序核对条目；不改写旧清单。"
+    },
+    {
+      "id": "PRIOR-design-continuity",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/reading-list.json",
+      "link": "../design-continuity/reading-list.json",
+      "role": "prior_reading_manifest",
+      "read_mode": "READING_MANIFEST_INSPECTED",
+      "sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c",
+      "notes": "W09 清单全文曾读，W12 清单结构与摘要读取并程序核对条目；不改写旧清单。"
+    }
+  ]
+}

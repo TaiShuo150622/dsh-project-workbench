@@ -1,0 +1,179 @@
+{
+  "scope": "mobile light/dark DOM and network check, not visual acceptance",
+  "rows": [
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.html",
+      "sha256": "294a58a9bc2472a1fa2782dd18a71654ba65c91c9f391db0109b2006b8a31d2f",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:28:50.893682+00:00"
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.html",
+      "sha256": "294a58a9bc2472a1fa2782dd18a71654ba65c91c9f391db0109b2006b8a31d2f",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:28:57.023468+00:00"
+    },
+    {
+      "file": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "c32887b126b5d369576a23d989b9706b3a5007480db66e9e517179557a8c8040",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:29:03.847350+00:00"
+    },
+    {
+      "file": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "c32887b126b5d369576a23d989b9706b3a5007480db66e9e517179557a8c8040",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:29:10.644569+00:00"
+    },
+    {
+      "file": "west/worked-example/EXAMPLE-离线阅读版.html",
+      "sha256": "b988fba51331193440ae33ab114b8a1b59f3a0484232549064a41c9cfed4d2b9",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 1,
+        "visibleSVG": 1,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:29:18.960771+00:00"
+    },
+    {
+      "file": "west/worked-example/EXAMPLE-离线阅读版.html",
+      "sha256": "b988fba51331193440ae33ab114b8a1b59f3a0484232549064a41c9cfed4d2b9",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 1,
+        "visibleSVG": 1,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T10:29:28.447398+00:00"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "copied_at_utc": "2026-11-08T11:05:13.013134+00:00",
+  "files": [
+    {
+      "path": "mechanisms/retention-replay-contract/CONTRACT.md",
+      "source_worktree": "mechanisms",
+      "bytes": 6825,
+      "sha256": "815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f"
+    },
+    {
+      "path": "mechanisms/retention-replay-contract/scenarios.json",
+      "source_worktree": "mechanisms",
+      "bytes": 12612,
+      "sha256": "8253941a3692f5e805aa3a1142804f2faf0de83bf5134a977c8908cf1df6a478"
+    },
+    {
+      "path": "mechanisms/retention-replay-contract/sources.json",
+      "source_worktree": "mechanisms",
+      "bytes": 13466,
+      "sha256": "677959e0d912edcd8819c77bd4c9e3281468c292de02ce1333a150190b0141db"
+    },
+    {
+      "path": "mechanisms/retention-replay-contract/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 3227,
+      "sha256": "a11a7492ba4eae34588fb036d5f32943e99029dcc92c0ee3b2bbd0cdd27e5d6f"
+    }
+  ]
+}

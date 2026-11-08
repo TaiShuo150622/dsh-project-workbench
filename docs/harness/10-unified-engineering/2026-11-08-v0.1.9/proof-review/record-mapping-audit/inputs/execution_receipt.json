@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "task": "R-04",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "node_version": "v24.6.0",
+  "execution_kind": "local deterministic read-only imported S1 source; synthetic observations",
+  "code_sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+  "inputs_manifest_sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+  "runs": [
+    {
+      "label": "probes",
+      "argv": [
+        "node",
+        "refinement-probes.mjs"
+      ],
+      "cwd": "record-refinement/",
+      "started_at_utc": "2026-11-08T07:37:16.629812+00:00",
+      "finished_at_utc": "2026-11-08T07:37:17.172456+00:00",
+      "exit_code": 0,
+      "stdout": "probes.json",
+      "stderr": "probes.stderr.txt",
+      "stdout_sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": {
+        "cases": 8,
+        "assertion_failures": 0,
+        "refinement_gap_counterexamples": 5,
+        "scoped_controls": 3
+      }
+    },
+    {
+      "label": "existing-tests",
+      "argv": [
+        "node",
+        "--test",
+        "--test-name-pattern=record (same request retries|failed writes are atomic|acceptance uses immutable|old result button|wrong completion suspends|revert keeps historical|resource reservation excludes|cancellation or authorization change|unknown sent action|successful action and completion|actions are owned|journal replay retains)|R1-P1|R1-P2|R2-S",
+        "inputs/tests/record-kernel.test.mjs",
+        "inputs/tests/record-adversarial-r1-protocol.test.mjs",
+        "inputs/tests/record-adversarial-r1-correction.test.mjs",
+        "inputs/tests/record-adversarial-r2-system.test.mjs"
+      ],
+      "cwd": "record-refinement/",
+      "started_at_utc": "2026-11-08T07:37:17.174261+00:00",
+      "finished_at_utc": "2026-11-08T07:37:17.363590+00:00",
+      "exit_code": 0,
+      "stdout": "existing-tests.stdout.txt",
+      "stderr": "existing-tests.stderr.txt",
+      "stdout_sha256": "8f70025f1b13067dcd782800c3082d4f981f1b6a4390e2245d8b919027616df3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reporter": "node default spec reporter",
+      "test_summary": {
+        "tests": 20,
+        "suites": 0,
+        "pass": 20,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  ],
+  "real_adapter_conformance_cases_run": false,
+  "network_or_production_effects_invoked": false,
+  "note": "A successful probe means its explicitly quoted mapping counterexample or scoped control was reproduced. It is not success on C01-C16 actual adapter scenarios.",
+  "product_source_unchanged_after_execution": [
+    {
+      "path": "record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "record/README.md",
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/record-kernel.test.mjs",
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/record-adversarial-r1-correction.test.mjs",
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/record-adversarial-r1-identity.test.mjs",
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/record-adversarial-r1-protocol.test.mjs",
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8",
+      "matches_frozen_base": true
+    },
+    {
+      "path": "tests/record-adversarial-r2-system.test.mjs",
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda",
+      "matches_frozen_base": true
+    }
+  ],
+  "post_execution_check_at_utc": "2026-11-08T07:38:19.572979+00:00"
+}

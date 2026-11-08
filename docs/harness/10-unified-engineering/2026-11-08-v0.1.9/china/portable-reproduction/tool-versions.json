@@ -1,0 +1,17 @@
+{
+  "python": "3.9.0",
+  "platform": "macOS-26.5-x86_64-i386-64bit",
+  "machine": "x86_64",
+  "lean_binary_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+  "tlc_jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "versions": {
+    "lean": {
+      "exit_code": 0,
+      "output": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n"
+    },
+    "java": {
+      "exit_code": 0,
+      "output": "java version \"17.0.6\" 2023-01-17 LTS\nJava(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)\nJava HotSpot(TM) 64-Bit Server VM (build 17.0.6+9-LTS-190, mixed mode, sharing)\n"
+    }
+  }
+}

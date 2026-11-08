@@ -1,0 +1,1385 @@
+{
+  "schema_version": "1.0",
+  "task": "W10",
+  "captured_at_utc": "2026-11-08T09:00:14.086913+00:00",
+  "status": "STATIC_MAPPING_AND_DECISION_PROPOSAL",
+  "workbench_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "host_commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "scope": "Fixed plugin entry graph, internal project writers, Native delegates and standalone Record model. Not all host plugins or installed runtime.",
+  "standard_host_chain": {
+    "steps": [
+      "connection index admit",
+      "BrowserAuth authenticated browser/API peer",
+      "HTTP bridge preserves admitted peer",
+      "shared exact fetch handler requires owner",
+      "plugin fetch callback receives Request only"
+    ],
+    "source_refs": [
+      {
+        "path": "packages/client/connection/src/index.ts",
+        "lines": [
+          146,
+          160
+        ]
+      },
+      {
+        "path": "packages/client/connection/src/rpc-host.ts",
+        "lines": [
+          129,
+          136
+        ]
+      },
+      {
+        "path": "packages/client/connection/src/rpc-host.ts",
+        "lines": [
+          215,
+          222
+        ]
+      },
+      {
+        "path": "packages/client/connection/src/http-bridge.ts",
+        "lines": [
+          37,
+          97
+        ]
+      },
+      {
+        "path": "packages/client/connection/src/rpc.ts",
+        "lines": [
+          153,
+          165
+        ]
+      }
+    ],
+    "claim": "Fixed standard chain has upstream authentication and owner-only exact routes; no explicit per-request principal in plugin callback.",
+    "not_claimed": [
+      "actual installed version verified",
+      "every carrier protected",
+      "per-person identity",
+      "human presence or fresh user acceptance",
+      "complete project/Record authorization"
+    ]
+  },
+  "entries": [
+    {
+      "id": "C01",
+      "kind": "HOST_UI_BOUNDARY",
+      "name": "NativeThread embedded conversation",
+      "source_refs": [
+        {
+          "path": "client/app.js",
+          "lines": [
+            76,
+            94
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            123,
+            123
+          ]
+        }
+      ],
+      "mutates": "delegates user conversation controls to native host UI",
+      "identity_available": "SessionProvider retained reference to selected session; full host prompt/cancel authority contract not followed",
+      "history_available": "selected native session ID; no Record history",
+      "record_kernel_wired": false,
+      "I01_disposition": "Must not claim api(action) wraps all native conversation writes. Keep separate view/source.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E01",
+      "kind": "HTTP",
+      "name": "create",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            70,
+            70
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            47,
+            60
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            53,
+            55
+          ]
+        }
+      ],
+      "mutates": "native workspace/session create + project persisted",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "new project UUID and native lead session ID; no Record history",
+      "record_kernel_wired": false,
+      "I01_disposition": "Outside I01 execution; do not equate to createTask.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E02",
+      "kind": "HTTP",
+      "name": "join",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            71,
+            71
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            62,
+            70
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            132,
+            135
+          ]
+        }
+      ],
+      "mutates": "attach existing ordinary session to project as a thread",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Selected session is target, not caller identity; no automatic Record history import.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E03",
+      "kind": "HTTP_ACTION",
+      "name": "pause",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            148,
+            150
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "project.paused=true; kick",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E04",
+      "kind": "HTTP_ACTION",
+      "name": "resume_project",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            148,
+            150
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "project.paused=false; kick",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E05",
+      "kind": "HTTP_ACTION",
+      "name": "retry_delivery",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            152,
+            155
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "clear project outbox errors; kick",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E06",
+      "kind": "HTTP_ACTION",
+      "name": "stop",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            157,
+            164
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "thread stopped/followups cleared/pending outbox cancelled; Native.stop",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E07",
+      "kind": "HTTP_ACTION",
+      "name": "accept",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            165,
+            169
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "review and not native-running: thread phase completed",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E08",
+      "kind": "HTTP_ACTION",
+      "name": "retry",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            59,
+            82
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            170,
+            177
+          ]
+        },
+        {
+          "path": "client/app.js",
+          "lines": [
+            106,
+            135
+          ]
+        }
+      ],
+      "mutates": "thread queued/error cleared/generation++; pending outbox cancelled; kick",
+      "identity_available": "Standard fixed DSH /api exact route admits authenticated owner Peer; plugin callback receives Request only, no per-person principal. Targets are caller-selected references.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Keep legacy semantics separate; any chosen Record bridge must use private entry. Not automatic mapping to similarly named kernel command.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E09",
+      "kind": "PLUGIN_TOOL",
+      "name": "project_dispatch/new",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            38,
+            53
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            72,
+            78
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            97,
+            112
+          ]
+        }
+      ],
+      "mutates": "new queued thread + dispatch key; schedules start",
+      "identity_available": "exec.agent exists and is object-identical to ctx.agents.get(exec.agent.id); Projects.member derives lead/worker and project from stored membership. Lead only.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Do not expose existing scheduler through I01; callId/id dedup differs from Record exact command fingerprint.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E10",
+      "kind": "PLUGIN_TOOL",
+      "name": "project_dispatch/existing",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            38,
+            53
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            79,
+            95
+          ]
+        }
+      ],
+      "mutates": "running target queues followup; otherwise new task text and generation, queued",
+      "identity_available": "exec.agent exists and is object-identical to ctx.agents.get(exec.agent.id); Projects.member derives lead/worker and project from stored membership. Lead only; thread must belong to derived project.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "If later bridged, bind original intent/attempt and all followup transitions; not a new user grant.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E11",
+      "kind": "PLUGIN_TOOL",
+      "name": "project_report",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            38,
+            56
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            114,
+            127
+          ]
+        }
+      ],
+      "mutates": "summary/phase/reportedGeneration and relay outbox",
+      "identity_available": "exec.agent exists and is object-identical to ctx.agents.get(exec.agent.id); Projects.member derives lead/worker and project from stored membership. Worker only; current worker inferred from actor session.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Agent report stays report; never synthesizes verifier completion or user acceptance.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E12",
+      "kind": "HOST_EVENT",
+      "name": "agent/status idle -> onIdle",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            19,
+            21
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            180,
+            187
+          ]
+        }
+      ],
+      "mutates": "may set waiting_user via report and send relay",
+      "identity_available": "Host callback agent.id; project worker membership checked; no user actor.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Observation/event provenance; cannot bypass Record role policy by forging user.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E13",
+      "kind": "HOST_EVENT",
+      "name": "agent/error -> report failed",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            22,
+            25
+          ]
+        }
+      ],
+      "mutates": "failed report for non-lead project worker",
+      "identity_available": "Host event agent.id; membership lookup; no user actor.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Observation/event provenance; legacy phase separate.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E14",
+      "kind": "STARTUP",
+      "name": "recover",
+      "source_refs": [
+        {
+          "path": "index.js",
+          "lines": [
+            14,
+            17
+          ]
+        },
+        {
+          "path": "server/projects.js",
+          "lines": [
+            189,
+            203
+          ]
+        }
+      ],
+      "mutates": "workspace attach repairs; interrupted phases; scheduler kick",
+      "identity_available": "Persisted project/session references plus host running state; not an authenticated user command.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Do not interpret projects.json as authenticated Record journal or start new history under old stream ID.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E15",
+      "kind": "INTERNAL_SCHEDULER",
+      "name": "drive",
+      "source_refs": [
+        {
+          "path": "server/projects.js",
+          "lines": [
+            205,
+            230
+          ]
+        }
+      ],
+      "mutates": "followup dequeue, generation/phase changes, calls start/flush",
+      "identity_available": "From stored membership and queued work; no independent user/verifier actor.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Account for as downstream writer if future scope includes scheduling; I01 does not execute it.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E16",
+      "kind": "INTERNAL_SCHEDULER",
+      "name": "start",
+      "source_refs": [
+        {
+          "path": "server/projects.js",
+          "lines": [
+            232,
+            265
+          ]
+        }
+      ],
+      "mutates": "starting, worktree creation, session/cwd, running/failed, relay",
+      "identity_available": "Stored project/thread targets; Native creates session under code/research mode.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Real host/filesystem effects stay outside I01; internal path must not become an unguarded Record writer.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E17",
+      "kind": "INTERNAL_DELIVERY",
+      "name": "flush",
+      "source_refs": [
+        {
+          "path": "server/projects.js",
+          "lines": [
+            267,
+            290
+          ]
+        }
+      ],
+      "mutates": "Native.deliver then outbox sent; errors may mark target failed",
+      "identity_available": "Persisted relay sender/target; not a human identity assertion.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Delivery accepted is not task completion; distinguish transport receipt.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E18",
+      "kind": "STATE_INGEST",
+      "name": "Store.open",
+      "source_refs": [
+        {
+          "path": "server/store.js",
+          "lines": [
+            7,
+            14
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            13,
+            17
+          ]
+        }
+      ],
+      "mutates": "loads projects/outbox JSON into memory",
+      "identity_available": "Filesystem state; minimal version/array checks, not Record actor authentication.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "No historical import as trusted commands; replay data requires a separately trusted source.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "E19",
+      "kind": "STATE_SINK",
+      "name": "Store.change",
+      "source_refs": [
+        {
+          "path": "server/store.js",
+          "lines": [
+            17,
+            29
+          ]
+        }
+      ],
+      "mutates": "serialized clone-write-rename then in-memory publication",
+      "identity_available": "Trusts internal callback; no actor/history validation.",
+      "history_available": "projectId/threadId/sessionId and thread generation; no Record stream/history incarnation binding.",
+      "record_kernel_wired": false,
+      "I01_disposition": "Do not reuse as the identity gate or claim Record durable ACK; storage work belongs to I03.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "N01",
+      "kind": "NATIVE_BOUNDARY",
+      "name": "Native.create",
+      "source_refs": [
+        {
+          "path": "server/native.js",
+          "lines": [
+            27,
+            38
+          ]
+        }
+      ],
+      "mutates": "workspace/session creation, rename, permission preset",
+      "identity_available": "trusted internal caller supplies cwd/title/mode; host registry returns sessionId",
+      "history_available": "native session ID only",
+      "record_kernel_wired": false,
+      "I01_disposition": "No new I01 use; source beyond sessionController/agent implementation not fully audited here.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "N02",
+      "kind": "NATIVE_BOUNDARY",
+      "name": "Native.ensureWorkspace",
+      "source_refs": [
+        {
+          "path": "server/native.js",
+          "lines": [
+            22,
+            26
+          ]
+        }
+      ],
+      "mutates": "workspace creation/attach session",
+      "identity_available": "internal target ID inspected via host",
+      "history_available": "native session ID only",
+      "record_kernel_wired": false,
+      "I01_disposition": "No new I01 use; source beyond sessionController/agent implementation not fully audited here.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "N03",
+      "kind": "NATIVE_BOUNDARY",
+      "name": "Native.deliver",
+      "source_refs": [
+        {
+          "path": "server/native.js",
+          "lines": [
+            40,
+            48
+          ]
+        }
+      ],
+      "mutates": "agent.followup plus sessionPersistence.flush",
+      "identity_available": "stored sender ID retained in source.kind agent-message; role:user alone is not user authority",
+      "history_available": "native session ID only",
+      "record_kernel_wired": false,
+      "I01_disposition": "No new I01 use; source beyond sessionController/agent implementation not fully audited here.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "N04",
+      "kind": "NATIVE_BOUNDARY",
+      "name": "Native.user",
+      "source_refs": [
+        {
+          "path": "server/native.js",
+          "lines": [
+            49,
+            51
+          ]
+        }
+      ],
+      "mutates": "sessionController.prompt helper",
+      "identity_available": "id/text/requestId supplied by internal caller; method name does not authenticate user",
+      "history_available": "native session ID only",
+      "record_kernel_wired": false,
+      "I01_disposition": "No new I01 use; source beyond sessionController/agent implementation not fully audited here.",
+      "reachable_in_current_plugin": false
+    },
+    {
+      "id": "N05",
+      "kind": "NATIVE_BOUNDARY",
+      "name": "Native.stop",
+      "source_refs": [
+        {
+          "path": "server/native.js",
+          "lines": [
+            52,
+            55
+          ]
+        }
+      ],
+      "mutates": "agent.cancel user reason and clear inbox",
+      "identity_available": "internal target ID; literal kind:user is cancellation reason, not identity evidence",
+      "history_available": "native session ID only",
+      "record_kernel_wired": false,
+      "I01_disposition": "No new I01 use; source beyond sessionController/agent implementation not fully audited here.",
+      "reachable_in_current_plugin": true
+    },
+    {
+      "id": "N06",
+      "kind": "FILESYSTEM_BOUNDARY",
+      "name": "Worktrees.create",
+      "source_refs": [
+        {
+          "path": "server/worktrees.js",
+          "lines": [
+            20,
+            29
+          ]
+        }
+      ],
+      "mutates": "creates branch/worktree directory at current committed HEAD",
+      "identity_available": "internal project/thread IDs and inspected repository path",
+      "history_available": "filesystem path/branch/base SHA; not Record task identity",
+      "record_kernel_wired": false,
+      "I01_disposition": "Outside I01 real effects.",
+      "reachable_in_current_plugin": true
+    }
+  ],
+  "adjacent_read_entries": [
+    {
+      "name": "project_threads",
+      "source": "index.js:50",
+      "status": "READ_PATH_NOT_MUTATION",
+      "identity": "same live agent + project membership"
+    },
+    {
+      "name": "project_read_thread",
+      "source": "index.js:57; server/projects.js:130-144",
+      "status": "READ_PATH_NOT_MUTATION",
+      "identity": "same live agent + project membership"
+    },
+    {
+      "name": "list",
+      "source": "index.js:69",
+      "status": "READ_PATH_NOT_MUTATION",
+      "identity": "standard upstream owner exact-route gate"
+    },
+    {
+      "name": "diff",
+      "source": "index.js:73-77; server/worktrees.js:31-37",
+      "status": "READ_PATH_NOT_MUTATION",
+      "identity": "standard owner gate plus project/thread target check"
+    },
+    {
+      "name": "health",
+      "source": "index.js:79",
+      "status": "READ_PATH_NOT_MUTATION",
+      "identity": "standard owner gate"
+    }
+  ],
+  "record_commands": [
+    {
+      "command": "createTask",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          140,
+          169
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "none_on_creation",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "beginAttempt",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          183,
+          188
+        ]
+      },
+      "roles": [
+        "user",
+        "agent"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "report",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          190,
+          195
+        ]
+      },
+      "roles": [
+        "user",
+        "agent:attempt-owner"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "note",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          196,
+          199
+        ]
+      },
+      "roles": [
+        "user",
+        "agent"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "LIMITED_CANDIDATE_PENDING_D01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "pause",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          200,
+          204
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "LIMITED_CANDIDATE_PENDING_D01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "cancel",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          205,
+          210
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "LIMITED_CANDIDATE_PENDING_D01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "authorize",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          211,
+          218
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "reviseTask",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          219,
+          229
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "verifyCompletion",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          230,
+          235
+        ]
+      },
+      "roles": [
+        "verifier"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "withdrawCompletion",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          236,
+          251
+        ]
+      },
+      "roles": [
+        "verifier"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "resolveDispute",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          252,
+          261
+        ]
+      },
+      "roles": [
+        "verifier"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "markUnavailable",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          262,
+          268
+        ]
+      },
+      "roles": [
+        "verifier"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "acceptResult",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          269,
+          281
+        ]
+      },
+      "roles": [
+        "user"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "acceptanceToken",
+      "I01_candidate": "LIMITED_CANDIDATE_PENDING_D01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "reserveAction",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          282,
+          292
+        ]
+      },
+      "roles": [
+        "user/agent:attempt-owner"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "dispatchAction",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          293,
+          305
+        ]
+      },
+      "roles": [
+        "user/agent:action-owner"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    },
+    {
+      "command": "resolveAction",
+      "source": {
+        "path": "record/kernel.mjs",
+        "lines": [
+          306,
+          328
+        ]
+      },
+      "roles": [
+        "verifier",
+        "user/agent:owner-for-unknown"
+      ],
+      "actor_authentication": "Trusted adapter required; kernel validates claimed role/IDs only.",
+      "history_binding": "Outer trusted HistoryBinding required for every command before dedup/task lookup.",
+      "version_condition": "expectedRevision",
+      "I01_candidate": "NOT_EXPOSED_IN_I01",
+      "current_runtime_adapter": false
+    }
+  ],
+  "project_store_change_coverage": [
+    {
+      "path": "server/projects.js",
+      "line": 59,
+      "entry_ids": [
+        "E01"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 69,
+      "entry_ids": [
+        "E02"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 83,
+      "entry_ids": [
+        "E10"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 107,
+      "entry_ids": [
+        "E09"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 121,
+      "entry_ids": [
+        "E11"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 149,
+      "entry_ids": [
+        "E03",
+        "E04"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 153,
+      "entry_ids": [
+        "E05"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 158,
+      "entry_ids": [
+        "E06"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 167,
+      "entry_ids": [
+        "E07"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 172,
+      "entry_ids": [
+        "E08"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 196,
+      "entry_ids": [
+        "E14"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 215,
+      "entry_ids": [
+        "E15"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 234,
+      "entry_ids": [
+        "E16"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 241,
+      "entry_ids": [
+        "E16"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 246,
+      "entry_ids": [
+        "E16"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 251,
+      "entry_ids": [
+        "E16"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 259,
+      "entry_ids": [
+        "E16"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 280,
+      "entry_ids": [
+        "E17"
+      ]
+    },
+    {
+      "path": "server/projects.js",
+      "line": 282,
+      "entry_ids": [
+        "E17"
+      ]
+    }
+  ],
+  "separate_model_boundaries": {
+    "kernel_connected_to_plugin": false,
+    "ordinary_kernel_envelope_has_stream_id": false,
+    "acceptance_token_has_stream_id": true,
+    "acceptance_token_is_authentication_credential": false,
+    "project_dispatch_key_uses_exact_command_fingerprint": false,
+    "rpc_id_persisted_as_record_request_id": false,
+    "test_actor_source": "tests/support/record-fixture.mjs:3-5 synthetic constants"
+  },
+  "D01_options": [
+    {
+      "id": "A",
+      "choice": "Fixed standard DSH owner route + registered agent tool channel",
+      "status": "CANDIDATE_NOT_SELECTED",
+      "requires": [
+        "Verify deployed version/carrier contract",
+        "Freeze stable authority/subject mapping and current role policy",
+        "Bind original history to private instance",
+        "Define owner authority vs human acceptance intent"
+      ]
+    },
+    {
+      "id": "B",
+      "choice": "Dedicated local trusted command entry",
+      "status": "DESIGN_ONLY_NOT_PRESENT",
+      "requires": [
+        "Concrete peer identity and access boundary",
+        "Host instance/history lifetime",
+        "No localhost or body actor substitution"
+      ]
+    },
+    {
+      "id": "SIMULATION_ONLY",
+      "choice": "Neither trusted boundary proven",
+      "status": "FALLBACK_NOT_PRODUCT_AUTHENTICATION",
+      "requires": [
+        "Keep actor/evidence synthetic",
+        "Do not claim authenticated integration"
+      ]
+    }
+  ],
+  "proposed_changes": [
+    {
+      "path": "server/record-entry.js (proposed)",
+      "change": "Private history registry/kernel handle, derived actor and whitelist; no implementation in W10."
+    },
+    {
+      "path": "index.js",
+      "change": "Connect only selected trusted channel; keep existing event/tool/HTTP paths classified."
+    },
+    {
+      "path": "client/app.js",
+      "change": "Separate Record view, captured original history/request/token/watermark; no alias to legacy phase."
+    },
+    {
+      "path": "client.js",
+      "change": "Regenerate through existing build only during later implementation."
+    },
+    {
+      "path": "record/kernel.mjs",
+      "change": "No required I01 core modification proposed; history binding is outer envelope."
+    },
+    {
+      "path": "server/projects.js / native.js / store.js",
+      "change": "Keep legacy semantics distinct; do not claim unified interception or durable Record ACK."
+    }
+  ],
+  "acceptance_prerequisites": [
+    {
+      "id": "T01",
+      "description": "Chosen standard host chain rejects unauthenticated and non-owner callers before Record entry.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T02",
+      "description": "Forged/unregistered agent object and body actor/role user/verifier cannot change derived identity.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T03",
+      "description": "Two histories each have task:1/revision=1 and same actor; old cancel with never-seen requestId routed to new history fails before apply and changes neither.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T04",
+      "description": "Exact command retransmission returns old receipt; different payload with same requestId is rejected; RPC correlation ID is not substituted.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T05",
+      "description": "UI project/history switch preserves already-created request origin, token and revision; late snapshots cannot cross histories.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T06",
+      "description": "Legacy accept/report/stopped and internal recovery events cannot synthesize Record acceptance/completion/termination proofs.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T07",
+      "description": "No exposed create/reserve/dispatch/verifier endpoint or external effect in I01; only frozen whitelist reaches private kernel.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T08",
+      "description": "Chosen user/agent roles plus current read scope are checked; token ownership does not authenticate actor.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T09",
+      "description": "New acceptance uses original token; old accepted request replay remains historical; unavailable/withdrawn result cannot be presented as current accepted result.",
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "T10",
+      "description": "Restart either restores explicitly trusted complete history or creates a new incarnation; no durable ACK claim without I03 evidence. Inspect all listed transport and internal routes for unintended Record access.",
+      "status": "PROPOSED_NOT_RUN"
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "U01",
+      "item": "Actual installed DSH version and all mounted carrier paths",
+      "reason": "Only fixed upstream standard HTTP chain read; no live host run."
+    },
+    {
+      "id": "U02",
+      "item": "Stable authority namespace and per-person identity",
+      "reason": "Owner principal is kind:owner; no individual subject supplied to exact callback."
+    },
+    {
+      "id": "U03",
+      "item": "Mapping owner authority to current allowed user commands/human acceptance intent",
+      "reason": "Transport authentication is not proof of a human click or a specific current authorization."
+    },
+    {
+      "id": "U04",
+      "item": "History incarnation registry/lifetime, task-thread mapping, original command binding",
+      "reason": "No current Record runtime adapter; project IDs/generation have different semantics."
+    },
+    {
+      "id": "U05",
+      "item": "Full native sessionController and embedded conversation command boundaries",
+      "reason": "Stopped at injected host API; source principal compatibility note alone is not command authentication."
+    },
+    {
+      "id": "U06",
+      "item": "Host tool execution provenance and callId replay stability beyond registered object check",
+      "reason": "No full tools implementation audit; only plugin check and fixed host interfaces read."
+    },
+    {
+      "id": "U07",
+      "item": "Verifier identity and actual external evidence",
+      "reason": "S1 fixtures are synthetic; I01 verifier writes remain closed."
+    },
+    {
+      "id": "U08",
+      "item": "Same-process malicious plugins and credential isolation",
+      "reason": "I01 does not claim process isolation; no credential/profile inspection or attack testing."
+    }
+  ],
+  "operations_not_performed": [
+    "Product code modification",
+    "Host startup or endpoint request",
+    "Authentication implementation",
+    "Test execution",
+    "External effect or paid model API",
+    "Credential/profile/session-data access",
+    "Commit or push"
+  ]
+}

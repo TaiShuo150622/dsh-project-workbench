@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "status": "CONSTRUCTED_NOT_RUN",
+  "actual_execution": false,
+  "scope": "Three finite paper counterexamples; no product/adapter/simulator or model/API experiment",
+  "cases": [
+    {
+      "id": "CVX01",
+      "title": "访问过滤悄悄改变分母",
+      "clauses": [
+        "CV01",
+        "CV03",
+        "CV04",
+        "CV06",
+        "CV07"
+      ],
+      "initial": {
+        "target": "source_ingestion",
+        "domain_revision": "D1",
+        "required_sources": [
+          "synthetic-a",
+          "synthetic-b"
+        ],
+        "required_handling": "capture each required source at the fixed revision",
+        "disclosure": "b identity is protected"
+      },
+      "observations": [
+        {
+          "source": "synthetic-a",
+          "handling": "captured"
+        },
+        {
+          "source": "synthetic-b",
+          "handling": "access denied"
+        }
+      ],
+      "unsafe_transition": "Filter the domain by current visibility, replace D1 with [a], and report complete from 1/1.",
+      "expected": "Original D1 remains; coverage=partial because required b is known unhandled. Protected internal gap remains. Public output exposes only policy-authorized status/next step, not b identity or count.",
+      "positive_control": "An authorized scope revision D2 can change the requirement prospectively, but must not rewrite the D1 report. If D1 requires an accepted assessment rather than raw capture, a properly authorized bounded attestation may fulfill that different handling mode.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "note": "Boolean values in this synthetic paper case describe assumed conditions, not a production trusted-input format."
+    },
+    {
+      "id": "CVX02",
+      "title": "索引水位冒充调用切点",
+      "clauses": [
+        "CV01",
+        "CV02",
+        "CV03",
+        "CV04",
+        "CV05"
+      ],
+      "initial": {
+        "history": "synthetic-h",
+        "incarnation": 1,
+        "index_processed_through": 10,
+        "request_cut": 12,
+        "target": "context_obligations",
+        "obligation": "include current applicable constraints from the declared accepted-event prefix"
+      },
+      "observations": [
+        {
+          "sequence": 11,
+          "content": "synthetic new prohibition, not yet indexed"
+        },
+        {
+          "sequence": 12,
+          "content": "synthetic unrelated note"
+        },
+        {
+          "registry_revision": "D2",
+          "change": "new required source added under the explicit domain-change rule"
+        }
+      ],
+      "unsafe_transition": "Use successful search of the index at 10 as complete coverage for cut 12 and then silently reuse it for D2.",
+      "expected": "The old report remains scoped to D1/cut10. Current coverage must account for the exact tail (10,12] and D2 membership; missing event 11 or new required source is a gap. Same sequence numbers in another history/incarnation do not close the interval.",
+      "positive_control": "After authenticated continuous tail capture and qualifying handling receipts, the scoped coverage may become complete even if the new prohibition makes the proposed business action disallowed. Unrelated note 12 need not invalidate independent old decisions.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "note": "Boolean values in this synthetic paper case describe assumed conditions, not a production trusted-input format."
+    },
+    {
+      "id": "CVX03",
+      "title": "有权评估不等于有权披露",
+      "clauses": [
+        "CV03",
+        "CV04",
+        "CV06",
+        "CV07",
+        "CV08"
+      ],
+      "initial": {
+        "target": "assessment_checks",
+        "domain": "finite protected synthetic source set",
+        "evaluator_can_read": true,
+        "consumer_can_read_originals": false,
+        "release_Grant_present": false
+      },
+      "observations": [
+        {
+          "assessment": "evaluator completed declared checks and found opposing evidence",
+          "source_identity": "protected-synthetic-id",
+          "policy": "consumer's task permits a narrowly scoped attestation if separately authorized"
+        }
+      ],
+      "unsafe_transition": "Publish the complete detailed report, source identity/count and conflict text using the evaluator's read authority alone.",
+      "expected": "No automatic release. The evaluator can retain an internally complete assessment-coverage report while publication is not permitted. If a later applicable release Grant/policy permits a minimal output, issue that bound projection; it does not assert raw-context coverage or grant raw evidence access.",
+      "positive_control": "A permitted summary can satisfy the agreed assessment obligation for the consumer without access to all ancestors; its negative/conflicting outcome does not become business success.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "note": "Boolean values in this synthetic paper case describe assumed conditions, not a production trusted-input format."
+    }
+  ]
+}

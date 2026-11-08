@@ -1,0 +1,82 @@
+{
+  "review_id": "R-02",
+  "review_type": "independent_model_review_and_local_specification_checks",
+  "model_declared_by_dispatcher": "gpt-6-astra",
+  "human_review_performed": false,
+  "input_manifest": "INPUT_MANIFEST.json",
+  "tlc_receipt_manifest": "TLC_RECEIPT_MANIFEST.json",
+  "first_round_outputs_modified": false,
+  "overall": "No counterexample to the original models' stated finite-domain conclusions was found in the fixed files. One shared-oracle semantic dependency was demonstrated and independently checked for the original evaluator.",
+  "findings": [
+    {
+      "id": "MA01",
+      "title": "Independent fixed-point algorithms share the formula interpreter",
+      "classification": "validation_boundary_common_mode_dependency",
+      "severity": "low",
+      "location": {"file": "inputs/python/model_check.py", "start_line": 196, "end_line": 227},
+      "counterexample_to_validation_independence": "Change each AND clause from all to any only in the audit process. a AND b at a=true,b=false becomes true, but the complete check_support() still returns without exception.",
+      "evidence": "audit_checks.json",
+      "original_model_error_found": false,
+      "independent_mitigation": {
+        "method": "Bitmask clause interpretation and all-derived-assignment fixed-point selection, without calling the reviewed semantic evaluator",
+        "formula_truth_table_cases_passed": 3872,
+        "fixed_point_cases_passed": 117128
+      },
+      "recommendation": "Qualify independence as fixed-point solver independence; retain a separate semantic truth-table or bitmask check for the common interpreter.",
+      "requires_product_change": false
+    }
+  ],
+  "python_replay": {
+    "receipt": "execution_receipt.json",
+    "exit_code": 0,
+    "elapsed_seconds": 21.418045334,
+    "results_byte_identical": true,
+    "traces_byte_identical": true,
+    "results_sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+    "traces_sha256": "0ad67a9053b3b257452e752868c1d947e2e67f96880ddc5d449819d72c322b46"
+  },
+  "additional_checks": {
+    "script": "audit_checks.py",
+    "result": "audit_checks.json",
+    "exit_code": 0,
+    "count_consistency_graphs": 10,
+    "independent_acceptance_count_formula": "3^9 * 3 * 2 * 2 + 2^9 * 2 * 2",
+    "independent_acceptance_state_count": 238244,
+    "source_files_mutated": false,
+    "deliberate_mutation_scope": "Only the audit process's imported module object"
+  },
+  "tla_static_review": {
+    "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+    "configuration_count": 6,
+    "unassigned_primed_variables_found": false,
+    "unbounded_reachable_state_domain_found": false,
+    "effect_set_hides_distinct_duplicate_sends": false,
+    "scope_notes": [
+      "Send always captures current targetEpoch; stale behavior is represented by already-sent old messages delivered later, not by a separate old executor generating new messages after epoch installation.",
+      "Each message ID is delivered at most once; retransmission is represented by another Send with a fresh message ID.",
+      "Target dedupe check, key persistence, and effect creation are one assumed atomic action with no retention expiry.",
+      "No fairness, eventual delivery, target-crash recovery, multiple business actions, or general implementation refinement is proved."
+    ]
+  },
+  "root_tlc_evidence_review": {
+    "independently_executed_by_this_reviewer": false,
+    "model_config_and_log_hashes_verified": true,
+    "raw_logs_read": true,
+    "cases": [
+      {"config": "combined", "exit_code": 0, "distinct": 624, "generated": 1360, "queue_remaining": 0, "complete": true},
+      {"config": "fence-only", "violation": "NoDuplicateEffect", "trace_transitions": 4, "complete": false},
+      {"config": "dedupe-only", "violation": "NoStaleCommit", "trace_transitions": 3, "complete": false},
+      {"config": "unstable-key", "violation": "NoDuplicateEffect", "trace_transitions": 4, "complete": false},
+      {"config": "cancel-is-not-rollback", "violation": "NoCommitAfterLocalCancel", "trace_transitions": 3, "complete": false},
+      {"config": "world-is-not-ledger", "violation": "WorldEffectAlwaysKnown", "trace_transitions": 2, "complete": false}
+    ],
+    "caution": "Stopping at one invariant violation does not establish other invariants over the whole reachable graph. Additional positive-only configs are outside this frozen review."
+  },
+  "suggested_nontrivial_small_lemmas": [
+    "For any finite dependency DAG, topological recomputation on the complete affected closure equals full reevaluation after root changes, while unaffected nodes remain equal.",
+    "Explicit Reserve/Spend/Settle/Release/Close transitions preserve liability coverage and budget bounds for every finite prefix, including hidden unreported spending."
+  ],
+  "product_changes": false,
+  "commit_or_push": false,
+  "network_or_model_api_calls": false
+}

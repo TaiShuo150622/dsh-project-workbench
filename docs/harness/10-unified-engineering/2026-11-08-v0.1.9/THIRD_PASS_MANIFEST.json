@@ -1,0 +1,294 @@
+{
+  "copied_at_utc": "2026-11-08T07:31:09.897777+00:00",
+  "scope": "Third immutable agent snapshots; local research only",
+  "files": [
+    {
+      "source_worktree": "west",
+      "path": "west/authority-scope/amendments.md",
+      "bytes": 7562,
+      "sha256": "95297a42a0da9afdb5ba2004c3ff34217980bb665b606e145b6a3f3ce25f3026"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/authority-scope/contract-cases.md",
+      "bytes": 5318,
+      "sha256": "b5680eb1b519db58a5bd66cdc7f9fbc1e8c79194d80177163b87a567af5bc83a"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/authority-scope/review-packet.md",
+      "bytes": 4144,
+      "sha256": "1ed85acc7e09fdb38cbb53c0cc04ee9c236d59d6d784310742638778575ab8c8"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/authority-scope/sources.json",
+      "bytes": 10432,
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "bytes": 17561,
+      "sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/conformance/README.md",
+      "bytes": 5526,
+      "sha256": "fef1bf6ff8511d11cb16b63f63aa86d4af9e2ff4d0b6cd316e29cc2f23037804"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/conformance/catalog.json",
+      "bytes": 51069,
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/conformance/review.md",
+      "bytes": 7456,
+      "sha256": "feb59315f96c15dfdb8814dcd55795705ba2b3e1904ceab273864609554eed5d"
+    },
+    {
+      "source_worktree": "mechanisms",
+      "path": "mechanisms/conformance/validation.json",
+      "bytes": 1253,
+      "sha256": "eb9262189be2ccb0c7019141db806570ab8ac124b82501eed87138670c766f93"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/BudgetSafety.lean",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/README.md",
+      "bytes": 8930,
+      "sha256": "4877ae2efbf25742b3c27e926b04c389c036d229a267ae23fc351b00bd105ede"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/SHA256SUMS",
+      "bytes": 674,
+      "sha256": "53975cb313bd7d7097c655958e5d5de681ad301213e7572bfb51b2cfbac38f1b"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/compiler.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/compiler.stdout.txt",
+      "bytes": 391,
+      "sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/execution_receipt.json",
+      "bytes": 2030,
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/inputs/FORMAL_MODEL.md",
+      "bytes": 28118,
+      "sha256": "3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/inputs.json",
+      "bytes": 496,
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/budget-proof/lean-toolchain.json",
+      "bytes": 700,
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/INPUT_MANIFEST.json",
+      "bytes": 4347,
+      "sha256": "5e2926f1af0d442b68744a07f45e1973ac4677f9f887b533e6438863fb9ab3b6"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/OUTPUT_MANIFEST.json",
+      "bytes": 1262,
+      "sha256": "0c01853aab64a670e1514f733d1d9290d161a6b09cd4e36a966a2e834da9d532"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/REVIEW.md",
+      "bytes": 12654,
+      "sha256": "1925948305bd3e4f5d9867895e711791f0fa3fe25e597821021625d49d341282"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/build_witnesses.py",
+      "bytes": 5550,
+      "sha256": "703e7f36d55a3dce9cd387150fc870852917e3bd05bf3ba34f793c2a3a37dcd8"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/compile/budget.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/compile/budget.stdout",
+      "bytes": 391,
+      "sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/compile/dag.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/compile/dag.stdout",
+      "bytes": 172,
+      "sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/compile_receipt.json",
+      "bytes": 2442,
+      "sha256": "aba6e348da37f2f84f39418a4dabc4542b7971aca6e8f211269dcbb8a4c2af40"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/findings.json",
+      "bytes": 4402,
+      "sha256": "28870564b54933fab007d5b07e101fe5258e2e19be3fb5b805fd65a02a00bc10"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/BudgetSafety.lean",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/README.md",
+      "bytes": 8930,
+      "sha256": "4877ae2efbf25742b3c27e926b04c389c036d229a267ae23fc351b00bd105ede"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/SHA256SUMS",
+      "bytes": 674,
+      "sha256": "53975cb313bd7d7097c655958e5d5de681ad301213e7572bfb51b2cfbac38f1b"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/compiler.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/compiler.stdout.txt",
+      "bytes": 391,
+      "sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/execution_receipt.json",
+      "bytes": 2030,
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/inputs/FORMAL_MODEL.md",
+      "bytes": 28118,
+      "sha256": "3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/inputs.json",
+      "bytes": 496,
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/budget/lean-toolchain.json",
+      "bytes": 700,
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/dag/IncrementalDag.lean",
+      "bytes": 8107,
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/dag/README.md",
+      "bytes": 4965,
+      "sha256": "831ba5400a0689c8c37c9651ed844edf4200fbe3dc97b3594d550e6a7d0e6639"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/dag/compile.log",
+      "bytes": 172,
+      "sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/inputs/dag/compile_receipt.json",
+      "bytes": 745,
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witness_receipt.json",
+      "bytes": 2304,
+      "sha256": "56e9cef46a9258ab474dc784b04fae1ab9726298249cbecfa298b55d02b0b673"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/BudgetWitness.lean",
+      "bytes": 14474,
+      "sha256": "12cfbb9d13556b2b240cc60525c86b336ef943202c22ad1bdfaf88dfb75963b6"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/BudgetWitness.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/BudgetWitness.stdout",
+      "bytes": 661,
+      "sha256": "acafc63e9b880106d0f8bf43a8c0cefa9e3bf36e659c2b34a22b3230a899363e"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/DagWitness.lean",
+      "bytes": 10176,
+      "sha256": "a8175a485724591412e74e87c0531ff335b21cf97d6680b30da66beafca764e1"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/DagWitness.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "proof-review",
+      "path": "proof-review/general-proof-audit/witnesses/DagWitness.stdout",
+      "bytes": 1050,
+      "sha256": "4442ff0ac62fb179bf4db7361b59bd319cceafed2dbdefc30f567b2d3d83b8a8"
+    }
+  ]
+}

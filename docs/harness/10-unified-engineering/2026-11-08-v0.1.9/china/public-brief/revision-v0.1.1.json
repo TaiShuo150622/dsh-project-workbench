@@ -1,0 +1,7 @@
+{
+  "recorded_at_utc": "2026-11-08T09:24:46.387132+00:00",
+  "previous_sha256": "88e3fef165d3c0e7dd8067f0ccafb4cb958804a1866342cbe82530349241e484",
+  "current_sha256": "f47e3ec8385412be72ae5644c4fe12da1eceb838a10bf3c28df53890f0be651b",
+  "review_sha256": "bfc1b628934fe0445ca68f6de924f057f96e8bd484cd4d682017e15632b2d66e",
+  "change": "C08 review status updated; conditional arguments remain unproved in Lean and not product liveness; no form submission"
+}

@@ -1,0 +1,19 @@
+{
+  "round": "R17",
+  "scope": "M10 finite coverage contract and W14 illustrative worked example at frozen hashes",
+  "must_fix": [],
+  "clarifications_required": [],
+  "conclusion": "No concrete semantic defect found in scoped frozen text and structured contract.",
+  "paper_reasoning_cases": 5,
+  "paper_cases_executed": false,
+  "new_model_checks": 0,
+  "new_proofs": 0,
+  "product_tests": 0,
+  "human_review_claimed": false,
+  "implementation_obligations_not_new_defects": [
+    "authenticated receipts and enumeration",
+    "actual-input capture boundary",
+    "summary fidelity and authorized disclosure",
+    "current operation grants and authoritative effect/settlement evidence"
+  ]
+}

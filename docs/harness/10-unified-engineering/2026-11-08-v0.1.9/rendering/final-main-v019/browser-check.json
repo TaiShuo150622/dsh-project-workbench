@@ -1,0 +1,63 @@
+{
+  "scope": "mobile light/dark DOM and network check, not visual acceptance",
+  "rows": [
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.html",
+      "sha256": "c62582e4d7663e7b0b07ebcab7d4355881497b137606824f8f5545a77efd6fe3",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T12:43:20.687242+00:00"
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.html",
+      "sha256": "c62582e4d7663e7b0b07ebcab7d4355881497b137606824f8f5545a77efd6fe3",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T12:43:27.584351+00:00"
+    }
+  ]
+}

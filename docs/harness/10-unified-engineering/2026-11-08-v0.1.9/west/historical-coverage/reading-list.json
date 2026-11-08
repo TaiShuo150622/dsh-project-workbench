@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0",
+  "task": "W09",
+  "captured_at_utc": "2026-11-08T08:47:46.309742+00:00",
+  "scope": "Source-only coverage review; no current product or external-source verification.",
+  "reading_status_legend": {
+    "FULL_THIS_ROUND": "Full text read in W09.",
+    "SELECTED_THIS_ROUND": "Only specified ranges read in W09.",
+    "PRIOR_SELECTED_HASH_CONFIRMED": "Prior selected reading; current hash matches prior input.",
+    "PRIOR_FULL_HASH_CONFIRMED": "Prior full text reading; current hash matches prior input.",
+    "PRIOR_AUTHORED_HASH_CONFIRMED": "Prior authored/reviewed research document; matching current copy.",
+    "INDEX_ONLY": "Title/version/type metadata only; body content not claimed covered."
+  },
+  "archive_reading_counts": {
+    "full_this_round": 9,
+    "selected_this_round": 1,
+    "prior_hash_confirmed": 4,
+    "total_indexed_bodies_touched": 14,
+    "index_only": 178
+  },
+  "entries": [
+    {
+      "id": "NAV01",
+      "repository_relative_path": "docs/harness/INDEX.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/INDEX.md",
+      "sha256": "57f8c2b9907064642b750de5015452956acbac050cca7157deb9138b757c322c",
+      "total_lines": 249,
+      "role": "navigation",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Full metadata index read and parsed, not full reading of 192 referenced bodies.",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "line_ranges": [
+        [
+          1,
+          249
+        ]
+      ]
+    },
+    {
+      "id": "NAV02",
+      "repository_relative_path": "docs/harness/08-browser/CONTENTS.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/CONTENTS.md",
+      "sha256": "e10eb6100de9976243778a60c3954ce30da4b09602e4a92e620bed6a00a151e7",
+      "total_lines": 55,
+      "role": "navigation",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "line_ranges": [
+        [
+          1,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "BR01",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "sha256": "4e10c3b418af6b2ff79f755ec4fb81c62018de32d7b24592c17d647048ff0560",
+      "total_lines": 62,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "BR02",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "sha256": "bce5208260614bd8ea310637898f0b23ea83d2a566a4d042a68aedf107df0aaa",
+      "total_lines": 39,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          39
+        ]
+      ]
+    },
+    {
+      "id": "BR03",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "sha256": "859196d31aec9193ee71a33e5c669ee5395543c1dc51509bca1ba6f5aea285ca",
+      "total_lines": 140,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          140
+        ]
+      ]
+    },
+    {
+      "id": "BR04",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "sha256": "c4cd25f33381d283a8333c536d7092ff89a7784488bdad9645107691bcd24829",
+      "total_lines": 52,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          52
+        ]
+      ]
+    },
+    {
+      "id": "BR05",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "sha256": "8b08d98fa117607e21c30f2814d26f87ac9a2e0d82f3084073f5194ef00c9ece",
+      "total_lines": 118,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          118
+        ]
+      ]
+    },
+    {
+      "id": "BR06",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "sha256": "45b3d4eca958b2466ca3c77e29d93addb6be6dd85881e308d4f5e4631c24baf8",
+      "total_lines": 129,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "BR07",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "sha256": "9d2993865c8021cb6395b338f6f069139c946001d81d74a47b5165193889d031",
+      "total_lines": 121,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          121
+        ]
+      ]
+    },
+    {
+      "id": "BR08",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "sha256": "94cba3f002586d5923dd34801189a26f7de001d57c0074c1a9541f6b329ffaa9",
+      "total_lines": 41,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Historical archived documentation; no current product or runtime verification.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          41
+        ]
+      ]
+    },
+    {
+      "id": "BR09",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "sha256": "16363ec71243bb81dc38716cf2355ac2cc6b9097dd3e620dfd8475ac1571e683",
+      "total_lines": 208,
+      "role": "archived_source",
+      "read_status": "SELECTED_THIS_ROUND",
+      "notes": "Remaining body not reviewed.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          113
+        ]
+      ]
+    },
+    {
+      "id": "RT01",
+      "repository_relative_path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403",
+      "total_lines": 57,
+      "role": "archived_source",
+      "read_status": "FULL_THIS_ROUND",
+      "notes": "Public curated historical proposal; no experiment or deployment rerun.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "OLD04",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "total_lines": 413,
+      "role": "archived_source",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "notes": "W06 semantic reading retained; W09 verifies file bytes, not a new full reading.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          145
+        ]
+      ],
+      "previous_sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "previous_round": "W06",
+      "hash_matches_previous": true
+    },
+    {
+      "id": "OLD05",
+      "repository_relative_path": "docs/harness/05-panels/docs/design/overall-discussion.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45",
+      "total_lines": 1024,
+      "role": "archived_source",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "notes": "W06 semantic reading retained; W09 verifies file bytes, not a new full reading.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          118
+        ]
+      ],
+      "previous_sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45",
+      "previous_round": "W06",
+      "hash_matches_previous": true
+    },
+    {
+      "id": "OLD06",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1",
+      "total_lines": 79,
+      "role": "archived_source",
+      "read_status": "PRIOR_FULL_HASH_CONFIRMED",
+      "notes": "W06 semantic reading retained; W09 verifies file bytes, not a new full reading.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          79
+        ]
+      ],
+      "previous_sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1",
+      "previous_round": "W06",
+      "hash_matches_previous": true
+    },
+    {
+      "id": "OLD07",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "total_lines": 423,
+      "role": "archived_source",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "notes": "W06 semantic reading retained; W09 verifies file bytes, not a new full reading.",
+      "implementation_claim_status": "HISTORICAL_DOCUMENT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          130
+        ]
+      ],
+      "previous_sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "previous_round": "W06",
+      "hash_matches_previous": true
+    },
+    {
+      "id": "NEW01",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "902071ad4aaeaa26b22913fdbb451ccdd220590c45b470908cd85d6627f348d1",
+      "total_lines": 198,
+      "role": "new_design_target",
+      "read_status": "SELECTED_THIS_ROUND",
+      "notes": "Action boundaries, scenarios, workbench and slices; additional grep matches do not count as full reading.",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "line_ranges": [
+        [
+          105,
+          178
+        ]
+      ]
+    },
+    {
+      "id": "NEW02",
+      "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "dedfe8b1de2e1b1c84cc714fcaa79e4efa4a9cd14a9d27f8f308b23157648a9f",
+      "total_lines": 95,
+      "role": "new_design_target",
+      "read_status": "SELECTED_THIS_ROUND",
+      "notes": "Selected reconciliation rows and historical links, not a new full reading.",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "line_ranges": [
+        [
+          1,
+          34
+        ],
+        [
+          78,
+          95
+        ]
+      ]
+    },
+    {
+      "id": "NEW03",
+      "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "sha256": "b13b9cd1c433cb0dd52c628b82be95992a5e0a3bbfc9a21ebc559366cdb2671a",
+      "total_lines": 377,
+      "role": "new_design_target",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "notes": "W08 selected motivation, propositions, related work and next-step sections.",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "previous_sha256": "b13b9cd1c433cb0dd52c628b82be95992a5e0a3bbfc9a21ebc559366cdb2671a",
+      "previous_round": "W08",
+      "hash_matches_previous": true
+    },
+    {
+      "id": "NEW04",
+      "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "total_lines": 169,
+      "role": "new_design_target",
+      "read_status": "PRIOR_AUTHORED_HASH_CONFIRMED",
+      "notes": "W07 authored/reviewed; integration copy matches west handoff. Slices remain proposals.",
+      "implementation_claim_status": "RESEARCH_OR_NAVIGATION_ONLY",
+      "line_ranges": [
+        [
+          1,
+          169
+        ]
+      ],
+      "previous_sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "previous_round": "W07/W08",
+      "hash_matches_previous": true
+    }
+  ],
+  "limits": [
+    "Hash equality proves identity, not semantic completeness or implementation.",
+    "HTML boards, PNG and design JSON remain index-only in W09.",
+    "No actual browser profile, operation log, token, credential or private company/quantitative material read.",
+    "Historical implementation statements are not current runtime facts."
+  ]
+}

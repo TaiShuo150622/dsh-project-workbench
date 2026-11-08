@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="b93c3768bc79">
+<title>R19：保留、删除与重放契约审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#必须改">必须改</a></li><li class="l2"><a href="#关键结论与必要限定">关键结论与必要限定</a></li><li class="l2"><a href="#四个情景的直接核对">四个情景的直接核对</a></li><li class="l2"><a href="#范围与回执">范围与回执</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R19：保留、删除与重放契约审查</h1>
+</header>
+<p>结论：对冻结 M12 正文、四个纸面情景及指定对照材料，<strong>未发现必须修订的实质语义错误</strong>。该契约没有把撤权扩成普遍删除，也没有用历史发布、只追加日志或回执缓存绕过新的有效处置。真实枚举、受控写入/交付、处置权和删除后证据资格仍是明确未实现的前提。</p>
+<p>这是不同模型研究线的模型语义审查，不是人类审核、模型证明或真实删除验收。模型标识按调度为 gpt-6-astra，未独立认证。CONTRACT SHA-256 为 <code>815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f</code>，匹配任务指定值。10 份冻结输入及来源身份见 <a href="INPUT_SNAPSHOT.json">INPUT_SNAPSHOT.json</a>。</p>
+<h2 id="必须改">必须改</h2>
+<p>无。本轮没有把已明确列出的实现义务重新包装成正文漏洞，也不提出通用删除引擎、法律保证或新 schema。</p>
+<h2 id="关键结论与必要限定">关键结论与必要限定</h2>
+<p>以下定位中的行号属于 <code>inputs/M12/CONTRACT.md</code>；情景定位属于冻结 <code>scenarios.json</code> 的 case ID。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">检查点</th><th style="text-align:left">定位</th><th style="text-align:left">独立判断与必须保留的边界</th></tr></thead><tbody><tr><td style="text-align:left">撤权、删除、证据资格</td><td style="text-align:left">11–18、24；RR01/RR03</td><td style="text-align:left">单主体撤权只影响该 Grant 及真实依赖链；副本/内容处置不推出原断言为假。原件不可再读时，是否仍合格取决于评估政策，且须保留不可复核/gap；不能只因反证被隐藏就宣布争议解决。与 W11 的正反证分离及 authority 的按 q 使用一致。</td></tr><tr><td style="text-align:left">派生物既非连坐也非永久豁免</td><td style="text-align:left">16、42；RR03</td><td style="text-align:left">B 的独立 release 不因 A 单独撤权自动失效；独立性须核真实依赖，而非名字叫 independent。新的有效 D2 明确覆盖摘要且有适用政策优先关系时，旧发布不抵抗处置。B 可消费、可读原证据、可重核分别判断。</td></tr><tr><td style="text-align:left">旧 worker 与新 ID</td><td style="text-align:left">22、28–34；RR01/RR02</td><td style="text-align:left">原 observationId tombstone 不足以拦截旧 source 的新 ID 派生。必须在受管写入/发布边界核来源版本及处置 revision，并与处置生效有共同顺序或等价拒旧依据。开工时检查 epoch 不够；只挡输出时不能报存储删除完成。传播范围/禁止的新写入由明确政策确定，不由来源删除无条件推出全部派生物消失。</td></tr><tr><td style="text-align:left">处置 ACK 与有限清理结论</td><td style="text-align:left">24、28–32；RR02</td><td style="text-align:left">接收请求、决定有效、禁止交付、后端方法完成和介质不可恢复是不同断言。有限清单不得因拒绝访问或不易处理而缩小；未确认旧生产者和备份仍是缺口。M10 的“义务已处理”不能单独变成实际删除成功，仍要看该 target 的成功条件及后端回执语义。正文与 RR02 均保留此限定。</td></tr><tr><td style="text-align:left">恢复与控制标记寿命</td><td style="text-align:left">31、34；RR04</td><td style="text-align:left">旧快照/备份/队列不能先恢复权威使用再等待处置尾部；有效状态未明时关闭受影响访问/重建。控制标记的保留许可与回流窗口需协调，不承诺永久 tombstone，也没有承诺这种未知状态一定能继续恢复。已外发内容与模型记忆不因本地标记被召回。</td></tr><tr><td style="text-align:left">P1/P3 与删除后的表示</td><td style="text-align:left">38–40；RR04</td><td style="text-align:left">P1 只在原初态、完整事件及解释器前提下适用，删 payload 后须另述新表示、兼容检查点和缺口。P3 只覆盖仍允许保留且只追加的控制范围，不能证明原文或事件存在性永久可提供。保留发生/处置事实不等于可重新证明旧业务结论。</td></tr><tr><td style="text-align:left">元数据、历史查询与回执缓存</td><td style="text-align:left">15、22、38；RR02/RR04</td><td style="text-align:left">ID、标题、摘要、散列与事件存在性都不默认无敏感性。同 requestId 只允许按当前披露政策返回获准历史表示；裁剪后的响应不冒充原字节回执。该规则针对返回表示，不赋予重新执行旧外部动作的权限。</td></tr></tbody></table></div>
+<h2 id="四个情景的直接核对">四个情景的直接核对</h2>
+<p>逐项读初态、扰动、observe、oracle 和 does_not_prove，未运行或机械穷举。下列是条件推导，不增加测试或证明数量。</p>
+<ul><li><strong>RR01</strong>：旧观察晚到与新 ID 重新抽取是两种入口。观察 ID 的撤回只挡前者；案例另假定冻结政策限制 source v1 对命题 k 的当前使用，才拒绝后者。未扩成全来源禁用，替代来源 b 保留；替代项验证与撤回不产生反证的边界一致。</li><li><strong>RR02</strong>：只取得 blob ACK 而 cache/inline receipt 尚存，不能满足五项受管范围的清理结论；尚有旧生产者时即使当前五项都查过，也不能把历史扫描当未来写入屏障。它明确区分 blocked delivery 和 storage removal，而非把一个布尔 epoch 当认证或围栏证明。</li><li><strong>RR03</strong>：GA 撤回与 D2 处置摘要作用于不同依赖。第一次变化可保留 RB；第二次只有明确范围、有效处置权及政策优先关系成立才限制 RB。独立性/优先关系未知时 oracle 保留 UNKNOWN，而非默认全删或全留。</li><li><strong>RR04</strong>：snapshot20 缺 D3/cut21 时，旧 requestId 命中旧 payload 缓存也不能跳过当前披露规则。D3 状态缺失或寿命结束而旧快照仍可回流时，不能把“没找到 tombstone”解释成“没有删除”。新受限表示不宣称逐字原日志重放。</li></ul>
+<p>这四例仍为 <strong>PROPOSED_NOT_RUN</strong>。其 SUCCESS 表示未来验收应观察的接口区分，不表示真实删除、全世界清除、业务完成或一般定理已经成立。</p>
+<h2 id="范围与回执">范围与回执</h2>
+<p>完整阅读 M12 的 CONTRACT、scenarios、sources 与作者 validation。对照冻结 FORMAL P1/P3 及相关谓词、W11 命题键/证据资格/撤回更正、authority §4–5 的主体与派生发布、M10 有限域/尾部/披露条件。M10 结构化契约及 W11 state-definition 作为冻结依据；前者沿用 R17 已读内容，后者沿用此前 W11 审查并定向核对操作定义。</p>
+<p>本轮只执行文件 SHA、JSON 和引用身份检查；作者文档校验通过不充当本线语义依据。没有运行四情景、重跑 W11 模型、删除/恢复真实数据、修改产品或作者文件；没有网络调用、提交或推送。没有重读所有旧档来源或审查 C13 类型迁移，亦不作法律合规结论。</p>
+<p><a href="verification_receipt.json">verification_receipt.json</a> 记录实际核验范围；<a href="findings.json">findings.json</a> 保留空 must-fix 与未证实现义务。收尾核对时，作者 FORMAL_MODEL 已较本次捕获变化；本轮仍以所列冻结版本为准，没有追认后续改稿。其他冻结输入均与原捕获哈希一致。后续作者改稿不自动落入本冻结结论。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

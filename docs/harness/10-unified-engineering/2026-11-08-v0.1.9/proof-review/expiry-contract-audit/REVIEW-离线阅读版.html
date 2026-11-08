@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="2636ce8ddb4b">
+<title>R-04：期限模型与适配契约 v0.1.1 的定向模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#固定输入与独立执行">固定输入与独立执行</a></li><li class="l2"><a href="#模型检查-类型-转移和范围">模型检查：类型、转移和范围</a></li><li class="l3"><a href="#期限反例确实发生在提交点">期限反例确实发生在提交点</a></li><li class="l3"><a href="#commit-配置为什么只能给有限-条件性的安全保证">commit 配置为什么只能给有限、条件性的安全保证</a></li><li class="l2"><a href="#ea01-运行器可能把错误不变量的失败当成预期反例">EA01：运行器可能把错误不变量的失败当成预期反例</a></li><li class="l2"><a href="#契约-v0-1-1-与-authority-q-的定向审查">契约 v0.1.1 与 authority/q 的定向审查</a></li><li class="l2"><a href="#交接范围">交接范围</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-04：期限模型与适配契约 v0.1.1 的定向模型审查</h1>
+</header>
+<p>结论：<strong>TTL/期限模型的三项结果独立复现，未发现类型、变量赋值或所声明有限域保证的错误。</strong> “发送/接收发生在期限前，实际效果却在线性化时已到期”的反例成立；提交点拒绝配置在其明确假设下通过，不是通用幂等证明。v0.1.1 对产品 unknown 与测试 UNKNOWN、无界等待与进展、按 q 的可用性及合法派生发布，目前未发现实质混淆。</p>
+<p>发现一项具体检查器缺口：冻结版 <code>run_expiry.py</code> 只匹配退出码，没有核对失败不变量。隔离负对照中，检查一个完全不同的不变量 Init 得到退出12，整套运行器仍退出0。本次原始及独立复跑日志确实都是 NoDuplicate 违例，所以这项缺口不推翻已读取的模型结果；应修运行器的判定规则。</p>
+<p><strong>修复状态补充：</strong> root 已修订运行器；本线随后只读核查新源码与正负对照证据，EA01 在 SHA <code>7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c</code> 下已解决。原版发现及输入快照保留，详见 <a href="REPAIR_REVIEW-离线阅读版.html">REPAIR_REVIEW.md</a>。</p>
+<p>本轮是不同模型的模型审查与独立 TLC 执行，非人类审核、非产品验收。原作者文件与此前审查输出均只读，没有提交、推送或调用模型 API。未对契约稿中的全部外部引用重新开展来源审计。</p>
+<h2 id="固定输入与独立执行">固定输入与独立执行</h2>
+<p>完整固定输入见 <a href="INPUT_MANIFEST.json">INPUT_MANIFEST.json</a>。主要 SHA256：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">文件</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">ExpiryContract.tla</td><td style="text-align:left"><code>c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4</code></td></tr><tr><td style="text-align:left">run_expiry.py</td><td style="text-align:left"><code>87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a</code></td></tr><tr><td style="text-align:left">formal-spec/README.md</td><td style="text-align:left"><code>65981f634c8f4d109d34fc64257184f7de569cb8e4bfdbae2751bec4d78f863d</code></td></tr><tr><td style="text-align:left">原 expiry-results/receipt.json</td><td style="text-align:left"><code>c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360</code></td></tr><tr><td style="text-align:left">适配契约与贯穿场景讨论稿 v0.1.1</td><td style="text-align:left"><code>32e2fc71df489af9d8558743fff51ff5966a92a7f69f2acf7e363671345ab7bd</code></td></tr><tr><td style="text-align:left">FORMAL_MODEL.md</td><td style="text-align:left"><code>a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd</code></td></tr></tbody></table></div>
+<p>本线在固定副本运行原 runner，输出到 <code>rerun/</code>。使用同一已提供 TLC jar，实际 SHA256 为 <code>936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88</code>；日志显示 TLC2 2.19、Java17、单 worker BFS。原运行器退出0。随后本线额外检查模型/cfg/jar/日志散列、违例名称、完成标志、队列数及轨迹长度，没有仅凭该退出码判定通过。详见 <a href="rerun/receipt.json">rerun/receipt.json</a> 和 <a href="verification_receipt.json">verification_receipt.json</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">配置</th><th style="text-align:left">原运行与独立复跑一致的结果</th><th style="text-align:right">generated</th><th style="text-align:right">distinct</th><th style="text-align:right">剩余队列</th></tr></thead><tbody><tr><td style="text-align:left">none</td><td style="text-align:left">NoDuplicate 违例，退出12，9个转移</td><td style="text-align:right">109</td><td style="text-align:right">59</td><td style="text-align:right">3</td></tr><tr><td style="text-align:left">admission</td><td style="text-align:left">NoDuplicate 违例，退出12，9个转移</td><td style="text-align:right">131</td><td style="text-align:right">81</td><td style="text-align:right">8</td></tr><tr><td style="text-align:left">commit</td><td style="text-align:left">完整结束，无错误，退出0</td><td style="text-align:right">115</td><td style="text-align:right">66</td><td style="text-align:right">0</td></tr></tbody></table></div>
+<p>两条反例有10个状态，包括初态，故为9次转移。前两项在违例处停止，不是全部可达状态计数；README 的“遇反例停止”准确。commit 的66个不同状态是本实例完整状态图。首次解析失败的历史记录单独保存，未计入状态检查通过结果。</p>
+<h2 id="模型检查-类型-转移和范围">模型检查：类型、转移和范围</h2>
+<p>变量为 now、sent、received、finished、admitted、seen、effects。各动作完整赋值：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">动作</th><th style="text-align:left">更新变量</th><th style="text-align:left">其余变量</th></tr></thead><tbody><tr><td style="text-align:left">Send</td><td style="text-align:left">sent</td><td style="text-align:left">六项 UNCHANGED</td></tr><tr><td style="text-align:left">Receive</td><td style="text-align:left">received、admitted</td><td style="text-align:left">五项 UNCHANGED</td></tr><tr><td style="text-align:left">Commit</td><td style="text-align:left">finished；拒绝分支保持 seen/effects，允许分支赋值 seen/effects</td><td style="text-align:left">now/sent/received/admitted UNCHANGED</td></tr><tr><td style="text-align:left">Evict</td><td style="text-align:left">seen</td><td style="text-align:left">六项 UNCHANGED</td></tr><tr><td style="text-align:left">Tick</td><td style="text-align:left">now</td><td style="text-align:left">六项 UNCHANGED</td></tr></tbody></table></div>
+<p>没有发现未约束的 primed 变量。Send 的 m 域由 Next 的 <code>m∈Messages</code> 限定；Receive 和 Commit 分别要求尚未接收/完成。初态、各转移保持 sent/received/finished 的包含关系，effects 只在对应消息 finished 的原子步增加。</p>
+<p>所有配置固定 Deadline=2，now 只按0→1→2前进，消息集合固定{1,2}，其余集合都是有限子集，seen为布尔值。时间在到期值2饱和，足以表达此模型只区分“未到期/已到期”的后续行为；并非验证了任意精度时钟或任意TTL长度。允许无限 stuttering 不扩大不同状态数，也不提供活性保证。</p>
+<p>effects 保存不同发送消息ID，seen 则代表同一不可变业务意图的去重记录。这种分离允许把两个发送产生的效果计成两次，而不是因共享业务键在集合中被自动合并。模型没有显式参数或多个 key，不能检查参数冲突、命名空间碰撞、不同意图误合并。</p>
+<h3 id="期限反例确实发生在提交点">期限反例确实发生在提交点</h3>
+<p>两条原始轨迹与本线轨迹均可概括为：</p>
+<pre data-lang="text"><code>now=0: Send(1) → Receive(1) → Commit(1)，effects={1}, seen=true
+now=0: Send(2) → Receive(2)，第二条请求已获得准入
+Tick → now=1
+Tick → now=2
+Evict → seen=false
+Commit(2) → effects={1,2}</code></pre>
+<p>所有发送和接收均发生在0，严格早于Deadline=2。因此 admission 反例不是偷用“接收时已过期却仍准入”的非法路径；缺的是从接收到实际效果之间仍有效的条件。反例也没有违反 Send 的期限守卫。</p>
+<p>9步具有明确事件下界：产生两次效果需两次Send、Receive、Commit共6步；从初态0达到到期2需两次Tick；两次效果之间删除去重状态至少一次Evict，共9步。当前最短轨迹达到该下界。该长度仅指模型的原子动作数，不是实际网络调用数或墙钟时间。</p>
+<h3 id="commit-配置为什么只能给有限-条件性的安全保证">commit 配置为什么只能给有限、条件性的安全保证</h3>
+<p>commit 模式在 Commit 的同一原子步检查 <code>now&gt;=Deadline</code> 并拒绝效果。到期前不能 Evict，所以目标对第二条消息仍有 seen；到期后即使 Evict，所有 Commit 都拒绝新效果。这是当前 NoDuplicate 通过的关键。</p>
+<p>它没有把所有消息永久拒绝作为唯一行为：未到期时的 Send→Receive→Commit 路径允许一次效果。但它允许到期后一个效果都未发生的任务永久不完成；模型没有承诺期限内必定完成，这不是当前安全性质的反例。</p>
+<p>需保留以下范围：</p>
+<ul><li>本模型是<strong>同一绝对业务截止点</strong>控制发送、提交和允许删除记录，不是已经证明所有“从首次请求/首次提交起算TTL”的策略。</li><li>提交期限检查与效果共用一个目标时钟、同一原子步骤；时钟不会倒退，期限不会动态延长，key不会提前丢失。</li><li>每个消息只提交一次，重试由两条不同消息表示；没有目标崩溃、持久化丢失或任意数量重试。</li><li>提交点拒绝是此模型采用的一种充分协议，并不是所有安全幂等系统都必须采用的唯一办法。永久保留key、可靠排除迟到请求或其他更强目标约束会改变前提。</li></ul>
+<p>README:45–57 和契约v0.1.1:59–70 已明确主要边界，没有将66状态的通过写成通用幂等证明。</p>
+<h2 id="ea01-运行器可能把错误不变量的失败当成预期反例">EA01：运行器可能把错误不变量的失败当成预期反例</h2>
+<p><strong>分类：检查器判定缺口。优先级：中；影响后续自动核查可靠性，不是已发现产品或模型错误。</strong> 位置：<code>inputs/formal-spec/run_expiry.py:27,36–43</code>。</p>
+<p>程序预期 none/admission 退出12、commit退出0；summary_lines虽然保存错误文本，最终条件只比较退出码。多个不同不变量的违例都可以使用12，因此返回码并不指明哪条命题被反驳。</p>
+<p>本线在 <code>runner-probe/</code> 建立隔离副本，只修改 none 配置：</p>
+<pre data-lang="text"><code>INVARIANTS TypeOK NoDuplicate
+改为
+INVARIANTS Init</code></pre>
+<p>模型和原 runner 本身均保持相同字节。实际结果：none 在第一次状态变化后报告 <code>Invariant Init is violated.</code>，仅1个转移，退出12；其他两配置保持原结果；<strong>整个 runner 仍退出0</strong>。详见 <a href="runner_probe_receipt.json">runner_probe_receipt.json</a> 及 <code>runner-probe-results/none.log</code>。</p>
+<p>这证明“退出码符合预期”并不等于“预期 NoDuplicate 反例已出现”。若未来模型引入 TypeOK 失败，现有模式也可能接受同类错误。</p>
+<p>建议逐mode核对：</p>
+<ol><li>none/admission 必须观察到指定的 NoDuplicate 违例；出现 TypeOK、Init 或其他错误不能当预期成功。</li><li>commit 必须无违例/错误、有完整完成标志且队列为0。</li><li>记录 observed_violations、complete_exploration 与退出码；负对照要验证错不变量确实被拒绝。</li></ol>
+<p>本节的反例仍对应原SHA；修订版及其独立阅读结论另列于 REPAIR_REVIEW.md，不覆盖原版证据。原始和本轮独立日志都确实满足正确的NoDuplicate判据，因此已有TTL反例与正向结果可以保留。</p>
+<h2 id="契约-v0-1-1-与-authority-q-的定向审查">契约 v0.1.1 与 authority/q 的定向审查</h2>
+<p>本节只检查任务指定的混淆点，不扩展成全面安全审计，也未运行真实适配器场景。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">关注点</th><th style="text-align:left">已读取的具体边界</th><th style="text-align:left">判断</th></tr></thead><tbody><tr><td style="text-align:left">产品unknown与测试UNKNOWN</td><td style="text-align:left">v0.1.1:136明确前者可能是正确产品行为，后者是测试证据不足不能通过；140要求记录具体预期谓词，并分开抽象与实现pass</td><td style="text-align:left">未发现混淆。SUCCESS只能读作该场景断言成立，不等于业务任务完成。</td></tr><tr><td style="text-align:left">永久等待与进展</td><td style="text-align:left">v0.1.1:138说无有界进展承诺时，超时不能直接断言协议违例；FORMAL:182又明确永久外部阻塞不保证完成、频繁“仍在运行”不证明进展</td><td style="text-align:left">二者相容。有限等待窗口可导致测试UNKNOWN，不因此给活性成功或业务完成。</td></tr><tr><td style="text-align:left">Usable按q判断</td><td style="text-align:left">FORMAL:58明确q至少包含consumer/operation/recipients，63/77分开访问、副本与验收变化；P4在固定主体/用途语境下使用</td><td style="text-align:left">未发现用单一全局available继承所有主体判定。</td></tr><tr><td style="text-align:left">C14a撤单主体授权</td><td style="text-align:left">v0.1.1:132要求A/B独立授权，且B相关输入不变才保持B判定</td><td style="text-align:left">有前提的局部不干扰，没有无条件承诺撤A永不影响B。</td></tr><tr><td style="text-align:left">C14b删除唯一副本</td><td style="text-align:left">v0.1.1:133限定指定版本唯一可用副本的权威删除确认；只否定依赖读取该原件的消费，保留历史完成</td><td style="text-align:left">没有把一次403/读取失败当全球删除，也没有把删除等同撤回历史证据真实性。</td></tr><tr><td style="text-align:left">C14c派生发布</td><td style="text-align:left">v0.1.1:134允许有权流程向无原文权主体发布汇总；FORMAL:158同时要求明确范围，区分消费/原文读取/重验，未经授权摘要不扩权</td><td style="text-align:left">没有要求所有汇总消费者拥有祖先原文权，也没有允许摘要天然绕过披露政策。</td></tr><tr><td style="text-align:left">当前策略与历史材料</td><td style="text-align:left">v0.1.1:120–121及FORMAL:116要求最终语义资源、参数和当前可信策略，旧会话材料不能授权新写入</td><td style="text-align:left">未发现把历史批准无条件恢复为持续权限。</td></tr></tbody></table></div>
+<p>“权限相关读取失败不推出全局删除”“合法派生发布不要求原文可读”“证据不足不等于产品失败”都是本轮应保留的区别。它们的真实实现仍需各场景声明的权威来源、操作/收件范围、时钟、版本与观察窗口；本报告没有将这些前提视为已在产品中实现。</p>
+<h2 id="交接范围">交接范围</h2>
+<p>本轮仅提出EA01一项具体缺口，随后完成其修复的定向只读复核。没有为了增加发现数量而把模型明示的有限域、单时钟或无活性假设当作新错误。输入与模型结果保持原样；未因运行器修复重复执行全部模型检查，也未撤销仍有效的原模型结论。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

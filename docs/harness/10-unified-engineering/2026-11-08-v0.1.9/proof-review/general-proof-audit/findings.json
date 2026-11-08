@@ -1,0 +1,82 @@
+{
+  "review_id": "R-03",
+  "review_type": "independent_model_statement_review_and_lean_compilation",
+  "model_declared_by_dispatcher": "gpt-6-astra",
+  "human_review": false,
+  "input_manifest": "INPUT_MANIFEST.json",
+  "original_compile_receipt": "compile_receipt.json",
+  "witness_compile_receipt": "witness_receipt.json",
+  "conclusion": "No formal theorem error, circular final-state premise, unproved placeholder, or vacuity-only result found in the frozen files. Two low-priority scope clarifications are supported by Lean witnesses.",
+  "findings": [
+    {
+      "id": "GA01",
+      "classification": "documentation_scope_too_narrow",
+      "severity": "low",
+      "location": "inputs/dag/README.md:40",
+      "title": "Read sets may change between evaluations while the existing theorem remains applicable",
+      "evidence": "witnesses/DagWitness.lean: DagAudit.changed_read_set_instance",
+      "witness": "Node 2 changes from reading node 0+1 to node 1+1; constants 10 and 7 are unchanged. New dependency 1->2 and selected={2} satisfy all premises, and result changes from 11 to 8.",
+      "all_main_theorem_premises_proved": true,
+      "recommendation": "Exclude mutation during a sweep and updates lacking revalidated complete dependencies/topological order/closure; do not exclude all between-run read-set changes.",
+      "theorem_change_required": false
+    },
+    {
+      "id": "GA02",
+      "classification": "external_refinement_boundary_already_partly_documented",
+      "severity": "low",
+      "location": "inputs/budget/BudgetSafety.lean:91-101,123-130,190-198",
+      "title": "Numeric ReleaseCertified relation cannot express per-action or epoch certificate binding",
+      "evidence": "witnesses/BudgetWitness.lean: BudgetAudit.same_numeric_certificate_reused",
+      "witness": "Two list entries both equal (hidden=0,future=3,reserved=3). One proof of numericCertificate(entry,3) is reused for both Release steps. The abstract run remains arithmetically safe.",
+      "original_arithmetic_theorem_refuted": false,
+      "existing_documentation": "README explicitly excludes identity/authentication and acknowledges that a universally true relation does not prove real future liability vanished.",
+      "recommendation": "Describe an abstract release-permission relation and explicitly state missing action/generation/liability-version binding. A separate certificate protocol model is only needed if authentication itself is claimed.",
+      "theorem_change_required": false
+    }
+  ],
+  "dag_assessment": {
+    "arbitrary_finite_n": true,
+    "complete_new_dependencies_required": true,
+    "selected_may_overapproximate_closure": true,
+    "old_cache_consistency_required": true,
+    "full_result_not_assumed": true,
+    "premise_satisfiability_witness_compiled": true,
+    "runtime_complexity_proved": false,
+    "dynamic_changes_during_sweep_covered": false,
+    "between_run_read_set_change_possible": true
+  },
+  "budget_assessment": {
+    "arbitrary_finite_action_list_and_run": true,
+    "natural_number_costs_without_fixed_enumeration_bound": true,
+    "actual_spent_is_independent_state_field": true,
+    "honest_accounting_is_preserved_not_defined_away": true,
+    "six_constructors_checked": ["Reserve", "Spend", "Settle", "Release", "Close", "Cancel"],
+    "nonzero_six_constructor_run_compiled": true,
+    "witness_final_actual_spent": 4,
+    "witness_final_hidden_spending": 1,
+    "final_safe_not_assumed_by_steps": true,
+    "real_world_cost_capture_and_release_truth_proved": false,
+    "extra_transitions_such_as_repricing_refunds_budget_reduction_covered": false
+  },
+  "axioms": {
+    "dag_main": ["propext", "Classical.choice", "Quot.sound"],
+    "budget_main": ["propext", "Quot.sound"],
+    "sorryAx_found": false,
+    "custom_axioms_found": false,
+    "native_decide_used": false
+  },
+  "independent_compilation": {
+    "lean_version": "4.35.0",
+    "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "dag_exit_code": 0,
+    "budget_exit_code": 0,
+    "dag_witness_exit_code": 0,
+    "budget_witness_exit_code": 0,
+    "witness_warning": "Two unused simp argument hints in the appended DAG witness; no incomplete proofs or compilation errors."
+  },
+  "author_sources_modified": false,
+  "prior_review_outputs_modified": false,
+  "product_execution_or_changes": false,
+  "network_or_model_api_calls": false,
+  "commit_or_push": false
+}

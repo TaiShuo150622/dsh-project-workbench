@@ -1,0 +1,275 @@
+{
+  "status": "PASS",
+  "validated_at_utc": "2026-11-08T10:06:29.860244+00:00",
+  "capture_cutoff_utc": "2026-11-08T09:49:56.836311+00:00",
+  "checks": {
+    "conditions": 2299,
+    "input_hashes": 19,
+    "C07_frozen_input_hashes": 16,
+    "pointer_resolutions": 393,
+    "literal_URL_pointers": 75,
+    "later_records": 135,
+    "constructed_URLs": 3,
+    "exact_mirrors": 6,
+    "representation_relations": 37,
+    "root_read_relations": 12,
+    "reader_links": 38
+  },
+  "errors": [],
+  "script_sha256": "39f0a51e895e4da47f7c8d47ac3d2c4079b44d480856e7c193f9c9d51685f4c2",
+  "manifest_sha256": "f2bb4a361688299fbb1abc9d86fee9327a9291b75051052a99bc95991b4b047b",
+  "no_checkout_fallback": true,
+  "all_input_paths_bounded_by_supplied_root": true,
+  "network_requests": 0,
+  "source_body_truth_not_reverified": true,
+  "product_tests_run": false,
+  "identity_bindings": [
+    {
+      "file": "ROOT_SOURCE_REVIEW_5.json",
+      "expected_original_sha256": "43c2d737af8cf842153ff53b5a8fa946f60c2849633f35e2af489696bc5c4745",
+      "actual_sha256": "43c2d737af8cf842153ff53b5a8fa946f60c2849633f35e2af489696bc5c4745",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_6.json",
+      "expected_original_sha256": "ea7767002a551a8663ef0ea93371b12dab7ac8558d5aa33f7b5659ec8462e094",
+      "actual_sha256": "ea7767002a551a8663ef0ea93371b12dab7ac8558d5aa33f7b5659ec8462e094",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_7.json",
+      "expected_original_sha256": "8fcd620295fb67aa53a4f00d6babce65a403b64c9d0a950068a66f4b41038857",
+      "actual_sha256": "8fcd620295fb67aa53a4f00d6babce65a403b64c9d0a950068a66f4b41038857",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_8.json",
+      "expected_original_sha256": "fd7f9af3fb58e0765d40c186420d1bac32e5eac550b65034213345e84082cfc0",
+      "actual_sha256": "fd7f9af3fb58e0765d40c186420d1bac32e5eac550b65034213345e84082cfc0",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_9.json",
+      "expected_original_sha256": "5a8da50d59b6e4afe6df557b16bc3dfd3b104f13d140512b7d49d61fb777a9dd",
+      "actual_sha256": "5a8da50d59b6e4afe6df557b16bc3dfd3b104f13d140512b7d49d61fb777a9dd",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/identity-opinion-bindings.json",
+      "expected_original_sha256": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+      "actual_sha256": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/reading-observations.json",
+      "expected_original_sha256": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+      "actual_sha256": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/scope-and-inputs.json",
+      "expected_original_sha256": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd",
+      "actual_sha256": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/source-index.json",
+      "expected_original_sha256": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+      "actual_sha256": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/url-index.json",
+      "expected_original_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+      "actual_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/progress-conditions/sources.json",
+      "expected_original_sha256": "2b08cfddc9b77967e38a3df8e413b900d65cb156954350f310a92d5f4e285058",
+      "actual_sha256": "2b08cfddc9b77967e38a3df8e413b900d65cb156954350f310a92d5f4e285058",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "mechanisms/interop-contracts/sources.json",
+      "expected_original_sha256": "7fcdfeec5424650791b564a10a669bf0fe0bedc557cfab74fb9b170c2409cef0",
+      "actual_sha256": "7fcdfeec5424650791b564a10a669bf0fe0bedc557cfab74fb9b170c2409cef0",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json",
+      "expected_original_sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae",
+      "actual_sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "resource-lifecycle/sources.json",
+      "expected_original_sha256": "f3f5cf4a26dae71edd6db220d22b08071913bdc8f24543e595b25ff2f51815c2",
+      "actual_sha256": "f3f5cf4a26dae71edd6db220d22b08071913bdc8f24543e595b25ff2f51815c2",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "expected_original_sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c",
+      "actual_sha256": "c87cf4c35231b8fa22536131d790f611efbebec5b2f6d5e0e31b0db3955c16d4",
+      "binding": "derived_identity",
+      "matched": true
+    },
+    {
+      "file": "west/evidence-disputes/literature.json",
+      "expected_original_sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87",
+      "actual_sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "west/evidence-disputes/sources.json",
+      "expected_original_sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a",
+      "actual_sha256": "1668f6498920c6e0e0de44ad648deb44868e83e1804eaf71817858e946fdd1bc",
+      "binding": "derived_identity",
+      "matched": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "expected_original_sha256": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962",
+      "actual_sha256": "a6509ae3984ae16d8399d1e0bbfa758c836d24d2d289e3a21bd60a1173e50a15",
+      "binding": "derived_identity",
+      "matched": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "expected_original_sha256": "8045e2549851a19e8a47ec28e45311173bf588f39603887b67d87885c45f1c3e",
+      "actual_sha256": "53dc3c3e48dd71f9a7e58b70a873fe92b97344ab982127847018ef1575195ee9",
+      "binding": "derived_identity",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "expected_original_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+      "actual_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "expected_original_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+      "actual_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "expected_original_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+      "actual_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "expected_original_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+      "actual_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "expected_original_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+      "actual_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/china/sources.json",
+      "expected_original_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "actual_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/foundations/sources.json",
+      "expected_original_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+      "actual_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "expected_original_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+      "actual_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "expected_original_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+      "actual_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "expected_original_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "actual_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/sources.json",
+      "expected_original_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+      "actual_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "expected_original_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "actual_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "expected_original_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+      "actual_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "expected_original_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+      "actual_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "expected_original_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+      "actual_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    },
+    {
+      "file": "china/consolidated-sources/inputs/west/sources.json",
+      "expected_original_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+      "actual_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+      "binding": "unchanged_with_derivation",
+      "matched": true
+    }
+  ],
+  "derivation_manifest_sha256": "dace19fa972f25202b1f9ee9b3508e17de28aaf46954f187b3ea3ae6b0c7c606",
+  "derivation_boundary": "Exact hash-chain consistency and retained-field comparison only; unsigned DERIVATION is not independent authentication or proof that redaction policy is complete."
+}

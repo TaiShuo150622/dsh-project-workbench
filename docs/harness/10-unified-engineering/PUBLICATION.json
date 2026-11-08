@@ -1,0 +1,26 @@
+{
+  "publication_date": "2026-11-08",
+  "research_main_version": "v0.1.9",
+  "repository": "TaiShuo150622/dsh-project-workbench",
+  "target_branch": "codex/dsh-project-workbench",
+  "public_base_commit": "b9d44847d72883bf5116c72f445c31618d7cc020",
+  "scope": "Personal generic Harness research; documentation publication only. No company or quantitative-project internal material, private sessions, credentials, toolchain binaries or product implementation changes.",
+  "frozen_snapshot": {
+    "path": "2026-11-08-v0.1.9",
+    "files": 1422,
+    "bytes": 21912917,
+    "package_manifest": "2026-11-08-v0.1.9/PACKAGE_MANIFEST.json",
+    "manifest_sha256": "f8586fb9720e1950ce27206ad47d74dab97c9707a732dc938f6be0b8eade9c09",
+    "source_code_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+    "all_files_identical_to_completed_local_export": true
+  },
+  "status_text_scope": "Local-only / not yet published wording inside the frozen snapshot refers to the research-delivery time. This wrapper documents the later authorized public curation without rewriting historical receipts.",
+  "navigation": {
+    "start": "README.md",
+    "topics": "CONTENTS.md",
+    "all_files": "FILE_INDEX.md",
+    "research_current": "2026-11-08-v0.1.9/统一Harness工程与形式化基础讨论稿-v0.1.9.md"
+  },
+  "verification_scope": "Frozen inventory and SHA256; current navigation; scoped publication/privacy review; staged documentation scope. Historical input links retain original context. No new scientific runs or product acceptance.",
+  "publication_proof": "The remote Git commit and anonymous readback are recorded separately after push; this file does not self-certify remote publication."
+}

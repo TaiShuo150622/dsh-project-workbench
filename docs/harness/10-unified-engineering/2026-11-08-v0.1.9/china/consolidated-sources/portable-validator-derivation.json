@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-11-08T09:02:47.767297+00:00",
+  "original": "validate_index.py",
+  "original_sha256": "66510164642653bd6eb2eeac81418cb8c5a1a80011011cb9440cc5bcbacb01fa",
+  "derived": "validate_index_portable.py",
+  "derived_sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74",
+  "changes": [
+    "Resolve merged research root from this directory rather than original worktree topology.",
+    "Write a separate portable-validation-receipt.json; retain original validation receipt.",
+    "Allow the portable receipt as a generated local navigation target."
+  ],
+  "semantic_checks_unchanged": true,
+  "scope": "portable index validation, not independent evidence of original source truth"
+}

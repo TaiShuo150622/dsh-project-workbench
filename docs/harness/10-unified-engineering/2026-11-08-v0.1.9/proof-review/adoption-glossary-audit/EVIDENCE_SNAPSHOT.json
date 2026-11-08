@@ -1,0 +1,87 @@
+{
+  "captured_at_utc": "2026-11-08T10:39:49.377833+00:00",
+  "files": [
+    {
+      "id": "P01",
+      "path": "evidence-inputs/rpc-host.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc-host.ts",
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "author_expected_sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "author_hash_matches": true,
+      "read_ranges_inclusive_pairs": [
+        129,
+        136,
+        215,
+        222
+      ],
+      "not_executed": true
+    },
+    {
+      "id": "P02",
+      "path": "evidence-inputs/app.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/client/app.js",
+      "sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "author_expected_sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "author_hash_matches": true,
+      "read_ranges_inclusive_pairs": [
+        76,
+        135
+      ],
+      "not_executed": true
+    },
+    {
+      "id": "P03",
+      "path": "evidence-inputs/index.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/index.js",
+      "sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "author_expected_sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "author_hash_matches": true,
+      "read_ranges_inclusive_pairs": [
+        9,
+        84
+      ],
+      "not_executed": true
+    },
+    {
+      "id": "E04",
+      "path": "evidence-inputs/TASKBOOK.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "author_expected_sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "author_hash_matches": true,
+      "read_ranges_inclusive_pairs": [
+        1,
+        42,
+        98,
+        110
+      ],
+      "not_executed": true
+    },
+    {
+      "id": "E10",
+      "path": "evidence-inputs/TRUSTED_MAP.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/trusted-entry-map/MAP.md",
+      "sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "author_expected_sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "author_hash_matches": true,
+      "read_ranges_inclusive_pairs": [
+        1,
+        29
+      ],
+      "not_executed": true
+    },
+    {
+      "id": "LOCAL_KERNEL",
+      "path": "evidence-inputs/kernel.mjs",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "author_expected_sha256": null,
+      "author_hash_matches": null,
+      "read_ranges_inclusive_pairs": [
+        1,
+        60
+      ],
+      "not_executed": true
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "copied_at_utc": "2026-11-08T08:49:21.738190+00:00",
+  "files": [
+    {
+      "path": "proof-review/reader-claims-audit/EVIDENCE_INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 8465,
+      "sha256": "f6bfa9114fa7475b6a461e1798ca279deec1a422d56df7c8c0abdd1a5a7e5bce"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 6922,
+      "sha256": "73ec503a48b316d97e7be1fe2c3e839504c8f00712078d02a0f4248009f89d37"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/OUTPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 790,
+      "sha256": "7d8c3e7a25b94ac99582c0fa160638361941e43649254ff54c5215b64d6a5cde"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 10243,
+      "sha256": "8199090c9dcaa7c5597a11e6716d081292040d9a8a37a820b661b6881c99446a"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/china/budget-proof/BudgetSafety.lean",
+      "source_worktree": "proof-review",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/china/budget-proof/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 2030,
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/china/record-refinement/REPORT-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "bytes": 15454,
+      "sha256": "3a470eb06f8c4205395c44566db2b5f65fbdeb3e50e14d57c9f7c60ed316ee84"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/china/record-refinement/REPORT.md",
+      "source_worktree": "proof-review",
+      "bytes": 14657,
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/dag-proof/IncrementalDag.lean",
+      "source_worktree": "proof-review",
+      "bytes": 8107,
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/dag-proof/compile_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 745,
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/admission.log",
+      "source_worktree": "proof-review",
+      "bytes": 3276,
+      "sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/commit.log",
+      "source_worktree": "proof-review",
+      "bytes": 1529,
+      "sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/none.log",
+      "source_worktree": "proof-review",
+      "bytes": 3277,
+      "sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/expiry-checked-results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4414,
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/dedupe-property.log",
+      "source_worktree": "proof-review",
+      "bytes": 1726,
+      "sha256": "70619e6a283333440404008f2caf84541711e2bde731b2f315690d63e5b17f65"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/fence-property.log",
+      "source_worktree": "proof-review",
+      "bytes": 1727,
+      "sha256": "3ad0b47c4f05edd5081a76fe14a82d94a1d0207fde48efc37a023fd89bb870da"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/feature-results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 1264,
+      "sha256": "dc3e2efaf1357a65f044d2ecd422f08f6283f2351e2474f0ac838a1dd2212ec8"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/durable.log",
+      "source_worktree": "proof-review",
+      "bytes": 1275,
+      "sha256": "5333a6fd298de1c6c31bd56355f4539d91213e1206fb06c9155b93f9463c40e1"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/error.log",
+      "source_worktree": "proof-review",
+      "bytes": 2138,
+      "sha256": "867ed06c95eefe10a4091ba998b81ac8184c5016af411c920c2c5f540ac81bce"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/memory.log",
+      "source_worktree": "proof-review",
+      "bytes": 3172,
+      "sha256": "1352858e9228975479c9216e59d1ee5c7ff87151d6f5bb945d84b84484649eba"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/relay-results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4380,
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/cancel-is-not-rollback.log",
+      "source_worktree": "proof-review",
+      "bytes": 2566,
+      "sha256": "a3c3160b6fbb039e7de5dfb3dd9bbdc9f668fbda14e95fd3ec67cd1d532d307f"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/combined.log",
+      "source_worktree": "proof-review",
+      "bytes": 1727,
+      "sha256": "4c4bb2d8354972620e9a6b8a3bd5c7a6df6110e2a708ac8220553a3015c66150"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/dedupe-only.log",
+      "source_worktree": "proof-review",
+      "bytes": 2567,
+      "sha256": "a97e08820cff2e73df5c009c1bbbfbcc75abeb5c13c51ad72b1f4751266e0ef0"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/fence-only.log",
+      "source_worktree": "proof-review",
+      "bytes": 3122,
+      "sha256": "427077a89e06d259f53fb83b6f61fe9184e2bc75ef966a070a081642ec2205fb"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4094,
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/unstable-key.log",
+      "source_worktree": "proof-review",
+      "bytes": 3124,
+      "sha256": "025becb9c8377e92f7ec7ab4d324cda0c0dc5633bab5b333326aea002c1d5820"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/evidence-inputs/formal-spec/results/world-is-not-ledger.log",
+      "source_worktree": "proof-review",
+      "bytes": 2317,
+      "sha256": "2f7e49e26ca0472b13d2d946a665dc661d8ef05d444ef21b26cc5645d2c46d49"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 3609,
+      "sha256": "4df53e5146d970823899715582826c8728afb4c7912f9918cb00466c6cee9f3f"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/ARCHITECTURE.md",
+      "source_worktree": "proof-review",
+      "bytes": 22348,
+      "sha256": "902071ad4aaeaa26b22913fdbb451ccdd220590c45b470908cd85d6627f348d1"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/EVIDENCE.md",
+      "source_worktree": "proof-review",
+      "bytes": 7501,
+      "sha256": "db1487bae92ca1b15d47be05a1fe29aed56b98b6a7ba14eca6eac9e74b1e71a9"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "bytes": 32981,
+      "sha256": "9d0015cfcd871b162ff6d282ec33f755171750ef7bcfe32db909a58b7d804933"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 6302,
+      "sha256": "cc88d7d94316dc39e574519b3ec79ecabe58c770a79ebc760a35a14ed573cc98"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/REPRODUCE.md",
+      "source_worktree": "proof-review",
+      "bytes": 5609,
+      "sha256": "d3c63317144255bd9bea2bba0bdef2d98f9246ccf1f37c0dba491e0ec6712749"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 4445,
+      "sha256": "6192963c31013d20a38b8d145ccf11c3179a98331f8aeb17150c33160e424e69"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/design-v0.1.1.json",
+      "source_worktree": "proof-review",
+      "bytes": 26603,
+      "sha256": "a340d5c4452ef26242cd88dd4e162dc7c996984843502f4c798fd028ea37c6b1"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/design.json",
+      "source_worktree": "proof-review",
+      "bytes": 24497,
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/review.md",
+      "source_worktree": "proof-review",
+      "bytes": 6010,
+      "sha256": "7da7b5f5f320d3305e82e08d948aac1741221a8308dfc1039aa67e145a6fec15"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 17383,
+      "sha256": "659c7f777345520baf7729c30caad296a51e824961aa5d7dc28d30b1fd2539ab"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "bytes": 18303,
+      "sha256": "c28d81faf38fe68daf26a07ba2337b7e274bfd9695a349f6008f917b5a31491f"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 1532,
+      "sha256": "e374e7c2f9cd237591302e41c9350862c4480cebeb6c5be2ff008b63d5bd9a8e"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/SHA256SUMS",
+      "source_worktree": "proof-review",
+      "bytes": 581,
+      "sha256": "9136859fbac049a26ea8334a54aff415267fe37fa9d017b1838efdd7df5717bc"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/inputs.json",
+      "source_worktree": "proof-review",
+      "bytes": 8192,
+      "sha256": "83fe0e264065d502eb77a79bf2f89ac3b1142ab9d9202da83b486c60a1a998c8"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/slice-checklist.json",
+      "source_worktree": "proof-review",
+      "bytes": 22437,
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 6339,
+      "sha256": "9433bab8f8d409a036822b7bcd320fb7f380b229ac0b7b8355e7ee6cfd7456ac"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.html",
+      "source_worktree": "proof-review",
+      "bytes": 31893,
+      "sha256": "55c8684f416c8841a98bb9c02cad7a4d01a2f536574f160a2b16c0ed9670f601"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 19465,
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/inputs/统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "source_worktree": "proof-review",
+      "bytes": 41058,
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1"
+    },
+    {
+      "path": "proof-review/reader-claims-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4842,
+      "sha256": "a5a2d56365d2d0c047dca36276286cfbabaab966753bcdeee0f35a884ccbb3ff"
+    }
+  ]
+}

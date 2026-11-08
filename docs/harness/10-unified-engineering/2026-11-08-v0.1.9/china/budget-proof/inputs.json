@@ -1,0 +1,9 @@
+{
+  "source_worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "captured_at_utc": "2026-11-08T07:12:51.801978+00:00",
+  "source_worktree_relative_path": "integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+  "snapshot": "inputs/FORMAL_MODEL.md",
+  "sha256": "3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a",
+  "bytes": 28118,
+  "scope": "P13 and adjacent budget definitions. Uncommitted working-tree snapshot; file digest is authoritative input identity."
+}

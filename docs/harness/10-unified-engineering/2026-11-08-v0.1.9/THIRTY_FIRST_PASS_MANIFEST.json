@@ -1,0 +1,179 @@
+{
+  "copied_at_utc": "2026-11-08T10:19:52.636755+00:00",
+  "files": [
+    {
+      "path": "proof-review/reader-composition-audit/EVIDENCE_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 1024,
+      "sha256": "5cd3d41db9c78c4fff52a57f763d8370f3341739d6585fd7410cab4bc8b7039b"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/INPUT_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 1319,
+      "sha256": "1720e6ddc9ab39a2d0610e811fbd8d90a6ccc21a2a7b9325d964040b5b117ae3"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/OUTPUT_HASHES.json",
+      "source_worktree": "proof-review",
+      "bytes": 1891,
+      "sha256": "0ba8223a9da8eaa7955d6ca0e01e0c33f4df766db952238d5053f389a635c155"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 5550,
+      "sha256": "510aedb515afe75e8fa39c35dfedb5f8e6b17b9c8c92444a4c17bd9a3853b8f1"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/evidence-inputs/china/handoff-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 12654,
+      "sha256": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/evidence-inputs/mechanisms/composition-review/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 4949,
+      "sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/evidence-inputs/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "bytes": 16084,
+      "sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/evidence-inputs/resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "bytes": 15827,
+      "sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/evidence-inputs/west/intent-coverage/MEMO.md",
+      "source_worktree": "proof-review",
+      "bytes": 11879,
+      "sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 816,
+      "sha256": "6d6f5a33295bd3a2d501d61c82e010f64f400fbb8b8192a6792297f8b5bfb1d7"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/ARCHITECTURE.md",
+      "source_worktree": "proof-review",
+      "bytes": 25082,
+      "sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/DESIGN_RECONCILIATION.md",
+      "source_worktree": "proof-review",
+      "bytes": 13147,
+      "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/EVIDENCE.md",
+      "source_worktree": "proof-review",
+      "bytes": 11564,
+      "sha256": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "bytes": 36703,
+      "sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 8821,
+      "sha256": "0d8236215e720c77e9fb058adb8471bee74059264ce7d4416eea7e210e5506aa"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/west/decision-brief/MEMO-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "bytes": 5291,
+      "sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/inputs/统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "source_worktree": "proof-review",
+      "bytes": 53086,
+      "sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178"
+    },
+    {
+      "path": "proof-review/reader-composition-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 5900,
+      "sha256": "7875c8c32ca71c9f624c35651404c53a54bba93757661768fb83d5a411fb388c"
+    },
+    {
+      "path": "west/worked-example/EXAMPLE.md",
+      "source_worktree": "west",
+      "bytes": 5559,
+      "sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7"
+    },
+    {
+      "path": "west/worked-example/README.md",
+      "source_worktree": "west",
+      "bytes": 2533,
+      "sha256": "9589fa089d28b6cfb22eba945f4ff8d21bfa4abb96bedb315c31201ea703a3b2"
+    },
+    {
+      "path": "west/worked-example/sources.json",
+      "source_worktree": "west",
+      "bytes": 5018,
+      "sha256": "ac5c7ab13432b83caae8a1d260cc2330e6961bb97b372cf4796f483a6e8abd8f"
+    },
+    {
+      "path": "west/worked-example/validation.json",
+      "source_worktree": "west",
+      "bytes": 3908,
+      "sha256": "8c3266e4d5a953df8c5a8a5784cd2304d2ab73a788b92e33a1a7aecb9cf136c4"
+    },
+    {
+      "path": "mechanisms/coverage-contract/README.md",
+      "source_worktree": "mechanisms",
+      "bytes": 2057,
+      "sha256": "ba83aae63a40ead364920ca03f4314a1e927dd53c76a4e2fce6a3614b1991785"
+    },
+    {
+      "path": "mechanisms/coverage-contract/contract.json",
+      "source_worktree": "mechanisms",
+      "bytes": 15618,
+      "sha256": "c6a524ee2527ae570c85a1a12aa69e3bc596d48ccba716b95a4776c1b63b0b85"
+    },
+    {
+      "path": "mechanisms/coverage-contract/counterexamples.json",
+      "source_worktree": "mechanisms",
+      "bytes": 5268,
+      "sha256": "6b270c2e8141bf044b9ef14cfb79fee6c8d1ff41f5f414cb08ccbf38a11ad2a2"
+    },
+    {
+      "path": "mechanisms/coverage-contract/sources.json",
+      "source_worktree": "mechanisms",
+      "bytes": 8484,
+      "sha256": "631176905be87105a155d48fe8ec54008dd56060da48ed1ab6ad96ddbc55e299"
+    },
+    {
+      "path": "mechanisms/coverage-contract/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 1897,
+      "sha256": "f26b67a56a207c83a43517d333ab6e2aa6bd146de3e0871e137077177424617e"
+    },
+    {
+      "path": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.html",
+      "source_worktree": "mechanisms",
+      "bytes": 17155,
+      "sha256": "fdf39d8359dc67a428e6a151000edd5b2936da11f88f03995422896f86f68a9c"
+    },
+    {
+      "path": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "source_worktree": "mechanisms",
+      "bytes": 7803,
+      "sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc"
+    }
+  ]
+}

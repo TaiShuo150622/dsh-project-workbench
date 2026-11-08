@@ -1,0 +1,18 @@
+{
+  "executed_at_utc": "2026-11-08T09:10:14.193910+00:00",
+  "python": "3.9.0",
+  "program_sha256": "548a4b6812609cc80967ef2eb8d4d6a47d09e6e3ccedceb02b445c4d58604d6b",
+  "results_sha256": "06f7d86aa443c9752cf51652988991362ffb13480e59e195e89425844db24c92",
+  "input_manifest_sha256": "849d7f4a4dcfdb4ee1ce2ce464e21ab89899090e83f5722387834e2b028dff73",
+  "source_catalog_sha256": "2b08cfddc9b77967e38a3df8e413b900d65cb156954350f310a92d5f4e285058",
+  "case_count": 21,
+  "total_reachable_states_across_distinct_cases": 162,
+  "total_explicit_edges_across_distinct_cases": 239,
+  "counterexample_cases": 11,
+  "bad_prefix_cases": 6,
+  "failed_expectations": [],
+  "elapsed_seconds": 0.008015,
+  "product_code_imported": false,
+  "network_requests": 0,
+  "model_api_calls": 0
+}

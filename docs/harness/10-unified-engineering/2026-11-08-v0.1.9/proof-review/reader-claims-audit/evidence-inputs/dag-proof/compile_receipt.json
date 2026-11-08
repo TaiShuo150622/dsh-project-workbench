@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-11-08T07:18:29.917678+00:00",
+  "completed_at": "2026-11-08T07:18:34.763263+00:00",
+  "source_sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+  "exit_code": 0,
+  "stdout": "'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]\n'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]\n",
+  "lean_version": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "official_archive_sha256": "c0c6f34f35ba1dcc5c4a5fd106fefab9eb5e8469712624dd2c868d51b63177c2",
+  "scope": "General specification theorem plus five concrete kernel reduction checks; no implementation refinement"
+}

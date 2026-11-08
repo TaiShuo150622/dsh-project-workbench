@@ -1,0 +1,109 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 48 and seed -2942995206389534770 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 64924] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/inputs/formal-spec/ExpiryContract.tla
+Parsing file __LOCAL_TMP__/Naturals.tla
+Parsing file __LOCAL_TMP__/FiniteSets.tla
+Parsing file __LOCAL_TMP__/Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module ExpiryContract
+Starting... (2026-11-07 23:44:13)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-07 23:44:14.
+Error: Invariant NoDuplicate is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ now = 0
+/\ seen = FALSE
+/\ received = {}
+/\ effects = {}
+/\ sent = {}
+/\ admitted = {}
+/\ finished = {}
+
+State 2: <Send line 28, col 12 to line 31, col 76 of module ExpiryContract>
+/\ now = 0
+/\ seen = FALSE
+/\ received = {}
+/\ effects = {}
+/\ sent = {1}
+/\ admitted = {}
+/\ finished = {}
+
+State 3: <Receive line 33, col 15 to line 37, col 65 of module ExpiryContract>
+/\ now = 0
+/\ seen = FALSE
+/\ received = {1}
+/\ effects = {}
+/\ sent = {1}
+/\ admitted = {1}
+/\ finished = {}
+
+State 4: <Commit line 40, col 5 to line 46, col 50 of module ExpiryContract>
+/\ now = 0
+/\ seen = TRUE
+/\ received = {1}
+/\ effects = {1}
+/\ sent = {1}
+/\ admitted = {1}
+/\ finished = {1}
+
+State 5: <Send line 28, col 12 to line 31, col 76 of module ExpiryContract>
+/\ now = 0
+/\ seen = TRUE
+/\ received = {1}
+/\ effects = {1}
+/\ sent = {1, 2}
+/\ admitted = {1}
+/\ finished = {1}
+
+State 6: <Receive line 33, col 15 to line 37, col 65 of module ExpiryContract>
+/\ now = 0
+/\ seen = TRUE
+/\ received = {1, 2}
+/\ effects = {1}
+/\ sent = {1, 2}
+/\ admitted = {1, 2}
+/\ finished = {1}
+
+State 7: <Tick line 53, col 9 to line 55, col 74 of module ExpiryContract>
+/\ now = 1
+/\ seen = TRUE
+/\ received = {1, 2}
+/\ effects = {1}
+/\ sent = {1, 2}
+/\ admitted = {1, 2}
+/\ finished = {1}
+
+State 8: <Tick line 53, col 9 to line 55, col 74 of module ExpiryContract>
+/\ now = 2
+/\ seen = TRUE
+/\ received = {1, 2}
+/\ effects = {1}
+/\ sent = {1, 2}
+/\ admitted = {1, 2}
+/\ finished = {1}
+
+State 9: <Evict line 48, col 10 to line 51, col 74 of module ExpiryContract>
+/\ now = 2
+/\ seen = FALSE
+/\ received = {1, 2}
+/\ effects = {1}
+/\ sent = {1, 2}
+/\ admitted = {1, 2}
+/\ finished = {1}
+
+State 10: <Commit line 40, col 5 to line 46, col 50 of module ExpiryContract>
+/\ now = 2
+/\ seen = TRUE
+/\ received = {1, 2}
+/\ effects = {1, 2}
+/\ sent = {1, 2}
+/\ admitted = {1, 2}
+/\ finished = {1, 2}
+
+109 states generated, 59 distinct states found, 3 states left on queue.
+The depth of the complete state graph search is 10.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).
+Finished in 00s at (2026-11-07 23:44:14)

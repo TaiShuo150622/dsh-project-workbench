@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-11-08T07:46:43.076848+00:00",
+  "purpose": "wrong invariant must not count as the expected NoDuplicate counterexample",
+  "mutation": "none config INVARIANTS Init",
+  "runner_sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+  "command": [
+    "python3",
+    "run_expiry.py",
+    "--jar",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+    "--output",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-runner-negative-control/results"
+  ],
+  "exit_code": 1,
+  "control_passed": true,
+  "observed_none_violations": [
+    "Init"
+  ]
+}

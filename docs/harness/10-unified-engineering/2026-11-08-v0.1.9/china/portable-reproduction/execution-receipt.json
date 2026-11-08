@@ -1,0 +1,266 @@
+{
+  "started_at_utc": "2026-11-08T10:25:46.745039+00:00",
+  "scope": "requested research models in copied export, not new scientific evidence",
+  "jobs": [
+    {
+      "id": "lean-dag",
+      "command": [
+        "$LEAN_BIN",
+        "dag-proof/IncrementalDag.lean"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:25:46.746033+00:00",
+      "completed_at_utc": "2026-11-08T10:25:52.039385+00:00",
+      "elapsed_seconds": 5.293,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/lean-dag.stdout.txt",
+      "stderr": "execution-copy/logs/lean-dag.stderr.txt",
+      "stdout_sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "lean-budget",
+      "command": [
+        "$LEAN_BIN",
+        "china/budget-proof/BudgetSafety.lean"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:25:52.046960+00:00",
+      "completed_at_utc": "2026-11-08T10:25:54.441179+00:00",
+      "elapsed_seconds": 2.394,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/lean-budget.stdout.txt",
+      "stderr": "execution-copy/logs/lean-budget.stderr.txt",
+      "stdout_sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "python-bounded",
+      "command": [
+        "python3",
+        "china/bounded-models/model_check.py",
+        "--output-dir",
+        "research-rerun/python-models"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:25:54.442452+00:00",
+      "completed_at_utc": "2026-11-08T10:26:15.920709+00:00",
+      "elapsed_seconds": 21.479,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/python-bounded.stdout.txt",
+      "stderr": "execution-copy/logs/python-bounded.stderr.txt",
+      "stdout_sha256": "1cf3f9599217b67bb03a6b91605a15fa3d7aadc2f94f1d6d8b973e0f9206b088",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "tlc-effects",
+      "command": [
+        "python3",
+        "formal-spec/run_tlc.py",
+        "--jar",
+        "$TLC_JAR",
+        "--output-dir",
+        "research-rerun/effects"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:16.038185+00:00",
+      "completed_at_utc": "2026-11-08T10:26:22.321297+00:00",
+      "elapsed_seconds": 6.282,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/tlc-effects.stdout.txt",
+      "stderr": "execution-copy/logs/tlc-effects.stderr.txt",
+      "stdout_sha256": "06d55dada466a73de520d801a904b5300e8bff5800fe24ed3dfc0e5a92bfcfeb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "tlc-expiry",
+      "command": [
+        "python3",
+        "formal-spec/run_expiry.py",
+        "--jar",
+        "$TLC_JAR",
+        "--output",
+        "research-rerun/expiry"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:22.323427+00:00",
+      "completed_at_utc": "2026-11-08T10:26:24.902381+00:00",
+      "elapsed_seconds": 2.579,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/tlc-expiry.stdout.txt",
+      "stderr": "execution-copy/logs/tlc-expiry.stderr.txt",
+      "stdout_sha256": "6cf6a8bf5bf52bdc1eda5d32e4e89b9568770034fb7cc8740bd2eb87da3611cb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "tlc-relay",
+      "command": [
+        "python3",
+        "formal-spec/run_relay.py",
+        "--jar",
+        "$TLC_JAR",
+        "--output",
+        "research-rerun/relay"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:24.910866+00:00",
+      "completed_at_utc": "2026-11-08T10:26:27.547975+00:00",
+      "elapsed_seconds": 2.637,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/tlc-relay.stdout.txt",
+      "stderr": "execution-copy/logs/tlc-relay.stderr.txt",
+      "stdout_sha256": "27d8a61fc39a5a941b0d95d6b20701f79e47b049a91076808fc33769e5ba63e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "tlc-fence-property",
+      "command": [
+        "java",
+        "-Xmx512m",
+        "-cp",
+        "$TLC_JAR",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "formal-spec/fence-property.cfg",
+        "-metadir",
+        "research-rerun/fence-state",
+        "formal-spec/EffectContract.tla"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:27.549458+00:00",
+      "completed_at_utc": "2026-11-08T10:26:28.382946+00:00",
+      "elapsed_seconds": 0.834,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/tlc-fence-property.stdout.txt",
+      "stderr": "execution-copy/logs/tlc-fence-property.stderr.txt",
+      "stdout_sha256": "35caeb23bbcaf228f54e2d99a538ddcec8249d726e2395dde681ee98607d2e31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "tlc-dedupe-property",
+      "command": [
+        "java",
+        "-Xmx512m",
+        "-cp",
+        "$TLC_JAR",
+        "tlc2.TLC",
+        "-workers",
+        "1",
+        "-config",
+        "formal-spec/dedupe-property.cfg",
+        "-metadir",
+        "research-rerun/dedupe-state",
+        "formal-spec/EffectContract.tla"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:28.384036+00:00",
+      "completed_at_utc": "2026-11-08T10:26:29.370945+00:00",
+      "elapsed_seconds": 0.987,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/tlc-dedupe-property.stdout.txt",
+      "stderr": "execution-copy/logs/tlc-dedupe-property.stderr.txt",
+      "stdout_sha256": "f2a4d392083f25d5b06c480607908bf7f613195ec0f3cf7bb7d235fb8d6bac85",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "C08-progress",
+      "command": [
+        "python3",
+        "china/progress-conditions/check_progress.py"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:29.372007+00:00",
+      "completed_at_utc": "2026-11-08T10:26:29.516817+00:00",
+      "elapsed_seconds": 0.145,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/C08-progress.stdout.txt",
+      "stderr": "execution-copy/logs/C08-progress.stderr.txt",
+      "stdout_sha256": "4c65e8f2489f91fa665e7fc3f7d41484bc5c87d28f97eb7d9872645fa72ff7ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "W11-disputes",
+      "command": [
+        "python3",
+        "west/evidence-disputes/bounded_check.py"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:29.517786+00:00",
+      "completed_at_utc": "2026-11-08T10:26:29.621859+00:00",
+      "elapsed_seconds": 0.104,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/W11-disputes.stdout.txt",
+      "stderr": "execution-copy/logs/W11-disputes.stderr.txt",
+      "stdout_sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "R12-handoff",
+      "command": [
+        "python3",
+        "proof-review/handoff-composition/check_handoff.py"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:29.622765+00:00",
+      "completed_at_utc": "2026-11-08T10:26:29.975352+00:00",
+      "elapsed_seconds": 0.353,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/R12-handoff.stdout.txt",
+      "stderr": "execution-copy/logs/R12-handoff.stderr.txt",
+      "stdout_sha256": "dce1355a46d619664b57f3478a4fa7ce52b6934c93dc18b654b7ecc8953b88d0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "R12-secondary-check",
+      "command": [
+        "python3",
+        "proof-review/handoff-composition/verify_handoff.py"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:29.976546+00:00",
+      "completed_at_utc": "2026-11-08T10:26:30.246195+00:00",
+      "elapsed_seconds": 0.27,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/R12-secondary-check.stdout.txt",
+      "stderr": "execution-copy/logs/R12-secondary-check.stderr.txt",
+      "stdout_sha256": "7bfe13f4588ccd5e7c51c8c696d3e8de3bbea9a904305969e1f5a848a29d110b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "R14-resource",
+      "command": [
+        "python3",
+        "proof-review/resource-audit/check_conditions.py"
+      ],
+      "cwd": "execution-copy/research",
+      "started_at_utc": "2026-11-08T10:26:30.247328+00:00",
+      "completed_at_utc": "2026-11-08T10:26:30.388019+00:00",
+      "elapsed_seconds": 0.141,
+      "exit_code": 0,
+      "expected_process_exit": 0,
+      "stdout": "execution-copy/logs/R14-resource.stdout.txt",
+      "stderr": "execution-copy/logs/R14-resource.stderr.txt",
+      "stdout_sha256": "8b44606fccc46767eb8151ea6d4f95f5ccb3fd152559f15101b86c2e89a26daa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "first_failure": null,
+  "product_tests_run": false,
+  "network_requests": 0,
+  "completed_at_utc": "2026-11-08T10:26:30.388954+00:00",
+  "all_processes_expected_exit": true
+}

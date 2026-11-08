@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="c54238ed3697">
+<title>R-08 DurableRelay 与 M06 定向模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#固定输入与独立执行">固定输入与独立执行</a></li><li class="l2"><a href="#类型-阶段与安全性质">类型、阶段与安全性质</a></li><li class="l2"><a href="#两条反例及最短性范围">两条反例及最短性范围</a></li><li class="l2"><a href="#源码切点与抽象边界">源码切点与抽象边界</a></li><li class="l2"><a href="#运行器与负对照">运行器与负对照</a></li><li class="l2"><a href="#交接结论">交接结论</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-08 DurableRelay 与 M06 定向模型审查</h1>
+</header>
+<p><strong>在冻结输入与声明范围内，未发现需修复的模型、运行器或源码映射错误。</strong> 独立 TLC 复跑与原计数、反例一致；错误不变量负对照确实被运行器拒绝。这个结论仅涉及条件抽象和有限安全检查，不能写成真实宿主已复现丢消息、通用耐久性证明、幂等证明或活性保证。</p>
+<p>本轮为不同模型审查线（调度声明 gpt-6-astra，未作运行时模型身份认证）加独立 TLC 执行，非人类审核。未运行产品、宿主、掉电或进程故障注入；未修改作者源，未提交/推送。</p>
+<h2 id="固定输入与独立执行">固定输入与独立执行</h2>
+<p>28 个模型、配置、回执和 M06 文件已冻结于 <code>inputs/</code>，SHA 见 <code>INPUT_MANIFEST.json</code>。另从工作台固定 git 对象提取 3 个源码文件，并从 DSH 固定 commit 原始 URL 读取 7 个文件，完整字节与 SHA 见 <code>SOURCE_MANIFEST.json</code>、<code>source-inputs/</code>。不是用当前分支代替固定版本。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">关键输入</th><th style="text-align:left">SHA-256</th></tr></thead><tbody><tr><td style="text-align:left">DurableRelay.tla</td><td style="text-align:left"><code>833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4</code></td></tr><tr><td style="text-align:left">run_relay.py</td><td style="text-align:left"><code>5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3</code></td></tr><tr><td style="text-align:left">RELAY_README.md</td><td style="text-align:left"><code>c60c1603bac897c4435d28d8d43a777eec812285e887313b066236bad4e2274f</code></td></tr><tr><td style="text-align:left">TLC jar</td><td style="text-align:left"><code>936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88</code></td></tr></tbody></table></div>
+<p>复制模型/运行器到本线 <code>run/</code>，原冻结输入未参与写入。独立结果：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">配置</th><th style="text-align:right">TLC 退出码</th><th style="text-align:left">generated / distinct / queue</th><th style="text-align:left">结果</th></tr></thead><tbody><tr><td style="text-align:left">memory</td><td style="text-align:right">12</td><td style="text-align:left">81 / 51 / 4</td><td style="text-align:left"><code>NoLostSent</code> 反例，9 次转移</td></tr><tr><td style="text-align:left">durable</td><td style="text-align:right">0</td><td style="text-align:left">87 / 52 / 0</td><td style="text-align:left">完整有限检查，无不变量错误</td></tr><tr><td style="text-align:left">error</td><td style="text-align:right">12</td><td style="text-align:left">13 / 12 / 4</td><td style="text-align:left"><code>ErrorProvesAbsence</code> 反例，4 次转移</td></tr></tbody></table></div>
+<p><code>rerun/receipt.json</code> 和原始日志为本线运行证据；<code>inputs/formal-spec/relay-results/</code> 是作者证据，两者分开。两个反例计数是首反例停止前访问量，只有 durable 的队列零与完整结束支持这份有限图的穷尽检查。TLC 输出的状态深度 10/5 含初态，对应转移数 9/4，不应误写为 10/5 次动作。</p>
+<h2 id="类型-阶段与安全性质">类型、阶段与安全性质</h2>
+<p>逐个检查 Init 及 11 个 Next 分支：每个状态变量都有赋值或 UNCHANGED，无开放的 primed 变量；mode 限于两个字符串。live/durable/sent/error 为布尔，phase 五值，calls≤2、failures≤1、crashes≤1，域有限。<code>durable ⇒ live</code> 在这些转移下保持，包括 Crash 的 <code>live&#x27;=durable</code>。三个配置均检查 TypeOK。</p>
+<ul><li>Start/Check/Append/flush/returned/MarkSent 把调用阶段与本地标记提交拆开；Crash 可发生于任意阶段，丢弃进行中的调用阶段并恢复 durable 对应 live。它不是把崩溃中的 Promise 当成稍后还能返回。</li><li>durable、sent 在 Crash 中保留；error 保留是模型选择，README 已说明可为历史错误。calls/failures/crashes 是有限探索计数，跨 Crash 保留不表示真实产品持久存有这些字段。</li><li><code>NoLostSent</code> 是消息接纳记录的恢复性质，不检查业务效果。由于 TypeOK 已含 durable⇒live，它在可达状态上等价于 sent⇒live；额外 <code>SentImpliesDurable</code> 更早要求标记依赖耐久接纳。</li><li>durable 模式不是靠从不设置 sent 过关：Start→Check→Append→FlushSuccess→MarkSent 是满足所有守卫的 5 步成功路径。安全性来自所有到 returned 的路径都要求 durable 已真，或经过设置 durable 的成功屏障；不是把待证不变量直接写成 Init。</li><li>Spec 为 Init 与 Next 的 stuttering 闭包，没有 fairness，且关闭 deadlock 检查。有限调用上限耗尽、一直等待或无限 stutter 都不被这些安全检查否定；不能据此说消息最终一定保存。</li></ul>
+<h2 id="两条反例及最短性范围">两条反例及最短性范围</h2>
+<p>memory 轨迹：Start→Check→Append→TargetWriteFailure→RetryDelivery→Start→Check→MarkSent→Crash。第一次失败留下 live=true、durable=false；同 ID 重试在 Check 直接 returned；保存 sent 后 Crash 得到 sent=true、live=false、durable=false。没有经过 LaterDrain。</p>
+<p>在这个微步定义中，丢失必须发生于一次 sent 后的 Crash；产生非 durable 的 returned 需要 memory 重试命中，而初次调用必须先 Append、失败并清 error 后才能再 Start。这些必要动作合计 9 步，与 TLC 广度优先反例相符。9 不是产品 API 调用数或真实时间下界。</p>
+<p>error 轨迹：Start→Check→Append→OtherWriterFailure，目标 durable=true、error=true。在第 4 步前不能到达 flush 分支，也没有其他设置 error 的路径，因此 4 是该模型的最短反例。这个反例甚至不依赖“历史错误后来成功 drain”的解释，直接表示目标保存成功、其他 writer 导致全局失败。</p>
+<h2 id="源码切点与抽象边界">源码切点与抽象边界</h2>
+<p>工作台 commit <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code> 的三份 git blob 均与 M06 来源清单一致：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">抽象</th><th style="text-align:left">本线实际核读的固定源码</th><th style="text-align:left">结论边界</th></tr></thead><tbody><tr><td style="text-align:left">worker→lead 同 ID 重试</td><td style="text-align:left">projects.js:114–125 将报告 relay 目标设为 lead；152–155 清原 outbox error；267–286 仍用原 m，只有目标匹配 worker thread 才受 running 门禁/失败改 phase</td><td style="text-align:left">lead 路径可达；不能直接套到失败 worker 目标或把用户 retry_delivery 说成无条件自动重试</td></tr><tr><td style="text-align:left">live 命中早退</td><td style="text-align:left">native.js:5–14、40–47 读 snapshotEvents/inbox；命中即 return，新消息 followup 后才 await flush</td><td style="text-align:left">live 去重不提供独立存储屏障；固定 ID/内容、未取消/删除等条件必须保留</td></tr><tr><td style="text-align:left">sent 与错误来源</td><td style="text-align:left">projects.js:278–286，deliver 之后另一次 Store.change 标记 sent，catch 也覆盖该标记失败</td><td style="text-align:left">MarkerWriteFailure 与目标失败不同；不能将任何异常等同未接收</td></tr><tr><td style="text-align:left">进程恢复标记</td><td style="text-align:left">store.js:15–26 临时写入、替换、内存发布</td><td style="text-align:left">模型假设该已保存 sent 在进程重启后可恢复；不从此推出 OS/设备掉电耐久性</td></tr></tbody></table></div>
+<p>DSH commit <code>fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159</code> 的来源链核对：followup→send→inbox.splice→session.append，session commit 先写内存 log，snapshotEvents 复制该 log。它支持 live 与 durable 分层，不是对磁盘的独立读回。<a href="https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts#L170-L180">agent.ts</a>、<a href="https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts#L892-L911">session/index.ts</a>。</p>
+<p>JSONL drain 失败恢复 buffered batch 并暂停定时 drain；显式后续 drain 仍可重试。flushAll 尝试每个 writer 并聚合错误，因而目标成功与其他会话失败可以共存。模型 LaterDrain 保留了补救分支；反例选择有限前缀内未发生补救，不要求永远禁止 drain。<a href="https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts#L267-L360">storage.ts</a>。</p>
+<p>JSONL 还包含写入同步、发布目录同步及追加失败回滚；因此 <code>TargetWriteFailure</code> 只能映射为具体的未提交或成功回滚分支，不能由通用异常推出。实际采用哪个后端、目标是否有正确路由的活动 writer、回滚是否成功、崩溃前有无另一次 drain，本轮都未在真实宿主观察。<a href="https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts#L1396-L1449">JSONL index.ts</a>。</p>
+<p>这些切点使 M06 DC04/DC05 的条件分析有源码依据，但尚未建立实现到模型的完整 simulation/refinement 关系。单 ID、不消费、不取消、不删记录、活动 writer、可靠恢复标记，以及一次进程崩溃，是必须保留的抽象前提；更强模式还需要真实适配层提供目标级耐久确认，布尔 durable 不是现有 snapshotEvents 能直接读取的字段。</p>
+<h2 id="运行器与负对照">运行器与负对照</h2>
+<p>运行器检查退出码、精确不变量名称、预期错误行；durable 还要求完整结束、无错误且队列零。它会提取状态计数，但<strong>没有将 81/51、87/52、13/12 或轨迹长度硬编码为验收断言</strong>；本轮另从独立日志比对了这些值。这是范围说明，不是运行器 bug。</p>
+<p>本线在 <code>negative-run/</code> 仅把 memory 的 <code>INVARIANTS TypeOK NoLostSent</code> 改为 <code>INVARIANTS Init</code>，其他模型/运行器/配置相同。独立运行后 memory 观察到 Init，TLC 退出12，但 outcome_matches=false；另两配置匹配，整个运行器退出1。见 <code>negative_receipt.json</code>、<code>negative-rerun/</code>。这实际验证了错误不变量不会因相同 TLC 退出码被误接纳。</p>
+<p>该负对照不证明运行器能识别所有损坏日志、工具故障或未来 TLC 格式；当前冻结格式及这项错误替换已经覆盖。无需为本轮再扩大模型或修改产品。</p>
+<h2 id="交接结论">交接结论</h2>
+<p>保持原模型与主要结论即可。最准确的可引用说法是：<strong>固定代码存在 live 去重与持久屏障分离的切点；在明确的 worker→lead、目标未提交、崩溃前未补救且 sent 可恢复的有限模型中，得到丢失接纳记录的反例；更强确认规则在该有限范围通过安全检查。真实宿主的故障路径与后端前提仍未验证。</strong></p>
+<p>M06 的 NOT_RUN 标签属于那条静态研究线，不因本线运行 TLC 就变成产品故障已运行。执行与核查回执、原始日志、输入清单均留在本轮目录，既有 R01–R07 未修改。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

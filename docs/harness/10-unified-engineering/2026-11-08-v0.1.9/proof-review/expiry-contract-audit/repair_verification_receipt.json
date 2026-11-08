@@ -1,0 +1,82 @@
+{
+  "review_method": "Read repaired runner and root execution evidence; verify SHA and raw log contents; no additional TLC execution in this repair review",
+  "runner_sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+  "EA01_status": "resolved_for_reviewed_revision",
+  "negative_runner_exit_code": 1,
+  "checks": [
+    {
+      "run": "positive",
+      "mode": "none",
+      "observed_violations": [
+        "NoDuplicate"
+      ],
+      "outcome_matches": true,
+      "state_counts": [
+        109,
+        59,
+        3
+      ]
+    },
+    {
+      "run": "positive",
+      "mode": "admission",
+      "observed_violations": [
+        "NoDuplicate"
+      ],
+      "outcome_matches": true,
+      "state_counts": [
+        131,
+        81,
+        8
+      ]
+    },
+    {
+      "run": "positive",
+      "mode": "commit",
+      "observed_violations": [],
+      "outcome_matches": true,
+      "state_counts": [
+        115,
+        66,
+        0
+      ]
+    },
+    {
+      "run": "negative",
+      "mode": "none",
+      "observed_violations": [
+        "Init"
+      ],
+      "outcome_matches": false,
+      "state_counts": [
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "run": "negative",
+      "mode": "admission",
+      "observed_violations": [
+        "NoDuplicate"
+      ],
+      "outcome_matches": true,
+      "state_counts": [
+        131,
+        81,
+        8
+      ]
+    },
+    {
+      "run": "negative",
+      "mode": "commit",
+      "observed_violations": [],
+      "outcome_matches": true,
+      "state_counts": [
+        115,
+        66,
+        0
+      ]
+    }
+  ]
+}

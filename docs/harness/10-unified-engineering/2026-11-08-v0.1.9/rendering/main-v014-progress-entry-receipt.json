@@ -1,0 +1,41 @@
+{
+  "batch": "main-v014-progress-entry",
+  "records": [
+    {
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "source_sha256": "f8b4cf48bf8a59063dd126a3800dad76c25bdd676a8fe06c2f046633850aa41d",
+      "offline": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.html",
+      "offline_sha256": "53e5ba88236921f610adab1c8d46572666d78245d40f8f5fbd2477d1f6d69aa6",
+      "diagrams": 6,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:23:06.724147+00:00"
+    },
+    {
+      "source": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "source_sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "offline": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "6a2ba09cea22fca6fe3c63edc49893f3521b66fd4ec69f1733253e5f805f745e",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:23:26.944089+00:00"
+    },
+    {
+      "source": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.md",
+      "source_sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed",
+      "offline": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "e9f1822adbaa94a65f54eabb3c2ed9a8709b49b9f9c04cb9584b9415e847b92b",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:23:42.434905+00:00"
+    },
+    {
+      "source": "west/trusted-entry-map/MAP.md",
+      "source_sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "offline": "west/trusted-entry-map/MAP-离线阅读版.html",
+      "offline_sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8",
+      "diagrams": 1,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:24:01.428705+00:00"
+    }
+  ]
+}

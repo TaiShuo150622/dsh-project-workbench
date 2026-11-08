@@ -1,0 +1,40 @@
+{
+  "frozen_input_hashes_verified": true,
+  "prior_R01_R02_main_outputs_unchanged": true,
+  "witnesses_have_exact_unmodified_source_prefix": true,
+  "json_parse_passed": true,
+  "artifacts": [
+    {
+      "file": "REVIEW.md",
+      "sha256": "1925948305bd3e4f5d9867895e711791f0fa3fe25e597821021625d49d341282"
+    },
+    {
+      "file": "findings.json",
+      "sha256": "28870564b54933fab007d5b07e101fe5258e2e19be3fb5b805fd65a02a00bc10"
+    },
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "5e2926f1af0d442b68744a07f45e1973ac4677f9f887b533e6438863fb9ab3b6"
+    },
+    {
+      "file": "compile_receipt.json",
+      "sha256": "aba6e348da37f2f84f39418a4dabc4542b7971aca6e8f211269dcbb8a4c2af40"
+    },
+    {
+      "file": "witness_receipt.json",
+      "sha256": "56e9cef46a9258ab474dc784b04fae1ab9726298249cbecfa298b55d02b0b673"
+    },
+    {
+      "file": "build_witnesses.py",
+      "sha256": "703e7f36d55a3dce9cd387150fc870852917e3bd05bf3ba34f793c2a3a37dcd8"
+    },
+    {
+      "file": "witnesses/DagWitness.lean",
+      "sha256": "a8175a485724591412e74e87c0531ff335b21cf97d6680b30da66beafca764e1"
+    },
+    {
+      "file": "witnesses/BudgetWitness.lean",
+      "sha256": "12cfbb9d13556b2b240cc60525c86b336ef943202c22ad1bdfaf88dfb75963b6"
+    }
+  ]
+}

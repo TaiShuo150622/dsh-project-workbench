@@ -1,0 +1,2497 @@
+{
+  "schema_version": 1,
+  "equality": "literal exact URL including fragment; no redirect or canonicalization",
+  "entries": [
+    {
+      "url": "../../../../../record/README.md",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/12"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://aclanthology.org/2024.acl-long.747.pdf",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/13"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/1105.2255",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.03629v3",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.11366v4",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.16291v2",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.16653v1",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2308.10144v3",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.10762v4",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.20911v1",
+      "document_occurrences": [
+        "china/sources.json#/sources/48"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "document_occurrences": [
+        "china/sources.json#/sources/51",
+        "mechanisms/cordis-boundary/sources.json#/sources/0",
+        "mechanisms/lifecycle-migration/sources.json#/sources/4",
+        "west/practitioner-views/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/1"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2308.10144v3",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/2"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2310.08560v2",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2403.12968v2",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2410.10762v4",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/3"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/0"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/6"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2412.07986v1",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2502.12110v11",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/5"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/8"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/6"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/12"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/6"
+      ],
+      "bibliography_enrichments": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/0"
+      ],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://claude.com/ko/resources/webinars/outtake-built-cyber-investigator-claude",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://cloud.tencent.com/document/product/248/125043",
+      "document_occurrences": [
+        "china/sources.json#/sources/40"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://cloud.tencent.com/product/acc",
+      "document_occurrences": [
+        "china/sources.json#/sources/31"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/3",
+        "west/authority-scope/sources.json#/sources/3/primary_documents/0"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/4"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/6"
+      ],
+      "bibliography_enrichments": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/3"
+      ],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/user-input",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/3/primary_documents/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/checkpointing",
+      "document_occurrences": [
+        "west/sources.json#/sources/27"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/memory",
+      "document_occurrences": [
+        "west/sources.json#/sources/28"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/4",
+        "west/sources.json#/sources/29"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/5"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "document_occurrences": [
+        "china/sources.json#/sources/55"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/8"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/architecture",
+      "document_occurrences": [
+        "west/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle",
+      "document_occurrences": [
+        "west/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/security",
+      "document_occurrences": [
+        "west/sources.json#/sources/35"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/errors",
+      "document_occurrences": [
+        "west/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+      "document_occurrences": [
+        "west/sources.json#/sources/34"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "document_occurrences": [
+        "west/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.dbos.dev/production/hosting-with-kubernetes",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.dbos.dev/python/tutorials/upgrading-workflows",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.dbos.dev/typescript/tutorials/upgrading-workflows",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/2/paired_file"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/40"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/6"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.temporal.io/develop/safe-deployments",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://docs.temporal.io/production-deployment/worker-deployments/recover-pinned-workflows",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/0"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/ExpeL/blob/e41ec9a24823e7b560c561ab191441b56d9bcefc/agent/expel.py#L420-L447",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/voyager.py#L265-L269",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/README.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/28"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/agents/fncall_agent.py",
+      "document_occurrences": [
+        "china/sources.json#/sources/30"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/memory/memory.py",
+      "document_occurrences": [
+        "china/sources.json#/sources/29"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/evaluation.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/27"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/conversations-recovery.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/15"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/goals.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/20"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/memory.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/19"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/multi-agent-coordination.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/18"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/sandbox.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/23"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/scheduled-tasks.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/24"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/17"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/3"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/package.json",
+      "document_occurrences": [
+        "china/sources.json#/sources/14"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/22"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/0"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.test.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/26"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/21"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.test.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/25"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/16"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/issues/2036",
+      "document_occurrences": [
+        "china/sources.json#/sources/52"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/README.md",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/kernel.mjs",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/store.js",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/projects.test.mjs",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/README.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/45"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/configs/harnesses/codebuddy-code/CONFIG.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/46"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/src/workbuddy_bench/judge/runners/rule/script_verifier_resilience.py",
+      "document_occurrences": [
+        "china/sources.json#/sources/47"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/README.md",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/test_advanced.py",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/README.md",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/17"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/configs/splits/manifest_confirm.json",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/13"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/docs/reproduce.md",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/12"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/bench/longmemeval/judge.py",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/15"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/memory/store.py",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/14"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/cookbook/02_agents/18_checkpointing/README.md#L1-L48",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/26"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/1"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/29"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/cancellation_management/redis_cancellation_manager.py#L198-L227",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/25"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/concurrency.py#L1-L17",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/27"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/status_persist.py#L254-L335",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/28"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/tests/integration/agents/test_external_session_fencing.py#L1-L155",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/30"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/permission.ts#L94-L101",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/context.ts#L44-L54",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/run-coordinator.ts#L1-L170",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/README.md",
+      "document_occurrences": [
+        "west/sources.json#/sources/30"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/examples/session_stores/README.md",
+      "document_occurrences": [
+        "west/sources.json#/sources/31"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_resume.py",
+      "document_occurrences": [
+        "west/sources.json#/sources/32"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_store.py",
+      "document_occurrences": [
+        "west/sources.json#/sources/33"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/transcript_mirror_batcher.py",
+      "document_occurrences": [
+        "west/sources.json#/sources/38"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/8"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/2"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/36"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_queue.py#L70-L131",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/39"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_recovery.py#L1-L77",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/38"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_sys_db.py#L1521-L1595",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/37"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/cordis-tutorial/02-lifecycle-and-effects.md",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/agent-team.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/session.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/tool-execution-pipeline.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/contracts.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/events.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/14"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/0/dsh/files/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": true
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-board.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-graph.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/scripts/cordis-core-lifecycle.spec.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/package.json",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/events.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746",
+      "document_occurrences": [
+        "mechanisms/lifecycle-migration/sources.json#/sources/5"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/reflect.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/utils.ts",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/discussions/5120",
+      "document_occurrences": [
+        "china/sources.json#/sources/49"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/README.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/001-domain.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/002-authorization.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/003-execution.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/app/outbox.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/12"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/core/assignments.ts",
+      "document_occurrences": [
+        "china/sources.json#/sources/13"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/agent/README.md#L1-L400",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/4"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/README.md#L269-L333",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/3"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/session/session.ts#L193-L217",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/types.ts#L1175-L1190",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/channels/last_value.py#L46-L71",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_loop.py#L463-L559",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_retry.py#L131-L143",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/types.py#L99-L104",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/README.md#L1-L82",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/19"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution-abort-race.test.ts#L39-L70",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/21"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/4"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/20"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/memory-operation.ts#L1-L60",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/22"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/interrupted-turn-record.ts#L435-L518",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/24"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/recovery-authority-guard.ts#L8-L74",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/23"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md#L1-L39",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/18"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/microsoft/LLMLingua/blob/01b9e9481d7395e1e83a48df4a062b11f6304325/experiments/llmlingua2/README.md",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/0"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/3"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/2"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py#L33-L116",
+      "document_occurrences": [
+        "mechanisms/work-improvement/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs",
+      "document_occurrences": [
+        "west/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/core/src/session/rollout_reconstruction.rs",
+      "document_occurrences": [
+        "west/sources.json#/sources/12"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/ext/skills/src/render.rs",
+      "document_occurrences": [
+        "west/sources.json#/sources/13"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/8",
+        "west/authority-scope/sources.json#/sources/2",
+        "west/authority-scope/sources.json#/sources/2/primary_documents/0",
+        "west/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/guide.md",
+      "document_occurrences": [
+        "west/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/memory.md",
+      "document_occurrences": [
+        "west/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sessions/index.md",
+      "document_occurrences": [
+        "west/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/2/primary_documents/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/0"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/2/primary_documents/2"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/1"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_state.py",
+      "document_occurrences": [
+        "west/authority-scope/sources.json#/sources/2/primary_documents/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/deferred-tools.md#L95-L137",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/13"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/overview.md#L1-L44",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/12"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/temporal.md#L267-L274",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/17"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/message-history.md#L681-L729",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/15"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/toolsets/approval_required.py#L1-L33",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/14"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/5"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/16"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/7"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/activity/src/index.ts#L16-L54",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/34"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/0"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/31"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/activity.ts#L86-L110",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/33"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/worker-tuner.ts#L155-L210",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/35"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/workflow/src/workflow.ts#L215-L277",
+      "document_occurrences": [
+        "mechanisms/sources.json#/sources/32"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/tianyicui",
+      "document_occurrences": [
+        "china/sources.json#/sources/50"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/docs/mkdocs/en/graph.md",
+      "document_occurrences": [
+        "china/sources.json#/sources/41"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/checkpoint.go",
+      "document_occurrences": [
+        "china/sources.json#/sources/42"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "document_occurrences": [
+        "china/sources.json#/sources/43"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/1",
+        "ROOT_SOURCE_REVIEW.json#/entries/2"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor_checkpoint_test.go",
+      "document_occurrences": [
+        "china/sources.json#/sources/44"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/wenshao",
+      "document_occurrences": [
+        "china/sources.json#/sources/53"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/6"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/7"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://justinlin610.github.io/",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/9"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://justinlin610.github.io/blog/from-reasoning-to-agentic-thinking/",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/8"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/pubs/chandy.pdf",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/pubs/time-clocks.pdf",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "document_occurrences": [
+        "west/sources.json#/sources/14"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/fsync.2.html",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/2/urls/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/rename.2.html",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/2/urls/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/7"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "document_occurrences": [
+        "china/sources.json#/sources/56"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://nodejs.org/download/release/v24.10.0/docs/api/fs.html",
+      "document_occurrences": [
+        "mechanisms/durability-boundary/sources.json#/groups/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://openai.com/index/harness-engineering/",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/2",
+        "west/sources.json#/sources/3"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/10"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://openai.com/index/unlocking-the-codex-harness/",
+      "document_occurrences": [
+        "west/sources.json#/sources/1"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/1",
+        "west/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/9",
+        "west/sources.json#/sources/26"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/11",
+        "west/sources.json#/sources/24"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+      "document_occurrences": [
+        "west/sources.json#/sources/21"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "document_occurrences": [
+        "west/sources.json#/sources/36"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies",
+      "document_occurrences": [
+        "west/sources.json#/sources/22"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+      "document_occurrences": [
+        "west/sources.json#/sources/25"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "document_occurrences": [
+        "west/sources.json#/sources/37"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/4"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/10",
+        "west/sources.json#/sources/23"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-1M/Qwen2_5_1M_Technical_Report.pdf?file=Qwen2_5_1M_Technical_Report.pdf",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/10"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/advanced-tool-use",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/4"
+      ],
+      "bibliography_enrichments": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/1"
+      ],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+      "document_occurrences": [],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/5"
+      ],
+      "bibliography_enrichments": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/2"
+      ],
+      "literal_in_catalog": false,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "document_occurrences": [
+        "west/sources.json#/sources/19"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/3",
+        "west/sources.json#/sources/17"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "document_occurrences": [
+        "west/context-evaluation/sources.json#/sources/16",
+        "west/practitioner-views/sources.json#/sources/5",
+        "west/sources.json#/sources/18"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/11"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/managed-agents",
+      "document_occurrences": [
+        "west/sources.json#/sources/16"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.anthropic.com/research/multi-agent-research-system",
+      "document_occurrences": [
+        "west/sources.json#/sources/20"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~val/15MayPODS.pdf",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/3"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "document_occurrences": [
+        "china/sources.json#/sources/33"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/5"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/checkpointing",
+      "document_occurrences": [
+        "china/sources.json#/sources/34"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/goal",
+      "document_occurrences": [
+        "china/sources.json#/sources/36"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/hooks",
+      "document_occurrences": [
+        "china/sources.json#/sources/39"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/memory",
+      "document_occurrences": [
+        "china/sources.json#/sources/35"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/permissions",
+      "document_occurrences": [
+        "china/sources.json#/sources/38"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/release-notes/v2.179.3",
+      "document_occurrences": [
+        "china/sources.json#/sources/32"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/scheduled-tasks",
+      "document_occurrences": [
+        "china/sources.json#/sources/37"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "document_occurrences": [
+        "mechanisms/cordis-boundary/sources.json#/sources/11"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.cs.cornell.edu/courses/cs530/2005sp/papers/sagas.pdf",
+      "document_occurrences": [
+        "foundations/sources.json#/sources/6"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.deepseek.com/en/harness/",
+      "document_occurrences": [
+        "china/sources.json#/sources/0"
+      ],
+      "root_read_observations": [],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "document_occurrences": [
+        "china/sources.json#/sources/54"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW.json#/entries/7"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    },
+    {
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "document_occurrences": [
+        "west/practitioner-views/sources.json#/sources/0",
+        "west/sources.json#/sources/15"
+      ],
+      "root_read_observations": [
+        "ROOT_SOURCE_REVIEW_2.json#/entries/9"
+      ],
+      "bibliography_enrichments": [],
+      "literal_in_catalog": true,
+      "constructed_only": false
+    }
+  ],
+  "warning": "A shared URL key is not merged claims or proof of content/version equivalence. Constructed links are explicitly marked and were not network checked."
+}

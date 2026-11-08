@@ -1,0 +1,97 @@
+[
+  {
+    "mode": "none",
+    "start_utc": "2026-11-08T07:45:15.579306+00:00",
+    "end_utc": "2026-11-08T07:45:16.613062+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/runner-probe-results/states-none",
+      "-config",
+      "expiry-none.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "5c5753d156629ea97c0d1556b1a38207ce323889254d4a3fc70bee40dfac279e",
+    "summary_lines": [
+      "Error: Invariant Init is violated.",
+      "Error: The behavior up to this point is:",
+      "2 states generated, 2 distinct states found, 0 states left on queue.",
+      "The depth of the complete state graph search is 2.",
+      "Finished in 00s at (2026-11-07 23:45:16)"
+    ]
+  },
+  {
+    "mode": "admission",
+    "start_utc": "2026-11-08T07:45:16.622081+00:00",
+    "end_utc": "2026-11-08T07:45:17.671528+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/runner-probe-results/states-admission",
+      "-config",
+      "expiry-admission.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "ba9842d948eda56f0b90d584291f7293e9cc36d50dfa9d7cee6bd0de1b48718d",
+    "summary_lines": [
+      "Error: Invariant NoDuplicate is violated.",
+      "Error: The behavior up to this point is:",
+      "131 states generated, 81 distinct states found, 8 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:45:17)"
+    ]
+  },
+  {
+    "mode": "commit",
+    "start_utc": "2026-11-08T07:45:17.678890+00:00",
+    "end_utc": "2026-11-08T07:45:18.434826+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/runner-probe-results/states-commit",
+      "-config",
+      "expiry-commit.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "056346dd5d9b36dd5c238c5a5589d6f23067ecf82691e85a5c7dea3e1eb7d1ba",
+    "summary_lines": [
+      "Model checking completed. No error has been found.",
+      "115 states generated, 66 distinct states found, 0 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:45:18)"
+    ]
+  }
+]

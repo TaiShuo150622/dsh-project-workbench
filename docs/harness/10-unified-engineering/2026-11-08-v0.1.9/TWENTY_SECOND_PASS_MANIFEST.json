@@ -1,0 +1,156 @@
+{
+  "copied_at_utc": "2026-11-08T09:27:36.764740+00:00",
+  "files": [
+    {
+      "path": "west/evidence-disputes/README.md",
+      "source_worktree": "west",
+      "bytes": 1617,
+      "sha256": "dcafed377994e8eb7ada26fba928e96df4053caf372f4715953220bc910a13c9"
+    },
+    {
+      "path": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.html",
+      "source_worktree": "west",
+      "bytes": 30004,
+      "sha256": "230c3641d993d3924e92930a170f03ec25fd4092d189cd5ce7722533542f6e31"
+    },
+    {
+      "path": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "source_worktree": "west",
+      "bytes": 16436,
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0"
+    },
+    {
+      "path": "west/evidence-disputes/bounded_check.py",
+      "source_worktree": "west",
+      "bytes": 15561,
+      "sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd"
+    },
+    {
+      "path": "west/evidence-disputes/check-results.json",
+      "source_worktree": "west",
+      "bytes": 10016,
+      "sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449"
+    },
+    {
+      "path": "west/evidence-disputes/literature.json",
+      "source_worktree": "west",
+      "bytes": 3103,
+      "sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87"
+    },
+    {
+      "path": "west/evidence-disputes/sources.json",
+      "source_worktree": "west",
+      "bytes": 6803,
+      "sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a"
+    },
+    {
+      "path": "west/evidence-disputes/state-definition.json",
+      "source_worktree": "west",
+      "bytes": 7164,
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa"
+    },
+    {
+      "path": "west/evidence-disputes/validation.json",
+      "source_worktree": "west",
+      "bytes": 9079,
+      "sha256": "6ffe0d916598a2e8a7d032f6cfe5fe0111ab5d2d77aa3c54805e8cbce32b3033"
+    },
+    {
+      "path": "proof-review/handoff-composition/PREMISES.md",
+      "source_worktree": "proof-review",
+      "bytes": 2327,
+      "sha256": "4a7081326bb9a4657110733b00631fe602b93006e80931465e78851837ea11cf"
+    },
+    {
+      "path": "proof-review/handoff-composition/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 976,
+      "sha256": "b890b1b30103b9b9eac141208c372e99bb41766c0a0e976640fc58d5724f820e"
+    },
+    {
+      "path": "proof-review/handoff-composition/SHA256SUMS",
+      "source_worktree": "proof-review",
+      "bytes": 1319,
+      "sha256": "4fc271a1f3005beaaacb5d4a37ac2d61758c640d30a204a75ac56180d852344c"
+    },
+    {
+      "path": "proof-review/handoff-composition/TRACES.md",
+      "source_worktree": "proof-review",
+      "bytes": 1404,
+      "sha256": "4589846986bc41bd020b4e416f00db813914576a40a89892d52b1e8ee68f8ac1"
+    },
+    {
+      "path": "proof-review/handoff-composition/check_handoff.py",
+      "source_worktree": "proof-review",
+      "bytes": 8801,
+      "sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c"
+    },
+    {
+      "path": "proof-review/handoff-composition/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 539,
+      "sha256": "f2abaaa0e65ae47a90b7f10e709df94a3f744a4ddac180d54c0079aa68d82f8f"
+    },
+    {
+      "path": "proof-review/handoff-composition/inputs/BudgetSafety.lean",
+      "source_worktree": "proof-review",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "path": "proof-review/handoff-composition/inputs/C08.md",
+      "source_worktree": "proof-review",
+      "bytes": 17854,
+      "sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed"
+    },
+    {
+      "path": "proof-review/handoff-composition/inputs/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "bytes": 32997,
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa"
+    },
+    {
+      "path": "proof-review/handoff-composition/inputs.json",
+      "source_worktree": "proof-review",
+      "bytes": 1021,
+      "sha256": "5c45a429d099dc8305dc097a1a0c0da021404948d34caf3c8bf9229e92d788f9"
+    },
+    {
+      "path": "proof-review/handoff-composition/results.json",
+      "source_worktree": "proof-review",
+      "bytes": 24026,
+      "sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4"
+    },
+    {
+      "path": "proof-review/handoff-composition/validation_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 1121,
+      "sha256": "5a0e6b607f0fd119521307cae06ecdb3c58673f06d211511456d5b1efaa6d3d3"
+    },
+    {
+      "path": "proof-review/handoff-composition/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 13073,
+      "sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae"
+    },
+    {
+      "path": "proof-review/handoff-composition/verify_handoff.py",
+      "source_worktree": "proof-review",
+      "bytes": 4476,
+      "sha256": "a6a5df0d9a594b8d7422f3d4d71b097d1bfb1d845196ac612a0d4672627571d4"
+    },
+    {
+      "path": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.0.html",
+      "source_worktree": "proof-review",
+      "bytes": 25929,
+      "sha256": "27abe544acb045e55b6345aebb3d63fc3b042d9e63c638a24a6a45a0693a142e"
+    },
+    {
+      "path": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 14372,
+      "sha256": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75"
+    }
+  ],
+  "status": "W11 and R12 original line deliveries; independent audits in progress"
+}

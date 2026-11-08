@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "fixtures_are_wire_validated": false,
+  "scope": "Six proposed claim-level mapping witnesses. No product adapter, fake runner, real host or live service was executed.",
+  "outcomes": {
+    "SUCCESS": "Specified mapping preserves the scoped evidence and explicitly represents missing facts.",
+    "FAILURE": "A required invariant is contradicted by observable mapping output.",
+    "UNSUPPORTED": "An explicitly required capability has no contract in the selected profile; never silently downgraded.",
+    "UNKNOWN": "Execution/effect/content evidence is unavailable or incomplete; not equivalent to failure or unsupported."
+  },
+  "cases": [
+    {
+      "id": "IW01",
+      "title": "同名 completed 的语义不相等",
+      "rules": [
+        "IC03",
+        "IC09"
+      ],
+      "sources": [
+        "S01",
+        "S06",
+        "S08"
+      ],
+      "capabilities": [
+        "MCP tasks completed result with tools/call payload",
+        "target wrapper task success criterion explicitly selected or deliberately absent"
+      ],
+      "initial_state": "No business acceptance exists. Adapter knows this is tools/call, not a generic unknown result.",
+      "stimuli": [
+        {
+          "kind": "synthetic_source_claim",
+          "protocol": "MCP_TASKS_2026_07_28",
+          "task_status": "completed",
+          "result": {
+            "isError": true,
+            "content": "synthetic tool error"
+          }
+        },
+        {
+          "kind": "separate_synthetic_source_claim",
+          "protocol": "A2A_1_0",
+          "task_status": "TASK_STATE_COMPLETED"
+        }
+      ],
+      "observable": [
+        "raw status and isError",
+        "mapped terminal claim, method outcome, acceptance",
+        "mapping policy and losses"
+      ],
+      "oracle": [
+        "First case retains terminal claim but method_outcome=TOOL_ERROR and business_acceptance=UNASSESSED.",
+        "Without a declared wrapper success criterion, no exact alias to A2A COMPLETED or FAILED is asserted.",
+        "Second case records provider claims successful task completion, while independent acceptance remains UNASSESSED.",
+        "If a policy emits A2A FAILED for the first case, policy and COARSENED semantic translation are recorded."
+      ],
+      "success": "The observations are distinguished and provenance retained; no business success claim manufactured.",
+      "failure": "Both completed strings collapse into accepted success, or the original isError is lost.",
+      "unsupported": "Required downstream business-success mapping has no agreed wrapper criterion.",
+      "unknown": "Raw result or method is unavailable, so tool/domain outcome cannot be classified.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    },
+    {
+      "id": "IW02",
+      "title": "取消确认、任务取消与外部效果分开",
+      "rules": [
+        "IC04",
+        "IC09"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S05",
+        "S07"
+      ],
+      "capabilities": [
+        "MCP tasks/cancel capability",
+        "optional A2A CancelTask status mapping"
+      ],
+      "initial_state": "A task has an unresolved external-effect obligation. No target-side cancellation or effect observation is supplied.",
+      "stimuli": [
+        {
+          "kind": "synthetic_cancel_response",
+          "protocol": "MCP_TASKS_2026_07_28",
+          "result": {
+            "resultType": "complete"
+          }
+        },
+        {
+          "kind": "synthetic_later_status",
+          "task_status": "working"
+        },
+        {
+          "kind": "separate_synthetic_cancel_response",
+          "protocol": "A2A_1_0",
+          "updated_task_status": "TASK_STATE_CANCELED"
+        }
+      ],
+      "observable": [
+        "cancel acknowledgment",
+        "provider task status",
+        "effect_resolution",
+        "obligation disposition"
+      ],
+      "oracle": [
+        "MCP ack marks cancel request acknowledged, not provider cancelled.",
+        "Later working is compatible with MCP cancellation contract; it is not auto-failure.",
+        "A2A CANCELED records that provider's terminal claim only.",
+        "No synthetic event resolves the external effect; effect_resolution remains UNKNOWN and no action-specific release/compensation claim follows.",
+        "Closing a tasks/get response stream is not silently rewritten as tasks/cancel."
+      ],
+      "success": "Cancel semantics are preserved and unresolved effect remains explicit.",
+      "failure": "Ack fabricates task cancellation, or provider cancellation fabricates rollback/resource-safe termination.",
+      "unsupported": "Destination requires guaranteed quiescence but upstream lacks a scoped stop/effect query mechanism.",
+      "unknown": "Cancel reply was lost or provider status cannot be observed; no cancellation conclusion can be made.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    },
+    {
+      "id": "IW03",
+      "title": "创建回复丢失不能靠新请求编号修复",
+      "rules": [
+        "IC02",
+        "IC05",
+        "IC09"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S05"
+      ],
+      "capabilities": [
+        "Known operation effect profile",
+        "optional target-side idempotency or effect lookup"
+      ],
+      "initial_state": "Client initiated an effectful operation; no task handle was received. Task creation and business effect may have occurred remotely.",
+      "stimuli": [
+        {
+          "kind": "synthetic_disconnect",
+          "point": "after request sent; before CreateTaskResult observed"
+        },
+        {
+          "kind": "proposed_retry",
+          "request_id": "synthetic-req-2",
+          "message_id": "synthetic-message-1",
+          "target_dedup_contract": null
+        },
+        {
+          "kind": "positive_control",
+          "known_task_handle_ref": "synthetic-handle-ref",
+          "operation": "tasks/get"
+        }
+      ],
+      "observable": [
+        "whether a handle was actually received",
+        "documented idempotency profile",
+        "chosen retry/poll/unknown behavior"
+      ],
+      "oracle": [
+        "Without a known handle or effect-query/idempotency contract, record outcome UNKNOWN; do not create a certainty of absent effect.",
+        "A fresh JSON-RPC request ID or repeated A2A messageId alone does not justify an effectful retry.",
+        "Positive control polls the known handle with current authorization and retention assumptions; it does not resend the original tools/call.",
+        "TaskNotFound does not prove original business action never happened."
+      ],
+      "success": "Unknown initiating outcome and known-handle recovery take different paths.",
+      "failure": "Lost reply triggers unconditional side-effect retry or absence is asserted from no handle.",
+      "unsupported": "Required lossless initiation recovery is unavailable in selected provider profile.",
+      "unknown": "No authoritative task/effect lookup or dedup receipt is available; business recovery remains unresolved.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    },
+    {
+      "id": "IW04",
+      "title": "订阅快照与 final chunk 不补齐历史",
+      "rules": [
+        "IC06",
+        "IC07",
+        "IC09"
+      ],
+      "sources": [
+        "S02",
+        "S05",
+        "S06"
+      ],
+      "capabilities": [
+        "A2A streaming true for SubscribeToTask",
+        "GetTask for terminal state",
+        "optional complete-artifact retrieval"
+      ],
+      "initial_state": "A subscriber received artifact prefix A, then disconnects. Chunk B and a status message occur during the gap.",
+      "stimuli": [
+        {
+          "kind": "synthetic_subscribe_first_event",
+          "task_status": "TASK_STATE_WORKING",
+          "history": "implementation-defined subset"
+        },
+        {
+          "kind": "synthetic_artifact_update",
+          "artifact_id": "synthetic-artifact-1",
+          "append": true,
+          "lastChunk": true,
+          "part": "C"
+        },
+        {
+          "kind": "synthetic_terminal_status",
+          "task_status": "TASK_STATE_COMPLETED"
+        },
+        {
+          "kind": "terminal_subscribe_attempt",
+          "expected_protocol_error": "UnsupportedOperationError"
+        }
+      ],
+      "observable": [
+        "first Task event",
+        "observed artifact parts",
+        "stream gaps",
+        "final status",
+        "retrieved artifact content if separately supplied"
+      ],
+      "oracle": [
+        "Subscription current snapshot is accepted as current state, not full missed-event replay.",
+        "A+C is not accepted as complete A+B+C solely because lastChunk=true.",
+        "If current snapshot or a later authoritative artifact fetch actually supplies full content, append new evidence and distinguish it from inferred replay.",
+        "Terminal task path uses GetTask; it does not demand successful SubscribeToTask.",
+        "Business acceptance remains unassessed until criterion/content evidence exists."
+      ],
+      "success": "Coverage gaps and partial content remain explicit; a new complete-content observation may resolve only its own gap.",
+      "failure": "Missing events/chunks are invented or final chunk alone validates assembled content.",
+      "unsupported": "Mandatory complete audit history cannot be met without a separately negotiated capability.",
+      "unknown": "Current task state known but missed history or artifact content completeness unavailable.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    },
+    {
+      "id": "IW05",
+      "title": "身份和授权不能随转发被升级",
+      "rules": [
+        "IC01",
+        "IC02",
+        "IC08",
+        "IC09"
+      ],
+      "sources": [
+        "S01",
+        "S04",
+        "S05",
+        "S06",
+        "S07"
+      ],
+      "capabilities": [
+        "Origin-scoped identity references",
+        "authenticated principal metadata where actually verified",
+        "optional approval binding mechanism"
+      ],
+      "initial_state": "Two endpoints return taskId synthetic-7. Incoming message has A2A ROLE_USER or Native role=user with source agent-message. Existing approval, if any, applies only to action digest synthetic-A.",
+      "stimuli": [
+        {
+          "kind": "two_provider_claims",
+          "endpoint_refs": [
+            "synthetic-provider-A",
+            "synthetic-provider-B"
+          ],
+          "task_id": "synthetic-7"
+        },
+        {
+          "kind": "relayed_message",
+          "role": "ROLE_USER",
+          "originator": "agent"
+        },
+        {
+          "kind": "changed_effectful_arguments",
+          "old_action_digest": "synthetic-A",
+          "new_action_digest": "synthetic-B"
+        },
+        {
+          "kind": "auth_required",
+          "credential_channel": "out-of-band",
+          "resume_without_followup_message": true
+        }
+      ],
+      "observable": [
+        "identity keys",
+        "provenance",
+        "approval binding",
+        "credential forwarding policy",
+        "new task status observations"
+      ],
+      "oracle": [
+        "The same raw ID at distinct endpoints is not merged.",
+        "A2A ROLE_USER means client role and Native role=user retains agent provenance; neither asserts human approval.",
+        "Approval for synthetic-A does not authorize synthetic-B.",
+        "AUTH_REQUIRED is represented as an authorization request and can resolve out of band; no follow-up message prerequisite is invented.",
+        "No original bearer token is forwarded to a new audience by default."
+      ],
+      "success": "Identity/authority information is neither collapsed nor upgraded.",
+      "failure": "Cross-provider ID collision, forged human origin, reused parameter-mismatched approval or implicit credential transit.",
+      "unsupported": "Selected downstream flow requires secure delegated credentials/approval binding that was not negotiated.",
+      "unknown": "Principal, approval binding, capability version or provider incarnation cannot be verified.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    },
+    {
+      "id": "IW06",
+      "title": "真实 Native 接口的返回值不足以伪造持久任务回执",
+      "rules": [
+        "IC03",
+        "IC04",
+        "IC05",
+        "IC08",
+        "IC09"
+      ],
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "capabilities": [
+        "Workbench Native interface at fixed commit",
+        "future adapter persistence/evidence profile explicitly absent in this case"
+      ],
+      "initial_state": "Proposed bridge observes only a resolved Native.deliver Promise and relay ID. It has no branch receipt, persistent task-handle registry or external-effect receipt. Separately a thread is reported review.",
+      "stimuli": [
+        {
+          "kind": "synthetic_interface_observation",
+          "method": "Native.deliver",
+          "resolved": true,
+          "branch_discriminator": null
+        },
+        {
+          "kind": "synthetic_project_observation",
+          "phase": "review",
+          "generation": 2
+        },
+        {
+          "kind": "separate_local_accept_observation",
+          "phase": "completed",
+          "generation": 2,
+          "external_acceptance_evidence": null
+        },
+        {
+          "kind": "synthetic_interface_observation",
+          "method": "Native.stop",
+          "resolved": true
+        }
+      ],
+      "observable": [
+        "method resolution",
+        "relay ID and provenance",
+        "project phase and generation",
+        "available persistent bridge receipt, if any"
+      ],
+      "oracle": [
+        "Native result alone is not emitted as MCP durable-created task handle; adapter must supply its own verified handle store/recovery semantics to make that promise.",
+        "No unconditional freshly-flushed claim, because actual source permits same-ID early return and the caller has no branch discriminator.",
+        "review remains worker report; completed records local accept transition only, without a fabricated external review signature.",
+        "Native.stop return does not produce target-effect termination proof.",
+        "Previously executed RP probes are source/control-flow evidence, not this proposed bridge's runtime conformance result."
+      ],
+      "success": "Missing stronger promises are explicit; bridge returns UNSUPPORTED where the destination requires them.",
+      "failure": "Native method return is presented as durable task creation/business acceptance/effect termination without added evidence.",
+      "unsupported": "Required durable task bridge or external effect oracle is absent; this is the expected admissible outcome for those requested guarantees.",
+      "unknown": "Whether a particular Native return refreshed durability or whether the real external effect resolved remains unobserved.",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "environment": "Offline synthetic claim-level mapping protocol; no network/host execution. Wire schema validation and a future runner are not included.",
+      "time_bound": {
+        "fixture_review": "finite listed observations",
+        "future_live_profile": "must specify transport timeout, observation deadline, retention and authority refresh policy before running; no default infinite wait"
+      },
+      "stop_rule": "Stop at the finite observation set or the predeclared future deadline. Report mapping conformance and business recovery separately.",
+      "conformance_vs_business": "SUCCESS means the adapter preserves required evidence and reports honest loss/unknown; it does not mean business task completion or effect recovery."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="043cc53302ad">
+<title>C-09 编写依据与状态边界</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>C-09 编写依据与状态边界</h1>
+</header>
+<p>此文件供讨论文案时核对，不是建议整段粘贴进登记简介的内容。本轮只复用已有研究材料，没有新增网络检索或外部来源，也没有访问登记表单。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">文案部分</th><th style="text-align:left">本轮读取入口</th><th style="text-align:left">使用方式与限定</th></tr></thead><tbody><tr><td style="text-align:left">统一工程主线、已有代码与研究层次</td><td style="text-align:left"><a href="../../统一Harness工程与形式化基础讨论稿-v0.1.3.md">统一主稿 v0.1.3</a></td><td style="text-align:left">工作台、Record、DAG、远程与长期任务共同服务工作路径；没有把所有方向列成已完成插件</td></tr><tr><td style="text-align:left">七片实施顺序与范围</td><td style="text-align:left"><a href="../../west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">W-07 任务书 v0.1.1</a></td><td style="text-align:left">全部为 PROPOSED_NOT_RUN；首片是可信入口和正确投影，不含真实效果发送</td></tr><tr><td style="text-align:left">可信入口现状及合作问题 1</td><td style="text-align:left"><a href="../../west/trusted-entry-map/MAP-离线阅读版.html">W-10 入口映射</a></td><td style="text-align:left">标准 owner 门禁有固定源码依据，但不等于逐人身份或每次人工确认；RecordKernel 尚未进入工作台运行入口</td></tr><tr><td style="text-align:left">接纳确认、远程与兼容问题 2、3、5</td><td style="text-align:left">主稿执行/恢复节、W-10 及其固定来源</td><td style="text-align:left">询问推荐的契约、观测及迁移方法；未把条件模型反例说成实际宿主事故</td></tr><tr><td style="text-align:left">期限及责任交接问题 4</td><td style="text-align:left"><a href="../progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html">C-08 条件稿</a></td><td style="text-align:left">C-08 尚待独立复核；只借其问题拆分，不把有限图或纸面推导作为一般自主交付定理</td></tr></tbody></table></div>
+<p>读取的具体文稿 SHA 和范围在 <a href="inputs.json">inputs.json</a>。主稿所载 <code>7264be1</code> 是固定研究代码输入，不能据此声称本机安装状态、全部远程组合、实际认证或生产部署已验证。本文不重新核验 PR 远端状态，因此登记文案也没有写“已合并”“已发布”或提供未经本轮确认的发布链接。</p>
+<p>本版采用以下定位和措辞：</p>
+<ul><li><strong>作者身份</strong>：个人插件作者；小团队使用是探索方向，不代表任何公司的正式合作登记，也未设定团队规模。</li><li><strong>已有成果</strong>：只写固定代码与实际研究层；一般证明保留假设，有限模型保留域，源码阅读不替代宿主运行。</li><li><strong>目标价值</strong>：减少重复解释、状态核对和恢复歧义是希望验证的目标，没有写成已经取得的生产收益。</li><li><strong>合作强度</strong>：从一个明确问题、设计评审或小型接入案例开始；共同投入和后续试用待讨论，没有预设上游承诺。</li><li><strong>排除范围</strong>：公司及量化内部材料、活跃度面板、凭据、个人会话、未经核实的用户数量、测试覆盖率和创新宣称不进入文案。</li></ul>
+<p>长度按正文单段计算，不含标题和注释：简介 326 个非空白字符，其中汉字 269 个；支持需求 257 个非空白字符，其中汉字 237 个。两段分别处在要求的约 250–400 字和 200–300 字范围。名称仅给出一个建议，后续讨论可再改；此版本尚未提交、发送、发布或推送。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

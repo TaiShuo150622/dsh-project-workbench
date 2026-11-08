@@ -1,0 +1,3272 @@
+{
+  "schema_version": "1.0",
+  "task": "W09",
+  "captured_at_utc": "2026-11-08T08:47:46.309742+00:00",
+  "status": "DOCUMENT_COVERAGE_AND_BRIDGE_PROPOSAL_ONLY",
+  "index": {
+    "repository_relative_path": "docs/harness/INDEX.md",
+    "sha256": "57f8c2b9907064642b750de5015452956acbac050cca7157deb9138b757c322c",
+    "parsed_entries": 192,
+    "topic_counts": {
+      "00": 49,
+      "01": 5,
+      "02": 6,
+      "03": 5,
+      "04": 8,
+      "05": 45,
+      "06": 16,
+      "07": 5,
+      "08": 49,
+      "09": 4
+    }
+  },
+  "coverage_unit": "Theme connection; unread individual clauses are not claimed covered.",
+  "reading_counts": {
+    "full_this_round": 9,
+    "selected_this_round": 1,
+    "prior_hash_confirmed": 4,
+    "total_indexed_bodies_touched": 14,
+    "index_only": 178
+  },
+  "topics": [
+    {
+      "id": "00",
+      "title": "项目工作台与后端任务包",
+      "index_entries": 49,
+      "reading_basis": "旧任务包索引层；W07 固定产品代码另有记录",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I01",
+        "I02",
+        "I04"
+      ],
+      "deferred_or_limited": [
+        "B-01–B-12、会话地图/TUI/布局未逐项复审；不能推定实现"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "01",
+      "title": "总体目标与信息到动作",
+      "index_entries": 5,
+      "reading_basis": "索引与衔接表的显式连接",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I07"
+      ],
+      "deferred_or_limited": [
+        "旧资源数字和仓库比较不继承为当前结果"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "02",
+      "title": "Agent 方法、工具面与工作流",
+      "index_entries": 6,
+      "reading_basis": "索引与衔接表；未重读全部旧方法稿",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/evaluation-design-review/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/mechanisms/work-improvement/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I04",
+        "I07"
+      ],
+      "deferred_or_limited": [
+        "H0 与效果门槛仍是历史计划；预测/检查、模板和 Workflow 是可替换策略"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "03",
+      "title": "运行底座、长期任务与资源治理",
+      "index_entries": 5,
+      "reading_basis": "旧稿索引；主稿和架构选读",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/mechanisms/lifecycle-migration/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I03",
+        "I04",
+        "I06"
+      ],
+      "deferred_or_limited": [
+        "底座未定；旧 Coding 文件/正文版本保留差别；内部实现不迁入"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "04",
+      "title": "Record、记忆与上下文组装",
+      "index_entries": 8,
+      "reading_basis": "Record v0.1.2 前轮选读哈希一致；其余索引",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/context-evaluation/review-packet.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/china/record-refinement/README-current.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I01",
+        "I03",
+        "I05"
+      ],
+      "deferred_or_limited": [
+        "状态内核与自主记忆分别验收；本体不是首片前提"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "05",
+      "title": "通用面板平台",
+      "index_entries": 45,
+      "reading_basis": "overall-discussion 前轮选读哈希一致；画板/任务卡索引层",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/architecture-reader-review/READING_ROUTE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I02"
+      ],
+      "deferred_or_limited": [
+        "P-01–P-15、TUI、自定义渲染器保留原计划，不被语义路线自动替代"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "06",
+      "title": "DAG 与协同可视化",
+      "index_entries": 16,
+      "reading_basis": "第一屏计划前轮全文且哈希一致；其余索引",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/FORMAL_MODEL.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/dag-proof/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I02",
+        "I04"
+      ],
+      "deferred_or_limited": [
+        "布局动效、领域提取和 AND/OR 语义分开；公开摘编不等于完整系统"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "07",
+      "title": "远程工作区与双运行模式",
+      "index_entries": 5,
+      "reading_basis": "v0.1.1 前轮选读哈希一致；草图原型未重看",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/mechanisms/lifecycle-migration/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I06"
+      ],
+      "deferred_or_limited": [
+        "先定一种模式和隔离目标；历史 rc.5 兼容结果不作当前验收"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "08",
+      "title": "浏览器插件与凭据边界",
+      "index_entries": 49,
+      "reading_basis": "本轮 8 份全文与 CAPABILITIES 选读；其余索引",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/mechanisms/conformance/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I02",
+        "I04",
+        "I06"
+      ],
+      "deferred_or_limited": [
+        "B01–B03 是提案；I01 无真实浏览器效果；平台扩张/完整共享控制/Computer Use 暂缓"
+      ],
+      "changes_default_slice_scope": false
+    },
+    {
+      "id": "09",
+      "title": "延伸场景与历史补充",
+      "index_entries": 4,
+      "reading_basis": "实时讨论本轮全文；CLI 和活动面板索引层",
+      "coverage_status": "TOPIC_CONNECTED_NOT_IMPLEMENTATION_COMPLETE",
+      "main_target": {
+        "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+        "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+      },
+      "specialist_targets": [
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/README.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        },
+        {
+          "repository_relative_path": "docs/research/harness-20261107/west/context-evaluation/review-packet.md",
+          "verification": "LINK_TARGET_EXISTS_ONLY_UNLESS_IN_READING_LIST"
+        }
+      ],
+      "implementation_slices": [
+        "I02",
+        "I05"
+      ],
+      "deferred_or_limited": [
+        "语音厂商/分人/多人权限/云本地全链部署暂缓；CLI 为历史；活动面板排除"
+      ],
+      "changes_default_slice_scope": false
+    }
+  ],
+  "extension_subtopics": [
+    {
+      "name": "realtime discussion",
+      "count": 1,
+      "status": "FULL_THIS_ROUND",
+      "bridge": "B04"
+    },
+    {
+      "name": "CLI history",
+      "count": 1,
+      "status": "INDEX_ONLY",
+      "future_use": "Optional history, not current mechanism evidence."
+    },
+    {
+      "name": "workspace activity panel",
+      "count": 2,
+      "status": "EXCLUDED_USER_SCOPE"
+    }
+  ],
+  "bridges": [
+    {
+      "id": "B01",
+      "title": "Browser call, business effect and diagnostic summary",
+      "source_refs": [
+        {
+          "reading_id": "BR01",
+          "lines": [
+            [
+              13,
+              27
+            ]
+          ]
+        },
+        {
+          "reading_id": "BR03",
+          "lines": [
+            [
+              14,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              44
+            ],
+            [
+              130,
+              140
+            ]
+          ]
+        }
+      ],
+      "proposal": "Map history/attempt/action to provider/context/tab generations and final arguments. Operation log remains best-effort telemetry; authoritative effect claims need separately scoped evidence. Post-send disconnect preserves unknown.",
+      "target_slices": [
+        "I03",
+        "I04"
+      ],
+      "minimal_future_check": "Wrapper success or missing diagnostic row never proves external completion; post-send disconnect stays unknown until qualified effect observation.",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "changes_default_slice_scope": false,
+      "adds_default_experiment_group": false
+    },
+    {
+      "id": "B02",
+      "title": "Lease, lifecycle and effect fencing",
+      "source_refs": [
+        {
+          "reading_id": "BR05",
+          "lines": [
+            [
+              6,
+              10
+            ],
+            [
+              47,
+              52
+            ],
+            [
+              89,
+              99
+            ]
+          ]
+        },
+        {
+          "reading_id": "BR02",
+          "lines": [
+            [
+              1,
+              39
+            ]
+          ]
+        }
+      ],
+      "proposal": "Verify all relevant writes enforce lease and trusted owner/instance binding. TTL/takeover/close only change future control eligibility; they neither undo accepted requests nor prove an old sender stopped.",
+      "target_slices": [
+        "I03",
+        "I04",
+        "I06"
+      ],
+      "minimal_future_check": "Lease expiry leaves old in-flight effect unresolved; cleanup respects work ownership and evidence retention.",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "changes_default_slice_scope": false,
+      "adds_default_experiment_group": false
+    },
+    {
+      "id": "B03",
+      "title": "Authority, capability, page data and execution location",
+      "source_refs": [
+        {
+          "reading_id": "BR04",
+          "lines": [
+            [
+              21,
+              21
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              52,
+              52
+            ]
+          ]
+        },
+        {
+          "reading_id": "BR09",
+          "lines": [
+            [
+              101,
+              101
+            ]
+          ]
+        }
+      ],
+      "proposal": "Bind final origin, object/argument revision, approval scope and location; apply current policy at use. Separate data audience and untrusted page content from authority; local guarantees do not transfer to A/B remote.",
+      "target_slices": [
+        "I02",
+        "I04",
+        "I06"
+      ],
+      "minimal_future_check": "Changed target/object cannot reuse unrelated approval; disconnected driver is not executable capability. Preserve existing approval preference.",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "changes_default_slice_scope": false,
+      "adds_default_experiment_group": false
+    },
+    {
+      "id": "B04",
+      "title": "Versioned realtime input and late result applicability",
+      "source_refs": [
+        {
+          "reading_id": "RT01",
+          "lines": [
+            [
+              31,
+              43
+            ],
+            [
+              45,
+              55
+            ]
+          ]
+        }
+      ],
+      "proposal": "Retain source span, version, provisional/stable status and acceptance time. Distinguish claims/decisions/AI hypotheses; correction supersedes assertions without granting authority or reversing effects. Recheck late results against current question/goal/watermark/audience.",
+      "target_slices": [
+        "I02",
+        "I05"
+      ],
+      "minimal_future_check": "Input, correction and late retrieval yield current traceable context; stale result remains historical and cannot overwrite current decision.",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "changes_default_slice_scope": false,
+      "adds_default_experiment_group": false
+    }
+  ],
+  "historical_document_gaps": [
+    {
+      "id": "D01",
+      "sources": [
+        "BR01",
+        "BR02",
+        "BR05",
+        "BR09"
+      ],
+      "finding": "CONTRACTS/LIFECYCLE 0.2.21 / 3014180, LEASES 0.1.98, CAPABILITIES provider 0.1.87 / extension 0.1.86 are different historical baselines.",
+      "resolution": "Do not combine into one current capability snapshot."
+    },
+    {
+      "id": "D02",
+      "sources": [
+        "BR01",
+        "BR03"
+      ],
+      "finding": "CONTRACTS associates runId/callId with operation log; strict OPERATION-LOG schema omits them.",
+      "resolution": "Document mapping gap only; check fixed implementation before relying on resumable identity."
+    },
+    {
+      "id": "D03",
+      "sources": [
+        "BR07"
+      ],
+      "finding": "Earlier independent approval proposal and later follow-dsh decision coexist; hard-sensitive goals include unwired paths.",
+      "resolution": "Respect chronology and actual enforced policy; do not reinstate old default or add approval flow."
+    },
+    {
+      "id": "D04",
+      "sources": [
+        "BR06"
+      ],
+      "finding": "CONTEXTS section 6 says no chrome_verify, section 7 describes API; artifact directories differ.",
+      "resolution": "Do not infer complete assertion orchestration from documentation."
+    }
+  ],
+  "excluded_categories": [
+    {
+      "category": "workspace activity panel",
+      "scope": "2 index entries only",
+      "reason": "Explicit user exclusion."
+    },
+    {
+      "category": "company and quantitative internal material",
+      "scope": "Not inventoried or read in W09",
+      "reason": "Explicit scope; public general ideas retain their curation boundary."
+    }
+  ],
+  "indexed_entries": [
+    {
+      "id": "IDX001",
+      "topic": "00",
+      "title": "DSH 项目工作台：后端建议与实施时间计划（评审稿）",
+      "repository_relative_path": "docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "index_link": "../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "source_version": "第四版 / 2026-11-01",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX002",
+      "topic": "00",
+      "title": "看板",
+      "repository_relative_path": "docs/handoff/ui-backend/BOARD.md",
+      "index_link": "../handoff/ui-backend/BOARD.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX003",
+      "topic": "00",
+      "title": "接口契约",
+      "repository_relative_path": "docs/handoff/ui-backend/CONTRACT.md",
+      "index_link": "../handoff/ui-backend/CONTRACT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX004",
+      "topic": "00",
+      "title": "DSH 工作台：开源项目调研与选型讨论稿",
+      "repository_relative_path": "docs/handoff/ui-backend/OPEN-SOURCE-RESEARCH-DRAFT.md",
+      "index_link": "../handoff/ui-backend/OPEN-SOURCE-RESEARCH-DRAFT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX005",
+      "topic": "00",
+      "title": "给 Codex 的开工提示词",
+      "repository_relative_path": "docs/handoff/ui-backend/PROMPT.md",
+      "index_link": "../handoff/ui-backend/PROMPT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX006",
+      "topic": "00",
+      "title": "DSH 统一组件库 · 后端任务包",
+      "repository_relative_path": "docs/handoff/ui-backend/README.md",
+      "index_link": "../handoff/ui-backend/README.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX007",
+      "topic": "00",
+      "title": "Agent 组件 · Agent.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Agent.dc.html",
+      "index_link": "../handoff/ui-backend/design/Agent.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX008",
+      "topic": "00",
+      "title": "构建动效 · Build.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Build.dc.html",
+      "index_link": "../handoff/ui-backend/design/Build.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX009",
+      "topic": "00",
+      "title": "图表 · Charts.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Charts.dc.html",
+      "index_link": "../handoff/ui-backend/design/Charts.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX010",
+      "topic": "00",
+      "title": "更多图表 · ChartsMore.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/ChartsMore.dc.html",
+      "index_link": "../handoff/ui-backend/design/ChartsMore.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX011",
+      "topic": "00",
+      "title": "Markdown 与富文本 · Content.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Content.dc.html",
+      "index_link": "../handoff/ui-backend/design/Content.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX012",
+      "topic": "00",
+      "title": "DAG 面板 · 桌面端 · DagDesktop.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/DagDesktop.dc.html",
+      "index_link": "../handoff/ui-backend/design/DagDesktop.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX013",
+      "topic": "00",
+      "title": "DAG 组件 · DagParts.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/DagParts.dc.html",
+      "index_link": "../handoff/ui-backend/design/DagParts.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX014",
+      "topic": "00",
+      "title": "DAG 面板 · TUI · DagTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/DagTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/DagTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX015",
+      "topic": "00",
+      "title": "桌面端成屏 · DesktopScreen.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/DesktopScreen.dc.html",
+      "index_link": "../handoff/ui-backend/design/DesktopScreen.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX016",
+      "topic": "00",
+      "title": "基础映射 · Foundations.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Foundations.dc.html",
+      "index_link": "../handoff/ui-backend/design/Foundations.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX017",
+      "topic": "00",
+      "title": "DSH 组件库总览 · Main.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Main.dc.html",
+      "index_link": "../handoff/ui-backend/design/Main.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX018",
+      "topic": "00",
+      "title": "动作语法 · Motion.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Motion.dc.html",
+      "index_link": "../handoff/ui-backend/design/Motion.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX019",
+      "topic": "00",
+      "title": "界面动效 · MotionUi.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/MotionUi.dc.html",
+      "index_link": "../handoff/ui-backend/design/MotionUi.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX020",
+      "topic": "00",
+      "title": "实时弹出 · TUI · PeekTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/PeekTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/PeekTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX021",
+      "topic": "00",
+      "title": "基础组件 · Primitives.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Primitives.dc.html",
+      "index_link": "../handoff/ui-backend/design/Primitives.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX022",
+      "topic": "00",
+      "title": "设计稿导出",
+      "repository_relative_path": "docs/handoff/ui-backend/design/README.md",
+      "index_link": "../handoff/ui-backend/design/README.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX023",
+      "topic": "00",
+      "title": "大会话缩进右栏 · SessionDock.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SessionDock.dc.html",
+      "index_link": "../handoff/ui-backend/design/SessionDock.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX024",
+      "topic": "00",
+      "title": "大会话缩进右栏 · TUI · SessionDockTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SessionDockTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/SessionDockTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX025",
+      "topic": "00",
+      "title": "会话地图 · 桌面端 · SessionMap.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SessionMap.dc.html",
+      "index_link": "../handoff/ui-backend/design/SessionMap.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX026",
+      "topic": "00",
+      "title": "怎么做出来 · SessionMapHow.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SessionMapHow.dc.html",
+      "index_link": "../handoff/ui-backend/design/SessionMapHow.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX027",
+      "topic": "00",
+      "title": "会话地图 · TUI · SessionMapTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SessionMapTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/SessionMapTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX028",
+      "topic": "00",
+      "title": "会话分屏 · 桌面端 · SplitDesktop.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SplitDesktop.dc.html",
+      "index_link": "../handoff/ui-backend/design/SplitDesktop.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX029",
+      "topic": "00",
+      "title": "会话分屏 · TUI · SplitTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/SplitTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/SplitTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX030",
+      "topic": "00",
+      "title": "TUI 成屏 · TuiScreen.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/TuiScreen.dc.html",
+      "index_link": "../handoff/ui-backend/design/TuiScreen.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX031",
+      "topic": "00",
+      "title": "冷灰主题 · TuiTheme.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/TuiTheme.dc.html",
+      "index_link": "../handoff/ui-backend/design/TuiTheme.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX032",
+      "topic": "00",
+      "title": "工作台 · 桌面端 · Workbench.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/Workbench.dc.html",
+      "index_link": "../handoff/ui-backend/design/Workbench.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX033",
+      "topic": "00",
+      "title": "工作台 · TUI · WorkbenchTui.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/WorkbenchTui.dc.html",
+      "index_link": "../handoff/ui-backend/design/WorkbenchTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX034",
+      "topic": "00",
+      "title": "工作流收成甘特图 · WorkflowGantt.dc.html",
+      "repository_relative_path": "docs/handoff/ui-backend/design/WorkflowGantt.dc.html",
+      "index_link": "../handoff/ui-backend/design/WorkflowGantt.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX035",
+      "topic": "00",
+      "title": "canvas.json · canvas.json",
+      "repository_relative_path": "docs/handoff/ui-backend/design/canvas.json",
+      "index_link": "../handoff/ui-backend/design/canvas.json",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX036",
+      "topic": "00",
+      "title": "dsh-cool-dark.json · dsh-cool-dark.json",
+      "repository_relative_path": "docs/handoff/ui-backend/design/themes/dsh-cool-dark.json",
+      "index_link": "../handoff/ui-backend/design/themes/dsh-cool-dark.json",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX037",
+      "topic": "00",
+      "title": "dsh-cool-light.json · dsh-cool-light.json",
+      "repository_relative_path": "docs/handoff/ui-backend/design/themes/dsh-cool-light.json",
+      "index_link": "../handoff/ui-backend/design/themes/dsh-cool-light.json",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX038",
+      "topic": "00",
+      "title": "B-01-phase-history",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-01-phase-history.md",
+      "index_link": "../handoff/ui-backend/tasks/B-01-phase-history.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX039",
+      "topic": "00",
+      "title": "B-02-display-status",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-02-display-status.md",
+      "index_link": "../handoff/ui-backend/tasks/B-02-display-status.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX040",
+      "topic": "00",
+      "title": "B-03-overview",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-03-overview.md",
+      "index_link": "../handoff/ui-backend/tasks/B-03-overview.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX041",
+      "topic": "00",
+      "title": "B-04-library",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-04-library.md",
+      "index_link": "../handoff/ui-backend/tasks/B-04-library.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX042",
+      "topic": "00",
+      "title": "B-05-project-goal",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-05-project-goal.md",
+      "index_link": "../handoff/ui-backend/tasks/B-05-project-goal.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX043",
+      "topic": "00",
+      "title": "B-06-session-map",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-06-session-map.md",
+      "index_link": "../handoff/ui-backend/tasks/B-06-session-map.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX044",
+      "topic": "00",
+      "title": "B-07-thread-card",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-07-thread-card.md",
+      "index_link": "../handoff/ui-backend/tasks/B-07-thread-card.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX045",
+      "topic": "00",
+      "title": "B-08-timeline",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-08-timeline.md",
+      "index_link": "../handoff/ui-backend/tasks/B-08-timeline.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX046",
+      "topic": "00",
+      "title": "B-09-live-feed",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-09-live-feed.md",
+      "index_link": "../handoff/ui-backend/tasks/B-09-live-feed.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX047",
+      "topic": "00",
+      "title": "B-10-layout-state",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-10-layout-state.md",
+      "index_link": "../handoff/ui-backend/tasks/B-10-layout-state.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX048",
+      "topic": "00",
+      "title": "B-11-tui-panels",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-11-tui-panels.md",
+      "index_link": "../handoff/ui-backend/tasks/B-11-tui-panels.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX049",
+      "topic": "00",
+      "title": "B-12-integration",
+      "repository_relative_path": "docs/handoff/ui-backend/tasks/B-12-integration.md",
+      "index_link": "../handoff/ui-backend/tasks/B-12-integration.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX050",
+      "topic": "01",
+      "title": "Harness 开源深研与本机资源研究",
+      "repository_relative_path": "docs/harness/01-vision/harness-deep-research-and-resources.md",
+      "index_link": "01-vision/harness-deep-research-and-resources.md",
+      "source_version": "2026-10-27",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX051",
+      "topic": "01",
+      "title": "信息驱动的决策与工作流演化 Harness",
+      "repository_relative_path": "docs/harness/01-vision/harness-discussion-v0.1.md",
+      "index_link": "01-vision/harness-discussion-v0.1.md",
+      "source_version": "0.1",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX052",
+      "topic": "01",
+      "title": "信息驱动的决策与工作流演化 Harness",
+      "repository_relative_path": "docs/harness/01-vision/harness-discussion-v0.2.md",
+      "index_link": "01-vision/harness-discussion-v0.2.md",
+      "source_version": "0.2",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX053",
+      "topic": "01",
+      "title": "信息驱动的决策与工作流演化 Harness · 调研与讨论稿 v0.3",
+      "repository_relative_path": "docs/harness/01-vision/harness-discussion-v0.3.md",
+      "index_link": "01-vision/harness-discussion-v0.3.md",
+      "source_version": "0.3",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX054",
+      "topic": "01",
+      "title": "十个 Agent 仓库核查与 Harness 借鉴分析",
+      "repository_relative_path": "docs/harness/01-vision/ten-agent-repositories-harness-review.md",
+      "index_link": "01-vision/ten-agent-repositories-harness-review.md",
+      "source_version": "0.1",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX055",
+      "topic": "02",
+      "title": "Agent 框架 H0 轮任务书",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "index_link": "02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "source_version": "未编号",
+      "document_type": "历史实施计划（未据此确认完成）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX056",
+      "topic": "02",
+      "title": "Agent 框架下一轮开发设计稿",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "index_link": "02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "source_version": "v1",
+      "document_type": "历史实施计划（未据此确认完成）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX057",
+      "topic": "02",
+      "title": "大型软件架构怎么设计（讨论记录）",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-大型软件架构讨论与待续.md",
+      "index_link": "02-methods/2026-10-19-大型软件架构讨论与待续.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX058",
+      "topic": "02",
+      "title": "Agent 与 Workflow 讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "index_link": "02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "source_version": "0.1.0",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX059",
+      "topic": "02",
+      "title": "从修正模式到前置提问：Agent 主动性与提问边界讨论稿 v0.1.1",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "index_link": "02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "source_version": "0.1.1",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX060",
+      "topic": "02",
+      "title": "Agent 工具面设计讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "index_link": "02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "source_version": "0.1.0",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX061",
+      "topic": "03",
+      "title": "Harness 底座架构重评讨论稿 v0.1.5",
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.5.md",
+      "index_link": "03-runtime/Harness 底座架构重评讨论稿 v0.1.5.md",
+      "source_version": "0.1.5",
+      "document_type": "历史公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX062",
+      "topic": "03",
+      "title": "Harness 底座架构重评讨论稿 v0.1.6",
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "index_link": "03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "source_version": "0.1.6",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX063",
+      "topic": "03",
+      "title": "AI 编码 Harness 主干设计 · 调研与讨论稿 v0.1",
+      "repository_relative_path": "docs/harness/03-runtime/history/AI编码Harness主干设计-源v0.1-公开整理版.md",
+      "index_link": "03-runtime/history/AI编码Harness主干设计-源v0.1-公开整理版.md",
+      "source_version": "0.1",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX064",
+      "topic": "03",
+      "title": "AI 编码 Harness 主干设计 · 调研与讨论稿 v0.1.1",
+      "repository_relative_path": "docs/harness/03-runtime/history/AI编码Harness主干设计-源文件v0.1.2-公开整理版.md",
+      "index_link": "03-runtime/history/AI编码Harness主干设计-源文件v0.1.2-公开整理版.md",
+      "source_version": "正文0.1.1；源文件0.1.2",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX065",
+      "topic": "03",
+      "title": "DeepSeek Harness 插件开发复盘与 AI Coding 流程",
+      "repository_relative_path": "docs/harness/03-runtime/history/DSH插件开发复盘与AICoding流程-公开整理版.md",
+      "index_link": "03-runtime/history/DSH插件开发复盘与AICoding流程-公开整理版.md",
+      "source_version": "未标版本；2026-10-19文件快照",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX066",
+      "topic": "04",
+      "title": "Record 智能记忆与自主上下文组装讨论稿 v0.1.2",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "index_link": "04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "source_version": "0.1.2",
+      "document_type": "公开整理版",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "reading_record_id": "OLD04",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX067",
+      "topic": "04",
+      "title": "Super agent 原文与记录机制核查",
+      "repository_relative_path": "docs/harness/04-memory/DeepSeek-SuperAgent原文与记录机制核查-2026-10-31-公开整理版.md",
+      "index_link": "04-memory/DeepSeek-SuperAgent原文与记录机制核查-2026-10-31-公开整理版.md",
+      "source_version": "研究笔记；2026-10-31",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX068",
+      "topic": "04",
+      "title": "DeepSeek 上下文组织与首轮执行输入核查",
+      "repository_relative_path": "docs/harness/04-memory/DeepSeek上下文组织与首轮输入核查-2026-10-31-公开整理版.md",
+      "index_link": "04-memory/DeepSeek上下文组织与首轮输入核查-2026-10-31-公开整理版.md",
+      "source_version": "研究笔记；2026-10-31",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX069",
+      "topic": "04",
+      "title": "任务条件化上下文组装：论文与运行时核查",
+      "repository_relative_path": "docs/harness/04-memory/任务条件化上下文组装-论文与运行时-2026-10-31-公开整理版.md",
+      "index_link": "04-memory/任务条件化上下文组装-论文与运行时-2026-10-31-公开整理版.md",
+      "source_version": "研究笔记；2026-10-31",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX070",
+      "topic": "04",
+      "title": "独立上下文组装器：认知科学依据、prefill 成本与验收设计",
+      "repository_relative_path": "docs/harness/04-memory/独立上下文组装器-认知依据与成本验收-2026-10-31-公开整理版.md",
+      "index_link": "04-memory/独立上下文组装器-认知依据与成本验收-2026-10-31-公开整理版.md",
+      "source_version": "研究笔记；2026-10-31",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX071",
+      "topic": "04",
+      "title": "自动本体与会话记忆相关研究",
+      "repository_relative_path": "docs/harness/04-memory/自动本体与会话记忆相关研究-2026-10-31-公开整理版.md",
+      "index_link": "04-memory/自动本体与会话记忆相关研究-2026-10-31-公开整理版.md",
+      "source_version": "研究笔记；2026-10-31",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX072",
+      "topic": "04",
+      "title": "Record 智能记忆与自主上下文组装讨论稿",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.2历史稿-公开整理版.md",
+      "index_link": "04-memory/Record智能记忆与自主上下文组装-源v0.2历史稿-公开整理版.md",
+      "source_version": "0.2；后续统一编号为0.1.1",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX073",
+      "topic": "04",
+      "title": "会话记录常驻 agent · 设计稿 v0.1",
+      "repository_relative_path": "docs/harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "index_link": "04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "source_version": "0.1",
+      "document_type": "早期设计／历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX074",
+      "topic": "05",
+      "title": "DSH 面板平台",
+      "repository_relative_path": "docs/harness/05-panels/README.md",
+      "index_link": "05-panels/README.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX075",
+      "topic": "05",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/05-panels/docs/design/history/overall-discussion-v0.1.0.md",
+      "index_link": "05-panels/docs/design/history/overall-discussion-v0.1.0.md",
+      "source_version": "0.1.0",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX076",
+      "topic": "05",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.1",
+      "repository_relative_path": "docs/harness/05-panels/docs/design/history/overall-discussion-v0.1.1.md",
+      "index_link": "05-panels/docs/design/history/overall-discussion-v0.1.1.md",
+      "source_version": "0.1.1",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX077",
+      "topic": "05",
+      "title": "DSH 通用面板平台整体设计讨论稿 v0.1.2",
+      "repository_relative_path": "docs/harness/05-panels/docs/design/overall-discussion.md",
+      "index_link": "05-panels/docs/design/overall-discussion.md",
+      "source_version": "0.1.2",
+      "document_type": "公开整理版",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "reading_record_id": "OLD05",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX078",
+      "topic": "05",
+      "title": "ACC设计讨论入口",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/ACC-DESIGN-DRAFT.md",
+      "index_link": "05-panels/docs/handoff/panels/ACC-DESIGN-DRAFT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX079",
+      "topic": "05",
+      "title": "看板",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/BOARD.md",
+      "index_link": "05-panels/docs/handoff/panels/BOARD.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX080",
+      "topic": "05",
+      "title": "DSH面板平台设计与实施协作讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "index_link": "05-panels/docs/handoff/panels/COLLABORATION.md",
+      "source_version": "0.1.0",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX081",
+      "topic": "05",
+      "title": "接口契约",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "index_link": "05-panels/docs/handoff/panels/CONTRACT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX082",
+      "topic": "05",
+      "title": "实现方案讨论入口",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/IMPLEMENTATION-DISCUSSION-DRAFT.md",
+      "index_link": "05-panels/docs/handoff/panels/IMPLEMENTATION-DISCUSSION-DRAFT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX083",
+      "topic": "05",
+      "title": "开源演进讨论入口",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/OPEN-SOURCE-EVOLUTION-DRAFT.md",
+      "index_link": "05-panels/docs/handoff/panels/OPEN-SOURCE-EVOLUTION-DRAFT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX084",
+      "topic": "05",
+      "title": "真宿主探针",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/PROBE.md",
+      "index_link": "05-panels/docs/handoff/panels/PROBE.md",
+      "source_version": "未编号",
+      "document_type": "历史记录（未复测）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX085",
+      "topic": "05",
+      "title": "给 Codex 的开工提示词",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/PROMPT.md",
+      "index_link": "05-panels/docs/handoff/panels/PROMPT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX086",
+      "topic": "05",
+      "title": "DSH 面板平台 · 任务包",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/README.md",
+      "index_link": "05-panels/docs/handoff/panels/README.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX087",
+      "topic": "05",
+      "title": "基础映射 · Foundations.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/Foundations.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/Foundations.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX088",
+      "topic": "05",
+      "title": "上限样例 · 设计图 · LimitBim.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/LimitBim.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/LimitBim.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX089",
+      "topic": "05",
+      "title": "上限样例 · 知识图谱 · LimitGraph.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/LimitGraph.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/LimitGraph.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX090",
+      "topic": "05",
+      "title": "上限样例 · 地图 · LimitMap.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/LimitMap.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/LimitMap.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX091",
+      "topic": "05",
+      "title": "上限样例 · 天体 · LimitSky.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/LimitSky.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/LimitSky.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX092",
+      "topic": "05",
+      "title": "系统上限 · LimitSummary.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/LimitSummary.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/LimitSummary.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX093",
+      "topic": "05",
+      "title": "自定义面板 · PanelDefine.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/PanelDefine.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/PanelDefine.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX094",
+      "topic": "05",
+      "title": "面板实样 · 桌面端 · PanelGallery.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/PanelGallery.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/PanelGallery.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX095",
+      "topic": "05",
+      "title": "面板实样 · TUI · PanelGalleryTui.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/PanelGalleryTui.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/PanelGalleryTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX096",
+      "topic": "05",
+      "title": "面板平台怎么做 · PanelHow.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/PanelHow.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/PanelHow.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX097",
+      "topic": "05",
+      "title": "面板类型 · PanelTypes.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/PanelTypes.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/PanelTypes.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX098",
+      "topic": "05",
+      "title": "基础组件 · Primitives.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/Primitives.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/Primitives.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX099",
+      "topic": "05",
+      "title": "设计稿导出",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/README.md",
+      "index_link": "05-panels/docs/handoff/panels/design/README.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX100",
+      "topic": "05",
+      "title": "运行图 · TUI · RunGraphTui.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/RunGraphTui.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/RunGraphTui.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX101",
+      "topic": "05",
+      "title": "冷灰主题 · TuiTheme.dc.html",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/TuiTheme.dc.html",
+      "index_link": "05-panels/docs/handoff/panels/design/TuiTheme.dc.html",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX102",
+      "topic": "05",
+      "title": "dsh-cool-dark.json · dsh-cool-dark.json",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/themes/dsh-cool-dark.json",
+      "index_link": "05-panels/docs/handoff/panels/design/themes/dsh-cool-dark.json",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX103",
+      "topic": "05",
+      "title": "dsh-cool-light.json · dsh-cool-light.json",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/design/themes/dsh-cool-light.json",
+      "index_link": "05-panels/docs/handoff/panels/design/themes/dsh-cool-light.json",
+      "source_version": "未编号",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX104",
+      "topic": "05",
+      "title": "P-01-skeleton",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX105",
+      "topic": "05",
+      "title": "P-02-spec",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-02-spec.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-02-spec.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX106",
+      "topic": "05",
+      "title": "P-03-data",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-03-data.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-03-data.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX107",
+      "topic": "05",
+      "title": "P-04-shell",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-04-shell.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-04-shell.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX108",
+      "topic": "05",
+      "title": "P-05-table",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-05-table.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-05-table.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX109",
+      "topic": "05",
+      "title": "P-06-timeline",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-06-timeline.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-06-timeline.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX110",
+      "topic": "05",
+      "title": "P-07-graph",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-07-graph.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-07-graph.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX111",
+      "topic": "05",
+      "title": "P-08-space",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-08-space.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-08-space.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX112",
+      "topic": "05",
+      "title": "P-09-sandbox",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX113",
+      "topic": "05",
+      "title": "P-10-trust",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX114",
+      "topic": "05",
+      "title": "P-11-model",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX115",
+      "topic": "05",
+      "title": "P-12-tui",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX116",
+      "topic": "05",
+      "title": "P-13-types",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX117",
+      "topic": "05",
+      "title": "P-14-ceiling",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-14-ceiling.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-14-ceiling.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX118",
+      "topic": "05",
+      "title": "P-15-integration",
+      "repository_relative_path": "docs/harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "index_link": "05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "source_version": "未编号",
+      "document_type": "实施任务卡（计划）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX119",
+      "topic": "06",
+      "title": "00 总则（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/00-总则.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/00-总则.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX120",
+      "topic": "06",
+      "title": "01 统一口径表（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX121",
+      "topic": "06",
+      "title": "02 代码结构与实施路线（DAG 详细设计 v1 快速成稿）（公开摘编）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX122",
+      "topic": "06",
+      "title": "上传清单与分轮评审（Claude Design · DAG 第一期）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-上传清单与分轮提示.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/03-上传清单与分轮提示.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX123",
+      "topic": "06",
+      "title": "DAG 第一期 · 前端结构需求（交给 Claude Design）（公开摘编）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-前端结构需求.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/03-前端结构需求.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX124",
+      "topic": "06",
+      "title": "视觉参考收集模板（给「好看」这件事用）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-视觉参考收集模板.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/03-视觉参考收集模板.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX125",
+      "topic": "06",
+      "title": "04 · 组件库规格（第一版）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/04-组件库规格.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/04-组件库规格.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX126",
+      "topic": "06",
+      "title": "05 · 构建动效讨论稿（点阵 → 成型 → 流动）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/05-构建动效讨论稿.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/05-构建动效讨论稿.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版（编辑改写）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX127",
+      "topic": "06",
+      "title": "06 · 布局引擎规格（第二版：够「改之前看影响」这一屏）（公开摘编）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/06-布局引擎规格.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/06-布局引擎规格.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX128",
+      "topic": "06",
+      "title": "07 · 第一屏收口计划（A：场景①「改之前看影响」）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "PRIOR_FULL_HASH_CONFIRMED",
+      "reading_record_id": "OLD06",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX129",
+      "topic": "06",
+      "title": "08 · 面板协议 v2 第一版（场景① 先用）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX130",
+      "topic": "06",
+      "title": "09 · 面板头重做（R1 一行头，2026-10-21）",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/09-面板头重做.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/09-面板头重做.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX131",
+      "topic": "06",
+      "title": "DAG借鉴Super-agent架构讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "source_version": "0.1.0",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX132",
+      "topic": "06",
+      "title": "项目图（DAG）详细设计 · 公开阅读入口",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/README.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/README.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX133",
+      "topic": "06",
+      "title": "布局内核选型试验 · 历史方法摘编",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/layout_spike.md",
+      "index_link": "06-dag/current/docs/design/dag-detailed/layout_spike.md",
+      "source_version": "未编号",
+      "document_type": "公开摘编",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX134",
+      "topic": "06",
+      "title": "09 · 面板头重做（R1 一行头，2026-10-21）",
+      "repository_relative_path": "docs/harness/06-dag/history/dsh-complete/docs/design/dag-detailed/09-面板头重做.md",
+      "index_link": "06-dag/history/dsh-complete/docs/design/dag-detailed/09-面板头重做.md",
+      "source_version": "未编号",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX135",
+      "topic": "07",
+      "title": "DSH rc.5 插件兼容测试记录",
+      "repository_relative_path": "docs/harness/07-remote/DSH-rc.5-插件兼容测试记录-2026-11-04.md",
+      "index_link": "07-remote/DSH-rc.5-插件兼容测试记录-2026-11-04.md",
+      "source_version": "未编号",
+      "document_type": "历史记录（未复测）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX136",
+      "topic": "07",
+      "title": "DSH-前端草图预览-v0.1.0.png · DSH-前端草图预览-v0.1.0.png",
+      "repository_relative_path": "docs/harness/07-remote/DSH-前端草图预览-v0.1.0.png",
+      "index_link": "07-remote/DSH-前端草图预览-v0.1.0.png",
+      "source_version": "0.1.0",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX137",
+      "topic": "07",
+      "title": "DSH 远程会话 · 前端评审原型 · DSH-远程会话前端原型-v0.1.0.html",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程会话前端原型-v0.1.0.html",
+      "index_link": "07-remote/DSH-远程会话前端原型-v0.1.0.html",
+      "source_version": "0.1.0",
+      "document_type": "设计附件",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX138",
+      "topic": "07",
+      "title": "DSH 远程工作区与双运行模式讨论稿 v0.1.0",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.0.md",
+      "index_link": "07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.0.md",
+      "source_version": "0.1.0",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX139",
+      "topic": "07",
+      "title": "DSH 远程工作区与双运行模式讨论稿 v0.1.1",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "index_link": "07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "source_version": "0.1.1",
+      "document_type": "公开整理版",
+      "read_status": "PRIOR_SELECTED_HASH_CONFIRMED",
+      "reading_record_id": "OLD07",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX140",
+      "topic": "08",
+      "title": "审批（approval）说明",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "index_link": "08-browser/dsh-chrome/docs/APPROVAL.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR07",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX141",
+      "topic": "08",
+      "title": "平台扩展架构（Windows / Linux / Edge / Brave / Firefox / 云）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "index_link": "08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX142",
+      "topic": "08",
+      "title": "自动更新（扩展与 provider）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/AUTO-UPDATE.md",
+      "index_link": "08-browser/dsh-chrome/docs/AUTO-UPDATE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX143",
+      "topic": "08",
+      "title": "浏览器支持与部署路线（Chrome / Edge / Safari）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/BROWSER-ROADMAP.md",
+      "index_link": "08-browser/dsh-chrome/docs/BROWSER-ROADMAP.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX144",
+      "topic": "08",
+      "title": "Backend 能力契约（capabilities）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "index_link": "08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "SELECTED_THIS_ROUND",
+      "reading_record_id": "BR09",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX145",
+      "topic": "08",
+      "title": "结构自审（2026-10-19，0.2.2）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CODE-REVIEW-SELF.md",
+      "index_link": "08-browser/dsh-chrome/docs/CODE-REVIEW-SELF.md",
+      "source_version": "0.2.2",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX146",
+      "topic": "08",
+      "title": "Codex 任务书：代码结构审查",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CODEX-TASK-STRUCTURE-REVIEW.md",
+      "index_link": "08-browser/dsh-chrome/docs/CODEX-TASK-STRUCTURE-REVIEW.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX147",
+      "topic": "08",
+      "title": "Computer Use：单独插件的长期规划",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "index_link": "08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR08",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX148",
+      "topic": "08",
+      "title": "配置（provider config）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CONFIG.md",
+      "index_link": "08-browser/dsh-chrome/docs/CONFIG.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX149",
+      "topic": "08",
+      "title": "隔离浏览器上下文（I1）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "index_link": "08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR06",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX150",
+      "topic": "08",
+      "title": "公共契约（A-01）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "index_link": "08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR01",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX151",
+      "topic": "08",
+      "title": "dsh-chrome 设计文档",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DESIGN.md",
+      "index_link": "08-browser/dsh-chrome/docs/DESIGN.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX152",
+      "topic": "08",
+      "title": "DSH 右侧边栏原生浏览器面板（Native Sidebar Browser）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "index_link": "08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX153",
+      "topic": "08",
+      "title": "DSH 右侧边栏浏览器（方案 A viewer 原型）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR.md",
+      "index_link": "08-browser/dsh-chrome/docs/DSH-SIDEBAR.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX154",
+      "topic": "08",
+      "title": "Microsoft Edge 支持（Chromium）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/EDGE.md",
+      "index_link": "08-browser/dsh-chrome/docs/EDGE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX155",
+      "topic": "08",
+      "title": "加固计划（Codex 审查 + 四角度评审后）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-PLAN.md",
+      "index_link": "08-browser/dsh-chrome/docs/HARDENING-PLAN.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX156",
+      "topic": "08",
+      "title": "加固队列 1（H1–H3）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-1.md",
+      "index_link": "08-browser/dsh-chrome/docs/HARDENING-QUEUE-1.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX157",
+      "topic": "08",
+      "title": "加固队列 2（H4–H8：安全收尾 + close/crash）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-2.md",
+      "index_link": "08-browser/dsh-chrome/docs/HARDENING-QUEUE-2.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX158",
+      "topic": "08",
+      "title": "后台浏览器（headless Chromium）H0/H1",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/HEADLESS.md",
+      "index_link": "08-browser/dsh-chrome/docs/HEADLESS.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX159",
+      "topic": "08",
+      "title": "Tab lease（I3 基础）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "index_link": "08-browser/dsh-chrome/docs/LEASES.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR05",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX160",
+      "topic": "08",
+      "title": "生命周期与资源表（A-02）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "index_link": "08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR02",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX161",
+      "topic": "08",
+      "title": "内存监控队列（Codex 监控提议）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-MONITOR-QUEUE.md",
+      "index_link": "08-browser/dsh-chrome/docs/MEMORY-MONITOR-QUEUE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX162",
+      "topic": "08",
+      "title": "内存/生命周期加固队列（来自 memory-reduction + Codex 新提议）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-QUEUE.md",
+      "index_link": "08-browser/dsh-chrome/docs/MEMORY-QUEUE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX163",
+      "topic": "08",
+      "title": "多浏览器 / 多沙盒实例：现状、设计与分阶段计划",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "index_link": "08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX164",
+      "topic": "08",
+      "title": "开源浏览器 Agent 方案调研（2026-10-17）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/OPEN-SOURCE-NOTES.md",
+      "index_link": "08-browser/dsh-chrome/docs/OPEN-SOURCE-NOTES.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX165",
+      "topic": "08",
+      "title": "操作记录（operations.jsonl）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "index_link": "08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR03",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX166",
+      "topic": "08",
+      "title": "页面 overlay：虚拟鼠标 + 标注",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/OVERLAY.md",
+      "index_link": "08-browser/dsh-chrome/docs/OVERLAY.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX167",
+      "topic": "08",
+      "title": "密码与凭据管理（PASSWORD-MANAGEMENT）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PASSWORD-MANAGEMENT.md",
+      "index_link": "08-browser/dsh-chrome/docs/PASSWORD-MANAGEMENT.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX168",
+      "topic": "08",
+      "title": "平台 bridge / host / 可执行文件审计（E-01）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLATFORM-AUDIT.md",
+      "index_link": "08-browser/dsh-chrome/docs/PLATFORM-AUDIT.md",
+      "source_version": "未编号",
+      "document_type": "历史记录（未复测）",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX169",
+      "topic": "08",
+      "title": "插件设置设计（PLUGIN-SETTINGS）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "index_link": "08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX170",
+      "topic": "08",
+      "title": "结构重构队列 2（Codex 审查后）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-2.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-2.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX171",
+      "topic": "08",
+      "title": "结构重构队列 3（工具域 + runtime + headless 动作）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-3.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-3.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX172",
+      "topic": "08",
+      "title": "结构重构队列 4（剩余工具域 + runtime + headless login）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-4.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-4.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX173",
+      "topic": "08",
+      "title": "结构重构队列 5（剩余 tools + headless dispatch）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-5.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-5.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX174",
+      "topic": "08",
+      "title": "结构重构队列 6（headless/viewer/update/tools 组装）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-6.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-6.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX175",
+      "topic": "08",
+      "title": "安全 / 多沙盒硬化队列 7",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-7.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE-7.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX176",
+      "topic": "08",
+      "title": "结构重构队列（给循环子智能体）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE.md",
+      "index_link": "08-browser/dsh-chrome/docs/REFACTOR-QUEUE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX177",
+      "topic": "08",
+      "title": "分阶段实施计划：从个人用到官方",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/ROADMAP.md",
+      "index_link": "08-browser/dsh-chrome/docs/ROADMAP.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX178",
+      "topic": "08",
+      "title": "Safari 可行性 Spike（结论：不属于近期）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SAFARI-SPIKE.md",
+      "index_link": "08-browser/dsh-chrome/docs/SAFARI-SPIKE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX179",
+      "topic": "08",
+      "title": "F1 Spike：实时画面（screencast）可行性",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SCREENCAST-SPIKE.md",
+      "index_link": "08-browser/dsh-chrome/docs/SCREENCAST-SPIKE.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX180",
+      "topic": "08",
+      "title": "跨通道机器型 token（sec）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SECRETS.md",
+      "index_link": "08-browser/dsh-chrome/docs/SECRETS.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX181",
+      "topic": "08",
+      "title": "安全模型（P2 + 批次 C 后）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "index_link": "08-browser/dsh-chrome/docs/SECURITY.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "BR04",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX182",
+      "topic": "08",
+      "title": "浏览器侧边栏（side panel）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/SIDEPANEL.md",
+      "index_link": "08-browser/dsh-chrome/docs/SIDEPANEL.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX183",
+      "topic": "08",
+      "title": "Windows 真机反馈修复队列 1（P1–P3 + P6，目标 0.2.25）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-1.md",
+      "index_link": "08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-1.md",
+      "source_version": "0.2.25",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX184",
+      "topic": "08",
+      "title": "Windows 真机反馈修复队列 2（P4/P5/P7，目标 0.2.26）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-2.md",
+      "index_link": "08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-2.md",
+      "source_version": "0.2.26",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX185",
+      "topic": "08",
+      "title": "Windows native host：单文件 `dsh-chrome-host.exe`（Node SEA）",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-HOST.md",
+      "index_link": "08-browser/dsh-chrome/docs/WINDOWS-HOST.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX186",
+      "topic": "08",
+      "title": "dsh-chrome 插件侧内存占用与优化建议",
+      "repository_relative_path": "docs/harness/08-browser/history/dsh-chrome-memory-reduction.md",
+      "index_link": "08-browser/history/dsh-chrome-memory-reduction.md",
+      "source_version": "未编号",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX187",
+      "topic": "08",
+      "title": "DeepSeek Harness 下一步执行路线与智能体团队分工",
+      "repository_relative_path": "docs/harness/08-browser/history/dsh-next-steps-agent-team-plan.md",
+      "index_link": "08-browser/history/dsh-next-steps-agent-team-plan.md",
+      "source_version": "未编号",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX188",
+      "topic": "08",
+      "title": "跨通道凭据与截图遮罩讨论稿 v0.1.5",
+      "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "index_link": "08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "source_version": "0.1.5",
+      "document_type": "历史公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX189",
+      "topic": "09",
+      "title": "工作区活跃度显示讨论稿 v0.1.2",
+      "repository_relative_path": "docs/harness/09-extensions/activity/docs/discussion/工作区活跃度显示讨论稿-v0.1.2.md",
+      "index_link": "09-extensions/activity/docs/discussion/工作区活跃度显示讨论稿-v0.1.2.md",
+      "source_version": "0.1.2",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "EXCLUDED_USER_SCOPE",
+      "scope_reason": "User excluded workspace activity panel.",
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX190",
+      "topic": "09",
+      "title": "工作区活跃度插件 · v0.1 实施稿：官方面板入口 + 活动视图，先读后写",
+      "repository_relative_path": "docs/harness/09-extensions/activity/docs/implementation/工作区活跃度插件-实施稿-2026-10-23.md",
+      "index_link": "09-extensions/activity/docs/implementation/工作区活跃度插件-实施稿-2026-10-23.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "EXCLUDED_USER_SCOPE",
+      "scope_reason": "User excluded workspace activity panel.",
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX191",
+      "topic": "09",
+      "title": "Claude Code 发展史：从 research preview 到现在",
+      "repository_relative_path": "docs/harness/09-extensions/cli/docs/research/claude-code-history.md",
+      "index_link": "09-extensions/cli/docs/research/claude-code-history.md",
+      "source_version": "未编号",
+      "document_type": "公开整理版",
+      "read_status": "INDEX_ONLY",
+      "reading_record_id": null,
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    },
+    {
+      "id": "IDX192",
+      "topic": "09",
+      "title": "实时讨论工作台的开源参考与公共核心",
+      "repository_relative_path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "index_link": "09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "source_version": "未标版本；2026-10-28",
+      "document_type": "公开整理版",
+      "read_status": "FULL_THIS_ROUND",
+      "reading_record_id": "RT01",
+      "scope_status": "IN_SCOPE_ARCHIVE",
+      "scope_reason": null,
+      "new_design_coverage": "NOT_REVIEWED_AT_FILE_CLAUSE_LEVEL"
+    }
+  ],
+  "limits": [
+    "No product implementation or runtime check.",
+    "No broad new web research.",
+    "No all-192-body reading claim.",
+    "No new default slice or experiment; bridges require later selection and implementation."
+  ]
+}

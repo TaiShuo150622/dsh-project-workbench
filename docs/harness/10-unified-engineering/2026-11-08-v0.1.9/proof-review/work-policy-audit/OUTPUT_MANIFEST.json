@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "564c702fcc4989aa9fcb2c772a201ece25869128a439a5bc7de08a2adf25b44b",
+      "bytes": 4206
+    },
+    {
+      "file": "REVIEW.md",
+      "sha256": "ed4ff530b946b54afaea8510974de14bad2cc15d50442fa8a9d746c234f9f070",
+      "bytes": 8855
+    },
+    {
+      "file": "findings.json",
+      "sha256": "1f059d6f68caf1725fc96eaa1d3b45e4a3adce0a7a42e86f5351d9dcf0a87f7d",
+      "bytes": 2286
+    },
+    {
+      "file": "verification_receipt.json",
+      "sha256": "b1400f2ba5773bceefd3797f97d8a56584caf90d79c3cb7e3e0c20a279a0cfe0",
+      "bytes": 2421
+    }
+  ]
+}

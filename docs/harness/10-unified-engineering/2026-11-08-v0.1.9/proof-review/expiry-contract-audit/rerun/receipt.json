@@ -1,0 +1,97 @@
+[
+  {
+    "mode": "none",
+    "start_utc": "2026-11-08T07:44:13.329046+00:00",
+    "end_utc": "2026-11-08T07:44:14.604435+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/rerun/states-none",
+      "-config",
+      "expiry-none.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "e5da2d18924c63dbd9cbf4d359cd696a2d17fd15bd5aef6390074fd3fd13c712",
+    "summary_lines": [
+      "Error: Invariant NoDuplicate is violated.",
+      "Error: The behavior up to this point is:",
+      "109 states generated, 59 distinct states found, 3 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:44:14)"
+    ]
+  },
+  {
+    "mode": "admission",
+    "start_utc": "2026-11-08T07:44:14.613357+00:00",
+    "end_utc": "2026-11-08T07:44:15.444856+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/rerun/states-admission",
+      "-config",
+      "expiry-admission.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "ebda2ad9272eef7b6d6b177d2677f7fb66ecc204129f0d47af7d749755ecb45b",
+    "summary_lines": [
+      "Error: Invariant NoDuplicate is violated.",
+      "Error: The behavior up to this point is:",
+      "131 states generated, 81 distinct states found, 8 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:44:15)"
+    ]
+  },
+  {
+    "mode": "commit",
+    "start_utc": "2026-11-08T07:44:15.452049+00:00",
+    "end_utc": "2026-11-08T07:44:16.240856+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/rerun/states-commit",
+      "-config",
+      "expiry-commit.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "9ddc3fbe81785897183c6d1a10f2d2b5740e2e453fb7c83b2c8a8c1a758b3be6",
+    "summary_lines": [
+      "Model checking completed. No error has been found.",
+      "115 states generated, 66 distinct states found, 0 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:44:15)"
+    ]
+  }
+]

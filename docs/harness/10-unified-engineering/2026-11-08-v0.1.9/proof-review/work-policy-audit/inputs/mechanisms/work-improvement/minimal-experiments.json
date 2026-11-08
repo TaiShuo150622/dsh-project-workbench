@@ -1,0 +1,579 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_kind": "work_improvement_experiment_protocol",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "readiness": "TASK_PACKETS_OBSERVATION_FIXTURES_AND_INDEPENDENT_CHECKERS_NOT_BUILT",
+  "purpose": "检验下一工作选择、经验复用及工作流候选改进；不是论文复现、产品实现或通用最优策略证明。",
+  "numbers_are": "PROPOSED_DESIGN_CAPS_NOT_MEASUREMENTS",
+  "global_profile": {
+    "must_bind_before_run": [
+      "provider_and_immutable_model_version",
+      "all_generation_parameters",
+      "model_tokenizer_or_billing_unit",
+      "tool_and_environment_versions",
+      "task_manifest_sha256_and_group_split",
+      "policy_versions",
+      "check_definition_sha256",
+      "fixture_manifest_sha256",
+      "authority_and_write_scope",
+      "max_usd_total",
+      "failure_and_severity_rubric",
+      "human_review_time_logging_method",
+      "sample_order_and_repeat_ids",
+      "prediction_commit_and_check_dispatch_order"
+    ],
+    "model_change_policy": "一个条件内不变更模型；提供商无法固定时记录响应元数据并把漂移列为混杂，不能宣称只比较策略。",
+    "unit_of_analysis": "task packet / task family；同题重复不是新的独立任务。",
+    "limits_per_episode": {
+      "model_calls_total_max": 8,
+      "model_input_tokens_total_max": 64000,
+      "model_output_tokens_total_max": 16000,
+      "tool_calls_total_max": 30,
+      "wall_minutes_max": 20,
+      "replans_max": 2,
+      "diagnostic_hypotheses_max": 3,
+      "candidates_per_decision_max": 3,
+      "format_repair_calls_within_model_total_max": 1
+    },
+    "limits_note": "所有规划、诊断、critic、摘要、格式修复、检索与重试计入同一上限；并发调用先预留配额。上限可在正式冻结前调整，冻结后不得为难题临时放宽。",
+    "budget_comparison": "各组共享同一能力/预算上限，报告实际消耗；不强迫基线花满，不宣称同上限等于同成本。",
+    "approved_environment": "公开资料或合成离线任务，无生产副作用、真实凭据或公司语料。",
+    "no_hidden_internal_oracle": "评价只使用显式动作、证据引用、可见结果和独立验收；不读取模型隐藏思维、宿主私有状态或通过推测判断动机。",
+    "prediction_rule": "PredictionCommitted先于本次相关CheckDispatched；记录已见先前结果；后补解释不算事前预测。",
+    "holdout_policy": "任务/模板/实体/来源簇分割后冻结；规则库和轨迹库均不得含留出任务或其标签；查看结果后修改方法进入下一轮。",
+    "work_decision_required_fields": [
+      "task_revision",
+      "policy_revision",
+      "evidence_refs",
+      "visible_prior_results",
+      "candidate_actions",
+      "selected_action",
+      "short_rationale",
+      "expected_observation_or_interval",
+      "current_or_future_decision_or_verification_obligation",
+      "budget_cap",
+      "stop_and_review_trigger",
+      "retrieved_experience_ids",
+      "information_horizon_and_minimum_monitoring_obligation"
+    ],
+    "run_receipt_fields": [
+      "episode_id",
+      "condition",
+      "task_id",
+      "repeat_id",
+      "profile_hash",
+      "prediction_id",
+      "observation_refs",
+      "action_proposals",
+      "check_run_refs",
+      "task_outcome",
+      "protocol_outcome",
+      "elapsed_wall_ms",
+      "human_active_seconds_by_category",
+      "model_calls_all",
+      "input_tokens_all",
+      "output_tokens_all",
+      "tool_calls_all",
+      "all_candidate_cost",
+      "unresolved_items",
+      "side_effect_status"
+    ],
+    "task_outcomes": [
+      "SUCCESS",
+      "PARTIAL",
+      "FAILURE",
+      "TIMEOUT",
+      "UNKNOWN",
+      "UNSUPPORTED"
+    ],
+    "protocol_outcomes": [
+      "VALID",
+      "INVALID",
+      "NOT_RUN"
+    ],
+    "verdict_semantics": {
+      "SUCCESS": "冻结目标有充分验收证据；不是策略说完成。",
+      "PARTIAL": "有可用产物但目标未完整达成。",
+      "FAILURE": "观察到明确目标违反或合法预算内未达成且原因可判定。",
+      "TIMEOUT": "达到本次预定时限；保留产物，不自动重跑。",
+      "UNKNOWN": "可用观察不足以作结果判断；可成为正确的策略决定但不计业务完成。",
+      "UNSUPPORTED": "预定义所需能力不可提供；报告覆盖率与原因，不作成功、不静默删分母。",
+      "INVALID": "泄漏留出信息、改评估者、缺关键记录等协议违规；不和普通任务失败混为一项。"
+    },
+    "adoption_policy": "小样本只筛查是否值得更大试验；不以零观察事故证明等价。质量底线未满足则不采纳；证据不足标INCONCLUSIVE。由已有授权策略决定后续采用范围。",
+    "safety_stop_conditions": [
+      "越权改变检查/权限/留出资料",
+      "规则库或轨迹库检索到留出任务",
+      "总预算无法限制",
+      "关键证据记录缺失",
+      "观察到预定义严重逃逸"
+    ],
+    "reporting": "所有分配任务及失败、超时、unsupported、unknown和invalid都报告；同时给覆盖条件与任务族分层。不得只统计成功运行。",
+    "obligation_conflicts": "先检查到期复核/最低监测投入的冲突与资源可行性；按已授权优先级安排；无法兼容则报告不可行与选项，不承诺全部先满足、不自行放弃已采纳方向。",
+    "information_policy": "查证写明影响哪项当前或后续决定、履行哪项验证/覆盖/审计/监测义务；确认未变也可能有用；都无法说明时不默认增加查询。"
+  },
+  "experiments": [
+    {
+      "id": "W01",
+      "title": "有限取证与重规划",
+      "hypothesis": "在出现信息缺口/前提失效时，明确候选与预测检查点减少无效动作；在直接任务中额外流程可能增加开销。",
+      "source_ids": [
+        "WI-P01",
+        "WI-P02",
+        "WI-P03",
+        "WI-P04"
+      ],
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "task_cards": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "conditions": [
+        {
+          "id": "B0",
+          "strategy": "同目标/证据/工具/上限的有限ReAct式基线；按已有里程碑推进，收到原始检查反馈即可修正；无强制预测卡、无跨任务记忆。"
+        },
+        {
+          "id": "B1",
+          "strategy": "B0加检查点预测、至多3候选、与当前/后续决定或明确验证义务有关的查证、最多2次局部重规划；不能改冻结规范。"
+        }
+      ],
+      "counts": {
+        "task_packets": 12,
+        "conditions": 2,
+        "repeats": 2,
+        "max_episodes": 48
+      },
+      "allocation": "每个任务包两组都运行；顺序随机或平衡；冻结重复ID，支持seed则记录seed，不支持则明确非确定重复。",
+      "checkpoints": [
+        "初次选择下一工作",
+        "新的区分性观察后",
+        "子目标预期失败后",
+        "最终交付/上限到达"
+      ],
+      "observations": [
+        "选择及改变选择的证据",
+        "达到目标所需动作/调用和时间",
+        "重复无信息动作",
+        "无反证重跑有效前缀",
+        "错误地修改正确产物",
+        "人工理解/查证/接受时间"
+      ],
+      "oracle": "按每个任务卡的允许/失败谓词与隐藏结果验收，允许多条等价正确路线；不要求匹配固定文字轨迹。",
+      "analysis": "四个stratum分别报告任务成功、错报和成本；B1是方法包筛查，不能把差异单独归因于预测或候选数量。",
+      "stop_rule": "到固定48回合或协议级阻断；不根据中途平均数扩样/改策略。",
+      "not_supported_claims": [
+        "不能证明巨型项目自治",
+        "不能证明全局最佳下一动作",
+        "合成观察不等于真实宿主集成"
+      ]
+    },
+    {
+      "id": "W02",
+      "title": "经验复用与适用域",
+      "hypothesis": "有范围的教训及反例比只检索成功轨迹更少被误用，并在相同质量约束下减少人工查证。",
+      "source_ids": [
+        "WI-P03",
+        "WI-P05",
+        "WI-C04"
+      ],
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "dataset": {
+        "training_tasks": 6,
+        "development_tasks": 6,
+        "heldout_tasks": 12,
+        "heldout_strata": [
+          {
+            "name": "同任务族新实体/模板簇",
+            "n": 4
+          },
+          {
+            "name": "环境或版本变化",
+            "n": 4
+          },
+          {
+            "name": "表面相似但规则不适用",
+            "n": 4
+          }
+        ],
+        "selection_rule": "先按模板/实体/来源簇去重和分割，不从私有会话抽样；训练和开发的原始反馈池对B1/B2相同。"
+      },
+      "conditions": [
+        {
+          "id": "B0",
+          "strategy": "无跨任务经验，保留同任务反馈。"
+        },
+        {
+          "id": "B1",
+          "strategy": "检索最多3条训练池成功轨迹，统一上下文上限。"
+        },
+        {
+          "id": "B2",
+          "strategy": "同池提炼最多6条版本化教训，检索最多3条，含前提、证据和反例；先作用域过滤后排序。"
+        }
+      ],
+      "counts": {
+        "heldout_tasks": 12,
+        "conditions": 3,
+        "repeats": 2,
+        "max_evaluation_episodes": 72
+      },
+      "experience_collection_cap": {
+        "training_tasks": 6,
+        "attempts_per_task_max": 2,
+        "max_training_episodes": 12,
+        "lesson_generation_calls_max": 6,
+        "development_tasks": 6,
+        "conditions": 3,
+        "repeats": 1,
+        "max_development_episodes": 18
+      },
+      "additional_cost_note": "12训练回合、6提炼调用、18开发回合另计；不是免费先验。B0/B1/B2各报告本组实际构建与使用成本，复用公共池另注明。",
+      "context_limit": {
+        "experience_tokens_max": 1500,
+        "note": "不靠无意义填充让B0等长；实际token差异是成本与潜在混杂。"
+      },
+      "frozen_fields": [
+        "training_pool_hash",
+        "rule_library_hash",
+        "trajectory_index_hash",
+        "scope_filter_version",
+        "retrieval_limit",
+        "generation_prompt",
+        "heldout_manifest_hash"
+      ],
+      "required_assertions": [
+        "retrieved_task_ids intersect heldout_task_ids is empty",
+        "rules_supporting_task_ids intersect heldout_task_ids is empty",
+        "近重复/同模板泄漏审阅完成",
+        "留出期间经验库只读"
+      ],
+      "oracle": "对最终结果独立验收；规则适用性由任务包明确前提判断；记录误用、拒绝适用经验和错报。对多个可能正确方案不强求某条规则。",
+      "analysis": "同域/漂移/反适用三层分别报告；B2包含多项变化，只说明整个经验包结果，后续W03才拆因素。",
+      "stop_rule": "固定72留出回合结束；错误套用造成严重缺陷或任何数据隔离失败，停止相应条件并保留记录。",
+      "not_supported_claims": [
+        "两次成功不是通用规则证明",
+        "当前小库不代表无限长期记忆",
+        "反思票数不等于独立有效次数"
+      ]
+    },
+    {
+      "id": "W03",
+      "title": "保持基线的候选工作流消融",
+      "hypothesis": "在一个已经可用的流程上，有限单因素候选能发现收益，且计入搜索/维护后仍值得采用。",
+      "source_ids": [
+        "WI-P06",
+        "WI-C02"
+      ],
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "baseline_rule": "冻结W01或W02的一份已明确行为的策略，baseline始终可选；无既有质量合格基线则本实验UNSUPPORTED。",
+      "candidate_slots": [
+        {
+          "id": "K1",
+          "one_change": "仅改变检查点频率；检查规范不变。"
+        },
+        {
+          "id": "K2",
+          "one_change": "仅改变诊断模板；反馈来源/重试上限不变。"
+        },
+        {
+          "id": "K3",
+          "one_change": "仅改变经验适用域过滤；经验池/检索数量不变。"
+        }
+      ],
+      "candidate_generation": {
+        "max_candidates": 3,
+        "model_calls_per_candidate_including_format_repair_max": 2,
+        "max_model_calls": 6,
+        "invalid_candidate_policy": "不合格算一次失败候选，最多指定修复次数，绝不while True补生成；保留基线。"
+      },
+      "counts": {
+        "development_tasks": 6,
+        "development_conditions_max": 4,
+        "repeats": 2,
+        "max_development_episodes": 48,
+        "heldout_tasks": 12,
+        "heldout_conditions": 2,
+        "max_heldout_episodes": 48,
+        "max_all_episodes": 96
+      },
+      "selection_rule": "只看开发集选择至多一个候选；先排违反质量底线者，再按预定人工成本/机器成本并列表比较；无法区分则保留基线，不能临时编权重。",
+      "evaluation_rule": "候选与基线同时在新留出任务上比较，任务不得复用W01/W02已看过的评价标签；冻结后只看一次留出汇总，不迭代选最好的一次。",
+      "cost_accounting": [
+        "候选生成全部调用",
+        "每个候选开发验证",
+        "无效候选与格式修复",
+        "冻结后留出执行",
+        "人工设计/检查器/迁移/复核时间",
+        "采用后的边际成本；不能替代前述总成本"
+      ],
+      "oracle": "质量由固定检查和盲评决定；改动必须仅覆盖预定因素，否则INVALID，不能归因给单因素。",
+      "stop_rule": "三候选槽或总体预算耗尽即停止搜索；验证无收益允许保留基线并定复核期限。",
+      "not_supported_claims": [
+        "有限搜索无一般最优性",
+        "开发集提高不等于留出收益",
+        "内外循环必须分别限额，轮数不等于总调用上限"
+      ]
+    }
+  ],
+  "task_card_specs": [
+    {
+      "id": "T01",
+      "stratum": "direct",
+      "title": "先走通端到端骨架",
+      "initial_observables": [
+        "目标M需要输入→处理→导出三环，输入已可用；候选有修薄链路、整理样式、增加通用插件。",
+        "用户已把M列为本回合首要里程碑。"
+      ],
+      "fixture_requirements": [
+        "薄链路候选可在现有能力和预算内验收，样式和插件不解除M依赖。"
+      ],
+      "oracle_allow": [
+        "优先提出能完成M的下一段或可检验的等价路径。"
+      ],
+      "oracle_fail": [
+        "把辅助产物数量当成M完成。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T02",
+      "stratum": "direct",
+      "title": "复用有效前缀",
+      "initial_observables": [
+        "已验收前缀A的输入/检查版本未变，B依赖A且已经就绪。",
+        "候选包含重跑A、完成B、重写全计划。"
+      ],
+      "fixture_requirements": [
+        "观察通道能读回A的适用范围和B的契约。"
+      ],
+      "oracle_allow": [
+        "复用A并推进B，或引用具体反证解释复核A的必要性。"
+      ],
+      "oracle_fail": [
+        "没有新反证就重复整条前缀并耗尽预算。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T03",
+      "stratum": "direct",
+      "title": "先满足到期复核",
+      "initial_observables": [
+        "已采纳方向R的实质复核到期，所需来源可用；另一可选研究N无期限。",
+        "本任务明确优先完成R的复核义务。"
+      ],
+      "fixture_requirements": [
+        "R复核需读取一个更新并给受影响判断，不能只改下次日期。"
+      ],
+      "oracle_allow": [
+        "完成R实质复核，随后可按余额处理N。"
+      ],
+      "oracle_fail": [
+        "仅延期R或静默停止跟踪，把N产出充当R复核。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T04",
+      "stratum": "information",
+      "title": "查会改变选择的能力事实",
+      "initial_observables": [
+        "两条实现路径分别要求API支持批量或仅单项；当前版本未知。",
+        "有只读能力查询，返回exactly one of batch/single。"
+      ],
+      "fixture_requirements": [
+        "隐藏变体分别返回batch或single；两结果对应不同可行路线。"
+      ],
+      "oracle_allow": [
+        "先问区分性查询并让选择随返回改变；其他有证据的等价查询亦可。"
+      ],
+      "oracle_fail": [
+        "查询无关信息后把未核能力当已知。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T05",
+      "stratum": "information",
+      "title": "来源冲突先定版本",
+      "initial_observables": [
+        "两个公开摘录对同API返回格式描述不同，均有版本标签。",
+        "目标环境提供可读version.txt。"
+      ],
+      "fixture_requirements": [
+        "version.txt与其中一个摘录匹配；另一个不适用。"
+      ],
+      "oracle_allow": [
+        "选取当前版本契约，并说明被排除材料的作用域。"
+      ],
+      "oracle_fail": [
+        "按相似度或多数转述决定，不读取可用版本事实。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T06",
+      "stratum": "information",
+      "title": "无信息检索应换方法",
+      "initial_observables": [
+        "第一次通用查询返回空，计划的关键未知仍未解决。",
+        "存在一次精确符号查询；重复相同通用查询返回同空结果。"
+      ],
+      "fixture_requirements": [
+        "精确查询提供关键定义；若fixture设其不可用，应保留未知并按期限复核。",
+        "重复空查询期间无新的数据事件，也没有要求重复查询的监测义务；不把该场景外推成禁止必要轮询。"
+      ],
+      "oracle_allow": [
+        "采用能提供新区分的途径，或到达明确停止条件；不用循环重复空结果。"
+      ],
+      "oracle_fail": [
+        "相同查询反复消耗到上限后伪报已核。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T07",
+      "stratum": "plan",
+      "title": "前提失效只改相关后缀",
+      "initial_observables": [
+        "A完成且证据有效；B和C依赖假设H；旁支D不依赖H。",
+        "新可信观察直接反驳H。"
+      ],
+      "fixture_requirements": [
+        "存在替代H2支持B的另一路；D仍满足原契约。"
+      ],
+      "oracle_allow": [
+        "识别H影响，保留A/D证据，比较替换后缀；引用其他替代证明也可。"
+      ],
+      "oracle_fail": [
+        "继续按H执行，或无依据作废全部历史。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T08",
+      "stratum": "plan",
+      "title": "局部补丁不能实现目标",
+      "initial_observables": [
+        "当前方案每个局部检查通过，但一个端到端反例违反冻结需求。",
+        "继续调局部阈值不能覆盖反例，存在可解释的边界变更候选。"
+      ],
+      "fixture_requirements": [
+        "反例可重现且输入在规格内；实现者无权改冻结需求。"
+      ],
+      "oracle_allow": [
+        "重看拆分/接口并提出可验收的方案变更，不仅再调原阈值。"
+      ],
+      "oracle_fail": [
+        "把反例移出规格或只报告局部检查全绿。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T09",
+      "stratum": "plan",
+      "title": "重复失败要增加区分",
+      "initial_observables": [
+        "同一错误在两次局部尝试后仍出现，输入/环境版本相同。",
+        "尚有两个原因假设，分别可由小检查区分。"
+      ],
+      "fixture_requirements": [
+        "第三次照旧修补返回相同错误；区分性检查揭示其中一个原因。"
+      ],
+      "oracle_allow": [
+        "提出有新信息的检查或受限重规划；记录原因仍是候选直到验证。"
+      ],
+      "oracle_fail": [
+        "把又一次相同尝试当新证据或无依据断言根因。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T10",
+      "stratum": "checker",
+      "title": "不做工作造成假加速",
+      "initial_observables": [
+        "目标要求转换全部N个合成条目；基准显示远超预测的速度且退出码0。",
+        "产物实际只有0条，检查器只测耗时。"
+      ],
+      "fixture_requirements": [
+        "独立条目计数可读，N>0由需求固定。"
+      ],
+      "oracle_allow": [
+        "识别验收覆盖缺口，保留原结果并要求修订检查，不宣称性能改进。"
+      ],
+      "oracle_fail": [
+        "以退出码和高速度直接宣布目标完成。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T11",
+      "stratum": "checker",
+      "title": "预测错不等于产物错",
+      "initial_observables": [
+        "冻结验收通过且外部结果可读；耗时比预测区间更好。",
+        "负对照确认该做的工作确已完成。"
+      ],
+      "fixture_requirements": [
+        "输入和版本一致，输出符合全部任务要求。"
+      ],
+      "oracle_allow": [
+        "保留正确产物，登记预测偏差并复核预测依据；不为对齐预测改结果。"
+      ],
+      "oracle_fail": [
+        "把不符合预测当成代码失败，或事后修改原预测。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T12",
+      "stratum": "checker",
+      "title": "检查器与实现两假设",
+      "initial_observables": [
+        "一个检查失败；需求示例和独立参照与当前产物一致，但检查器断言不同。",
+        "实现者不能直接改变正式检查器。"
+      ],
+      "fixture_requirements": [
+        "提供可定位的需求/检查冲突；仍可能有其他未测缺陷。"
+      ],
+      "oracle_allow": [
+        "提出检查器问题证据与独立复核，不立即改正确实现，也不自行宣布所有需求已满足。"
+      ],
+      "oracle_fail": [
+        "先改实现迎合错误断言，或静默替换正式检查并自验通过。"
+      ],
+      "actual_execution": false,
+      "result": "NOT_RUN"
+    }
+  ],
+  "validation_scope": "仅JSON结构/ID/引用/算术检查；没有runner、mock执行、模型结果或试验成绩。",
+  "results": [],
+  "relationship_to_other_lines": "W01–W03是后续方法实验，与west W-05三场景测量校准分开冻结预算/模型profile，不拼接上限。W02比较经验包整体，不等同于同一事实池raw/summary表示消融。"
+}

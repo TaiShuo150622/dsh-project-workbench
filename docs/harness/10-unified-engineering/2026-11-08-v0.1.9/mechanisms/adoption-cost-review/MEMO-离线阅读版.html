@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="d1d71956b55f">
+<title>M11 · 统一 Harness 的采用成本反方备忘 v0.1.0</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip ver">v0.1.0</span><span class="chip">2026-11-08</span><span class="chip">mechanisms 研究线 · 静态审查 / 建议待验证；未测产品成本</span></div>
+<h1>M11 · 统一 Harness 的采用成本反方备忘 v0.1.0</h1>
+</header>
+<p><strong>保留完整工作台，反对把完整能力变成每项工作的启动门槛。</strong> v0.1.6 已反对重造全部底座；剩下的实施风险是把 ARCH 的 13 段契约、十步动作链落实成每个小改动都要填写、等待和复核的流程。这里审查的是潜在默认值，不声称当前产品已经如此。输入版本、读取范围及原文定位见 <a href="sources.json">sources.json</a>。</p>
+<p>原产品顺序仍是完整面板 P01–P15 → 工作台 B01–B12，阶段 A 同步冻结；H/I 是研究验收路线。本备忘不削减面板最终范围、不提前开 I01、不替用户决定底座。以下成本是有机制依据的风险假设，均不是工时或收益实测。<a href="../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">W12：DC01–DC03、Q1–Q2</a></p>
+<p><strong>AC01 · 普通 Coding 不必先成为跨协议持久任务。</strong></p>
+<ul><li><strong>最小已有方案</strong>：复用固定工作台的原生会话、差异预览和 review 汇报；普通交付可以是补丁、检查产物与人的评阅。新增规格/产物版本关联仍须实现。S1 仅支持普通 PR merge，不能把一般 Coding 目标改名塞入它；merge 是可单独验证的外部动作。<a href="../../west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">W07 L35、98–105</a></li><li><strong>何时加统一层</strong>：需要自动消费另一个宿主的结果、可靠续接未决动作，或跨插件统一验收时，才启用相应适配与持久承诺；先一个真实宿主，再选一个差异明确的对照。需要强保证但宿主不足时，阻断该操作，不降格放行。</li><li><strong>失败/迁移/维护成本</strong>：额外协议状态、句柄寿命、取消和版本兼容；统一 completed 容易制造假完成。现有消息返回不能无条件包装成 durable task；新版本要迁移关联并保留原未知效果。<a href="../interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html">M08</a></li><li><strong>推翻建议的证据</strong>：实际首批任务确实跨宿主续接；原生方案在固定断连/重复响应轨迹下无法达到已约定恢复要求，而统一桥接真实通过，并计入安装、升级与恢复人工后仍满足预定成本条件。</li></ul>
+<p><strong>AC02 · 统一语义不要求先设一个所有工作的中心服务。</strong></p>
+<ul><li><strong>最小已有方案</strong>：沿原归属：工作台持有项目业务、宿主持有会话与执行、面板读版本化视图。固定代码已嵌入原生会话；同进程模块可承接接口。单写者是部署约束，不是现有 Store 已有跨进程锁或掉电耐久的证明。<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md">既有后端计划 L8、201–205</a></li><li><strong>何时加统一层</strong>：确有多个独立进程要并发修改同一权威项目，或脱离宿主仍须持续协调时，再选择共享权威及存储；需要持久编排时先评估现成组件，不同时引入多套引擎。</li><li><strong>失败/迁移/维护成本</strong>：新增服务停机、身份桥、备份、日志格式、双版本排空与数据迁移；宿主和新服务都能改同一事实会造成分叉。成熟存储也不代替目标端效果证据；不能为了省服务而承诺现有内存内核已有持久 ACK。<a href="../durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html">M06</a>、<a href="../lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html">M05</a></li><li><strong>推翻建议的证据</strong>：冻结部署拓扑后，两个必要写者无法经单一写入口工作，或所需断连续接必须独立于宿主生命周期；候选服务在相同故障模型下保持身份/意图/回执一致，并有可执行退役方案。</li></ul>
+<p><strong>AC03 · 图应先帮助选择与看影响，不成为所有工作的强制调度器。</strong></p>
+<ul><li><strong>最小已有方案</strong>：保留完整通用面板，先用明确对象引用和有界显式关系展示需求、文件、检查；计划可用近期任务清单。现有打开图按钮只说明入口存在，不代表稳定引用或完整依赖已实现。推断边只提示复核。<a href="../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">W12：DC06–DC07</a></li><li><strong>何时加统一层</strong>：要自动复用旧证据、决定哪些检查重跑，或根据替代支持放行后继时，才要求相应有类型依赖与支持公式；不能因图好看就取得执行权。</li><li><strong>失败/迁移/维护成本</strong>：漏边导致漏检，过多边导致全量重做；计划、知识、事件和支持图混用会迫使不必要的无环化。新增提取器/图存储要处理版本迁移与重新索引；Lean 重算定理不证明提取器完整。</li><li><strong>推翻建议的证据</strong>：真实规格修改中，清单/显式关系反复漏掉约定必须重查的对象；自动依赖方案在独立标注修改集上降低漏检与过度失效，且节省的人工覆盖维护代价。达成前不据此重排 P/B。</li></ul>
+<p><strong>AC04 · coverage 是有限声明的证据，不能变成“全资料看齐才准工作”。</strong></p>
+<ul><li><strong>最小已有方案</strong>：宿主原始历史、直接读文件/简单检索，加本次明确的强制约束及最新纠正；有关来源、切点和处理收据仍需真实采集。完整上下文与简单检索都是候选基线，不能预判何者更便宜。<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.6.md">主稿 Record 部分</a></li><li><strong>何时加统一层</strong>：当某操作确实要求指定检查覆盖，才固定其有限义务域并逐项核收据；后续要声称缩短实际输入，再验证对应输入捕获。后台本体、独立选材模型不成为默认同步前置。</li><li><strong>失败/迁移/维护成本</strong>：整理/选择额外调用、缓存变化、尾部漏入、索引重建、权限维护；把任何 gap 升成全项目阻断会妨碍不依赖该材料的工作。不能反向删掉不可访问来源以宣布 complete，也不能默认披露隐藏 gap。<a href="../coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html">M10</a></li><li><strong>推翻建议的证据</strong>：冻结同一来源域、纠正时点与实际输入边界，复杂方案在留出 Coding 任务中减少关键约束遗漏，并满足预先约定的质量、延迟及全部成本条件。局部覆盖通过不算任务成功，输入 trace 缺失不填默认满分。</li></ul>
+<p><strong>AC05 · 保留当前授权检查，避免把它实现成重复人工批准。</strong></p>
+<ul><li><strong>最小已有方案</strong>：复用选定宿主的认证、沙箱和工具权限，并补窄域身份/历史映射；固定 DSH exact fetch 路由有 owner 门禁，仍不识别每位自然人。已有 custom 路径持续信任与单动作批准分开；普通内容改动不默认重新问。<a href="https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts#L215-L222">DSH 固定源码 L129–136、215–222</a>、<a href="../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">W12：DC08</a></li><li><strong>何时加统一层</strong>：跨身份域委派、接收范围变化、权限扩大、政策要求的敏感动作，或原审批不覆盖最终有效参数时，加相应判断/审批；审批可来自已有效的范围政策，不等于一律弹窗。</li><li><strong>失败/迁移/维护成本</strong>：双层权限漂移、撤回不同步、反复确认造成机械点击；旧 owner 域也不能被迁移成伪造的逐人批准。减少人工询问不能省掉执行点必要授权，也不能把 UI 选中或模型 role=user 当批准。<a href="../composition-review/REVIEW-离线阅读版.html">M09</a></li><li><strong>推翻建议的证据</strong>：实际允许范围出现宿主无法约束的效果，或接收方需要可核逐人决定；补充门禁阻止该反例。若要进一步逐次人工审查，应另证明它比可执行的范围策略/针对性检查多拦住约定风险，而非仅增加确认次数。</li></ul>
+<p><strong>AC06 · 自主计划与成长应可替换，不让每次交付陪跑一套研究流程。</strong></p>
+<ul><li><strong>最小已有方案</strong>：一个宿主执行循环、清楚的近期目标、必要检查；出意外再做有上限诊断，关键预测可简短记录。留候选经验但不自动升级通用规则。用户已采纳方向的跟踪、审计与到期义务仍保留。</li><li><strong>何时加统一层</strong>：出现重复失败、可复用任务族或新能力机会，才比较专用规划器、额外评审、检索经验与工作流候选；先说明会改变的决定或履行的验证义务。工具发现同理：官方 SDK 文档也描述每次搜索多一次往返，小工具集可能直接加载更快，这是其条件说明，非我们的收益定律。<a href="https://code.claude.com/docs/en/agent-sdk/tool-search#how-tool-search-works">官方说明</a></li><li><strong>失败/迁移/维护成本</strong>：生成/筛选/重试/评估调用、错误检查器、反馈泄漏、人工核验及模型升级重评；外层轮数不是总调用上限。更多评审意见不等于更少交付缺陷，候选通过不能改自己的评价规则。<a href="../work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html">已核研究与限制</a></li><li><strong>推翻建议的证据</strong>：独立留出任务、完整约定阶段和固定预算下，某组件满足预定质量下限并减少人的活动时间或约定总成本；失败、超时、拒绝与截断留在分母。反之删该组件的默认调用，不取消整个工作台方向。</li></ul>
+<p><strong>哪些语义不能外包给一个同名字段。</strong> 统一层必须保留来源命名空间及 history/incarnation，区分规格、尝试、产物、提供方声明、检查与验收；当前操作授权独立于历史批准；未决效果和接管责任不因 ACK 消失；coverage 只属声明域。宿主可以产生认证、执行、持久化和观察依据，现成组件可以实现这些机制，但我们仍负责映射范围与诚实呈现。不能复制一份所有会话正文，再把复制成功当成统一完成。</p>
+<p><strong>给第一版的具体补充建议。</strong> 在阶段 A 为每项获准用户操作写一行“需要哪些保证、依据由谁提供、缺项阻断什么、允许继续什么”。这是开发者冻结的适用表，不新增每任务人工填表；已有身份、版本和检查记录尽量自动取得。检查集合由冻结的操作/政策与已声明能力决定，不让调用者传一个轻量模式开关绕过保护。没有该层承诺时可以如实提供较弱功能；已要求的保证未知时不能伪造满足。P/B 的视图价值可保留，I05–I07 也不应倒挂成 I01–I04 或普通任务的启动条件。</p>
+<p>采用比较沿用既有量表校准，之后再预先冻结采纳门槛；不从 12-run 推收益。以相同任务阶段、模型、资料、预算和扰动比较宿主基线与单项新增组件，分别计最终交付、首次可用产物时间、人工活动/打断、等待、自动化全费用及安装/升级/恢复维护。正确 unknown 可通过契约检查，但不计业务交付成功；安全前提先满足，再讨论成本，不用平均收益抵销已知越权。</p>
+<p>本轮只核文档、固定源码与引用，没有实施这些默认值、测量成本、运行模型/API、连接真实宿主或发布。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

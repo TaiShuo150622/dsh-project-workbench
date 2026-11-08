@@ -1,0 +1,191 @@
+{
+  "scope": "different research line review of frozen finite R12; shared transitions",
+  "source_main_sha256": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75",
+  "findings": [
+    {
+      "id": "C10-01",
+      "classification": "scope_clarification",
+      "title": "授权只覆盖终态观察",
+      "locations": [
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            61,
+            72,
+            86,
+            87,
+            107
+          ]
+        },
+        {
+          "file": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+          "lines": [
+            84,
+            92,
+            110,
+            132,
+            160
+          ]
+        }
+      ],
+      "evidence": "3 original-graph scope witnesses: CommitTransfer without receiver resolve Grant, SettleOnce under custody, and settlement after resolve revocation.",
+      "recommendation": "State that transfer/settlement actor and operation authorization are assumed/unmodeled, not covered by authorized_resolution.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-02",
+      "classification": "composition_condition_missing",
+      "title": "非零收尾预留没有进入R12",
+      "locations": [
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            17,
+            32,
+            37,
+            38,
+            104
+          ]
+        },
+        {
+          "file": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+          "lines": [
+            51,
+            116,
+            158,
+            159
+          ]
+        },
+        {
+          "file": "inputs/BudgetSafety.lean",
+          "lines": [
+            76,
+            89,
+            102,
+            108,
+            131,
+            135
+          ]
+        }
+      ],
+      "evidence": "Fixed extra R_B=1 is initially safe; 3-step destination prepare gives 0+2+1=3>2 while original invariants pass.",
+      "recommendation": "Limit R12 to R=0 or explicitly use residual budget after separate closing reservation; dynamic closing requires its own admission mapping. Existing Lean has no cross-budget transfer Step.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-03",
+      "classification": "premise_boundary_confirmed",
+      "title": "政策归属不是不可变物理付款归属",
+      "locations": [
+        {
+          "file": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+          "lines": [
+            51,
+            53,
+            141
+          ]
+        },
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            3,
+            5,
+            97,
+            100
+          ]
+        }
+      ],
+      "evidence": "8-step original conservative-cross path exceeds immutable origin A cost 3>2 while policy costs A=1,B=2 remain safe. Historical global world cost stays 3.",
+      "recommendation": "Retain full unsettled reattribution policy premise; otherwise change owner only.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-04",
+      "classification": "premise_removal_counterexample",
+      "title": "prepared占位失效使phase蕴含失效",
+      "locations": [
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            82,
+            88
+          ]
+        },
+        {
+          "file": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+          "lines": [
+            59,
+            61,
+            78
+          ]
+        }
+      ],
+      "evidence": "Added prepared-claim expiry: 1692 states,4869 edges; minimum coverage failure 5 steps, actual policy cost failure 8.",
+      "recommendation": "Preserve atomic order of destination claim validity/abort and transfer commit; do not copy phase-only condition into storage with independent TTL.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-05",
+      "classification": "premise_removal_counterexample",
+      "title": "提交后目标占位也须持续覆盖",
+      "locations": [
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            86,
+            90
+          ]
+        },
+        {
+          "file": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+          "lines": [
+            59,
+            60,
+            78
+          ]
+        }
+      ],
+      "evidence": "Added committed-claim expiry: 1584 states,4473 edges; minimum coverage failure 5 steps, actual policy cost failure 8.",
+      "recommendation": "Keep destination claim until genuine liability reduction; checking only at commit does not prevent subsequent expiry.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-06",
+      "classification": "reproduced",
+      "title": "原五配置及账目守恒复现",
+      "locations": [
+        {
+          "file": "inputs/check_handoff.py",
+          "lines": [
+            42,
+            46,
+            51,
+            60,
+            78,
+            108
+          ]
+        }
+      ],
+      "evidence": "5076 states,14172 edges; 8 original violation minimum lengths reproduced using reverse BFS; history accounting and additional cost/grant invariants checked.",
+      "recommendation": "Retain finite/shared-transition scope and fixed costs/atomic durable controller assumptions.",
+      "original_invariant_defect": false
+    },
+    {
+      "id": "C10-07",
+      "classification": "main_claim_check",
+      "title": "v0.1.3未声称已证跨预算协议",
+      "locations": [
+        {
+          "file": "inputs/main-v0.1.3.md",
+          "lines": [
+            218,
+            280
+          ]
+        }
+      ],
+      "evidence": "Main draft keeps closing reservation and labels existing general DAG/budget proof scope; no direct R12 blanket authorization/composition claim found.",
+      "recommendation": "Use scoped C10 summary in later reader entry without increasing P1-P15 or general proof count.",
+      "original_invariant_defect": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+✔ R1-P2 correction: invalidated success waits for sender proof instead of reusing the old result (6.049ms)
+✔ R1-P2 correction: only terminal not-applied proof releases the corrected action (7.421875ms)
+✔ R1-P1 a replacement active authorization cannot strand an unsent reservation (3.719834ms)
+✔ R2-S01 final admission blocks an existing reservation after another success is withdrawn (9.774167ms)
+✔ R2-S01 control terminal proof releases the original reservation after replay (4.190375ms)
+✔ R2-S02 a result button from another history cannot accept an independent assignment (1.960084ms)
+✔ R2-S02 control same-history result tokens and submitted requests survive JSON replay (1.636959ms)
+✔ R2-S03 control a revert learned through an old assignment invalidates its peer token after replay (3.863625ms)
+✔ record same request retries return original receipt without another event (8.350875ms)
+✔ record failed writes are atomic and stale task revisions cannot overwrite state (2.723458ms)
+✔ record acceptance uses immutable result binding while unrelated notes stay valid (1.000916ms)
+✔ record old result button cannot accept a corrected different result (0.6665ms)
+✔ record wrong completion suspends acceptance and same result needs explicit reuse (3.762958ms)
+✔ record revert keeps historical completion but invalidates current dependencies (0.74875ms)
+✔ record resource reservation excludes different tasks targeting the same branch (0.676167ms)
+✔ record cancellation or authorization change before send aborts reservations (1.675666ms)
+✔ record unknown sent action cannot be replaced after cancellation and reissue (0.8085ms)
+✔ record successful action and completion publish atomically (0.448542ms)
+✔ record actions are owned and task scope cannot change while a sender is unresolved (0.365209ms)
+✔ record journal replay retains idempotency and rejects event gaps or altered receipts (0.965917ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.5105

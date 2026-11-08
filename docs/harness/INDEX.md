@@ -2,9 +2,15 @@
 
 返回 [阅读指南](README.md) · [文件清单与 SHA-256](MANIFEST.json)
 
-本次收录 **192 个源文档及设计附件**：144 份 Markdown，42 份 HTML，1 份 PNG，5 份设计 JSON。导航文件不计入这些数量；两套交接包共用的画板和主题按目录依赖各自保留。
+首批收录 **192 个源文档及设计附件**：144 份 Markdown，42 份 HTML，1 份 PNG，5 份设计 JSON。2026-11-08 另归档统一工程研究 **1,422 个文件**，含当前与历史稿、HTML、来源/身份清单、证明、模型及隔离验证记录；两种数量口径不同，不能相加当作独立文章篇数。导航文件另列，两套交接包共用的画板和主题按目录依赖各自保留。
 
 “源版本”沿用原稿标记；“历史”不表示错误，只表示有后续稿件或当时的讨论语境。公开整理可能删除内部案例、个人原话和私有附件；具体边界见各稿开头。所有实施卡均为计划材料，不以文件存在证明任务已经完成。
+
+## 新增 · 统一 Harness 工程研究
+
+推荐先读 [本轮阅读指南](10-unified-engineering/README.md)，当前主稿为 [v0.1.9](10-unified-engineering/2026-11-08-v0.1.9/统一Harness工程与形式化基础讨论稿-v0.1.9.md)。[专题目录](10-unified-engineering/CONTENTS.md)按问题导航，[完整文件索引](10-unified-engineering/FILE_INDEX.md)逐项列出全部研究快照文件。对应 [PACKAGE_MANIFEST.json](10-unified-engineering/2026-11-08-v0.1.9/PACKAGE_MANIFEST.json)与 [公开整理记录](10-unified-engineering/PUBLICATION.json)保留文件身份、公开范围及历史时点说明。
+
+以下 00–09 节继续保留首批文档的逐项索引和版本沿革。
 
 ## 00 · 项目工作台与后端任务包
 

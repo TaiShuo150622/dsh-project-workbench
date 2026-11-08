@@ -1,0 +1,209 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_STRUCTURE_WARNING",
+  "task": "W11",
+  "validated_at_utc": "2026-11-08T09:26:09.663857+00:00",
+  "actual_execution": {
+    "command": "python3 docs/research/harness-20261107/west/evidence-disputes/bounded_check.py > docs/research/harness-20261107/west/evidence-disputes/check-results.json",
+    "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west",
+    "exit_code": 0,
+    "result_file_mtime_utc": "2026-11-08T09:22:40.750607+00:00",
+    "python": "3.9.0",
+    "results_status": "PASS",
+    "scope": "INDEPENDENT_SYNTHETIC_BOUNDED_RESEARCH_MODEL",
+    "counts": {
+      "named_checks": 14,
+      "four_observation_assignments": 81,
+      "arrival_permutations": 24,
+      "claim_keys": 16,
+      "ordered_key_isolation_pairs": 240,
+      "illustrative_bad_policy_counterexamples": 5,
+      "candidate_operation_policy_checks": 18
+    }
+  },
+  "document_checker": {
+    "command": "python3 __LOCAL_HOME__/.agents/skills/discussion-draft/scripts/check_draft.py docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 1,
+    "warning": "No H2 named 总体架构. Accepted: first body section 工程反例与判断边界 contains figure 1, the overall evidence-to-decision chain.",
+    "h2_count": 9,
+    "mermaid_count": 3
+  },
+  "render": {
+    "command": "python3 __LOCAL_HOME__/.agents/skills/discussion-draft/scripts/render.py docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md --html",
+    "exit_code": 0,
+    "html_generated": true,
+    "visual_browser_check_run": false,
+    "note": "Generated HTML is a reading view; Mermaid renderer may require its external library. No visual verification claimed."
+  },
+  "json_files_parsed": [
+    "check-results.json",
+    "literature.json",
+    "sources.json",
+    "state-definition.json"
+  ],
+  "links": [
+    {
+      "from": "README.md",
+      "target": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "Record证据争议与修正讨论稿-v0.1.0.html",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.html",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "state-definition.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/state-definition.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "check-results.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/check-results.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "bounded_check.py",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/bounded_check.py",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "sources.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/sources.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "validation.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/validation.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "bounded_check.py",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/bounded_check.py",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "state-definition.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/state-definition.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "check-results.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/evidence-disputes/check-results.json",
+      "resolution": "CURRENT_WEST_DELIVERABLE",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "../../FORMAL_MODEL.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "resolution": "READ_ONLY_INTEGRATION_COUNTERPART",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "../../china/record-refinement/REPORT-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/record-refinement/REPORT-v0.1.1.md",
+      "resolution": "READ_ONLY_INTEGRATION_COUNTERPART",
+      "exists": true
+    },
+    {
+      "from": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "target": "../../proof-review/record-mapping-audit/REVIEW.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/proof-review/record-mapping-audit/REVIEW.md",
+      "resolution": "READ_ONLY_INTEGRATION_COUNTERPART",
+      "exists": true
+    }
+  ],
+  "input_hash_checks": [
+    {
+      "id": "I01",
+      "expected": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa",
+      "current": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "I02",
+      "expected": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "current": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "I03",
+      "expected": "3a470eb06f8c4205395c44566db2b5f65fbdeb3e50e14d57c9f7c60ed316ee84",
+      "current": "3a470eb06f8c4205395c44566db2b5f65fbdeb3e50e14d57c9f7c60ed316ee84",
+      "unchanged_since_capture": true
+    }
+  ],
+  "output_hashes_except_this_receipt": [
+    {
+      "path": "README.md",
+      "sha256": "dcafed377994e8eb7ada26fba928e96df4053caf372f4715953220bc910a13c9",
+      "bytes": 1617
+    },
+    {
+      "path": "Record证据争议与修正讨论稿-v0.1.0.html",
+      "sha256": "230c3641d993d3924e92930a170f03ec25fd4092d189cd5ce7722533542f6e31",
+      "bytes": 30004
+    },
+    {
+      "path": "Record证据争议与修正讨论稿-v0.1.0.md",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "bytes": 16436
+    },
+    {
+      "path": "bounded_check.py",
+      "sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd",
+      "bytes": 15561
+    },
+    {
+      "path": "check-results.json",
+      "sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449",
+      "bytes": 10016
+    },
+    {
+      "path": "literature.json",
+      "sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87",
+      "bytes": 3103
+    },
+    {
+      "path": "sources.json",
+      "sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a",
+      "bytes": 6803
+    },
+    {
+      "path": "state-definition.json",
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa",
+      "bytes": 7164
+    }
+  ],
+  "not_executed": [
+    "Record or plugin product tests",
+    "Host or model API invocation",
+    "Real authentication, ACL, coverage measurement or source independence",
+    "Publication or external action",
+    "General logical proof or recursive formula solver",
+    "Crash durable transaction behavior"
+  ],
+  "scope_statement": "All authored files confined to west/evidence-disputes; other project worktrees read only. No commit, push or publication."
+}

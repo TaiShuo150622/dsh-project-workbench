@@ -1,0 +1,40 @@
+{
+  "audit": "R10",
+  "input_snapshot_sha256": "de6b634bb09f72d837551651e343ec287faf882afcc8ffdb7d41d68a3cfb5ff3",
+  "scope_package": "reader-preview-20261108T0858Z",
+  "findings": [
+    {
+      "id": "PP01",
+      "classification": "reproducibility defect",
+      "priority": "must fix before claiming portable validation",
+      "location": "china/consolidated-sources/validate_index.py:11,150-156",
+      "claim": "C07 source indexes regenerate but unchanged validator depends on original integration workspace.",
+      "evidence": "Complete 740-file copy: exit 1, 15 missing reader link errors, despite corresponding package files present; five regenerated machine-index hashes equal frozen originals.",
+      "minimal_fix": "Resolve research root from the package layout or explicit argument; preserve historical validation receipt and write separate portable receipt."
+    },
+    {
+      "id": "PP02",
+      "classification": "current-output identity metadata mismatch",
+      "priority": "must fix or clearly label stage",
+      "location": "57 *.reading-build.json: output_sha256; example README-离线阅读版.reading-build.json:4",
+      "claim": "All 57 renderer metadata output hashes differ from final HTML; final manifest and DERIVATION hashes agree with actual final bytes.",
+      "minimal_fix": "Label pre-package-transform renderer hash explicitly and record final output hash after all transformations."
+    }
+  ],
+  "positive_checks": {
+    "manifest_entries_matching": 739,
+    "derivation_rows_matching_both_sides": 623,
+    "derivation_rows_reconstructed_exactly": 623,
+    "unchanged_executable_or_config_files": 122,
+    "c07_regenerated_machine_indexes_matching": 5,
+    "record_cases": 8,
+    "record_assertion_failures": 0,
+    "record_mapping_differences": 5,
+    "record_controls": 3,
+    "m07_probes_passed": 5,
+    "m07_assertions": 22,
+    "current_local_links_checked": 175,
+    "current_missing_local_links": 0
+  },
+  "author_repair_status": "Root reports later fixes; not part of frozen-package verification and not independently accepted here."
+}

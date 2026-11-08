@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-11-08",
+  "status": "partial_cross_review",
+  "description": "Root reopened representative second-pass primary evidence; not runtime reproduction or exhaustive source audit.",
+  "entries": [
+    {
+      "id": "TM-01",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+      "blob_sha": "a9852b6317ffc38139f93664e47bc269b208e57b",
+      "location": "1–85",
+      "root_review_note": "三种取消模式的承诺和心跳条件已重读；等待结束也不等于外部效果回滚。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AG-05",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+      "blob_sha": "87d7619e5e23098b4471b28af59cb4dddc36279b",
+      "location": "4892–4990",
+      "root_review_note": "行锁、expected_attempt与session metadata同事务已核；其范围是这些存储写入。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "DB-01",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+      "blob_sha": "6e13e605f645fb91e0d0817851acf0bf2aa6ee36",
+      "location": "2497–2561",
+      "root_review_note": "函数返回后再记结果；取消不记结果可重跑，外部效果未知窗口仍需目标契约。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "PI-02",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+      "blob_sha": "9fe1d2279337b729e4a1f648b5db9c314fca743c",
+      "location": "130–246",
+      "root_review_note": "恢复execute分支检查旧/新replay=safe并直接run；初始beforeTool与最终参数重验不同路径。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "LT-02",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+      "blob_sha": "7c5f1d3204661ea43c38f4e1dcad44e1cd2fae4c",
+      "location": "446–533",
+      "root_review_note": "忽略abort的工具可在宽限期后detached，返回中断与真实工具结束不同。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "PA-05",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+      "blob_sha": "447e1775a55be77ef460fda79ea13d528de2f38d",
+      "location": "548–605",
+      "root_review_note": "请求数统计已提交响应，部分重试不计；token限制可在响应后核查，预估非默认。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "CTX-LME-table3",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "location": "Table 3",
+      "root_review_note": "已核Round原文value与K=V+fact对比，GPT-4o Top10 .670至.720，不作跨论文排名。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "CTX-LME-grader",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "blob_sha": "4732f3772b04a2b9069121ade304e6320494abc2",
+      "location": "24–42",
+      "root_review_note": "知识更新评分允许旧新同现；时间数量容忍off-by-one，不能等同严格执行纠错指标。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "CTX-Flex-confirm",
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "location": "§4.1,§5.2 Table3,Limitations,§E.1",
+      "root_review_note": "已核147任务表，时间线与完整法相近；LME汇总参与设计；冻结与运行时间关系仍属作者报告。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "PV-Bolin",
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "location": "本人问答124–141",
+      "root_review_note": "读到模型循环和宿主沙箱分工；未把编辑Quick answer视为本人原话。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "PV-Lopopolo",
+      "url": "https://openai.com/index/harness-engineering/",
+      "location": "署名/日期与repository legibility主线",
+      "root_review_note": "官方署名Ryan Lopopolo；工程经验范围是一项内部项目，速度估算未作为验证。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "PV-Rajasekaran",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "location": "署名/日期；Removing the sprint construct；DAW phase table",
+      "root_review_note": "逐项消融和模型更新改变收益；取消sprint后仍有三轮build/QA，不解释成完全取消评价。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "Cordis-root",
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "location": "首页，§5.1.1，§6.1，§7.3",
+      "root_review_note": "核共同署名和机构；inverse/commutation为作者义务；外部emission不在回退状态内；reload自有内存不自动保留。另以pdftoppm渲染第59页并目视确认Algorithm1第6/17行及f after g约定；只列局部记号方向疑点，非主定理反驳。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false,
+      "visual_review": {
+        "pdf_page": 59,
+        "zero_based_page": 58,
+        "method": "pdftoppm then view_image",
+        "status": "examined"
+      }
+    }
+  ]
+}

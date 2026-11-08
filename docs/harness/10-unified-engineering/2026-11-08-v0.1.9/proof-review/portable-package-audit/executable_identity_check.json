@@ -1,0 +1,615 @@
+{
+  "files": [
+    {
+      "file": "china/bounded-models/model_check.py",
+      "sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89",
+      "unchanged": true
+    },
+    {
+      "file": "china/budget-proof/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "unchanged": true
+    },
+    {
+      "file": "china/consolidated-sources/build_index.py",
+      "sha256": "c2fde1aa0b93c2db8f42ce59cd608a046a4185423203dfecb2e6a0d4fc24b11c",
+      "unchanged": true
+    },
+    {
+      "file": "china/consolidated-sources/validate_index.py",
+      "sha256": "66510164642653bd6eb2eeac81418cb8c5a1a80011011cb9440cc5bcbacb01fa",
+      "unchanged": true
+    },
+    {
+      "file": "china/evidence-catalog-audit/audit_sources.py",
+      "sha256": "0f0c047f0b1b0d29d1b10dca798a48806df22e37b665ccbd3e3f8e3a8952377a",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/build-matrix.py",
+      "sha256": "4e087d88145ed680906ce32e5f852b6faa6007eb51fcd3e5f05af9d812a6f472",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/record-kernel.test.mjs",
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/inputs/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "unchanged": true
+    },
+    {
+      "file": "china/record-refinement/refinement-probes.mjs",
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+      "unchanged": true
+    },
+    {
+      "file": "dag-proof/IncrementalDag.lean",
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/EffectContract.tla",
+      "sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/cancel-is-not-rollback.cfg",
+      "sha256": "0255a5f6c5d03c1bb2e5b7bad8ed0fd45b67e0bab053b23334825da17420f166",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/combined.cfg",
+      "sha256": "2291d510543fefd7fe833d22c80fd8a7c551c9e3ca1501496bd24f31091ae312",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/dedupe-only.cfg",
+      "sha256": "524aa728ff1d88e45bd4a8e25e708f9cf6df37dc2d6c29cfd7594e56aac131e9",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/dedupe-property.cfg",
+      "sha256": "49a715a9f1d47e4b6e98d693b15cbfabf494af79268d7f04bf2067d94bbc3961",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-none.cfg",
+      "sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/fixture/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/fence-only.cfg",
+      "sha256": "20973596795d766d0a83b3cf981e80fa35618f16ec46ae7d51f2cd5cbf4ee0fa",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/fence-property.cfg",
+      "sha256": "e9184c4f40eb3aaf9edf5c32790c69a12176fbbc98f4091b4df9d5fff0a41dd0",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-memory.cfg",
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/run_tlc.py",
+      "sha256": "1c3c380038663e9c2bd61cd5ccfb9a89f8c32aa0bfdfff29c39950644c63b85c",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/unstable-key.cfg",
+      "sha256": "2c141b2207e373e672f767a6bc747f4f798463fa40b0206a9791ddd5b594c243",
+      "unchanged": true
+    },
+    {
+      "file": "formal-spec/world-is-not-ledger.cfg",
+      "sha256": "7ba2cd34814c5c94225512d7cf4b5e7a0d06ae3a7d4541950df5124605fa5b9e",
+      "unchanged": true
+    },
+    {
+      "file": "mechanisms/relay-code-probes/inputs/native.mjs",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "unchanged": true
+    },
+    {
+      "file": "mechanisms/relay-code-probes/inputs/projects.mjs",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "unchanged": true
+    },
+    {
+      "file": "mechanisms/relay-code-probes/run-probes.mjs",
+      "sha256": "4ac85f16a2be3997e0d29490acbedb6e1d17dea1e3174b82d48f9be983382db8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-none.cfg",
+      "sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/run_expiry.py",
+      "sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/run_expiry.py",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-admission.cfg",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-commit.cfg",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/expiry-none.cfg",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe/run_expiry.py",
+      "sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/build_witnesses.py",
+      "sha256": "703e7f36d55a3dce9cd387150fc870852917e3bd05bf3ba34f793c2a3a37dcd8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/IncrementalDag.lean",
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/BudgetWitness.lean",
+      "sha256": "12cfbb9d13556b2b240cc60525c86b336ef943202c22ad1bdfaf88dfb75963b6",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/general-proof-audit/witnesses/DagWitness.lean",
+      "sha256": "a8175a485724591412e74e87c0531ff335b21cf97d6680b30da66beafca764e1",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.py",
+      "sha256": "2ec01f1b7e6abc8d8e7353c292f6d398f680ea764d9fc15725191e06f8c4c2ae",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/model_check.py",
+      "sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/EffectContract.tla",
+      "sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/cancel-is-not-rollback.cfg",
+      "sha256": "0255a5f6c5d03c1bb2e5b7bad8ed0fd45b67e0bab053b23334825da17420f166",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/combined.cfg",
+      "sha256": "2291d510543fefd7fe833d22c80fd8a7c551c9e3ca1501496bd24f31091ae312",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/dedupe-only.cfg",
+      "sha256": "524aa728ff1d88e45bd4a8e25e708f9cf6df37dc2d6c29cfd7594e56aac131e9",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/fence-only.cfg",
+      "sha256": "20973596795d766d0a83b3cf981e80fa35618f16ec46ae7d51f2cd5cbf4ee0fa",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/unstable-key.cfg",
+      "sha256": "2c141b2207e373e672f767a6bc747f4f798463fa40b0206a9791ddd5b594c243",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla/world-is-not-ledger.cfg",
+      "sha256": "7ba2cd34814c5c94225512d7cf4b5e7a0d06ae3a7d4541950df5124605fa5b9e",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/china/budget-proof/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/reader-claims-audit/evidence-inputs/dag-proof/IncrementalDag.lean",
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/build-matrix.py",
+      "sha256": "4e087d88145ed680906ce32e5f852b6faa6007eb51fcd3e5f05af9d812a6f472",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/record-kernel.test.mjs",
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/refinement-probes.mjs",
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-memory.cfg",
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/relay-memory.cfg",
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-run/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/relay-memory.cfg",
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/run/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/agent.ts",
+      "sha256": "ad9ee0778c0a93dec40363f88b53f442add9b033837b9ff049675a1ada3df61f",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/inbox.ts",
+      "sha256": "336e10096a4899cdbef71e68da6896c5ed84c17a95c56729d17b8ba607bac1ca",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/session/src/index.ts",
+      "sha256": "343eeb693620bf3de6d21fcecb685fb7288b623c0bd4f655f29a23e92ce2f634",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/handle.ts",
+      "sha256": "2fd8b5c5188ffdf5adee78a260b3dd0a9be97e5eb9fcdb5aafae5a8ed5471a31",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/index.ts",
+      "sha256": "15d2feeaa8876d4be1c87234ac92e50d819c500444588e497d5228aed1876fc7",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/index.ts",
+      "sha256": "1475457333ca86a01f7ea72dcf33de25b02be8b9c670fb32e8b99d8efb54cd81",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/storage.ts",
+      "sha256": "57d5fa1d7efd17789d6a223f6aa5e06b79092665bea13f8a23d3bab644d066c3",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/native.js",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/projects.js",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/relay-durability-audit/source-inputs/workbench/server/store.js",
+      "sha256": "7cbe2a3c1f2a35f3b152cb07219918824a7e8e8fc156d115d63a895e5f79933c",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "unchanged": true
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/refinement-probes.mjs",
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+      "unchanged": true
+    }
+  ],
+  "all_unchanged": true
+}

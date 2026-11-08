@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-08T09:49:56.836311+00:00",
+  "C07_cutoff_utc": "2026-11-08T08:35:43.419998+00:00",
+  "inputs": [
+    {
+      "file": "ROOT_SOURCE_REVIEW_5.json",
+      "sha256": "43c2d737af8cf842153ff53b5a8fa946f60c2849633f35e2af489696bc5c4745",
+      "bytes": 2027,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_6.json",
+      "sha256": "ea7767002a551a8663ef0ea93371b12dab7ac8558d5aa33f7b5659ec8462e094",
+      "bytes": 1347,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_7.json",
+      "sha256": "8fcd620295fb67aa53a4f00d6babce65a403b64c9d0a950068a66f4b41038857",
+      "bytes": 2534,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_8.json",
+      "sha256": "fd7f9af3fb58e0765d40c186420d1bac32e5eac550b65034213345e84082cfc0",
+      "bytes": 3294,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_9.json",
+      "sha256": "5a8da50d59b6e4afe6df557b16bc3dfd3b104f13d140512b7d49d61fb777a9dd",
+      "bytes": 2421,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "china/consolidated-sources/identity-opinion-bindings.json",
+      "sha256": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea",
+      "bytes": 14703,
+      "role": "C07_frozen_subject_index"
+    },
+    {
+      "file": "china/consolidated-sources/reading-observations.json",
+      "sha256": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827",
+      "bytes": 54339,
+      "role": "C07_frozen_subject_index"
+    },
+    {
+      "file": "china/consolidated-sources/scope-and-inputs.json",
+      "sha256": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd",
+      "bytes": 156822,
+      "role": "C07_frozen_subject_index"
+    },
+    {
+      "file": "china/consolidated-sources/source-index.json",
+      "sha256": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+      "bytes": 831910,
+      "role": "C07_frozen_subject_index"
+    },
+    {
+      "file": "china/consolidated-sources/url-index.json",
+      "sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+      "bytes": 89259,
+      "role": "C07_frozen_subject_index"
+    },
+    {
+      "file": "china/progress-conditions/sources.json",
+      "sha256": "2b08cfddc9b77967e38a3df8e413b900d65cb156954350f310a92d5f4e285058",
+      "bytes": 2519,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "mechanisms/interop-contracts/sources.json",
+      "sha256": "7fcdfeec5424650791b564a10a669bf0fe0bedc557cfab74fb9b170c2409cef0",
+      "bytes": 17936,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json",
+      "sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae",
+      "bytes": 3591,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "resource-lifecycle/sources.json",
+      "sha256": "f3f5cf4a26dae71edd6db220d22b08071913bdc8f24543e595b25ff2f51815c2",
+      "bytes": 2299,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c",
+      "bytes": 53298,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "west/evidence-disputes/literature.json",
+      "sha256": "c9b03f4363c4869d9979bb19157b0653c1d66226dda0ac8584f9d327e104fa87",
+      "bytes": 3103,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "west/evidence-disputes/sources.json",
+      "sha256": "1e686da7d3aa761ef09626b158e920cce3577e810bb464a8ba25b70fde1cde2a",
+      "bytes": 6803,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "sha256": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962",
+      "bytes": 16696,
+      "role": "later_catalogue"
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "sha256": "8045e2549851a19e8a47ec28e45311173bf588f39603887b67d87885c45f1c3e",
+      "bytes": 22800,
+      "role": "later_catalogue"
+    }
+  ],
+  "scope": "Explicit source catalogues only; navigation/readback is not new body reading.",
+  "excluded": [
+    "raw source-inputs code/PDF bodies",
+    "execution and validation receipts",
+    "copies under other audits inputs/",
+    "research source citations embedded only in prose not a declared catalogue",
+    "future catalogues after this snapshot"
+  ],
+  "all_paths_relative_to_research_root": true
+}

@@ -1,0 +1,23 @@
+{
+  "audit": "R11-C08",
+  "input_snapshot_sha256": "52cc21c0b9da1e890fe7b077f164082f8677f8b72b0f12236e74f5e140b6bd9b",
+  "verdict": "No substantive defect found within frozen input and stated finite event-graph scope.",
+  "findings": [],
+  "checks": {
+    "author_cases": 21,
+    "states_sum": 162,
+    "explicit_edges_sum": 239,
+    "fair_counterexample_cases": 11,
+    "bad_prefix_cases": 6,
+    "independent_random_graph_cases": 1200,
+    "positive_lasso_minima_checked": 11,
+    "bad_prefix_presence_and_minima_checked": 21,
+    "mutant_or_adversarial_checks": 3
+  },
+  "general_claims_status": "Conditional paper arguments only; no new Lean theorem, no addition to previous 14 TLC configurations.",
+  "limitations": [
+    "SCC oracle shares the author-provided graphs and event labels, not a separately formalized product model.",
+    "Random graph checks are differential tests, not a machine proof of checker correctness.",
+    "Full stuttering, real scheduling, actual authority, real success outcomes and elapsed-time guarantees are outside the finite graph semantics."
+  ]
+}

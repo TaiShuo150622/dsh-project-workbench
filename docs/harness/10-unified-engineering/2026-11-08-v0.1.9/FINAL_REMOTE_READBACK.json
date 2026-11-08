@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-11-08T12:24:00Z",
+  "timestamp_precision": "minute; after API responses",
+  "scope": "Read-only GitHub connector metadata, no mutation or product tests",
+  "pr": {
+    "url": "https://github.com/TaiShuo150622/dsh-project-workbench/pull/1",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+    "base_sha": "b9d44847d72883bf5116c72f445c31618d7cc020"
+  },
+  "ci": {
+    "workflow_runs": [
+      {
+        "id": 42430397773,
+        "name": "Record and workbench CI",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 3,
+        "jobs_url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/jobs",
+        "logs_url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/logs",
+        "workflow_id": 410761918
+      }
+    ]
+  }
+}

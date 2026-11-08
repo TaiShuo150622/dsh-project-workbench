@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0.0",
+  "topic": "M-06 durability and outbox refinement boundaries",
+  "accessed_at_utc": "2026-11-08",
+  "status": "STATIC_READING_COMPLETE",
+  "actual_execution": false,
+  "source_group_count": 4,
+  "groups": [
+    {
+      "id": "B0",
+      "kind": "fixed_source_call_chain",
+      "title": "Workbench Store / outbox / Native / Record → pinned DSH persistence",
+      "author_or_institution": [
+        "TaiShuo150622/dsh-project-workbench contributors",
+        "deepseek-ai/deepseek-harness contributors"
+      ],
+      "workbench": {
+        "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+        "retrieval": "git show from designated mechanisms worktree; no product import or execution",
+        "files": [
+          {
+            "path": "server/store.js",
+            "blob": "bd37da931a3eb09ae4a0ddf2c6c4493fee3c3f82",
+            "ranges": [
+              "1–29"
+            ],
+            "claims": [
+              "Per-instance Promise queue; clone/mutate/write temporary file/rename/publish; no explicit sync or cross-instance CAS."
+            ]
+          },
+          {
+            "path": "server/projects.js",
+            "blob": "081109c113313cb1ea656de436d80b888cb39dcb",
+            "ranges": [
+              "22–25",
+              "72–125",
+              "146–205",
+              "232–289"
+            ],
+            "claims": [
+              "Local state and relay intent share Store change in start/report.",
+              "Delivery precedes separate sent marker write; catch also covers marker failure.",
+              "Recovery intentionally gates worker redelivery; lead relay can retry same outbox ID via retry_delivery.",
+              "Dispatch duplicate-key check precedes queue critical section."
+            ]
+          },
+          {
+            "path": "server/native.js",
+            "blob": "798d5ce8ecbf9d4073e75f3a54a272e4f86c0f8c",
+            "ranges": [
+              "5–14",
+              "40–54"
+            ],
+            "claims": [
+              "Delivery dedup uses history/live-inbox message IDs; early return skips flush.",
+              "New relay preserves agent-message provenance, calls followup, then service-wide persistence.flush."
+            ]
+          },
+          {
+            "path": "record/kernel.mjs",
+            "blob": "0e7020aa29f23029c57707f5eca4c9f1423d98a2",
+            "ranges": [
+              "107–135",
+              "200–217",
+              "282–325",
+              "350–386"
+            ],
+            "claims": [
+              "Synchronous model publishes in-memory state/journal/request receipt; duplicate exact command returns historical receipt.",
+              "Dispatch changes model state, does not call real network.",
+              "Full journal replay rebuilds receipt identities; snapshot installation is a read-cache operation."
+            ]
+          },
+          {
+            "path": "record/README.md",
+            "blob": "5e318f6f68bd6a0fea4b1d97827ed5f5ca34ca84",
+            "ranges": [
+              "full"
+            ],
+            "claims": [
+              "Explicitly excludes persistence, actor authentication, cross-process locking and host tool interception."
+            ]
+          },
+          {
+            "path": "index.js",
+            "blob": "3ae89525bde1c6e87d4c5709296b78aa1917bfa0",
+            "ranges": [
+              "full"
+            ],
+            "claims": [
+              "Constructs Store and Projects; does not integrate Record kernel into native relay or persistence."
+            ]
+          },
+          {
+            "path": "tests/projects.test.mjs",
+            "blob": "c90d5b2597865e6be7a65a74e7280472467e45b1",
+            "ranges": [
+              "full"
+            ],
+            "claims": [
+              "Same-dispatch-key test is sequential; native relay test uses mock successful no-op flush; this is not runtime durability proof."
+            ]
+          }
+        ],
+        "repository": "TaiShuo150622/dsh-project-workbench",
+        "commit_date": "2026-11-07T16:34:50-08:00",
+        "repository_url": "https://github.com/TaiShuo150622/dsh-project-workbench",
+        "remote_commit_availability": "Not rechecked in this task; source evidence comes from fixed local git objects."
+      },
+      "dsh": {
+        "repository": "deepseek-ai/deepseek-harness",
+        "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+        "retrieval": "Read public fixed raw source; no third-party code executed",
+        "files": [
+          {
+            "path": "packages/session/session-persistence/src/index.ts",
+            "ranges": [
+              "125–187"
+            ],
+            "claims": [
+              "append visibility versus flush durability; flush covers active owned write handles and aggregates failures."
+            ]
+          },
+          {
+            "path": "packages/session/session-persistence/src/handle.ts",
+            "ranges": [
+              "85–116"
+            ],
+            "claims": [
+              "Acknowledged append visibility is weaker than flush durability; close completes pending durability by contract."
+            ]
+          },
+          {
+            "path": "packages/core/agent-loop/src/agent.ts",
+            "ranges": [
+              "170–180"
+            ],
+            "claims": [
+              "followup calls send, which synchronously splices inbox and wakes driver."
+            ]
+          },
+          {
+            "path": "packages/core/agent-loop/src/inbox.ts",
+            "ranges": [
+              "210–230"
+            ],
+            "claims": [
+              "Inbox splice appends a session event, then emits insertion notifications."
+            ]
+          },
+          {
+            "path": "packages/core/session/src/index.ts",
+            "ranges": [
+              "728–736",
+              "806–837",
+              "892–911"
+            ],
+            "claims": [
+              "Session append commits the event to in-memory log and invokes contained observers; no await for storage here.",
+              "snapshotEvents reads a frozen copy of the current in-memory log, not an independent persisted read."
+            ]
+          },
+          {
+            "path": "packages/session/session-persistence-jsonl/src/storage.ts",
+            "ranges": [
+              "187–211",
+              "267–360",
+              "503–567"
+            ],
+            "claims": [
+              "Live event copies are buffered; failed drain restores batch and pauses timed drain.",
+              "Service flush drains each active writer and aggregates errors, including unrelated sessions."
+            ]
+          },
+          {
+            "path": "packages/session/session-persistence-jsonl/src/index.ts",
+            "ranges": [
+              "472–473",
+              "911–935",
+              "1264–1323",
+              "1361–1369",
+              "1396–1449"
+            ],
+            "claims": [
+              "JSONL delegates service flush to tracker; POSIX materialization syncs file and directory; append syncs and attempts rollback on error."
+            ]
+          }
+        ],
+        "permalink_prefix": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/",
+        "commit_date": "2026-11-04T08:40:00Z"
+      },
+      "limits": [
+        "Static conditions only, no reproduced fault or data-loss incident.",
+        "Actual loaded host backend and writer routing not verified; JSONL failure does not necessarily mean target event absent, especially if rollback itself fails.",
+        "Do not generalize workbench Store's lack of explicit sync to DSH JSONL, which contains sync mechanisms.",
+        "Fresh process recovery, OS/power failure and external-effect verification have separate assumptions."
+      ]
+    },
+    {
+      "id": "N1",
+      "kind": "official_versioned_documentation",
+      "title": "Node.js v24.10.0 File system API",
+      "author_or_institution": "Node.js project",
+      "version": "v24.10.0",
+      "url": "https://nodejs.org/download/release/v24.10.0/docs/api/fs.html",
+      "locators": [
+        "#fspromiseswritefilefile-data-options",
+        "#filehandlesync"
+      ],
+      "reading_coverage": "Targeted writeFile and FileHandle.sync sections, including flush introduction/default and implementation caveat.",
+      "claims": [
+        "writeFile flush defaults false; true invokes filehandle.sync after successful write.",
+        "FileHandle.sync asks for storage-device flush with OS/device-specific implementation.",
+        "Concurrent writes require synchronization; a Promise completion is not automatically a cross-process transaction."
+      ],
+      "limits": [
+        "Not a verification of the currently installed Node or storage device.",
+        "No filesystem experiment run; adding flush:true alone does not prove directory namespace durability."
+      ]
+    },
+    {
+      "id": "L1",
+      "kind": "primary_system_manuals",
+      "title": "Linux man-pages rename(2) and fsync(2)",
+      "author_or_institution": "Linux man-pages project; man7.org rendering by Michael Kerrisk",
+      "version": "man-pages 6.19",
+      "page_date": "2026-02-08",
+      "render_date": "2026-09-09",
+      "urls": [
+        "https://man7.org/linux/man-pages/man2/rename.2.html",
+        "https://man7.org/linux/man-pages/man2/fsync.2.html"
+      ],
+      "reading_coverage": "rename DESCRIPTION and NFS BUGS; fsync DESCRIPTION, errors and implementation cautions; version colophons.",
+      "claims": [
+        "Existing target rename is atomic for path lookup under documented semantics.",
+        "File fsync does not necessarily flush the containing directory entry; directory sync is separate.",
+        "On NFS, a failed rename response cannot establish that no rename occurred."
+      ],
+      "limits": [
+        "Linux interface reference, not empirical macOS/APFS or all-device assurance.",
+        "Current HTML URL is mutable; displayed manual version/date were recorded.",
+        "Open Group POSIX pages returned 403 during discovery; no claim relies on unread POSIX source."
+      ]
+    },
+    {
+      "id": "A1",
+      "kind": "official_architecture_guidance",
+      "title": "Transactional outbox pattern",
+      "author_or_institution": "Amazon Web Services Prescriptive Guidance",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+      "published_at": null,
+      "accessed_at_utc": "2026-11-08",
+      "reading_coverage": "Intent, motivation, issues and outbox-table explanation; no example code executed.",
+      "claims": [
+        "Commit business update and outbox event in the same local transaction; a separate relay delivers it.",
+        "Duplicate notifications remain possible and require consumer-level handling."
+      ],
+      "limits": [
+        "AWS examples do not prove workbench file transaction durability.",
+        "Do not generalize wording about FIFO queues to arbitrary business external effects or claim universal exactly-once.",
+        "Unversioned live guidance; no publication date was inferred."
+      ]
+    }
+  ],
+  "unverified": [
+    "Current host/provider configuration",
+    "Actual OS/filesystem/device power-loss behavior",
+    "Runtime fault reproduction",
+    "Concurrency tests",
+    "Durable Record adapter implementation"
+  ]
+}

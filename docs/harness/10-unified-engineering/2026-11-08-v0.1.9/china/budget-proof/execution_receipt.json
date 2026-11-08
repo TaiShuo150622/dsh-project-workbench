@@ -1,0 +1,56 @@
+{
+  "completed_at_utc": "2026-11-08T07:19:33.176900+00:00",
+  "command": [
+    "lean",
+    "BudgetSafety.lean"
+  ],
+  "toolchain_version": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "toolchain_metadata": "lean-toolchain.json",
+  "exit_code": 0,
+  "kernel_checked": true,
+  "axiom_dependencies": [
+    "'HarnessBudget.step_preserves' depends on axioms: [propext, Quot.sound]",
+    "'HarnessBudget.run_preserves' depends on axioms: [propext, Quot.sound]",
+    "'HarnessBudget.actual_spent_le_exposure' depends on axioms: [propext, Quot.sound]",
+    "'HarnessBudget.finite_run_budget_safety' depends on axioms: [propext, Quot.sound]",
+    "'HarnessBudget.from_empty_finite_run_safe' depends on axioms: [propext, Quot.sound]"
+  ],
+  "scope": "General theorem over finite List actions and finite legal Run, not product or remote validation. External-world refinement conditions remain.",
+  "artifacts": [
+    {
+      "file": "BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "bytes": 11464
+    },
+    {
+      "file": "compiler.stdout.txt",
+      "sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20",
+      "bytes": 391
+    },
+    {
+      "file": "compiler.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "inputs.json",
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717",
+      "bytes": 496
+    },
+    {
+      "file": "inputs/FORMAL_MODEL.md",
+      "sha256": "3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a",
+      "bytes": 28118
+    },
+    {
+      "file": "lean-toolchain.json",
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e",
+      "bytes": 700
+    },
+    {
+      "file": "README.md",
+      "sha256": "4877ae2efbf25742b3c27e926b04c389c036d229a267ae23fc351b00bd105ede",
+      "bytes": 8930
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "command": [
+    "python3",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/relay-durability-audit/negative-run/run_relay.py",
+    "--jar",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+    "--output",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/relay-durability-audit/negative-rerun"
+  ],
+  "runner_exit_code": 1,
+  "expected_runner_exit_code": 1,
+  "observed_violations": {
+    "memory": [
+      "Init"
+    ],
+    "durable": [],
+    "error": [
+      "ErrorProvesAbsence"
+    ]
+  },
+  "outcome_matches": {
+    "memory": false,
+    "durable": true,
+    "error": true
+  },
+  "only_config_mutation": "memory INVARIANTS TypeOK NoLostSent -> INVARIANTS Init",
+  "independently_executed": true
+}

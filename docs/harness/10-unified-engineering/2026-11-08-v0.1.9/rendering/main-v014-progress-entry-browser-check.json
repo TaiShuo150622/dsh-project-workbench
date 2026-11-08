@@ -1,0 +1,237 @@
+{
+  "scope": "mobile light/dark DOM and network check, not visual acceptance",
+  "rows": [
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.html",
+      "sha256": "53e5ba88236921f610adab1c8d46572666d78245d40f8f5fbd2477d1f6d69aa6",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:17.990176+00:00"
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.html",
+      "sha256": "53e5ba88236921f610adab1c8d46572666d78245d40f8f5fbd2477d1f6d69aa6",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 6,
+        "visibleSVG": 6,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:26.725473+00:00"
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "6a2ba09cea22fca6fe3c63edc49893f3521b66fd4ec69f1733253e5f805f745e",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:34.775425+00:00"
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "6a2ba09cea22fca6fe3c63edc49893f3521b66fd4ec69f1733253e5f805f745e",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:40.479215+00:00"
+    },
+    {
+      "file": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "e9f1822adbaa94a65f54eabb3c2ed9a8709b49b9f9c04cb9584b9415e847b92b",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:49.261225+00:00"
+    },
+    {
+      "file": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "e9f1822adbaa94a65f54eabb3c2ed9a8709b49b9f9c04cb9584b9415e847b92b",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:26:57.134156+00:00"
+    },
+    {
+      "file": "west/trusted-entry-map/MAP-离线阅读版.html",
+      "sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 1,
+        "visibleSVG": 1,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:27:05.417952+00:00"
+    },
+    {
+      "file": "west/trusted-entry-map/MAP-离线阅读版.html",
+      "sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 1,
+        "visibleSVG": 1,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:27:12.407521+00:00"
+    }
+  ]
+}

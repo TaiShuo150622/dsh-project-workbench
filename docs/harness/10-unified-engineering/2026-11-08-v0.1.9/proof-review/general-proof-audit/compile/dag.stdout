@@ -1,0 +1,2 @@
+'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]

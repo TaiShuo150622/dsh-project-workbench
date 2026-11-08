@@ -1,0 +1,26 @@
+{
+  "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107",
+  "captured_at_utc": "2026-11-08T10:09:51.927428+00:00",
+  "files": [
+    {
+      "path": "mechanisms/composition-review/REVIEW.md",
+      "sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d"
+    },
+    {
+      "path": "west/intent-coverage/MEMO.md",
+      "sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5"
+    },
+    {
+      "path": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281"
+    },
+    {
+      "path": "china/handoff-audit/REVIEW.md",
+      "sha256": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861"
+    },
+    {
+      "path": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1.md",
+      "sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35"
+    }
+  ]
+}

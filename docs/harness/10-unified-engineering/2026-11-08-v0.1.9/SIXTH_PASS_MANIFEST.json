@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-08T08:00:29.998741+00:00",
+  "scope": "immutable research handoffs W06 R04 R05; original inputs and failed runs retained",
+  "files": [
+    {
+      "path": "west/architecture-reader-review/READING_ROUTE.md",
+      "source_worktree": "west",
+      "sha256": "b5e108ef4f7a9e4d58d1a74cc80005f0d61a485bd7fa467b4928cb3fe20e35d5",
+      "bytes": 3442
+    },
+    {
+      "path": "west/architecture-reader-review/REVIEW.md",
+      "source_worktree": "west",
+      "sha256": "4c3b5797b0b5b810d2fbf166816d1a67e6197ab77e815e60bd6df4ab87971b60",
+      "bytes": 10282
+    },
+    {
+      "path": "west/architecture-reader-review/review-inputs.json",
+      "source_worktree": "west",
+      "sha256": "9e12e30bbaa0deaf955eedaca40e400d9eba9902bbb93dd853c774f480005e92",
+      "bytes": 8140
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "sha256": "9e669b529391d265482684d1ca612f7344272df93885f606e31966689ae49cfa",
+      "bytes": 5770
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/OUTPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "sha256": "408aee9b2925c2db8e411a27f6753113d5dcfbb916a0f6adc3054b715fe44d1a",
+      "bytes": 1242
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/REPAIR_INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "sha256": "247538a059e369ce93d2590378b54271f09e24c7d3251ba9209855164992a051",
+      "bytes": 6635
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/REPAIR_REVIEW.md",
+      "source_worktree": "proof-review",
+      "sha256": "55cebf63e992d96fbf93f77b7c2fcae7d1926a338b3139a35c7f66513e8ced4d",
+      "bytes": 2282
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "sha256": "da28342d3989ebfc9ace0323df4fe9654b374085f552c671ebdc3f0dc6f22521",
+      "bytes": 11517
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/findings.json",
+      "source_worktree": "proof-review",
+      "sha256": "2da61a00fea21ed136ee2fce479d2bd2dc533c2ce8f1de11e9d0f51e3a47204b",
+      "bytes": 4527
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/ExpiryContract.tla",
+      "source_worktree": "proof-review",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "bytes": 2637
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/README.md",
+      "source_worktree": "proof-review",
+      "sha256": "65981f634c8f4d109d34fc64257184f7de569cb8e4bfdbae2751bec4d78f863d",
+      "bytes": 5287
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-admission.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "bytes": 112
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-commit.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "bytes": 109
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-none.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+      "bytes": 107
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "303ed36a305da6187d8b21384a6c73ca9cbccb576ef13afcde8fe95bf7441c43",
+      "bytes": 3277
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "0581996803e4c67811795c0af849d5e4853b5de0205fb914836f08c726df2ce9",
+      "bytes": 1531
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "9922ee8230b07e853b70a651ce0c123c8c081a52bf99970df8b94f45076beecf",
+      "bytes": 1188
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "b50a76ddac60ffecd098b4cfd7ea1e7841754afa3fa5cb6e18db9106cc02d2c0",
+      "bytes": 1186
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "009e2e572bb1bc7099d6c0602e88269e5406a742e863e1e7c80b627a8eff4b0a",
+      "bytes": 1187
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401",
+      "bytes": 3203
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "3b1380f323a2f219ceadeba59392ac4cbfe8d0aa2a6645d553306f37329894db",
+      "bytes": 3277
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360",
+      "bytes": 3986
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/formal-spec/run_expiry.py",
+      "source_worktree": "proof-review",
+      "sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a",
+      "bytes": 2151
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/inputs/适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "source_worktree": "proof-review",
+      "sha256": "32e2fc71df489af9d8558743fff51ff5966a92a7f69f2acf7e363671345ab7bd",
+      "bytes": 19729
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557",
+      "bytes": 3276
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45",
+      "bytes": 1529
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3",
+      "bytes": 3277
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/ExpiryContract.tla",
+      "source_worktree": "proof-review",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "bytes": 2637
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-admission.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "bytes": 112
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-commit.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "bytes": 109
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/expiry-none.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "bytes": 93
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/fixture/run_expiry.py",
+      "source_worktree": "proof-review",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "bytes": 3234
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "fb2ad298d8bd42396f4931c6bc92628050209c9031add4084a175b0ab295fdf5",
+      "bytes": 3315
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "5da451bd7025ef4150434a424a4f3865d661e55a3be49b4cf2662fd8b5040a3c",
+      "bytes": 1569
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "59ecf74105349c59612888d6bf576a388d88751cecf32737fda893f06af70208",
+      "bytes": 1623
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/stderr.txt",
+      "source_worktree": "proof-review",
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b",
+      "bytes": 37
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/stdout.txt",
+      "source_worktree": "proof-review",
+      "sha256": "92200317ff361d7e7cd9b6fae514ed8476e45395141846c7e961c73a4fb08e52",
+      "bytes": 890
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair-inputs/run_expiry.py",
+      "source_worktree": "proof-review",
+      "sha256": "7c4b0ade1401f863c9a47a4052f1dd3dd93565e4a86bb50c479b3fa55582ea0c",
+      "bytes": 3234
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/repair_verification_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "8cc3bf72af06054670291bb6a423b6298d761378285d56c40fea3c1e34cd34aa",
+      "bytes": 1615
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "ebda2ad9272eef7b6d6b177d2677f7fb66ecc204129f0d47af7d749755ecb45b",
+      "bytes": 3319
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "9ddc3fbe81785897183c6d1a10f2d2b5740e2e453fb7c83b2c8a8c1a758b3be6",
+      "bytes": 1573
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "e5da2d18924c63dbd9cbf4d359cd696a2d17fd15bd5aef6390074fd3fd13c712",
+      "bytes": 3320
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "d92922d167b93373b3792b8d4caa28234aaf71f6dc97efca312b91e296ab805a",
+      "bytes": 4031
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun.stderr",
+      "source_worktree": "proof-review",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/rerun.stdout",
+      "source_worktree": "proof-review",
+      "sha256": "d6c86a795f211f4c1b217f4623edf2e95c46143c39ef63ef380b3be75c54347b",
+      "bytes": 901
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe/ExpiryContract.tla",
+      "source_worktree": "proof-review",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "bytes": 2637
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe/expiry-admission.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "bytes": 112
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe/expiry-commit.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "bytes": 109
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe/expiry-none.cfg",
+      "source_worktree": "proof-review",
+      "sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+      "bytes": 93
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe/run_expiry.py",
+      "source_worktree": "proof-review",
+      "sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a",
+      "bytes": 2151
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe-results/admission.log",
+      "source_worktree": "proof-review",
+      "sha256": "ba9842d948eda56f0b90d584291f7293e9cc36d50dfa9d7cee6bd0de1b48718d",
+      "bytes": 3313
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe-results/commit.log",
+      "source_worktree": "proof-review",
+      "sha256": "056346dd5d9b36dd5c238c5a5589d6f23067ecf82691e85a5c7dea3e1eb7d1ba",
+      "bytes": 1567
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe-results/none.log",
+      "source_worktree": "proof-review",
+      "sha256": "5c5753d156629ea97c0d1556b1a38207ce323889254d4a3fc70bee40dfac279e",
+      "bytes": 1621
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe-results/receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "1193e3f250c2e9c31d717ba796cf55fb8fdd5903e54288f705fdd39cc5a26da3",
+      "bytes": 4065
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe.stderr",
+      "source_worktree": "proof-review",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner-probe.stdout",
+      "source_worktree": "proof-review",
+      "sha256": "996941e6acda8508273330c124a47c903a43c9f309f6b1a0c43b8e5dbe0ab58c",
+      "bytes": 890
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/runner_probe_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "82150211c7059c9214a3810a164bd5b76198a708338f53d928d40d3f94c9d00c",
+      "bytes": 2121
+    },
+    {
+      "path": "proof-review/expiry-contract-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "cdf29df7dfe09ae386962776bd8f42a2fa42c764284764534a44f51e10b7f495",
+      "bytes": 3021
+    },
+    {
+      "path": "proof-review/record-mapping-audit/INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943
+    },
+    {
+      "path": "proof-review/record-mapping-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "sha256": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "bytes": 8217
+    },
+    {
+      "path": "proof-review/record-mapping-audit/findings.json",
+      "source_worktree": "proof-review",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "sha256": "f7b9e6ebe825d149cd8f796eb67de406c1c240b9ec417bf5bc0291dad3d11e44",
+      "bytes": 2052
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/REPORT.md",
+      "source_worktree": "proof-review",
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe",
+      "bytes": 14657
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/SHA256SUMS",
+      "source_worktree": "proof-review",
+      "sha256": "e2c6f890d140e805a8e7511c94ac26dbd21e8f3be0e2b2f1dc6acd0a80aa8c7e",
+      "bytes": 2571
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/TRACES.md",
+      "source_worktree": "proof-review",
+      "sha256": "3a93baa1ff9451fb102998b8f6abf9a6108e3cbed39022c45213a2748ab0c544",
+      "bytes": 7034
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/build-matrix.py",
+      "source_worktree": "proof-review",
+      "sha256": "4e087d88145ed680906ce32e5f852b6faa6007eb51fcd3e5f05af9d812a6f472",
+      "bytes": 19404
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "bytes": 4351
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/existing-tests.stderr.txt",
+      "source_worktree": "proof-review",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/existing-tests.stdout.txt",
+      "source_worktree": "proof-review",
+      "sha256": "8f70025f1b13067dcd782800c3082d4f981f1b6a4390e2245d8b919027616df3",
+      "bytes": 2054
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/record/README.md",
+      "source_worktree": "proof-review",
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567",
+      "bytes": 9449
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/record/kernel.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "bytes": 26038
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/ADAPTER_CONTRACT.md",
+      "source_worktree": "proof-review",
+      "sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b",
+      "bytes": 16869
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/ARCHITECTURE.md",
+      "source_worktree": "proof-review",
+      "sha256": "889b0bc82d7c2d7d7308aea9b99eab59d132c39a49ab904e5047787c7687d162",
+      "bytes": 20709
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "source_worktree": "proof-review",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/specifications/catalog.json",
+      "source_worktree": "proof-review",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8",
+      "bytes": 3681
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92",
+      "bytes": 6014
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8",
+      "bytes": 2688
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda",
+      "bytes": 8527
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/record-kernel.test.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392",
+      "bytes": 15959
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs/tests/support/record-fixture.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "bytes": 2458
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/inputs.json",
+      "source_worktree": "proof-review",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/probes.initial.json",
+      "source_worktree": "proof-review",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/probes.json",
+      "source_worktree": "proof-review",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/probes.stderr.txt",
+      "source_worktree": "proof-review",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/refinement-matrix.json",
+      "source_worktree": "proof-review",
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2",
+      "bytes": 43772
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/refinement-probes.mjs",
+      "source_worktree": "proof-review",
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+      "bytes": 12171
+    },
+    {
+      "path": "proof-review/record-mapping-audit/inputs/validation_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a",
+      "bytes": 701
+    },
+    {
+      "path": "proof-review/record-mapping-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "sha256": "2c8df7ebec5f71b172fad687ebcd0e462f68f40cd43b66653c8fde7090b82c30",
+      "bytes": 816
+    }
+  ]
+}

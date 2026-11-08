@@ -1,0 +1,72 @@
+{
+  "captured_at_utc": "2026-11-08T08:58:19.012146+00:00",
+  "base_worktree_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "worktree_documents_are_uncommitted_research": true,
+  "identity_rule": "File SHA identifies the actual input; base commit alone does not identify these research drafts.",
+  "body_copies_stored": false,
+  "inputs": [
+    {
+      "file": "FORMAL_MODEL.md",
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa",
+      "bytes": 32997,
+      "read_scope": "Objects and action/unknown clauses; P13 and liveness discussion lines 162–182; relevant mapping limits. Not a new proof review of every proposition.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "sha256": "0e00d0313d7bfa640678c6923905bd490ba795a0e6d2a8d44a02b031876ca3d5",
+      "bytes": 22525,
+      "read_scope": "Five layers/two loops; remote continuity and ongoing-research scenarios; H07 and first implementation boundary.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867",
+      "bytes": 21536,
+      "read_scope": "WorkDecision, S0–S3, finite candidate/query policy, diagnosis, versioned experience and evaluation limits; no new literature reproduction.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "bytes": 19465,
+      "read_scope": "Story endpoint, I01 boundary, I03–I07 gates and open implementation decisions.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "china/budget-proof/README.md",
+      "sha256": "32aac0b0822b1c526bc5dae140282d61d198747d2ee4d49a69258d07c0f2ffa3",
+      "bytes": 9501,
+      "read_scope": "Finite safety guarantee, transfer rules and implementation boundary.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "china/budget-proof/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "bytes": 11464,
+      "read_scope": "Run and finite_run_budget_safety definitions, lines 210–268; Cancel preserves same budget state.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "formal-spec/EffectContract.tla",
+      "sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "bytes": 3605,
+      "read_scope": "Header and Spec/Next; no fairness claimed.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "formal-spec/ExpiryContract.tla",
+      "sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "bytes": 2637,
+      "read_scope": "Header and Spec/Next; no fairness claimed.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    },
+    {
+      "file": "formal-spec/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "bytes": 4187,
+      "read_scope": "Header, entire local transition list and Spec; no fairness claimed.",
+      "role": "existing_project_research_input_not_new_independent_source"
+    }
+  ]
+}

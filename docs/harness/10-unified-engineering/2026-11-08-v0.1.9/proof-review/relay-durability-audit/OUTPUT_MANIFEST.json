@@ -1,0 +1,149 @@
+{
+  "files": [
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "87804d730d8b79529815f9280461437fd723b9bcaecb8a428e8908eb01294b84",
+      "bytes": 10441
+    },
+    {
+      "file": "REVIEW.md",
+      "sha256": "73c88ad6c05ce7056bc8fc6288442f9d394990f2fa023de88826a246d4e7c835",
+      "bytes": 9601
+    },
+    {
+      "file": "SOURCE_MANIFEST.json",
+      "sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae",
+      "bytes": 3591
+    },
+    {
+      "file": "execution_receipt.json",
+      "sha256": "31c6e9c67e8e3912182a7623e789d4287f792223423db3eab6e75ddf1a924360",
+      "bytes": 688
+    },
+    {
+      "file": "findings.json",
+      "sha256": "92a4b6ca84415b88267658339316f5c006d3ab263d9f1e18cd3e5ca92222c035",
+      "bytes": 1687
+    },
+    {
+      "file": "negative-rerun/durable.log",
+      "sha256": "3e3d516c8fa36f3fa83c7a0e614e04da8ba669b6f69a67f4047cbdaf58f4376b",
+      "bytes": 1314
+    },
+    {
+      "file": "negative-rerun/error.log",
+      "sha256": "bb6a545270e508123a3bb53988d5d2b13f1e26f4873161f919525b4446d28b28",
+      "bytes": 2176
+    },
+    {
+      "file": "negative-rerun/memory.log",
+      "sha256": "72d7939065ba5ebeab406aaf51a54420e2f8db761fa18cdf62e89de591eea13c",
+      "bytes": 1413
+    },
+    {
+      "file": "negative-rerun/receipt.json",
+      "sha256": "d8246a14065fe6665281e8d5f180be0f9ce3f79c8033b55f703fc8bace2417ca",
+      "bytes": 4442
+    },
+    {
+      "file": "negative-run/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "bytes": 4187
+    },
+    {
+      "file": "negative-run/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "bytes": 118
+    },
+    {
+      "file": "negative-run/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "bytes": 107
+    },
+    {
+      "file": "negative-run/relay-memory.cfg",
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3",
+      "bytes": 85
+    },
+    {
+      "file": "negative-run/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "bytes": 3338
+    },
+    {
+      "file": "negative.stderr.txt",
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b",
+      "bytes": 37
+    },
+    {
+      "file": "negative.stdout.txt",
+      "sha256": "cf01fba9d4b52cb87ae23e6b678263fa40dbe261a7b25febafa4e449b031e799",
+      "bytes": 893
+    },
+    {
+      "file": "negative_receipt.json",
+      "sha256": "406c665b2b6b37b7d7fd5d5c39e8b3b3b23d0686de122864784a3dbabc5eb912",
+      "bytes": 926
+    },
+    {
+      "file": "rerun/durable.log",
+      "sha256": "a11417a6d456024444cd7ea92d6c3aa12f44457b450ee8b11173a58d75a10917",
+      "bytes": 1302
+    },
+    {
+      "file": "rerun/error.log",
+      "sha256": "5f3c62a1d04851815e1d21458b1061072653de88ab3e3a59efd05a171b5e368d",
+      "bytes": 2167
+    },
+    {
+      "file": "rerun/memory.log",
+      "sha256": "84e2ff8aa3ff6420970e8b5f700476585ee8abe84c18a70c25700163605a5cae",
+      "bytes": 3203
+    },
+    {
+      "file": "rerun/receipt.json",
+      "sha256": "cd38c6729c09396c1fb75ed660b2ab34548d905f1cc9d6712aa42f789c0281a7",
+      "bytes": 4431
+    },
+    {
+      "file": "run/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "bytes": 4187
+    },
+    {
+      "file": "run/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "bytes": 118
+    },
+    {
+      "file": "run/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "bytes": 107
+    },
+    {
+      "file": "run/relay-memory.cfg",
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "bytes": 98
+    },
+    {
+      "file": "run/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "bytes": 3338
+    },
+    {
+      "file": "runner.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "runner.stdout.txt",
+      "sha256": "f256dad75830bd17eb92d26a70b3a88680037fe541ee6201fa5f92717cb0d13e",
+      "bytes": 902
+    },
+    {
+      "file": "verification_receipt.json",
+      "sha256": "bee58eb2bf63f87d56d38740ba7b10fa54796e341d4ac449bf7cdcde8c4bc8eb",
+      "bytes": 1811
+    }
+  ]
+}

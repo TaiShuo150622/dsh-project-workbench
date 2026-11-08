@@ -1,0 +1,514 @@
+{
+  "task": "W10",
+  "captured_at_utc": "2026-11-08T09:00:14.086913+00:00",
+  "workbench_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "host_commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "inputs": [
+    {
+      "id": "WB01",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "index.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/index.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js",
+      "sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "git_blob_sha1": "3ae89525bde1c6e87d4c5709296b78aa1917bfa0",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          85
+        ]
+      ],
+      "total_lines": 85,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB02",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "server/projects.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/projects.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "git_blob_sha1": "081109c113313cb1ea656de436d80b888cb39dcb",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          292
+        ]
+      ],
+      "total_lines": 292,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB03",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "server/native.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/native.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "git_blob_sha1": "798d5ce8ecbf9d4073e75f3a54a272e4f86c0f8c",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "total_lines": 56,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB04",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "server/store.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/store.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/store.js",
+      "sha256": "7cbe2a3c1f2a35f3b152cb07219918824a7e8e8fc156d115d63a895e5f79933c",
+      "git_blob_sha1": "bd37da931a3eb09ae4a0ddf2c6c4493fee3c3f82",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "total_lines": 31,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB05",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "server/worktrees.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/worktrees.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/worktrees.js",
+      "sha256": "cfe5d1121294050b710be73ac953ca5dfac18b3a1652350ad64d3d9d9029027e",
+      "git_blob_sha1": "3dd34f38fdaafb9a45750084b91d9ce42e70e4ea",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "total_lines": 39,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB06",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "client/app.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/client/app.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client/app.js",
+      "sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "git_blob_sha1": "29002fa1ef7cde1bb770d8b9787f223aa911239d",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "SELECTED",
+      "line_ranges": [
+        [
+          1,
+          29
+        ],
+        [
+          32,
+          168
+        ]
+      ],
+      "total_lines": 168,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB07",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "client.js",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/client.js",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client.js",
+      "sha256": "f3762f8b427e7479c2f665794a22026458ee0ead995374af1ba35e08a7d3a7d7",
+      "git_blob_sha1": "cc679775b7eb182b94791602faba0c09de6c9b4d",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "STRUCTURAL_COMPARISON_ONLY",
+      "line_ranges": [],
+      "total_lines": 173,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB08",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "record/kernel.mjs",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/record/kernel.mjs",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "git_blob_sha1": "0e7020aa29f23029c57707f5eca4c9f1423d98a2",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          387
+        ]
+      ],
+      "total_lines": 387,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB09",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "record/README.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/record/README.md",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/README.md",
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567",
+      "git_blob_sha1": "5e318f6f68bd6a0fea4b1d97827ed5f5ca34ca84",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "total_lines": 81,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB10",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "tests/desktop-contract.test.mjs",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/tests/desktop-contract.test.mjs",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/desktop-contract.test.mjs",
+      "sha256": "aedee237e700326a9ee21403527dc7d554a86c0ab6ba54a03a14f79d9a2f04b4",
+      "git_blob_sha1": "f92bd914b27dfb23a25b7226285641a74552db56",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          135
+        ]
+      ],
+      "total_lines": 135,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB11",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "tests/support/record-fixture.mjs",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/tests/support/record-fixture.mjs",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "git_blob_sha1": "1deb497af74586f9ef828ea0261e3c20c3848482",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "total_lines": 29,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB12",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "scripts/build.mjs",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/scripts/build.mjs",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/scripts/build.mjs",
+      "sha256": "517dcac9bbb5a954fb858060ee2d74beb81a5ae2e93086ef68c3f17103042ba6",
+      "git_blob_sha1": "daaf55ac6d376c7a45ed2e935fec62db28feb67e",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "total_lines": 12,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB13",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "package.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/package.json",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/package.json",
+      "sha256": "1dc8c0dedc142a78b1e101142bf6651cef8ff7532b9740485793e83cce9e7430",
+      "git_blob_sha1": "92330fe17456ca3cdd59ecbf3521163f20bc9dc1",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "total_lines": 41,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB14",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "cordis.patch.yml",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/cordis.patch.yml",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/cordis.patch.yml",
+      "sha256": "f135e476e188ddf59fb1db0e72f94e12423fa1865d5f8ea537d68669712f4ea4",
+      "git_blob_sha1": "23a5c9fcb3e8f8a3b5e26f2988f6a23bb68d672e",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "total_lines": 3,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "WB15",
+      "repository": "TaiShuo150622/dsh-project-workbench",
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "path": "README.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/README.md",
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/README.md",
+      "sha256": "72cd7554dc496056b7a5bbf77db75d4e0a52c918b3afbeee42735a77fee2f452",
+      "git_blob_sha1": "35594dd7b989a2f71c72adf8d6d04b6635417f2b",
+      "working_copy_matches_fixed_commit": true,
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "total_lines": 48,
+      "evidence_class": "FIXED_SOURCE_STATIC_NOT_RUNTIME"
+    },
+    {
+      "id": "DSH01",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/index.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/index.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/index.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+      "sha256": "33a14e80298e0a0bc7bafef515d853d13584cd2433844b3dc2a89d4980d315e1",
+      "git_blob_sha1": "d563cd40e83f6048dd993f297650f821f6921d62",
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          169
+        ]
+      ],
+      "total_lines": 169,
+      "retrieved_at_utc": "2026-11-08T08:53:01.503824+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH02",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/api-request-trust.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/api-request-trust.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/api-request-trust.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/api-request-trust.ts",
+      "sha256": "879a4f497ad41355771303a5956851da04661be24b08435fe7bf13d42e1e3b9b",
+      "git_blob_sha1": "a2fb78ec6cf56bf56a3b0ae8e39e066b7fb69578",
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          176
+        ]
+      ],
+      "total_lines": 176,
+      "retrieved_at_utc": "2026-11-08T08:53:02.330133+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH03",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/rpc-host.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc-host.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/rpc-host.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "git_blob_sha1": "88e7b48baa54df58392b0f1bcec6d4416cb30c7a",
+      "read_status": "SELECTED",
+      "line_ranges": [
+        [
+          85,
+          160
+        ],
+        [
+          202,
+          412
+        ]
+      ],
+      "total_lines": 412,
+      "retrieved_at_utc": "2026-11-08T08:53:04.155577+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH04",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/client/rpc.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/client/rpc.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/client/rpc.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/client/rpc.ts",
+      "sha256": "8a55426351dfc3b4150b6fdd60daf20735824cbb90b4b806321ec442c639e460",
+      "git_blob_sha1": "c5d5c9b39460f40d6454766ceba759f558418fe0",
+      "read_status": "SELECTED",
+      "line_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "total_lines": 183,
+      "retrieved_at_utc": "2026-11-08T08:53:02.348064+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH05",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "snapshot_relative_path": "source-inputs/dsh/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "sha256": "bd102c1867feab15cbe5f6cba2e43fb9311ede680d936db7c2e925b18aa3ed98",
+      "git_blob_sha1": "cccf5c6a32e632f58160bac6fa7bb3ce68a24ca4",
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          60
+        ]
+      ],
+      "total_lines": 60,
+      "retrieved_at_utc": "2026-11-08T08:53:02.759466+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH06",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/browser-auth.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/browser-auth.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/browser-auth.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/browser-auth.ts",
+      "sha256": "f1ebdb9fa8706414852420393d9f34b2d604a128928a2f5852d4832ce38b45f7",
+      "git_blob_sha1": "5c8594df6f6c8269dfef5db1faebe4da3f9e9f26",
+      "read_status": "SELECTED",
+      "line_ranges": [
+        [
+          155,
+          265
+        ],
+        [
+          351,
+          394
+        ]
+      ],
+      "total_lines": 394,
+      "retrieved_at_utc": "2026-11-08T08:54:48.664036+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH07",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/http-bridge.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/http-bridge.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/http-bridge.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/http-bridge.ts",
+      "sha256": "182a668579ec5701489f54449bb4b0e63e80b77f90edc147b993b1acba4bae86",
+      "git_blob_sha1": "61d89c01276d0d2f83c62fa07f347382efe6218b",
+      "read_status": "FULL",
+      "line_ranges": [
+        [
+          1,
+          127
+        ]
+      ],
+      "total_lines": 127,
+      "retrieved_at_utc": "2026-11-08T08:54:47.684290+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DSH08",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/client/connection/src/rpc.ts",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc.ts",
+      "snapshot_relative_path": "source-inputs/dsh/packages/client/connection/src/rpc.ts",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc.ts",
+      "sha256": "74ba5632fea441a4c76de677ddeb840de51a775b42514c0908a3ef207339d94b",
+      "git_blob_sha1": "aec79d07285e43d9bc0659499dbec18cf0940d98",
+      "read_status": "SELECTED",
+      "line_ranges": [
+        [
+          132,
+          175
+        ],
+        [
+          277,
+          293
+        ]
+      ],
+      "total_lines": 328,
+      "retrieved_at_utc": "2026-11-08T08:54:47.938645+00:00",
+      "evidence_class": "FIXED_UPSTREAM_SOURCE_NOT_INSTALLED_HOST"
+    },
+    {
+      "id": "DES01",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "read_status": "SELECTED_THIS_ROUND_PRIOR_AUTHORED",
+      "line_ranges": [
+        [
+          55,
+          92
+        ],
+        [
+          127,
+          150
+        ]
+      ],
+      "evidence_class": "EXISTING_IMPLEMENTATION_PROPOSAL_NOT_IMPLEMENTED"
+    }
+  ],
+  "scope": [
+    "Fixed workbench runtime entry graph and Record model; selected standard DSH connection path.",
+    "No live host, private session, credential, network mutation or model request.",
+    "Remote GETs fetched public fixed source only; GitHub connector failed, curl used as fallback.",
+    "Host source source-snapshot mismatch with actual installed version remains unknown."
+  ],
+  "source_acquisition_notes": [
+    "GitHub connector: Transport closed. Python urllib: local certificate verification failure. curl public fixed-commit GET succeeded without disabling certificate verification.",
+    "Git tree metadata used only to locate connection source; not a claim of reading other repository files."
+  ]
+}

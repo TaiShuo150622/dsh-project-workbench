@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "2a56214b6b43426df259a65fc2d26c72904ef048115af522c975d4d54bc40d6a"
+    },
+    {
+      "file": "REVIEW.md",
+      "sha256": "5548195469a4b0b351dccda990d42992c3f6aef1f90535544e548900345499f5"
+    },
+    {
+      "file": "receipt.json",
+      "sha256": "7458e79d81a04c7921903c18f6599af6327cc6a1febfde826344a0e6d1a6623f"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "INPUT_SNAPSHOT.json": "52cc21c0b9da1e890fe7b077f164082f8677f8b72b0f12236e74f5e140b6bd9b",
+  "REVIEW.md": "bfc1b628934fe0445ca68f6de924f057f96e8bd484cd4d682017e15632b2d66e",
+  "execution_receipt.json": "b9f21d7290afbf4cc412bdf1c703cf6b0919baed45607bbd052ebf010fc9c3d0",
+  "findings.json": "e501ecdcc3a2e4df71880600e8a1d0b58895bc9fb98cc11959d41c08d388c55f",
+  "oracle_check.py": "96f94ad790b402b2f3672cdfdc8c16d21fd72029bbf89b4650a2d547118e7790",
+  "oracle_results.json": "245e23e7082289f6c53332e338ee205c88d20d19a6b24bf8caa880d4f776b585"
+}

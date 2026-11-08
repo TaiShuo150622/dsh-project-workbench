@@ -1,0 +1,1948 @@
+{
+  "task": "W12",
+  "status": "PASS_WITH_DOCUMENTED_STRUCTURE_WARNING",
+  "validated_at_utc": "2026-11-08T09:43:33.113391+00:00",
+  "checks": {
+    "decision_count": 10,
+    "guide_question_count": 8,
+    "source_files": 43,
+    "task_card_entries": 27,
+    "source_line_references": 84,
+    "markdown_local_links": 158,
+    "json_files_parsed": [
+      "continuity.json",
+      "reading-list.json",
+      "task-entries.json"
+    ],
+    "input_hashes_unchanged": 43
+  },
+  "reading_coverage": {
+    "unique_files": 43,
+    "by_category_and_depth": {
+      "archive": {
+        "FULL": 20,
+        "SELECTED_BODY": 2,
+        "NAVIGATION_ONLY": 1,
+        "CARD_METADATA": 15
+      },
+      "research": {
+        "FULL": 3,
+        "SELECTED_BODY": 1,
+        "SELECTED_MATCHES": 1
+      }
+    },
+    "archive_unique_files": 38,
+    "research_unique_files": 5,
+    "task_cards_metadata": 27,
+    "task_cards_full_body": 12,
+    "not_claimed": "Not all 192 archived attachments read. W09 remains an unchanged historical snapshot. No design HTML rendered or original private bundle inspected."
+  },
+  "structure_checker": {
+    "command": "python3 __LOCAL_HOME__/.agents/skills/discussion-draft/scripts/check_draft.py docs/research/harness-20261107/west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 1,
+    "h2_count": 8,
+    "mermaid_count": 3,
+    "warning_disposition": "No H2 named 总体架构; first body section 路线与材料优先级 contains figure 1 showing the discussion/product/research relationship. Requirement satisfied structurally; warning retained."
+  },
+  "render": {
+    "command": "python3 __LOCAL_HOME__/.agents/skills/discussion-draft/scripts/render.py docs/research/harness-20261107/west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md --html",
+    "exit_code": 0,
+    "html_generated": true,
+    "browser_visual_verification": false
+  },
+  "refs": [
+    {
+      "decision": "DC01",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        6,
+        8
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        197,
+        205
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        69,
+        82
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "N-R",
+      "lines_1_based": [
+        20,
+        20
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "N-I",
+      "lines_1_based": [
+        94,
+        107
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "N-I",
+      "lines_1_based": [
+        127,
+        137
+      ]
+    },
+    {
+      "decision": "DC01",
+      "source_id": "N-M",
+      "lines_1_based": [
+        356,
+        358
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "PN-S",
+      "lines_1_based": [
+        77,
+        108
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "PN-S",
+      "lines_1_based": [
+        161,
+        166
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        700,
+        725
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "PN-B",
+      "lines_1_based": [
+        48,
+        54
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "P-09",
+      "lines_1_based": [
+        41,
+        44
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "P-11",
+      "lines_1_based": [
+        1,
+        1
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "P-13",
+      "lines_1_based": [
+        1,
+        1
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "N-I",
+      "lines_1_based": [
+        79,
+        86
+      ]
+    },
+    {
+      "decision": "DC02",
+      "source_id": "N-I",
+      "lines_1_based": [
+        133,
+        137
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        71,
+        78
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        271,
+        320
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        32,
+        56
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        201,
+        205
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "WB-C",
+      "lines_1_based": [
+        133,
+        147
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "N-M",
+      "lines_1_based": [
+        192,
+        192
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "N-I",
+      "lines_1_based": [
+        39,
+        51
+      ]
+    },
+    {
+      "decision": "DC03",
+      "source_id": "N-I",
+      "lines_1_based": [
+        100,
+        104
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "WB-C",
+      "lines_1_based": [
+        18,
+        35
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "B-02",
+      "lines_1_based": [
+        26,
+        43
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "WB-C",
+      "lines_1_based": [
+        120,
+        131
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "B-08",
+      "lines_1_based": [
+        26,
+        29
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        110,
+        118
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "N-I",
+      "lines_1_based": [
+        79,
+        92
+      ]
+    },
+    {
+      "decision": "DC04",
+      "source_id": "N-A",
+      "lines_1_based": [
+        144,
+        157
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "WB-C",
+      "lines_1_based": [
+        80,
+        90
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "B-05",
+      "lines_1_based": [
+        25,
+        42
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        114,
+        114
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "N-I",
+      "lines_1_based": [
+        35,
+        35
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "N-I",
+      "lines_1_based": [
+        81,
+        86
+      ]
+    },
+    {
+      "decision": "DC05",
+      "source_id": "N-M",
+      "lines_1_based": [
+        164,
+        164
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "WB-C",
+      "lines_1_based": [
+        92,
+        110
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "B-06",
+      "lines_1_based": [
+        27,
+        45
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        56,
+        56
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        556,
+        585
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "P-12",
+      "lines_1_based": [
+        34,
+        57
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "N-R",
+      "lines_1_based": [
+        13,
+        18
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "N-R",
+      "lines_1_based": [
+        43,
+        55
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "N-I",
+      "lines_1_based": [
+        100,
+        100
+      ]
+    },
+    {
+      "decision": "DC06",
+      "source_id": "N-M",
+      "lines_1_based": [
+        190,
+        192
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "PN-C",
+      "lines_1_based": [
+        260,
+        282
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "P-11",
+      "lines_1_based": [
+        34,
+        58
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        299,
+        318
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        387,
+        400
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "N-I",
+      "lines_1_based": [
+        17,
+        17
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "N-I",
+      "lines_1_based": [
+        75,
+        92
+      ]
+    },
+    {
+      "decision": "DC07",
+      "source_id": "N-I",
+      "lines_1_based": [
+        100,
+        100
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "PN-C",
+      "lines_1_based": [
+        209,
+        227
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "P-10",
+      "lines_1_based": [
+        32,
+        49
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        318,
+        318
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        339,
+        352
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        811,
+        824
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "N-I",
+      "lines_1_based": [
+        81,
+        92
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "N-I",
+      "lines_1_based": [
+        133,
+        133
+      ]
+    },
+    {
+      "decision": "DC08",
+      "source_id": "N-M",
+      "lines_1_based": [
+        164,
+        164
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        17,
+        31
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        65,
+        95
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        718,
+        734
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        758,
+        812
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        831,
+        855
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "RT",
+      "lines_1_based": [
+        898,
+        906
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "N-R",
+      "lines_1_based": [
+        19,
+        21
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "N-I",
+      "lines_1_based": [
+        101,
+        104
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "N-I",
+      "lines_1_based": [
+        127,
+        137
+      ]
+    },
+    {
+      "decision": "DC09",
+      "source_id": "N-M",
+      "lines_1_based": [
+        92,
+        92
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "WB-R",
+      "lines_1_based": [
+        44,
+        64
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        18,
+        26
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "WB-P",
+      "lines_1_based": [
+        157,
+        171
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "PN-R",
+      "lines_1_based": [
+        64,
+        83
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        608,
+        644
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        729,
+        746
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "PN-O",
+      "lines_1_based": [
+        784,
+        799
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "PN-S",
+      "lines_1_based": [
+        161,
+        218
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "P-15",
+      "lines_1_based": [
+        32,
+        54
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "B-12",
+      "lines_1_based": [
+        27,
+        46
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "N-I",
+      "lines_1_based": [
+        9,
+        11
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "N-I",
+      "lines_1_based": [
+        53,
+        53
+      ]
+    },
+    {
+      "decision": "DC10",
+      "source_id": "N-IR",
+      "lines_1_based": [
+        7,
+        13
+      ]
+    }
+  ],
+  "links": [
+    {
+      "file": "README.md",
+      "target": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.html",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.html",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "continuity.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/continuity.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "task-entries.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/task-entries.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "READING.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/READING.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "reading-list.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/reading-list.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "README.md",
+      "target": "validation.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/validation.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../ARCHITECTURE.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-12-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-12-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/BOARD.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BOARD.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-09-live-feed.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-09-live-feed.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-12-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-12-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "task-entries.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/task-entries.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "reading-list.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/reading-list.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "target": "READING.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/READING.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "reading-list.json",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/design-continuity/reading-list.json",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/BOARD.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/BOARD.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/design/overall-discussion.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/COLLABORATION.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/BOARD.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/INDEX.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/INDEX.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../ARCHITECTURE.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "READING.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "READING.md",
+      "target": "../implementation-taskbook/README.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.4.md",
+      "resolution": "INTEGRATION_READ_ONLY_COUNTERPART"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-01-phase-history.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-01-phase-history.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-02-display-status.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-03-overview.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-03-overview.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-04-library.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-04-library.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-05-project-goal.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-06-session-map.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-07-thread-card.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-07-thread-card.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-08-timeline.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-09-live-feed.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-09-live-feed.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-10-layout-state.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-10-layout-state.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-11-tui-panels.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-11-tui-panels.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../handoff/ui-backend/tasks/B-12-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/handoff/ui-backend/tasks/B-12-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-01-skeleton.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-02-spec.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-02-spec.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-03-data.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-03-data.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-04-shell.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-04-shell.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-05-table.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-05-table.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-06-timeline.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-06-timeline.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-07-graph.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-07-graph.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-08-space.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-08-space.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-09-sandbox.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-10-trust.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-11-model.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-12-tui.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-13-types.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-14-ceiling.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-14-ceiling.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    },
+    {
+      "file": "READING.md",
+      "target": "../../../../harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolved_path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/harness/05-panels/docs/handoff/panels/tasks/P-15-integration.md",
+      "resolution": "LOCAL_DELIVERABLE"
+    }
+  ],
+  "input_hash_checks": [
+    {
+      "id": "WB-C",
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "WB-P",
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "WB-R",
+      "sha256": "78d3642a9c86af1ca5b877041e7cfc9ee523692d8553a0c0ba75c4ecbce778cd",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "WB-B",
+      "sha256": "105a7de5379ac8f018e967c1b3e1a1adfcf0ed90e9f2a9b388ce41c8d3df77ce",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "PN-C",
+      "sha256": "40d1829386ab952f48135a0154a914e91b3e093c3c82f5c7e1b1f1d9c7b4867c",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "PN-O",
+      "sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "PN-S",
+      "sha256": "fe930300d6ed4db868c2e2d594096b6cde528ac7c117f418a7ec6a2a27aa4d14",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "PN-R",
+      "sha256": "7d60c381265b7fd016e40e5498565d36cd5667817d16dbe75029240a5727c2e9",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "PN-B",
+      "sha256": "092fc2e0754197ca32ad491e1b44d3a6c63ca40bf73e69d0b435577e798d10a7",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "RT",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "IDX",
+      "sha256": "57f8c2b9907064642b750de5015452956acbac050cca7157deb9138b757c322c",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "N-R",
+      "sha256": "c453d0add92a6d80539290cddc7688c2da9a55e767497d81378710194ef80af5",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "N-A",
+      "sha256": "0e00d0313d7bfa640678c6923905bd490ba795a0e6d2a8d44a02b031876ca3d5",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "N-I",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "N-IR",
+      "sha256": "c1916f08da5cc042b5b9e5dac5425f564e6b4ed8201b4cdf9593068fff89f1a9",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "N-M",
+      "sha256": "f8b4cf48bf8a59063dd126a3800dad76c25bdd676a8fe06c2f046633850aa41d",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-01",
+      "sha256": "c9515d8681c1bbc3d133fbf699dab6fb34a441dd85cbb46a77b04c9884b12922",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-02",
+      "sha256": "879d637001049b366d8d3c7ae1f8119b1e9295e042f47c8252b104009b6f72b0",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-03",
+      "sha256": "5fdf4144e7b7dcd49d5d85014848bfaafc8a913ff64d8e60db1e595a36d981fc",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-04",
+      "sha256": "0782c4da13c9323b9ad821594a3ca7bb4738266721d2489fa57e7de70bbf1745",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-05",
+      "sha256": "e50fae892567e5c172760b690127a71b813cf0bcdac272db9af08841f212a6b8",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-06",
+      "sha256": "7b3d0d4f5653e6a100e207ba93ea8686eaec49d2b8f774407ba46fce9810891d",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-07",
+      "sha256": "7a6a504ca93359d11279b62edc3553ddd130dcc212e50661f0ffd3540232c762",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-08",
+      "sha256": "bc3910cd9c306c6681020d728ce67a96813c37e7fa88ee3abcdb01c54a10d405",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-09",
+      "sha256": "0afe362853852085a693f7d20cafd6b6ff1b4016098e4477fcfefce7e9c1a4da",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-10",
+      "sha256": "91eb43dcf4acf4c118975aa21514e1f574c5d004daf65c2b5c54f0902f44fb93",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-11",
+      "sha256": "3d351e3e86172d67477b3153168b31fa72de2a7cf31c7bed56b84960d3a116de",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "B-12",
+      "sha256": "f1aa707f1903e83326ec9921da03fc8e6d0d4ff9efc3437575ea73417414410b",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-01",
+      "sha256": "9be16f5918918830b9c203813e7ca7e5d8c86b33110144b94bc021f0a970aec7",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-02",
+      "sha256": "d98d6737a5e10e7d0fd0ef45d5718e168bd3b2c7e777fae64363d76bc7f4de42",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-03",
+      "sha256": "1f32958d0ee59fc52fac9bb1ef571bb344b71684581a89775bf8b90a01d5e336",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-04",
+      "sha256": "15b1133a60b3466ff89ac0bf836570274bbaad3ed94d1464f076bc35917e5f5b",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-05",
+      "sha256": "f3ab83e147541af25969cb30abcbb40f35cc0bba884b25dbf2813073cce3a725",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-06",
+      "sha256": "d8b1e3fb46224baafcbff573d59ed4526ba46d86b18b2e013bbcebe40c4224ef",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-07",
+      "sha256": "101424eadf695a62a37a3b799410f9bea097c692eca761790e18a4c5c8565aca",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-08",
+      "sha256": "175e7cd536fd6f62b611d4f8c5ac908340c3678e0e1a21edb7dda082d65b085c",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-09",
+      "sha256": "68e72a1242c768bfc08dd716d083b89503f98d94509d48516e18b76f053257ff",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-10",
+      "sha256": "36bbe1fa58f452f245c4110397bf50a3700d5196070d4dd4a0c5fb47f0eb666d",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-11",
+      "sha256": "d7aea0de8af2b523bcc9d13f21e8279193b5ba8273f21c5dd17da25d8fdeba61",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-12",
+      "sha256": "c998118e75ef3d4ffaf604a269f55531c5cc42b9f7475af288551767aa99c587",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-13",
+      "sha256": "2d530253cd51da76b17ae6db3bcbb7e81ca98971fcf65085a321265bbafcdcc5",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-14",
+      "sha256": "e708c522955e946c62d1b87e1bad9ee1928b4e2e958c297356ffc37919535479",
+      "unchanged_since_capture": true
+    },
+    {
+      "id": "P-15",
+      "sha256": "d3ab7450ec3e9e4207c9bd1c16030c5ef9bd7d014fb6227ee5d5fba7186da34f",
+      "unchanged_since_capture": true
+    }
+  ],
+  "output_hashes_except_this_receipt": [
+    {
+      "path": "READING.md",
+      "sha256": "a3599664a0bc12d7566a3cede7575cc02c2b027ce95c2057dc7c10364fd5224e",
+      "bytes": 8641
+    },
+    {
+      "path": "README.md",
+      "sha256": "63bb265a3aad6d8ef6c78f96b33e9d2400db53384a21e29ec77ac09b87747e52",
+      "bytes": 1345
+    },
+    {
+      "path": "continuity.json",
+      "sha256": "dbe7880163564b10830db18b123cb6170809bb89d5e599cbd1ecb934289cd0d2",
+      "bytes": 22329
+    },
+    {
+      "path": "reading-list.json",
+      "sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c",
+      "bytes": 53298
+    },
+    {
+      "path": "task-entries.json",
+      "sha256": "3e5e53feb05d889c1e5e7fd872df4be69849ffb8fc834aa0448bb19b226c0a94",
+      "bytes": 23932
+    },
+    {
+      "path": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.html",
+      "sha256": "165f80f6b5a16881ec7e499f561ad8d5a4c32ffef5eea18368b0eef361d85edb",
+      "bytes": 38630
+    },
+    {
+      "path": "旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "sha256": "6f0ebe4f2261a8967f8de96340c28c2e3f5625c40ab3e0061c6ed9b6edd4a04d",
+      "bytes": 25066
+    }
+  ],
+  "execution_boundaries": {
+    "historical_task_verify_commands_run": false,
+    "host_started": false,
+    "external_research_added": false,
+    "product_changed": false,
+    "prior_west_snapshot_changed": false,
+    "other_worktree_written": false,
+    "commit_or_push": false
+  },
+  "limits": [
+    "Static document checks do not establish product behavior or preserve historical benchmarks as current results.",
+    "No claim of all 192 archive attachments read.",
+    "Full-file hash does not imply full-body semantic reading; declared depth controls coverage.",
+    "Input source snippets were not copied; referenced input hashes identify this review snapshot."
+  ]
+}

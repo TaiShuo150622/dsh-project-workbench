@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "study_id": "M12",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "scope": "Four paper witnesses over explicitly bounded synthetic objects, observations, copies and policies. No real data or product execution.",
+  "common_assumptions": [
+    "Decision actor, authority and policy applicability are supplied by a trusted host boundary, not body fields.",
+    "Object, source and copy identities are namespaced and versioned; hypothetical lineage is explicit, not semantically inferred.",
+    "Operation policies distinguish evidence eligibility, disclosure, retention and acceptance.",
+    "Publication/disclosure linearization assumptions are stated per witness; a cached policy epoch alone does not establish immediate enforcement.",
+    "All retained control metadata is expressly permitted in the synthetic policy; no universal retention right is assumed."
+  ],
+  "result_semantics": {
+    "SUCCESS": "The declared interface preserves the specified scope/ordering/reporting distinction using the required observable witnesses. It does not prove world-wide deletion, physical erasure, model forgetting or business task completion.",
+    "FAILURE": "A listed observable contradicts the frozen case oracle.",
+    "UNSUPPORTED": "The environment explicitly lacks a required collection or enforcement capability. A weaker claim may be reported, but does not satisfy the requested contract.",
+    "UNKNOWN": "Required origin, policy, lineage, cut, enumeration or back-end evidence cannot be established. Retain permitted gap information; do not replace with a success flag."
+  },
+  "cases": [
+    {
+      "id": "RR01",
+      "title": "Correction or withdrawal cannot be bypassed by fresh observation IDs",
+      "applicable_environment": "One declared event history, one extraction worker, one current-view publisher; synthetic source versions only.",
+      "initial_state": {
+        "history": {
+          "id": "h-demo",
+          "incarnation": "i1",
+          "cut": 10
+        },
+        "source": "s@v1",
+        "observation": "o1 supports claim k at source v1",
+        "other_source": "b@v1 independently supports k",
+        "worker": "j1 captured s@v1 at cut10",
+        "correction_scope": "Current interpretation of claim k derived from s@v1 only; not every unrelated claim from that source and not raw-content deletion."
+      },
+      "disturbance": [
+        "At cut11 accept an authorized correction o1→o2 referencing s@v2, validated before retiring o1; preserve permitted historical content.",
+        "Then deliver old o1 again; alternatively worker j1 emits a new ID o3 derived from s@v1 as current.",
+        "Control variant: only withdraw o1, with no explicit opposing assertion or content-deletion instruction."
+      ],
+      "observe": [
+        "Accepted decision identity, policy version and target relation; eligible observation IDs at the current claim key.",
+        "j1 source identity/version and lineage plus captured and publish-time disposition cuts.",
+        "Publisher's admission/rejection receipt and current-view version; raw historical access is checked separately."
+      ],
+      "oracle": {
+        "SUCCESS": "o1 cannot reactivate by late arrival; o3 cannot bypass the frozen policy retiring current use of s@v1 for claim k merely by changing ID. o2 only participates after its explicit validation; b remains independent. Withdrawal alone creates no negative evidence.",
+        "FAILURE": "o1/o3 silently becomes the current version, or b is globally removed, or withdrawal synthesizes a negative assertion.",
+        "UNSUPPORTED": "Publisher cannot bind output to source version or enforce the chosen current-use policy at publication.",
+        "UNKNOWN": "Source lineage, correction scope, issuer authority, or relevant tail is unavailable; do not claim current evidence projection is complete."
+      },
+      "does_not_prove": [
+        "s@v2 is true in the external world",
+        "all independent sources have been found",
+        "raw s@v1 was deleted",
+        "arbitrary rewritten text can be traced semantically"
+      ]
+    },
+    {
+      "id": "RR02",
+      "title": "Blob removal is not declared-copy cleanup",
+      "applicable_environment": "Synthetic finite copy registry version d1 and storage adapters with explicitly stated deletion acknowledgement semantics.",
+      "initial_state": {
+        "scope": [
+          "blob:s@v1",
+          "summary:m1 derived from s@v1",
+          "index-entry:e1",
+          "response-cache:c1",
+          "inline-receipt:r1"
+        ],
+        "policy": "Authorized D1 requires blocking delivery and removing these five representations; control fields decisionId/kind/outcome are allowed, title/text/content hash are not allowed in public audit.",
+        "enumeration": "The five-item list is the frozen required domain; no claim about objects outside it.",
+        "in_flight_producer": "j-old captured s@v1 and dispositionRevision=0 before D1; a new-ID summary write may arrive after blob removal."
+      },
+      "disturbance": [
+        "Accept D1 and make its chosen disclosure boundary effective.",
+        "blob adapter reports removal; summary cache and inline receipt still contain the synthetic payload.",
+        "One required target cannot be queried; a naive aggregator reports complete after the first successful acknowledgement.",
+        "After D1 is acknowledged and a cleanup pass has returned, j-old attempts to write a fresh summary from s@v1 under its old disposition revision."
+      ],
+      "observe": [
+        "Frozen registry/membership version and per-representation action/result receipts.",
+        "Whether a forbidden representation can still be served after the declared boundary.",
+        "Backend method/acknowledgement contract, observed time and remaining required gaps.",
+        "Audit response field list under current disclosure policy.",
+        "Enforced write/publication boundary binds sourceVersion and dispositionRevision; ordering or equivalent rejection witness relative to D1. Distinguish blocked delivery from forbidden new storage."
+      ],
+      "oracle": {
+        "SUCCESS": "Disallowed new delivery is blocked within the declared enforcement contract. Missing cleanup remains partial/unknown; inaccessible targets stay in the denominator. Even all five method receipts support only their stated finite storage semantics. Late j-old write is rejected or processed under D1 before it can recreate a forbidden managed copy or be injected. If only output gating is proven, report that narrower fact; storage cleanup remains partial/unknown while old writers are unresolved.",
+        "FAILURE": "A first blob ACK is promoted to overall cleanup or medium erasure; a denied/missing target is silently removed from scope; forbidden content is copied into the audit response. A check performed only when j-old started is reused to admit its stale write after D1, or a display-only tombstone is treated as a storage write barrier.",
+        "UNSUPPORTED": "Required adapter cannot block delivery or provide the removal/verification semantics stipulated by D1. This includes lack of an enforceable boundary for the required write/publication semantics.",
+        "UNKNOWN": "Required copy identity, enumeration, acknowledgment meaning or residual status cannot be established."
+      },
+      "does_not_prove": [
+        "physical recovery is impossible",
+        "all backups/external copies are included",
+        "a content hash is automatically harmless",
+        "a model that saw the bytes has forgotten them"
+      ]
+    },
+    {
+      "id": "RR03",
+      "title": "Principal revocation and independent release have different dependencies",
+      "applicable_environment": "Synthetic principals A/B with independent authenticated Grants; authorized summary release and later explicit retention decision.",
+      "initial_state": {
+        "source": "s@v1 read by A under GA",
+        "summary": "m@v2 legitimately produced and released to B under RB",
+        "release_dependencies": "RB does not depend on continued validity of GA; RB binds source/transform/output versions, B, use and applicable release policy.",
+        "audit": "B may consume m@v2 but has no right to read source s@v1."
+      },
+      "disturbance": [
+        "Revoke GA only.",
+        "Optionally remove the original source copy while RB remains independently valid under its explicit policy.",
+        "Then accept a new authorized retention decision D2 whose scope explicitly includes m@v2 and whose applicable policy supersedes its continued retention/release."
+      ],
+      "observe": [
+        "Independent grant and release-decision identities, dependency sets and current policy versions.",
+        "Separate outcomes for B consuming m@v2, reading s@v1 and revalidating the original basis.",
+        "D2 authority/scope, resulting delivery restriction and removal receipts."
+      ],
+      "oracle": {
+        "SUCCESS": "GA revocation changes A and actual dependent chains, not B by default. Permitted B consumption can continue while raw evidence/revalidation is unavailable. Once effective D2 applies to m@v2, old lawful release is not treated as a permanent exemption.",
+        "FAILURE": "GA revocation globally deletes the artifact, B's raw access is invented, or RB prevents an applicable authorized D2 solely because publication was previously lawful.",
+        "UNSUPPORTED": "The environment cannot distinguish principal Grant, release decision and content lifecycle.",
+        "UNKNOWN": "Independence or policy precedence is not established; do not assume either blanket preservation or blanket deletion."
+      },
+      "does_not_prove": [
+        "a release is independent just because it was labelled independent",
+        "source correction can never affect a summary",
+        "any external law permits retention",
+        "all consumers can read all ancestors"
+      ]
+    },
+    {
+      "id": "RR04",
+      "title": "Old snapshot and duplicate receipt do not resurrect deleted payload",
+      "applicable_environment": "One bounded old snapshot, one restored query endpoint, one historical command-receipt cache; no real backups.",
+      "initial_state": {
+        "snapshot": "at h-demo/i1/cut20 includes original payload x and full command receipt r",
+        "decision": "D3 accepted at cut21 deletes x in the declared domain; only opaque decision/event identifiers and disposition result may remain",
+        "storage": "The live payload is removed under its declared storage contract, and control D3 is preserved in an authorized separate representation."
+      },
+      "disturbance": [
+        "Restore snapshot20 without its deletion tail, then attempt to open queries or rebuild an index.",
+        "Replay a prior requestId seeking the cached original receipt.",
+        "Control variant: effective disposition state is unavailable or its retention window ended while old snapshots can still return."
+      ],
+      "observe": [
+        "Snapshot/history/incarnation and accepted disposition-tail boundary before reopening.",
+        "Current-policy filtering/redaction of historical receipt output; returned representation/version label.",
+        "Projection lineage, gap list and actual claim of replay coverage.",
+        "Allowed minimal audit fields and declared tombstone/old-snapshot lifetime policy."
+      ],
+      "oracle": {
+        "SUCCESS": "Restored old content is not exposed before applicable control state/tail is established. Duplicate receipts receive a clearly restricted current-disclosure representation. Deleted original bytes are not regenerated, and exact old-log replay is not claimed without its original prerequisites.",
+        "FAILURE": "Old snapshot becomes current authority, duplicate delivery returns deleted text, absent tombstone is assumed to mean no deletion, or a redacted log is called byte-identical full replay.",
+        "UNSUPPORTED": "Restore or receipt endpoint cannot consult the required disposition boundary or enforce current disclosure.",
+        "UNKNOWN": "Current disposition state, compatible checkpoint semantics or original replay input is unavailable; keep the affected access/rebuild closed rather than manufacturing the missing content."
+      },
+      "does_not_prove": [
+        "original business claims remain revalidatable",
+        "all audit metadata may be kept indefinitely",
+        "all external snapshots were erased",
+        "the previous P1/P3 theorems automatically extend to a redacted log"
+      ]
+    }
+  ]
+}

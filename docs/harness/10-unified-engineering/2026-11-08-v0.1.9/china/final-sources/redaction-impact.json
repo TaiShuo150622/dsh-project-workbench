@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "scope": "pattern inventory of 14 later source catalogues; not a security audit",
+  "original_catalogue_sha_references": "manifest.json",
+  "redactable_fields": [
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/0/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/1/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/2/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/3/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/4/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/5/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/6/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/7/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/8/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/9/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/10/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/11/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/12/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/13/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/14/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/15/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/16/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/17/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/18/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/19/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/20/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/21/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/22/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/23/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/24/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/25/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/26/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/27/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/28/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/29/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/30/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/31/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/32/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/33/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/34/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/35/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/36/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/37/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/38/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/39/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/40/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/41/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/design-continuity/reading-list.json",
+      "json_pointer": "/files/42/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/evidence-disputes/sources.json",
+      "json_pointer": "/local_inputs/0/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/evidence-disputes/sources.json",
+      "json_pointer": "/local_inputs/1/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/evidence-disputes/sources.json",
+      "json_pointer": "/local_inputs/2/path",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/0/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/1/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/2/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/3/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/4/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/5/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/6/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/7/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/8/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/9/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/10/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/11/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/12/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/13/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/14/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/15/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/16/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/17/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/18/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/historical-coverage/reading-list.json",
+      "json_pointer": "/entries/19/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/0/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/1/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/2/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/3/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/4/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/5/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/6/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/7/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/8/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/9/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/10/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/11/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/12/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/13/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/14/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/15/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/16/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/17/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/18/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/19/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/20/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/21/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/22/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    },
+    {
+      "file": "west/trusted-entry-map/sources.json",
+      "json_pointer": "/inputs/23/source",
+      "kinds": [
+        "personal_home_path"
+      ],
+      "original_value_intentionally_not_copied": true
+    }
+  ],
+  "fields": 90,
+  "files": 4,
+  "by_file": {
+    "west/design-continuity/reading-list.json": 43,
+    "west/evidence-disputes/sources.json": 3,
+    "west/historical-coverage/reading-list.json": 20,
+    "west/trusted-entry-map/sources.json": 24
+  },
+  "implication": "Raw-copy portability is not redacted-package identity. Validate exact original SHA or a matching DERIVATION original/derived SHA pair.",
+  "source_evidence_modified": false
+}

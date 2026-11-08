@@ -1,0 +1,68 @@
+{
+  "status": "STATIC_NAVIGATION_COUNT_NOT_USABILITY_TEST",
+  "counted_at_utc": "2026-11-08T10:27:33.393180+00:00",
+  "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/README.md",
+  "sha256": "9c224fb87984d386e84663763c7a195f53cc3ac81d8492179a5bdb25a88e65c3",
+  "line_count": 62,
+  "h2_count": 5,
+  "table_count": 2,
+  "table_data_rows": 21,
+  "bullet_items": 7,
+  "explicit_table_or_list_items": 28,
+  "markdown_link_occurrences": 48,
+  "unique_exact_link_targets": 46,
+  "sections": [
+    {
+      "title": "preamble",
+      "table_data_rows": 0,
+      "bullet_items": 0,
+      "link_occurrences": 0
+    },
+    {
+      "title": "先读哪几份",
+      "table_data_rows": 5,
+      "bullet_items": 0,
+      "link_occurrences": 7
+    },
+    {
+      "title": "按问题继续读",
+      "table_data_rows": 16,
+      "bullet_items": 0,
+      "link_occurrences": 28
+    },
+    {
+      "title": "公司、开源项目与公开观点",
+      "table_data_rows": 0,
+      "bullet_items": 7,
+      "link_occurrences": 9
+    },
+    {
+      "title": "对外介绍的简版",
+      "table_data_rows": 0,
+      "bullet_items": 0,
+      "link_occurrences": 1
+    },
+    {
+      "title": "复核入口",
+      "table_data_rows": 0,
+      "bullet_items": 0,
+      "link_occurrences": 3
+    }
+  ],
+  "initial_read_snapshot": {
+    "sha256": "2286016d1b3af726e22d4e3e4b58d6257ab5487596dcad7efaaffd698b9b2071",
+    "line_count": 61,
+    "h2_count": 5,
+    "table_count": 2,
+    "table_data_rows": 20,
+    "bullet_items": 7,
+    "explicit_table_or_list_items": 27,
+    "markdown_link_occurrences": 45,
+    "unique_exact_link_targets": 43
+  },
+  "interpretation_limits": [
+    "只计算本 README 的导航结构，不是全包文件数或独立来源篇数。",
+    "相同链接重复出现按出现次数计；精确目标不做语义去重。",
+    "是否过载是编辑判断，未做用户阅读实验。"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "study_id": "M11",
+  "status": "PASSED_DOCUMENT_CHECKS",
+  "checked_at_utc": "2026-11-08T10:36:12.956247+00:00",
+  "actual_product_execution": false,
+  "cost_experiment_executed": false,
+  "document_validation_executed": true,
+  "validation_method": "Python stdlib: JSON/ID/reference/hash/section checks; read-only git status for server and record. No simulator, runner, model/API or product invoked.",
+  "memo_chars": 4745,
+  "memo_han_chars": 2915,
+  "decision_count": 6,
+  "input_count": 16,
+  "primary_source_count": 6,
+  "inputs": [
+    {
+      "id": "E01",
+      "sha256_matches": true
+    },
+    {
+      "id": "E02",
+      "sha256_matches": true
+    },
+    {
+      "id": "E03",
+      "sha256_matches": true
+    },
+    {
+      "id": "E04",
+      "sha256_matches": true
+    },
+    {
+      "id": "E05",
+      "sha256_matches": true
+    },
+    {
+      "id": "E06",
+      "sha256_matches": true
+    },
+    {
+      "id": "E07",
+      "sha256_matches": true
+    },
+    {
+      "id": "E08",
+      "sha256_matches": true
+    },
+    {
+      "id": "E09",
+      "sha256_matches": true
+    },
+    {
+      "id": "E10",
+      "sha256_matches": true
+    },
+    {
+      "id": "E11",
+      "sha256_matches": true
+    },
+    {
+      "id": "E12",
+      "sha256_matches": true
+    },
+    {
+      "id": "E13",
+      "sha256_matches": true
+    },
+    {
+      "id": "E14",
+      "sha256_matches": true
+    },
+    {
+      "id": "E15",
+      "sha256_matches": true
+    },
+    {
+      "id": "E16",
+      "sha256_matches": true
+    }
+  ],
+  "local_links": [
+    {
+      "target": "sources.json",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../../../handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../composition-review/REVIEW.md",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "exists_in_authoring_or_integration_overlay": true
+    }
+  ],
+  "local_link_resolution_note": "Cross-line sources are read-only in integration and resolve after this folder is imported at the same repository-relative location. Their current hashes are checked; no source copied.",
+  "old_outputs": [
+    {
+      "round": "interop-contracts",
+      "same_as_imported_input": true
+    },
+    {
+      "round": "composition-review",
+      "same_as_imported_input": true
+    },
+    {
+      "round": "coverage-contract",
+      "same_as_imported_input": true
+    }
+  ],
+  "product_paths_clean": true,
+  "outputs": {
+    "sources.json": "1308990819a50a40afde8c1d27038b37b6340f9478831de20ad955d46ceda032",
+    "MEMO.md": "57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e"
+  },
+  "errors": [],
+  "limitations": [
+    "No cost or user-burden measurement.",
+    "No acceptance protocol or adapter execution.",
+    "No independent-model review.",
+    "No HTML rendering requested or produced."
+  ]
+}

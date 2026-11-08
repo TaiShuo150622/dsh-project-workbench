@@ -1,0 +1,85 @@
+{
+  "task": "W16",
+  "status": "STATIC_VALIDATION_PASS",
+  "checked_at_utc": "2026-11-08T10:36:48.889204+00:00",
+  "term_count": 18,
+  "group_count": 4,
+  "chinese_character_count": 1100,
+  "rendered_text_estimate_non_whitespace_characters_including_English_and_table_markup": 1751,
+  "reference_occurrences": 24,
+  "unique_link_targets": 5,
+  "links": [
+    {
+      "reference": "F",
+      "target": "../../FORMAL_MODEL.md",
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "exists": true
+    },
+    {
+      "reference": "A",
+      "target": "../../ARCHITECTURE.md",
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "reference": "M",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "exists": true
+    },
+    {
+      "reference": "C",
+      "target": "../../mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "reference": "X",
+      "target": "../worked-example/EXAMPLE.md",
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/worked-example/EXAMPLE.md",
+      "exists": true
+    }
+  ],
+  "input_hash_checks": [
+    {
+      "relative_source": "FORMAL_MODEL.md",
+      "reviewed_sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "current_sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "matches": true
+    },
+    {
+      "relative_source": "ARCHITECTURE.md",
+      "reviewed_sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "current_sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "matches": true
+    },
+    {
+      "relative_source": "统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "reviewed_sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "current_sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "matches": true
+    },
+    {
+      "relative_source": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "reviewed_sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "current_sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "matches": true
+    },
+    {
+      "relative_source": "west/worked-example/EXAMPLE.md",
+      "reviewed_sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "current_sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "matches": true
+    }
+  ],
+  "issues": [],
+  "glossary_sha256": "7aa65ef833a5df6c5e94c0a3d23f87d44b1c8b6c5d78999225b36fb57cc44586",
+  "inputs_sha256": "612e8b332e116cd3605fe34c0fae94a60d65456fb50a3a060e58d200a796691f",
+  "not_executed": [
+    "No product, schema or model changes",
+    "No host or external API calls",
+    "No proof or experiment reruns",
+    "No browser rendering or usability test",
+    "No commit, push or publication"
+  ]
+}

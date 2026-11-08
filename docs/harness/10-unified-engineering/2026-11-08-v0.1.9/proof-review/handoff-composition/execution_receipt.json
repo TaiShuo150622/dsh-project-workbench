@@ -1,0 +1,18 @@
+{
+  "executed_at_utc": "2026-11-08T09:21:12.014640+00:00",
+  "python": "3.9.0",
+  "code_sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c",
+  "results_sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4",
+  "configurations": 5,
+  "states_sum": 5076,
+  "edges_sum": 14172,
+  "checks": {
+    "conservative-same": true,
+    "conservative-cross": true,
+    "ack-releases": true,
+    "release-first": true,
+    "ack-is-capability": true
+  },
+  "product_execution": false,
+  "external_calls": 0
+}

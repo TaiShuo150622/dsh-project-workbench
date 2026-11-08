@@ -1,0 +1,47 @@
+{
+  "copied_at_utc": "2026-11-08T08:14:02.933222+00:00",
+  "files": [
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/README.md",
+      "bytes": 1532,
+      "sha256": "e374e7c2f9cd237591302e41c9350862c4480cebeb6c5be2ff008b63d5bd9a8e"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/SHA256SUMS",
+      "bytes": 581,
+      "sha256": "9136859fbac049a26ea8334a54aff415267fe37fa9d017b1838efdd7df5717bc"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/inputs.json",
+      "bytes": 8192,
+      "sha256": "83fe0e264065d502eb77a79bf2f89ac3b1142ab9d9202da83b486c60a1a998c8"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/slice-checklist.json",
+      "bytes": 22437,
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/validation.json",
+      "bytes": 6339,
+      "sha256": "9433bab8f8d409a036822b7bcd320fb7f380b229ac0b7b8355e7ee6cfd7456ac"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.html",
+      "bytes": 31893,
+      "sha256": "55c8684f416c8841a98bb9c02cad7a4d01a2f536574f160a2b16c0ed9670f601"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "bytes": 19465,
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23"
+    }
+  ]
+}

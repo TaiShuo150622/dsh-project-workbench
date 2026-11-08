@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "validated_at_utc": "2026-11-08T09:42:26.296085+00:00",
+  "frozen_inputs": 11,
+  "source_files_unchanged": 11,
+  "source_root_revalidated": true,
+  "author_result_bytes_identical": true,
+  "author_secondary_check_bytes_identical": true,
+  "printed_paths_replayed": 31,
+  "reader_local_links": 18,
+  "finding_locations_with_valid_lines": 13,
+  "main_source_sha256": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75",
+  "audit_code_sha256": "d0ab4e27612c738b0b5403451dce8a7476435cc0a6721b1f6186b833200b9cff",
+  "audit_results_sha256": "69a66b802eafaddaf750ff6d4c9537e5dae0451c9ea5a8721bfc0e8207dc6255",
+  "validator_sha256": "201bf87b381166d196f5ab3e38e13adbf52e79fc9e330fb0b0d21a6658afd679",
+  "product_execution": false,
+  "external_calls": 0,
+  "initial_validation_correction": "Initial hash validation detected that the local input explanation reused inputs/README.md, overwriting the frozen copy. The frozen README was restored from its unchanged source, the explanation moved to inputs/INDEX.md, and all 11 input hashes were then revalidated. No author source changed.",
+  "reproducibility_correction": "A repeated process produced different JSON byte order because a set of expected invariant names was iterated without sorting. The comparison dictionary now uses sorted names; the state exploration and invariant formulas were unchanged. Separate subsequent processes are checked for byte equality."
+}

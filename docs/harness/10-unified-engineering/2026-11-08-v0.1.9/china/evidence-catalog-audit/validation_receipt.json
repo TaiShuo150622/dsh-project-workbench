@@ -1,0 +1,12 @@
+{
+  "validated_at_utc": "2026-11-08T08:13:08.363285+00:00",
+  "checks_passed": true,
+  "frozen_catalog_and_review_hashes": 14,
+  "source_entry_json_pointers_checked": 215,
+  "all_url_json_pointers_checked": 247,
+  "identity_relationships_checked": 21,
+  "counts_independently_recomputed": true,
+  "root_and_author_reading_observations_remain_separate": true,
+  "network_requests": 0,
+  "scope": "Metadata consistency only; not source-body or identity verification."
+}

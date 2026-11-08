@@ -1,0 +1,20 @@
+{
+  "version": "0.1.1",
+  "created_at_utc": "2026-11-08T08:21:01.870284+00:00",
+  "original_report_sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe",
+  "corrected_report_sha256": "3a470eb06f8c4205395c44566db2b5f65fbdeb3e50e14d57c9f7c60ed316ee84",
+  "product_changed": false,
+  "tests_rerun": false,
+  "corrections": [
+    {
+      "id": "RF03",
+      "raw_status_preserved": "COUNTEREXAMPLE_REPRODUCED",
+      "interpretation": "representation_gap_not_single_source_OR_retraction_counterexample"
+    },
+    {
+      "id": "FORMAL_CAPTURE_HISTORY",
+      "interpretation": "two_capture_times_same_content_and_q_semantics",
+      "content_sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    }
+  ]
+}

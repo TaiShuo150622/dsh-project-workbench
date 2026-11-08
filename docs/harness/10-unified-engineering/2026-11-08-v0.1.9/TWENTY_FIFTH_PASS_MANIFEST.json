@@ -1,0 +1,53 @@
+{
+  "copied_at_utc": "2026-11-08T09:45:30.207516+00:00",
+  "files": [
+    {
+      "path": "west/design-continuity/READING.md",
+      "source_worktree": "west",
+      "bytes": 8641,
+      "sha256": "a3599664a0bc12d7566a3cede7575cc02c2b027ce95c2057dc7c10364fd5224e"
+    },
+    {
+      "path": "west/design-continuity/README.md",
+      "source_worktree": "west",
+      "bytes": 1345,
+      "sha256": "63bb265a3aad6d8ef6c78f96b33e9d2400db53384a21e29ec77ac09b87747e52"
+    },
+    {
+      "path": "west/design-continuity/continuity.json",
+      "source_worktree": "west",
+      "bytes": 22329,
+      "sha256": "dbe7880163564b10830db18b123cb6170809bb89d5e599cbd1ecb934289cd0d2"
+    },
+    {
+      "path": "west/design-continuity/reading-list.json",
+      "source_worktree": "west",
+      "bytes": 53298,
+      "sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c"
+    },
+    {
+      "path": "west/design-continuity/task-entries.json",
+      "source_worktree": "west",
+      "bytes": 23932,
+      "sha256": "3e5e53feb05d889c1e5e7fd872df4be69849ffb8fc834aa0448bb19b226c0a94"
+    },
+    {
+      "path": "west/design-continuity/validation.json",
+      "source_worktree": "west",
+      "bytes": 78395,
+      "sha256": "58232c41356b43a4c062ddc5022fed7cfdb15b306ae78cba7d5974f9450142f5"
+    },
+    {
+      "path": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.html",
+      "source_worktree": "west",
+      "bytes": 38630,
+      "sha256": "165f80f6b5a16881ec7e499f561ad8d5a4c32ffef5eea18368b0eef361d85edb"
+    },
+    {
+      "path": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "source_worktree": "west",
+      "bytes": 25066,
+      "sha256": "6f0ebe4f2261a8967f8de96340c28c2e3f5625c40ab3e0061c6ed9b6edd4a04d"
+    }
+  ]
+}

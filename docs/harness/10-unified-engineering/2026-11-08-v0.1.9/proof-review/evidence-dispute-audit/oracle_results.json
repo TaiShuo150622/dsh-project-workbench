@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "script_sha256": "e22e347ef910c2b31e3f2c44894b640c36addc7fbfd30be91c3dafa68c3f116f",
+  "subject_sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd",
+  "mixed_event_permutations": 5040,
+  "prefix_key_checks": 70560,
+  "qualified_status_assignments": 20736,
+  "all_six_key_field_isolation_pairs": 4032,
+  "policy_cartesian_checks": 48,
+  "correction_identity_collision_is_atomic": true,
+  "mutation_traps": {
+    "absence_negation": true,
+    "latest_received_wins": true,
+    "positive_only_publication": true,
+    "same_root_erases_conflict": true
+  },
+  "visibility_limit_observed": {
+    "partial_coverage": {
+      "action_permission": "NOT_COMPUTED",
+      "fact_truth": "NOT_COMPUTED",
+      "readiness": "UNKNOWN",
+      "reason": "INCOMPLETE_EVIDENCE_COVERAGE"
+    },
+    "unsupported_complete_claim": {
+      "action_permission": "NOT_COMPUTED",
+      "fact_truth": "NOT_COMPUTED",
+      "readiness": "READY_FOR_AUTH_CHECK",
+      "reason": "CANDIDATE_EVIDENCE_GATE_ONLY"
+    },
+    "classification": "Explicitly disclosed synthetic-input boundary, not a newly found defect."
+  },
+  "limits": [
+    "Fixed consistent observation identities and single-colon synthetic issuer names.",
+    "No world truth, root resolver, ACL, time-window parser or live operation executed.",
+    "Oracle shares synthetic datatypes and key equality, but independently projects immutable event sets; not a general proof."
+  ]
+}

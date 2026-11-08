@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="b7088bf4f899">
+<title>R18：采用成本建议与术语审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#必须修改">必须修改</a></li><li class="l2"><a href="#已查与未查">已查与未查</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R18：采用成本建议与术语审查</h1>
+</header>
+<p>结论：冻结 M11/W16 与主线 v0.1.7 的定向范围内，<strong>未发现 must-fix 语义错误</strong>。按操作选择所需保证，没有被写成调用者可绕过授权或关键证据的轻量开关；普通 Coding 没有被塞进 S1 的 PR merge 规格。词典对观察、证据分量、任务支持、覆盖、权限及接管的区分成立。不建议新增 schema，也不要求每次小编辑重新取得人工批准。</p>
+<p>本报告是模型审查和静态源码核对，不是人类审核、产品测试或性能评估。模型身份按调度为 gpt-6-astra，未独立认证。M11 SHA 为 <code>57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e</code>；W16 SHA 为 <code>7aa65ef833a5df6c5e94c0a3d23f87d44b1c8b6c5d78999225b36fb57cc44586</code>。其余身份见 <a href="INPUT_SNAPSHOT.json">INPUT_SNAPSHOT.json</a>。</p>
+<h2 id="必须修改">必须修改</h2>
+<p>无。下面列的是本轮结论成立所依赖、且原文已经写出的限定，不是要求新增流程。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">对象与定位（均为冻结副本）</th><th style="text-align:left">必须保留的具体限定</th><th style="text-align:left">独立核对结果</th></tr></thead><tbody><tr><td style="text-align:left">M11 MEMO:11–14、53</td><td style="text-align:left">所需保证由冻结操作/政策及能力声明决定；需要强保证而宿主不足时阻断相应操作；不能由调用者提交“轻量模式”绕过</td><td style="text-align:left">与主线按操作、主体、接收范围的 q 及当前准入一致。可以如实提供较弱功能，但不能把原先必需义务改成可选后宣称满足。</td></tr><tr><td style="text-align:left">M11 MEMO:32–35、39–42</td><td style="text-align:left">不相关 gap 不阻断整个项目；相关强制约束/纠正仍须真实采集，访问拒绝不删分母；减少询问不省执行点授权</td><td style="text-align:left">coverage 与当前权限保持不同职责。已有适用范围政策可提供授权，不等于每次人工弹窗。UI 选中、自报 actor 或模型 role=user 均不补授权。</td></tr><tr><td style="text-align:left">M11 MEMO:11；证据 kernel.mjs:34–40；TASKBOOK:35、102</td><td style="text-align:left">普通 Coding 可先形成带来源的补丁、检查和评阅；S1 仅接受普通 PR merge</td><td style="text-align:left">kernel 的 spec 实际要求 <code>kind=pull_request_merge</code> 且 <code>mergeMethod=merge</code>。M11 未将 Coding 测试结果伪造为 merge evidence，也未将新版本关联写成已实现。</td></tr><tr><td style="text-align:left">M11 MEMO:18–21、39、51；证据 rpc-host.ts:129–136、215–222</td><td style="text-align:left">单写者部署约束不是跨进程锁/掉电耐久证明；宿主 owner 域不是逐人批准；映射责任仍在统一层</td><td style="text-align:left">固定源码确有 BrowserAuth 接纳和 exact fetch 非 owner 拒绝分支。这里只支持该路由的静态断言，不证明全部 carrier、安装版本或实际宿主运行。</td></tr><tr><td style="text-align:left">M11 MEMO:11、18；证据 app.js:80–94、116–124，index.js:9、39–56</td><td style="text-align:left">原生会话/差异/review 是可复用入口，不代表完整稳定引用、认证闭包或 Record 接线</td><td style="text-align:left">源码存在会话 retain/嵌入、差异预览、注册 agent 对象检查；project_report 的 review 明确为待评阅而非 accepted/merged。依赖注入列表本身不证明权限、沙箱和持久化的全部保证，M11 sources 已注明。</td></tr><tr><td style="text-align:left">M11 MEMO:46–55</td><td style="text-align:left">追踪、审计和到期义务保留；比较包括失败/超时/拒绝/截断与维护成本；12-run 只是校准，正确 unknown 不计业务交付</td><td style="text-align:left">没有把减少默认组件等同撤销已采纳方向，或用平均收益抵销已知越权。成本论断仍是待测建议。</td></tr><tr><td style="text-align:left">W16 GLOSSARY:20–24、30–33</td><td style="text-align:left">日志接纳不保证内容真；“正支持”是证据分量，任务 Supported 另看完成判据；coverage complete 不等于任务完成；当前 Grant 独立</td><td style="text-align:left">四态行与任务谓词行需按现有相邻上下文阅读。后者已明确 Supported 不是仅有正证据，不存在把两者定义为同一谓词的结论。不同根也未被直接称为独立证据。</td></tr><tr><td style="text-align:left">W16 GLOSSARY:39–43</td><td style="text-align:left">owner/handoff 保留原动作/代际、unknown 与未结算负担；settlement 按证据调整费用；每次行动另核当前授权</td><td style="text-align:left">接管未被当作撤销原效果或费用结清，存在性/取消 ACK 未被当作终止证据。术语清单是阅读辅助，不是每项工作都要实例化全部对象的 API。</td></tr></tbody></table></div>
+<p>三次直接替换检查均被现有文字排除：用轻量标记免掉当前 Grant，违反 MEMO:41、53；把不可读但必需的材料从分母删除，违反 :34；把普通 Coding 任务改名成 S1 merge，违反 :11 且不满足 kernel spec。它们是本轮纸面推导，不是执行了三个测试或发现三个产品漏洞。</p>
+<h2 id="已查与未查">已查与未查</h2>
+<p>完整阅读 M11 MEMO、W16 GLOSSARY 及各自来源/验证元数据；以 R16 已读主线为基线，阅读冻结 v0.1.7、FORMAL、ARCH 的全部差异，并重读涉及对象、当前准入、动作链和上下文的段落。v0.1.7 新增 M10/W14 的边界与 R17 一致。</p>
+<p>另冻结六份定向依据并按 <a href="EVIDENCE_SNAPSHOT.json">EVIDENCE_SNAPSHOT.json</a> 所列范围静态阅读。其中 rpc-host.ts、app.js、index.js 三份源码及 W07/W10 两份文档与作者引用 SHA 完全一致；kernel 直接检查规格入口。没有把作者 validation 的 PASS 当作语义 oracle，没有重复运行产品、形式模型或成本实验。</p>
+<p>本轮不全量复核 M11 的 16 份历史输入，也未联网重查工具搜索文档、AFlow、Temporal 或上游当前版本；不证明沙箱、持久化、权限链全面正确。主线三份文件冻结为本回执输入，后续补丁不自动纳入。没有修改作者源、产品或旧轮结果，没有提交、推送。哈希与范围回执见 <a href="verification_receipt.json">verification_receipt.json</a>。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

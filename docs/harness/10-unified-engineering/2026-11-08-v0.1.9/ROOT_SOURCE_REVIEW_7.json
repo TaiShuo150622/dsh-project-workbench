@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "accessed_at_utc": "2026-11-08T09:23:25Z",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "PROGRESS-root-fairness-and-real-time",
+      "title": "Specifying Systems, Leslie Lamport",
+      "url": "https://lamport.azurewebsites.net/tla/book-21-07-04.pdf",
+      "location": "Selected returned text: PDF pages 123-124 (printed 106-107), 139-141 (printed 122-124), 147-148 (printed 130-131); no full-book reading",
+      "root_review_note": "Weak/strong fairness distinguish continuous versus repeated enabling. Real-time upper-bound conditions and unbounded time progress are separate requirements; merely adding fairness does not supply a deadline. Root checked these definitions, not every external citation or the product mapping.",
+      "status": "primary_source_selected_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "INTEROP-root-mcp-task-errors-and-cancel",
+      "title": "MCP Tasks Extension specification 2026-07-28",
+      "url": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+      "location": "Task Status; Task Creation; Task Cancellation; Protocol Errors; Task Execution Errors, returned lines 149-155, 269-270, 350-359, 705-754",
+      "root_review_note": "The task status completed includes a CallToolResult with isError true; failed is reserved for JSON-RPC execution errors. Cancel success acknowledges the request but need not stop work or eventually become cancelled. Expired task disappearance is allowed. These are protocol claims, not observed server behavior.",
+      "status": "versioned_primary_source_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "INTEROP-root-a2a-v101-subscription",
+      "title": "A2A Protocol v1.0.1 specification",
+      "url": "https://a2a-protocol.org/v1.0.1/specification/",
+      "location": "Selected returned text, sections 3.1.3-3.1.6 and 3.2.2; version 1.0.0 was viewed first as discovery and is not used as the frozen release",
+      "root_review_note": "CancelTask attempts cancellation and returns updated state without guaranteeing cancellation success. SubscribeToTask starts with current Task and ends at a terminal state; it is not a guaranteed historical-event replay. The normal response behavior is further qualified by returnImmediately configuration. Root does not infer business acceptance or durable external effects from these states.",
+      "status": "versioned_primary_source_reopened",
+      "runtime_tested": false
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "task": "W14",
+  "status": "PASS",
+  "example_status": "ILLUSTRATIVE_NOT_RUN",
+  "frozen_at_utc": "2026-11-08T10:16:42.666174+00:00",
+  "scope": "document-only integrity checks plus explicitly listed author review; no runtime or formal verification",
+  "checks": {
+    "status_marker_present": true,
+    "all_non_whitespace_characters_including_heading_table_diagram": 2007,
+    "han_characters_including_heading_table_diagram": 1503,
+    "within_2500_even_with_non_Han_and_Markdown": true,
+    "state_table_data_rows": 7,
+    "mermaid_diagrams": 1,
+    "code_fences_balanced": true,
+    "two_endings_present": true
+  },
+  "source_checks": [
+    {
+      "id": "EVIDENCE",
+      "hash_matches": true,
+      "line_ranges_valid": true
+    },
+    {
+      "id": "HANDOFF",
+      "hash_matches": true,
+      "line_ranges_valid": true
+    },
+    {
+      "id": "SLICES",
+      "hash_matches": true,
+      "line_ranges_valid": true
+    },
+    {
+      "id": "VISION",
+      "hash_matches": true,
+      "line_ranges_valid": true
+    }
+  ],
+  "links": [
+    {
+      "file": "README.md",
+      "target": "EXAMPLE.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "validation.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "sources.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "../evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "../../proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "file": "README.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    }
+  ],
+  "author_semantic_review_notes": [
+    "全部人物、角色、权限、运行、产物、批准均在开头限定为假设；没有声称运行或用户批准。",
+    "r1/v1/s1/c1 的历史检查不自动证明 v2/s2/c2；样例通过不等于全部业务规格为真。",
+    "相反观察在最初都声明同一冻结键；后续核实日志错挂 r0 后追加授权更正。没有将已知不同键直接归为矛盾。",
+    "同根重复不是新独立证据；来源认证不保证内容正确；仅有正支持不自动满足发布条件。",
+    "取消 ACK、旧实例终止、目标迟到写入阻断、计费终止和结清分别陈述。",
+    "接管原 o1/a1/g1，unknown、原预算占位和待结算负担连续；当前查询/结算权限另查。",
+    "结尾 A 是条件假设，需要终态、旧代际效果约束、结算和最终阶段验收；结尾 B 仅获得指定审阅者在 t 的读取观察，不宣称全任务完成。",
+    "新库引发保持/小修/替换及采用时机提案；收益和迁移不被写成已验证或已经批准。",
+    "该例不是每次小编辑的强制流程，不改变现行 S1 能力/I04 施工范围。"
+  ],
+  "errors": [],
+  "mermaid_rendered": false,
+  "artifacts": [
+    {
+      "file": "EXAMPLE.md",
+      "sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7"
+    },
+    {
+      "file": "README.md",
+      "sha256": "9589fa089d28b6cfb22eba945f4ff8d21bfa4abb96bedb315c31201ea703a3b2"
+    },
+    {
+      "file": "sources.json",
+      "sha256": "ac5c7ab13432b83caae8a1d260cc2330e6961bb97b372cf4796f483a6e8abd8f"
+    }
+  ],
+  "not_performed": [
+    "product code modification",
+    "API calls",
+    "user authorization",
+    "model experiments",
+    "host execution",
+    "commit",
+    "push"
+  ]
+}

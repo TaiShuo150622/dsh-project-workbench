@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-11-08T09:45:30.207942+00:00",
+  "old_version": "v0.1.0",
+  "current_version": "v0.1.1",
+  "reason": [
+    "C10-01 authorization scope",
+    "C10-02 explicit R=0 and no Lean composition"
+  ],
+  "model_or_result_changed": false,
+  "files": {
+    "责任接管与负担连续性讨论稿-v0.1.1.md": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+    "责任接管与负担连续性讨论稿-v0.1.0.md": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75"
+  }
+}

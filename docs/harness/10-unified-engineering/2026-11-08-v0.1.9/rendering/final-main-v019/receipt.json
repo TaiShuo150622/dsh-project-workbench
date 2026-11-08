@@ -1,0 +1,14 @@
+{
+  "batch": "final-main-v019",
+  "records": [
+    {
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.9.md",
+      "source_sha256": "8cdb8c436c5984035adcdc2c6bd0e1e8118596f18d4d9c0b3c2d91a4dcb8fbad",
+      "offline": "统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.html",
+      "offline_sha256": "c62582e4d7663e7b0b07ebcab7d4355881497b137606824f8f5545a77efd6fe3",
+      "diagrams": 6,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T12:42:50.364967+00:00"
+    }
+  ]
+}

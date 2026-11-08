@@ -1,0 +1,131 @@
+{
+  "copied_at_utc": "2026-11-08T10:42:10.326030+00:00",
+  "files": [
+    {
+      "path": "proof-review/adoption-glossary-audit/EVIDENCE_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 3374,
+      "sha256": "013655ea8ed35290942e3c19ee1c10d670eb5f757ae785939c49fb0d5c3cd78c"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/INPUT_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 3051,
+      "sha256": "9fc329b74f2a8c011c4465f88b8e9971f086d90bb739e9b10b933491e6365180"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/OUTPUT_HASHES.json",
+      "source_worktree": "proof-review",
+      "bytes": 1986,
+      "sha256": "1fe640dea315b78bfff1dae4db77ea6589b0cb21395a073b6646d79dd3b21982"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 5483,
+      "sha256": "32d10bfc1a2f921571ae2b6d324f608b6965f8deac5615be6a0dba094e1447e4"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/TASKBOOK.md",
+      "source_worktree": "proof-review",
+      "bytes": 19784,
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/TRUSTED_MAP.md",
+      "source_worktree": "proof-review",
+      "bytes": 11798,
+      "sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/app.js",
+      "source_worktree": "proof-review",
+      "bytes": 19626,
+      "sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/index.js",
+      "source_worktree": "proof-review",
+      "bytes": 7295,
+      "sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/kernel.mjs",
+      "source_worktree": "proof-review",
+      "bytes": 26038,
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/evidence-inputs/rpc-host.ts",
+      "source_worktree": "proof-review",
+      "bytes": 15605,
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 365,
+      "sha256": "f6c2a1bb0435391682e6a01a737624e566cf4f764f7104e919f1d0fb283f3fbc"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/M11/MEMO.md",
+      "source_worktree": "proof-review",
+      "bytes": 11186,
+      "sha256": "57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/M11/sources.json",
+      "source_worktree": "proof-review",
+      "bytes": 21577,
+      "sha256": "1308990819a50a40afde8c1d27038b37b6340f9478831de20ad955d46ceda032"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/M11/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 4550,
+      "sha256": "d91a355360bd21dbad54845f56d2570995a0e2c8b54e493317d5224ca7cf39bd"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/W16/GLOSSARY.md",
+      "source_worktree": "proof-review",
+      "bytes": 4867,
+      "sha256": "7aa65ef833a5df6c5e94c0a3d23f87d44b1c8b6c5d78999225b36fb57cc44586"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/W16/inputs.json",
+      "source_worktree": "proof-review",
+      "bytes": 3644,
+      "sha256": "612e8b332e116cd3605fe34c0fae94a60d65456fb50a3a060e58d200a796691f"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/W16/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 3711,
+      "sha256": "9d4d97c73e6872f0a3391c4451f19df08c188ae7af83308c7f5de6c70f9a0257"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/root/ARCHITECTURE.md",
+      "source_worktree": "proof-review",
+      "bytes": 25678,
+      "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/root/FORMAL_MODEL.md",
+      "source_worktree": "proof-review",
+      "bytes": 37579,
+      "sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/inputs/root/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "source_worktree": "proof-review",
+      "bytes": 54326,
+      "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82"
+    },
+    {
+      "path": "proof-review/adoption-glossary-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4169,
+      "sha256": "b0e9e9583ef8e8157489b3655fade06a43cb82a452256820e64e6c3b9f7ab373"
+    }
+  ]
+}

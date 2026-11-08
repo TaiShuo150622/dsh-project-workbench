@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "status": "DOCUMENT_CHECKS_PASSED",
+  "checked_at": "2026-11-08T09:53:19.699165+00:00",
+  "scope": "Static review artifact validation; no model, adapter, product, API or service execution",
+  "checks": {
+    "body_unicode_characters": 2462,
+    "body_limit_2500": true,
+    "sources": 11,
+    "counterexamples": 3,
+    "source_references_resolve": true,
+    "local_links_resolve": true,
+    "all_constructed_cases_not_run": true,
+    "product_tracked_diff_empty": true
+  },
+  "file_hashes": {
+    "REVIEW.md": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+    "counterexamples.json": "2636353f0cbf6c8c801c7c4b546537717341f588db50d78cf0f756169378d895",
+    "inputs.json": "0cb10b502ce5cccb54e31bebc46cca8cf76d248769e084ec661daa6c6d2a45e9"
+  },
+  "limitations": [
+    "No general composition theorem proved.",
+    "No independent-model review; this is the mechanisms agent reviewing another context of the same parent model.",
+    "Core document findings refer to the frozen SHA snapshots; root reported the Assessment integration fix in progress."
+  ]
+}

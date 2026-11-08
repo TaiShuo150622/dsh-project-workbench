@@ -1,0 +1,23 @@
+{
+  "started_at_utc": "2026-11-08T10:23:07.505852+00:00",
+  "screen_session": "c12-repro-20261108-1010-export",
+  "launch_exit_code": 0,
+  "execution_mode": "detached screen; sequential research-only commands; no retries",
+  "command_template": "screen -dmS SESSION python3 run_reproduction.py --lean LEAN_BIN --jar TLC_JAR",
+  "initial_launch_observation": "returned 0 but no running session, model outputs, or driver-created directories; no completed work was rerun",
+  "instrumented_launch": {
+    "session": "c12r",
+    "exit_code": 0,
+    "started_at_utc": "2026-11-08T10:24:47.150635+00:00",
+    "entry_marker": "execution-copy/LAUNCH_ENTERED.txt",
+    "stderr": "execution-copy/driver.stderr.txt"
+  },
+  "sandbox_launch_failure": "screen log: Cannot exec '/bin/sh': Operation not permitted",
+  "unrestricted_screen_launch": {
+    "session": "c12r",
+    "started_at_utc": "2026-11-08T10:25:43.470256+00:00",
+    "exit_code": 0,
+    "same_execution_copy": true,
+    "prior_model_runs": 0
+  }
+}

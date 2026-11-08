@@ -1,0 +1,19 @@
+{
+  "EVIDENCE_SNAPSHOT.json": "5cd3d41db9c78c4fff52a57f763d8370f3341739d6585fd7410cab4bc8b7039b",
+  "INPUT_SNAPSHOT.json": "1720e6ddc9ab39a2d0610e811fbd8d90a6ccc21a2a7b9325d964040b5b117ae3",
+  "REVIEW.md": "510aedb515afe75e8fa39c35dfedb5f8e6b17b9c8c92444a4c17bd9a3853b8f1",
+  "evidence-inputs/china/handoff-audit/REVIEW.md": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861",
+  "evidence-inputs/mechanisms/composition-review/REVIEW.md": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+  "evidence-inputs/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+  "evidence-inputs/resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1.md": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35",
+  "evidence-inputs/west/intent-coverage/MEMO.md": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+  "findings.json": "6d6f5a33295bd3a2d501d61c82e010f64f400fbb8b8192a6792297f8b5bfb1d7",
+  "inputs/ARCHITECTURE.md": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+  "inputs/DESIGN_RECONCILIATION.md": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+  "inputs/EVIDENCE.md": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+  "inputs/FORMAL_MODEL.md": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+  "inputs/README.md": "0d8236215e720c77e9fb058adb8471bee74059264ce7d4416eea7e210e5506aa",
+  "inputs/west/decision-brief/MEMO-v0.1.1.md": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+  "inputs/统一Harness工程与形式化基础讨论稿-v0.1.6.md": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+  "verification_receipt.json": "7875c8c32ca71c9f624c35651404c53a54bba93757661768fb83d5a411fb388c"
+}

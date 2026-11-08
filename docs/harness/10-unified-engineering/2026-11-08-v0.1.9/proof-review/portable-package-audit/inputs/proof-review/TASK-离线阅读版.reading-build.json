@@ -1,0 +1,9 @@
+{
+  "source_sha256": "530908587a3177597d8ca16a26a726e27db01684e3c85126d1ee2786ac3b7b63",
+  "source_sha1": "1b5d0cd39a8eb2cd665275e72f498d0f3594aa32",
+  "output_sha256": "1bebc2f8afb313c29a12e482a6195d245179a5a9aab96cd702e685a0a8bece46",
+  "reference_definitions": 0,
+  "resolved_uses": 0,
+  "transform": "standard reference links expanded and angle-bracket destinations normalized in rendering input only; original Markdown/source metadata preserved; responsive wrapping CSS",
+  "offline_raw_mermaid_mode": true
+}

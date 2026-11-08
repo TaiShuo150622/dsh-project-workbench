@@ -1,0 +1,115 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 127 and seed -7273834024283318239 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 82714] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/relay-durability-audit/run/DurableRelay.tla
+Parsing file __LOCAL_TMP__/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module DurableRelay
+Starting... (2026-11-08 00:29:56)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-08 00:29:56.
+Error: Invariant NoLostSent is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ live = FALSE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 0
+
+State 2: <Start line 32, col 10 to line 34, col 71 of module DurableRelay>
+/\ live = FALSE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "check"
+/\ durable = FALSE
+/\ calls = 1
+
+State 3: <Check line 36, col 10 to line 40, col 78 of module DurableRelay>
+/\ live = FALSE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "append"
+/\ durable = FALSE
+/\ calls = 1
+
+State 4: <Append line 42, col 11 to line 44, col 73 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "flush"
+/\ durable = FALSE
+/\ calls = 1
+
+State 5: <TargetWriteFailure line 50, col 23 to line 53, col 74 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 1
+/\ error = TRUE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 1
+
+State 6: <RetryDelivery line 69, col 18 to line 71, col 86 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 1
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 1
+
+State 7: <Start line 32, col 10 to line 34, col 71 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 1
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "check"
+/\ durable = FALSE
+/\ calls = 2
+
+State 8: <Check line 36, col 10 to line 40, col 78 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 1
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "returned"
+/\ durable = FALSE
+/\ calls = 2
+
+State 9: <MarkSent line 60, col 13 to line 62, col 75 of module DurableRelay>
+/\ live = TRUE
+/\ failures = 1
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = TRUE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 2
+
+State 10: <Crash line 77, col 10 to line 80, col 63 of module DurableRelay>
+/\ live = FALSE
+/\ failures = 1
+/\ error = FALSE
+/\ crashes = 1
+/\ sent = TRUE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 2
+
+81 states generated, 51 distinct states found, 4 states left on queue.
+The depth of the complete state graph search is 10.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 3).
+Finished in 00s at (2026-11-08 00:29:56)

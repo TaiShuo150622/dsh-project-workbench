@@ -1,0 +1,602 @@
+{
+  "scope": "public archive markdown inventory, not all attachments",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "roots": [
+    "01-vision",
+    "02-methods",
+    "04-memory",
+    "06-dag",
+    "07-remote",
+    "08-browser",
+    "09-extensions"
+  ],
+  "files": [
+    {
+      "path": "docs/harness/01-vision/CONTENTS.md",
+      "lines": 9,
+      "sha256": "ff1476f66e676dab7cc8dd1ba5320aa07bb88c65fefd3b072baf93b2c206682e",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-deep-research-and-resources.md",
+      "lines": 210,
+      "sha256": "b668e91ffe8849d80f1567e24e5cda4043571a3c3c28aa0448df284b557095d8",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.1.md",
+      "lines": 472,
+      "sha256": "a05e63afe1e488d8ebb51d79e9ab90e81c3eb6c1816cd85edf2e974e67222cbd",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.2.md",
+      "lines": 691,
+      "sha256": "d0193c304797b47137109029d5e9f53439bdc82e2c3b1668bdf1ff3a021cac10",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/01-vision/harness-discussion-v0.3.md",
+      "lines": 907,
+      "sha256": "673e7c5f272d4209cb7332d89e746f56c70c4ebd92a712dfef7385edc74b3ec1",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/01-vision/ten-agent-repositories-harness-review.md",
+      "lines": 233,
+      "sha256": "9c4756293cfb18095d60875373e11d9e9c063bf073a73c95c91b92b3de79e129",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "lines": 258,
+      "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "lines": 394,
+      "sha256": "fe0554a572cb807fae2fd711b1c5466ac346198ebf362baf90319ce88e77922d",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-19-大型软件架构讨论与待续.md",
+      "lines": 24,
+      "sha256": "c6f9c381b3affbf17377b2e9a0fc4d1f17e5bf4e44c7c283564d690d415b4b67",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "lines": 257,
+      "sha256": "cce4c41da7d1baae4db15d16c04b2ff4eb40404bf443019a8293e1abae21ca0d",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "lines": 58,
+      "sha256": "1c0618747f40732104f71f59579bfeec8a83f461428867e74f95a39739734098",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "lines": 251,
+      "sha256": "63f59f0d7c347a09bf9f6ed254cfdd83c915bc04c51a7840073666f8e9ca57f6",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/02-methods/CONTENTS.md",
+      "lines": 10,
+      "sha256": "1436ba6bca25dfc2fac21c56508215b3301a67c76b7fbbec792e5189ff92bfd1",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/CONTENTS.md",
+      "lines": 12,
+      "sha256": "ed8606d654f8ae6a2b71d8aa5f52a70ddbc0e8453d3e4504bb73429acae9a50f",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/DeepSeek-SuperAgent原文与记录机制核查-2026-10-31-公开整理版.md",
+      "lines": 79,
+      "sha256": "b8b14111cea1e35538f706c4629b1e0773cc973eb9fec0b6c104f2416b4d912e",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/DeepSeek上下文组织与首轮输入核查-2026-10-31-公开整理版.md",
+      "lines": 108,
+      "sha256": "17a1d2e0fe4c030babba1ad75c74595388ef568e6f870c06092e0f44ed4bf4ba",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "lines": 413,
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.2历史稿-公开整理版.md",
+      "lines": 296,
+      "sha256": "3e5a24617599f84247b78ee0e4600aa61c3d2ae9cae473fa80771ae1d4a2603a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/任务条件化上下文组装-论文与运行时-2026-10-31-公开整理版.md",
+      "lines": 122,
+      "sha256": "97b2c282b89bfce110da94fab79ce685b3a5c61185f94b06fd2b797bf3e0ff9b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "lines": 265,
+      "sha256": "b9f2859a5e7496770d7e545988d18149c197b9a53e562d8161c4d1eff5b9e88d",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/独立上下文组装器-认知依据与成本验收-2026-10-31-公开整理版.md",
+      "lines": 186,
+      "sha256": "5a89329c1c1a377b6c0ddd9092c057531c0940858bfc0d32fd2bfc2beb03edcd",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/04-memory/自动本体与会话记忆相关研究-2026-10-31-公开整理版.md",
+      "lines": 141,
+      "sha256": "cfe3d0b1bac49ce9dd32a7af9f6ba0f2173ada6d83ab8a63b3d2871719afd9b0",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/CONTENTS.md",
+      "lines": 20,
+      "sha256": "025901ca7d0be881482c4d737171c281f99dac245c3b03d27601d6135ac720c9",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/00-总则.md",
+      "lines": 18,
+      "sha256": "0499ff62af47d3bf4f566abcd96cf8bb486db77e2804ee5e51145a6e7b4f1394",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "lines": 24,
+      "sha256": "241b08a108e0447b84dafbebcef061f09096c02f0834a8349828816736724c66",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "lines": 30,
+      "sha256": "d0d0c6eee0170c322981454475ac7adca985c0358b73140a6bea7aee3a8dde90",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-上传清单与分轮提示.md",
+      "lines": 61,
+      "sha256": "27ba629bcde15a167b4133202bb1435afdac810b6352ec002c41ed1b79a4256a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-前端结构需求.md",
+      "lines": 28,
+      "sha256": "12290c6cdb1a6cf1d8d211fe135a853bbd1292b4862fccd211a72b009b9d459e",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/03-视觉参考收集模板.md",
+      "lines": 43,
+      "sha256": "7174c6f4d760f44ae1c5bfdf0720bc8076a6c0d3980e56ee6ba28a639c484e9b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/04-组件库规格.md",
+      "lines": 411,
+      "sha256": "d2210d8451f50775883606781de43f25863e698600f6fc65cd2aba25fb0505e5",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/05-构建动效讨论稿.md",
+      "lines": 123,
+      "sha256": "655063ce87532114170a0731df00e19d8b3909b1bb8797b29cfd4257ac01de10",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/06-布局引擎规格.md",
+      "lines": 33,
+      "sha256": "688f463d85919c9acd884299d4afafd8557e52447c2e18b763c5802f9fbdc214",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "lines": 79,
+      "sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "lines": 136,
+      "sha256": "9b38bbbe3eda3209313b3663061406cb35cbb7a623ed688fa32ef88c5723877a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/09-面板头重做.md",
+      "lines": 182,
+      "sha256": "754840e8db7607d3358964c1c56ad6da0ae376d0710646ce9612dd5889e57d14",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "lines": 387,
+      "sha256": "4e2a489f520196d89f833778395edddad8183c78484b711581650fae96812280",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/README.md",
+      "lines": 32,
+      "sha256": "15b74b833255d28b281b7e1709702d0cf2dd847351a2a2d293b42cd555df6a63",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/current/docs/design/dag-detailed/layout_spike.md",
+      "lines": 39,
+      "sha256": "2c20533c6866dee5aaf77f59406a735cb9b13863ecd61a85462bf577d083dada",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/06-dag/history/dsh-complete/docs/design/dag-detailed/09-面板头重做.md",
+      "lines": 196,
+      "sha256": "96eb78018cba9c5409b80916e573a740ff234f58fc964b94b0353ed18e2db14b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/07-remote/CONTENTS.md",
+      "lines": 9,
+      "sha256": "b8926d402b7c80e9bce2dd59a36291323f05a40f07b316f668cb803fc13cafa0",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-rc.5-插件兼容测试记录-2026-11-04.md",
+      "lines": 91,
+      "sha256": "9224d4b98b0997fa0b39a0f598b364f79bc96b165050acb27c8487b834925b96",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.0.md",
+      "lines": 415,
+      "sha256": "84bcf5ded7d7d4dce2e412c7ecfc120272241400343761a11c8f4e2aa4687e01",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "lines": 423,
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/CONTENTS.md",
+      "lines": 55,
+      "sha256": "e10eb6100de9976243778a60c3954ce30da4b09602e4a92e620bed6a00a151e7",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/APPROVAL.md",
+      "lines": 121,
+      "sha256": "9d2993865c8021cb6395b338f6f069139c946001d81d74a47b5165193889d031",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "lines": 128,
+      "sha256": "81e0bee853e3be6d02dbffefc6ba3ac7886159e7eeebbf4b138a69a8283db040",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/AUTO-UPDATE.md",
+      "lines": 94,
+      "sha256": "947fbd5d6819bebcb54c9a3ecd3b7916110fc9d8bcaf185ef36792bcfdbc581b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/BROWSER-ROADMAP.md",
+      "lines": 56,
+      "sha256": "457253e78673f16d12f8077eac92f0bd7eae3f419330e2c1a38658511b3ac52b",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CAPABILITIES.md",
+      "lines": 208,
+      "sha256": "16363ec71243bb81dc38716cf2355ac2cc6b9097dd3e620dfd8475ac1571e683",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CODE-REVIEW-SELF.md",
+      "lines": 170,
+      "sha256": "07d4554a23e5853b0c4bdb16daf2ecae5cf2257be429ea101418d6100e3c2d1c",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CODEX-TASK-STRUCTURE-REVIEW.md",
+      "lines": 102,
+      "sha256": "2c1b63b9d43094a407d6af707f3602b32c44c3d4bd05d481311e81118fa70fc8",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/COMPUTER-USE-PLUGIN.md",
+      "lines": 41,
+      "sha256": "94cba3f002586d5923dd34801189a26f7de001d57c0074c1a9541f6b329ffaa9",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONFIG.md",
+      "lines": 51,
+      "sha256": "2aabe864b71e37f01c50986b9a62fbeef2c312f187f459bc2fcbc7548fd50d90",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTEXTS.md",
+      "lines": 129,
+      "sha256": "45b3d4eca958b2466ca3c77e29d93addb6be6dd85881e308d4f5e4631c24baf8",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/CONTRACTS.md",
+      "lines": 62,
+      "sha256": "4e10c3b418af6b2ff79f755ec4fb81c62018de32d7b24592c17d647048ff0560",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DESIGN.md",
+      "lines": 358,
+      "sha256": "2fa64522705255c96c929b85ce528184de8f79a22bef378ba2bab84c64c3c42a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "lines": 1376,
+      "sha256": "f09901c22204e1c23aea5cd8fa4170e6d2f0fa5568bb80f909b63fa56d4b3c3d",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR.md",
+      "lines": 192,
+      "sha256": "eb6b713b8906893cea68b0e5b7d04834b4cb21575a55a6b4862edd14ba815ca1",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/EDGE.md",
+      "lines": 51,
+      "sha256": "412422a6cb5e2fd1ceacf1f674d05c6e0f3a34864ddfb91515089014a30124e9",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-PLAN.md",
+      "lines": 58,
+      "sha256": "cca2fafe96247bcec960d7bd03657ed539499b455b24a415426b0042275c866f",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-1.md",
+      "lines": 25,
+      "sha256": "0fc4fdd1f556fa28db8be2b5ee594c726fb0764b67abebf463627d7c10f47a79",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HARDENING-QUEUE-2.md",
+      "lines": 33,
+      "sha256": "1714be08362aa067f9c1b7f63c817912c0baae99dd589cb3893808427f6193fb",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/HEADLESS.md",
+      "lines": 1214,
+      "sha256": "5f8f3626f5d23a38061492025323cbe48257959ca18b66f573f67ab77d56ed75",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LEASES.md",
+      "lines": 118,
+      "sha256": "8b08d98fa117607e21c30f2814d26f87ac9a2e0d82f3084073f5194ef00c9ece",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/LIFECYCLE.md",
+      "lines": 39,
+      "sha256": "bce5208260614bd8ea310637898f0b23ea83d2a566a4d042a68aedf107df0aaa",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-MONITOR-QUEUE.md",
+      "lines": 36,
+      "sha256": "5aaf9a2aa2a55fe1c63143b63f5c0476f78cab30ccc79c0b3b9ab6031832ee61",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MEMORY-QUEUE.md",
+      "lines": 34,
+      "sha256": "98b4a9d6907cf6d609ae204db4b71065d59f771097f55dda259ead4c67cb1293",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "lines": 983,
+      "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OPEN-SOURCE-NOTES.md",
+      "lines": 70,
+      "sha256": "f9dcd6f55bd0b8dde9dbe659c129bdbb43d8203385580c73c6a699e972363e88",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OPERATION-LOG.md",
+      "lines": 140,
+      "sha256": "859196d31aec9193ee71a33e5c669ee5395543c1dc51509bca1ba6f5aea285ca",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/OVERLAY.md",
+      "lines": 56,
+      "sha256": "0dadbed838693365cd167b929c30254878237ad4f597ea73671b6824da862aad",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PASSWORD-MANAGEMENT.md",
+      "lines": 702,
+      "sha256": "33d8194b5f9c96a086b7d7f3c09f5d5045d44bd7c98ca26cf5608381cb0e1e34",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PLATFORM-AUDIT.md",
+      "lines": 269,
+      "sha256": "82d293421b73e67e8041e6ce2264db28a2b7a5d007fdc6011ab80f33cc77eb2a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "lines": 679,
+      "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-2.md",
+      "lines": 42,
+      "sha256": "b877025a5a94f6960823d8f497a95451131d5fa4a2c57a1f006b420421317ab7",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-3.md",
+      "lines": 30,
+      "sha256": "60b023e20d6e2c8da391b4d5f6e066f9a34af37e7ac9732cd02d8be88542cc5c",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-4.md",
+      "lines": 25,
+      "sha256": "fcf8839d0492c80c5a235a7d9c3e2b52e43f4c77630340150409a8aaed81ec75",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-5.md",
+      "lines": 23,
+      "sha256": "65858646a27b1744b0f2510546408689fd8ff09ce343344dc085929b375def89",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-6.md",
+      "lines": 29,
+      "sha256": "9c4faa7b64733110e34b37892e4528a8815543a0321788c37cfdd0765456c5af",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE-7.md",
+      "lines": 31,
+      "sha256": "f5d8a23a1357b4761a07b665b2d97ed002ed87d48ee66f14b82d940545f101b9",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/REFACTOR-QUEUE.md",
+      "lines": 47,
+      "sha256": "a5a04b4cbc81b2bc7e9069a12ae1d943dcafeb80bc0ad3ee2d4b62e21845bd40",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/ROADMAP.md",
+      "lines": 170,
+      "sha256": "cd3656386d360b931077d2d48e30c3fcd540c8c408c74efc77e5ba52848006e6",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SAFARI-SPIKE.md",
+      "lines": 42,
+      "sha256": "7b1c40c03ca9874192125dc9b1a3a86b167523815e741bcbf9ee871c92ee9413",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SCREENCAST-SPIKE.md",
+      "lines": 159,
+      "sha256": "9a6d59d40f7e5c7eaf44a6735a0cc25ee5618757d7a834bfe095d1849c54c374",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SECRETS.md",
+      "lines": 170,
+      "sha256": "60de4066a85cae68f1ab7336c4ff6e805f76047aa537facdcbd39e1327871cd7",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SECURITY.md",
+      "lines": 52,
+      "sha256": "c4cd25f33381d283a8333c536d7092ff89a7784488bdad9645107691bcd24829",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/SIDEPANEL.md",
+      "lines": 59,
+      "sha256": "9868ecd39c9214757c76afef5b7270b0fed59d82dfa7e44650ffee39aa07dd88",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-1.md",
+      "lines": 30,
+      "sha256": "3dd1f571c7f7656633223927380aec2f8d2343da79b24685f484b3563cc8b171",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-FIX-QUEUE-2.md",
+      "lines": 35,
+      "sha256": "531457760b8eeab9e7bc1a30134dfaf78e5f6532f7739182560099a9c0307735",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/dsh-chrome/docs/WINDOWS-HOST.md",
+      "lines": 363,
+      "sha256": "a80d7bb43526600c2109a6383b797491a521e82fb016c611dd8f781519cce07e",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/history/dsh-chrome-memory-reduction.md",
+      "lines": 285,
+      "sha256": "1f69aa80c46c888a574c0929a1d2453982e2ab5fa6877f4ba974f47e73b334c7",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/history/dsh-next-steps-agent-team-plan.md",
+      "lines": 370,
+      "sha256": "4565ee74786ed313dbd97ffaa3d271364d525729b110f3582723c4adc1ecab00",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "lines": 412,
+      "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/09-extensions/CONTENTS.md",
+      "lines": 8,
+      "sha256": "e08229a428e7fd3bf7dd1a5524026703fb45de221a3a7460609707d3129f9a64",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/09-extensions/cli/docs/research/claude-code-history.md",
+      "lines": 165,
+      "sha256": "73622b08a2b74d51db27c0e7a6edb3a04677bc7c635a38760e967fbca3955a7f",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    },
+    {
+      "path": "docs/harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "lines": 57,
+      "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403",
+      "discovery": "path/hash metadata only unless separately listed in reading-list"
+    }
+  ],
+  "exact_duplicate_groups": [],
+  "excluded_without_body_read": [
+    {
+      "path": "docs/harness/09-extensions/activity/docs/discussion/工作区活跃度显示讨论稿-v0.1.2.md",
+      "reason": "用户排除工作区活跃度面板；未读取正文或计算内容哈希"
+    },
+    {
+      "path": "docs/harness/09-extensions/activity/docs/implementation/工作区活跃度插件-实施稿-2026-10-23.md",
+      "reason": "用户排除工作区活跃度面板；未读取正文或计算内容哈希"
+    }
+  ]
+}

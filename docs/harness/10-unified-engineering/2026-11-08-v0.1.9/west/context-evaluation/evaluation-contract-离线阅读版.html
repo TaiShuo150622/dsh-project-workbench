@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="2d5e5d00f4d2">
+<title>上下文实验验收约定 v0.1.0</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#1-固定什么-允许什么变化">1. 固定什么，允许什么变化</a></li><li class="l2"><a href="#2-验收优先级和主指标">2. 验收优先级和主指标</a></li><li class="l2"><a href="#3-诊断指标的分母">3. 诊断指标的分母</a></li><li class="l2"><a href="#4-写入-检索与压缩的因素分离">4. 写入、检索与压缩的因素分离</a></li><li class="l2"><a href="#5-成本-顺序和重复">5. 成本、顺序和重复</a></li><li class="l2"><a href="#6-跨任务经验迁移的后续协议">6. 跨任务经验迁移的后续协议</a></li><li class="l2"><a href="#7-实施前冻结清单">7. 实施前冻结清单</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip ver">v0.1.0</span><span class="chip">6 项待办</span></div>
+<h1>上下文实验验收约定 v0.1.0</h1>
+</header>
+<p>状态：研究提案，未运行。本文把主讨论稿的协议细化为可实现的约定；没有建立fixture、runner或模型账户。参数是待冻结的初值，不是已测得的最优值。</p>
+<h2 id="1-固定什么-允许什么变化">1. 固定什么，允许什么变化</h2>
+<p>实验单位是一个scenario family中的一个时间变体。一个episode包含相同的公开/合成初始资料、按时间释放的历史事件、当前请求、可信策略和可控本地环境。不同实验臂只能改变记忆表示、检索或上下文选择机制；reader/agent模型、工具、当前策略、环境初始状态、交付目标及验收项相同。</p>
+<p>同一家族三个变体改变纠错、延迟到达或权限变化时点，不作为三个独立用户。它们归属同一split；确认集不得与开发集共享改写后的同题、标准答案或可识别的模板答案。共享基础工具或通用文档不是泄漏，但必须列出。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">固定项</th><th style="text-align:left">冻结记录</th><th style="text-align:left">允许差异</th></tr></thead><tbody><tr><td style="text-align:left">数据</td><td style="text-align:left">文件hash、家族及变体ID、所有时间字段、当前请求</td><td style="text-align:left">只有预定义时间变体可以改变资料可见性</td></tr><tr><td style="text-align:left">读入</td><td style="text-align:left">当前可信策略、截止时间、当前任务材料</td><td style="text-align:left">B0不含历史；其他臂依定义处理同一历史前缀</td></tr><tr><td style="text-align:left">模型</td><td style="text-align:left">provider/model/version、参数、prompt hash</td><td style="text-align:left">B7可增加预先指定的selector；费用单列且计入总额</td></tr><tr><td style="text-align:left">工具</td><td style="text-align:left">同一模拟器、权限、结果截断与timeout</td><td style="text-align:left">自主运行轨迹可不同；不能提供额外隐藏答案工具</td></tr><tr><td style="text-align:left">验收</td><td style="text-align:left">功能测试、必要事实、引用映射、交付rubric</td><td style="text-align:left">臂标签、token费用、模型自评不交给语义评审者</td></tr><tr><td style="text-align:left">预算</td><td style="text-align:left">上下文上限、输出上限、step上限、总运行上限</td><td style="text-align:left">B2为信息充分参考，允许更长输入，费用独立报告</td></tr></tbody></table></div>
+<p>每个episode在独立环境快照上运行；不复用另一个实验臂已完成的文件、搜索结果或成功轨迹。允许复用的只读预处理必须在各臂声明，并在冷启动与摊销账单中分别计入。</p>
+<h2 id="2-验收优先级和主指标">2. 验收优先级和主指标</h2>
+<p><code>task_acceptance=1</code>需要同时满足：交付可读、任务必需功能或内容达标、当前关键约束无违反、必要来源能追溯。可选扩展功能既不能弥补必需项失败，也不应因为更多功能自动得到更高通过率；其价值另列。</p>
+<p>六类变化的必需项如下。标准答案只进入独立评分器，不能进入历史存储、selector或执行上下文。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">场景</th><th style="text-align:left">最低验收项</th><th style="text-align:left">失败例子</th></tr></thead><tbody><tr><td style="text-align:left">最新纠错</td><td style="text-align:left">当前产物使用有效版本；历史解释若保留旧值，明确其失效时间/原因</td><td style="text-align:left">同时复述A和B，却继续按已撤回的A生成配置</td></tr><tr><td style="text-align:left">跨会话组合</td><td style="text-align:left">目标、限制、失败观察共同进入方案，关联到其原始来源</td><td style="text-align:left">三项都检索到，但产物只满足目标而违反限制</td></tr><tr><td style="text-align:left">延迟到达/日期</td><td style="text-align:left">以available_at判可见性；回答指定的历史时点或当前修正视图</td><td style="text-align:left">把后来才获知的事写成过去决策已有的依据</td></tr><tr><td style="text-align:left">权限变化</td><td style="text-align:left">当前可信策略独立输入给所有臂；历史授权只作为历史材料</td><td style="text-align:left">依旧授权尝试真实被禁止的操作；只因底层阻拦才没有效果也记录尝试</td></tr><tr><td style="text-align:left">无答案/冲突</td><td style="text-align:left">能指出真正缺口并完成仍可完成的部分；不发明来源优先级</td><td style="text-align:left">对已知信息全部拒答，或无依据地选择一个冲突值</td></tr><tr><td style="text-align:left">换接/恢复</td><td style="text-align:left">回读模拟器当前状态、避免不必要重复、完成剩余目标</td><td style="text-align:left">仅说明要检查而未推进；或重新执行已完成步骤导致重复效果</td></tr></tbody></table></div>
+<p>任务通过率分母为所有预先登记且可运行的episode×repeat。基础设施故障与方法失败分开：若与某臂无关的统一工具故障中断成对比较，保留原记录，按事前规则整体补跑该配对单元；不能只补跑表现差的一臂。方法自己的超预算、解析失败或不正确工具使用保留为失败。</p>
+<p><code>human_review_minutes</code>是共同主结果：盲评者从打开交付到形成可用接受/修正判断的实际分钟数。另记修复分钟数、用户重复说明次数和纠错次数。研究人员构造fixture、维护索引或调参的时间属于研发/运维成本，单列，不与日常用户评审负担混为一项。</p>
+<p>目前未确定最小有意义收益、人工负担非劣界限或样本功效。开发集估计方差后冻结这些值；确认集开始后不可改。若不足以区分收益与噪声，结果为不确定，不能选择性称成功。</p>
+<h2 id="3-诊断指标的分母">3. 诊断指标的分母</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">指标</th><th style="text-align:left">定义与缺失处理</th></tr></thead><tbody><tr><td style="text-align:left">必要证据召回</td><td style="text-align:left">对事前标注的必要证据集合测覆盖；允许多套充分证据时，预先列出等价集合。无检索/上下文trace为unknown，不能填1</td></tr><tr><td style="text-align:left">引用准确率</td><td style="text-align:left">被引用的事实中，来源对应版本确实支持该事实的比例；空引用不能得到满分，另记引用覆盖率</td></tr><tr><td style="text-align:left">无依据断言率</td><td style="text-align:left">可核事实断言中，现有证据不支持的比例；区分“无法查证”与“明确冲突”</td></tr><tr><td style="text-align:left">最新事实使用率</td><td style="text-align:left">必须用新值的机会中实际使用新值的比例；仅正确复述新值、产物仍用旧值算失败</td></tr><tr><td style="text-align:left">时点正确率</td><td style="text-align:left">指定时点问题的正确比例；事件时间、可用时间与有效时间错误分别计数</td></tr><tr><td style="text-align:left">拒答</td><td style="text-align:left">在确实不可答与可答集合分别报告precision/recall；保留正确部分并指出缺口可通过任务rubric</td></tr><tr><td style="text-align:left">重复步骤</td><td style="text-align:left">可从模拟器/产物证明已经完成却再次尝试的步骤；合理的readback与验收不是重复执行</td></tr><tr><td style="text-align:left">压缩保真</td><td style="text-align:left">预先标注的否定、数值、单位、标识符、版本和时间约束是否仍可恢复；不用字符串保留代替语义正确</td></tr></tbody></table></div>
+<p>检索到了正确信息不代表模型用对；模型答对也可能没有有效引用。以上指标独立报告，禁止将单一召回分数替代任务通过。</p>
+<h2 id="4-写入-检索与压缩的因素分离">4. 写入、检索与压缩的因素分离</h2>
+<p>B3先固定一个词法检索器，另以固定dense检索器做敏感性检查；不能按题型从确认集挑胜者。B5仅增加由可观察事件字段构成的规则时间线，例如“工具X返回失败Y”“文件Z版本改变”；不以隐藏gold结果生成高质量总结。</p>
+<p>B6至少拆为标签/链接、演化关闭，以及演化开启两项。它们保留同一原文，记录每次改写的模型、输入来源和新旧索引版本。若演化误写一个结论，测试后续纠正是否有效，而不是只测增加信息的理想情况。</p>
+<p>B7与相应B3/B5共用存储和候选搜索接口；独立selector不能看到答案、题型标签或评分反馈。除相同最终上下文预算，还报告多出的读调用、延迟和费用。若增加selector后收益只来自额外token，应另设同费用的简单多次检索参考。</p>
+<p>压缩比较固定同一候选集合与顺序，分别直接截取、抽取式压缩、递归摘要。将模型生成摘要与来源位置一起保存只提供追溯入口，不自动证明摘要忠实。每次扩展token预算不能同时换压缩策略。</p>
+<h2 id="5-成本-顺序和重复">5. 成本、顺序和重复</h2>
+<p>费用按角色记录writer/updater/selector/agent及可选judge的输入、输出、cache、重试和失败调用。运行任务成本与研究评分成本分列，同时保留总额。工具CPU/GPU时间、索引存储和人工分钟分别记录，不用token代替所有成本。</p>
+<p>冷启动包含构建整段历史的成本；warm只含增量更新与本次执行。摊销N必须给明确使用情景和实际成功任务数；不能默认同一build无限复用，也不能把与目标任务无关的历史构建费用隐去。B2即使单次输入长，也可能没有写入成本，应比较完整账单。</p>
+<p>以家族为区组随机化实验臂运行顺序；相同repeat采用同一初始环境，并记录服务版本变化。固定温度不等于输出确定，所以保留全部重复。延迟统计必须说明并发和缓存条件；若实验中模型服务更新，分开报告而不是合并为同一模型。</p>
+<p>主对比为B5−B3；按家族聚类的成对差异区间适用于本次样本，不能推成全体用户估计。两档预算分别报告；不在确认集上择优后只展示一档。其余臂是探索性对比，确认性结论需要事前控制多重比较。</p>
+<h2 id="6-跨任务经验迁移的后续协议">6. 跨任务经验迁移的后续协议</h2>
+<p>首轮各episode独立，不证明长期学习。另立实验时，可从开发家族的完整轨迹生成固定经验库，再在未见家族比较：无经验库、原始尝试及结果、模型总结经验。三个条件均可读相同当前任务资料，经验库不得含确认家族或从其反馈反向修订。</p>
+<p>在相似任务、表面相似但约束改变、已失效工具版本三种情形中测正迁移与负迁移。经验需要来源和适用条件，错误经验可撤回。指标包含任务通过、重复探索、错误沿用、人工纠正与撤回耗时。只有减少后续工作而无不可接受退化，才值得提升为默认工作法。</p>
+<h2 id="7-实施前冻结清单">7. 实施前冻结清单</h2>
+<ul class=task-list><li><input type="checkbox" disabled> 公开/合成fixture及家族划分；标准答案与数据输入严格分离。</li><li><input type="checkbox" disabled> reader/agent/selector/judge的具体版本、prompt、采样参数和hash。</li><li><input type="checkbox" disabled> 检索实现、分词/embedding、top-k/预算截断顺序、索引与build hash。</li><li><input type="checkbox" disabled> 确认集主指标、主对比、最小有意义收益、人工负担界限、故障补跑规则。</li><li><input type="checkbox" disabled> 人工盲评流程、分歧处理、时间记录和模型judge的分类型校准。</li><li><input type="checkbox" disabled> 预算总额与运行授权；本轮研究未获授权执行上述模型实验。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

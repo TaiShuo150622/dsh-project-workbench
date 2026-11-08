@@ -1,0 +1,379 @@
+{
+  "task": "C13",
+  "frozen_at_utc": "2026-11-08T10:47:48.512416+00:00",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "files": [
+    {
+      "id": "INDEX",
+      "repository_relative_path": "docs/harness/INDEX.md",
+      "relative_link": "../../../../harness/INDEX.md",
+      "sha256": "57f8c2b9907064642b750de5015452956acbac050cca7157deb9138b757c322c",
+      "line_count": 249,
+      "role": "navigation",
+      "read_mode": "METADATA_GUIDE_PARSED",
+      "read_ranges_1_based": null
+    },
+    {
+      "id": "MANIFEST",
+      "repository_relative_path": "docs/harness/MANIFEST.json",
+      "relative_link": "../../../../harness/MANIFEST.json",
+      "sha256": "33b890f212912966e15924d24b7bc98b6a137aa37fd6fc1a5c7041146a59a4bc",
+      "line_count": 1735,
+      "role": "navigation",
+      "read_mode": "ALL_RECORDS_PARSED",
+      "read_ranges_1_based": null
+    },
+    {
+      "id": "W09",
+      "repository_relative_path": "docs/research/harness-20261107/west/historical-coverage/reading-list.json",
+      "relative_link": "../../west/historical-coverage/reading-list.json",
+      "sha256": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962",
+      "line_count": 385,
+      "role": "prior_read_scope",
+      "read_mode": "ALL_RECORDS_INSPECTED",
+      "read_ranges_1_based": null
+    },
+    {
+      "id": "W12",
+      "repository_relative_path": "docs/research/harness-20261107/west/design-continuity/reading-list.json",
+      "relative_link": "../../west/design-continuity/reading-list.json",
+      "sha256": "a0bb95c0452b49b815e3d5ce921ffc41b982bc609730376e15be2b4788e83d0c",
+      "line_count": 1302,
+      "role": "prior_read_scope",
+      "read_mode": "ALL_RECORDS_INSPECTED",
+      "read_ranges_1_based": null
+    },
+    {
+      "id": "W13",
+      "repository_relative_path": "docs/research/harness-20261107/west/intent-coverage/reading-list.json",
+      "relative_link": "../../west/intent-coverage/reading-list.json",
+      "sha256": "773568f4c06ac3048846795ac4c542446db1e87396a81656fe39392b2eae04c0",
+      "line_count": 448,
+      "role": "prior_read_scope",
+      "read_mode": "ALL_RECORDS_INSPECTED",
+      "read_ranges_1_based": null
+    },
+    {
+      "id": "MAIN",
+      "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "relative_link": "../../统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "line_count": 438,
+      "role": "comparison_target",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          123,
+          305
+        ],
+        [
+          361,
+          427
+        ]
+      ]
+    },
+    {
+      "id": "ARCH",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "relative_link": "../../ARCHITECTURE.md",
+      "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "line_count": 213,
+      "role": "comparison_target",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          213
+        ]
+      ]
+    },
+    {
+      "id": "RECON",
+      "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "relative_link": "../../DESIGN_RECONCILIATION.md",
+      "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+      "line_count": 104,
+      "role": "comparison_target",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "I",
+      "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "relative_link": "../../west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "line_count": 171,
+      "role": "comparison_target",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          94,
+          147
+        ]
+      ]
+    },
+    {
+      "id": "W13-MEMO",
+      "repository_relative_path": "docs/research/harness-20261107/west/intent-coverage/MEMO.md",
+      "relative_link": "../../west/intent-coverage/MEMO.md",
+      "sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+      "line_count": 94,
+      "role": "prior_analysis_reused",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          55,
+          93
+        ]
+      ]
+    },
+    {
+      "id": "RT",
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "relative_link": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "line_count": 1288,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          394,
+          717
+        ],
+        [
+          936,
+          1132
+        ],
+        [
+          1228,
+          1288
+        ]
+      ]
+    },
+    {
+      "id": "WF",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "relative_link": "../../../../harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "sha256": "cce4c41da7d1baae4db15d16c04b2ff4eb40404bf443019a8293e1abae21ca0d",
+      "line_count": 257,
+      "role": "selected_archive_body",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          257
+        ]
+      ]
+    },
+    {
+      "id": "REC",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "relative_link": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "line_count": 413,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          146,
+          301
+        ],
+        [
+          331,
+          413
+        ]
+      ]
+    },
+    {
+      "id": "REM",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "relative_link": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "line_count": 423,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          131,
+          423
+        ]
+      ]
+    },
+    {
+      "id": "H0",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "relative_link": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71",
+      "line_count": 258,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          198
+        ]
+      ]
+    },
+    {
+      "id": "SEC",
+      "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "relative_link": "../../../../harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+      "line_count": 412,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          31
+        ],
+        [
+          77,
+          335
+        ],
+        [
+          364,
+          412
+        ]
+      ]
+    },
+    {
+      "id": "SET",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a",
+      "line_count": 679,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          25
+        ],
+        [
+          80,
+          121
+        ],
+        [
+          471,
+          547
+        ],
+        [
+          642,
+          679
+        ]
+      ]
+    },
+    {
+      "id": "MULTI",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+      "line_count": 983,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          39
+        ],
+        [
+          279,
+          321
+        ],
+        [
+          372,
+          420
+        ],
+        [
+          615,
+          629
+        ],
+        [
+          649,
+          692
+        ],
+        [
+          744,
+          799
+        ],
+        [
+          844,
+          898
+        ],
+        [
+          958,
+          983
+        ]
+      ]
+    },
+    {
+      "id": "DAG1",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "relative_link": "../../../../harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "sha256": "241b08a108e0447b84dafbebcef061f09096c02f0834a8349828816736724c66",
+      "line_count": 24,
+      "role": "selected_archive_body",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          24
+        ]
+      ]
+    },
+    {
+      "id": "DAG2",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "relative_link": "../../../../harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "sha256": "d0d0c6eee0170c322981454475ac7adca985c0358b73140a6bea7aee3a8dde90",
+      "line_count": 30,
+      "role": "selected_archive_body",
+      "read_mode": "FULL",
+      "read_ranges_1_based": [
+        [
+          1,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "NATIVE",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "sha256": "f09901c22204e1c23aea5cd8fa4170e6d2f0fa5568bb80f909b63fa56d4b3c3d",
+      "line_count": 1376,
+      "role": "selected_archive_body",
+      "read_mode": "SELECTED_BODY",
+      "read_ranges_1_based": [
+        [
+          1,
+          30
+        ],
+        [
+          108,
+          133
+        ],
+        [
+          612,
+          720
+        ],
+        [
+          864,
+          940
+        ],
+        [
+          1280,
+          1308
+        ]
+      ]
+    }
+  ],
+  "path_policy": "Paths relative to repository root; relative_link resolves from this directory after integration. No personal home paths stored.",
+  "provenance": "Archive and current research bytes are original inputs; C13 writes only this directory."
+}

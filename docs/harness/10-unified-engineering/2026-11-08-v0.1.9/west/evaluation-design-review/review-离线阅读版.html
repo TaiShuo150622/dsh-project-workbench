@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="ec18b58c309f">
+<title>W-05 独立评价设计审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#最低实施入口">最低实施入口</a></li><li class="l2"><a href="#本轮交付与检查">本轮交付与检查</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>W-05 独立评价设计审查</h1>
+</header>
+<p>2026-11-08 UTC。研究设计审查，未运行。这里的“独立”指相对总稿重新检查问题与对照；仍是同模型 agent，不是外部统计审查或独立复现实验。源文件版本摘要保存在 design.json。</p>
+<p>现有协议值得保留：完整任务为主终点、当前策略统一给各臂、家族级 split、全角色成本、缺失 trace 不填成功、失败不任意补跑、确认集不用于调参。下列问题影响其可识别的主张和可执行成本，应在实施前收窄。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">ID</th><th style="text-align:left">位置</th><th style="text-align:left">问题或反例</th><th style="text-align:left">最小修正</th><th style="text-align:left">允许结论</th></tr></thead><tbody><tr><td style="text-align:left">R01</td><td style="text-align:left">protocol.json dataset_design/arms/budget_design</td><td style="text-align:left">72 episode 易被误读为 72 次运行；完整交叉可达 3,456 次，B2 单档仍 3,240；B6 等消融另加</td><td style="text-align:left">先 6 家族 × 2 臂 × 1 次 = 12；用调用级预算；所有内循环、失败和构建计费</td><td style="text-align:left">pilot 仅检查可测性与成本，不承诺功效</td></tr><tr><td style="text-align:left">R02</td><td style="text-align:left">conformance C06/C09 vs task_acceptance</td><td style="text-align:left">正确保留未知可得到 conformance SUCCESS，但用户仍没有完成结果；全拒绝可以显得更“正确”</td><td style="text-align:left">分契约 verdict、产品 unknown、完成截止结果；有可恢复证据的场景测推进，无证据场景测正确等待</td><td style="text-align:left">有限轨迹满足声明契约，不等于完成率/恢复速度提高</td></tr><tr><td style="text-align:left">R03</td><td style="text-align:left">ARCHITECTURE H01–H08/三场景</td><td style="text-align:left">同时加图、持久性、上下文、工具和新模型，无法归因；更强 target 幂等可能才是收益来源</td><td style="text-align:left">每场景保留合理基线、相同目标能力和当前政策；A 只允许声称结构化交接 bundle 效果；后续逐组件删减</td><td style="text-align:left">局部组合的效果，不能归给某个单独模块或“统一”的抽象本身</td></tr><tr><td style="text-align:left">R04</td><td style="text-align:left">evaluation-contract §2 人工时间</td><td style="text-align:left">更容易审查的界面可能更难维护；同一评审先看一臂会学到另一臂答案</td><td style="text-align:left">日常操作/首审/纠错与研究复核、维护分账；评审者不连续看同一家族两臂，遮蔽标签但承认形态可识别</td><td style="text-align:left">给定参与者/任务的人工负担，非所有用户平均省时</td></tr><tr><td style="text-align:left">R05</td><td style="text-align:left">protocol metrics/permissions</td><td style="text-align:left">底层拒绝写入与模型避免提议越权是不同层；通过 16 个机制用例无法证明上下文策略不误导</td><td style="text-align:left">同时记录禁止动作尝试、准入决定、实际效果；所有记忆臂共用同一可信边界</td><td style="text-align:left">当前例集的行为差异与边界证据，不是全局安全证明</td></tr><tr><td style="text-align:left">R06</td><td style="text-align:left">B3/B5/B7、B2</td><td style="text-align:left">B7 额外模型调用、B2 更长输入可以买到收益；只等最终 token 不等总成本</td><td style="text-align:left">先 B5/B3 单档；B7 后续增加同费用简单检索参考；B2 作为信息上限参考而非公平成本冠军</td><td style="text-align:left">预算/信息条件内的净收益；不能说收益必来自“智能选择”</td></tr><tr><td style="text-align:left">R07</td><td style="text-align:left">statistics/24 家族及变体</td><td style="text-align:left">时间变体、重复、同模板改写都相关；pilot 每场景 2 家族不足以支撑总体非劣</td><td style="text-align:left">split 和汇总用家族；pilot 逐对展示，不报显著性/功效；确认前重新设计并冻结最小有意义差异</td><td style="text-align:left">当前样本的描述性结果，不作总体推断</td></tr><tr><td style="text-align:left">R08</td><td style="text-align:left">recovery 故障注入</td><td style="text-align:left">固定秒数断连可能命中不同业务阶段；未到故障点的候选被剔除会产生幸存者偏差</td><td style="text-align:left">相同逻辑屏障、独立 target audit；未到屏障保留为故障前任务失败；同时报证据可得后的恢复时间</td><td style="text-align:left">指定 fault model 的表现，不能推广任意断电、网络或生产任务</td></tr><tr><td style="text-align:left">R09</td><td style="text-align:left">evaluation-contract §6 / 改进循环</td><td style="text-align:left">每 episode 清空不测成长；冻结库结果也不证明在线学习；规则库隔离但轨迹库开放仍会泄漏</td><td style="text-align:left">开发建库与目标家族隔离；规则/轨迹/索引/缓存整体冻结；三臂迁移；在线成长另以序列随机化</td><td style="text-align:left">固定库的留出迁移，或另立协议后的序列收益，不能互相代替</td></tr><tr><td style="text-align:left">R10</td><td style="text-align:left">DESIGN_RECONCILIATION §4</td><td style="text-align:left">以候选自己的检查器定义合格，可能只证明它更会通过自己的检查</td><td style="text-align:left">需求级独立 oracle、功能负对照、人工分歧审查；检查器版本冻结且候选不能改</td><td style="text-align:left">通过实际覆盖的需求，无法覆盖的真实价值仍待人验收</td></tr><tr><td style="text-align:left">R11</td><td style="text-align:left">控制模型/有限证明到工程切片</td><td style="text-align:left">归纳/枚举成立依赖有限模型、完整观察和强制边界；真实适配器未必实现这些假设</td><td style="text-align:left">证明、模型检查、静态源码、合约实测、任务收益五层分别标状态</td><td style="text-align:left">每层仅支持自己的范围；零反例不表示零风险或任意规模正确</td></tr><tr><td style="text-align:left">R12</td><td style="text-align:left">成本与复杂度</td><td style="text-align:left">最终推理成本掩盖候选生成、诊断、验证、迁移和人工维护；“20 外轮”不等于 20 次 API</td><td style="text-align:left">调用级总账与失败成本，固定总限额；模型升级后重新做移除组件对照</td><td style="text-align:left">在具体模型/任务/期限上的取舍，非复杂 Harness 永久更优</td></tr></tbody></table></div>
+<h2 id="最低实施入口">最低实施入口</h2>
+<p>先实现一个固定输入清单、两个隔离工作区、一致的当前策略入口、独立目标 oracle、调用/人工计量和一次配对输出格式。不要先做八臂全因子实验，也不要求先实现自主 ontology。</p>
+<p>三个场景的初试必须保留失败、未完成和无法判定；<code>accepted_count / attempted_count</code> 与 oracle coverage 一起报告。因轨迹缺失不能核实的任务不是成功，但也不能据此虚构目标发生了错误效果。基础设施共同故障补跑时同时保留原对与新对，并声明采用哪组作比较。</p>
+<p>pilot 结束后只有三种动作：保留简单方案；有明确测量与价值信号后另冻确认计划；因测量不足修夹具再立版本。禁止看到少量有利例子就称“统一 Harness 已提高效率”。</p>
+<h2 id="本轮交付与检查">本轮交付与检查</h2>
+<ul><li>讨论稿：<code>最小评估与可证伪价值讨论稿-v0.1.0.md</code>。</li><li>可机读计划：<code>design.json</code>，包括三场景、配对单位、指标、停止规则、成本展开及冻结经验扩展。</li><li>本文件：具体审查意见。</li><li>所有任务/模型运行均未执行；budget 未冻结，execution_ready=false。文档/JSON 格式检查不能替代实验。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

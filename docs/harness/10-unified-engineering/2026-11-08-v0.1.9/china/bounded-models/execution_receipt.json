@@ -1,0 +1,35 @@
+{
+  "completed_at_utc": "2026-11-08T06:51:40.341063+00:00",
+  "python": "3.9.0",
+  "command": "python3 docs/research/harness-20261107/china/bounded-models/model_check.py",
+  "exit_code": 0,
+  "artifact_integrity_checked": true,
+  "note": "Local specification enumeration only; root independent rerun and code review still pending. SHA-256 verifies content identity, not authorship or truth.",
+  "artifacts": [
+    {
+      "file": "model_check.py",
+      "sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89",
+      "bytes": 28263
+    },
+    {
+      "file": "results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745
+    },
+    {
+      "file": "TRACES.md",
+      "sha256": "0ad67a9053b3b257452e752868c1d947e2e67f96880ddc5d449819d72c322b46",
+      "bytes": 15894
+    },
+    {
+      "file": "inputs.json",
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5",
+      "bytes": 896
+    },
+    {
+      "file": "README.md",
+      "sha256": "a2d19115b61fe58d08be9457b077b248419a99d204599b8e7d163f2c1ba0e73b",
+      "bytes": 13643
+    }
+  ]
+}

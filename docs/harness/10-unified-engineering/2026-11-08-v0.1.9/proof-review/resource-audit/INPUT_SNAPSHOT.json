@@ -1,0 +1,26 @@
+{
+  "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/resource-lifecycle",
+  "captured_at_utc": "2026-11-08T09:41:24.436001+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "9b4d357a5f283c5029617a7c0493387b198baee631a2783e391ddfcc695dc7c6",
+      "bytes": 490
+    },
+    {
+      "path": "inputs.json",
+      "sha256": "f53228fb0590ff4e241c3bae4c99f18fb5a19ff8b873457e3cf54f1970020b26",
+      "bytes": 1423
+    },
+    {
+      "path": "sources.json",
+      "sha256": "f3f5cf4a26dae71edd6db220d22b08071913bdc8f24543e595b25ff2f51815c2",
+      "bytes": 2299
+    },
+    {
+      "path": "资源归属与环境生命周期讨论稿-v0.1.0.md",
+      "sha256": "ef58adcb57fa0c810d39a7e8c3acead46cbbcc8fd5136f90bc4f2ba1da0fb161",
+      "bytes": 14351
+    }
+  ]
+}

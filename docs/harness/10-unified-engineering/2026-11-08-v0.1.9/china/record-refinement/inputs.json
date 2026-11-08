@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-08T07:34:09.543383+00:00",
+  "task": "R-04 Record S1 implementation refinement review",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "entries": [
+    {
+      "role": "frozen_product_source",
+      "source": "china/record/kernel.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "bytes": 26038,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_product_source",
+      "source": "china/record/README.md",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/record/README.md",
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567",
+      "bytes": 9449,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/support/record-fixture.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "bytes": 2458,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/record-kernel.test.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/record-kernel.test.mjs",
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392",
+      "bytes": 15959,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/record-adversarial-r1-correction.test.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8",
+      "bytes": 3681,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/record-adversarial-r1-identity.test.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92",
+      "bytes": 6014,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/record-adversarial-r1-protocol.test.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8",
+      "bytes": 2688,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "frozen_existing_test",
+      "source": "china/tests/record-adversarial-r2-system.test.mjs",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/tests/record-adversarial-r2-system.test.mjs",
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda",
+      "bytes": 8527,
+      "working_tree_matches_commit": true
+    },
+    {
+      "role": "uncommitted_research_specification",
+      "source": "integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/specifications/FORMAL_MODEL.md",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904,
+      "identity_note": "Content hash pins the working draft; git HEAD alone does not identify this uncommitted file."
+    },
+    {
+      "role": "uncommitted_research_specification",
+      "source": "integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/specifications/ARCHITECTURE.md",
+      "sha256": "889b0bc82d7c2d7d7308aea9b99eab59d132c39a49ab904e5047787c7687d162",
+      "bytes": 20709,
+      "identity_note": "Content hash pins the working draft; git HEAD alone does not identify this uncommitted file."
+    },
+    {
+      "role": "uncommitted_research_specification",
+      "source": "integration/docs/research/harness-20261107/适配契约与贯穿场景讨论稿-v0.1.0.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/specifications/ADAPTER_CONTRACT.md",
+      "sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b",
+      "bytes": 16869,
+      "identity_note": "Content hash pins the working draft; git HEAD alone does not identify this uncommitted file."
+    },
+    {
+      "role": "uncommitted_research_specification",
+      "source": "mechanisms/docs/research/harness-20261107/mechanisms/conformance/catalog.json",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/specifications/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "identity_note": "Content hash pins the working draft; git HEAD alone does not identify this uncommitted file."
+    },
+    {
+      "role": "parent_requested_q_semantics_update",
+      "source": "integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "prepared_source": "inputs/specifications/FORMAL_MODEL-q-update.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "captured_at_utc": "2026-11-08T07:37:16.627598+00:00",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904,
+      "identity_note": "Later working draft captured after parent clarified Usable_L(t,q,n), q=(consumer,operation,recipients). The first snapshot is retained."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "sources": [
+    {
+      "id": "L01",
+      "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+      "title": "Making Belnap’s “Useful Four-Valued Logic” Useful",
+      "authors": [
+        "Geoff Sutcliffe",
+        "Francis Jeffry Pelletier",
+        "Allen P. Hazen"
+      ],
+      "published_date": "2018",
+      "publication_date_precision": "year",
+      "venue": "AAAI FLAIRS-31, pp. 116–121",
+      "accessed_at_utc": "2026-11-08T09:15:44.183333+00:00",
+      "sha256": "b0ae4b54958e823b5ddb03952219d658d74355d68928a02694f6220197f570c1",
+      "bytes": 480538,
+      "read_scope": {
+        "pages_1_based": [
+          1,
+          2
+        ],
+        "sections": [
+          "1 Background",
+          "2 What is a Useful Conditional? (selected)"
+        ]
+      },
+      "claim_class": "PRIMARY_PAPER_SELECTED_SECTIONS",
+      "supports": [
+        "Four values and separate truth/information orders are established ideas; the paper presents designated logical values."
+      ],
+      "limitations": [
+        "1977 Belnap original not read; cite this 2018 original research article, not a claim of rereading the 1977 chapter.",
+        "Its conditional-connective extension and benchmark are not adopted or rerun."
+      ],
+      "full_pdf_copied_into_deliverable": false,
+      "our_application_inferences": [
+        "Logical designated values are not permissions to execute a Harness action; a separate operation policy is proposed here."
+      ]
+    },
+    {
+      "id": "L02",
+      "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+      "title": "Provenance Semirings",
+      "authors": [
+        "Todd J. Green",
+        "Grigoris Karvounarakis",
+        "Val Tannen"
+      ],
+      "published_date": "2007-06-11",
+      "publication_date_precision": "conference_start_date",
+      "venue": "PODS 2007, June 11–14, pp. 31–40",
+      "accessed_at_utc": "2026-11-08T09:15:46.563948+00:00",
+      "sha256": "74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0",
+      "bytes": 262241,
+      "read_scope": {
+        "pages_1_based": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "3 Positive Relational Algebra",
+          "4 Polynomials for Provenance (selected)"
+        ]
+      },
+      "claim_class": "PRIMARY_PAPER_SELECTED_SECTIONS",
+      "supports": [
+        "Different algebraic operations preserve alternative and joint derivation structure."
+      ],
+      "limitations": [
+        "Positive RA sections used; no claim they solve this proposal’s retraction, temporal scope, authentication or opposing-evidence policies.",
+        "No probabilistic independence assumption adopted."
+      ],
+      "full_pdf_copied_into_deliverable": false,
+      "our_application_inferences": [
+        "Provenance multiplicities and derivation paths are not treated here as counts of statistically independent observations."
+      ]
+    }
+  ],
+  "note": "PDF bytes fetched only for hash, not saved/reproduced. Claims use selected正文 read through web tool; search summaries not used as evidence."
+}

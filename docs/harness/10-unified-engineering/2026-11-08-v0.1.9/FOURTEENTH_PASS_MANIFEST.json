@@ -1,0 +1,473 @@
+{
+  "copied_at_utc": "2026-11-08T08:35:28.226758+00:00",
+  "files": [
+    {
+      "path": "china/package-boundary-review/README.md",
+      "source_worktree": "china",
+      "bytes": 9938,
+      "sha256": "921b664d3d9e5aa5efe4a944a213ae0da7e8020e7495424a1d030455a4c5901a"
+    },
+    {
+      "path": "china/package-boundary-review/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 781,
+      "sha256": "2f932f34e11c41ae8dcac84ed442a83694c7341e3ba35dfbd00661766db66581"
+    },
+    {
+      "path": "china/package-boundary-review/duplicate-inputs.json",
+      "source_worktree": "china",
+      "bytes": 39045,
+      "sha256": "330c4f47c51f1743766e789933795028f368498355e6d57a036952e7acb5d3df"
+    },
+    {
+      "path": "china/package-boundary-review/execution_receipt.json",
+      "source_worktree": "china",
+      "bytes": 1595,
+      "sha256": "832937c4ca98e7893c5321885687bb6b6137df0e63626f15ef496791f92a4f29"
+    },
+    {
+      "path": "china/package-boundary-review/package-inventory.json",
+      "source_worktree": "china",
+      "bytes": 138935,
+      "sha256": "ab8d8716e096fa624ea913cd4f78dc4f44382f0bd4f096a31ac14e672eb2ebe2"
+    },
+    {
+      "path": "china/package-boundary-review/path-and-link-findings.json",
+      "source_worktree": "china",
+      "bytes": 254793,
+      "sha256": "0e05bc14b735ebd57e9130a1f4e0ab91fc0783762ec2702e020d08c98d8068e0"
+    },
+    {
+      "path": "china/package-boundary-review/pattern-review.json",
+      "source_worktree": "china",
+      "bytes": 10826,
+      "sha256": "59fe8ef6ade0bece1b9a763091480155f0ec4a622bb71cc4118c86a27f3a9db1"
+    },
+    {
+      "path": "china/package-boundary-review/review-findings.json",
+      "source_worktree": "china",
+      "bytes": 14200,
+      "sha256": "fb1699ae9f14ed9ffeb7b1f0f60be85b42b0139473ce85ec269a83c57115a463"
+    },
+    {
+      "path": "china/package-boundary-review/scan_package.py",
+      "source_worktree": "china",
+      "bytes": 9191,
+      "sha256": "fb2fc7240d68e4fc2e27780abac9e9572a3b29dfabfb6f40f1b4e3459c2d5c3a"
+    },
+    {
+      "path": "china/package-boundary-review/validation_receipt.json",
+      "source_worktree": "china",
+      "bytes": 375,
+      "sha256": "dba261e3571c7e9653fc30d55fabe2888a49d19da434adb985a989456d1fd147"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/INPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 10441,
+      "sha256": "87804d730d8b79529815f9280461437fd723b9bcaecb8a428e8908eb01294b84"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/OUTPUT_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 4525,
+      "sha256": "5597b945ab7c3cc181261118eeb982275038d213f89d3c859f01ddc89de98868"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 9601,
+      "sha256": "73c88ad6c05ce7056bc8fc6288442f9d394990f2fa023de88826a246d4e7c835"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 3591,
+      "sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 688,
+      "sha256": "31c6e9c67e8e3912182a7623e789d4287f792223423db3eab6e75ddf1a924360"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 1687,
+      "sha256": "92a4b6ca84415b88267658339316f5c006d3ab263d9f1e18cd3e5ca92222c035"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/DurableRelay.tla",
+      "source_worktree": "proof-review",
+      "bytes": 4187,
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/RELAY_README.md",
+      "source_worktree": "proof-review",
+      "bytes": 6518,
+      "sha256": "c60c1603bac897c4435d28d8d43a777eec812285e887313b066236bad4e2274f"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-durable.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 118,
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-error.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 107,
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-memory.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 98,
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/durable.log",
+      "source_worktree": "proof-review",
+      "bytes": 1275,
+      "sha256": "5333a6fd298de1c6c31bd56355f4539d91213e1206fb06c9155b93f9463c40e1"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/error.log",
+      "source_worktree": "proof-review",
+      "bytes": 2138,
+      "sha256": "867ed06c95eefe10a4091ba998b81ac8184c5016af411c920c2c5f540ac81bce"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/memory.log",
+      "source_worktree": "proof-review",
+      "bytes": 3172,
+      "sha256": "1352858e9228975479c9216e59d1ee5c7ff87151d6f5bb945d84b84484649eba"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4380,
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "source_worktree": "proof-review",
+      "bytes": 4187,
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 118,
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 107,
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 85,
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "source_worktree": "proof-review",
+      "bytes": 3338,
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 358,
+      "sha256": "4d229999e56926b6d6582378d0be8c72ab7350bfa318d10e47734698777369a8"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/durable.log",
+      "source_worktree": "proof-review",
+      "bytes": 1314,
+      "sha256": "438c63ca4241eee807831fc1d4cebb53e9342a8ea9a43576f01f628614a870ff"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/error.log",
+      "source_worktree": "proof-review",
+      "bytes": 2176,
+      "sha256": "f1dbd6141eb20c7de051530875584f3844c37fa0401631297f15d6f9ae7a77a6"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/memory.log",
+      "source_worktree": "proof-review",
+      "bytes": 1415,
+      "sha256": "e2ee3640d6736c2080d7ae87288b3915df384c81bb1dfe42252c93ea97c09c59"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4436,
+      "sha256": "ee14319fe178a02f6fd87a1ad6db5362bb0d48a230d150a7a6846d494e1aa5c1"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 37,
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/stdout.txt",
+      "source_worktree": "proof-review",
+      "bytes": 893,
+      "sha256": "96f07f55e23709fcc84c5539f459f8ae7f1eb2aed80d6ef0fa38d5fc05b6d4c0"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/formal-spec/run_relay.py",
+      "source_worktree": "proof-review",
+      "bytes": 3338,
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 1972,
+      "sha256": "4b71ddef904c7feafebe7b6b68abe52ca4b3af02aa32f4f776f5cf3e5da5c601"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/crash-cuts.json",
+      "source_worktree": "proof-review",
+      "bytes": 20615,
+      "sha256": "fd79d786d2f2d35a9e71b1bad6885b15627db6b15a653500ac58e27ae628cefa"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/sources.json",
+      "source_worktree": "proof-review",
+      "bytes": 11448,
+      "sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/validation.json",
+      "source_worktree": "proof-review",
+      "bytes": 1675,
+      "sha256": "b8e0e689ab206fe0215a0885553f79fec3168c7b32a5cb8cbc022963c0a92972"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.html",
+      "source_worktree": "proof-review",
+      "bytes": 26840,
+      "sha256": "e8847e0bfa582fadbefd1c6d6473c7705c4f0c4219d467379bdc14ccbfb590da"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "source_worktree": "proof-review",
+      "bytes": 15609,
+      "sha256": "7b5e1e55384ba9a61e3378a13e63d8685d784022bff9d4cd346a00647c86aa69"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-rerun/durable.log",
+      "source_worktree": "proof-review",
+      "bytes": 1314,
+      "sha256": "3e3d516c8fa36f3fa83c7a0e614e04da8ba669b6f69a67f4047cbdaf58f4376b"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-rerun/error.log",
+      "source_worktree": "proof-review",
+      "bytes": 2176,
+      "sha256": "bb6a545270e508123a3bb53988d5d2b13f1e26f4873161f919525b4446d28b28"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-rerun/memory.log",
+      "source_worktree": "proof-review",
+      "bytes": 1413,
+      "sha256": "72d7939065ba5ebeab406aaf51a54420e2f8db761fa18cdf62e89de591eea13c"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-rerun/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4442,
+      "sha256": "d8246a14065fe6665281e8d5f180be0f9ce3f79c8033b55f703fc8bace2417ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-run/DurableRelay.tla",
+      "source_worktree": "proof-review",
+      "bytes": 4187,
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-run/relay-durable.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 118,
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-run/relay-error.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 107,
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-run/relay-memory.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 85,
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative-run/run_relay.py",
+      "source_worktree": "proof-review",
+      "bytes": 3338,
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative.stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 37,
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative.stdout.txt",
+      "source_worktree": "proof-review",
+      "bytes": 893,
+      "sha256": "cf01fba9d4b52cb87ae23e6b678263fa40dbe261a7b25febafa4e449b031e799"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/negative_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 926,
+      "sha256": "406c665b2b6b37b7d7fd5d5c39e8b3b3b23d0686de122864784a3dbabc5eb912"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/rerun/durable.log",
+      "source_worktree": "proof-review",
+      "bytes": 1302,
+      "sha256": "a11417a6d456024444cd7ea92d6c3aa12f44457b450ee8b11173a58d75a10917"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/rerun/error.log",
+      "source_worktree": "proof-review",
+      "bytes": 2167,
+      "sha256": "5f3c62a1d04851815e1d21458b1061072653de88ab3e3a59efd05a171b5e368d"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/rerun/memory.log",
+      "source_worktree": "proof-review",
+      "bytes": 3203,
+      "sha256": "84e2ff8aa3ff6420970e8b5f700476585ee8abe84c18a70c25700163605a5cae"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/rerun/receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 4431,
+      "sha256": "cd38c6729c09396c1fb75ed660b2ab34548d905f1cc9d6712aa42f789c0281a7"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/run/DurableRelay.tla",
+      "source_worktree": "proof-review",
+      "bytes": 4187,
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/run/relay-durable.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 118,
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/run/relay-error.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 107,
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/run/relay-memory.cfg",
+      "source_worktree": "proof-review",
+      "bytes": 98,
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/run/run_relay.py",
+      "source_worktree": "proof-review",
+      "bytes": 3338,
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/runner.stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/runner.stdout.txt",
+      "source_worktree": "proof-review",
+      "bytes": 902,
+      "sha256": "f256dad75830bd17eb92d26a70b3a88680037fe541ee6201fa5f92717cb0d13e"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/agent.ts",
+      "source_worktree": "proof-review",
+      "bytes": 31142,
+      "sha256": "ad9ee0778c0a93dec40363f88b53f442add9b033837b9ff049675a1ada3df61f"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/agent-loop/src/inbox.ts",
+      "source_worktree": "proof-review",
+      "bytes": 8873,
+      "sha256": "336e10096a4899cdbef71e68da6896c5ed84c17a95c56729d17b8ba607bac1ca"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/core/session/src/index.ts",
+      "source_worktree": "proof-review",
+      "bytes": 67103,
+      "sha256": "343eeb693620bf3de6d21fcecb685fb7288b623c0bd4f655f29a23e92ce2f634"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/handle.ts",
+      "source_worktree": "proof-review",
+      "bytes": 5319,
+      "sha256": "2fd8b5c5188ffdf5adee78a260b3dd0a9be97e5eb9fcdb5aafae5a8ed5471a31"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence/src/index.ts",
+      "source_worktree": "proof-review",
+      "bytes": 8863,
+      "sha256": "15d2feeaa8876d4be1c87234ac92e50d819c500444588e497d5228aed1876fc7"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/index.ts",
+      "source_worktree": "proof-review",
+      "bytes": 75727,
+      "sha256": "1475457333ca86a01f7ea72dcf33de25b02be8b9c670fb32e8b99d8efb54cd81"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/dsh/packages/session/session-persistence-jsonl/src/storage.ts",
+      "source_worktree": "proof-review",
+      "bytes": 24212,
+      "sha256": "57d5fa1d7efd17789d6a223f6aa5e06b79092665bea13f8a23d3bab644d066c3"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/workbench/server/native.js",
+      "source_worktree": "proof-review",
+      "bytes": 3044,
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/workbench/server/projects.js",
+      "source_worktree": "proof-review",
+      "bytes": 19203,
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/source-inputs/workbench/server/store.js",
+      "source_worktree": "proof-review",
+      "bytes": 1329,
+      "sha256": "7cbe2a3c1f2a35f3b152cb07219918824a7e8e8fc156d115d63a895e5f79933c"
+    },
+    {
+      "path": "proof-review/relay-durability-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 1811,
+      "sha256": "bee58eb2bf63f87d56d38740ba7b10fa54796e341d4ac449bf7cdcde8c4bc8eb"
+    }
+  ]
+}

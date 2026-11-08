@@ -1,0 +1,88 @@
+{
+  "task": "W15 delivery guide",
+  "status": "EDITORIAL_CANDIDATE_NOT_PRODUCT_IMPLEMENTATION",
+  "checked_at_utc": "2026-11-08T10:27:33.393180+00:00",
+  "fixed_product_input_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "scope": "只读指定研究材料；仅写 west/delivery-guide；没有运行模型、产品、API 或证明。",
+  "sources": [
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/README.md",
+      "reviewed_sha256": "2286016d1b3af726e22d4e3e4b58d6257ab5487596dcad7efaaffd698b9b2071",
+      "current_sha256_at_metadata_check": "9c224fb87984d386e84663763c7a195f53cc3ac81d8492179a5bdb25a88e65c3",
+      "reading": "全文 1–61；随后重读当前导航 1–62 并重新计数。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/decision-brief/MEMO-v0.1.1.md",
+      "reviewed_sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+      "current_sha256_at_metadata_check": "d944e9d1d08434d9619ac7506cc3fb1e9d52a5763e8b428c5f486ed6e3be387e",
+      "reading": "全文 1–30；末行历史依据标签由 root 修正后单独核读。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "reviewed_sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "current_sha256_at_metadata_check": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "reading": "全文 1–436；不继承后续 v0.1.7 的未读新增内容。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/EVIDENCE.md",
+      "reviewed_sha256": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+      "current_sha256_at_metadata_check": "bc0313db913bcb519a097eb03afe9819def0d1003391d8654b3d6e344a309281",
+      "reading": "全文 1–70；随后只核读新增 N08 行。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/REPRODUCE.md",
+      "reviewed_sha256": "67e8d722c63fdbfac81c3c15bf5a0ad38041ac535c3f6ea1bb49d23540aa4c1e",
+      "current_sha256_at_metadata_check": "67e8d722c63fdbfac81c3c15bf5a0ad38041ac535c3f6ea1bb49d23540aa4c1e",
+      "reading": "全文 1–95。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/public-brief/登记文案-v0.1.2.md",
+      "reviewed_sha256": "dea70d59fa9daba6286e46811f8bcd6bc7c1c073530dbad72912865654a13c2d",
+      "current_sha256_at_metadata_check": "dea70d59fa9daba6286e46811f8bcd6bc7c1c073530dbad72912865654a13c2d",
+      "reading": "全文 1–62。"
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/worked-example/EXAMPLE.md",
+      "reviewed_sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "current_sha256_at_metadata_check": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "reading": "此前全文读本线版本；本轮再读 integration 同字节副本 1–33。"
+    }
+  ],
+  "claim_map": [
+    {
+      "guide_item": 1,
+      "source": "china/public-brief/登记文案-v0.1.2.md",
+      "lines": "19–20"
+    },
+    {
+      "guide_item": 2,
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "lines": "38, 127–156, 174, 202–252, 279"
+    },
+    {
+      "guide_item": 3,
+      "source": "EVIDENCE.md",
+      "lines_at_initial_read": "9–10"
+    },
+    {
+      "guide_item": 4,
+      "source": "EVIDENCE.md",
+      "lines_at_initial_read": "11–20, 22–26"
+    },
+    {
+      "guide_item": 5,
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "lines": "361–393, 423–427"
+    },
+    {
+      "guide_item": 6,
+      "source": "china/public-brief/登记文案-v0.1.2.md",
+      "lines": "24–34, 48–62"
+    },
+    {
+      "section": "product_order_and_decisions",
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "lines": "361–365, 389–413"
+    }
+  ]
+}

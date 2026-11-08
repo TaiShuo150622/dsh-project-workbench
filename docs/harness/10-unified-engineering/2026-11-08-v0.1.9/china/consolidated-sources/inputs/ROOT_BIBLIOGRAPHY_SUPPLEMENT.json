@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "purpose": "bibliographic enrichment of four existing root-only reading observations; not new independent sources or experiments",
+  "accessed_at_utc": "2026-11-08T08:19:05.995238+00:00",
+  "entries": [
+    {
+      "review_id": "TTL-AWS-original",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "title": "Making retries safe with idempotent APIs",
+      "authors": [
+        "Malcolm Featonby"
+      ],
+      "institution": "Amazon Web Services / Amazon Builders Library",
+      "publication_date": null,
+      "date_note": "No publication date visible in the accessed article; accessed date is not substituted.",
+      "kind": "official_authored_engineering_article",
+      "attribution_locator": "title and byline 213–220; About the author 479–483",
+      "attribution_limit": "Official page states an AWS engineering role; no independent present employment verification."
+    },
+    {
+      "review_id": "TOOLS-Anthropic-search",
+      "url": "https://www.anthropic.com/research/advanced-tool-use",
+      "title": "Introducing advanced tool use on the Claude Developer Platform",
+      "authors": [
+        "Bin Wu"
+      ],
+      "institution": "Anthropic Engineering",
+      "publication_date": "2025-11-24",
+      "kind": "official_authored_engineering_article",
+      "attribution_locator": "publication and team 21–27; Authors & acknowledgements 514–517",
+      "attribution_limit": "Named contributors are distinct from the written-by author; a publication-time official team article, not separate personal endorsements."
+    },
+    {
+      "review_id": "TOOLS-Anthropic-code",
+      "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+      "title": "Code execution with MCP: Building more efficient agents",
+      "authors": [
+        "Adam Jones",
+        "Conor Kelly"
+      ],
+      "institution": "Anthropic Engineering",
+      "publication_date": "2025-11-04",
+      "kind": "official_authored_engineering_article",
+      "attribution_locator": "publication and team 20–26; Authors & acknowledgements 258–262",
+      "attribution_limit": "Official joint article, not independently established present employment."
+    },
+    {
+      "review_id": "TOOLS-Claude-SDK",
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+      "title": "Scale to many tools with tool search",
+      "authors": [],
+      "institution": "Anthropic / Claude Code Docs",
+      "publication_date": null,
+      "date_note": "Dynamic documentation; no dated individual byline shown.",
+      "kind": "official_product_documentation",
+      "attribution_locator": "title/navigation 90–104",
+      "attribution_limit": "Product documentation, not an individual employee opinion."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "study_id": "M12",
+  "checked_at_utc": "2026-11-08T10:59:44.898928+00:00",
+  "status": "PASSED_DOCUMENT_CHECKS",
+  "actual_product_execution": false,
+  "actual_model_experiment_execution": false,
+  "synthetic_model_executed": false,
+  "acceptance_protocol_executed": false,
+  "document_validation_executed": true,
+  "method": "Python stdlib JSON/IDs/references/hashes and read-only git status; no semantic simulator or product runner.",
+  "contract_chars": 2840,
+  "contract_han_chars": 1816,
+  "input_count": 10,
+  "case_count": 4,
+  "inputs": [
+    {
+      "id": "R01",
+      "sha256_matches": true
+    },
+    {
+      "id": "R02",
+      "sha256_matches": true
+    },
+    {
+      "id": "R03",
+      "sha256_matches": true
+    },
+    {
+      "id": "R04",
+      "sha256_matches": true
+    },
+    {
+      "id": "R05",
+      "sha256_matches": true
+    },
+    {
+      "id": "R06",
+      "sha256_matches": true
+    },
+    {
+      "id": "R07",
+      "sha256_matches": true
+    },
+    {
+      "id": "R08",
+      "sha256_matches": true
+    },
+    {
+      "id": "R09",
+      "sha256_matches": true
+    },
+    {
+      "id": "R10",
+      "sha256_matches": true
+    }
+  ],
+  "local_links": [
+    {
+      "target": "sources.json",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "scenarios.json",
+      "exists_in_authoring_or_integration_overlay": true
+    },
+    {
+      "target": "../../china/legacy-closure/COVERAGE.md",
+      "exists_in_authoring_or_integration_overlay": true
+    }
+  ],
+  "link_resolution_note": "Cross-line C13 link resolves after import at the same integration repository-relative path; source inputs remained read-only.",
+  "prior_outputs": [
+    {
+      "round": "M10",
+      "unchanged": true
+    },
+    {
+      "round": "M11",
+      "unchanged": true
+    }
+  ],
+  "product_paths_clean": true,
+  "outputs": {
+    "sources.json": "677959e0d912edcd8819c77bd4c9e3281468c292de02ce1333a150190b0141db",
+    "CONTRACT.md": "815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f",
+    "scenarios.json": "8253941a3692f5e805aa3a1142804f2faf0de83bf5134a977c8908cf1df6a478"
+  },
+  "errors": [],
+  "limits": [
+    "No storage deletion or restore performed.",
+    "No new formal proof or bounded semantic-model execution.",
+    "Same-model separate-context review only.",
+    "All four witnesses remain PROPOSED_NOT_RUN.",
+    "No legal compliance conclusion or actual-data processing."
+  ],
+  "input_drift_handled": [
+    {
+      "id": "R04",
+      "previous_sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "reread_sha256": "8208c6371f85580289fe4a7003b52850a28286aa3f91f96962ec4503cac78814",
+      "reason": "Root integrated legacy-closure/adoption amendments during the review; relevant sections reread, compatible with this proposal."
+    },
+    {
+      "id": "R09",
+      "previous_sha256": "d1bf8ca600e109327388675608cbca35890a93fdec3435528c4614a0691c7664",
+      "reread_sha256": "8565d53c07ab619b370cb8714975291e9528665cb12f96951bbdd80c43a87e03",
+      "reason": "Root integrated legacy-closure/adoption amendments during the review; relevant sections reread, compatible with this proposal."
+    }
+  ]
+}

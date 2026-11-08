@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_id": "M05-LIFECYCLE-MIGRATION",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "created_at_utc": "2026-11-08",
+  "purpose": "六个候选迁移故障验收协议；没有 runner、迁移器或宿主结果。",
+  "environment_policy": {
+    "allowed": "隔离的合成历史、虚构命名空间与可观察模拟目标；如将来验证真实 SDK，须另冻结并授权环境。",
+    "excluded": [
+      "生产或私人历史",
+      "真实凭据/服务/用户请求",
+      "无授权 reset/kill/redeploy",
+      "第三方代码在本研究轮执行"
+    ],
+    "profile_freeze_required": true
+  },
+  "parameter_profile": {
+    "profile_id": "M05-DRAFT-SYNTHETIC-v1",
+    "status": "UNFROZEN_EXPERIMENT_PROFILE",
+    "test_namespace": "synthetic/m05/<case_id>/<trial_id>",
+    "clock_mode": "Must choose virtual clock or named monotonic clock before a run; never infer wall-clock truth from event watermarks.",
+    "proposed_parameters": {
+      "admission_ack_deadline_ms": 30000,
+      "observation_window_ms": 120000,
+      "late_effect_at_ms": 45000,
+      "support_deadline_ms": 600000,
+      "review_due_after_hold_ms": 60000
+    },
+    "limitations": "参数仅用于小型隔离故障协议，尚未选环境或做灵敏度分析；不得当生产超时或一般支持期限。各 trial 的 profile 摘要必须冻结，不能运行后延长窗口凑成功。"
+  },
+  "result_definitions": {
+    "SUCCESS": "全部适用 oracle 均由公开适配接口或隔离目标的观察证据支持；可以是正确拒绝/暂停。不能据此计为业务迁移成功。",
+    "FAILURE": "观察到明确违反契约的动作、状态或证据归属；须给出具体记录，不从不可见内部状态推断。",
+    "UNSUPPORTED": "冻结的能力 profile 在运行前明确不支持此场景所需能力，或没有可提供的必要探针；不算通过。已宣称支持后不能用该分类掩盖已观察到的违反。",
+    "UNKNOWN": "声称适用且有观察方案，但期限内证据不足、回执不确定或观察链缺失；不算通过或业务完成。",
+    "NOT_RUN": "本目录所有场景的当前结果；未选择实际 SDK/宿主组合，未执行。"
+  },
+  "global_observation_rule": "Only declared adapter exports, replay reports, request/receipt journals and a queryable isolated target may be used. Do not depend on unobservable process memory, internal ownership flags or an omniscient world state.",
+  "scenarios": [
+    {
+      "id": "LM01",
+      "title": "能解码但不能重放的解释器或 codec 升级",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC01",
+        "MC02",
+        "MC03"
+      ],
+      "source_refs": [
+        "T1",
+        "D1"
+      ],
+      "applicability": {
+        "capabilities": [
+          "history_export",
+          "bundle_manifest",
+          "isolated_replay_verification"
+        ],
+        "environment": "已冻结的单个工作流 SDK 与两组运行时/codec；本目录不指定实际产品安装版本。"
+      },
+      "initial_state": [
+        "合成 run A 有已完成步骤和一个等待控制点；保存原始历史摘要 H0。",
+        "旧组合 B0 的样例历史可重放，目标组合 B1 能解码同一 payload。"
+      ],
+      "perturbation": [
+        "在隔离候选中使数值/日期/枚举转换改变一个控制分支，或改变步骤顺序；不重新发外部动作。",
+        "调用候选兼容检查，再尝试请求接管。"
+      ],
+      "observations": [
+        "B0/B1 bundle manifest",
+        "每条历史的 replay report 与输入摘要",
+        "准入拒绝/允许记录",
+        "隔离目标的请求清单"
+      ],
+      "deadline": "在冻结的 observation_window_ms 内收集结果；没有 replay 接口则按能力缺口分类。",
+      "oracle": {
+        "success": [
+          "报告该历史在 B1 上不兼容并阻止自动续接。",
+          "H0 原件未改，未把重新调用模型生成的决策当历史。",
+          "验证用组合与拟部署组合明确匹配。"
+        ],
+        "failure": [
+          "解码成功被当成重放成功并发出后续动作。",
+          "重放改写原事件，或偷偷换用 B0 验证后部署 B1。"
+        ],
+        "unsupported": [
+          "预先声明没有可用的历史导出或 replay 接口。"
+        ],
+        "unknown": [
+          "报告无法关联候选 bundle/历史，或期限内检查没有可判结果。"
+        ]
+      }
+    },
+    {
+      "id": "LM02",
+      "title": "补丁点三类历史与过早移除",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC03",
+        "MC08"
+      ],
+      "source_refs": [
+        "D1"
+      ],
+      "applicability": {
+        "capabilities": [
+          "patch_marker_aware_recovery",
+          "history_class_inventory",
+          "isolated_replay_verification"
+        ],
+        "environment": "DBOS Python 或 TypeScript 单一固定 SDK profile；如启用 auto-upgrade，另证明 Enterprise 功能可用。"
+      },
+      "initial_state": [
+        "A 在补丁部署前启动、尚未经过补丁位置。",
+        "B 已以旧代码越过该位置且有原步骤检查点。",
+        "C 的历史含 patch marker；记录三组来源，不只保存启动时间。"
+      ],
+      "perturbation": [
+        "先恢复 A/B/C 到含 patch 的候选版本。",
+        "在隔离验证候选中提前删除旧分支或 marker，再检查三类历史；不部署至真实服务。"
+      ],
+      "observations": [
+        "三类合成历史和 patch 位置摘要",
+        "SDK 恢复/replay 输出",
+        "声明的新旧分支选择与退役计划"
+      ],
+      "deadline": "每组检查使用同一冻结 observation_window_ms；提前删补丁是隔离负例，不是要求破坏正常服务。",
+      "oracle": {
+        "success": [
+          "含补丁版本对 A 可以走新分支、B 保留旧分支、C 沿 marker 路径；以固定 SDK 实际语义核对。",
+          "不兼容的提前删补丁候选被拒绝或明确失败；废弃/移除分阶段且库存证据覆盖相关历史。"
+        ],
+        "failure": [
+          "把所有升级前启动的任务都硬判旧分支。",
+          "提前删除后静默误配步骤结果，或未核历史就宣称可删补丁。"
+        ],
+        "unsupported": [
+          "固定版本缺少对应 patch/replay 能力；Enterprise-only 路线在非 Enterprise 环境未支持。"
+        ],
+        "unknown": [
+          "不能观察 marker 类别或恢复输出无法对应历史，无法判断是否按正确路径恢复。"
+        ]
+      }
+    },
+    {
+      "id": "LM03",
+      "title": "路由回退、漏项可见性和非幂等 reset 重试",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC01",
+        "MC04",
+        "MC08"
+      ],
+      "source_refs": [
+        "T2",
+        "D2"
+      ],
+      "applicability": {
+        "capabilities": [
+          "pinned_version_routing",
+          "version_drainage_observation",
+          "migration_operation_journal"
+        ],
+        "environment": "Temporal pinned recovery profile 或语义等价的隔离适配器；关闭 run reset 是单独子变体。"
+      },
+      "initial_state": [
+        "旧版本 Vbad 有一个正在运行的 pinned run，合成 Visibility 返回可被延迟。",
+        "另有一个已关闭 run Rclosed，并为其 reset 建立 migration_operation_id M。"
+      ],
+      "perturbation": [
+        "将新流量路由改回 Vgood，同时让一次 Visibility 查询不包含旧 run。",
+        "子变体：对 Rclosed 发起一次受控 reset，记录目标已接收但丢失调用端回执，然后请求处理同一 M。"
+      ],
+      "observations": [
+        "新流量路由与现存 run 的版本归属",
+        "独立 drainage 状态与带查询时间/范围的 Visibility 结果",
+        "M 的请求、目标 receipt/lookup 与 successor lineage"
+      ],
+      "deadline": "到 admission_ack_deadline_ms 未收到回执时仍不可假定未发生；到 observation_window_ms 没有 drain/lineage 证据则保留 UNKNOWN。",
+      "oracle": {
+        "success": [
+          "明确区分新路由回退与既有 pinned run 的迁移。",
+          "单次空查询不足以退役旧版本。",
+          "对不确定 M 先核对已有操作/lineage；无核对能力则暂停，不能再次 reset 并宣称幂等。"
+        ],
+        "failure": [
+          "仅凭回退或空查询宣布所有旧任务已迁移并销毁必要执行能力。",
+          "重试同一 M 造成多个 reset successor，或抹去前一次不确定结果。"
+        ],
+        "unsupported": [
+          "无 pinned/drainage 能力时该部分预先不适用；无任何 reset 操作则 reset 子变体不适用。"
+        ],
+        "unknown": [
+          "可见性与 drainage 证据不一致，或丢失回执后无可靠操作查询，不能确定 reset 结果。"
+        ]
+      }
+    },
+    {
+      "id": "LM04",
+      "title": "旧效果迟到、适配器换身份与审批参数变化",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC04",
+        "MC05",
+        "MC06"
+      ],
+      "source_refs": [
+        "D1",
+        "C2"
+      ],
+      "applicability": {
+        "capabilities": [
+          "outbound_action_journal",
+          "scoped_effect_lookup_or_dedup",
+          "current_authorization_gate"
+        ],
+        "environment": "可查询的合成目标、两版工具适配器；目标去重期限与 namespace 在 trial 前冻结。"
+      },
+      "initial_state": [
+        "旧动作 A 使用目标 namespace N、参数摘要 P、幂等键 K，回执缺失而效果 UNKNOWN。",
+        "批准仅覆盖 N/P；新版本 B1 准备接管，旧请求尚未证明停止。"
+      ],
+      "perturbation": [
+        "在 late_effect_at_ms 让旧目标请求提交成功并产生可查询证据。",
+        "子变体一：新适配器试图以新 namespace 或新 K 将 A 当成全新请求重发。",
+        "子变体二：把参数改成 P2，同时沿用原审批；当前授权源撤回原批准。"
+      ],
+      "observations": [
+        "两版适配器实际出站 envelope、审批/执行点决策",
+        "隔离目标的动作与去重结果查询",
+        "迟到证据所属 action/run",
+        "共享资源义务投影和 successor 结果"
+      ],
+      "deadline": "迟到发生点必须在冻结观察窗口内；窗口结束未见可查效果时保持 UNKNOWN，不以超时证明无效果。",
+      "oracle": {
+        "success": [
+          "兼容的同一动作重试保留已约定身份；身份语义改变或效果未知时拒绝盲重试。",
+          "迟到成功归属 A，并保留其对共享资源的影响，不覆盖新动作结果。",
+          "P2 或已撤销批准在执行点被拒绝，或取得另行有效授权后作为新动作处理。"
+        ],
+        "failure": [
+          "改 K/namespace 造成目标重复效果，却报告一次业务效果。",
+          "因 worker/插件版本变化丢弃旧成功证据并释放相关资源。",
+          "P2 或撤销后的动作未经当前有效授权发出。"
+        ],
+        "unsupported": [
+          "预先声明无法查询/去重时，不评估自动安全重试；仍可评估是否正确保持 UNKNOWN 和暂停。"
+        ],
+        "unknown": [
+          "没有可关联的目标证据，无法判定旧效果是否落地；不得将其计为迁移完成。"
+        ]
+      }
+    },
+    {
+      "id": "LM05",
+      "title": "插件 reload 后内存、清理与外部效果分离",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC03",
+        "MC04",
+        "MC05",
+        "MC08"
+      ],
+      "source_refs": [
+        "C1",
+        "C2"
+      ],
+      "applicability": {
+        "capabilities": [
+          "plugin_reload_lifecycle_observation",
+          "durable_task_state_export",
+          "outbound_action_journal"
+        ],
+        "environment": "固定 Cordis/DSH profile 的隔离插件与合成目标；仅协议，未启动该环境。"
+      },
+      "initial_state": [
+        "组件本地内存含非持久计数；长寿命依赖或 Record 中另存任务控制点 Q。",
+        "插件有一个异步 disposer 和一个外部未知请求 A。"
+      ],
+      "perturbation": [
+        "替换插件版本；子变体让 disposer 报错，另一子变体让其迟到完成。",
+        "保持 A 的目标执行独立于本地 lifecycle，并提供独立效果观察。"
+      ],
+      "observations": [
+        "插件生命周期事件/清理错误日志",
+        "Q 的持久读取来源与恢复记录",
+        "A 的目标 receipt/效果查询",
+        "任务恢复与资源释放分别报告的状态"
+      ],
+      "deadline": "在 observation_window_ms 内观察；清理未完成与清理异常须分别报告；不靠进入 DISPOSED 推断目标效果。",
+      "oracle": {
+        "success": [
+          "本地内存不存活时明确重建或声明不能恢复；Q 的续接来自声明的持久来源。",
+          "plugin unloaded、task resumed、effect resolved 独立报告。",
+          "清理异常/迟到不被冒充远端取消成功；旧效果义务被保存或明确转交。"
+        ],
+        "failure": [
+          "把 reload 等同原进程任意状态自动迁移。",
+          "disposer 结束或报错后仅凭插件状态就宣布 A 未发生/资源全释放。",
+          "丢失 Q 却报告任务续接成功。"
+        ],
+        "unsupported": [
+          "宿主仅支持 reload 且不声称耐久任务恢复时，任务续接能力标 UNSUPPORTED，生命周期观察可另报告。"
+        ],
+        "unknown": [
+          "清理或效果观察不足、持久状态无法关联版本时，相关谓词保持 UNKNOWN。"
+        ]
+      }
+    },
+    {
+      "id": "LM06",
+      "title": "事件 upcast 与索引代际重建不能增强事实或权限",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "contract_refs": [
+        "MC01",
+        "MC02",
+        "MC06",
+        "MC07"
+      ],
+      "source_refs": [],
+      "proposal_only": true,
+      "applicability": {
+        "capabilities": [
+          "immutable_event_export",
+          "schema_projection",
+          "index_generation_metadata",
+          "current_read_authorization"
+        ],
+        "environment": "合成事件库、两个虚构访问主体和可切换的派生索引；无私人文档。"
+      },
+      "initial_state": [
+        "原始事件 E1 记录旧动作结果 UNKNOWN，缺少新版必填 success 字段。",
+        "索引 I0 基于水位 W0，主体 U 曾可读取一个合成记录，随后其权限撤销。",
+        "目标 I1 使用新投影模式与明确水位 W1。"
+      ],
+      "perturbation": [
+        "候选转换器尝试用 success=true 填默认值。",
+        "重建期间尝试混读 I0/I1，并以 U 查询已撤销的记录；同时观察是否产生任何业务出站动作。"
+      ],
+      "observations": [
+        "E1 原始摘要与转换器版本/输出",
+        "查询结果的 generation、watermark 和 source refs",
+        "U 的当前授权判定与返回内容",
+        "出站业务动作清单"
+      ],
+      "deadline": "观察窗口内固定 W0/W1 与撤权事件次序；未能提供一致代际或当前权限证据时不宣布切换成功。",
+      "oracle": {
+        "success": [
+          "缺失字段保持未知或明确 unsupported；E1 原件不变。",
+          "查询提供一致已声明代际，当前权限阻止 U 读取；索引升级不产生外部业务动作。",
+          "混读若协议允许必须有明确语义与一致性证明；本候选 profile 默认禁止。"
+        ],
+        "failure": [
+          "默认值把 UNKNOWN 改写成成功。",
+          "已撤销的内容仍以旧索引权限返回，或同一响应无说明地混入不同语义代际。",
+          "索引重建触发业务副作用。"
+        ],
+        "unsupported": [
+          "未提供事件投影/索引能力时预先不适用；不能以此称支持跨版本知识恢复。"
+        ],
+        "unknown": [
+          "缺少 source/generation 或权限判定证据，无法核对查询结果；切换保持未验证。"
+        ]
+      }
+    }
+  ],
+  "reporting": {
+    "required_fields": [
+      "trial_id",
+      "case_id",
+      "profile_digest",
+      "source_and_target_bundle_digest",
+      "executed_at",
+      "status",
+      "contract_verdict",
+      "business_migration_outcome",
+      "effect_resolution",
+      "evidence_refs",
+      "observation_gaps",
+      "human_interventions",
+      "resource_and_model_cost"
+    ],
+    "current_values": {
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "contract_verdict": "NOT_RUN",
+      "business_migration_outcome": "NOT_RUN"
+    },
+    "separate_metrics": [
+      "适用场景协议通过率",
+      "业务续接完成率",
+      "未知效果数及其等待时间",
+      "旧版本/制品实际保留成本",
+      "人工介入次数和主动处理时间",
+      "超支持期限且无明确责任方的义务数"
+    ],
+    "cost_note": "尚无成本结果；准入拒绝、UNSUPPORTED、UNKNOWN 均不得算作业务迁移成功。"
+  }
+}

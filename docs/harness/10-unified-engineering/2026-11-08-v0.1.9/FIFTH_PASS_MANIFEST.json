@@ -1,0 +1,173 @@
+{
+  "copied_at_utc": "2026-11-08T07:48:20.834971+00:00",
+  "files": [
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/README.md",
+      "bytes": 2052,
+      "sha256": "f7b9e6ebe825d149cd8f796eb67de406c1c240b9ec417bf5bc0291dad3d11e44"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/REPORT.md",
+      "bytes": 14657,
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/SHA256SUMS",
+      "bytes": 2571,
+      "sha256": "e2c6f890d140e805a8e7511c94ac26dbd21e8f3be0e2b2f1dc6acd0a80aa8c7e"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/TRACES.md",
+      "bytes": 7034,
+      "sha256": "3a93baa1ff9451fb102998b8f6abf9a6108e3cbed39022c45213a2748ab0c544"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/build-matrix.py",
+      "bytes": 19404,
+      "sha256": "4e087d88145ed680906ce32e5f852b6faa6007eb51fcd3e5f05af9d812a6f472"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/execution_receipt.json",
+      "bytes": 4351,
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/existing-tests.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/existing-tests.stdout.txt",
+      "bytes": 2054,
+      "sha256": "8f70025f1b13067dcd782800c3082d4f981f1b6a4390e2245d8b919027616df3"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/record/README.md",
+      "bytes": 9449,
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/record/kernel.mjs",
+      "bytes": 26038,
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/specifications/ADAPTER_CONTRACT.md",
+      "bytes": 16869,
+      "sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/specifications/ARCHITECTURE.md",
+      "bytes": 20709,
+      "sha256": "889b0bc82d7c2d7d7308aea9b99eab59d132c39a49ab904e5047787c7687d162"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "bytes": 31904,
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/specifications/FORMAL_MODEL.md",
+      "bytes": 31904,
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/specifications/catalog.json",
+      "bytes": 51069,
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/record-adversarial-r1-correction.test.mjs",
+      "bytes": 3681,
+      "sha256": "527373b2e5269a486356768e9e3a53d9b0b3d1e7076dda653b55d0c1a56299a8"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/record-adversarial-r1-identity.test.mjs",
+      "bytes": 6014,
+      "sha256": "8f40575f18506359fc2d845d9626f62408e7282a385b0fa2e2d45671b70f4a92"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/record-adversarial-r1-protocol.test.mjs",
+      "bytes": 2688,
+      "sha256": "f05e105252bf2043f26f6af8ca69e7b5cdc1b3b001859accb9e9ddf840d767c8"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/record-adversarial-r2-system.test.mjs",
+      "bytes": 8527,
+      "sha256": "a5cc60eaa2b46a32f96f4aeb01fdd30651e7529c28d79b5af069d5e339ecefda"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/record-kernel.test.mjs",
+      "bytes": 15959,
+      "sha256": "7b3700517a6a361c4da135825754f7b898650e63edfb78caa95055185e605392"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs/tests/support/record-fixture.mjs",
+      "bytes": 2458,
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/inputs.json",
+      "bytes": 6031,
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/probes.initial.json",
+      "bytes": 10863,
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/probes.json",
+      "bytes": 10863,
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/probes.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/refinement-matrix.json",
+      "bytes": 43772,
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/refinement-probes.mjs",
+      "bytes": 12171,
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/record-refinement/validation_receipt.json",
+      "bytes": 701,
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a"
+    }
+  ]
+}

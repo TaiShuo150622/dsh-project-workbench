@@ -1,0 +1,78 @@
+{
+  "old_receipts_excluded": 14,
+  "old_excluded_receipts": [
+    {
+      "path": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "12837272543d39b85ea3e3bce09bd917a1464156e3408f4229c032e093ec7ef4"
+    },
+    {
+      "path": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "c5cfc78ce3b7dccbf4641aca8158b32c23886757042e49d08e98d4860fb975d7"
+    },
+    {
+      "path": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "75fb21820f6425850d40365e3c70e03b51f629bdc1ae65fcc9f1cd72f6c8754a"
+    },
+    {
+      "path": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "99e8f9575c500d62a46d3f01d4b6a517a4a35dc62dbc07091a9024d865ca2312"
+    },
+    {
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "34f47975b8bb6f125952c8576adaa46353b36d1e4f446432357ce282b02e8d77"
+    },
+    {
+      "path": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "376a4717289fc6731ade13487a8c7e732543f274f9204f6d8c1bde2c230bfff1"
+    },
+    {
+      "path": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "0c95649dd1ff8006ca7762a38611afe0317a3fb2bc5acc593ce4e22511bee386"
+    },
+    {
+      "path": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "f49ec81e18d199b63cf3aa7bed754dc0598774cdcf4fd8e6ebf56a2156350524"
+    },
+    {
+      "path": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "f8e7fd6ce5737d4c58a4df6806306cf9219ce4769c48e7a3fbb7119405850ee7"
+    },
+    {
+      "path": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "380434fb006b6731fdacce53ec47cb7b6a31eca76686be52c1eb1916db4c0f62"
+    },
+    {
+      "path": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "c12cd2fa33123af244a0329702a2c2d338e35782d14fdb7dc476a0c354a57206"
+    },
+    {
+      "path": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "f3c75dbb07e7e8e0be23406c567cc9dc324beb579c69368c10780a67483637bd"
+    },
+    {
+      "path": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "d0fb562136807dfa138bc01b41ddea0bad87b29ac82363554d75dc9125d7fdf9"
+    },
+    {
+      "path": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "reason": "orphan render receipt",
+      "original_sha256": "dc5bdb2b44f0f39205ef18dcbc6ae5e94ca2a1dbd462454ace6d913f000433bd"
+    }
+  ],
+  "restored": 14,
+  "not_in_new": [],
+  "new_excluded_receipts": []
+}

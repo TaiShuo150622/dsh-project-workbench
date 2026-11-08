@@ -1,0 +1,496 @@
+{
+  "schema_version": "0.1.0",
+  "status": "RESEARCH_READ_NOT_REPRODUCED",
+  "actual_execution": false,
+  "scope": "Public generic Harness work selection, replanning and experience improvement",
+  "sources": [
+    {
+      "id": "WI-P01",
+      "aid": "2305.16291v2",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "authors": [
+        "Guanzhi Wang",
+        "Yuqi Xie",
+        "Yunfan Jiang",
+        "Ajay Mandlekar",
+        "Chaowei Xiao",
+        "Yuke Zhu",
+        "Linxi Fan",
+        "Anima Anandkumar"
+      ],
+      "published": "2023-05-25",
+      "version_date": "2023-10-19",
+      "locators": [
+        "§2.1–2.3 pp3–6",
+        "§3.1–3.4 pp6–9",
+        "§4 p10",
+        "Appendix A.1 p19"
+      ],
+      "claims": [
+        "状态与成败任务驱动自动课程，成功代码进入技能库。",
+        "每任务4轮；160提示迭代，3次探索试验；报告63种物品。"
+      ],
+      "limitations": [
+        "Mineflayer高层API与游戏内目标，不证明现实项目价值或不可逆操作恢复。",
+        "critic误判、无效任务、旧模型费用与性能均不能直接外推。"
+      ],
+      "read": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        19
+      ],
+      "not_read": "全部提示附录与所有实现细节未逐项审计；未复现实验。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2305.16291v2",
+      "pdf_url": "https://arxiv.org/pdf/2305.16291v2",
+      "pdf_sha256": "769a4e33ddeeb73870849232eece49afe882c2d146362e33917ccb432ba0efb8",
+      "pdf_pages": 42,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-P02",
+      "aid": "2210.03629v3",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "published": "2022-10-06",
+      "version_date": "2023-03-10",
+      "locators": [
+        "§2–3 pp3–6",
+        "Table1 p5",
+        "Table2 p6",
+        "Table3–4 p8"
+      ],
+      "claims": [
+        "交替取证与行动，组合策略在7/5步后切换；不声称信息采集总优于纯推理。",
+        "HotpotQA PaLM-540B：27.4 ReAct，29.4 CoT，35.1 ReAct→CoT-SC。"
+      ],
+      "limitations": [
+        "有限步数/采样策略不是模型调用费用等价。",
+        "检索失败、重复动作会阻塞；未证明跨任务经验学习。"
+      ],
+      "read": [
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "not_read": "未审计全部示例、fine-tuning实施和附录；未复现。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2210.03629v3",
+      "pdf_url": "https://arxiv.org/pdf/2210.03629v3",
+      "pdf_sha256": "f285b0971ae4a790e402fb93966bed3adde2cf0a04977d08b2b40d6ab0cace69",
+      "pdf_pages": 33,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-P03",
+      "aid": "2305.16653v1",
+      "title": "AdaPlanner: Adaptive Planning from Feedback with Language Models",
+      "authors": [
+        "Haotian Sun",
+        "Yuchen Zhuang",
+        "Lingkai Kong",
+        "Bo Dai",
+        "Chao Zhang"
+      ],
+      "published": "2023-05-26",
+      "version_date": "2023-05-26",
+      "locators": [
+        "§3 pp4–6",
+        "Table2 p7",
+        "Figure4 p9",
+        "§6 pp9–10",
+        "Appendix8.1 p12"
+      ],
+      "claims": [
+        "子目标assert触发计划修订并从保存状态继续；成功技能有/无示例对照过滤。",
+        "ALFWorld134任务、50动作上限、6示例；GPT-3 91.79%，GPT-3.5 80.60%。"
+      ],
+      "limitations": [
+        "保存变量状态不是外部效果可撤销证明。",
+        "仍需expert demonstrations；论文前后baseline示例数说明不完全一致，本稿不引用样本倍数优势。"
+      ],
+      "read": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "not_read": "未逐一检查长提示/轨迹附录，未审计官方实现或复现。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2305.16653v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.16653v1",
+      "pdf_sha256": "100be0ffe93662453966574bf63c4517548d016e72c562130bee4a6b13c2cca6",
+      "pdf_pages": 43,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-P04",
+      "aid": "2303.11366v4",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": [
+        "Noah Shinn",
+        "Federico Cassano",
+        "Edward Berman",
+        "Ashwin Gopinath",
+        "Karthik Narasimhan",
+        "Shunyu Yao"
+      ],
+      "published": "2023-03-20",
+      "version_date": "2023-10-10",
+      "locators": [
+        "§3 pp3–4",
+        "§4.3/Table1 p7",
+        "Table2–3 p8",
+        "§5 p9"
+      ],
+      "claims": [
+        "反馈后的文字诊断影响同任务下次尝试。",
+        "Rust50 GPT-4：60基线/52无测试/60无反思/68完整，单位为百分比。"
+      ],
+      "limitations": [
+        "生成测试可误报或漏报；单次最终pass@1包含多次内部调用。",
+        "动态API/并发/硬件依赖结果等是作者列出的测试映射限制。"
+      ],
+      "read": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "not_read": "子agent补读官方日志和相关代码；未运行，不把日志计数当新复现。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2303.11366v4",
+      "pdf_url": "https://arxiv.org/pdf/2303.11366v4",
+      "pdf_sha256": "6059b6f89fea9959bd3dab553fbb97756a3dfb1b15e3cbab2fbf3ab6664333bd",
+      "pdf_pages": 19,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-P05",
+      "aid": "2308.10144v3",
+      "title": "ExpeL: LLM Agents Are Experiential Learners",
+      "authors": [
+        "Andrew Zhao",
+        "Daniel Huang",
+        "Quentin Xu",
+        "Matthieu Lin",
+        "Yong-Jin Liu",
+        "Gao Huang"
+      ],
+      "published": "2023-08-20",
+      "version_date": "2024-12-20",
+      "locators": [
+        "§4 pp4–5",
+        "§5.6/Table3 p10",
+        "AppendixD.1 p14",
+        "AppendixD.5/E p15"
+      ],
+      "claims": [
+        "从成功失败对提炼insights并检索成功轨迹；gpt-3.5-turbo-0613执行，gpt-4-0613提炼。",
+        "HotpotQA：28.0±1.4基线/39.0±1.7完整/29.0±0.4加入反思提炼；跨折标准误。",
+        "收集最多3次重试；HotpotQA/ALFWorld/WebShop步数上限7/20/15。"
+      ],
+      "limitations": [
+        "仅文字环境；论文规则可装入上下文，不证明无限经验累积。",
+        "D.1使用four-fold与half-split描述，按作者原设置标记；当前源码隔离不能替代当年运行证据。"
+      ],
+      "read": [
+        4,
+        5,
+        10,
+        14,
+        15
+      ],
+      "not_read": "未复原完整训练checkpoint和所有fold；不定性论文泄漏。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2308.10144v3",
+      "pdf_url": "https://arxiv.org/pdf/2308.10144v3",
+      "pdf_sha256": "01e533d81fb4a5f91797c073a9b1929acbaa64da45a592b26563ca7d135024f3",
+      "pdf_pages": 38,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-P06",
+      "aid": "2410.10762v4",
+      "title": "AFlow: Automating Agentic Workflow Generation",
+      "authors": [
+        "Jiayi Zhang",
+        "Jinyu Xiang",
+        "Zhaoyang Yu",
+        "Fengwei Teng",
+        "Xionghui Chen",
+        "Jiaqi Chen",
+        "Mingchen Zhuge",
+        "Xin Cheng",
+        "Sirui Hong",
+        "Jinlin Wang",
+        "Bingnan Zheng",
+        "Bang Liu",
+        "Yuyu Luo",
+        "Chenglin Wu"
+      ],
+      "published": "2024-10-14",
+      "version_date": "2025-04-15",
+      "locators": [
+        "§3–5 pp4–10",
+        "Table1 p8",
+        "AppendixA.6 p19",
+        "AppendixD p30"
+      ],
+      "claims": [
+        "候选工作流树保留父改动、执行评价与失败；固定模型/温度/格式缩小搜索空间。",
+        "20轮，每候选验证5次，测试3次；表1 GPT-4o-mini均分76.0→80.3，约5.7%相对。"
+      ],
+      "limitations": [
+        "测试推理费用不含搜索、迁移、人工；不声称人工负担已测为零。",
+        "正文与附录伪码的混合概率参数标法不一致；固定实现另有默认值。",
+        "未审核附录G收敛证明；不据此声称全局最优或有限预算保证。"
+      ],
+      "read": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        19,
+        30,
+        38
+      ],
+      "not_read": "未逐项复核所有任务输出；附录G仅尾页覆盖，未作证明核验或实验复现。",
+      "kind": "primary_research",
+      "url": "https://arxiv.org/abs/2410.10762v4",
+      "pdf_url": "https://arxiv.org/pdf/2410.10762v4",
+      "pdf_sha256": "9be15f695f11dd5bc634c1c026bd2270eff3d3c4a53c4d9b51c012b7bd03d521",
+      "pdf_pages": 38,
+      "accessed_at": "2026-11-08",
+      "verification": "METHODS_AND_SELECTED_RESULTS_READ_NOT_REPRODUCED"
+    },
+    {
+      "id": "WI-C01",
+      "repo": "MineDojo/Voyager",
+      "commit": "55e45a880755d0c8c66ca7fb5fe7962ac8974f89",
+      "commit_date": "2023-07-27T07:35:42Z",
+      "title": "Voyager task curriculum and skill commit",
+      "authors": [
+        "MineDojo/Voyager contributors"
+      ],
+      "file": "voyager/voyager.py",
+      "lines": [
+        [
+          265,
+          269
+        ],
+        [
+          315,
+          356
+        ]
+      ],
+      "claims": [
+        "迭代调度课程；成功后新增skill；错误恢复有模拟器hard reset。"
+      ],
+      "limitations": [
+        "选取论文修订前历史commit，不证明与论文全部运行完全同配置。"
+      ],
+      "read_by": "mechanisms parent",
+      "kind": "official_source_code",
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/voyager.py#L265-L269",
+      "accessed_at": "2026-11-08",
+      "verification": "STATIC_READ_NOT_EXECUTED"
+    },
+    {
+      "id": "WI-C02",
+      "repo": "FoundationAgents/AFlow",
+      "commit": "289d5544cfb5698799b207b931a392aadc9e9c1a",
+      "commit_date": "2025-04-15T09:52:02Z",
+      "title": "AFlow optimizer outer and inner budgets",
+      "authors": [
+        "FoundationAgents/AFlow contributors"
+      ],
+      "file": "scripts/optimizer.py",
+      "lines": [
+        [
+          32,
+          46
+        ],
+        [
+          105,
+          113
+        ],
+        [
+          130,
+          181
+        ]
+      ],
+      "claims": [
+        "外层轮数20、验证轮数5；提前停止默认关闭；内层候选生成可继续，外轮数不是总调用上限。"
+      ],
+      "limitations": [
+        "静态调用边界核查，未执行；不能据此估算实际花费。"
+      ],
+      "read_by": "mechanisms parent",
+      "kind": "official_source_code",
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46",
+      "accessed_at": "2026-11-08",
+      "verification": "STATIC_READ_NOT_EXECUTED"
+    },
+    {
+      "id": "WI-C03",
+      "repo": "noahshinn/reflexion",
+      "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+      "commit_date": null,
+      "title": "Reflexion code feedback and official Rust50 artifacts",
+      "authors": [
+        "noahshinn/reflexion contributors"
+      ],
+      "file": "programming_runs/reflexion.py",
+      "lines": [
+        [
+          33,
+          116
+        ]
+      ],
+      "claims": [
+        "内部生成测试与benchmark最终评价分开；官方四组日志50题计数与论文Rust消融一致。"
+      ],
+      "limitations": [
+        "代码/日志由同模型子agent只读核查；保存产物不是本轮重跑；文件名和reflection数量仅描述该产物预算。",
+        "当前Python日志150/164与论文91.0有差异，本稿不混用此headline。"
+      ],
+      "read_by": "experience_sources; paper results independently reopened by mechanisms parent",
+      "kind": "official_source_code",
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py#L33-L116",
+      "accessed_at": "2026-11-08",
+      "verification": "STATIC_READ_NOT_EXECUTED",
+      "artifact_evidence": [
+        {
+          "condition": "baseline",
+          "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/simple_humaneval_rs_hard50/humaneval-rs._simple_1_gpt-4_pass_at_k_1_rs.jsonl",
+          "records": 50,
+          "is_solved_true": 30,
+          "check_kind": "READ_ONLY_OFFICIAL_SAVED_LOG_BY_SUBAGENT_NOT_RERUN"
+        },
+        {
+          "condition": "without_tests",
+          "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/immediate_reflexion_humaneval_rs_hardest50/humaneval-rs-hardest50._immediate-reflexion_5_gpt-4_pass_at_k_1_rs.jsonl",
+          "records": 50,
+          "is_solved_true": 26,
+          "check_kind": "READ_ONLY_OFFICIAL_SAVED_LOG_BY_SUBAGENT_NOT_RERUN"
+        },
+        {
+          "condition": "without_reflection",
+          "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/immediate_refinement_humaneval_rs_hardest50/humaneval-rs-hardest50._immediate-refinement_5_gpt-4_pass_at_k_1_rs.jsonl",
+          "records": 50,
+          "is_solved_true": 30,
+          "check_kind": "READ_ONLY_OFFICIAL_SAVED_LOG_BY_SUBAGENT_NOT_RERUN"
+        },
+        {
+          "condition": "full",
+          "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/reflexion_humaneval_rs_hard50/humaneval-rs._reflexion_5_gpt-4_pass_at_k_1_rs.jsonl",
+          "records": 50,
+          "is_solved_true": 34,
+          "check_kind": "READ_ONLY_OFFICIAL_SAVED_LOG_BY_SUBAGENT_NOT_RERUN"
+        }
+      ]
+    },
+    {
+      "id": "WI-C04",
+      "repo": "LeapLabTHU/ExpeL",
+      "commit": "e41ec9a24823e7b560c561ab191441b56d9bcefc",
+      "commit_date": null,
+      "title": "ExpeL rule update and experience scope",
+      "authors": [
+        "LeapLabTHU/ExpeL contributors"
+      ],
+      "file": "agent/expel.py",
+      "lines": [
+        [
+          420,
+          447
+        ],
+        [
+          555,
+          578
+        ],
+        [
+          696,
+          790
+        ]
+      ],
+      "claims": [
+        "规则计数由模型ADD/EDIT/AGREE/REMOVE操作调整，不是独立有效性验证次数。"
+      ],
+      "limitations": [
+        "同模型子agent静态核查；fold规则提炼与轨迹检索隔离需进一步验证。",
+        "尚未核查作者原始运行checkpoint，不能断言论文数据泄漏。"
+      ],
+      "read_by": "experience_sources",
+      "kind": "official_source_code",
+      "url": "https://github.com/LeapLabTHU/ExpeL/blob/e41ec9a24823e7b560c561ab191441b56d9bcefc/agent/expel.py#L420-L447",
+      "accessed_at": "2026-11-08",
+      "verification": "STATIC_READ_NOT_EXECUTED"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "535905a83d363614fd0a8b60b47b6ec21e63c565be5dcfa5a168e237edba4f84",
+      "read_sections": [
+        "1–5"
+      ],
+      "status": "CURRENT_RESEARCH_DRAFT_AT_READ"
+    },
+    {
+      "path": "integration/docs/harness/01-vision/harness-discussion-v0.3.md",
+      "sha256": "673e7c5f272d4209cb7332d89e746f56c70c4ebd92a712dfef7385edc74b3ec1",
+      "read_sections": [
+        "1–6",
+        "8 headings and relevant decision boundary",
+        "11 review obligations",
+        "20 next steps"
+      ],
+      "status": "HISTORICAL_PUBLIC_DRAFT_NOT_REVALIDATED"
+    },
+    {
+      "path": "integration/docs/harness/03-runtime/history/AI编码Harness主干设计-源文件v0.1.2-公开整理版.md",
+      "sha256": "41e97cef0d16999a435dd89027a34d16c8838a57d57566d4c96948581e9e03d7",
+      "read_sections": [
+        "问题与目标",
+        "固定方法如何减少审查",
+        "工作流：拆分、检查点、预测与回溯",
+        "闭环：反哺harness与数据标注",
+        "闭环在harness上怎么落地",
+        "技能内化",
+        "意外分类与待拍板相关段"
+      ],
+      "status": "HISTORICAL_PUBLIC_DRAFT_NOT_REVALIDATED"
+    }
+  ],
+  "coverage_note": "读取相关方法、结果、预算和限制，不等于逐页全文审计；未执行模型/API试验/第三方代码。下载PDF只在内存提取文本，没有保存论文全文。"
+}

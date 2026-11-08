@@ -1,0 +1,55 @@
+{
+  "round": "R-08",
+  "review_type": "independent_model_review_plus_TLC",
+  "declared_model": "gpt-6-astra",
+  "runtime_model_attested": false,
+  "human_review_claimed": false,
+  "product_execution": false,
+  "findings": [],
+  "conclusion": "No substantive defect found within frozen finite model, runner and conditional fixed-source mapping.",
+  "verification": {
+    "memory": {
+      "generated": 81,
+      "distinct": 51,
+      "queue": 4,
+      "transitions": 9,
+      "violation": "NoLostSent"
+    },
+    "durable": {
+      "generated": 87,
+      "distinct": 52,
+      "queue": 0,
+      "complete": true
+    },
+    "error": {
+      "generated": 13,
+      "distinct": 12,
+      "queue": 4,
+      "transitions": 4,
+      "violation": "ErrorProvesAbsence"
+    },
+    "independent_negative_control": {
+      "wrong_invariant": "Init",
+      "TLC_exit_code": 12,
+      "runner_exit_code": 1,
+      "memory_outcome_matches": false
+    }
+  },
+  "required_scope": [
+    "one immutable worker-to-lead relay ID",
+    "same-ID explicit retry remains reachable",
+    "active routed target writer",
+    "target-no-commit failure selected, not inferred from any exception",
+    "no successful later drain on counterexample prefix",
+    "sent recoverable under process-only crash profile",
+    "no message consumption/cancellation/deletion",
+    "no fairness or liveness claim",
+    "not an implementation refinement proof or actual lost-message incident"
+  ],
+  "clarifications": [
+    {
+      "classification": "scope_only_not_bug",
+      "text": "Runner parses counts but does not assert exact regression counts or shortest trace length; this review independently compared both."
+    }
+  ]
+}

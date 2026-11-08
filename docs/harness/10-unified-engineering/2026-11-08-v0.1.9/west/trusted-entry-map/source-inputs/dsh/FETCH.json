@@ -1,0 +1,70 @@
+{
+  "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "repository": "deepseek-ai/deepseek-harness",
+  "inputs": [
+    {
+      "path": "packages/client/connection/src/index.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+      "sha256": "33a14e80298e0a0bc7bafef515d853d13584cd2433844b3dc2a89d4980d315e1",
+      "lines": 169,
+      "bytes": 6978,
+      "fetched_at_utc": "2026-11-08T08:53:01.503824+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/api-request-trust.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/api-request-trust.ts",
+      "sha256": "879a4f497ad41355771303a5956851da04661be24b08435fe7bf13d42e1e3b9b",
+      "lines": 176,
+      "bytes": 8787,
+      "fetched_at_utc": "2026-11-08T08:53:02.330133+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/rpc-host.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "lines": 412,
+      "bytes": 15605,
+      "fetched_at_utc": "2026-11-08T08:53:04.155577+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/client/rpc.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/client/rpc.ts",
+      "sha256": "8a55426351dfc3b4150b6fdd60daf20735824cbb90b4b806321ec442c639e460",
+      "lines": 183,
+      "bytes": 7351,
+      "fetched_at_utc": "2026-11-08T08:53:02.348064+00:00"
+    },
+    {
+      "path": "docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "sha256": "bd102c1867feab15cbe5f6cba2e43fb9311ede680d936db7c2e925b18aa3ed98",
+      "lines": 60,
+      "bytes": 2396,
+      "fetched_at_utc": "2026-11-08T08:53:02.759466+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/browser-auth.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/browser-auth.ts",
+      "sha256": "f1ebdb9fa8706414852420393d9f34b2d604a128928a2f5852d4832ce38b45f7",
+      "lines": 394,
+      "bytes": 16185,
+      "fetched_at_utc": "2026-11-08T08:54:48.664036+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/http-bridge.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/http-bridge.ts",
+      "sha256": "182a668579ec5701489f54449bb4b0e63e80b77f90edc147b993b1acba4bae86",
+      "lines": 127,
+      "bytes": 5034,
+      "fetched_at_utc": "2026-11-08T08:54:47.684290+00:00"
+    },
+    {
+      "path": "packages/client/connection/src/rpc.ts",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc.ts",
+      "sha256": "74ba5632fea441a4c76de677ddeb840de51a775b42514c0908a3ef207339d94b",
+      "lines": 328,
+      "bytes": 13015,
+      "fetched_at_utc": "2026-11-08T08:54:47.938645+00:00"
+    }
+  ]
+}

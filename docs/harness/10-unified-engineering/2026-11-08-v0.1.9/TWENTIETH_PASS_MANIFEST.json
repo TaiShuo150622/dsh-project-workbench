@@ -1,0 +1,89 @@
+{
+  "copied_at_utc": "2026-11-08T09:10:04.859609+00:00",
+  "files": [
+    {
+      "path": "china/progress-conditions/README.md",
+      "source_worktree": "china",
+      "bytes": 3302,
+      "sha256": "c9efff068c2935b230fb27045e531e27ffe97c9c034c744906a0cdabf06d3788"
+    },
+    {
+      "path": "china/progress-conditions/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 1157,
+      "sha256": "87adbf640c33539eea11e2f35e68f16ce31470bff7367d447afd9f640bb50fcf"
+    },
+    {
+      "path": "china/progress-conditions/TRACES.md",
+      "source_worktree": "china",
+      "bytes": 12254,
+      "sha256": "856860bb2725ed98e6dcefe4d1ca3b0a87559d1fd6f15caec819faa99f5a4133"
+    },
+    {
+      "path": "china/progress-conditions/check_progress.py",
+      "source_worktree": "china",
+      "bytes": 20623,
+      "sha256": "548a4b6812609cc80967ef2eb8d4d6a47d09e6e3ccedceb02b445c4d58604d6b"
+    },
+    {
+      "path": "china/progress-conditions/draft-check.txt",
+      "source_worktree": "china",
+      "bytes": 117,
+      "sha256": "ee59e2e32b7e9eecad94cd43a565d282b7e0a7baded482a15be0312ce7eef28a"
+    },
+    {
+      "path": "china/progress-conditions/execution_receipt.json",
+      "source_worktree": "china",
+      "bytes": 773,
+      "sha256": "88785e03b3da0dd78b813f28804b2c27c9caef24e102f473a0487b13ea607827"
+    },
+    {
+      "path": "china/progress-conditions/inputs.json",
+      "source_worktree": "china",
+      "bytes": 3623,
+      "sha256": "849d7f4a4dcfdb4ee1ce2ce464e21ab89899090e83f5722387834e2b028dff73"
+    },
+    {
+      "path": "china/progress-conditions/render-log.txt",
+      "source_worktree": "china",
+      "bytes": 112,
+      "sha256": "73b05511ee507038d6d6da407dcb7d3c5ca0f0675f6030a413bb95a820808a28"
+    },
+    {
+      "path": "china/progress-conditions/results.json",
+      "source_worktree": "china",
+      "bytes": 36649,
+      "sha256": "06f7d86aa443c9752cf51652988991362ffb13480e59e195e89425844db24c92"
+    },
+    {
+      "path": "china/progress-conditions/sources.json",
+      "source_worktree": "china",
+      "bytes": 2519,
+      "sha256": "2b08cfddc9b77967e38a3df8e413b900d65cb156954350f310a92d5f4e285058"
+    },
+    {
+      "path": "china/progress-conditions/validation_receipt.json",
+      "source_worktree": "china",
+      "bytes": 2859,
+      "sha256": "5867d72b04a500399cc4c63c412c12f4a75dca940cc89feee04a81ee8c17857a"
+    },
+    {
+      "path": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.html",
+      "source_worktree": "china",
+      "bytes": 29344,
+      "sha256": "a7dee5c3b7b340442ffe1b8386c8dd987c6e00529880379f2a451b9153c92be8"
+    },
+    {
+      "path": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.json",
+      "source_worktree": "china",
+      "bytes": 3106,
+      "sha256": "66f384af0560b7df12cd051b88169e531e9b4199a1db3868f3888f43fa3cf4e7"
+    },
+    {
+      "path": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.md",
+      "source_worktree": "china",
+      "bytes": 17854,
+      "sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed"
+    }
+  ]
+}

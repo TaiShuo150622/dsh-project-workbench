@@ -1,0 +1,41 @@
+{
+  "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107",
+  "captured_at_utc": "2026-11-08T10:08:24.357406+00:00",
+  "files": [
+    {
+      "path": "统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "bytes": 53086
+    },
+    {
+      "path": "FORMAL_MODEL.md",
+      "sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+      "bytes": 36703
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+      "bytes": 25082
+    },
+    {
+      "path": "EVIDENCE.md",
+      "sha256": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+      "bytes": 11564
+    },
+    {
+      "path": "DESIGN_RECONCILIATION.md",
+      "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+      "bytes": 13147
+    },
+    {
+      "path": "README.md",
+      "sha256": "0d8236215e720c77e9fb058adb8471bee74059264ce7d4416eea7e210e5506aa",
+      "bytes": 8821
+    },
+    {
+      "path": "west/decision-brief/MEMO-v0.1.1.md",
+      "sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+      "bytes": 5291
+    }
+  ]
+}

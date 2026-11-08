@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "accessed_at": "2026-11-08T07:38:22.079938+00:00",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "AUTH-OpenAI-invocation",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165",
+      "blob_sha": "8685e3ec6e191e982bb2d3194c27b3a85772520b",
+      "location": "165–231",
+      "root_review_note": "批准作用域与语义字段构成指纹；参数规范化进入identity，不能说仅按call ID批准。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-OpenAI-reuse",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582",
+      "blob_sha": "92cf584d0145da019d5ebeffe69c4c3a21f32c5e",
+      "location": "582–612",
+      "root_review_note": "已登记call ID的类型、scope或fingerprint变化会抛错；静态路径不证明所有目标规范化安全。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-MCP-annotations",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276",
+      "blob_sha": "0abde3c55dd07ee038c8614ce74f116150ff1c8c",
+      "location": "2270–2295",
+      "root_review_note": "Annotations.audience 是 user/assistant Role[] 内容用途提示，与OAuth资源audience及应用数据ACL不同。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-MCP-token",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "blob_sha": "b45830c74d4801c04605943b50a86eb17de52025",
+      "location": "Token Audience Binding; Access Token Privilege Restriction",
+      "root_review_note": "规范要求目标服务验证凭据接收者，上游使用另发凭据，不允许直接透传。规范要求不等于部署已符合。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-Claude-order",
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "location": "How permissions are evaluated",
+      "root_review_note": "hooks/deny/ask/mode/allow多个阶段可以决定调用；canUseTool不是所有路径的唯一拦截点。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "AUTH-Claude-child-tools",
+      "url": "https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent",
+      "location": "513–551",
+      "root_review_note": "子代理可有主会话没有的inline MCP连接，受信任及管理策略限制。工具面不是授权集合，不能要求所有工具名严格父子子集。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "TTL-AWS-original",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "location": "Retries and semantic equivalence; Late arriving requests; Same client request ID different intent",
+      "root_review_note": "业务意图/调用方身份、迟到请求和保留期分别明确；本文有限期限模型是自己的抽象，不当作AWS实现复现。",
+      "status": "primary_text_reopened",
+      "runtime_tested": false
+    }
+  ]
+}

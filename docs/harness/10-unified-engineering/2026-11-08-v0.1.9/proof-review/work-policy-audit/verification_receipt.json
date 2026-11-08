@@ -1,0 +1,100 @@
+{
+  "checked_at_utc": "2026-11-08T08:07:52.467368+00:00",
+  "reviewer_executed": [
+    "snapshot_hash_check",
+    "json_parse",
+    "author_receipt_artifact_hash_crosscheck",
+    "design_count_arithmetic",
+    "proposed_not_run_status_check"
+  ],
+  "reviewer_not_executed": [
+    "author_document_checker",
+    "browser_visual_review",
+    "task_runner",
+    "model_api",
+    "statistical_experiment",
+    "source_paper_reverification"
+  ],
+  "frozen_inputs": [
+    {
+      "path": "mechanisms/work-improvement/sources.json",
+      "matches": true
+    },
+    {
+      "path": "mechanisms/work-improvement/README.md",
+      "matches": true
+    },
+    {
+      "path": "mechanisms/work-improvement/minimal-experiments.json",
+      "matches": true
+    },
+    {
+      "path": "mechanisms/work-improvement/validation.json",
+      "matches": true
+    },
+    {
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "matches": true
+    },
+    {
+      "path": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "matches": true
+    },
+    {
+      "path": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "matches": true
+    },
+    {
+      "path": "west/evaluation-design-review/README.md",
+      "matches": true
+    },
+    {
+      "path": "west/evaluation-design-review/review.md",
+      "matches": true
+    },
+    {
+      "path": "west/evaluation-design-review/design.json",
+      "matches": true
+    },
+    {
+      "path": "统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "matches": true
+    }
+  ],
+  "author_hashes": [
+    {
+      "file": "README.md",
+      "matches": true
+    },
+    {
+      "file": "minimal-experiments.json",
+      "matches": true
+    },
+    {
+      "file": "sources.json",
+      "matches": true
+    },
+    {
+      "file": "自主推进与工作方式改进讨论稿-v0.1.0.html",
+      "matches": true
+    },
+    {
+      "file": "自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "matches": true
+    }
+  ],
+  "design_checks": {
+    "pilot_12": true,
+    "transfer_18": true,
+    "W01_48": true,
+    "W02_72": true,
+    "W03_96": true,
+    "legacy_3456": true,
+    "legacy_3240": true,
+    "legacy_1944": true,
+    "legacy_864": true,
+    "unrun_status": true
+  },
+  "all_pass": true,
+  "author_checks_are_not_independent_experiment_evidence": true
+}

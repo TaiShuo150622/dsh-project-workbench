@@ -1,0 +1,48 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Warning: Please run the Java VM which executes TLC with a throughput optimized garbage collector by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 100 and seed -4798165258989769962 with 1 worker on 8 cores with 512MB heap and 64MB offheap memory [pid: 47166] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/EffectContract.tla
+Parsing file __LOCAL_TMP__/Naturals.tla
+Parsing file __LOCAL_TMP__/FiniteSets.tla
+Parsing file __LOCAL_TMP__/Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module EffectContract
+Starting... (2026-11-07 22:57:14)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-07 22:57:15.
+Error: Invariant WorldEffectAlwaysKnown is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ cancelled = FALSE
+/\ effects = {}
+/\ messages = << >>
+/\ targetEpoch = 1
+/\ sent = 0
+/\ confirmed = FALSE
+/\ seenKeys = {}
+
+State 2: <Send line 30, col 3 to line 40, col 71 of module EffectContract>
+/\ cancelled = FALSE
+/\ effects = {}
+/\ messages = <<[epoch |-> 1, key |-> 0, status |-> "pending"]>>
+/\ targetEpoch = 1
+/\ sent = 1
+/\ confirmed = FALSE
+/\ seenKeys = {}
+
+State 3: <Next line 82, col 6 to line 82, col 42 of module EffectContract>
+/\ cancelled = FALSE
+/\ effects = {[message |-> 1, sentEpoch |-> 1, commitEpoch |-> 1, afterCancel |-> FALSE]}
+/\ messages = <<[epoch |-> 1, key |-> 0, status |-> "applied"]>>
+/\ targetEpoch = 1
+/\ sent = 1
+/\ confirmed = FALSE
+/\ seenKeys = {0}
+
+8 states generated, 8 distinct states found, 5 states left on queue.
+The depth of the complete state graph search is 3.
+The average outdegree of the complete state graph is 3 (minimum is 3, the maximum 3 and the 95th percentile is 3).
+Finished in 00s at (2026-11-07 22:57:15)

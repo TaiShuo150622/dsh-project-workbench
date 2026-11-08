@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0",
+  "version": "0.1.0",
+  "as_of": "2026-11-08",
+  "scope": "west/context-evaluation",
+  "runtime_experiments_run": false,
+  "datasets_downloaded": false,
+  "model_api_calls": 0,
+  "sources": [
+    {
+      "id": "E01",
+      "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "authors": [
+        "Di Wu",
+        "Hongwei Wang",
+        "Wenhao Yu",
+        "Yuwei Zhang",
+        "Kai-Wei Chang",
+        "Dong Yu"
+      ],
+      "publication_date": "2024-10-14",
+      "version": "v2 2025-03-04",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "顺序历史、更新/时间/跨会话/拒答能力；索引、检索、读取分解。"
+      ],
+      "limitations": [
+        "QA benchmark不是完整工作；旧商业系统2024样本不能评价现产品；judge元评估有限。"
+      ],
+      "locator": "3.1–3.4; 4–5; A.4"
+    },
+    {
+      "id": "E02",
+      "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "url": "https://aclanthology.org/2024.acl-long.747.pdf",
+      "authors": [
+        "Adyasha Maharana",
+        "Dong-Ho Lee",
+        "Sergey Tulyakov",
+        "Mohit Bansal",
+        "Francesco Barbieri",
+        "Yuwei Fang"
+      ],
+      "publication_date": "2024-08",
+      "version": "ACL 2024 final",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "机器生成人工编辑对话；QA和事件摘要；正式版10段1986题，Table5。"
+      ],
+      "limitations": [
+        "早期版本不同；单次运行和合成分布；QA文字匹配不同于语义接受。"
+      ],
+      "locator": "sections 3.4,4,5; Appendix B.1 Table5, C.1–C.2"
+    },
+    {
+      "id": "E03",
+      "title": "MemGPT: Towards LLMs as Operating Systems",
+      "url": "https://arxiv.org/html/2310.08560v2",
+      "authors": [
+        "Charles Packer",
+        "Sarah Wooders",
+        "Kevin Lin",
+        "Vivian Fang",
+        "Shishir G. Patil",
+        "Ion Stoica",
+        "Joseph E. Gonzalez"
+      ],
+      "publication_date": "2023-10-12",
+      "version": "v2 2024-02-12",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "模型通过函数管理主上下文、外存和分页；回忆及文档QA实验。"
+      ],
+      "limitations": [
+        "DMR摘要基线与全历史检索输入不等价；对话总评测数未在所读段落核实；不是当前Letta产品测试。"
+      ],
+      "locator": "2;3.1–3.2;6.1.2–6.1.5"
+    },
+    {
+      "id": "E04",
+      "title": "A-Mem: Agentic Memory for LLM Agents",
+      "url": "https://arxiv.org/html/2502.12110v11",
+      "authors": [
+        "Wujiang Xu",
+        "Zujie Liang",
+        "Kai Mei",
+        "Hang Gao",
+        "Juntao Tan",
+        "Yongfeng Zhang"
+      ],
+      "publication_date": "2025-02-17",
+      "version": "v11 2025-10-08",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "note生成、语义链接与演化；LoCoMo/DialSim与组件消融。"
+      ],
+      "limitations": [
+        "论文所述7512QA和当前locomo10默认文件的对应未核实；按类别调k；F1/BLEU不证明自主ontology一般必要。"
+      ],
+      "locator": "3;4.1–4.5;6;A.5. Earlier v3 read for discovery, final claims use v11."
+    },
+    {
+      "id": "E05",
+      "title": "LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression",
+      "url": "https://arxiv.org/html/2403.12968v2",
+      "authors": [
+        "Zhuoshi Pan",
+        "Qianhui Wu",
+        "Huiqiang Jiang",
+        "Menglin Xia",
+        "Xufang Luo",
+        "Jue Zhang",
+        "Qingwei Lin",
+        "Victor Rühle",
+        "Yuqing Yang",
+        "Chin-Yew Lin",
+        "H. Vicky Zhao",
+        "Lili Qiu",
+        "Dongmei Zhang"
+      ],
+      "publication_date": "2024-03-19",
+      "version": "v2 2024-08-12; ACL Findings 2024",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "蒸馏token选择压缩；MeetingBank、LongBench等下游评价。"
+      ],
+      "limitations": [
+        "生成参考和旧模型；抽取不保证语义无损；未测动态权限/纠错。"
+      ],
+      "locator": "3–5; Table1/2; Appendix F/J/P"
+    },
+    {
+      "id": "E06",
+      "title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "authors": [
+        "Wujiang Xu",
+        "Jiaojiao Han",
+        "Xi Zhu",
+        "Qizheng Zhang",
+        "Kaiqu Liang",
+        "Yutong Yin",
+        "Kai Mei",
+        "Dimitris N. Metaxas"
+      ],
+      "publication_date": "2026-10-23",
+      "version": "v1 preprint",
+      "accessed_date": "2026-11-08",
+      "category": "original_research_paper",
+      "evidence_status": "original_body_read_author_report_not_reproduced",
+      "supports": [
+        "原文保留、调用时预算呈现；完整任务轨迹与事实QA作用不同；有确认任务与组件消融。"
+      ],
+      "limitations": [
+        "作者报告未复现；LME汇总参与设计；每任务重置不测试跨任务学习；公开研究日志缺失；不全臂全数据重复运行。"
+      ],
+      "locator": "3–6; Appendix B,E.1; Tables1/3/5"
+    },
+    {
+      "id": "E07",
+      "title": "LongMemEval answer checking",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "authors": [
+        "xiaowu0162"
+      ],
+      "publication_date": "2026-05-11",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "更新题允许旧与新信息同时出现；时间题某些off-by-one可判对。"
+      ],
+      "limitations": [
+        "这是基准评分口径，不能当动作语义验收。"
+      ],
+      "locator": "get_anscheck_prompt lines24–42; model_zoo lines11–16",
+      "code": {
+        "repository": "xiaowu0162/LongMemEval",
+        "commit": "9e0b455f4ef0e2ab8f2e582289761153549043fc",
+        "path": "src/evaluation/evaluate_qa.py",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E08",
+      "title": "LoCoMo data release and available scripts",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD",
+      "authors": [
+        "snap-research"
+      ],
+      "publication_date": "2024-08-13",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "当前10段是早期50段子集；数据有evidence标注；部分评测未发布。"
+      ],
+      "limitations": [
+        "未下载或重新统计数据；只使用论文Table5和README。"
+      ],
+      "locator": "Data; Notes1–3; event-summarization evaluation",
+      "code": {
+        "repository": "snap-research/locomo",
+        "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+        "path": "README.MD",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E09",
+      "title": "LoCoMo QA scoring",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "authors": [
+        "snap-research"
+      ],
+      "publication_date": "2024-08-13",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "category5匹配拒答词串；无上下文trace分支可把recall填1。"
+      ],
+      "limitations": [
+        "不把兼容性默认值当实际证据召回；未运行。"
+      ],
+      "locator": "eval_question_answering lines189–237",
+      "code": {
+        "repository": "snap-research/locomo",
+        "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+        "path": "task_eval/evaluation.py",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E10",
+      "title": "A-Mem experiment repository",
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/README.md",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "区分论文实验仓库与应用库；默认locomo10和k调优入口。"
+      ],
+      "limitations": [
+        "当前实现后于论文；不是表格原始运行快照。"
+      ],
+      "locator": "Getting Started; Categories",
+      "code": {
+        "repository": "WujiangXu/A-mem",
+        "commit": "f9a173dec325d84fcc97e7828775c7b241c33466",
+        "path": "README.md",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E11",
+      "title": "A-Mem QA experiment adapter",
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/test_advanced.py",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "按类别调整prompt；拒答类候选式；默认数据locomo10。"
+      ],
+      "limitations": [
+        "不把候选式拒答得分解释为自由回答能力；历史实验数据hash仍缺。"
+      ],
+      "locator": "answer_question lines129–198; parser dataset lines421–423",
+      "code": {
+        "repository": "WujiangXu/A-mem",
+        "commit": "f9a173dec325d84fcc97e7828775c7b241c33466",
+        "path": "test_advanced.py",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E12",
+      "title": "LLMLingua-2 released experiment instructions",
+      "url": "https://github.com/microsoft/LLMLingua/blob/01b9e9481d7395e1e83a48df4a062b11f6304325/experiments/llmlingua2/README.md",
+      "authors": [
+        "microsoft"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "公开蒸馏数据入口、压缩和下游评价脚本。"
+      ],
+      "limitations": [
+        "只核可复现入口，未安装或训练/下载。"
+      ],
+      "locator": "Data collection; Model Training; Evaluation",
+      "code": {
+        "repository": "microsoft/LLMLingua",
+        "commit": "01b9e9481d7395e1e83a48df4a062b11f6304325",
+        "path": "experiments/llmlingua2/README.md",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E13",
+      "title": "FlexA-Mem reproduction specification",
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/docs/reproduce.md",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "逐任务重置、预算共用、各split和统计；旧build与当前重建有区别。"
+      ],
+      "limitations": [
+        "不是全臂等次数复现；README明示研究日志不在发布包。"
+      ],
+      "locator": "shared rules; Builds in paper vs here; benchmarks; Statistics",
+      "code": {
+        "repository": "WujiangXu/Flex-Amem",
+        "commit": "37ba0ce2b4d14f6746e819b6a2d728ad74c364f2",
+        "path": "docs/reproduce.md",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E14",
+      "title": "FlexA-Mem confirmation split manifest",
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/configs/splits/manifest_confirm.json",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "含147个任务列表与SHA256、作者的冻结说明。"
+      ],
+      "limitations": [
+        "manifest本身不能独立证明所有运行发生在冻结之后；引用的研究日志未公开。"
+      ],
+      "locator": "files; note; sources",
+      "code": {
+        "repository": "WujiangXu/Flex-Amem",
+        "commit": "37ba0ce2b4d14f6746e819b6a2d728ad74c364f2",
+        "path": "configs/splits/manifest_confirm.json",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E15",
+      "title": "FlexA-Mem note store",
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/memory/store.py",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "按序加入note、缓存索引、文件替换保存。"
+      ],
+      "limitations": [
+        "研究内部存储不是认证审计账本；emb/link可变化，不能把paper的raw不可改偷换为所有对象永久不可变。"
+      ],
+      "locator": "NoteStore.add/set_emb/link/save",
+      "code": {
+        "repository": "WujiangXu/Flex-Amem",
+        "commit": "37ba0ce2b4d14f6746e819b6a2d728ad74c364f2",
+        "path": "src/flexamem/memory/store.py",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E16",
+      "title": "FlexA-Mem LongMemEval judge",
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/bench/longmemeval/judge.py",
+      "authors": [
+        "WujiangXu"
+      ],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": [
+        "复用LongMemEval题型判据，judge单独调用。"
+      ],
+      "limitations": [
+        "当前源码不证明历史运行judge配置；仍继承宽松更新/时间口径。"
+      ],
+      "locator": "module docstring; _TEMPORAL; _UPDATE; judge_prompt",
+      "code": {
+        "repository": "WujiangXu/Flex-Amem",
+        "commit": "37ba0ce2b4d14f6746e819b6a2d728ad74c364f2",
+        "path": "src/flexamem/bench/longmemeval/judge.py",
+        "paper_version_equivalence": "not_established"
+      }
+    },
+    {
+      "id": "E17",
+      "title": "Harness design for long-running application development",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "authors": [
+        "Prithvi Rajasekaran",
+        "Anthropic"
+      ],
+      "publication_date": "2026-03-24",
+      "accessed_date": "2026-11-08",
+      "category": "official_staff_engineering_report",
+      "evidence_status": "primary_body_read_author_report_not_reproduced",
+      "supports": [
+        "模型升级后逐项撤去不再必要编排，评价应按任务能力边界。"
+      ],
+      "limitations": [
+        "不是统计基准；任务范围与预算不同；见west v0.1.1完整核查。"
+      ],
+      "locator": "The architecture; Removing the sprint construct; Results from updated harness",
+      "identity_basis": "原文写明Labs team成员，限发文时"
+    },
+    {
+      "id": "E18",
+      "title": "FlexA-Mem release scope and research-log limitation",
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/README.md",
+      "authors": ["WujiangXu"],
+      "publication_date": "2026-10-28",
+      "publication_date_basis": "snapshot commit date, not paper experiment date",
+      "accessed_date": "2026-11-08",
+      "category": "author_source_code_or_repository_documentation",
+      "evidence_status": "pinned_source_static_read_not_executed",
+      "supports": ["README明确研究日志及其内部文档不在本发布包；公开运行入口及call ledger路径。"],
+      "limitations": ["公开代码和manifest不能独立证明作者完整研发顺序；未运行脚本或验证历史调用账单。"],
+      "locator": "Layout后的research log说明; Getting Started notes",
+      "code": {
+        "repository": "WujiangXu/Flex-Amem",
+        "commit": "37ba0ce2b4d14f6746e819b6a2d728ad74c364f2",
+        "path": "README.md",
+        "paper_version_equivalence": "not_established"
+      }
+    }
+  ]
+}

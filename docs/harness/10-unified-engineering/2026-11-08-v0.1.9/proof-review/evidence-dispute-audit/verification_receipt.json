@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-11-08T09:30:47.369622+00:00",
+  "source_unchanged": true,
+  "changed_files": [],
+  "input_snapshot_sha256": "76f988150817d65137c14169a1000a9c92622e76b6ba0a0c575e80fe6f690cb2",
+  "oracle_command": [
+    "python3",
+    "oracle_check.py"
+  ],
+  "oracle_exit_code": 0,
+  "oracle_script_sha256": "e22e347ef910c2b31e3f2c44894b640c36addc7fbfd30be91c3dafa68c3f116f",
+  "oracle_results_sha256": "1476ad0377798eba59be3981fd9938e3574b10ae88f6185d1d56a6ade96a1ae1",
+  "independence": "Separate-context model review; event-set oracle independent of Model.view and LABELS, sharing synthetic datatypes and equality. Not human review or authentication proof.",
+  "product_or_external_calls": false
+}

@@ -1,0 +1,35 @@
+{
+  "copied_at_utc": "2026-11-08T08:50:11.802919+00:00",
+  "files": [
+    {
+      "path": "west/historical-coverage/COVERAGE.md",
+      "source_worktree": "west",
+      "bytes": 10746,
+      "sha256": "d95d6371afb12b1632367723a46ef5c0004ef2f105ac3fc1c0680686d8879d54"
+    },
+    {
+      "path": "west/historical-coverage/README.md",
+      "source_worktree": "west",
+      "bytes": 1933,
+      "sha256": "7375f2fb1982441a905f3a1106e3aaa1f444e9d61fdfcb1d3c83213c86298c73"
+    },
+    {
+      "path": "west/historical-coverage/coverage.json",
+      "source_worktree": "west",
+      "bytes": 131408,
+      "sha256": "2c8b4e88d897b4de5196a1b0c261798907b832fbae573f1e3646f634cbd18f07"
+    },
+    {
+      "path": "west/historical-coverage/reading-list.json",
+      "source_worktree": "west",
+      "bytes": 16696,
+      "sha256": "3d5f98872a1521995ce5d320e81c94e2a8489abfbb93103a29782a8a0aca2962"
+    },
+    {
+      "path": "west/historical-coverage/validation.json",
+      "source_worktree": "west",
+      "bytes": 13620,
+      "sha256": "1311900851dcc52a377d0dd92f70c33617a76c18a91e8ed59af08d86865399fc"
+    }
+  ]
+}

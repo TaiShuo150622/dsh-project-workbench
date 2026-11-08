@@ -1,0 +1,2345 @@
+{
+  "schema_version": 1,
+  "kind": "bounded_specification_model_check_not_product_test",
+  "script_sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89",
+  "inputs": {
+    "source_worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+    "captured_at_utc": "2026-11-08T06:38:52.888156+00:00",
+    "note": "Working-tree documents were uncommitted; per-file SHA-256 is the actual specification identity. Git HEAD alone does not identify these inputs.",
+    "inputs": [
+      {
+        "name": "FORMAL_MODEL.md",
+        "snapshot": "inputs/FORMAL_MODEL.md",
+        "sha256": "17b53da7356e0c50bd28ebde33fd2c0ece0460c6a0507b89de6a726b4b9977b2",
+        "bytes": 26534,
+        "source_worktree_relative_path": "integration/docs/research/harness-20261107/FORMAL_MODEL.md"
+      },
+      {
+        "name": "ARCHITECTURE.md",
+        "snapshot": "inputs/ARCHITECTURE.md",
+        "sha256": "c82c879ee28d080ff623acbc22eb58db356269ed90617a982af11443c4827ce1",
+        "bytes": 19345,
+        "source_worktree_relative_path": "integration/docs/research/harness-20261107/ARCHITECTURE.md"
+      }
+    ]
+  },
+  "action_model": {
+    "correct": {
+      "complete": true,
+      "states": 364,
+      "transitions": 1664,
+      "max_shortest_depth": 11,
+      "depth_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 12,
+        "4": 20,
+        "5": 28,
+        "6": 55,
+        "7": 89,
+        "8": 88,
+        "9": 50,
+        "10": 14,
+        "11": 1
+      },
+      "transition_coverage": {
+        "abandon_unsent": 28,
+        "cancel": 324,
+        "no_effect_evidence": 272,
+        "outcome_unknown": 112,
+        "reserve": 20,
+        "send": 20,
+        "sender_terminated": 296,
+        "success": 272,
+        "withdraw_evidence": 320
+      },
+      "violating_edges": {
+        "FALSE_CONJECTURE_active_count_at_most_one": 312
+      },
+      "shortest_counterexamples": {
+        "FALSE_CONJECTURE_active_count_at_most_one": {
+          "length": 5,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "reserved",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "dispatched",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "success",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "B"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "withdraw_evidence",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "unknown",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "omit_dispatch_recheck": {
+      "complete": true,
+      "states": 364,
+      "transitions": 1672,
+      "max_shortest_depth": 11,
+      "depth_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 12,
+        "4": 20,
+        "5": 28,
+        "6": 55,
+        "7": 89,
+        "8": 88,
+        "9": 50,
+        "10": 14,
+        "11": 1
+      },
+      "transition_coverage": {
+        "abandon_unsent": 28,
+        "cancel": 324,
+        "no_effect_evidence": 272,
+        "outcome_unknown": 112,
+        "reserve": 20,
+        "send": 28,
+        "sender_terminated": 296,
+        "success": 272,
+        "withdraw_evidence": 320
+      },
+      "violating_edges": {
+        "FALSE_CONJECTURE_active_count_at_most_one": 320,
+        "dispatch_has_no_unresolved_conflict": 8
+      },
+      "shortest_counterexamples": {
+        "FALSE_CONJECTURE_active_count_at_most_one": {
+          "length": 5,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "reserved",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "dispatched",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "success",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "B"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "withdraw_evidence",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "unknown",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            }
+          ]
+        },
+        "dispatch_has_no_unresolved_conflict": {
+          "length": 6,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "reserved",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "dispatched",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "success",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "B"
+              },
+              "state": {
+                "phase": [
+                  "success",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "withdraw_evidence",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "unknown",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "B"
+              },
+              "state": {
+                "phase": [
+                  "unknown",
+                  "dispatched"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "cancel_means_not_applied": {
+      "complete": true,
+      "states": 308,
+      "transitions": 1356,
+      "max_shortest_depth": 10,
+      "depth_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 12,
+        "4": 20,
+        "5": 32,
+        "6": 62,
+        "7": 83,
+        "8": 63,
+        "9": 25,
+        "10": 4
+      },
+      "transition_coverage": {
+        "abandon_unsent": 28,
+        "cancel": 300,
+        "no_effect_evidence": 200,
+        "outcome_unknown": 56,
+        "reserve": 20,
+        "send": 20,
+        "sender_terminated": 244,
+        "success": 200,
+        "withdraw_evidence": 288
+      },
+      "violating_edges": {
+        "FALSE_CONJECTURE_active_count_at_most_one": 192,
+        "cancel_request_is_not_effect_resolution": 128
+      },
+      "shortest_counterexamples": {
+        "cancel_request_is_not_effect_resolution": {
+          "length": 3,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "reserved",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "dispatched",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "cancel",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "not_applied",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  true,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            }
+          ]
+        },
+        "FALSE_CONJECTURE_active_count_at_most_one": {
+          "length": 5,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "reserved",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "send",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "dispatched",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  false,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "cancel",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "not_applied",
+                  "idle"
+                ],
+                "cancel_requested": [
+                  true,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve",
+                "action": "B"
+              },
+              "state": {
+                "phase": [
+                  "not_applied",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  true,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "withdraw_evidence",
+                "action": "A"
+              },
+              "state": {
+                "phase": [
+                  "unknown",
+                  "reserved"
+                ],
+                "cancel_requested": [
+                  true,
+                  false
+                ],
+                "sender_stopped": [
+                  false,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "support_model": {
+    "formula_count_per_node": 121,
+    "networks": 14641,
+    "stable_assignments_checked": 117128,
+    "transitions_checked": 351384,
+    "additions_checked": 175692,
+    "withdrawals_checked": 175692,
+    "clear_all_descendants_failing_transitions": 25875,
+    "stale_seed_failing_transitions": 22362,
+    "shortest_counterexamples": {
+      "clear_all_descendants": {
+        "length": 3,
+        "network": {
+          "y": "FALSE",
+          "z": "a OR b"
+        },
+        "trace": [
+          {
+            "event": {
+              "op": "initial"
+            },
+            "state": {
+              "bases": [
+                false,
+                false,
+                false
+              ],
+              "derived": [
+                false,
+                false
+              ]
+            }
+          },
+          {
+            "event": {
+              "op": "add_root",
+              "root": "a"
+            },
+            "state": {
+              "bases": [
+                true,
+                false,
+                false
+              ],
+              "derived": [
+                false,
+                true
+              ]
+            }
+          },
+          {
+            "event": {
+              "op": "add_root",
+              "root": "b"
+            },
+            "state": {
+              "bases": [
+                true,
+                true,
+                false
+              ],
+              "derived": [
+                false,
+                true
+              ]
+            }
+          },
+          {
+            "event": {
+              "op": "withdraw_root",
+              "root": "a"
+            },
+            "state": {
+              "bases": [
+                false,
+                true,
+                false
+              ],
+              "derived": [
+                false,
+                false
+              ],
+              "oracle_lfp": [
+                false,
+                true
+              ]
+            }
+          }
+        ]
+      },
+      "stale_seed": {
+        "length": 2,
+        "network": {
+          "y": "FALSE",
+          "z": "a OR z"
+        },
+        "trace": [
+          {
+            "event": {
+              "op": "initial"
+            },
+            "state": {
+              "bases": [
+                false,
+                false,
+                false
+              ],
+              "derived": [
+                false,
+                false
+              ]
+            }
+          },
+          {
+            "event": {
+              "op": "add_root",
+              "root": "a"
+            },
+            "state": {
+              "bases": [
+                true,
+                false,
+                false
+              ],
+              "derived": [
+                false,
+                true
+              ]
+            }
+          },
+          {
+            "event": {
+              "op": "withdraw_root",
+              "root": "a"
+            },
+            "state": {
+              "bases": [
+                false,
+                false,
+                false
+              ],
+              "derived": [
+                false,
+                true
+              ],
+              "oracle_lfp": [
+                false,
+                false
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "focused_bfs": {
+      "cycle_correct": {
+        "network": {
+          "y": "a OR z",
+          "z": "y"
+        },
+        "complete": true,
+        "states": 8,
+        "transitions": 24,
+        "max_shortest_depth": 3,
+        "depth_histogram": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "transition_coverage": {
+          "add_root": 12,
+          "withdraw_root": 12
+        },
+        "violating_edges": {},
+        "shortest_counterexamples": {}
+      },
+      "cycle_stale_seed": {
+        "network": {
+          "y": "a OR z",
+          "z": "y"
+        },
+        "complete": true,
+        "states": 12,
+        "transitions": 36,
+        "max_shortest_depth": 4,
+        "depth_histogram": {
+          "0": 1,
+          "1": 3,
+          "2": 4,
+          "3": 3,
+          "4": 1
+        },
+        "transition_coverage": {
+          "add_root": 20,
+          "withdraw_root": 16
+        },
+        "violating_edges": {
+          "supported_equals_least_fixed_point": 12
+        },
+        "shortest_counterexamples": {
+          "supported_equals_least_fixed_point": {
+            "length": 2,
+            "trace": [
+              {
+                "event": {
+                  "op": "initial"
+                },
+                "state": {
+                  "bases": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "derived": [
+                    false,
+                    false
+                  ]
+                }
+              },
+              {
+                "event": {
+                  "op": "add_root",
+                  "root": "a"
+                },
+                "state": {
+                  "bases": [
+                    true,
+                    false,
+                    false
+                  ],
+                  "derived": [
+                    true,
+                    true
+                  ]
+                }
+              },
+              {
+                "event": {
+                  "op": "withdraw_root",
+                  "root": "a"
+                },
+                "state": {
+                  "bases": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "derived": [
+                    true,
+                    true
+                  ]
+                }
+              }
+            ],
+            "network": {
+              "y": "a OR z",
+              "z": "y"
+            }
+          }
+        }
+      },
+      "and_or_correct": {
+        "network": {
+          "y": "a AND b OR c",
+          "z": "y"
+        },
+        "complete": true,
+        "states": 8,
+        "transitions": 24,
+        "max_shortest_depth": 3,
+        "depth_histogram": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "transition_coverage": {
+          "add_root": 12,
+          "withdraw_root": 12
+        },
+        "violating_edges": {},
+        "shortest_counterexamples": {}
+      },
+      "and_or_clear_descendants": {
+        "network": {
+          "y": "a AND b OR c",
+          "z": "y"
+        },
+        "complete": true,
+        "states": 12,
+        "transitions": 36,
+        "max_shortest_depth": 4,
+        "depth_histogram": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 2,
+          "4": 3
+        },
+        "transition_coverage": {
+          "add_root": 17,
+          "withdraw_root": 19
+        },
+        "violating_edges": {
+          "supported_equals_least_fixed_point": 7
+        },
+        "shortest_counterexamples": {
+          "supported_equals_least_fixed_point": {
+            "length": 3,
+            "trace": [
+              {
+                "event": {
+                  "op": "initial"
+                },
+                "state": {
+                  "bases": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "derived": [
+                    false,
+                    false
+                  ]
+                }
+              },
+              {
+                "event": {
+                  "op": "add_root",
+                  "root": "a"
+                },
+                "state": {
+                  "bases": [
+                    true,
+                    false,
+                    false
+                  ],
+                  "derived": [
+                    false,
+                    false
+                  ]
+                }
+              },
+              {
+                "event": {
+                  "op": "add_root",
+                  "root": "c"
+                },
+                "state": {
+                  "bases": [
+                    true,
+                    false,
+                    true
+                  ],
+                  "derived": [
+                    true,
+                    true
+                  ]
+                }
+              },
+              {
+                "event": {
+                  "op": "withdraw_root",
+                  "root": "a"
+                },
+                "state": {
+                  "bases": [
+                    false,
+                    false,
+                    true
+                  ],
+                  "derived": [
+                    false,
+                    false
+                  ]
+                }
+              }
+            ],
+            "network": {
+              "y": "a AND b OR c",
+              "z": "y"
+            }
+          }
+        }
+      }
+    }
+  },
+  "budget_model": {
+    "exhaustive_bound": 4,
+    "closing_initial": 1,
+    "correct": {
+      "complete": true,
+      "states": 264,
+      "transitions": 776,
+      "max_shortest_depth": 8,
+      "depth_histogram": {
+        "0": 1,
+        "1": 7,
+        "2": 23,
+        "3": 47,
+        "4": 69,
+        "5": 66,
+        "6": 37,
+        "7": 12,
+        "8": 2
+      },
+      "transition_coverage": {
+        "consume_closing_reserve": 132,
+        "reserve_cost": 88,
+        "settle_all_reported": 216,
+        "spend_unreported": 196,
+        "stop_release_future_only": 144
+      },
+      "violating_edges": {},
+      "shortest_counterexamples": {}
+    },
+    "forget_unreported": {
+      "complete": true,
+      "states": 1862,
+      "transitions": 7255,
+      "max_shortest_depth": 11,
+      "depth_histogram": {
+        "0": 1,
+        "1": 7,
+        "2": 23,
+        "3": 59,
+        "4": 127,
+        "5": 232,
+        "6": 363,
+        "7": 423,
+        "8": 353,
+        "9": 202,
+        "10": 64,
+        "11": 8
+      },
+      "transition_coverage": {
+        "MUTANT_keep_only_future": 1136,
+        "consume_closing_reserve": 931,
+        "reserve_cost": 252,
+        "settle_all_reported": 2448,
+        "spend_unreported": 1408,
+        "stop_release_future_only": 1080
+      },
+      "violating_edges": {
+        "final_settled_cost_within_budget": 89,
+        "ledger_total_with_closing_within_budget": 1287,
+        "physical_worst_case_within_budget": 4485,
+        "reservation_covers_unsettled_liability": 5294
+      },
+      "shortest_counterexamples": {
+        "reservation_covers_unsettled_liability": {
+          "length": 3,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  1,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "spend_unreported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "MUTANT_keep_only_future",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        "physical_worst_case_within_budget": {
+          "length": 4,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  1,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "spend_unreported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "MUTANT_keep_only_future",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "B",
+                "amount": 3
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        "ledger_total_with_closing_within_budget": {
+          "length": 5,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  1,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "spend_unreported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "MUTANT_keep_only_future",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "B",
+                "amount": 3
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "settle_all_reported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 1,
+                "closing_remaining": 1,
+                "phase": [
+                  "done",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        "final_settled_cost_within_budget": {
+          "length": 8,
+          "trace": [
+            {
+              "event": {
+                "op": "initial"
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "idle",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  1,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "spend_unreported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  1,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "MUTANT_keep_only_future",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "idle"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "reserve_cost",
+                "action": "B",
+                "amount": 3
+              },
+              "state": {
+                "settled": 0,
+                "closing_remaining": 1,
+                "phase": [
+                  "running",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  1,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "settle_all_reported",
+                "action": "A",
+                "amount": 1
+              },
+              "state": {
+                "settled": 1,
+                "closing_remaining": 1,
+                "phase": [
+                  "done",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "spend_unreported",
+                "action": "B",
+                "amount": 3
+              },
+              "state": {
+                "settled": 1,
+                "closing_remaining": 1,
+                "phase": [
+                  "done",
+                  "running"
+                ],
+                "reserved": [
+                  0,
+                  3
+                ],
+                "hidden_spent": [
+                  0,
+                  3
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "settle_all_reported",
+                "action": "B",
+                "amount": 3
+              },
+              "state": {
+                "settled": 4,
+                "closing_remaining": 1,
+                "phase": [
+                  "done",
+                  "done"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "event": {
+                "op": "consume_closing_reserve",
+                "amount": 1
+              },
+              "state": {
+                "settled": 5,
+                "closing_remaining": 0,
+                "phase": [
+                  "done",
+                  "done"
+                ],
+                "reserved": [
+                  0,
+                  0
+                ],
+                "hidden_spent": [
+                  0,
+                  0
+                ],
+                "future_max": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "required_18_over_10": {
+      "bound": 10,
+      "length": 8,
+      "trace": [
+        {
+          "event": {
+            "op": "initial"
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "idle",
+              "idle"
+            ],
+            "reserved": [
+              0,
+              0
+            ],
+            "hidden_spent": [
+              0,
+              0
+            ],
+            "future_max": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "reserve_cost",
+            "action": "A",
+            "amount": 10
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "idle"
+            ],
+            "reserved": [
+              10,
+              0
+            ],
+            "hidden_spent": [
+              0,
+              0
+            ],
+            "future_max": [
+              10,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "spend_unreported",
+            "action": "A",
+            "amount": 8
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "idle"
+            ],
+            "reserved": [
+              10,
+              0
+            ],
+            "hidden_spent": [
+              8,
+              0
+            ],
+            "future_max": [
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "MUTANT_keep_only_future",
+            "action": "A",
+            "amount": 8
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "idle"
+            ],
+            "reserved": [
+              2,
+              0
+            ],
+            "hidden_spent": [
+              8,
+              0
+            ],
+            "future_max": [
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "reserve_cost",
+            "action": "B",
+            "amount": 8
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "running"
+            ],
+            "reserved": [
+              2,
+              8
+            ],
+            "hidden_spent": [
+              8,
+              0
+            ],
+            "future_max": [
+              2,
+              8
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "spend_unreported",
+            "action": "A",
+            "amount": 2
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "running"
+            ],
+            "reserved": [
+              2,
+              8
+            ],
+            "hidden_spent": [
+              10,
+              0
+            ],
+            "future_max": [
+              0,
+              8
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "spend_unreported",
+            "action": "B",
+            "amount": 8
+          },
+          "state": {
+            "settled": 0,
+            "closing_remaining": 0,
+            "phase": [
+              "running",
+              "running"
+            ],
+            "reserved": [
+              2,
+              8
+            ],
+            "hidden_spent": [
+              10,
+              8
+            ],
+            "future_max": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "settle_all_reported",
+            "action": "A",
+            "amount": 10
+          },
+          "state": {
+            "settled": 10,
+            "closing_remaining": 0,
+            "phase": [
+              "done",
+              "running"
+            ],
+            "reserved": [
+              0,
+              8
+            ],
+            "hidden_spent": [
+              0,
+              8
+            ],
+            "future_max": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "event": {
+            "op": "settle_all_reported",
+            "action": "B",
+            "amount": 8
+          },
+          "state": {
+            "settled": 18,
+            "closing_remaining": 0,
+            "phase": [
+              "done",
+              "done"
+            ],
+            "reserved": [
+              0,
+              0
+            ],
+            "hidden_spent": [
+              0,
+              0
+            ],
+            "future_max": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "minimum_claim": "Explicit required scenario, not a global shortest path claim; general mutant minima come from BFS below.",
+      "correct_rule_blocks_second_reservation": true
+    }
+  },
+  "acceptance_model": {
+    "binding_fields": [
+      "historyId",
+      "taskId",
+      "specVersion",
+      "witnessId",
+      "resultId",
+      "artifactVersion",
+      "availabilityRevision",
+      "acceptancePolicyVersion",
+      "decisionRevision"
+    ],
+    "D_abstraction": "conjunction, true -> false once",
+    "notes_bound": "0 -> 1 once",
+    "acceptances_per_run": 1,
+    "complete": true,
+    "states": 238244,
+    "transitions": 1393170,
+    "max_shortest_depth": 13,
+    "depth_histogram": {
+      "0": 1,
+      "1": 12,
+      "2": 77,
+      "3": 386,
+      "4": 1670,
+      "5": 5922,
+      "6": 16206,
+      "7": 33258,
+      "8": 50469,
+      "9": 55735,
+      "10": 43531,
+      "11": 22785,
+      "12": 7168,
+      "13": 1024
+    },
+    "transition_coverage": {
+      "accept_current_binding": 1024,
+      "invalidate_read_input": 476488,
+      "update_binding_field": 717804,
+      "update_unrelated_note": 79756,
+      "withdraw_acceptance": 118098
+    },
+    "violating_edges": {
+      "global_revision_matches_event_oracle": 512,
+      "omit_spec_version_matches_event_oracle": 1024
+    },
+    "shortest_counterexamples": {
+      "omit_spec_version_matches_event_oracle": {
+        "length": 2,
+        "trace": [
+          {
+            "event": {
+              "op": "initial"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 0,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": null,
+              "accepted_global_revision": -1,
+              "event_oracle_valid": false
+            }
+          },
+          {
+            "event": {
+              "op": "accept_current_binding"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 0,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "accepted_global_revision": 0,
+              "event_oracle_valid": true
+            }
+          },
+          {
+            "event": {
+              "op": "update_binding_field",
+              "field": "specVersion"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 0,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "accepted_global_revision": 0,
+              "event_oracle_valid": false
+            }
+          }
+        ]
+      },
+      "global_revision_matches_event_oracle": {
+        "length": 2,
+        "trace": [
+          {
+            "event": {
+              "op": "initial"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 0,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": null,
+              "accepted_global_revision": -1,
+              "event_oracle_valid": false
+            }
+          },
+          {
+            "event": {
+              "op": "accept_current_binding"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 0,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "accepted_global_revision": 0,
+              "event_oracle_valid": true
+            }
+          },
+          {
+            "event": {
+              "op": "update_unrelated_note"
+            },
+            "state": {
+              "current": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "note_revision": 1,
+              "applicability_D_valid": true,
+              "decision_withdrawn": false,
+              "binding": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "accepted_global_revision": 0,
+              "event_oracle_valid": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "checks_passed": true,
+  "meaning_of_passed": "Correct bounded variants passed stated properties; specified false conjectures and mutants produced counterexamples. Not a general proof or product validation."
+}

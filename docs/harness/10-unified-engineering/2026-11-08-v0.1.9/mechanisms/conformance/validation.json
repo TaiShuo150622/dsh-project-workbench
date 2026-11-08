@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "status": "STRUCTURE_CHECKED_ONLY",
+  "actual_execution": false,
+  "validation_execution": true,
+  "scenario_execution": false,
+  "checked_at": "2026-11-08T07:19:26.062231+00:00",
+  "catalog_sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+  "case_count": 16,
+  "variant_count": 43,
+  "checks": [
+    "JSON parse",
+    "C01-C16 exact coverage and order",
+    "unique variant IDs and parent references",
+    "capability and observation channel references",
+    "four oracle result categories per case",
+    "all scenario results NOT_RUN",
+    "empty scenario execution evidence",
+    "local links excluding soon-to-be-written validation receipt",
+    "Markdown trailing whitespace"
+  ],
+  "errors": [],
+  "reviewed_source_sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b",
+  "current_source_sha256": "69c2282172eb38309d06be764190076863fadb703e20eed2e7212075e092c44b",
+  "reviewed_source_still_current": true,
+  "limitations": [
+    "No scenario executed; no adapter capability certified.",
+    "No JSON Schema engine or protocol runner executed.",
+    "Current source may have been revised by root; review line numbers remain pinned to reviewed_source_sha256."
+  ]
+}

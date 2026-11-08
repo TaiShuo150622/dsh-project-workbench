@@ -1,0 +1,35 @@
+{
+  "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+  "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "cases": [
+    {
+      "config": "fence-property",
+      "started_at": "2026-11-08T07:08:00.575242+00:00",
+      "completed_at": "2026-11-08T07:08:01.757383+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "counts": {
+        "generated": 1265,
+        "distinct": 604,
+        "queue_remaining": 0
+      },
+      "config_sha256": "e9184c4f40eb3aaf9edf5c32790c69a12176fbbc98f4091b4df9d5fff0a41dd0",
+      "log_sha256": "3ad0b47c4f05edd5081a76fe14a82d94a1d0207fde48efc37a023fd89bb870da"
+    },
+    {
+      "config": "dedupe-property",
+      "started_at": "2026-11-08T07:08:01.777424+00:00",
+      "completed_at": "2026-11-08T07:08:02.987715+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "counts": {
+        "generated": 1564,
+        "distinct": 660,
+        "queue_remaining": 0
+      },
+      "config_sha256": "49a715a9f1d47e4b6e98d693b15cbfabf494af79268d7f04bf2067d94bbc3961",
+      "log_sha256": "70619e6a283333440404008f2caf84541711e2bde731b2f315690d63e5b17f65"
+    }
+  ],
+  "scope": "Two additional property-isolation finite checks; original six runs preserved"
+}

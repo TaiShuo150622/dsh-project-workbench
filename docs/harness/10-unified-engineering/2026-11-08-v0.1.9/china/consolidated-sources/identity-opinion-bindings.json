@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "relationships": [
+    {
+      "subject_group": "china/sources.json#/sources/49",
+      "relation": "affiliation_sources",
+      "target_original_id": "CN-PE-DS-02",
+      "target_group": "china/sources.json#/sources/50",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "china/sources.json#/sources/49",
+      "relation": "affiliation_sources",
+      "target_original_id": "CN-PE-DS-03",
+      "target_group": "china/sources.json#/sources/51",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "china/sources.json#/sources/52",
+      "relation": "affiliation_sources",
+      "target_original_id": "CN-PE-QW-02",
+      "target_group": "china/sources.json#/sources/53",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "china/sources.json#/sources/54",
+      "relation": "affiliation_sources",
+      "target_original_id": "CN-PE-TX-02",
+      "target_group": "china/sources.json#/sources/55",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "mechanisms/cordis-boundary/sources.json#/sources/0",
+      "relation": "affiliations_from_pdf_title_page",
+      "inline_evidence": {
+        "Yifan Shi": [
+          "Peking University",
+          "DeepSeek-AI"
+        ],
+        "Wei Zhang": [
+          "Peking University"
+        ],
+        "Tianyi Cui": [
+          "DeepSeek-AI"
+        ]
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/context-evaluation/sources.json#/sources/16",
+      "relation": "identity_basis",
+      "inline_evidence": "原文写明Labs team成员，限发文时",
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/0",
+      "relation": "identity_sources",
+      "target_original_id": "P02",
+      "target_group": "west/practitioner-views/sources.json#/sources/1",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/1",
+      "relation": "identity_sources",
+      "target_original_id": "P02",
+      "target_group": "west/practitioner-views/sources.json#/sources/1",
+      "self_reference": true,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/2",
+      "relation": "identity_sources",
+      "target_original_id": "P03",
+      "target_group": "west/practitioner-views/sources.json#/sources/2",
+      "self_reference": true,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/3",
+      "relation": "identity_sources",
+      "target_original_id": "P04",
+      "target_group": "west/practitioner-views/sources.json#/sources/3",
+      "self_reference": true,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/3",
+      "relation": "identity_sources",
+      "target_original_id": "P05",
+      "target_group": "west/practitioner-views/sources.json#/sources/4",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/5",
+      "relation": "identity_sources",
+      "target_original_id": "P06",
+      "target_group": "west/practitioner-views/sources.json#/sources/5",
+      "self_reference": true,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/6",
+      "relation": "identity_sources",
+      "target_original_id": "P07",
+      "target_group": "west/practitioner-views/sources.json#/sources/6",
+      "self_reference": true,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/6",
+      "relation": "identity_sources",
+      "target_original_id": "P08",
+      "target_group": "west/practitioner-views/sources.json#/sources/7",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/8",
+      "relation": "identity_sources",
+      "target_original_id": "P10",
+      "target_group": "west/practitioner-views/sources.json#/sources/9",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/practitioner-views/sources.json#/sources/8",
+      "relation": "identity_sources",
+      "target_original_id": "P12",
+      "target_group": "west/practitioner-views/sources.json#/sources/11",
+      "self_reference": false,
+      "role": "dated_identity_evidence; not current employment or company endorsement"
+    },
+    {
+      "subject_group": "west/sources.json#/sources/0",
+      "relation": "identity_basis",
+      "inline_evidence": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "官方作者栏注明 Member of Technical Staff；仅证明发文时归属"
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/sources.json#/sources/1",
+      "relation": "identity_basis",
+      "inline_evidence": {
+        "url": "https://openai.com/index/unlocking-the-codex-harness/",
+        "text": "官方作者栏注明 Member of Technical Staff"
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/sources.json#/sources/3",
+      "relation": "identity_basis",
+      "inline_evidence": {
+        "url": "https://openai.com/index/harness-engineering/",
+        "text": "官方作者栏注明 Member of the Technical Staff"
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/sources.json#/sources/15",
+      "relation": "identity_basis",
+      "inline_evidence": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "OpenAI 2026-01-23 官方作者栏标 Michael Bolin 为 Member of Technical Staff；采访方称开源Codex负责人"
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    },
+    {
+      "subject_group": "west/sources.json#/sources/18",
+      "relation": "identity_basis",
+      "inline_evidence": {
+        "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+        "text": "正文作者介绍为 Anthropic Labs team 成员；仅发文时归属"
+      },
+      "role": "dated_identity_evidence; not current employment or individual endorsement"
+    }
+  ],
+  "views": [
+    {
+      "id": "china/sources.json#/sources/49/view",
+      "origin_type": "china_opinion_entry",
+      "opinion_group": "china/sources.json#/sources/49",
+      "identity_groups": [
+        "china/sources.json#/sources/50",
+        "china/sources.json#/sources/51"
+      ],
+      "person_or_original_author_label": "Tianyi Cui / tianyicui",
+      "category": "employee_public_view",
+      "dates": {
+        "published_at": "2026-08-30",
+        "accessed_at": "2026-11-08"
+      },
+      "limitations": [
+        "Historical proposal, not proof that skill shipped or migration compatibility is guaranteed."
+      ],
+      "do_not_promote_to_company_contract": true
+    },
+    {
+      "id": "china/sources.json#/sources/52/view",
+      "origin_type": "china_opinion_entry",
+      "opinion_group": "china/sources.json#/sources/52",
+      "identity_groups": [
+        "china/sources.json#/sources/53"
+      ],
+      "person_or_original_author_label": "wenshao; later maintainer response by yiliang114",
+      "category": "employee_public_view",
+      "dates": {
+        "published_at": "2026-03-02",
+        "accessed_at": "2026-11-08"
+      },
+      "limitations": [
+        "Personal usage report is historical, not a current benchmark or Qwen team official specification.",
+        "Maintainer collaborator status alone not separately treated as Alibaba employment proof."
+      ],
+      "do_not_promote_to_company_contract": true
+    },
+    {
+      "id": "china/sources.json#/sources/54/view",
+      "origin_type": "china_opinion_entry",
+      "opinion_group": "china/sources.json#/sources/54",
+      "identity_groups": [
+        "china/sources.json#/sources/55"
+      ],
+      "person_or_original_author_label": "汪晟杰; interviewer/editor Tina (InfoQ)",
+      "category": "employee_original_interview",
+      "dates": {
+        "published_at": "2025-09-10",
+        "accessed_at": "2026-11-08"
+      },
+      "limitations": [
+        "2025 historical interview; design intent not proof of current enforcement.",
+        "Reported productivity numbers excluded because no reproducible protocol established.",
+        "Interview's checkpoint means human review point; current rewind docs use checkpoint differently."
+      ],
+      "do_not_promote_to_company_contract": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/0",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V1",
+        "person": "Michael Bolin",
+        "company_scope": "OpenAI at January 2026 official byline; March interview continuity supported but not November role",
+        "date": "2026-03-14",
+        "source_ids": [
+          "P01",
+          "P02"
+        ],
+        "status": "core_personal_interview_with_official_identity_support",
+        "decisions": [
+          "D1",
+          "D2"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/0",
+        "west/practitioner-views/sources.json#/sources/1"
+      ],
+      "joint_vs_personal_status_preserved": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/1",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V2",
+        "person": "Ryan Lopopolo",
+        "company_scope": "OpenAI; contemporaneous official staff byline",
+        "date": "2026-02-11",
+        "source_ids": [
+          "P03"
+        ],
+        "status": "core_official_signed_engineering_experience",
+        "decisions": [
+          "D2",
+          "D3"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/2"
+      ],
+      "joint_vs_personal_status_preserved": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/2",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V3",
+        "person": "Justin Young",
+        "company_scope": "Anthropic official engineering authorship at date; exact title date unverified",
+        "date": "2025-11-26",
+        "source_ids": [
+          "P04",
+          "P05"
+        ],
+        "status": "core_official_authorship_title_temporal_limit",
+        "decisions": [
+          "D3",
+          "D4"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/3",
+        "west/practitioner-views/sources.json#/sources/4"
+      ],
+      "joint_vs_personal_status_preserved": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/3",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V4",
+        "person": "Prithvi Rajasekaran",
+        "company_scope": "Anthropic Labs; contemporaneous official byline",
+        "date": "2026-03-24",
+        "source_ids": [
+          "P06"
+        ],
+        "status": "core_official_signed_engineering_experiment",
+        "decisions": [
+          "D3",
+          "D5"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/5"
+      ],
+      "joint_vs_personal_status_preserved": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/4",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V5",
+        "people": [
+          "Yifan Shi",
+          "Wei Zhang",
+          "Tianyi Cui"
+        ],
+        "company_scope": "paper-declared affiliation: Shi PKU+DeepSeek-AI, Zhang PKU, Cui DeepSeek-AI",
+        "date": "2026-08-26",
+        "source_ids": [
+          "P07",
+          "P08"
+        ],
+        "status": "core_joint_research_not_individual_statement",
+        "decisions": [
+          "D6"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/6",
+        "west/practitioner-views/sources.json#/sources/7"
+      ],
+      "joint_vs_personal_status_preserved": true
+    },
+    {
+      "id": "west/practitioner-views/sources.json#/views/5",
+      "origin_type": "explicit_view_group",
+      "raw_view": {
+        "id": "V6",
+        "person": "Junyang Lin",
+        "company_scope": "past Qwen affiliation verified at 2025-01-26; company at essay date unconfirmed",
+        "date": "2026-03-26",
+        "source_ids": [
+          "P09",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "status": "supplement_personal_not_counted_as_qwen_employee_view",
+        "decisions": [
+          "D2",
+          "D3",
+          "D5"
+        ]
+      },
+      "source_groups": [
+        "west/practitioner-views/sources.json#/sources/8",
+        "west/practitioner-views/sources.json#/sources/9",
+        "west/practitioner-views/sources.json#/sources/10",
+        "west/practitioner-views/sources.json#/sources/11"
+      ],
+      "joint_vs_personal_status_preserved": true
+    }
+  ],
+  "rules": [
+    "Identity at publication and present employment are different claims.",
+    "Joint research/authored article is not each individual separately stating every result.",
+    "Official product documentation and personal opinion are distinct.",
+    "Resolve short IDs inside their original catalog only."
+  ]
+}

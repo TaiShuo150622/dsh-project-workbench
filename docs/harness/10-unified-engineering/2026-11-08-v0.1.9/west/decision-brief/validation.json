@@ -1,0 +1,40 @@
+{
+  "scope": "memo length, single-table structure, links, JSON, and input identity only",
+  "checked_at_utc": "2026-11-08T08:17:22+00:00",
+  "body_visible_characters_excluding_table_and_sources": 1102,
+  "body_chinese_characters_excluding_table_and_sources": 881,
+  "table_count": 1,
+  "links": [
+    {
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.2.md#待证命题与下一步",
+      "file_exists": true
+    },
+    {
+      "target": "../implementation-taskbook/README.md",
+      "file_exists": true
+    },
+    {
+      "target": "../西方Harness机制核查讨论稿-v0.1.1.md",
+      "file_exists": true
+    },
+    {
+      "target": "../../china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "file_exists": true
+    },
+    {
+      "target": "../../mechanisms/机制对照与反例讨论稿-v0.1.0.md#可直接借鉴的机制与隐含条件",
+      "file_exists": true
+    },
+    {
+      "target": "inputs.json",
+      "file_exists": true
+    }
+  ],
+  "missing_links": [],
+  "input_count": 7,
+  "memo_sha256": "9df02995ad608d1140e3eadbfa672da5abaf49230fa4966da8e77eb6131fd532",
+  "product_tests_run": false,
+  "network_research_run": false,
+  "input_section_locations_complete": true,
+  "inputs_sha256": "ad32f857c3eeed1b520bc9311dd754b95d362c234561959721750ea513c85b41"
+}

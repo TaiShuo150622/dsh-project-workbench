@@ -1,0 +1,58 @@
+{
+  "manifest_total": 739,
+  "manifest_mismatch": [],
+  "derivation_rows": 623,
+  "derived_mismatch": [],
+  "original_current_source_mismatch": [],
+  "original_unavailable": [],
+  "changed_code": [],
+  "redaction_examples": [
+    "china/budget-proof/README.md",
+    "formal-spec/expiry-checked-results/admission.log",
+    "formal-spec/expiry-checked-results/commit.log",
+    "formal-spec/expiry-checked-results/none.log"
+  ],
+  "generated_views": [
+    {
+      "path": "ARCHITECTURE-离线阅读版.html",
+      "from_markdown": "ARCHITECTURE.md",
+      "markdown_sha256": "0e00d0313d7bfa640678c6923905bd490ba795a0e6d2a8d44a02b031876ca3d5",
+      "sha256": "90de758e38e80b37328c092d8ce7bb5494eb9763c428e7aee3d6ef80a609a7bf",
+      "external_diagram_dependency": false
+    },
+    {
+      "path": "BASELINE-离线阅读版.html",
+      "from_markdown": "BASELINE.md",
+      "markdown_sha256": "25c5e9be962597f1957e643f4339507a4bbe4e8eff1e4f60a0261c10c35e39b9",
+      "sha256": "f0d4ba5e8c0d459e9caf65976521bcab440e4be3e960ce2de608d729eeb15f37",
+      "external_diagram_dependency": false
+    },
+    {
+      "path": "DESIGN_RECONCILIATION-离线阅读版.html",
+      "from_markdown": "DESIGN_RECONCILIATION.md",
+      "markdown_sha256": "a3667f196ffcb73633860701203517c89e29cff9d189892f58b9ee9f6d926e4b",
+      "sha256": "fe2b64f158f27c069f644099a4e4e03f4e4fa2621294e16ddbb6f676127dc24e",
+      "external_diagram_dependency": false
+    }
+  ],
+  "links_sample": [
+    {
+      "file": "DESIGN_RECONCILIATION.md",
+      "from": "../../harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "to": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E5%B7%A5%E5%85%B7%E9%9D%A2%E8%AE%BE%E8%AE%A1%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md",
+      "kind": "fixed_public_reference"
+    },
+    {
+      "file": "DESIGN_RECONCILIATION.md",
+      "from": "../../harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "to": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E4%B8%BB%E5%8A%A8%E6%80%A7%E4%B8%8E%E6%8F%90%E9%97%AE%E8%BE%B9%E7%95%8C%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md",
+      "kind": "fixed_public_reference"
+    },
+    {
+      "file": "DESIGN_RECONCILIATION.md",
+      "from": "../../harness/01-vision/harness-discussion-v0.3.md",
+      "to": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md",
+      "kind": "fixed_public_reference"
+    }
+  ]
+}

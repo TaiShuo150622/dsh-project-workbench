@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="8c5e182797cd">
+<title>C13 · 旧稿覆盖收束</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#读了什么-为什么到此收束">读了什么，为什么到此收束</a></li><li class="l2"><a href="#应直接补回的两组产品沿革">应直接补回的两组产品沿革</a></li><li class="l2"><a href="#保留为后续设计题-不把旧提案升为本轮承诺">保留为后续设计题，不把旧提案升为本轮承诺</a></li><li class="l2"><a href="#不能倒着继承的历史表述">不能倒着继承的历史表述</a></li><li class="l2"><a href="#建议收束顺序">建议收束顺序</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">2026-11-08</span><span class="chip">仅核公开归档与研究稿。对照冻结的统一主稿 v0.1.7、ARCHITECTURE、DESIGN_RECONCILIATION；不是对后续补丁的审查，也不是当前插件能力验证。</span></div>
+<h1>C13 · 旧稿覆盖收束</h1>
+</header>
+<p>本次发现两组应直接补入沿革的产品决定：<strong>远程同时保留 A/B，先 SSH 后 Codespaces；跨通道凭据并入 dsh-chrome，保留已选存储、可见范围及迁移前提。</strong> 另外有三类后续设计题值得保留：旧账本与新 Record 的权威写者衔接、记忆删除与重建的传播、持久工作流与 Record 的生命周期权威归属。它们不扩大 I01。</p>
+<p>“旧稿已采纳”在这里指公开稿明确记为“已拍板/已确认”，没有重新读取私人会话来证明批准；实现、测试和部署仍按各自历史状态理解。所有引用的文件 SHA、实际读取范围和逐条映射见 <a href="reading-list.json">reading-list.json</a>、<a href="decisions.json">decisions.json</a>；每条引用的行号都对应冻结 SHA。</p>
+<h2 id="读了什么-为什么到此收束">读了什么，为什么到此收束</h2>
+<p>先解析 <a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/MANIFEST.json">归档清单</a> 的 192 个附件及 <a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/INDEX.md">完整索引</a>，再复用 W09、W12、W13 已有正文范围。192 包括 HTML、图和 JSON，不能称为 192 篇已读文章。本轮没有重读三份清单中已充分处理的面板/工作台、工具面、提问边界、DAG 工作单元/订阅或后台呈现员正文。</p>
+<p>新增核读 <strong>11 份代表文件：按这三份清单，8 份此前未列为正文读取，3 份扩展既有选读范围；其中 3 份全文、8 份定向选段。</strong> 这不是对所有过去聊天阅读经历的穷尽声明。Runtime 与 Workflow 由本任务子线核读，其余由 C13 主线核读；这不是两次独立复核。全文是 Workflow 与两份短 DAG 公开摘编，不把长稿的选段改称全文。归档中的底座 v0.1.5、远程 v0.1.0、Record 源 v0.2 历史稿没有逐份补读；依据索引中的后继关系选 v0.1.6、v0.1.1、v0.1.2。外部研究综述、设计 HTML、队列细节及历史兼容测试不为凑篇数展开。公司、量化内部材料和两份活跃度稿正文均未纳入。</p>
+<p>选读以主体、存储、迁移、产品顺序为界。浏览器稿的历史状态有同文修订和未同步段落，不能靠标题“current”或测试数字认定当前实现。未阅读全文的范围、未采用候选与筛选规则均在 <a href="selection.json">selection.json</a> 中。</p>
+<h2 id="应直接补回的两组产品沿革">应直接补回的两组产品沿革</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">决定</th><th style="text-align:left">公开原稿依据</th><th style="text-align:left">v0.1.7 / ARCH / RECON 现状</th><th style="text-align:left">建议</th></tr></thead><tbody><tr><td style="text-align:left"><strong>D01 远程产品目标与试点顺序</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/07-remote/DSH-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E5%8F%8C%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">远程 v0.1.1</a> L387–412：保留 DSH 桌面、A/B 同纳方案、每会话选环境、先 SSH 后 Codespaces。L303、L371 把线程继承环境与跨机器迁移/派发首版排除分开。</td><td style="text-align:left">MAIN L214 已保留每会话 A/B；ARCH L114 同样覆盖绑定。MAIN L393、I06 只选一个研究模式；三个汇总落点未明确保留 SSH→Codespaces 次序，也未明说选一个试点不删除另一产品模式。<strong>局部遗漏。</strong></td><td style="text-align:left">“产品方案保留 DSH 桌面与 A/B 双模式，先接已有 SSH，再验证 Codespaces；I06 只选一种模式作可归因的研究试点，不改变双模式产品目标。服务器、目录、插件清单和是否改桌面源码仍待实施前确定。”不恢复旧版本/时间估算，不授权任一服务器部署。</td></tr><tr><td style="text-align:left"><strong>D02 跨通道凭据的产品归属和迁移边界</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/08-browser/security/2026-11-05-%E8%B7%A8%E9%80%9A%E9%81%93%E5%87%AD%E6%8D%AE%E4%B8%8E%E6%88%AA%E5%9B%BE%E9%81%AE%E7%BD%A9%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.5.md">公开凭据 v0.1.5</a> L377–386；L208、L250、L272。后续决定是并入 dsh-chrome、不新立插件；机器型真值按条存 Keychain、env 仅引用；ref 分级解锁和使用端目标/命令限制；模型不看长度，保留 ref/绑定/轮换元数据；不动 DSH 自身凭据库；备份/export 暂缓；最小链路验证后才迁存量并留回滚。</td><td style="text-align:left">MAIN L131、L176–180 与 ARCH L46、L61–70 只有通用身份/权限/保留边界；RECON 没有这组产品沿革。<strong>遗漏。</strong></td><td style="text-align:left">沿革表保留产品归属、真值、可见范围、备份暂缓及迁移前提即可。不能由历史文稿的代码/哨兵测试记录，推成真实录入、截图遮罩、迁移或当前宿主验证已经完成。此项是已有浏览器方向的衔接，不是新建“凭据插件”，也不纳入 I01。</td></tr></tbody></table></div>
+<p>凭据稿还记录“两类分开处理”和“不产生＋浏览器矩形遮，computer use 只做策略”的已选范围（L103、L324、L377–378）。这可作为该专题的边界入口，不能改写成跨工具截图永远安全；本轮没有检查任何真实凭据、配置或私有操作。</p>
+<h2 id="保留为后续设计题-不把旧提案升为本轮承诺">保留为后续设计题，不把旧提案升为本轮承诺</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">项</th><th style="text-align:left">本次新增读取与状态</th><th style="text-align:left">当前覆盖</th><th style="text-align:left">建议落点</th></tr></thead><tbody><tr><td style="text-align:left"><strong>D03 旧记录试点与权威存储衔接</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E4%BB%BB%E5%8A%A1%E4%B9%A6.md">H0 任务书</a> L31–40、L169–180：历史计划要求账本唯一真源、项目记录只读派生、发生时校验写入与单写入口。具体文件锁、旧上游 pin、门槛和路径均属旧任务书。</td><td style="text-align:left">MAIN L367、RECON L27 已保留 H0 是否继续/合并/调整；ARCH L37–52 已区分权威事件与派生物，L207 将持久存储/并发范围留待决定。<strong>原则覆盖，迁移安排未定。</strong></td><td style="text-align:left">在 I03/I05 前明确旧账本、控制事件日志和派生知识各自拥有者、导入去重与撤回映射；不能让旧工具和新内核同时成为同一状态的独立真源。不要从“采用 SQLite”或“单写者”推成已决定全系统一个数据库。</td></tr><tr><td style="text-align:left"><strong>D04 本体演化及删除传播</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">Record v0.1.2</a> L224、L275–300：类别身份与名称分开、合类保留映射、拆类保留重判/待核与旧查询；重处理不得无声复活已撤销、删除或人工修正内容。底座 v0.1.6 L660 还要求检查索引/摘要/缓存残留。都是设计约束，非已验证迁移。</td><td style="text-align:left">MAIN L127–158、ARCH L41–52 已覆盖分层、纠错、水位和保留政策；三个汇总落点没有直接列删除传播与分类迁移验收。<strong>部分遗漏／后续待定。</strong></td><td style="text-align:left">在 I05 的后续验收问题中区分必须删除、按政策失效/重算与可合法保留的派生物；记录处理范围、旧 ID 映射和残余未知。已发布合法派生物不因一个人的源访问撤回而自动全局删除。重建来源已不存在或无权读取时，不再称“随时可重建”。</td></tr><tr><td style="text-align:left"><strong>D05 设置源与迁移</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md">浏览器设置稿</a> L110–118、L504–546：建议唯一用户设置源、只用显式 override 覆盖旧设置、项目配置不得放宽安全、先接线再迁移；迁移默认预览、不强制改用户配置，写入限插件自身并备份。L642–655 仍列待拍项；L672 明说当时无迁移脚本。</td><td style="text-align:left">ARCH L108、L116 有能力与版本迁移，但没有替浏览器冻结这套设置方案。<strong>暂缓提案，非遗漏的已批准实现。</strong></td><td style="text-align:left">保留浏览器专题入口与配置来源/作用域问题，不为统一稿复刻设置 schema。新设置页面出现与配置真正生效分别验收。此前“设置 MVP 不新建客户端”仅限设置方案，不得用它否定后来凭据 tab 的独立决定。</td></tr><tr><td style="text-align:left"><strong>D06 浏览器工作与资源主体</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md">多实例稿</a> L25–36、L313–320、L649–689；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md">原生面板稿</a> L618–625、L689–718、L897：agent owner、session、context、panel 不同；隐藏/解绑不等于关浏览器；named profile 不自动删除登录态；多 provider 进程需要单独协议。原生面板自己的文稿也承认 session 声明不是独立 session 凭证。</td><td style="text-align:left">MAIN L176、L244–254 与 ARCH L61、L108、L114 覆盖主体差异和资源生命周期。<strong>抽象已覆盖，具体映射/保留政策仍待定。</strong></td><td style="text-align:left">保留到浏览器适配器验收：由可信宿主证明 session→agent→context 关系，引用绑定代际；不能拿同名 context 自动重绑恢复旧能力。关闭临时执行资源与删除持久 profile/原件分开。不要恢复旧内存目标、回收秒数、并发上限为当前承诺。</td></tr><tr><td style="text-align:left"><strong>D07 底座与生命周期权威</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/03-runtime/Harness%20%E5%BA%95%E5%BA%A7%E6%9E%B6%E6%9E%84%E9%87%8D%E8%AF%84%E8%AE%A8%E8%AE%BA%E7%A8%BF%20v0.1.6.md">底座 v0.1.6</a> L1057 明说尚未批准最终底座；L1063 要求组合时只选一处生命周期权威；L1084–1088 要求产品身份独立于宿主会话 ID、先契约小对照。</td><td style="text-align:left">RECON L21、ARCH L7–17/L112/L116/L207 均保留底座待选。<strong>已覆盖，权威具体分工未定。</strong></td><td style="text-align:left">基础版 Pi 的早期选择、H0 的 DSH-first 试点和后来的最终底座待选不能合并成一个永久决定。引入持久工作流前，明确同一 task/attempt 的未来调度、取消、恢复分别由哪个权威写入者负责。不是要求全系统单服务器。</td></tr><tr><td style="text-align:left"><strong>D08 Workflow 的研究批准与执行批准</strong></td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E4%B8%8EWorkflow%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">Agent 与 Workflow</a> L165–171 已拍的是 plan 消融研究问题、公开 benchmark、先出稿且实验待拍；L175–237 的实例数/阈值与顺序仍为提案。</td><td style="text-align:left">RECON L77/L84–85、MAIN L367/L371–389 已将策略可替换、旧阈值待验证分开。<strong>已覆盖。</strong></td><td style="text-align:left">不恢复旧四臂实验为当前任务；本轮 12 次校准也没有自动替代旧实验的批准。旧“只有预测证伪才改 plan”已被 RECON L85 正式扩展至目标、环境、输入与接口变化。</td></tr><tr><td style="text-align:left"><strong>D09 DAG 工作单元、状态合并与订阅</strong></td><td style="text-align:left">W13 已全文核读 DAG11/DAG08；本轮只新增 <a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/01-%E7%BB%9F%E4%B8%80%E5%8F%A3%E5%BE%84%E8%A1%A8.md">统一口径摘编</a> L7–24 和 <a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E4%B8%8E%E5%AE%9E%E6%96%BD%E8%B7%AF%E7%BA%BF.md">分层路线摘编</a> L7–30：公共词表/版本裁定、数据/视图/宿主分层，未公开具体字段。</td><td style="text-align:left">MAIN L184–206/L367、RECON L15/L29 已保留有类型图，合并/订阅/后台呈现员仍待定。<strong>已覆盖。</strong></td><td style="text-align:left">沿用 W13 的明确待定状态，不重复读一次再算新增发现；公开摘编不能反推出内部完整迁移接口，图选择也不能成为执行授权。</td></tr></tbody></table></div>
+<h2 id="不能倒着继承的历史表述">不能倒着继承的历史表述</h2>
+<ol><li><strong>同文晚决定优先于旧待拍占位。</strong> 凭据稿 L93、L331 仍写长度可选/待拍，但 L384 已明确不给模型；L265 的旧迁移待拍标题，须结合 L386、L412 的先验证再迁移，不可取一句就执行迁移。</li><li><strong>旧发现不是当前缺陷。</strong> 多实例稿 L292–304 的未实现清单，部分已经被文末 L958–981 的修订记录改变。C13 只用它解释当时的主体与资源问题；没有重新判断当前并发、登录或引擎能力。</li><li><strong>命名相同不等于同一代实现。</strong> H0 的账本、记忆 Record 与当前 S1 状态内核各有用途；原稿写过单写入口不证明现在已持久、原子或跨进程安全。原生面板稿 L6–8 只记录 A0 的一个组件，不能替 A/B/C 主体或当前认证/多会话接线作证。</li><li><strong>旧边界不擅自扩成全局约束。</strong> Workflow 的窄 Agent 三层是策略主张；设置 MVP 不做大 UI 不禁止其他功能的 client bundle；凭据方案并入浏览器不代表所有 Harness 数据统一存浏览器插件。当前统一内核仍可连接多个独立模块。</li></ol>
+<h2 id="建议收束顺序">建议收束顺序</h2>
+<p>先在下一主稿补丁与 RECON 补 D01/D02 的产品沿革，明确不增加当前实施授权。随后把 D03/D04/D07 放入对应持久化、记忆和工作流接入的待决清单；D05/D06 留作浏览器适配器边界。D08/D09 已有清楚去向，无须再加一套编号或试验。</p>
+<p>本轮没有新增外部文献或网络核查，没有模型复跑、产品测试或真实宿主操作。文件与行号校验只能证明这些引用存在且输入未变，不能证明旧作者叙述真实、用户原始批准充分或实现已完成。<a href="validation.json">静态回执</a>记录验证范围；若 root 后续改汇总稿，请以新 SHA 另作整合记录，不追改本次冻结判断。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

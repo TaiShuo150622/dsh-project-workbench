@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="6da2354d622a">
+<title>统一 Harness：一页阅读路线</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>统一 Harness：一页阅读路线</h1>
+</header>
+<p>这项工程希望把一次工作从资料输入一直接到可验收交付，并把值得复用的方法带入下一次工作。项目工作台是人的入口；Coding 方法决定如何预测、检查和纠偏；Record 保留可追溯材料并研究调用前选材；有类型的图帮助理解改动影响；工具与远程执行完成动作；持续改进判断新方法是否真正值得采用。它们可以是独立插件，共同遵守少量工作契约。</p>
+<p>下列顺序用于阅读；不更改既有产品开发顺序。链接按本文件装配到统一研究目录后的位置组织。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">顺序</th><th style="text-align:left">先回答的问题</th><th style="text-align:left">阅读入口</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">为什么把这些插件与设想组织成同一个工程？人从中得到什么？</td><td style="text-align:left"><a href="../../统一Harness工程与形式化基础讨论稿-v0.1.1.md">主稿</a>的“动机、总体架构、工作决策与持续改进”。先抓住目标→资料→计划→执行→验收→经验的循环。</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left">哪些是原有方向，哪些是本轮修正？</td><td style="text-align:left"><a href="../../DESIGN_RECONCILIATION-离线阅读版.html">既有讨论衔接</a>。区分保留的产品目标与修正后的证据、模板和评价规则。历史设计不等于已经实现。</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left">用户实际在哪里看、选、讨论和决定下一步？</td><td style="text-align:left"><a href="../../ARCHITECTURE-离线阅读版.html">架构 §9–11</a>；按需看<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/05-panels/docs/design/overall-discussion.md#journeys">通用面板用户任务</a>和<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/07-%E7%AC%AC%E4%B8%80%E5%B1%8F%E6%94%B6%E5%8F%A3%E8%AE%A1%E5%88%92-2026-10-17.md">DAG 改动前影响视图</a>。面板承接产物和选择，图解释影响，工作台承接任务决策。</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left">Record 和远程能力具体要解决什么？</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">Record 自主上下文组装</a>的轮后/后台/调用前三条路径；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/07-remote/DSH-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E5%8F%8C%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">远程双运行模式</a>的每会话环境选择。本轮继续研究价值，未把自主本体或远程组合验收当作完成事实。</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left">首个闭环、已有成果和下一步分别是什么？</td><td style="text-align:left">主稿“验证与实施路线”；<a href="../evaluation-design-review/README-离线阅读版.html">12-run 最小校准</a>。公开演示任务先接通实际产物、版本、效果与验收，再评价复杂上下文和编排。12 次是测量校准，不能证明收益；成长试验为后续选项。</td></tr><tr><td style="text-align:left">6</td><td style="text-align:left">对外能复用什么，哪些主张能经得起核查？</td><td style="text-align:left">主稿“相关工作”的候选贡献与 <a href="../../ARCHITECTURE-离线阅读版.html">ARCHITECTURE §11</a>；精确契约读<a href="../../FORMAL_MODEL-离线阅读版.html">形式模型</a>，证明读<a href="../../proof-review/general-proof-audit/REVIEW-离线阅读版.html">独立复核入口</a>。源码/协议、条件证明、模型检查、真实运行和用户接受是不同证据。</td></tr></tbody></table></div>
+<p>只想讨论产品价值，先读 1、3、5；准备实现，读 2、4 后进入 H01–H08 与契约；要复核工程结论，再读 6 和各专题的原始来源。需要找其他历史材料时使用<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/INDEX.md">公开总索引</a>，无需先读完整归档。</p>
+<p>本轮可交接的是统一设计、来源核查、条件证明、有限反例和未运行的评估方案。已有插件或 Record 输入的代码与历史有限检查另按各自版本看待。下一项产品证据应是一个真实闭环；不会由论文、形式通过或文档数量自动产生。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

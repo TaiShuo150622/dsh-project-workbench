@@ -1,0 +1,122 @@
+[
+  {
+    "mode": "none",
+    "start_utc": "2026-11-08T07:46:39.287740+00:00",
+    "end_utc": "2026-11-08T07:46:40.253124+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/states-none",
+      "-config",
+      "expiry-none.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "observed_violations": [
+      "NoDuplicate"
+    ],
+    "state_counts": [
+      109,
+      59,
+      3
+    ],
+    "outcome_matches": true,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3",
+    "summary_lines": [
+      "Error: Invariant NoDuplicate is violated.",
+      "Error: The behavior up to this point is:",
+      "109 states generated, 59 distinct states found, 3 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:46:39)"
+    ]
+  },
+  {
+    "mode": "admission",
+    "start_utc": "2026-11-08T07:46:40.267479+00:00",
+    "end_utc": "2026-11-08T07:46:41.331617+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/states-admission",
+      "-config",
+      "expiry-admission.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 12,
+    "expected_exit_code": 12,
+    "observed_violations": [
+      "NoDuplicate"
+    ],
+    "state_counts": [
+      131,
+      81,
+      8
+    ],
+    "outcome_matches": true,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557",
+    "summary_lines": [
+      "Error: Invariant NoDuplicate is violated.",
+      "Error: The behavior up to this point is:",
+      "131 states generated, 81 distinct states found, 8 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:46:40)"
+    ]
+  },
+  {
+    "mode": "commit",
+    "start_utc": "2026-11-08T07:46:41.342561+00:00",
+    "end_utc": "2026-11-08T07:46:42.188897+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/states-commit",
+      "-config",
+      "expiry-commit.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "observed_violations": [],
+    "state_counts": [
+      115,
+      66,
+      0
+    ],
+    "outcome_matches": true,
+    "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+    "config_sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "log_sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45",
+    "summary_lines": [
+      "Model checking completed. No error has been found.",
+      "115 states generated, 66 distinct states found, 0 states left on queue.",
+      "The depth of the complete state graph search is 10.",
+      "Finished in 00s at (2026-11-07 23:46:41)"
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "status": "DOCUMENT_CHECKS_PASSED",
+  "checked_at": "2026-11-08T09:36:46.641924+00:00",
+  "scope": "Static document/JSON/reference checks only, not protocol conformance or runtime/business acceptance",
+  "checks": {
+    "json_files_parse": true,
+    "source_count": 10,
+    "mapping_rule_count": 9,
+    "witness_count": 6,
+    "source_and_rule_references_resolve": true,
+    "all_rules_covered_by_witness_plan": true,
+    "all_witnesses_proposed_not_run": true,
+    "all_sources_fixed_commit_sha256": true,
+    "markdown_local_link_count": 13,
+    "markdown_local_links_resolve": true,
+    "discussion_structure": {
+      "h2": 9,
+      "mermaid": 3,
+      "errors": 0,
+      "warnings": 0
+    },
+    "html_generated": true,
+    "html_visually_verified": false,
+    "wire_schema_validated": false,
+    "product_tracked_diff_empty": true,
+    "prior_M06_M07_fingerprints_unchanged": true
+  },
+  "executions": {
+    "real_network_protocol_calls": false,
+    "real_host_execution": false,
+    "mapping_runner_execution": false,
+    "business_effect_execution": false,
+    "documentation_validation": true
+  },
+  "file_hashes": {
+    "README.md": "320064eb8fb9c4e1996ba430a98fdcc0914c06110d7b804ef3eadf819669494a",
+    "acceptance.json": "b254e5c943467cf264c036bd1b09d45de19992f17d4b3fdae7ee83e68a4152ad",
+    "mapping.json": "768ed292c8dc826e45a1fc5bd1d312b4fae9fc1658cdc24045a198616b412e66",
+    "sources.json": "7fcdfeec5424650791b564a10a669bf0fe0bedc557cfab74fb9b170c2409cef0",
+    "跨宿主协议与有损适配契约讨论稿-v0.1.0.html": "07329cc7224aa383bd8acf8089aaf7fd9bbb223748ca85c38f681c5f0265647f",
+    "跨宿主协议与有损适配契约讨论稿-v0.1.0.md": "1b08a43a8e6d682c1be06c0d9556e8a9ae1d70cb2a37b4cd52053584fe1662e4"
+  },
+  "limitations": [
+    "No adapter implementation exists in this output.",
+    "A2A published binding/return-mode discrepancies remain unresolved and are documented.",
+    "Source retrieval used verified HTTPS; one urllib certificate failure was followed by curl retrieval with default certificate verification."
+  ]
+}

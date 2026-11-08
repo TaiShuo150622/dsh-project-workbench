@@ -1,0 +1,20 @@
+{
+  "BASIS_SNAPSHOT.json": "97e24d331d5b9c2aedaf526aa19b61b47bc01109d7efa8988adeb1f3b05d9229",
+  "INPUT_SNAPSHOT.json": "0e9c8d25b3067fcd201ac3099dc2fcb38a2bd5f4d1a352c7bbb839372b640096",
+  "REVIEW.md": "0639acfce2757bc5d83e5c3fc8f3eaab8c4f0244535cb5228ea25227ee61cb32",
+  "findings.json": "363ea3f5af692f9e9b3ed3fae9913897f669754e6f08a8363b71de608be77e61",
+  "inputs/M10/README.md": "ba83aae63a40ead364920ca03f4314a1e927dd53c76a4e2fce6a3614b1991785",
+  "inputs/M10/contract.json": "c6a524ee2527ae570c85a1a12aa69e3bc596d48ccba716b95a4776c1b63b0b85",
+  "inputs/M10/counterexamples.json": "6b270c2e8141bf044b9ef14cfb79fee6c8d1ff41f5f414cb08ccbf38a11ad2a2",
+  "inputs/M10/sources.json": "631176905be87105a155d48fe8ec54008dd56060da48ed1ab6ad96ddbc55e299",
+  "inputs/M10/validation.json": "f26b67a56a207c83a43517d333ab6e2aa6bd146de3e0871e137077177424617e",
+  "inputs/M10/有限声明域覆盖契约讨论稿-v0.1.0.html": "fdf39d8359dc67a428e6a151000edd5b2936da11f88f03995422896f86f68a9c",
+  "inputs/M10/有限声明域覆盖契约讨论稿-v0.1.0.md": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+  "inputs/R16-basis/ARCHITECTURE.md": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+  "inputs/R16-basis/FORMAL_MODEL.md": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+  "inputs/W14/EXAMPLE.md": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+  "inputs/W14/README.md": "9589fa089d28b6cfb22eba945f4ff8d21bfa4abb96bedb315c31201ea703a3b2",
+  "inputs/W14/sources.json": "ac5c7ab13432b83caae8a1d260cc2330e6961bb97b372cf4796f483a6e8abd8f",
+  "inputs/W14/validation.json": "8c3266e4d5a953df8c5a8a5784cd2304d2ab73a788b92e33a1a7aecb9cf136c4",
+  "verification_receipt.json": "7a9c11b50fd4c43f5a83354fe41429f40a60fb9a02fd00dac8b61ebc18b90d41"
+}

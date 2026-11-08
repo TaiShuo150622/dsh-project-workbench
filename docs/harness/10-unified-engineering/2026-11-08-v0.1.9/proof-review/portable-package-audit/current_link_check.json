@@ -1,0 +1,881 @@
+{
+  "scope": "file existence for 12 current Markdown reading routes; no anchor or remote validation",
+  "links": [
+    {
+      "file": "README.md",
+      "target": "west/decision-brief/MEMO.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "EVIDENCE.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "DESIGN_RECONCILIATION.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/historical-coverage/COVERAGE.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "china/record-refinement/README-current.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "FORMAL_MODEL.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "dag-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "formal-spec/README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "formal-spec/RELAY_README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "china/consolidated-sources/SOURCE_INDEX.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "ROOT_SOURCE_REVIEW_5.json",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "china/evidence-catalog-audit/README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "FORMAL_MODEL.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "EVIDENCE.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "dag-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/general-proof-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "china/budget-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/general-proof-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "china/bounded-models/README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/model-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "formal-spec/README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "formal-spec/RELAY_README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/relay-durability-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/expiry-contract-audit/REPAIR_REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/relay-durability-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "mechanisms/relay-code-probes/README.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "mechanisms/conformance/catalog.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "west/evaluation-design-review/design-v0.1.1.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "west/implementation-taskbook/slice-checklist.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "west/context-evaluation/protocol.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "mechanisms/work-improvement/minimal-experiments.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "mechanisms/lifecycle-migration/fault-scenarios.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "mechanisms/durability-boundary/crash-cuts.json",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/model-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/snapshot-errata-check/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "EVIDENCE.md",
+      "target": "proof-review/work-policy-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "EVIDENCE.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "dag-proof/compile_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "china/budget-proof/execution_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "proof-review/general-proof-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "china/bounded-models/README.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "formal-spec/README.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "formal-spec/RELAY_README.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "china/record-refinement/execution_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "mechanisms/relay-code-probes/README.md",
+      "exists": true
+    },
+    {
+      "file": "REPRODUCE.md",
+      "target": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "DESIGN_RECONCILIATION.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/context-evaluation/protocol.json",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/authority-scope/amendments.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "formal-spec/RELAY_README.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "proof-review/relay-durability-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "FORMAL_MODEL.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "dag-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "china/budget-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "formal-spec/README.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "proof-review/general-proof-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/evaluation-design-review/README.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "target": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "target": "mechanisms/lifecycle-migration/contracts.json",
+      "exists": true
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "target": "proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "FORMAL_MODEL.md",
+      "target": "dag-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "FORMAL_MODEL.md",
+      "target": "china/budget-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "FORMAL_MODEL.md",
+      "target": "china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "slice-checklist.json",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "../../china/record-refinement/REPORT.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "../../proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "inputs.json",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "SHA256SUMS",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/README.md",
+      "target": "validation.json",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "../../china/record-refinement/REPORT-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "../../proof-review/record-mapping-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "inputs.json",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "slice-checklist.json",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "design-v0.1.1.json",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "design-v0.1.1.json",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "../../mechanisms/work-improvement/minimal-experiments.json",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/README.md",
+      "target": "../../mechanisms/conformance/catalog.json",
+      "exists": true
+    },
+    {
+      "file": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "target": "../../proof-review/work-policy-audit/REVIEW.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "SOURCE_INDEX.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "source-index.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "reading-observations.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "identity-opinion-bindings.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "url-index.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "scope-and-inputs.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "execution_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "validation_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "SHA256SUMS",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/README.md",
+      "target": "reproducibility_receipt.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../中国Harness机制核查讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/authority-scope/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/lifecycle-migration/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/cordis-boundary/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/cordis-boundary/READING_COVERAGE.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/context-evaluation/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/work-improvement/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../中国Harness机制核查讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "identity-opinion-bindings.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/practitioner-views/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../../FORMAL_MODEL.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/foundations/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../budget-proof/README.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "../bounded-models/README.md",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/foundations/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/cordis-boundary/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/work-improvement/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/context-evaluation/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/practitioner-views/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/west/authority-scope/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/lifecycle-migration/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "source-index.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "reading-observations.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "scope-and-inputs.json",
+      "exists": true
+    },
+    {
+      "file": "china/consolidated-sources/SOURCE_INDEX.md",
+      "target": "execution_receipt.json",
+      "exists": true
+    }
+  ],
+  "missing": []
+}

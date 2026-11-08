@@ -1,0 +1,257 @@
+{
+  "task": "W10",
+  "validated_at_utc": "2026-11-08T09:01:39.298710+00:00",
+  "status": "PASS",
+  "errors": [],
+  "summary": {
+    "input_files": 24,
+    "workbench_fixed_files": 15,
+    "host_source_files": 8,
+    "entry_and_boundary_records": 26,
+    "project_store_mutation_sites": 19,
+    "kernel_commands": 16,
+    "unrun_acceptance_prerequisites": 10,
+    "diagrams": 1,
+    "main_visible_characters": 5848,
+    "links": 17,
+    "generated_bundle_matches_source": true
+  },
+  "input_hash_checks": [
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/index.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/projects.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/native.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/store.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/server/worktrees.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/client/app.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/client.js",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/record/kernel.mjs",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/record/README.md",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/tests/desktop-contract.test.mjs",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/tests/support/record-fixture.mjs",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/scripts/build.mjs",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/package.json",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/cordis.patch.yml",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/README.md",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/index.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/api-request-trust.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc-host.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/client/rpc.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/browser-auth.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/http-bridge.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc.ts",
+      "ok": true
+    },
+    {
+      "type": "input_hash",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "ok": true
+    }
+  ],
+  "link_checks": [
+    {
+      "document": "README.md",
+      "href": "MAP.md",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "README.md",
+      "href": "entry-map.json",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "README.md",
+      "href": "sources.json",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "README.md",
+      "href": "validation.json",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "README.md",
+      "href": "../implementation-taskbook/README.md",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js#L9-L84",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/README.md#L3-L9",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts#L146-L160",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts#L129-L136",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts#L215-L222",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js#L47-L290",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js#L5-L54",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client/app.js#L76-L94",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/client/rpc.ts#L34-L69",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/kernel.mjs#L116-L179",
+      "type": "fixed_source_url",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "entry-map.json",
+      "type": "local",
+      "ok": true
+    },
+    {
+      "document": "MAP.md",
+      "href": "sources.json",
+      "type": "local",
+      "ok": true
+    }
+  ],
+  "output_sha256": {
+    "sources.json": "8045e2549851a19e8a47ec28e45311173bf588f39603887b67d87885c45f1c3e",
+    "MAP.md": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+    "README.md": "e771f8c604a9eba07243abdd4fd137580bdffd41870cb7fb398d9932c4894104",
+    "entry-map.json": "ce6985aebc412d252d57dbb59a00efe20b24b68f0d406f1f44632f45b1e24162"
+  },
+  "limits": [
+    "Static counts, paths, ranges, fixed-file identity and generated bundle comparison only.",
+    "No test execution, running host, real HTTP/project request, product modification, authentication implementation or external effect.",
+    "Mermaid source syntax inspected, no visual rendering or page-count proof.",
+    "Host source snapshots do not attest installed version or alternate carrier configuration."
+  ]
+}

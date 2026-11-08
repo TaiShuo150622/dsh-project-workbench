@@ -1,0 +1,3399 @@
+{
+  "schema_version": 1,
+  "scanned_at_utc": "2026-11-08T08:35:43.419998+00:00",
+  "files": [
+    {
+      "file": "EIGHTH_PASS_MANIFEST.json",
+      "sha256": "f6816ad3fead96999b5713ee5360bbe4fc24a52d9b978f372750a1436d7f535e",
+      "bytes": 4144,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "ELEVENTH_PASS_MANIFEST.json",
+      "sha256": "14e16c4133238a4d9b19a6f751f908233ef660f81dcb3f413350e39ef3945c45",
+      "bytes": 672,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "FIFTH_PASS_MANIFEST.json",
+      "sha256": "fc743d0a70ce0b31c8166083805085d63cdfda1dffafcccdc118993de39f6f35",
+      "bytes": 6257,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "FIRST_PASS_MANIFEST.json",
+      "sha256": "643a7a0cc26e89741805ba229e7873fe5e1cdc4528b0980eb22f7bbc2697169c",
+      "bytes": 1629,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "FOURTEENTH_PASS_MANIFEST.json",
+      "sha256": "3b51a8ef26dcd4fc9c402e592440bea05bdfdb1e84a1ec520b3333734c4de2c1",
+      "bytes": 19421,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "FOURTH_PASS_MANIFEST.json",
+      "sha256": "7119bc6579b1a0e3374351d1adaa61a4f8ade555ded50484a2adb877ab2f9f37",
+      "bytes": 2329,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "NINTH_PASS_MANIFEST.json",
+      "sha256": "e3d2dae705a15706cf8e9a724519e9ab4aca0d773a06cffa1f639984eabf7315",
+      "bytes": 1645,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+      "bytes": 2811,
+      "role": "root_bibliography_enrichment",
+      "snapshot": "inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW.json",
+      "sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+      "bytes": 4886,
+      "role": "root_read_observations",
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW.json"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_2.json",
+      "sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+      "bytes": 6016,
+      "role": "root_read_observations",
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_2.json"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_3.json",
+      "sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+      "bytes": 3590,
+      "role": "root_read_observations",
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_3.json"
+    },
+    {
+      "file": "ROOT_SOURCE_REVIEW_4.json",
+      "sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+      "bytes": 4154,
+      "role": "root_read_observations",
+      "snapshot": "inputs/ROOT_SOURCE_REVIEW_4.json"
+    },
+    {
+      "file": "SECOND_PASS_MANIFEST.json",
+      "sha256": "6396840b1e045c2edd9319e974868f208b7add855c85cd928ae104042f712079",
+      "bytes": 13954,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "SEVENTH_PASS_MANIFEST.json",
+      "sha256": "e337b1b8255508e9381664b11657614115a0da77447c94cbfb31313c9c341651",
+      "bytes": 1678,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "SIXTH_PASS_MANIFEST.json",
+      "sha256": "867a938a3531375f6c591431c62a612029298a1597956d7c1993217a01c4b3dd",
+      "bytes": 23327,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "TENTH_PASS_MANIFEST.json",
+      "sha256": "d74ccb2a4f9ab321fe351e89eea930d79fec53c21e003ca056a302dcc0e0b697",
+      "bytes": 5759,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "THIRD_PASS_MANIFEST.json",
+      "sha256": "be8125719b81d6e98a71a6451e5c108e45262c3d088a612cbc29026ae4eeae5e",
+      "bytes": 10857,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "THIRTEENTH_PASS_MANIFEST.json",
+      "sha256": "f3c0b34b1ab9592f6041bccdc6d5bc47e24ee6c7d1b9688941775fa43d4899dd",
+      "bytes": 1466,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "TWELFTH_PASS_MANIFEST.json",
+      "sha256": "91ca7015a969172c0b10318d2cf467ae6744d3b59951df103cff0b1d66b8ec7a",
+      "bytes": 3935,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "baseline-github.json",
+      "sha256": "267a2a810ef7d97ef977b3f8bed8429f848ac56aad154b3246c435ce13e3ba7f",
+      "bytes": 5002,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/bounded-models/execution_receipt.json",
+      "sha256": "27339ecb14445f577c8f364cceaf614e297cdbd3a6eda1ec4623336675efd0a5",
+      "bytes": 1148,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/bounded-models/inputs.json",
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5",
+      "bytes": 896,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/bounded-models/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/budget-proof/execution_receipt.json",
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa",
+      "bytes": 2030,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/budget-proof/inputs.json",
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717",
+      "bytes": 496,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/budget-proof/lean-toolchain.json",
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e",
+      "bytes": 700,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/catalog-inventory.json",
+      "sha256": "da760b67e7aa595f13e238d638cb7f87e6e5075d0a8c9685ff5a9cedec8c2fd3",
+      "bytes": 74901,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/dedup-plan.json",
+      "sha256": "838e46d22c1a3edb2c56ba1523f4f3e4c540a4728904efc35d85026e383c946a",
+      "bytes": 11883,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/execution_receipt.json",
+      "sha256": "f0fe5a143227430fd8dcbe6bfc1e2e4030a745107186978ace7bd2d192cfc19e",
+      "bytes": 2340,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/field-issues.json",
+      "sha256": "2e3eb87a493ae89c3d01df8ace10569ac6b3ef8ebc17b632e80a7be32ec89932",
+      "bytes": 23964,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/identity-opinion-bindings.json",
+      "sha256": "360f49a0a7873f3f0617ade22bcda2301cdaf522154ea28f6e1f23a95347c340",
+      "bytes": 13548,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW.json",
+      "sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+      "bytes": 4886,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+      "bytes": 6016,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+      "bytes": 3590,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+      "bytes": 4154,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/china/sources.json",
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "bytes": 56172,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/foundations/sources.json",
+      "sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+      "bytes": 8304,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/cordis-boundary/sources.json",
+      "sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+      "bytes": 21712,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/lifecycle-migration/sources.json",
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "bytes": 9903,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/sources.json",
+      "sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+      "bytes": 51832,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/authority-scope/sources.json",
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+      "bytes": 10432,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/context-evaluation/sources.json",
+      "sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+      "bytes": 18622,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/practitioner-views/sources.json",
+      "sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+      "bytes": 16647,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/inputs/west/sources.json",
+      "sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+      "bytes": 40680,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/evidence-catalog-audit/root-cross-review-index.json",
+      "sha256": "030272e89d873f0d73ec5d5a3820f5941815fdf240202d8cf16d4981f0041a56",
+      "bytes": 52016,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/source-inventory.json",
+      "sha256": "75f6e6258326440d816a9740c48ff94a61c2b8a4ea6f6a8ef4c6e4601add9c55",
+      "bytes": 1075824,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/evidence-catalog-audit/validation_receipt.json",
+      "sha256": "c27774632dd1bf01c1ddcee58a73abe157ac06bcc0b7c5b4772e2d89a16b62b8",
+      "bytes": 468,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/duplicate-inputs.json",
+      "sha256": "330c4f47c51f1743766e789933795028f368498355e6d57a036952e7acb5d3df",
+      "bytes": 39045,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/execution_receipt.json",
+      "sha256": "832937c4ca98e7893c5321885687bb6b6137df0e63626f15ef496791f92a4f29",
+      "bytes": 1595,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/package-inventory.json",
+      "sha256": "ab8d8716e096fa624ea913cd4f78dc4f44382f0bd4f096a31ac14e672eb2ebe2",
+      "bytes": 138935,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/path-and-link-findings.json",
+      "sha256": "0e05bc14b735ebd57e9130a1f4e0ab91fc0783762ec2702e020d08c98d8068e0",
+      "bytes": 254793,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/pattern-review.json",
+      "sha256": "59fe8ef6ade0bece1b9a763091480155f0ec4a622bb71cc4118c86a27f3a9db1",
+      "bytes": 10826,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/review-findings.json",
+      "sha256": "fb1699ae9f14ed9ffeb7b1f0f60be85b42b0139473ce85ec269a83c57115a463",
+      "bytes": 14200,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/package-boundary-review/validation_receipt.json",
+      "sha256": "dba261e3571c7e9653fc30d55fabe2888a49d19da434adb985a989456d1fd147",
+      "bytes": 375,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/execution_receipt.json",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "bytes": 4351,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/inputs/specifications/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "china/record-refinement/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/integration-corrections-v0.1.1.json",
+      "sha256": "8e078759472a75143ddc8b8d8610bc7f847885cd60b37bb20d1293ae57ddb742",
+      "bytes": 749,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/probes.initial.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/refinement-matrix.json",
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2",
+      "bytes": 43772,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/record-refinement/validation_receipt.json",
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a",
+      "bytes": 701,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "china/sources.json",
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+      "bytes": 56172,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/china/sources.json"
+    },
+    {
+      "file": "dag-proof/compile_receipt.json",
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e",
+      "bytes": 745,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401",
+      "bytes": 3203,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/expiry-results/receipt.json",
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360",
+      "bytes": 3986,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/receipt.json",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/expiry-runner-negative-control/results/receipt.json",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/feature-results/receipt.json",
+      "sha256": "dc3e2efaf1357a65f044d2ecd422f08f6283f2351e2474f0ac838a1dd2212ec8",
+      "bytes": 1264,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/relay-results/receipt.json",
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac",
+      "bytes": 4380,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/receipt.json",
+      "sha256": "4d229999e56926b6d6582378d0be8c72ab7350bfa318d10e47734698777369a8",
+      "bytes": 358,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/relay-runner-negative-control/results/receipt.json",
+      "sha256": "ee14319fe178a02f6fd87a1ad6db5362bb0d48a230d150a7a6846d494e1aa5c1",
+      "bytes": 4436,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "formal-spec/results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f",
+      "bytes": 4094,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "foundations/sources.json",
+      "sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+      "bytes": 8304,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/foundations/sources.json"
+    },
+    {
+      "file": "mechanisms/conformance/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/conformance/validation.json",
+      "sha256": "eb9262189be2ccb0c7019141db806570ab8ac124b82501eed87138670c766f93",
+      "bytes": 1253,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/cordis-boundary/sources.json",
+      "sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+      "bytes": 21712,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/mechanisms/cordis-boundary/sources.json"
+    },
+    {
+      "file": "mechanisms/durability-boundary/crash-cuts.json",
+      "sha256": "fd79d786d2f2d35a9e71b1bad6885b15627db6b15a653500ac58e27ae628cefa",
+      "bytes": 20615,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/durability-boundary/sources.json",
+      "sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+      "bytes": 11448,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/mechanisms/durability-boundary/sources.json"
+    },
+    {
+      "file": "mechanisms/durability-boundary/validation.json",
+      "sha256": "b8e0e689ab206fe0215a0885553f79fec3168c7b32a5cb8cbc022963c0a92972",
+      "bytes": 1675,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/contracts.json",
+      "sha256": "8416737af21f1cd046071ce19f9676f55dcab1bdf2c31a49e62e203b7263f60f",
+      "bytes": 10508,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/fault-scenarios.json",
+      "sha256": "c6e5cb625440f8494dbce2c820276c70fc1bce8e3b0e629b6d701eb8ebc587d6",
+      "bytes": 17829,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/sources.json",
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+      "bytes": 9903,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/mechanisms/lifecycle-migration/sources.json"
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/validation.json",
+      "sha256": "2f4f303e43761ea70b7adc425888e423aa8472a98e224bc257df61e5a52f469e",
+      "bytes": 2110,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/sources.json",
+      "sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+      "bytes": 51832,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/mechanisms/sources.json"
+    },
+    {
+      "file": "mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2",
+      "bytes": 23380,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/mechanisms/work-improvement/sources.json"
+    },
+    {
+      "file": "mechanisms/work-improvement/validation.json",
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933",
+      "bytes": 1249,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/INPUT_MANIFEST.json",
+      "sha256": "9e669b529391d265482684d1ca612f7344272df93885f606e31966689ae49cfa",
+      "bytes": 5770,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/OUTPUT_MANIFEST.json",
+      "sha256": "408aee9b2925c2db8e411a27f6753113d5dcfbb916a0f6adc3054b715fe44d1a",
+      "bytes": 1242,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/REPAIR_INPUT_MANIFEST.json",
+      "sha256": "247538a059e369ce93d2590378b54271f09e24c7d3251ba9209855164992a051",
+      "bytes": 6635,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/findings.json",
+      "sha256": "2da61a00fea21ed136ee2fce479d2bd2dc533c2ce8f1de11e9d0f51e3a47204b",
+      "bytes": 4527,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/initial-parse-failure/receipt.json",
+      "sha256": "aba1dc2fc43f69d69e4e60cd132fa84e6816f4d06f169a85e04973196ff31401",
+      "bytes": 3203,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/inputs/formal-spec/expiry-results/receipt.json",
+      "sha256": "c5d3981993d85bc90a6be5f1565c089f4bee7d88e31b52a863c9b3d09362c360",
+      "bytes": 3986,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/receipt.json",
+      "sha256": "985a002a47c10e40b5820b418ad7ebd2dd70e51b29d75d9dd69cb045657d511c",
+      "bytes": 725,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair-inputs/expiry-runner-negative-control/results/receipt.json",
+      "sha256": "615709165b47ae2360612b112377cfebb92e38e978a2a0587ea288460c6fdbcb",
+      "bytes": 4442,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/repair_verification_receipt.json",
+      "sha256": "8cc3bf72af06054670291bb6a423b6298d761378285d56c40fea3c1e34cd34aa",
+      "bytes": 1615,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/rerun/receipt.json",
+      "sha256": "d92922d167b93373b3792b8d4caa28234aaf71f6dc97efca312b91e296ab805a",
+      "bytes": 4031,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner-probe-results/receipt.json",
+      "sha256": "1193e3f250c2e9c31d717ba796cf55fb8fdd5903e54288f705fdd39cc5a26da3",
+      "bytes": 4065,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/runner_probe_receipt.json",
+      "sha256": "82150211c7059c9214a3810a164bd5b76198a708338f53d928d40d3f94c9d00c",
+      "bytes": 2121,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/expiry-contract-audit/verification_receipt.json",
+      "sha256": "cdf29df7dfe09ae386962776bd8f42a2fa42c764284764534a44f51e10b7f495",
+      "bytes": 3021,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/findings.json",
+      "sha256": "81664987d29b2cff48c5783a25dc42cc3b28833c67a1af4f679ebb257c6acc1f",
+      "bytes": 10626,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/general-proof-audit/INPUT_MANIFEST.json",
+      "sha256": "5e2926f1af0d442b68744a07f45e1973ac4677f9f887b533e6438863fb9ab3b6",
+      "bytes": 4347,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/general-proof-audit/OUTPUT_MANIFEST.json",
+      "sha256": "0c01853aab64a670e1514f733d1d9290d161a6b09cd4e36a966a2e834da9d532",
+      "bytes": 1262,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/general-proof-audit/compile_receipt.json",
+      "sha256": "aba6e348da37f2f84f39418a4dabc4542b7971aca6e8f211269dcbb8a4c2af40",
+      "bytes": 2442,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/general-proof-audit/findings.json",
+      "sha256": "28870564b54933fab007d5b07e101fe5258e2e19be3fb5b805fd65a02a00bc10",
+      "bytes": 4402,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/execution_receipt.json",
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa",
+      "bytes": 2030,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/inputs.json",
+      "sha256": "cb520d723e1a455fa0c1d02645b35d6035087ef6e13621b27ff90982a483d717",
+      "bytes": 496,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/budget/lean-toolchain.json",
+      "sha256": "636d60f8dfeff28b918cb9e190ede0dfd1dfeb36738d3594b9b7e24509d0af1e",
+      "bytes": 700,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/general-proof-audit/inputs/dag/compile_receipt.json",
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e",
+      "bytes": 745,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/general-proof-audit/witness_receipt.json",
+      "sha256": "56e9cef46a9258ab474dc784b04fae1ab9726298249cbecfa298b55d02b0b673",
+      "bytes": 2304,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/inputs/MANIFEST.json",
+      "sha256": "4b29589d74479b585553edaa69807797e4ca2e98b8739d38e3e25df7b58611b9",
+      "bytes": 448,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/model-audit/INPUT_MANIFEST.json",
+      "sha256": "5e5abd1f9886af1d836acbd636ed3b748bc66081cf54cc14df14b6165a5000a5",
+      "bytes": 5352,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/OUTPUT_MANIFEST.json",
+      "sha256": "565f3d49702070322659faab5f03b6bd9c995df0d8a38a280a0d4f57330ea756",
+      "bytes": 1201,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/TLC_RECEIPT_MANIFEST.json",
+      "sha256": "8fa452f2d67d0c436c98ece4509ba7dc61088a3be3727e20389dd9da232c6111",
+      "bytes": 2490,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/audit_checks.json",
+      "sha256": "f052487efe0cac50142308cc2176e7f7a49d946fac141570ba4e603689eb8061",
+      "bytes": 1260,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/execution_receipt.json",
+      "sha256": "63313edb3fe89db2f5ad55467c77fabcda0d52bc9dd104fcb2a35e2d3542d3fc",
+      "bytes": 1034,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/findings.json",
+      "sha256": "34e4cf765a48a1b249041261338379556e02485b1b7a430971ac765a5bd4826d",
+      "bytes": 4942,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/execution_receipt.json",
+      "sha256": "27339ecb14445f577c8f364cceaf614e297cdbd3a6eda1ec4623336675efd0a5",
+      "bytes": 1148,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/inputs.json",
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5",
+      "bytes": 896,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/model-audit/inputs/python/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/model-audit/inputs/tla-results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f",
+      "bytes": 4094,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/model-audit/rerun/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/INPUT_MANIFEST.json",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/execution_receipt.json",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "bytes": 4351,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs/specifications/catalog.json",
+      "sha256": "068f7d8581803fd01545af15ebd90ced488fab1295d3a782067fc88c5db4c8b9",
+      "bytes": 51069,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/probes.initial.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/refinement-matrix.json",
+      "sha256": "424b654a601695bccc225fae33314a1046bc970d69edee1204c537fdfd6fc2e2",
+      "bytes": 43772,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/inputs/validation_receipt.json",
+      "sha256": "503ad440592ca294653f7d848e21cce22999270a3e5085af31a86d0e5cacfd1a",
+      "bytes": 701,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/record-mapping-audit/verification_receipt.json",
+      "sha256": "2c8df7ebec5f71b172fad687ebcd0e462f68f40cd43b66653c8fde7090b82c30",
+      "bytes": 816,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/INPUT_MANIFEST.json",
+      "sha256": "87804d730d8b79529815f9280461437fd723b9bcaecb8a428e8908eb01294b84",
+      "bytes": 10441,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/OUTPUT_MANIFEST.json",
+      "sha256": "5597b945ab7c3cc181261118eeb982275038d213f89d3c859f01ddc89de98868",
+      "bytes": 4525,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json",
+      "sha256": "888990ffa8ad17aed69da6b1724998f60bb1bc7058b359a8d1431b3f8ac0aaae",
+      "bytes": 3591,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/execution_receipt.json",
+      "sha256": "31c6e9c67e8e3912182a7623e789d4287f792223423db3eab6e75ddf1a924360",
+      "bytes": 688,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/findings.json",
+      "sha256": "92a4b6ca84415b88267658339316f5c006d3ab263d9f1e18cd3e5ca92222c035",
+      "bytes": 1687,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-results/receipt.json",
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac",
+      "bytes": 4380,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/receipt.json",
+      "sha256": "4d229999e56926b6d6582378d0be8c72ab7350bfa318d10e47734698777369a8",
+      "bytes": 358,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/formal-spec/relay-runner-negative-control/results/receipt.json",
+      "sha256": "ee14319fe178a02f6fd87a1ad6db5362bb0d48a230d150a7a6846d494e1aa5c1",
+      "bytes": 4436,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/crash-cuts.json",
+      "sha256": "fd79d786d2f2d35a9e71b1bad6885b15627db6b15a653500ac58e27ae628cefa",
+      "bytes": 20615,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/sources.json",
+      "sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+      "bytes": 11448,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/inputs/mechanisms/durability-boundary/validation.json",
+      "sha256": "b8e0e689ab206fe0215a0885553f79fec3168c7b32a5cb8cbc022963c0a92972",
+      "bytes": 1675,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative-rerun/receipt.json",
+      "sha256": "d8246a14065fe6665281e8d5f180be0f9ce3f79c8033b55f703fc8bace2417ca",
+      "bytes": 4442,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/negative_receipt.json",
+      "sha256": "406c665b2b6b37b7d7fd5d5c39e8b3b3b23d0686de122864784a3dbabc5eb912",
+      "bytes": 926,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/rerun/receipt.json",
+      "sha256": "cd38c6729c09396c1fb75ed660b2ab34548d905f1cc9d6712aa42f789c0281a7",
+      "bytes": 4431,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/relay-durability-audit/verification_receipt.json",
+      "sha256": "bee58eb2bf63f87d56d38740ba7b10fa54796e341d4ac449bf7cdcde8c4bc8eb",
+      "bytes": 1811,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/INPUT_MANIFEST.json",
+      "sha256": "2a56214b6b43426df259a65fc2d26c72904ef048115af522c975d4d54bc40d6a",
+      "bytes": 4257,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/OUTPUT_MANIFEST.json",
+      "sha256": "b0348806fa75da3d4e0e45e45d8cc5183a5f3a6d87c89a486f86bce2d2569a42",
+      "bytes": 402,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/author/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/INPUT_MANIFEST.json",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/inputs/r05/verification_receipt.json",
+      "sha256": "2c8df7ebec5f71b172fad687ebcd0e462f68f40cd43b66653c8fde7090b82c30",
+      "bytes": 816,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/snapshot-errata-check/receipt.json",
+      "sha256": "7458e79d81a04c7921903c18f6599af6327cc6a1febfde826344a0e6d1a6623f",
+      "bytes": 3932,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/work-policy-audit/INPUT_MANIFEST.json",
+      "sha256": "564c702fcc4989aa9fcb2c772a201ece25869128a439a5bc7de08a2adf25b44b",
+      "bytes": 4206,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/work-policy-audit/OUTPUT_MANIFEST.json",
+      "sha256": "7f18add1b01361c22e6ad0d17d7f25b787dc8617eb011d7ceeec265c10fcf64d",
+      "bytes": 626,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/work-policy-audit/findings.json",
+      "sha256": "1f059d6f68caf1725fc96eaa1d3b45e4a3adce0a7a42e86f5351d9dcf0a87f7d",
+      "bytes": 2286,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/minimal-experiments.json",
+      "sha256": "f921c5d28d635e2b7918ee1c897cadf759a23c7345fb3933eb25c674c55f57f2",
+      "bytes": 23380,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/sources.json",
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+      "bytes": 17301,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/mechanisms/work-improvement/validation.json",
+      "sha256": "48ea796110642d57aaebb23adad8b637865b1461af17d68c6352a60264083933",
+      "bytes": 1249,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/work-policy-audit/inputs/west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497,
+      "role": "excluded_frozen_input"
+    },
+    {
+      "file": "proof-review/work-policy-audit/verification_receipt.json",
+      "sha256": "b1400f2ba5773bceefd3797f97d8a56584caf90d79c3cb7e3e0c20a279a0cfe0",
+      "bytes": 2421,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "root-model-replay/results.json",
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "bytes": 55745,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/architecture-reader-review/review-inputs.json",
+      "sha256": "9e12e30bbaa0deaf955eedaca40e400d9eba9902bbb93dd853c774f480005e92",
+      "bytes": 8140,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/authority-scope/sources.json",
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+      "bytes": 10432,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/west/authority-scope/sources.json"
+    },
+    {
+      "file": "west/context-evaluation/protocol.json",
+      "sha256": "c637886c04746ddac6bb2b046db441221304bb50705c7f0e3509a0b87aa79082",
+      "bytes": 7447,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/context-evaluation/sources.json",
+      "sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+      "bytes": 18622,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/west/context-evaluation/sources.json"
+    },
+    {
+      "file": "west/decision-brief/inputs.json",
+      "sha256": "ad32f857c3eeed1b520bc9311dd754b95d362c234561959721750ea513c85b41",
+      "bytes": 5887,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/decision-brief/validation.json",
+      "sha256": "52d069c37de69ddd541b2d42ac0a1067e3432435827e7beb2594dacfb5629b89",
+      "bytes": 1312,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/evaluation-design-review/design-v0.1.1.json",
+      "sha256": "a340d5c4452ef26242cd88dd4e162dc7c996984843502f4c798fd028ea37c6b1",
+      "bytes": 26603,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/implementation-taskbook/inputs.json",
+      "sha256": "83fe0e264065d502eb77a79bf2f89ac3b1142ab9d9202da83b486c60a1a998c8",
+      "bytes": 8192,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/implementation-taskbook/slice-checklist.json",
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804",
+      "bytes": 22437,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/implementation-taskbook/validation.json",
+      "sha256": "9433bab8f8d409a036822b7bcd320fb7f380b229ac0b7b8355e7ee6cfd7456ac",
+      "bytes": 6339,
+      "role": "excluded_non_source_artifact"
+    },
+    {
+      "file": "west/practitioner-views/sources.json",
+      "sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+      "bytes": 16647,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/west/practitioner-views/sources.json"
+    },
+    {
+      "file": "west/sources.json",
+      "sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+      "bytes": 40680,
+      "role": "original_source_catalog",
+      "snapshot": "inputs/west/sources.json"
+    },
+    {
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.render-receipt.json",
+      "sha256": "d0fb562136807dfa138bc01b41ddea0bad87b29ac82363554d75dc9125d7fdf9",
+      "bytes": 513,
+      "role": "excluded_non_source_artifact"
+    }
+  ],
+  "literal_catalog_URL_occurrences": [
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://www.deepseek.com/en/harness/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/session.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/tool-execution-pipeline.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/agent-team.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-board.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-graph.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/001-domain.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/002-authorization.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/003-execution.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/12/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/app/outbox.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/13/url"
+      },
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/core/assignments.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/14/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/package.json",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/15/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/conversations-recovery.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/16/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/17/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/18/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/multi-agent-coordination.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/19/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/memory.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/20/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/goals.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/21/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/22/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/23/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/sandbox.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/24/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/scheduled-tasks.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/25/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.test.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/26/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.test.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/27/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/evaluation.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/28/url"
+      },
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/29/url"
+      },
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/memory/memory.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/30/url"
+      },
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/agents/fncall_agent.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/31/url"
+      },
+      "url": "https://cloud.tencent.com/product/acc",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/32/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/release-notes/v2.179.3",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/33/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/34/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/checkpointing",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/35/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/memory",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/36/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/goal",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/37/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/scheduled-tasks",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/38/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/permissions",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/39/url"
+      },
+      "url": "https://www.codebuddy.cn/docs/cli/hooks",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/40/url"
+      },
+      "url": "https://cloud.tencent.com/document/product/248/125043",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/41/url"
+      },
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/docs/mkdocs/en/graph.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/42/url"
+      },
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/checkpoint.go",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/43/url"
+      },
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/44/url"
+      },
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor_checkpoint_test.go",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/45/url"
+      },
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/46/url"
+      },
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/configs/harnesses/codebuddy-code/CONFIG.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/47/url"
+      },
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/src/workbuddy_bench/judge/runners/rule/script_verifier_resilience.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/48/url"
+      },
+      "url": "https://arxiv.org/abs/2607.20911v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/49/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/discussions/5120",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/50/url"
+      },
+      "url": "https://github.com/tianyicui",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/51/url"
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/52/url"
+      },
+      "url": "https://github.com/QwenLM/qwen-code/issues/2036",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/53/url"
+      },
+      "url": "https://github.com/wenshao",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/54/url"
+      },
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/55/url"
+      },
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "china/sources.json",
+        "file_sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600",
+        "json_pointer": "/sources/56/url"
+      },
+      "url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://lamport.azurewebsites.net/pubs/time-clocks.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://lamport.azurewebsites.net/pubs/chandy.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://www.cis.upenn.edu/~val/15MayPODS.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://arxiv.org/html/2412.07986v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://arxiv.org/abs/1105.2255",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://www.cs.cornell.edu/courses/cs530/2005sp/papers/sagas.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/access_failures/0/url"
+      },
+      "url": "https://repository.upenn.edu/bitstreams/b598c0a7-0d24-4162-8279-5f51a17d29c2/download",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "foundations/sources.json",
+        "file_sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1",
+        "json_pointer": "/access_failures/1/url"
+      },
+      "url": "https://www.cs.princeton.edu/techreports/1987/070.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/0/full_text_url"
+      },
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/events.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/reflect.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/utils.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/package.json",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/cordis-tutorial/02-lifecycle-and-effects.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/contracts.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/scripts/cordis-core-lifecycle.spec.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/13/url"
+      },
+      "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/cordis-boundary/sources.json",
+        "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+        "json_pointer": "/sources/14/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/events.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/0/workbench/repository_url"
+      },
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/0/dsh/permalink_prefix"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/1/url"
+      },
+      "url": "https://nodejs.org/download/release/v24.10.0/docs/api/fs.html",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/2/urls/0"
+      },
+      "url": "https://man7.org/linux/man-pages/man2/rename.2.html",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/2/urls/1"
+      },
+      "url": "https://man7.org/linux/man-pages/man2/fsync.2.html",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/durability-boundary/sources.json",
+        "file_sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+        "json_pointer": "/groups/3/url"
+      },
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://docs.temporal.io/develop/safe-deployments",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/0/permalink"
+      },
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/develop/safe-deployments.mdx",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://docs.temporal.io/production-deployment/worker-deployments/recover-pinned-workflows",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/1/permalink"
+      },
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://docs.dbos.dev/python/tutorials/upgrading-workflows",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/2/permalink"
+      },
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/2/paired_file/url"
+      },
+      "url": "https://docs.dbos.dev/typescript/tutorials/upgrading-workflows",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/2/paired_file/permalink"
+      },
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/typescript/tutorials/upgrading-workflows.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://docs.dbos.dev/production/hosting-with-kubernetes",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/3/permalink"
+      },
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/production/hosting-with-kubernetes.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/4/full_text_url"
+      },
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/lifecycle-migration/sources.json",
+        "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+        "json_pointer": "/sources/5/permalink"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/README.md#L269-L333",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/types.ts#L1175-L1190",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/session/session.ts#L193-L217",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/agent/README.md#L1-L400",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/run-coordinator.ts#L1-L170",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/permission.ts#L94-L101",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/context.ts#L44-L54",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/types.py#L99-L104",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_retry.py#L131-L143",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/channels/last_value.py#L46-L71",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_loop.py#L463-L559",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/12/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/overview.md#L1-L44",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/13/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/deferred-tools.md#L95-L137",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/14/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/toolsets/approval_required.py#L1-L33",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/15/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/message-history.md#L681-L729",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/16/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/17/url"
+      },
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/temporal.md#L267-L274",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/18/url"
+      },
+      "url": "https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md#L1-L39",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/19/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/README.md#L1-L82",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/20/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/21/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution-abort-race.test.ts#L39-L70",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/22/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/memory-operation.ts#L1-L60",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/23/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/recovery-authority-guard.ts#L8-L74",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/24/url"
+      },
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/interrupted-turn-record.ts#L435-L518",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/25/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/cancellation_management/redis_cancellation_manager.py#L198-L227",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/26/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/cookbook/02_agents/18_checkpointing/README.md#L1-L48",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/27/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/concurrency.py#L1-L17",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/28/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/status_persist.py#L254-L335",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/29/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/30/url"
+      },
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/tests/integration/agents/test_external_session_fencing.py#L1-L155",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/31/url"
+      },
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/32/url"
+      },
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/workflow/src/workflow.ts#L215-L277",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/33/url"
+      },
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/activity.ts#L86-L110",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/34/url"
+      },
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/activity/src/index.ts#L16-L54",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/35/url"
+      },
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/worker-tuner.ts#L155-L210",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/36/url"
+      },
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/37/url"
+      },
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_sys_db.py#L1521-L1595",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/38/url"
+      },
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_recovery.py#L1-L77",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/39/url"
+      },
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_queue.py#L70-L131",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/sources.json",
+        "file_sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e",
+        "json_pointer": "/sources/40/url"
+      },
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://arxiv.org/abs/2305.16291v2",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/0/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2305.16291v2",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://arxiv.org/abs/2210.03629v3",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/1/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2210.03629v3",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://arxiv.org/abs/2305.16653v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/2/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2305.16653v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://arxiv.org/abs/2303.11366v4",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/3/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2303.11366v4",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://arxiv.org/abs/2308.10144v3",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/4/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2308.10144v3",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://arxiv.org/abs/2410.10762v4",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/5/pdf_url"
+      },
+      "url": "https://arxiv.org/pdf/2410.10762v4",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/voyager.py#L265-L269",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py#L33-L116",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/8/artifact_evidence/0/url"
+      },
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/simple_humaneval_rs_hard50/humaneval-rs._simple_1_gpt-4_pass_at_k_1_rs.jsonl",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/8/artifact_evidence/1/url"
+      },
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/immediate_reflexion_humaneval_rs_hardest50/humaneval-rs-hardest50._immediate-reflexion_5_gpt-4_pass_at_k_1_rs.jsonl",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/8/artifact_evidence/2/url"
+      },
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/immediate_refinement_humaneval_rs_hardest50/humaneval-rs-hardest50._immediate-refinement_5_gpt-4_pass_at_k_1_rs.jsonl",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/8/artifact_evidence/3/url"
+      },
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/root/reflexion_humaneval_rs_hard50/humaneval-rs._reflexion_5_gpt-4_pass_at_k_1_rs.jsonl",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "mechanisms/work-improvement/sources.json",
+        "file_sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/LeapLabTHU/ExpeL/blob/e41ec9a24823e7b560c561ab191441b56d9bcefc/agent/expel.py#L420-L447",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/2/primary_documents/0/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/2/primary_documents/1/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/2/primary_documents/2/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/2/primary_documents/3/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_state.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/3/primary_documents/0/url"
+      },
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/3/primary_documents/1/url"
+      },
+      "url": "https://code.claude.com/docs/en/agent-sdk/user-input",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/authority-scope/sources.json",
+        "file_sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://aclanthology.org/2024.acl-long.747.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://arxiv.org/html/2310.08560v2",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://arxiv.org/html/2502.12110v11",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://arxiv.org/html/2403.12968v2",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/test_advanced.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://github.com/microsoft/LLMLingua/blob/01b9e9481d7395e1e83a48df4a062b11f6304325/experiments/llmlingua2/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/12/url"
+      },
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/docs/reproduce.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/13/url"
+      },
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/configs/splits/manifest_confirm.json",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/14/url"
+      },
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/memory/store.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/15/url"
+      },
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/bench/longmemeval/judge.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/16/url"
+      },
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/context-evaluation/sources.json",
+        "file_sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648",
+        "json_pointer": "/sources/17/url"
+      },
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://openai.com/index/harness-engineering/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://claude.com/ko/resources/webinars/outtake-built-cyber-investigator-claude",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://justinlin610.github.io/blog/from-reasoning-to-agentic-thinking/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://justinlin610.github.io/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-1M/Qwen2_5_1M_Technical_Report.pdf?file=Qwen2_5_1M_Technical_Report.pdf",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/practitioner-views/sources.json",
+        "file_sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05",
+        "json_pointer": "/excluded_candidates/0/url"
+      },
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1vnbdzn/author_here_any_feedback_for_deepseek_harness/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/0/url"
+      },
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/0/identity_basis/url"
+      },
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/1/url"
+      },
+      "url": "https://openai.com/index/unlocking-the-codex-harness/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/1/identity_basis/url"
+      },
+      "url": "https://openai.com/index/unlocking-the-codex-harness/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/2/url"
+      },
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/3/url"
+      },
+      "url": "https://openai.com/index/harness-engineering/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/3/identity_basis/url"
+      },
+      "url": "https://openai.com/index/harness-engineering/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/4/url"
+      },
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/architecture",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/5/url"
+      },
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/errors",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/6/url"
+      },
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/7/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/8/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sessions/index.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/9/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/guide.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/10/url"
+      },
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/memory.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/11/url"
+      },
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/12/url"
+      },
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/core/src/session/rollout_reconstruction.rs",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/13/url"
+      },
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/ext/skills/src/render.rs",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/14/url"
+      },
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/15/url"
+      },
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/15/identity_basis/url"
+      },
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/16/url"
+      },
+      "url": "https://www.anthropic.com/research/managed-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/17/url"
+      },
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/18/url"
+      },
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/18/identity_basis/url"
+      },
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/19/url"
+      },
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/20/url"
+      },
+      "url": "https://www.anthropic.com/research/multi-agent-research-system",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/21/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/22/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/23/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/24/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/25/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/26/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/27/url"
+      },
+      "url": "https://code.claude.com/docs/en/checkpointing",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/28/url"
+      },
+      "url": "https://code.claude.com/docs/en/memory",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/29/url"
+      },
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/30/url"
+      },
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/31/url"
+      },
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/examples/session_stores/README.md",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/32/url"
+      },
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_resume.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/33/url"
+      },
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_store.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/34/url"
+      },
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/35/url"
+      },
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/security",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/36/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/37/url"
+      },
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    },
+    {
+      "origin": {
+        "file": "west/sources.json",
+        "file_sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157",
+        "json_pointer": "/sources/38/url"
+      },
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/transcript_mirror_batcher.py",
+      "purpose": "literal_catalog_URL; may be document, identity, permalink prefix, alternative or excluded candidate"
+    }
+  ],
+  "exclusions": [
+    "All inputs/ copies, including C-05 frozen catalogs.",
+    "Audit reports, generated inventories and test/experiment receipts are not new source catalogs.",
+    "ROOT_BIBLIOGRAPHY_SUPPLEMENT enriches matching existing observations only."
+  ],
+  "preserved_prior_snapshot": "china/evidence-catalog-audit was not modified."
+}

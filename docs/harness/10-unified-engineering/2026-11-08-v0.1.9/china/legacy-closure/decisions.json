@@ -1,0 +1,1006 @@
+{
+  "task": "C13",
+  "comparison_snapshot": "MAIN v0.1.7 + ARCH + RECON as bound in inputs.json",
+  "coverage_notices": [
+    "Omission refers to these three summary documents, not every file in the repository.",
+    "Recorded adopted direction is not independent revalidation of private user approval or runtime.",
+    "No new implementation authorization is inferred."
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "title": "远程产品双模式与 SSH→Codespaces 次序",
+      "evidence_kind": "RECORDED_ADOPTED_PRODUCT_DIRECTION",
+      "coverage_status": "PARTIAL_OMISSION",
+      "source_refs": [
+        {
+          "input_id": "REM",
+          "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+          "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+          "line_ranges_1_based": [
+            [
+              303,
+              303
+            ],
+            [
+              371,
+              371
+            ],
+            [
+              387,
+              394
+            ],
+            [
+              410,
+              412
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              214,
+              214
+            ],
+            [
+              393,
+              395
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              114,
+              116
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              88,
+              88
+            ]
+          ]
+        },
+        {
+          "input_id": "I",
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+          "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+          "line_ranges_1_based": [
+            [
+              104,
+              104
+            ],
+            [
+              129,
+              135
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "保留 DSH 桌面",
+        "A/B 同时纳入产品方案",
+        "每会话开始时选择环境",
+        "先 SSH 后 Codespaces"
+      ],
+      "recommendation": "补沿革；I06 单模式仅是研究取样，不删另一路产品目标。具体目标、范围与宿主版本另定。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Public document records only; private original user conversations not read."
+    },
+    {
+      "id": "D02",
+      "title": "跨通道凭据归属、真值和迁移门槛",
+      "evidence_kind": "RECORDED_ADOPTED_PRODUCT_DIRECTION",
+      "coverage_status": "OMITTED",
+      "source_refs": [
+        {
+          "input_id": "SEC",
+          "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+          "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+          "line_ranges_1_based": [
+            [
+              103,
+              103
+            ],
+            [
+              202,
+              208
+            ],
+            [
+              250,
+              250
+            ],
+            [
+              272,
+              274
+            ],
+            [
+              324,
+              324
+            ],
+            [
+              377,
+              386
+            ],
+            [
+              392,
+              412
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              131,
+              133
+            ],
+            [
+              176,
+              180
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              46,
+              48
+            ],
+            [
+              61,
+              70
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              9,
+              29
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "交互型与机器型分开",
+        "机器型逐条 Keychain 真值与引用 env",
+        "ref 分级解锁、命令绑定与解释器禁用的历史设计",
+        "跨通道部分并入 dsh-chrome，不新立插件",
+        "不改变 DSH 自有模型凭据库",
+        "模型不看长度，只保留 ref/绑定/轮换元数据",
+        "备份/export 暂缓",
+        "最小链路验证后迁存量且保留回滚",
+        "遮罩先不产生与浏览器矩形，computer use 策略与后续可选兜底"
+      ],
+      "recommendation": "仅保留公开产品决定，历史代码/哨兵测试/待录入状态不更新为当前实现；不进入 I01。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Public document records only; private original user conversations not read."
+    },
+    {
+      "id": "D03",
+      "title": "H0 账本与新 Record 的真源和迁移衔接",
+      "evidence_kind": "HISTORICAL_ADOPTED_PLAN_WITH_UNFROZEN_SUCCESSOR",
+      "coverage_status": "COVERED_WITH_UNRESOLVED_MAPPING",
+      "source_refs": [
+        {
+          "input_id": "H0",
+          "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+          "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71",
+          "line_ranges_1_based": [
+            [
+              31,
+              40
+            ],
+            [
+              169,
+              180
+            ],
+            [
+              184,
+              194
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              367,
+              367
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              37,
+              52
+            ],
+            [
+              181,
+              181
+            ],
+            [
+              207,
+              207
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              27,
+              27
+            ]
+          ]
+        },
+        {
+          "input_id": "I",
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+          "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+          "line_ranges_1_based": [
+            [
+              101,
+              105
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "旧账本唯一真源与派生记录分开",
+        "发生时校验、幂等与单写入口是旧计划约束"
+      ],
+      "recommendation": "I03/I05 前冻结旧账本、工作控制事件和知识派生物的写者、导入/去重/撤回映射；不继承旧文件锁实现或时间阈值。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Public document records only; private original user conversations not read."
+    },
+    {
+      "id": "D04",
+      "title": "记忆删除传播与分类迁移",
+      "evidence_kind": "DESIGN_CONSTRAINT_NOT_IMPLEMENTATION",
+      "coverage_status": "PARTIAL_OMISSION",
+      "source_refs": [
+        {
+          "input_id": "REC",
+          "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+          "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+          "line_ranges_1_based": [
+            [
+              199,
+              199
+            ],
+            [
+              224,
+              224
+            ],
+            [
+              275,
+              300
+            ],
+            [
+              360,
+              360
+            ],
+            [
+              375,
+              390
+            ],
+            [
+              403,
+              413
+            ]
+          ]
+        },
+        {
+          "input_id": "RT",
+          "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+          "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+          "line_ranges_1_based": [
+            [
+              660,
+              662
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              127,
+              158
+            ],
+            [
+              251,
+              251
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              41,
+              52
+            ],
+            [
+              207,
+              211
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              14,
+              14
+            ],
+            [
+              87,
+              87
+            ]
+          ]
+        },
+        {
+          "input_id": "I",
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+          "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+          "line_ranges_1_based": [
+            [
+              103,
+              103
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "类别 ID 与显示名称分开",
+        "拆合保留旧 ID/查询和重判结果",
+        "删除/撤销/人工修正不能在重处理时无声复活",
+        "删除传播到索引、摘要、缓存须有处理边界"
+      ],
+      "recommendation": "作为 I05 后续存储验收题，按政策区分删除/失效/合法保留；不无条件删除合法发布派生物，不提前选数据库。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Proposal or analytical boundary; not inferred user approval."
+    },
+    {
+      "id": "D05",
+      "title": "浏览器设置源与配置迁移",
+      "evidence_kind": "PROPOSAL_WITH_HISTORICAL_CODE_NOT_RETESTED",
+      "coverage_status": "DEFERRED",
+      "source_refs": [
+        {
+          "input_id": "SET",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+          "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a",
+          "line_ranges_1_based": [
+            [
+              18,
+              22
+            ],
+            [
+              80,
+              118
+            ],
+            [
+              475,
+              488
+            ],
+            [
+              504,
+              546
+            ],
+            [
+              642,
+              655
+            ],
+            [
+              659,
+              679
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              108,
+              116
+            ],
+            [
+              207,
+              207
+            ]
+          ]
+        },
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              166,
+              178
+            ],
+            [
+              240,
+              240
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "建议唯一用户设置入口及来源可见",
+        "显式 override 与 schema 默认值分开",
+        "项目配置不得放宽安全",
+        "迁移不强制重写用户 profile、先预览与备份"
+      ],
+      "recommendation": "保持专题提案，不冻结字段和迁移脚本；设置范围的无新 UI 不否定后来的凭据 tab。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Proposal or analytical boundary; not inferred user approval."
+    },
+    {
+      "id": "D06",
+      "title": "浏览器主体和持久资源",
+      "evidence_kind": "MIXED_HISTORICAL_BOUNDARY_AND_PROPOSAL",
+      "coverage_status": "COVERED_WITH_ADAPTER_QUESTIONS",
+      "source_refs": [
+        {
+          "input_id": "MULTI",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+          "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+          "line_ranges_1_based": [
+            [
+              25,
+              36
+            ],
+            [
+              313,
+              320
+            ],
+            [
+              383,
+              405
+            ],
+            [
+              416,
+              419
+            ],
+            [
+              649,
+              689
+            ]
+          ]
+        },
+        {
+          "input_id": "NATIVE",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+          "sha256": "f09901c22204e1c23aea5cd8fa4170e6d2f0fa5568bb80f909b63fa56d4b3c3d",
+          "line_ranges_1_based": [
+            [
+              6,
+              8
+            ],
+            [
+              618,
+              625
+            ],
+            [
+              642,
+              651
+            ],
+            [
+              689,
+              718
+            ],
+            [
+              889,
+              901
+            ],
+            [
+              1286,
+              1299
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              176,
+              178
+            ],
+            [
+              244,
+              254
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              61,
+              62
+            ],
+            [
+              108,
+              114
+            ],
+            [
+              130,
+              130
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "agent owner/session/context/panel 不可互换",
+        "隐藏面板与关 context 分开",
+        "关闭执行资源与删除 named profile/登录态分开",
+        "同 provider 多 context 不等于多 provider 进程协调"
+      ],
+      "recommendation": "适配器须可信映射主体与代际；旧同名引用不能自动恢复能力。保留可见/隐藏及 profile 策略为待定，不继承秒数、内存数字。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Proposal or analytical boundary; not inferred user approval."
+    },
+    {
+      "id": "D07",
+      "title": "最终底座未定与生命周期权威",
+      "evidence_kind": "EXPLICIT_NOT_YET_DECIDED_AND_COMPOSITION_PROPOSAL",
+      "coverage_status": "COVERED_WITH_UNRESOLVED_MAPPING",
+      "source_refs": [
+        {
+          "input_id": "RT",
+          "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+          "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+          "line_ranges_1_based": [
+            [
+              1057,
+              1065
+            ],
+            [
+              1084,
+              1088
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              240,
+              240
+            ],
+            [
+              391,
+              395
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              7,
+              17
+            ],
+            [
+              60,
+              61
+            ],
+            [
+              112,
+              116
+            ],
+            [
+              181,
+              181
+            ],
+            [
+              207,
+              207
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              21,
+              21
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "后来的架构重评没有批准最终底座",
+        "产品身份独立宿主 ID",
+        "持久工作流组合须明确同一生命周期的权威"
+      ],
+      "recommendation": "Pi 早期方向和 DSH-first 试点不能合成永久底座决定。接入工作流前按 task/attempt 明确未来调度、取消和恢复写入权威，非全系统单数据库。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Proposal or analytical boundary; not inferred user approval."
+    },
+    {
+      "id": "D08",
+      "title": "Workflow 研究批准及策略地位",
+      "evidence_kind": "RECORDED_RESEARCH_SCOPE_AND_UNRUN_EXPERIMENT",
+      "coverage_status": "COVERED",
+      "source_refs": [
+        {
+          "input_id": "WF",
+          "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+          "sha256": "cce4c41da7d1baae4db15d16c04b2ff4eb40404bf443019a8293e1abae21ca0d",
+          "line_ranges_1_based": [
+            [
+              9,
+              13
+            ],
+            [
+              35,
+              35
+            ],
+            [
+              88,
+              96
+            ],
+            [
+              119,
+              159
+            ],
+            [
+              165,
+              183
+            ],
+            [
+              224,
+              237
+            ]
+          ]
+        },
+        {
+          "input_id": "RT",
+          "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+          "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+          "line_ranges_1_based": [
+            [
+              530,
+              564
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              172,
+              172
+            ],
+            [
+              281,
+              294
+            ],
+            [
+              367,
+              389
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              31,
+              33
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              77,
+              85
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "已拍研究题与公开 benchmark、只出稿实验待拍",
+        "窄 Agent 三层只是策略候选",
+        "旧四臂和本轮 12 次校准均非已执行"
+      ],
+      "recommendation": "无需恢复旧阈值；后来的目标/环境/接口变化也能触发重规划，已由 RECON 明确收窄旧限制。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Public document records only; private original user conversations not read."
+    },
+    {
+      "id": "D09",
+      "title": "DAG 分层与工作单元/订阅待定",
+      "evidence_kind": "PUBLIC_ABSTRACT_PLUS_PRIOR_READING_REUSE",
+      "coverage_status": "COVERED",
+      "source_refs": [
+        {
+          "input_id": "DAG1",
+          "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+          "sha256": "241b08a108e0447b84dafbebcef061f09096c02f0834a8349828816736724c66",
+          "line_ranges_1_based": [
+            [
+              7,
+              24
+            ]
+          ]
+        },
+        {
+          "input_id": "DAG2",
+          "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+          "sha256": "d0d0c6eee0170c322981454475ac7adca985c0358b73140a6bea7aee3a8dde90",
+          "line_ranges_1_based": [
+            [
+              7,
+              30
+            ]
+          ]
+        },
+        {
+          "input_id": "W13-MEMO",
+          "repository_relative_path": "docs/research/harness-20261107/west/intent-coverage/MEMO.md",
+          "sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+          "line_ranges_1_based": [
+            [
+              61,
+              69
+            ]
+          ]
+        }
+      ],
+      "comparison_refs": [
+        {
+          "input_id": "MAIN",
+          "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+          "sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+          "line_ranges_1_based": [
+            [
+              184,
+              206
+            ],
+            [
+              367,
+              367
+            ]
+          ]
+        },
+        {
+          "input_id": "ARCH",
+          "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+          "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+          "line_ranges_1_based": [
+            [
+              100,
+              100
+            ],
+            [
+              166,
+              176
+            ]
+          ]
+        },
+        {
+          "input_id": "RECON",
+          "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+          "sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+          "line_ranges_1_based": [
+            [
+              15,
+              15
+            ],
+            [
+              29,
+              29
+            ]
+          ]
+        },
+        {
+          "input_id": "I",
+          "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+          "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+          "line_ranges_1_based": [
+            [
+              100,
+              100
+            ]
+          ]
+        }
+      ],
+      "claims_in_scope": [
+        "实体/时间/视图/动作/构建契约分开",
+        "尚未裁定冲突不由图样补事实",
+        "工作单元合并、订阅、后台呈现员维持待定"
+      ],
+      "recommendation": "复用 W13 对 DAG11/DAG08 的全文范围，不算本轮新读；不追读未公开内部迁移。",
+      "implementation_claim": "NONE",
+      "user_approval_basis": "Proposal or analytical boundary; not inferred user approval."
+    }
+  ],
+  "historical_conflicts": [
+    {
+      "id": "S01",
+      "scope": "same_document_later_decision",
+      "earlier": [
+        {
+          "input_id": "SEC",
+          "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+          "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+          "line_ranges_1_based": [
+            [
+              93,
+              93
+            ],
+            [
+              265,
+              270
+            ],
+            [
+              331,
+              331
+            ]
+          ]
+        }
+      ],
+      "later": [
+        {
+          "input_id": "SEC",
+          "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+          "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+          "line_ranges_1_based": [
+            [
+              384,
+              386
+            ],
+            [
+              412,
+              412
+            ]
+          ]
+        }
+      ],
+      "resolution": "长度不给模型；存量迁移有最小链路验证与回滚前提。旧待拍/可选行不可单独当当前决定。"
+    },
+    {
+      "id": "S02",
+      "scope": "historical_revision_not_current_product",
+      "earlier": [
+        {
+          "input_id": "MULTI",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+          "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+          "line_ranges_1_based": [
+            [
+              292,
+              304
+            ]
+          ]
+        }
+      ],
+      "later": [
+        {
+          "input_id": "MULTI",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+          "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+          "line_ranges_1_based": [
+            [
+              958,
+              983
+            ]
+          ]
+        }
+      ],
+      "resolution": "文末修订改变部分早期状态；既不把早期缺口当当前bug，也不把附录测试当本轮重测。"
+    },
+    {
+      "id": "S03",
+      "scope": "different_product_scopes_not_real_conflict",
+      "earlier": [
+        {
+          "input_id": "SET",
+          "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+          "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a",
+          "line_ranges_1_based": [
+            [
+              116,
+              116
+            ]
+          ]
+        }
+      ],
+      "later": [
+        {
+          "input_id": "SEC",
+          "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+          "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+          "line_ranges_1_based": [
+            [
+              11,
+              11
+            ],
+            [
+              392,
+              392
+            ]
+          ]
+        }
+      ],
+      "resolution": "设置MVP不新增客户端只限该设置方案；后来凭据tab是另一功能的决定/历史状态。不可扩为全局禁止。"
+    }
+  ]
+}

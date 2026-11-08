@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="bf77ccb31101">
+<title>C-08 可打印最短反例</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#c08-m01-zero-cost-loop">C08-M01-zero-cost-loop</a></li><li class="l2"><a href="#c08-m02-fair-deliver">C08-M02-fair-deliver</a></li><li class="l2"><a href="#c08-m03-busy-is-not-progress">C08-M03-busy-is-not-progress</a></li><li class="l2"><a href="#c08-m04-intermittent-wf">C08-M04-intermittent-WF</a></li><li class="l2"><a href="#c08-m05-intermittent-sf">C08-M05-intermittent-SF</a></li><li class="l2"><a href="#c08-m06-unavailable-even-sf">C08-M06-unavailable-even-SF</a></li><li class="l2"><a href="#c08-m07-fixed-goal">C08-M07-fixed-goal</a></li><li class="l2"><a href="#c08-m07-changing-goal">C08-M07-changing-goal</a></li><li class="l2"><a href="#c08-m08-bounded-controller">C08-M08-bounded-controller</a></li><li class="l2"><a href="#c08-m08-query-cap-mutant">C08-M08-query-cap-mutant</a></li><li class="l2"><a href="#c08-m09-stopped-is-not-accepted">C08-M09-stopped-is-not-accepted</a></li><li class="l2"><a href="#c08-m10-ack-transfer">C08-M10-ack-transfer</a></li><li class="l2"><a href="#c08-m10-offer-transfer-mutant">C08-M10-offer-transfer-mutant</a></li><li class="l2"><a href="#c08-m11-local-stop-is-not-handoff">C08-M11-local-stop-is-not-handoff</a></li><li class="l2"><a href="#c08-m12-fair-but-late">C08-M12-fair-but-late</a></li><li class="l2"><a href="#c08-m13-bounded-deadline">C08-M13-bounded-deadline</a></li><li class="l2"><a href="#c08-m13-receiver-delay-mutant">C08-M13-receiver-delay-mutant</a></li><li class="l2"><a href="#c08-m14-service-missed">C08-M14-service-missed</a></li><li class="l2"><a href="#c08-m14-service-scheduled">C08-M14-service-scheduled</a></li><li class="l2"><a href="#c08-m15-finite-queue-open-closure">C08-M15-finite-queue-open-closure</a></li><li class="l2"><a href="#c08-m16-fair-attempts-can-all-fail">C08-M16-fair-attempts-can-all-fail</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>C-08 可打印最短反例</h1>
+</header>
+<p>前缀后重复 cycle 构成无限行为；Halt 表示已经停止的失败端点。长度按显式事件数计，初态为零步。</p>
+<h2 id="c08-m01-zero-cost-loop">C08-M01-zero-cost-loop</h2>
+<p>状态 2；显式边 2；fairness <code>[]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;phase&quot;: &quot;run&quot;, &quot;spent&quot;: 0} --QuerySame--&gt; {&quot;phase&quot;: &quot;run&quot;, &quot;spent&quot;: 0}</code></pre>
+<p>B=1. Every state has spent&lt;=1; QuerySame has zero model cost. Does not assert real queries are free.</p>
+<h2 id="c08-m02-fair-deliver">C08-M02-fair-deliver</h2>
+<p>状态 2；显式边 2；fairness <code>[{&quot;name&quot;: &quot;delivery&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Deliver&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>Fairness on the continuously enabled productive action excludes M01; no time bound follows.</p>
+<h2 id="c08-m03-busy-is-not-progress">C08-M03-busy-is-not-progress</h2>
+<p>状态 4；显式边 4；fairness <code>[{&quot;name&quot;: &quot;any_work&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Background&quot;, &quot;Discharge&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;pending&quot;: true, &quot;heartbeat&quot;: 0} --Background--&gt; {&quot;pending&quot;: true, &quot;heartbeat&quot;: 1}
+{&quot;pending&quot;: true, &quot;heartbeat&quot;: 1} --Background--&gt; {&quot;pending&quot;: true, &quot;heartbeat&quot;: 0}</code></pre>
+<p>Background performs real state changes. Aggregate work fairness does not discharge the pending obligation.</p>
+<h2 id="c08-m04-intermittent-wf">C08-M04-intermittent-WF</h2>
+<p>状态 3；显式边 3；fairness <code>[{&quot;name&quot;: &quot;discharge&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Discharge&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;available&quot;: true, &quot;done&quot;: false} --CloseWindow--&gt; {&quot;available&quot;: false, &quot;done&quot;: false}
+{&quot;available&quot;: false, &quot;done&quot;: false} --OpenWindow--&gt; {&quot;available&quot;: true, &quot;done&quot;: false}</code></pre>
+<h2 id="c08-m05-intermittent-sf">C08-M05-intermittent-SF</h2>
+<p>状态 3；显式边 3；fairness <code>[{&quot;name&quot;: &quot;discharge&quot;, &quot;mode&quot;: &quot;SF&quot;, &quot;actions&quot;: [&quot;Discharge&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>Environment alternates availability in this graph; SF is an extra premise, not an implemented scheduler property.</p>
+<h2 id="c08-m06-unavailable-even-sf">C08-M06-unavailable-even-SF</h2>
+<p>状态 1；显式边 1；fairness <code>[{&quot;name&quot;: &quot;resolution&quot;, &quot;mode&quot;: &quot;SF&quot;, &quot;actions&quot;: [&quot;Resolve&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;effect&quot;: &quot;unknown&quot;} --PollUnknown--&gt; {&quot;effect&quot;: &quot;unknown&quot;}</code></pre>
+<p>Resolve is never enabled; its SF is vacuous. No duplicate external send is allowed by this graph.</p>
+<h2 id="c08-m07-fixed-goal">C08-M07-fixed-goal</h2>
+<p>状态 3；显式边 2；fairness <code>[{&quot;name&quot;: &quot;production&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Produce&quot;]}, {&quot;name&quot;: &quot;acceptance&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Accept&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>revision_parity is a quotient of an ever-increasing revision counter, not permission to reuse old version identities. ReviseGoal resets current evidence; the loop lifts by incrementing the real counter.</p>
+<h2 id="c08-m07-changing-goal">C08-M07-changing-goal</h2>
+<p>状态 6；显式边 8；fairness <code>[{&quot;name&quot;: &quot;production&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Produce&quot;]}, {&quot;name&quot;: &quot;acceptance&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Accept&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;revision_parity&quot;: 0, &quot;produced&quot;: false, &quot;accepted&quot;: false} --ReviseGoal--&gt; {&quot;revision_parity&quot;: 1, &quot;produced&quot;: false, &quot;accepted&quot;: false}
+{&quot;revision_parity&quot;: 1, &quot;produced&quot;: false, &quot;accepted&quot;: false} --Produce--&gt; {&quot;revision_parity&quot;: 1, &quot;produced&quot;: true, &quot;accepted&quot;: false}
+{&quot;revision_parity&quot;: 1, &quot;produced&quot;: true, &quot;accepted&quot;: false} --ReviseGoal--&gt; {&quot;revision_parity&quot;: 0, &quot;produced&quot;: false, &quot;accepted&quot;: false}</code></pre>
+<p>revision_parity is a quotient of an ever-increasing revision counter, not permission to reuse old version identities. ReviseGoal resets current evidence; the loop lifts by incrementing the real counter.</p>
+<h2 id="c08-m08-bounded-controller">C08-M08-bounded-controller</h2>
+<p>状态 28；显式边 57；fairness <code>[]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>Two obligations with two fixed stages each, one acceptance stage, K=2 auxiliary steps. Successful stage completion is assumed, not established for arbitrary Coding work.</p>
+<h2 id="c08-m08-query-cap-mutant">C08-M08-query-cap-mutant</h2>
+<p>状态 10；显式边 22；fairness <code>[]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;stageA&quot;: 2, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --QuerySame--&gt; {&quot;stageA&quot;: 2, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}</code></pre>
+<p>Two obligations with two fixed stages each, one acceptance stage, K=2 auxiliary steps. Successful stage completion is assumed, not established for arbitrary Coding work.</p>
+<h2 id="c08-m09-stopped-is-not-accepted">C08-M09-stopped-is-not-accepted</h2>
+<p>状态 29；显式边 60；fairness <code>[]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>{&quot;stageA&quot;: 2, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --AdvanceA--&gt; {&quot;stageA&quot;: 1, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+{&quot;stageA&quot;: 1, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --AdvanceA--&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+{&quot;stageA&quot;: 0, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --AdvanceB--&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 1, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+{&quot;stageA&quot;: 0, &quot;stageB&quot;: 1, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --AdvanceB--&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+{&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;} --Reject--&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;rejected&quot;}</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;rejected&quot;} --Halt--&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;rejected&quot;}</code></pre>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>AdvanceA -&gt; {&quot;stageA&quot;: 1, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+AdvanceA -&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 2, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+AdvanceB -&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 1, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+AdvanceB -&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;running&quot;}
+Reject -&gt; {&quot;stageA&quot;: 0, &quot;stageB&quot;: 0, &quot;auxiliaryLeft&quot;: 2, &quot;outcome&quot;: &quot;rejected&quot;}</code></pre>
+<p>All actual controller paths terminate; the lasso ends in analysis-only Halt at a rejected terminal state.</p>
+<h2 id="c08-m10-ack-transfer">C08-M10-ack-transfer</h2>
+<p>状态 5；显式边 5；fairness <code>[{&quot;name&quot;: &quot;recipient_acceptance&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;AcceptResponsibility&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>Packet binds an unresolved effect; acknowledgement transfers responsibility but does not resolve that effect. Willing/authorized receiver is an explicit environment premise.</p>
+<h2 id="c08-m10-offer-transfer-mutant">C08-M10-offer-transfer-mutant</h2>
+<p>状态 5；显式边 5；fairness <code>[{&quot;name&quot;: &quot;recipient_acceptance&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;AcceptResponsibility&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>Offer -&gt; {&quot;packet&quot;: true, &quot;ack&quot;: false, &quot;localStopped&quot;: false, &quot;owner&quot;: &quot;receiver&quot;, &quot;unknown&quot;: true}</code></pre>
+<p>Packet binds an unresolved effect; acknowledgement transfers responsibility but does not resolve that effect. Willing/authorized receiver is an explicit environment premise.</p>
+<h2 id="c08-m11-local-stop-is-not-handoff">C08-M11-local-stop-is-not-handoff</h2>
+<p>状态 5；显式边 5；fairness <code>[{&quot;name&quot;: &quot;recipient_acceptance&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;AcceptResponsibility&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>Offer -&gt; {&quot;packet&quot;: true, &quot;ack&quot;: false, &quot;localStopped&quot;: false, &quot;owner&quot;: &quot;sender&quot;, &quot;unknown&quot;: true}
+LocalStop -&gt; {&quot;packet&quot;: true, &quot;ack&quot;: false, &quot;localStopped&quot;: true, &quot;owner&quot;: &quot;sender&quot;, &quot;unknown&quot;: true}</code></pre>
+<h2 id="c08-m12-fair-but-late">C08-M12-fair-but-late</h2>
+<p>状态 15；显式边 22；fairness <code>[{&quot;name&quot;: &quot;time&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Tick&quot;]}, {&quot;name&quot;: &quot;prepare&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Prepare&quot;]}, {&quot;name&quot;: &quot;receiver&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;Ack&quot;]}]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>Tick -&gt; {&quot;clock&quot;: 1, &quot;phase&quot;: &quot;run&quot;}
+Tick -&gt; {&quot;clock&quot;: 2, &quot;phase&quot;: &quot;run&quot;}
+Tick -&gt; {&quot;clock&quot;: 3, &quot;phase&quot;: &quot;run&quot;}</code></pre>
+<p>Every fair behavior eventually receives, but deadline D=3 is not guaranteed. Any bad finite prefix can extend by Prepare/Ack and then stop fairly.</p>
+<h2 id="c08-m13-bounded-deadline">C08-M13-bounded-deadline</h2>
+<p>状态 6；显式边 5；fairness <code>[]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>D=3, cutoff=1; each transition consumes one discrete time unit. Prepare and recipient Ack take &lt;=1 unit each only in the conservative case. Unknown remains true after receipt.</p>
+<h2 id="c08-m13-receiver-delay-mutant">C08-M13-receiver-delay-mutant</h2>
+<p>状态 9；显式边 9；fairness <code>[]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>{&quot;clock&quot;: 0, &quot;phase&quot;: &quot;run&quot;, &quot;unknown&quot;: true} --Work--&gt; {&quot;clock&quot;: 1, &quot;phase&quot;: &quot;run&quot;, &quot;unknown&quot;: true}
+{&quot;clock&quot;: 1, &quot;phase&quot;: &quot;run&quot;, &quot;unknown&quot;: true} --Prepare--&gt; {&quot;clock&quot;: 2, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}
+{&quot;clock&quot;: 2, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true} --DelayAck--&gt; {&quot;clock&quot;: 3, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}
+{&quot;clock&quot;: 3, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true} --DelayAck--&gt; {&quot;clock&quot;: 4, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;clock&quot;: 4, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true} --Halt--&gt; {&quot;clock&quot;: 4, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}</code></pre>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>Work -&gt; {&quot;clock&quot;: 1, &quot;phase&quot;: &quot;run&quot;, &quot;unknown&quot;: true}
+Prepare -&gt; {&quot;clock&quot;: 2, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}
+DelayAck -&gt; {&quot;clock&quot;: 3, &quot;phase&quot;: &quot;offered&quot;, &quot;unknown&quot;: true}</code></pre>
+<p>D=3, cutoff=1; each transition consumes one discrete time unit. Prepare and recipient Ack take &lt;=1 unit each only in the conservative case. Unknown remains true after receipt.</p>
+<h2 id="c08-m14-service-missed">C08-M14-service-missed</h2>
+<p>状态 14；显式边 13；fairness <code>[]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>{&quot;clock&quot;: 0, &quot;completedMask&quot;: 0, &quot;stopped&quot;: false} --TimePasses--&gt; {&quot;clock&quot;: 1, &quot;completedMask&quot;: 0, &quot;stopped&quot;: false}
+{&quot;clock&quot;: 1, &quot;completedMask&quot;: 0, &quot;stopped&quot;: false} --ObserveDue0--&gt; {&quot;clock&quot;: 2, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+{&quot;clock&quot;: 2, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false} --TimePasses--&gt; {&quot;clock&quot;: 3, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+{&quot;clock&quot;: 3, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false} --TimePasses--&gt; {&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+{&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false} --CloseWindow--&gt; {&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: true}</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: true} --Halt--&gt; {&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: true}</code></pre>
+<p>最短 bad 前缀：</p>
+<pre data-lang="text"><code>TimePasses -&gt; {&quot;clock&quot;: 1, &quot;completedMask&quot;: 0, &quot;stopped&quot;: false}
+ObserveDue0 -&gt; {&quot;clock&quot;: 2, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+TimePasses -&gt; {&quot;clock&quot;: 3, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+TimePasses -&gt; {&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: false}
+CloseWindow -&gt; {&quot;clock&quot;: 4, &quot;completedMask&quot;: 1, &quot;stopped&quot;: true}</code></pre>
+<p>Finite window [0,4], two due observations in slots 1 and 3. An observation can report no change and still discharge its due obligation. Closing is not retrospective coverage.</p>
+<h2 id="c08-m14-service-scheduled">C08-M14-service-scheduled</h2>
+<p>状态 6；显式边 5；fairness <code>[]</code>。</p>
+<p>本图在所列 fairness 下没有避开目标的公平循环或失败死端。</p>
+<p>Finite window [0,4], two due observations in slots 1 and 3. An observation can report no change and still discharge its due obligation. Closing is not retrospective coverage.</p>
+<h2 id="c08-m15-finite-queue-open-closure">C08-M15-finite-queue-open-closure</h2>
+<p>状态 2；显式边 2；fairness <code>[{&quot;name&quot;: &quot;complete_current&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;DischargeAndAdmitNext&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;current_id_parity&quot;: 0, &quot;pending&quot;: 1} --DischargeAndAdmitNext--&gt; {&quot;current_id_parity&quot;: 1, &quot;pending&quot;: 1}
+{&quot;current_id_parity&quot;: 1, &quot;pending&quot;: 1} --DischargeAndAdmitNext--&gt; {&quot;current_id_parity&quot;: 0, &quot;pending&quot;: 1}</code></pre>
+<p>Each step completes the current obligation and admits a distinct new one under the same goal. Queue size is always one; the obligation universe is unbounded. Parity quotient lifts to successive fresh natural-number IDs, never ID reuse.</p>
+<h2 id="c08-m16-fair-attempts-can-all-fail">C08-M16-fair-attempts-can-all-fail</h2>
+<p>状态 4；显式边 4；fairness <code>[{&quot;name&quot;: &quot;attempt&quot;, &quot;mode&quot;: &quot;WF&quot;, &quot;actions&quot;: [&quot;AttemptFails&quot;, &quot;AttemptPasses&quot;]}]</code>。</p>
+<p>prefix:</p>
+<pre data-lang="text"><code>(empty)</code></pre>
+<p>cycle:</p>
+<pre data-lang="text"><code>{&quot;attempt_parity&quot;: 0, &quot;passed&quot;: false} --AttemptFails--&gt; {&quot;attempt_parity&quot;: 1, &quot;passed&quot;: false}
+{&quot;attempt_parity&quot;: 1, &quot;passed&quot;: false} --AttemptFails--&gt; {&quot;attempt_parity&quot;: 0, &quot;passed&quot;: false}</code></pre>
+<p>A productive option exists, and attempts run fairly, but outcome choice can always fail. Scheduling fairness is not an assumption of favorable external outcomes.</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

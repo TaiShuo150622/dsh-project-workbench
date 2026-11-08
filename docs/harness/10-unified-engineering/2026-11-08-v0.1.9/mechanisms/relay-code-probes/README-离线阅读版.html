@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="58d894e4412c">
+<title>M07：真实方法与模拟持久层的条件代码探针</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#输入与最小切面">输入与最小切面</a></li><li class="l2"><a href="#模拟接口及其承诺">模拟接口及其承诺</a></li><li class="l2"><a href="#探针与结果">探针与结果</a></li><li class="l2"><a href="#复核与范围">复核与范围</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">2026-11-08</span><span class="chip">mechanisms 研究线</span></div>
+<h1>M07：真实方法与模拟持久层的条件代码探针</h1>
+</header>
+<p>已运行 5 个探针，5 个断言组通过。这里执行的是固定源码副本中的真实方法，以及明确可控的 fakehost / fakepersistence / fakestore；没有运行真实 DSH、真实持久层、业务任务、网络发送或进程故障。通过表示声明的条件行为得到观察，不表示产品修复、宿主验收或真实丢消息复现。</p>
+<h2 id="输入与最小切面">输入与最小切面</h2>
+<p>工作台基线固定为 <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code>。通过 git show 复制两份完整文件，仅把文件扩展名改为 .mjs 以独立选择 ESM，内容逐字节不变：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">原路径</th><th style="text-align:left">研究副本</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">server/native.js</td><td style="text-align:left"><a href="inputs/native.mjs">inputs/native.mjs</a></td><td style="text-align:left">0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400</td></tr><tr><td style="text-align:left">server/projects.js</td><td style="text-align:left"><a href="inputs/projects.mjs">inputs/projects.mjs</a></td><td style="text-align:left">565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713</td></tr></tbody></table></div>
+<p>详细 git blob、大小与复制方式见 <a href="input-manifest.json">input-manifest.json</a>。运行前脚本校验上述硬编码 SHA 与清单。它没有导入工作区产品入口，也没有调用真实 Store。</p>
+<p>实际方法切面为 Native.deliver / accepted，以及 Projects.prototype.flush 和 action 的 retry_delivery 分支。Projects 方法以最小 receiver 调用；kick 只写入模拟轨迹，不启动调度器。未调用 Projects.create/start/drive、Native.create/user/stop，也未创建任何实际会话或工作树。</p>
+<h2 id="模拟接口及其承诺">模拟接口及其承诺</h2>
+<p>模拟语义就是探针的输入条件，不能反过来当作宿主实现证据。M06 已核的实际 DSH 边界另见 <a href="../durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html">原研究稿</a>；本轮保持 M06 原件不变。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">接口</th><th style="text-align:left">明确定义</th><th style="text-align:left">没有模拟的内容</th></tr></thead><tbody><tr><td style="text-align:left">FakeHost.resolveAgent / snapshotEvents / inbox / followup</td><td style="text-align:left">单个合成目标；followup 同步记录 live inbox splice。</td><td style="text-align:left">真实 agent 驱动、模型调用、后台任务、所有 inbox 竞争。</td></tr><tr><td style="text-align:left">FakePersistence.flush</td><td style="text-align:left">success：把 liveEvents 复制到 retainedEvents；target_no_commit：不复制而拒绝；other_writer_failure：先复制目标，再因另一个模拟 writer 拒绝。</td><td style="text-align:left">DSH 文件格式、文件同步、目录同步、回滚、操作系统与设备。</td></tr><tr><td style="text-align:left">FakeStore.change</td><td style="text-align:left">顺序地 clone→执行真实回调→发布内存状态；可在首次 sent 标记发布前失败，后续错误状态写入正常。</td><td style="text-align:left">真实 Store 队列、文件写入、跨进程锁、rename、掉电行为。</td></tr><tr><td style="text-align:left">retainedEvents / retainedState</td><td style="text-align:left">仅是同一 Node 进程里的模拟保留副本，用来区分逻辑层。</td><td style="text-align:left">真实磁盘或跨进程耐久性。</td></tr><tr><td style="text-align:left">forgetVolatileOnly</td><td style="text-align:left">清空模拟 live 数组，保留模拟 retained 数组。</td><td style="text-align:left">没有 kill、重启或断电，不是实际崩溃试验。</td></tr><tr><td style="text-align:left">retry_delivery.kick</td><td style="text-align:left">记录“不调度”；之后由探针显式调用真实 flush。</td><td style="text-align:left">没有搭建大假调度器。</td></tr></tbody></table></div>
+<h2 id="探针与结果">探针与结果</h2>
+<p><a href="results.json">results.json</a> 保存每项前提、断言、观察快照、方法回执及调用轨迹；<code>actual_execution=true</code> 仅指该模拟探针执行，真实宿主和持久层执行字段均为 false。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">ID</th><th style="text-align:left">区分的问题</th><th style="text-align:left">观察与断言结果</th></tr></thead><tbody><tr><td style="text-align:left">RP01 正对照</td><td style="text-align:left">新 ID 正常保存，再次投递已保留 ID。</td><td style="text-align:left">followup=1、flush=1；目标模拟保留=true、outbox.sent=true；重复请求没有新增投递。</td></tr><tr><td style="text-align:left">RP02</td><td style="text-align:left">已有 live ID，但没有模拟保留记录。</td><td style="text-align:left">Native.deliver 正常返回且 flush=0；并未因此获得目标模拟保留记录。</td></tr><tr><td style="text-align:left">RP03</td><td style="text-align:left">lead 汇报 relay 的目标首次保存失败，同 ID retry_delivery。</td><td style="text-align:left">初次记录错误；真实 retry_delivery 清错；第二次因 live ID 早退而不再 flush，但真实 Projects.flush 标 sent。逻辑内存清除后，模拟保留副本为 sent=true / 目标无消息。</td></tr><tr><td style="text-align:left">RP04 对照</td><td style="text-align:left">目标模拟保存成功，但其他 writer 导致全局 flush 拒绝。</td><td style="text-align:left">初次同样记录错误；同 ID 重试后 sent=true，而且目标已有模拟保留。说明整体 flush 异常不能证明目标没收到。</td></tr><tr><td style="text-align:left">RP05</td><td style="text-align:left">目标模拟保存成功，但首次 sent 标记写入失败。</td><td style="text-align:left">真实 catch 再写错误；worker 从 running 变为 failed，文字使用“消息尚未投递”；目标模拟保留仍为 true。</td></tr></tbody></table></div>
+<p>RP03 选 worker→lead 汇报，避免给 worker 的失败路径 phase 门禁改变同 ID 可达性。它还明确假定目标写未提交、没有后续成功 drain、模拟 Store 的标记独立保留。实际系统是否同时满足这些条件，需要真实宿主与存储 profile 的独立证据。</p>
+<p>所有 Projects.flush 调用在内部错误已被 catch 并记录时仍 fulfilled；这份“方法回执”与消息成功、业务成功是不同概念。结果中没有真实外部业务效果。</p>
+<h2 id="复核与范围">复核与范围</h2>
+<p>可审阅 <a href="run-probes.mjs">run-probes.mjs</a>。如需重跑，仅在该研究目录对应环境执行此文件；它只写同目录 results.json，会覆盖该研究结果文件：</p>
+<pre data-lang="text"><code>node docs/research/harness-20261107/mechanisms/relay-code-probes/run-probes.mjs</code></pre>
+<p>本轮只执行一次探针，结果记录实际 Node 版本与 UTC 时间；之后仅做 stdlib 清单核对。源 SHA 不符时会在导入前拒绝。源副本的身份验证不是第三方代码安全审计。</p>
+<p><a href="validation.json">validation.json</a> 记录输入副本与 git 对象一致、结果 schema/ID/断言及本地链接检查，以及 M06 既有清单摘要未变。没有修改产品代码，没有提交或推送。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

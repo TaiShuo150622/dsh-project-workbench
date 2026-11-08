@@ -1,0 +1,128 @@
+{
+  "task": "W15",
+  "status": "STATIC_VALIDATION_PASS",
+  "checked_at_utc": "2026-11-08T10:29:02.134083+00:00",
+  "scope": "Markdown/JSON/link and editorial-boundary checks only; no code, model, API, proof, runtime or usability test executed.",
+  "guide_chinese_characters": 1013,
+  "guide_non_whitespace_characters": 1467,
+  "outcome_items": 6,
+  "decision_items": 5,
+  "markdown_files": 3,
+  "json_files_including_this_receipt": 3,
+  "local_link_occurrences": 13,
+  "links": [
+    {
+      "file": "GUIDE.md",
+      "target": "../worked-example/EXAMPLE.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/worked-example/EXAMPLE.md"
+    },
+    {
+      "file": "GUIDE.md",
+      "target": "../decision-brief/MEMO-v0.1.1.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/decision-brief/MEMO-v0.1.1.md"
+    },
+    {
+      "file": "GUIDE.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.6.md"
+    },
+    {
+      "file": "GUIDE.md",
+      "target": "../../EVIDENCE.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/EVIDENCE.md"
+    },
+    {
+      "file": "GUIDE.md",
+      "target": "../../REPRODUCE.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/REPRODUCE.md"
+    },
+    {
+      "file": "GUIDE.md",
+      "target": "../../README.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/README.md"
+    },
+    {
+      "file": "README-REVIEW.md",
+      "target": "readme-stats.json",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/readme-stats.json"
+    },
+    {
+      "file": "README-REVIEW.md",
+      "target": "GUIDE.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/GUIDE.md"
+    },
+    {
+      "file": "README.md",
+      "target": "GUIDE.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/GUIDE.md"
+    },
+    {
+      "file": "README.md",
+      "target": "README-REVIEW.md",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/README-REVIEW.md"
+    },
+    {
+      "file": "README.md",
+      "target": "inputs.json",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/inputs.json"
+    },
+    {
+      "file": "README.md",
+      "target": "readme-stats.json",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/readme-stats.json"
+    },
+    {
+      "file": "README.md",
+      "target": "validation.json",
+      "exists": true,
+      "resolved": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/delivery-guide/validation.json"
+    }
+  ],
+  "issues": [],
+  "files": [
+    {
+      "path": "GUIDE.md",
+      "sha256": "c9c5f3d7f01d0eb9c46bace9abee6e86a7c12e8b1bc97b683e35df5914ee5657",
+      "bytes": 3816
+    },
+    {
+      "path": "README-REVIEW.md",
+      "sha256": "00c154c782208fbd71cd196df40b02d54c2d1b80e389612eba9bdbeb378dc73d",
+      "bytes": 2353
+    },
+    {
+      "path": "README.md",
+      "sha256": "7d1b801b9121deb0f064205a08e6f9f1ceaee884a943fece83806bd286a4b543",
+      "bytes": 1098
+    },
+    {
+      "path": "inputs.json",
+      "sha256": "838c94791408ea1765bb6fca787d050eb4a4ae39acbb072c69debe419e19d75c",
+      "bytes": 4477
+    },
+    {
+      "path": "readme-stats.json",
+      "sha256": "33c69abac0c416fca107c2f52a007f04b82589ad84880b9df618d0101fbf8832",
+      "bytes": 1973
+    }
+  ],
+  "not_executed": [
+    "No new product or host validation",
+    "No model/paid API calls",
+    "No rendering/usability trial",
+    "No commit, push or external submission",
+    "No review of main v0.1.7 body"
+  ]
+}

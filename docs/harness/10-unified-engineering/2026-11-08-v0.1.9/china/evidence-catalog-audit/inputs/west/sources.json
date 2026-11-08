@@ -1,0 +1,930 @@
+{
+  "schema_version": "1.0",
+  "research_line": "west",
+  "version": "0.1.1",
+  "as_of": "2026-11-08",
+  "method": "Primary bodies read; official contract, pinned source, official staff report, personal public interview and our inference are separate. No live product experiment.",
+  "sources": [
+    {
+      "id": "O01",
+      "company": "OpenAI",
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "title": "Unrolling the Codex agent loop",
+      "authors": [
+        "Michael Bolin",
+        "OpenAI"
+      ],
+      "publication_date": "2026-01-23",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_staff_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "模型输入、工具执行、结果追加构成循环；上下文投影与持久历史不同。缓存前缀和压缩方式影响设计。"
+      ],
+      "limitations": [
+        "文章记录1月实现；未据此断言11月仍不使用 previous_response_id。不把当时参数当当前默认。"
+      ],
+      "locator": "agent loop; prompt caching; compaction",
+      "identity_basis": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "官方作者栏注明 Member of Technical Staff；仅证明发文时归属"
+      }
+    },
+    {
+      "id": "O02",
+      "company": "OpenAI",
+      "url": "https://openai.com/index/unlocking-the-codex-harness/",
+      "title": "Unlocking the Codex harness: how we built the App Server",
+      "authors": [
+        "Celia Chen",
+        "OpenAI"
+      ],
+      "publication_date": "2026-02-04",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_staff_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "App Server 把核心循环、线程持久历史和双向事件协议提供给多种宿主；审批请求可暂停 turn。"
+      ],
+      "limitations": [
+        "官方设计说明，不等同所有客户端能力或端到端事务保证。"
+      ],
+      "locator": "App Server; thread manager; JSON-RPC",
+      "identity_basis": {
+        "url": "https://openai.com/index/unlocking-the-codex-harness/",
+        "text": "官方作者栏注明 Member of Technical Staff"
+      }
+    },
+    {
+      "id": "O03",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "title": "Codex as a platform",
+      "authors": [
+        "Nicolas Bonamy",
+        "Derrick Choi",
+        "OpenAI"
+      ],
+      "publication_date": "2026-08-19",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "应用保留业务上下文、界面与 system of record，App Server 提供 agent loop 与配置后的工具/沙箱交互。"
+      ],
+      "limitations": [
+        "演示应用不是用户业务验收或安全证明；未额外核实每位作者具体职务。"
+      ],
+      "locator": "main article: app server and application responsibilities"
+    },
+    {
+      "id": "O04",
+      "company": "OpenAI",
+      "url": "https://openai.com/index/harness-engineering/",
+      "title": "Harness engineering: leveraging Codex in an agent-first world",
+      "authors": [
+        "Ryan Lopopolo",
+        "OpenAI"
+      ],
+      "publication_date": "2026-02-11",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_staff_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "团队通过仓库内知识入口、可运行环境、日志指标和界面可读性加强代理反馈。"
+      ],
+      "limitations": [
+        "自述单团队经验；速度与PR数字没有对照，不泛化为收益。作者发文时身份不等于当前职位。"
+      ],
+      "locator": "Increasing application legibility; repository knowledge",
+      "identity_basis": {
+        "url": "https://openai.com/index/harness-engineering/",
+        "text": "官方作者栏注明 Member of the Technical Staff"
+      }
+    },
+    {
+      "id": "O05",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/architecture",
+      "title": "Agents API architecture",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "托管 harness、可选环境和应用服务分层；自建环境的启动、重连、关闭、文件保留由应用负责。"
+      ],
+      "limitations": [
+        "文档契约层证据，未创建服务或验证账号可用性。"
+      ],
+      "locator": "The pieces; Connect your own environment"
+    },
+    {
+      "id": "O06",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/errors",
+      "title": "Agents API errors and recovery",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "断流不是最终状态证明；失败 turn 可能有已完成外部作用，先核对保存结果再续未完成工作。"
+      ],
+      "limitations": [
+        "未提供外部业务原子事务保证；错误码会演进。"
+      ],
+      "locator": "Recovery; Disconnected streams"
+    },
+    {
+      "id": "O07",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle",
+      "title": "Agents API sandbox lifecycle",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "签名 webhook 入队后再读当前状态；idle 单事件不足以安全关闭环境；断连不会自动重启被杀命令。"
+      ],
+      "limitations": [
+        "主要针对 self_hosted 控制器；提供原则不等于替应用实现资源租约/去重。"
+      ],
+      "locator": "Start compute from webhooks; Keep the environment available; Reconnect"
+    },
+    {
+      "id": "O08",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "title": "Agents SDK human in the loop",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "RunState 不认证调用人或快照；审批不保证 exactly-once；未知副作用应先权威对账，避免自动重放。"
+      ],
+      "limitations": [
+        "本地示例非可部署HTTP服务；应用仍须认证、幂等和恢复。"
+      ],
+      "locator": "Long-running approvals; Recovering after a crash; Versioning pending tasks",
+      "code": {
+        "repository": "openai/openai-agents-python",
+        "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+        "path": "docs/human_in_the_loop.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O09",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sessions/index.md",
+      "title": "Agents SDK sessions",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "Session 保存对话历史；input callback 可调整模型投影而不把旧项再次存成新项；RunState 另存运行审批状态。"
+      ],
+      "limitations": [
+        "历史存储不是副作用日志或业务事实库；后端能力各异。"
+      ],
+      "locator": "Core session behavior; Control how history and new input merge",
+      "code": {
+        "repository": "openai/openai-agents-python",
+        "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+        "path": "docs/sessions/index.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O10",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/guide.md",
+      "title": "Agents SDK sandbox concepts",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "对话Session、sandbox session、RunState与snapshot不同；Manifest定义新环境而非全部实时状态；本地backend不保证OS隔离。"
+      ],
+      "limitations": [
+        "只读官方仓库文档，未运行provider；不可将名为sandbox的对象视作安全边界证明。"
+      ],
+      "locator": "Core pieces; Choose a sandbox client",
+      "code": {
+        "repository": "openai/openai-agents-python",
+        "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+        "path": "docs/sandbox/guide.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O11",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/memory.md",
+      "title": "Agents SDK agent memory",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "跨run记忆与对话历史分开；摘要→索引→rollout按需读取；提取/整合两阶段，memory layout区分逻辑记忆集合。"
+      ],
+      "limitations": [
+        "记忆可过时，源对话可能截断；目录分开不证明访问控制。"
+      ],
+      "locator": "Read memory; Generate memory; Use different layouts",
+      "code": {
+        "repository": "openai/openai-agents-python",
+        "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+        "path": "docs/sandbox/memory.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O12",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs",
+      "title": "Codex experimental user verification contracts",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-08",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "UserVerificationCancelResponse 仅确认取消信号，原生工作可能未退出，已完成效果不回滚。"
+      ],
+      "limitations": [
+        "仅实验性用户验证RPC，不泛化为所有工具取消实现。"
+      ],
+      "locator": "UserVerificationCancelParams / UserVerificationCancelResponse, lines 157–171; comment lines 166–167",
+      "code": {
+        "repository": "openai/codex",
+        "commit": "748ab55ca7de0b647d9a7a9d9a8e70e00f28666d",
+        "path": "codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O13",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/core/src/session/rollout_reconstruction.rs",
+      "title": "Codex rollout reconstruction",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-08",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "从存活历史片段重建context/settings/attribution；选取最新完整compaction及对应suffix，不能无条件回退较旧压缩。"
+      ],
+      "limitations": [
+        "静态读1–240行；不是进程重启、文件回滚或业务效果恢复。"
+      ],
+      "locator": "RolloutReconstruction; select_input_compaction; finalize_active_segment",
+      "code": {
+        "repository": "openai/codex",
+        "commit": "748ab55ca7de0b647d9a7a9d9a8e70e00f28666d",
+        "path": "codex-rs/core/src/session/rollout_reconstruction.rs",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O14",
+      "company": "OpenAI",
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/ext/skills/src/render.rs",
+      "title": "Codex skill catalog rendering",
+      "authors": [
+        "openai"
+      ],
+      "publication_date": "2026-11-08",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "技能元数据列表有预算、截短/省略计数与提示；可见列表不是全部安装能力。"
+      ],
+      "limitations": [
+        "读取1–165行，未完整追踪所有调用者/分支；不能声明每种宿主展示相同警告。"
+      ],
+      "locator": "metadata budget constants; SkillRenderReport",
+      "code": {
+        "repository": "openai/codex",
+        "commit": "748ab55ca7de0b647d9a7a9d9a8e70e00f28666d",
+        "path": "codex-rs/ext/skills/src/render.rs",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O15",
+      "company": "OpenAI",
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "title": "Build skills",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "技能以元数据渐进发现，选择后加载完整指令；插件负责分发技能与可选连接器。"
+      ],
+      "limitations": [
+        "入口从developers.openai.com/codex/skills重定向；指令不是强制执行或完成证明。"
+      ],
+      "locator": "How ChatGPT and Codex use skills; Distribute skills with plugins"
+    },
+    {
+      "id": "P01",
+      "company": "OpenAI",
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "title": "The New Inner Loop of Software Engineering with Michael Bolin",
+      "authors": [
+        "Michael Bolin（受访者）",
+        "Ksenia Se（采访者）"
+      ],
+      "publication_date": "2026-03-14",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "staff_personal_public_interview",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "Bolin 将模型行为判断与宿主OS工具限制分层，并强调工具与模型训练分布协同。"
+      ],
+      "limitations": [
+        "采用原始采访方公开转录；未逐帧核对视频；不是官方API合同，也不推断11月任职。"
+      ],
+      "locator": "Michael answers under What Is the Harness?",
+      "identity_basis": {
+        "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+        "text": "OpenAI 2026-01-23 官方作者栏标 Michael Bolin 为 Member of Technical Staff；采访方称开源Codex负责人"
+      }
+    },
+    {
+      "id": "A01",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/research/managed-agents",
+      "title": "Scaling Managed Agents: decoupling the brain from the hands",
+      "authors": [
+        "Lance Martin",
+        "Gabe Cemaj",
+        "Michael Cohen",
+        "Anthropic"
+      ],
+      "publication_date": "2026-04-08",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "持久session与harness/sandbox分离；harness可按session日志重建，sandbox失败可作为工具错误处理。"
+      ],
+      "limitations": [
+        "架构自述；未证明任意命令恢复或外部作用exactly-once；不采用其TTFT数字作通用性能结论。"
+      ],
+      "locator": "Decoupling the brain from the hands; session interface; acknowledgments"
+    },
+    {
+      "id": "A02",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "title": "Effective harnesses for long-running agents",
+      "authors": [
+        "Anthropic Engineering"
+      ],
+      "publication_date": "2025-11-26",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "初始化与增量编码会话通过功能清单、进度文件和git交接；真实端到端检查可发现静态/单元检查遗漏。"
+      ],
+      "limitations": [
+        "历史模型与示例；提示词限制测试清单修改不是形式不可变约束。"
+      ],
+      "locator": "initializer agent; coding agent; testing"
+    },
+    {
+      "id": "A03",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "title": "Harness design for long-running application development",
+      "authors": [
+        "Prithvi Rajasekaran",
+        "Anthropic"
+      ],
+      "publication_date": "2026-03-24",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_staff_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "Sonnet4.5→Opus4.5取消context reset；Opus4.6撤sprint、把QA放build末尾；任务在模型独立能力边界内时额外评估可能只增成本。"
+      ],
+      "limitations": [
+        "署名工程报告，未公布完整样本量、随机种子或置信区间；展示游戏制作器及DAW案例，预算/范围不同；同模型QA经作者校准仍漏bug。末尾QA不等于全任务仅一次，DAW展示3轮build/QA。"
+      ],
+      "locator": "Why naive implementations fall short; The architecture; Iterating on the harness; Removing the sprint construct; Results from the updated harness",
+      "identity_basis": {
+        "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+        "text": "正文作者介绍为 Anthropic Labs team 成员；仅发文时归属"
+      }
+    },
+    {
+      "id": "A04",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "title": "Effective context engineering for AI agents",
+      "authors": [
+        "Anthropic Engineering"
+      ],
+      "publication_date": "2025-09-29",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "预取与按需探索可混合；轻量标识、渐进披露、压缩和结构化笔记服务长任务。"
+      ],
+      "limitations": [
+        "历史设计解释；不把五个最近文件等当当前固定行为，不将上下文压缩等同事实压缩。"
+      ],
+      "locator": "Context retrieval and agentic search; Context engineering for long-horizon tasks"
+    },
+    {
+      "id": "A05",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/research/multi-agent-research-system",
+      "title": "How we built our multi-agent research system",
+      "authors": [
+        "Anthropic Engineering"
+      ],
+      "publication_date": "2025-06-13",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_engineering_report",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "独立方向适合并行探索；高依赖任务未必适合；多代理收益需计入更多token与协调/恢复成本。"
+      ],
+      "limitations": [
+        "历史Research架构和内部评估；不采用90.2%或15倍作普遍规律；同步局限已可能被现产品改变。"
+      ],
+      "locator": "Benefits; Production reliability and engineering challenges"
+    },
+    {
+      "id": "A06",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+      "title": "Managed Agents session event stream",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "stream重连先打开流再列历史并按event ID去重；interrupt入队、处理和idle不同；workflow可能仍运行。"
+      ],
+      "limitations": [
+        "Beta契约；描述的full sandbox checkpoint不证明任意外部效果或本地进程恢复。"
+      ],
+      "locator": "Reconnect without missing events; Interrupt the agent"
+    },
+    {
+      "id": "A07",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies",
+      "title": "Managed Agents permission policies",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "auto不是人工检查点；custom tools由应用管理；转发user.message会被视作调用方意图。"
+      ],
+      "limitations": [
+        "Beta；配置版本与现有session有差异；不能据此证明业务终端用户权限。"
+      ],
+      "locator": "Permission policy types; auto; Respond to confirmation requests"
+    },
+    {
+      "id": "A08",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "title": "Managed Agents workflow runs",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "completed只表示工作流程序结束；phase_ended不证明通过；主线程interrupt不结束工作流。"
+      ],
+      "limitations": [
+        "Beta；部分状态变化无事件保证；实际业务验收仍需独立规则和证据。"
+      ],
+      "locator": "Run events; Interrupt a session with runs open"
+    },
+    {
+      "id": "A09",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "title": "Managed Agents define outcomes",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "独立上下文grader按rubric有限次迭代；satisfied是评分结果；idle后产物上传可稍后完成。"
+      ],
+      "limitations": [
+        "Beta模型评分不等于外部权威验收；grader内部推理不可见。"
+      ],
+      "locator": "Create a rubric; Outcome evaluation end; Retrieve deliverables"
+    },
+    {
+      "id": "A10",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+      "title": "Secure your Managed Agents deployment",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "服务身份可workspace限权；业务对象授权由应用检查；同session多代理共享sandbox与vault；网络host白名单非操作权限。"
+      ],
+      "limitations": [
+        "安全建议与边界，不是安全审计；未读取任何实际凭据或部署。"
+      ],
+      "locator": "Keep credentials in vaults; Keep untrusted input away from powerful tools"
+    },
+    {
+      "id": "A11",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "title": "Managed Agents session budgets",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "预算在请求间限制新工作；在途请求及工具仍完成；共享session预算，结算事件仍可入账。"
+      ],
+      "limitations": [
+        "Beta；不能作精确最终费用上界或每线程硬配额；未引用易变价格。"
+      ],
+      "locator": "When a session reaches its budget; Budgets in multiagent sessions"
+    },
+    {
+      "id": "A12",
+      "company": "Anthropic",
+      "url": "https://code.claude.com/docs/en/checkpointing",
+      "title": "Claude Code checkpointing",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "代码恢复和对话恢复可分开；仅特定已跟踪文件可恢复，Bash-only/部分子代理/链接文件有边界。"
+      ],
+      "limitations": [
+        "不是Git长期历史、整个机器快照或外部副作用回滚。"
+      ],
+      "locator": "Limitations; Rewind and summarize"
+    },
+    {
+      "id": "A13",
+      "company": "Anthropic",
+      "url": "https://code.claude.com/docs/en/memory",
+      "title": "How Claude remembers your project",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "CLAUDE.md/auto memory是上下文而非强制配置；索引启动限量加载，主题按需读取，跨worktree共享本机记忆。"
+      ],
+      "limitations": [
+        "不证明事实正确、跨机器同步或安全隔离。"
+      ],
+      "locator": "CLAUDE.md vs auto memory; Auto memory"
+    },
+    {
+      "id": "A14",
+      "company": "Anthropic",
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "title": "Create custom subagents",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未标独立发布日期，按访问时点记录",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "子代理上下文/工具/权限有专门控制；代理消息不作为用户审批；技能预加载和工具可用性不同。"
+      ],
+      "limitations": [
+        "当前文档支持嵌套子代理等，勿沿用旧版限制；配置继承复杂，未逐模式运行验证。"
+      ],
+      "locator": "Permission modes; Preload skills; Resume subagents"
+    },
+    {
+      "id": "A15",
+      "company": "Anthropic",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/README.md",
+      "title": "Claude Agent SDK Python README",
+      "authors": [
+        "anthropics"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "SDK捆绑Claude Code CLI；allowed_tools是自动审批列表，不是工具移除列表；system prompt snapshot影响resume后更新。"
+      ],
+      "limitations": [
+        "SDK开源不等于整个CLI引擎源码开放；CLI版本门槛另计。"
+      ],
+      "locator": "Prerequisites; Using Tools; System Prompt",
+      "code": {
+        "repository": "anthropics/claude-agent-sdk-python",
+        "commit": "2209f2c134fee914c0f75733b631a5fc238ca846",
+        "path": "README.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "A16",
+      "company": "Anthropic",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/examples/session_stores/README.md",
+      "title": "Claude SessionStore reference adapters",
+      "authors": [
+        "anthropics"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "示例S3/Redis/Postgres适配器验证接口，明确非生产维护；append失败会报告MirrorError但不阻断对话。"
+      ],
+      "limitations": [
+        "镜像有缺口风险；13项契约通过不证明韧性或持久完整性；未运行测试。"
+      ],
+      "locator": "Production checklist",
+      "code": {
+        "repository": "anthropics/claude-agent-sdk-python",
+        "commit": "2209f2c134fee914c0f75733b631a5fc238ca846",
+        "path": "examples/session_stores/README.md",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "A17",
+      "company": "Anthropic",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_resume.py",
+      "title": "Claude SDK SessionStore resume materialization",
+      "authors": [
+        "anthropics"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "远程transcript恢复通过临时本地目录供CLI读取；存储调用失败/超时会抛错，无历史时可能退回新会话。"
+      ],
+      "limitations": [
+        "读源未执行；恢复会话文件不是恢复工作区、进程或业务结果。"
+      ],
+      "locator": "module docstring; materialize_resume_session",
+      "code": {
+        "repository": "anthropics/claude-agent-sdk-python",
+        "commit": "2209f2c134fee914c0f75733b631a5fc238ca846",
+        "path": "src/claude_agent_sdk/_internal/session_resume.py",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "A18",
+      "company": "Anthropic",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_store.py",
+      "title": "Claude in-memory SessionStore",
+      "authors": [
+        "anthropics"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "页面正文日期；源码条目为固定提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "开发参考存储按project/session/subpath组织；进程退出丢失，源码明确非生产。"
+      ],
+      "limitations": [
+        "逻辑key不是认证边界；未测试跨进程时序。"
+      ],
+      "locator": "InMemorySessionStore",
+      "code": {
+        "repository": "anthropics/claude-agent-sdk-python",
+        "commit": "2209f2c134fee914c0f75733b631a5fc238ca846",
+        "path": "src/claude_agent_sdk/_internal/session_store.py",
+        "read_mode": "static"
+      }
+    },
+    {
+      "id": "O16",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+      "title": "Automatic review",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未给发布日期；按访问日核查，beta header不是发布日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "review 适用root及子代理；none默认多数动作直接执行，不是人工审批；模式更新与输入准入竞态可返回409且请求所有更新均不应用。"
+      ],
+      "limitations": [
+        "项目需开通权限；review不配置sandbox，不代替网络/凭据控制；未账号实测。"
+      ],
+      "locator": "Choose a review mode; Prepare the execution environment; Change the review mode (lines 1018–1032, 1235–1285)"
+    },
+    {
+      "id": "O17",
+      "company": "OpenAI",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/security",
+      "title": "Sandbox security",
+      "authors": [
+        "OpenAI"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未给发布日期；按访问日核查，beta header不是发布日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "应用API权限与只可连接环境的executor key分离；身份认证控制存在，业务和第三方凭据仍需应用/可信代理持有。"
+      ],
+      "limitations": [
+        "代理可读环境key；隔离依赖部署；不把API认证等同最终用户业务对象授权。"
+      ],
+      "locator": "Separate credentials; Broker third-party access (lines 990–1002)"
+    },
+    {
+      "id": "A19",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "title": "Using agent memory",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未给发布日期；按访问日核查，beta header不是发布日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "跨session store有版本与content_sha256并发条件；删除当前记忆保留历史；redact可删除历史内容并保留审计元数据，不能直接redact活跃head。"
+      ],
+      "limitations": [
+        "beta agent-memory-2026-07-22；历史有保留期，不称永久不可变；未核到依赖证据/验收失效传播契约，不据此声称不支持。"
+      ],
+      "locator": "Safe content edits; Audit memory changes; Redact a version (lines 250–318)"
+    },
+    {
+      "id": "A20",
+      "company": "Anthropic",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "title": "Memory stores in self-hosted sandboxes",
+      "authors": [
+        "Anthropic"
+      ],
+      "publication_date": null,
+      "publication_date_basis": "页面未给发布日期；按访问日核查，beta header不是发布日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_product_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "工具先写本地副本，worker异步同步；冲突服务端store胜出，本地write/edit仍成功且代理不收到错误；强杀worker可能丢失未同步变更。"
+      ],
+      "limitations": [
+        "只针对自托管副本；cloud live mount语义另列；未实际制造冲突；产品云平台可用性不从页面统一导航推断。"
+      ],
+      "locator": "How the worker handles memory; Read-only stores and conflicts (lines 175–188, 230–237)"
+    },
+    {
+      "id": "A21",
+      "company": "Anthropic",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/transcript_mirror_batcher.py",
+      "title": "Claude SDK transcript mirror batcher",
+      "authors": [
+        "anthropics"
+      ],
+      "publication_date": "2026-11-06",
+      "publication_date_basis": "固定源码提交日期",
+      "accessed_date": "2026-11-08",
+      "category": "official_source_code_or_repo_documentation",
+      "evidence_status": "primary_body_read_not_runtime_tested",
+      "supports": [
+        "一般适配器错误最多3次尝试；timeout不重试，原因是取消后底层IO仍可能落库；最终失败上报后丢弃batch，不阻断会话。"
+      ],
+      "limitations": [
+        "静态代码；本地transcript可用不等于远端镜像完整；某些entry无uuid，不能假定统一去重键。"
+      ],
+      "locator": "TranscriptMirrorBatcher docstring lines 47–62; _do_flush lines 180–222",
+      "code": {
+        "repository": "anthropics/claude-agent-sdk-python",
+        "commit": "2209f2c134fee914c0f75733b631a5fc238ca846",
+        "path": "src/claude_agent_sdk/_internal/transcript_mirror_batcher.py",
+        "read_mode": "static"
+      }
+    }
+  ]
+}

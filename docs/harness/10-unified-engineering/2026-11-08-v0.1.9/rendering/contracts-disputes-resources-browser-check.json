@@ -1,0 +1,295 @@
+{
+  "scope": "mobile light/dark DOM and network check, not visual acceptance",
+  "rows": [
+    {
+      "file": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "06fe570e35fe43a939796fd1f3ed52c72f20924dcc6434bc8952be30e03b523a",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:06.915446+00:00"
+    },
+    {
+      "file": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "06fe570e35fe43a939796fd1f3ed52c72f20924dcc6434bc8952be30e03b523a",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:16.782344+00:00"
+    },
+    {
+      "file": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "c447bf432c62863496469e3e26f62f047a06d86a9379d075c8a83c1a12920989",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:24.140880+00:00"
+    },
+    {
+      "file": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "c447bf432c62863496469e3e26f62f047a06d86a9379d075c8a83c1a12920989",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:29.304538+00:00"
+    },
+    {
+      "file": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "c379b09084ae7361fdd637b952c03aceb24c628e9d59130bec536ffde8ead9b7",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:35.875580+00:00"
+    },
+    {
+      "file": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "c379b09084ae7361fdd637b952c03aceb24c628e9d59130bec536ffde8ead9b7",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:40.895682+00:00"
+    },
+    {
+      "file": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "dcf3897d48ed55b21dc064262a06f09ea47d614c1ef224ba0b78edaef224b581",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:47.691486+00:00"
+    },
+    {
+      "file": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "dcf3897d48ed55b21dc064262a06f09ea47d614c1ef224ba0b78edaef224b581",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:53:54.980914+00:00"
+    },
+    {
+      "file": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "48a7ee0389ec5bc09dc24907de7275bc023331ca87f0acb64286d5be5976b4f5",
+      "theme": "light",
+      "observed": {
+        "theme": "light",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:54:01.627772+00:00"
+    },
+    {
+      "file": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "48a7ee0389ec5bc09dc24907de7275bc023331ca87f0acb64286d5be5976b4f5",
+      "theme": "dark",
+      "observed": {
+        "theme": "dark",
+        "width": 430,
+        "docWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "scriptSources": 0,
+        "resources": [],
+        "brokenNavigation": [],
+        "mode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "theme": true,
+        "no_page_overflow": true,
+        "figure_count": true,
+        "visible_count": true,
+        "no_external_scripts": true,
+        "no_resource_requests": true,
+        "nav_resolves": true,
+        "static_svg": true,
+        "source_build_unchanged": true
+      },
+      "pass": true,
+      "checked_at_utc": "2026-11-08T09:54:07.856877+00:00"
+    }
+  ]
+}

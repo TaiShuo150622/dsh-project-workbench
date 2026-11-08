@@ -1,0 +1,236 @@
+{
+  "review_type": "document claims audit plus read-only receipt and hash inspection",
+  "new_model_or_product_runs": 0,
+  "scope_excludes_later_M07_C07_edits": true,
+  "configuration_rows": [
+    {
+      "group": "results",
+      "config": "combined",
+      "exit_code": 0,
+      "counts": [
+        1360,
+        624,
+        0
+      ],
+      "violations": [],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": true,
+      "counterexample": false
+    },
+    {
+      "group": "results",
+      "config": "fence-only",
+      "exit_code": 12,
+      "counts": [
+        44,
+        39,
+        24
+      ],
+      "violations": [
+        "NoDuplicateEffect"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "results",
+      "config": "dedupe-only",
+      "exit_code": 12,
+      "counts": [
+        19,
+        18,
+        11
+      ],
+      "violations": [
+        "NoStaleCommit"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "results",
+      "config": "unstable-key",
+      "exit_code": 12,
+      "counts": [
+        44,
+        39,
+        24
+      ],
+      "violations": [
+        "NoDuplicateEffect"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "results",
+      "config": "cancel-is-not-rollback",
+      "exit_code": 12,
+      "counts": [
+        21,
+        19,
+        11
+      ],
+      "violations": [
+        "NoCommitAfterLocalCancel"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "results",
+      "config": "world-is-not-ledger",
+      "exit_code": 12,
+      "counts": [
+        8,
+        8,
+        5
+      ],
+      "violations": [
+        "WorldEffectAlwaysKnown"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "feature-results",
+      "config": "fence-property",
+      "exit_code": 0,
+      "counts": [
+        1265,
+        604,
+        0
+      ],
+      "violations": [],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": true,
+      "counterexample": false
+    },
+    {
+      "group": "feature-results",
+      "config": "dedupe-property",
+      "exit_code": 0,
+      "counts": [
+        1564,
+        660,
+        0
+      ],
+      "violations": [],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": true,
+      "counterexample": false
+    },
+    {
+      "group": "expiry-checked-results",
+      "config": "none",
+      "exit_code": 12,
+      "counts": [
+        109,
+        59,
+        3
+      ],
+      "violations": [
+        "NoDuplicate"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "expiry-checked-results",
+      "config": "admission",
+      "exit_code": 12,
+      "counts": [
+        131,
+        81,
+        8
+      ],
+      "violations": [
+        "NoDuplicate"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "expiry-checked-results",
+      "config": "commit",
+      "exit_code": 0,
+      "counts": [
+        115,
+        66,
+        0
+      ],
+      "violations": [],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": true,
+      "counterexample": false
+    },
+    {
+      "group": "relay-results",
+      "config": "memory",
+      "exit_code": 12,
+      "counts": [
+        81,
+        51,
+        4
+      ],
+      "violations": [
+        "NoLostSent"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    },
+    {
+      "group": "relay-results",
+      "config": "durable",
+      "exit_code": 0,
+      "counts": [
+        87,
+        52,
+        0
+      ],
+      "violations": [],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": true,
+      "counterexample": false
+    },
+    {
+      "group": "relay-results",
+      "config": "error",
+      "exit_code": 12,
+      "counts": [
+        13,
+        12,
+        4
+      ],
+      "violations": [
+        "ErrorProvesAbsence"
+      ],
+      "hash_matches_receipt": true,
+      "complete_safety_pass": false,
+      "counterexample": true
+    }
+  ],
+  "counts": {
+    "total": 14,
+    "complete_safety_pass": 5,
+    "counterexample": 9
+  },
+  "all_log_hashes_match": true,
+  "implementation_proposal_counts": {
+    "slices": 7,
+    "acceptance_checks": 29,
+    "all_checks_PROPOSED_NOT_RUN": true
+  },
+  "lean_source_sha_matches_prior_review": {
+    "DAG": true,
+    "Budget": true
+  }
+}

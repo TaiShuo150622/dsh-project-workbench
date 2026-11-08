@@ -1,0 +1,155 @@
+{
+  "copied_at_utc": "2026-11-08T08:16:28.639666+00:00",
+  "files": [
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/README.md",
+      "bytes": 9224,
+      "sha256": "d0a2a0a9440dde023241b77efed3bf2a34eb0ac50708a774fd70d0a07ada3b60"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/SHA256SUMS",
+      "bytes": 2316,
+      "sha256": "4e6f8d567dc73926211d765ca9c7b49b284a0582db745069d4ad350846f3b34f"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/audit_sources.py",
+      "bytes": 24615,
+      "sha256": "0f0c047f0b1b0d29d1b10dca798a48806df22e37b665ccbd3e3f8e3a8952377a"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/catalog-inventory.json",
+      "bytes": 74901,
+      "sha256": "da760b67e7aa595f13e238d638cb7f87e6e5075d0a8c9685ff5a9cedec8c2fd3"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/dedup-plan.json",
+      "bytes": 11883,
+      "sha256": "838e46d22c1a3edb2c56ba1523f4f3e4c540a4728904efc35d85026e383c946a"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/execution_receipt.json",
+      "bytes": 2340,
+      "sha256": "f0fe5a143227430fd8dcbe6bfc1e2e4030a745107186978ace7bd2d192cfc19e"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/field-issues.json",
+      "bytes": 23964,
+      "sha256": "2e3eb87a493ae89c3d01df8ace10569ac6b3ef8ebc17b632e80a7be32ec89932"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/identity-opinion-bindings.json",
+      "bytes": 13548,
+      "sha256": "360f49a0a7873f3f0617ade22bcda2301cdaf522154ea28f6e1f23a95347c340"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW.json",
+      "bytes": 4886,
+      "sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "bytes": 6016,
+      "sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "bytes": 3590,
+      "sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "bytes": 4154,
+      "sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/china/sources.json",
+      "bytes": 56172,
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/foundations/sources.json",
+      "bytes": 8304,
+      "sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/mechanisms/cordis-boundary/sources.json",
+      "bytes": 21712,
+      "sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/mechanisms/lifecycle-migration/sources.json",
+      "bytes": 9903,
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/mechanisms/sources.json",
+      "bytes": 51832,
+      "sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/mechanisms/work-improvement/sources.json",
+      "bytes": 17301,
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/west/authority-scope/sources.json",
+      "bytes": 10432,
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/west/context-evaluation/sources.json",
+      "bytes": 18622,
+      "sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/west/practitioner-views/sources.json",
+      "bytes": 16647,
+      "sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/inputs/west/sources.json",
+      "bytes": 40680,
+      "sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/root-cross-review-index.json",
+      "bytes": 52016,
+      "sha256": "030272e89d873f0d73ec5d5a3820f5941815fdf240202d8cf16d4981f0041a56"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/source-inventory.json",
+      "bytes": 1075824,
+      "sha256": "75f6e6258326440d816a9740c48ff94a61c2b8a4ea6f6a8ef4c6e4601add9c55"
+    },
+    {
+      "source_worktree": "china",
+      "path": "china/evidence-catalog-audit/validation_receipt.json",
+      "bytes": 468,
+      "sha256": "c27774632dd1bf01c1ddcee58a73abe157ac06bcc0b7c5b4772e2d89a16b62b8"
+    }
+  ]
+}

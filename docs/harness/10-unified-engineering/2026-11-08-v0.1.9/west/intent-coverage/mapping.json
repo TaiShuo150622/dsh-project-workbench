@@ -1,0 +1,493 @@
+{
+  "task": "W13",
+  "status": "SOURCE_REVIEW_ONLY_NOT_IMPLEMENTED",
+  "target_main": {
+    "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+    "sha256": "28d373e48c8305e2ccb51c77e9c4bcf1f2b1c11c9e58215c2f0af9453ea813af",
+    "lines": 428
+  },
+  "findings": [
+    {
+      "id": "IC01",
+      "classification": "RETAIN_EXPLICIT_REQUIREMENT_AND_STRENGTHEN_MAIN",
+      "title": "改进对象包括工作流结构，采用时机也是决定的一部分",
+      "adoption_basis": "V3 自身将变更范围、生效时机列为已经明确需求；具体算法/底座仍待定。",
+      "source_refs": [
+        {
+          "source_id": "V3",
+          "lines": [
+            31,
+            64
+          ]
+        },
+        {
+          "source_id": "V3",
+          "lines": [
+            154,
+            232
+          ]
+        },
+        {
+          "source_id": "V3",
+          "lines": [
+            286,
+            310
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            250,
+            286
+          ]
+        },
+        {
+          "source_id": "ARCH",
+          "lines": [
+            29,
+            31
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            105,
+            107
+          ]
+        }
+      ],
+      "gap": "双循环已覆盖，但主文和 I07 容易读成主要从失败中抽经验；新能力带来的机会、模块替换/结构重构，以及何时采用的比较较弱。",
+      "recommended_action": "主文增一两句：新证据和新能力也能发起改进；在共同未来期限内比较保持、小修、替换、重构，并分别选择现在、下一模块或下一项目采用；结果是变更提案及复核义务。",
+      "constraint": "不恢复旧净价值公式为已校准决策器，不增加 I01；自动试验/迁移授权仍待定。"
+    },
+    {
+      "id": "IC02",
+      "classification": "RETAIN_EXPLICIT_SCOPE_BOUNDARY",
+      "title": "统一契约不等于把各领域的目标、预算和评价合成一个总分",
+      "adoption_basis": "V3 L57/L871 明确各领域独立管理；未决定跨领域统一资源分配。",
+      "source_refs": [
+        {
+          "source_id": "V3",
+          "lines": [
+            46,
+            64
+          ]
+        },
+        {
+          "source_id": "V3",
+          "lines": [
+            255,
+            264
+          ]
+        },
+        {
+          "source_id": "V3",
+          "lines": [
+            477,
+            479
+          ]
+        },
+        {
+          "source_id": "V3",
+          "lines": [
+            866,
+            881
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            54,
+            92
+          ]
+        },
+        {
+          "source_id": "MAIN",
+          "lines": [
+            238,
+            248
+          ]
+        },
+        {
+          "source_id": "MAIN",
+          "lines": [
+            273,
+            297
+          ]
+        }
+      ],
+      "gap": "主文统一内核、预算与责任接管写得较细，却未显式重述领域边界，容易让读者推成自动跨领域权衡。",
+      "recommended_action": "总体架构补一句：各领域目标、预算、评价保留各自作用域；共享协议和物理资源约束不自动引入跨领域价值换算或预算转移授权。",
+      "constraint": "这不禁止共享机器容量治理；跨预算机制可作为能力研究，但实际转移仍需另定授权和归属。"
+    },
+    {
+      "id": "IC03",
+      "classification": "HISTORICALLY_ADOPTED_PLAN_NEEDS_DISPOSITION",
+      "title": "H0 记录/技能试点尚需说明如何与 P/B、H/I 衔接",
+      "adoption_basis": "H0 稿头标为 2026-10-19 已拍板，末尾列 P1/P2/P4/P5 决定；§2 仍遗留“建议、需确认”标题。可确认是历史已采纳计划，不能据此替每个内部方案补出独立批准。",
+      "source_refs": [
+        {
+          "source_id": "H0",
+          "lines": [
+            5,
+            28
+          ]
+        },
+        {
+          "source_id": "H0",
+          "lines": [
+            77,
+            107
+          ]
+        },
+        {
+          "source_id": "H0",
+          "lines": [
+            152,
+            199
+          ]
+        },
+        {
+          "source_id": "H0",
+          "lines": [
+            381,
+            392
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "RECON",
+          "lines": [
+            26,
+            41
+          ]
+        },
+        {
+          "source_id": "MAIN",
+          "lines": [
+            353,
+            385
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            94,
+            107
+          ]
+        }
+      ],
+      "gap": "新文保留预测/检查/诊断语义和 P→B 排期，却未列 DSH-first 的意外记录、教训条目、发生时写入/校验与方法技能这一历史计划的承接状态。",
+      "recommended_action": "沿革表加一行：H0 的方法模块可映射到 I05/I07 或独立试点，但继续、合并还是撤销原计划尚未在本轮决定；不能从新编号推定旧计划已完成或已放弃。",
+      "constraint": "不恢复旧 40 题/80%/两周≥30 条等阈值与排期，不把旧 DSH 版本能力当现状；自用/不做商店仅保留历史语境，公开文档不等于安装分发产品。"
+    },
+    {
+      "id": "IC04",
+      "classification": "CLARIFY_PRESERVED_RECORD_SEMANTICS",
+      "title": "用户决定与 AI 提议必须在记录中保持不同身份",
+      "adoption_basis": "当前 Record 稿明确不可退让的语义边界；早期记录稿也强调来源标注和用户事件锚点。不是本轮新增产品功能。",
+      "source_refs": [
+        {
+          "source_id": "REC0",
+          "lines": [
+            45,
+            48
+          ]
+        },
+        {
+          "source_id": "REC0",
+          "lines": [
+            214,
+            230
+          ]
+        },
+        {
+          "source_id": "REC12",
+          "lines": [
+            46,
+            46
+          ]
+        },
+        {
+          "source_id": "REC12",
+          "lines": [
+            376,
+            376
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            121,
+            152
+          ]
+        },
+        {
+          "source_id": "ARCH",
+          "lines": [
+            33,
+            48
+          ]
+        }
+      ],
+      "gap": "来源/认证/授权已覆盖；摘要抽取不能替用户补理由、把助手提议写成已决定，尚缺一句直接可读的规则。",
+      "recommended_action": "在 Record 材料分层后加一句：用户决定须能定位到相应用户事件；助手建议、模型推断和实际批准分型，未记录理由保留未知。",
+      "constraint": "身份真实不保证内容真实；引用锚点检查也不等于用户已批准所有相关动作。"
+    },
+    {
+      "id": "IC05",
+      "classification": "HISTORICAL_PROPOSAL_EXPLICITLY_DEFER",
+      "title": "会话外人工操作捕获保留为后续接入问题",
+      "adoption_basis": "REC0 是早期历史设计，提出 shell/编辑器/notebook 捕获；未找到其已批准进入本轮首切片的证据。",
+      "source_refs": [
+        {
+          "source_id": "REC0",
+          "lines": [
+            3,
+            17
+          ]
+        },
+        {
+          "source_id": "REC0",
+          "lines": [
+            30,
+            48
+          ]
+        },
+        {
+          "source_id": "REC0",
+          "lines": [
+            122,
+            134
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            125,
+            129
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            103,
+            107
+          ]
+        }
+      ],
+      "gap": "当前三时序以会话轮后为入口，旧稿对用户在会话外改文件、回退代码的关注没有独立去向；不能因此承诺全域监听。",
+      "recommended_action": "范围说明列为暂缓：未来按明确项目/渠道接入外部观察；首轮可用显式导入/已授权工具读回保留原改动和来源，不需要常驻采集器。",
+      "constraint": "文件差异不能直接证明由人产生；来源未识别应标未知。永久全量保留、无成本捕获、时间戳证明未见答案均不继承。"
+    },
+    {
+      "id": "IC06",
+      "classification": "UNADOPTED_DAG_PROPOSAL_EXPLICITLY_DEFER",
+      "title": "状态合并与后台呈现员没有被旧稿批准，不补成默认功能",
+      "adoption_basis": "DAG11 L29、L329、L360–368 明确待用户回答；正文状态合并、订阅与呈现员都是提案。",
+      "source_refs": [
+        {
+          "source_id": "DAG11",
+          "lines": [
+            174,
+            249
+          ]
+        },
+        {
+          "source_id": "DAG11",
+          "lines": [
+            253,
+            303
+          ]
+        },
+        {
+          "source_id": "DAG11",
+          "lines": [
+            327,
+            368
+          ]
+        },
+        {
+          "source_id": "DAG08",
+          "lines": [
+            19,
+            53
+          ]
+        },
+        {
+          "source_id": "DAG08",
+          "lines": [
+            74,
+            95
+          ]
+        }
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            176,
+            200
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            100,
+            100
+          ]
+        }
+      ],
+      "gap": "统一语义可保留，但不能让读者误以为已决定迁移两个插件的状态、自动开图或把选区变成执行授权。",
+      "recommended_action": "专题索引明确暂缓工作单元合并、图节点订阅、后台呈现员；已可继承的交互约束是稳定选择、草稿不自动发送、新旧视图/失败可辨。",
+      "constraint": "view seq 只挡旧视图回执，不是普通命令的 history 绑定；UI cancel 不证明后端工作停止。历史耗时目标不升为性能承诺。"
+    }
+  ],
+  "coverage_without_new_gap": [
+    {
+      "topic": "工具发现/加载/权限",
+      "source_ids": [
+        "TOOLS"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            154,
+            174
+          ]
+        }
+      ],
+      "conclusion": "已覆盖能力目录、投影、形态与退出通道；3–8 工具及旧实验阈值已正确收窄。"
+    },
+    {
+      "topic": "条件提问与自主推进",
+      "source_ids": [
+        "ASK"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            273,
+            299
+          ]
+        },
+        {
+          "source_id": "RECON",
+          "lines": [
+            70,
+            85
+          ]
+        }
+      ],
+      "conclusion": "已保留先查约束、关键歧义才问与授权不重复；无需新增提问流程。"
+    },
+    {
+      "topic": "Record 三时序与自主本体",
+      "source_ids": [
+        "REC12"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            121,
+            152
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            103,
+            103
+          ]
+        }
+      ],
+      "conclusion": "已覆盖执行前独立组装、增量水位与本体消融；不退回仅历史问答。只复用 W09 原选读范围与本轮行命中。"
+    },
+    {
+      "topic": "远程 A/B 与本地 UI",
+      "source_ids": [
+        "REM"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            204,
+            248
+          ]
+        },
+        {
+          "source_id": "I",
+          "lines": [
+            104,
+            104
+          ]
+        }
+      ],
+      "conclusion": "据 W09 原选读范围已映射每会话环境绑定、双模式与断线边界；没有证据要求本轮同时实现 A/B。未重读剩余全文。"
+    },
+    {
+      "topic": "浏览器平台扩展",
+      "source_ids": [
+        "BRPL"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            50,
+            50
+          ]
+        },
+        {
+          "source_id": "MAIN",
+          "lines": [
+            156,
+            172
+          ]
+        },
+        {
+          "source_id": "ARCH",
+          "lines": [
+            7,
+            9
+          ]
+        }
+      ],
+      "conclusion": "能力声明与可替换执行边界已有落点；Win/Linux/Edge/Firefox/云后端是旧建议，未发现本轮遗漏的已采纳跨平台交付承诺。"
+    },
+    {
+      "topic": "实时讨论输入",
+      "source_ids": [
+        "REALTIME"
+      ],
+      "current_refs": [
+        {
+          "source_id": "MAIN",
+          "lines": [
+            50,
+            50
+          ]
+        }
+      ],
+      "conclusion": "W09 已全文核读，主稿已接时序/问题版本约束；本轮不重复，也不恢复活跃度方向。"
+    }
+  ],
+  "limits": [
+    "已明确/已拍板按公开稿的记录识别，未访问原始私人对话重新认证批准。",
+    "不同主题的版本号不能全局比较；Record 源 v0.2 是后续统一编号 v0.1.1 的历史稿。",
+    "不声称全部192附件核读；没有新增模型/API/远程或产品运行。"
+  ]
+}

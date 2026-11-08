@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-11-08T09:15:58.568787+00:00",
+  "task": "C09 public registration wording for future discussion",
+  "status": "DRAFT_NOT_SUBMITTED_NOT_SENT",
+  "new_external_sources": [],
+  "network_requests_this_task": 0,
+  "inputs": [
+    {
+      "worktree": "integration",
+      "file": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1",
+      "read_scope": "统一工程、成果分层、执行恢复、证明边界与实施路线"
+    },
+    {
+      "worktree": "integration",
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "read_scope": "版本说明、七片计划、I01 与最终阶段终点；v0.1.1 仅更新阅读入口"
+    },
+    {
+      "worktree": "integration",
+      "file": "west/trusted-entry-map/MAP.md",
+      "sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "read_scope": "固定调用链、owner/agent 身份区别、尚未接入 RecordKernel、I01 边界与 D01 未决"
+    },
+    {
+      "worktree": "china",
+      "file": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.md",
+      "sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed",
+      "read_scope": "四种终点、可用性和时间前提、责任接纳；独立复核状态沿本次任务要求记为待复核"
+    }
+  ],
+  "copy_lengths": {
+    "introduction": {
+      "non_whitespace": 326,
+      "han": 269,
+      "requested_range": [
+        250,
+        400
+      ]
+    },
+    "support": {
+      "non_whitespace": 257,
+      "han": 237,
+      "requested_range": [
+        200,
+        300
+      ]
+    }
+  },
+  "engineering_questions": 5,
+  "unrun_implementation_slices": 7,
+  "name_suggestions": 1,
+  "C08_status": "AUTHOR_DRAFT_PENDING_INDEPENDENT_REVIEW; not promoted to established general theorem",
+  "product_code_modified": false
+}

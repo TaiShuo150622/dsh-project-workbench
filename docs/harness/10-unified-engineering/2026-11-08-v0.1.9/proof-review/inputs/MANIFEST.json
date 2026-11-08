@@ -1,0 +1,17 @@
+{
+  "captured_at_utc": "2026-11-08T06:34:00Z",
+  "files": [
+    {
+      "file": "FORMAL_MODEL.md",
+      "sha256": "05cbe3a3aaffb057dbc18068396c45257027c755dcabfa22ad0b75907869f4ba"
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "sha256": "4530c601c5e5333da6e42b76e684318ab1af44422962c2b59519d83b76b73260"
+    },
+    {
+      "file": "BASELINE.md",
+      "sha256": "25c5e9be962597f1957e643f4339507a4bbe4e8eff1e4f60a0261c10c35e39b9"
+    }
+  ]
+}

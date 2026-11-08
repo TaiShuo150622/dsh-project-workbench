@@ -1,0 +1,191 @@
+{
+  "copied_at_utc": "2026-11-08T09:44:03.698143+00:00",
+  "files": [
+    {
+      "path": "china/handoff-audit/README.md",
+      "source_worktree": "china",
+      "bytes": 2212,
+      "sha256": "c48b627dbb6dc23a6f90ad9949277edfa448ef043865e44e1cb7167e2ecbb7c4"
+    },
+    {
+      "path": "china/handoff-audit/REVIEW.md",
+      "source_worktree": "china",
+      "bytes": 12654,
+      "sha256": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861"
+    },
+    {
+      "path": "china/handoff-audit/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 2640,
+      "sha256": "452ef1aaff6fac2a3e40f90ad03446ec107451a5de52d8d3b447dba94fcb9669"
+    },
+    {
+      "path": "china/handoff-audit/TRACES.md",
+      "source_worktree": "china",
+      "bytes": 5545,
+      "sha256": "d2e5716eb86f66e2d92850b4b9bbaca63d21b85ee94901a103c49af61582310b"
+    },
+    {
+      "path": "china/handoff-audit/audit-results.json",
+      "source_worktree": "china",
+      "bytes": 153527,
+      "sha256": "69a66b802eafaddaf750ff6d4c9537e5dae0451c9ea5a8721bfc0e8207dc6255"
+    },
+    {
+      "path": "china/handoff-audit/audit_handoff.py",
+      "source_worktree": "china",
+      "bytes": 13931,
+      "sha256": "d0ab4e27612c738b0b5403451dce8a7476435cc0a6721b1f6186b833200b9cff"
+    },
+    {
+      "path": "china/handoff-audit/execution_receipt.json",
+      "source_worktree": "china",
+      "bytes": 518,
+      "sha256": "edc6e5b3c6c5fc5ebcf4ddbc34431a6339b8a0607883f9662eddfbe58fb8178e"
+    },
+    {
+      "path": "china/handoff-audit/findings.json",
+      "source_worktree": "china",
+      "bytes": 6071,
+      "sha256": "ad553f1d219eaba10e99e3e1c7f9d1cf1a660000a0da5b71f2aad5e7fa948a62"
+    },
+    {
+      "path": "china/handoff-audit/inputs/BudgetSafety.lean",
+      "source_worktree": "china",
+      "bytes": 11464,
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    },
+    {
+      "path": "china/handoff-audit/inputs/FORMAL_MODEL.md",
+      "source_worktree": "china",
+      "bytes": 32997,
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa"
+    },
+    {
+      "path": "china/handoff-audit/inputs/INDEX.md",
+      "source_worktree": "china",
+      "bytes": 550,
+      "sha256": "e90a5b2bf39efa0070ef70b9728493d8b2f39d820d3348fd53257019807b4117"
+    },
+    {
+      "path": "china/handoff-audit/inputs/PREMISES.md",
+      "source_worktree": "china",
+      "bytes": 2327,
+      "sha256": "4a7081326bb9a4657110733b00631fe602b93006e80931465e78851837ea11cf"
+    },
+    {
+      "path": "china/handoff-audit/inputs/README.md",
+      "source_worktree": "china",
+      "bytes": 976,
+      "sha256": "b890b1b30103b9b9eac141208c372e99bb41766c0a0e976640fc58d5724f820e"
+    },
+    {
+      "path": "china/handoff-audit/inputs/check_handoff.py",
+      "source_worktree": "china",
+      "bytes": 8801,
+      "sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c"
+    },
+    {
+      "path": "china/handoff-audit/inputs/inputs.json",
+      "source_worktree": "china",
+      "bytes": 1021,
+      "sha256": "5c45a429d099dc8305dc097a1a0c0da021404948d34caf3c8bf9229e92d788f9"
+    },
+    {
+      "path": "china/handoff-audit/inputs/main-v0.1.3.md",
+      "source_worktree": "china",
+      "bytes": 41058,
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1"
+    },
+    {
+      "path": "china/handoff-audit/inputs/results.json",
+      "source_worktree": "china",
+      "bytes": 24026,
+      "sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4"
+    },
+    {
+      "path": "china/handoff-audit/inputs/verification_receipt.json",
+      "source_worktree": "china",
+      "bytes": 13073,
+      "sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae"
+    },
+    {
+      "path": "china/handoff-audit/inputs/verify_handoff.py",
+      "source_worktree": "china",
+      "bytes": 4476,
+      "sha256": "a6a5df0d9a594b8d7422f3d4d71b097d1bfb1d845196ac612a0d4672627571d4"
+    },
+    {
+      "path": "china/handoff-audit/inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+      "source_worktree": "china",
+      "bytes": 14372,
+      "sha256": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75"
+    },
+    {
+      "path": "china/handoff-audit/inputs.json",
+      "source_worktree": "china",
+      "bytes": 3307,
+      "sha256": "10670076d6379ffa77c04d6513c0aab4886dbc85df2a22cbdce66f9849aaa07a"
+    },
+    {
+      "path": "china/handoff-audit/reproducibility_receipt.json",
+      "source_worktree": "china",
+      "bytes": 385,
+      "sha256": "de2849a11f042e23d2418dd5242b8b420fc633c59ba8681165bf54014d6511f3"
+    },
+    {
+      "path": "china/handoff-audit/rerun/check.stdout.txt",
+      "source_worktree": "china",
+      "bytes": 539,
+      "sha256": "15eed72fb9d2f482044963858f9cb51ded24d8de1e22c94c418032f506bae84f"
+    },
+    {
+      "path": "china/handoff-audit/rerun/check_handoff.py",
+      "source_worktree": "china",
+      "bytes": 8801,
+      "sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c"
+    },
+    {
+      "path": "china/handoff-audit/rerun/execution_receipt.json",
+      "source_worktree": "china",
+      "bytes": 539,
+      "sha256": "15eed72fb9d2f482044963858f9cb51ded24d8de1e22c94c418032f506bae84f"
+    },
+    {
+      "path": "china/handoff-audit/rerun/results.json",
+      "source_worktree": "china",
+      "bytes": 24026,
+      "sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4"
+    },
+    {
+      "path": "china/handoff-audit/rerun/verification_receipt.json",
+      "source_worktree": "china",
+      "bytes": 13073,
+      "sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae"
+    },
+    {
+      "path": "china/handoff-audit/rerun/verify.stdout.txt",
+      "source_worktree": "china",
+      "bytes": 65,
+      "sha256": "7bfe13f4588ccd5e7c51c8c696d3e8de3bbea9a904305969e1f5a848a29d110b"
+    },
+    {
+      "path": "china/handoff-audit/rerun/verify_handoff.py",
+      "source_worktree": "china",
+      "bytes": 4476,
+      "sha256": "a6a5df0d9a594b8d7422f3d4d71b097d1bfb1d845196ac612a0d4672627571d4"
+    },
+    {
+      "path": "china/handoff-audit/validate_audit.py",
+      "source_worktree": "china",
+      "bytes": 4833,
+      "sha256": "201bf87b381166d196f5ab3e38e13adbf52e79fc9e330fb0b0d21a6658afd679"
+    },
+    {
+      "path": "china/handoff-audit/validation_receipt.json",
+      "source_worktree": "china",
+      "bytes": 1449,
+      "sha256": "d1fdfbd0d994ea0a80f2f4f48423f36c27e5fd6acc0a7312c226058b52517cc4"
+    }
+  ]
+}

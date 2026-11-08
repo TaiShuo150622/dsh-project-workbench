@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "version": "0.1.0",
+  "as_of": "2026-11-08",
+  "scope": "west/practitioner-views",
+  "runtime_experiments_run": false,
+  "model_api_calls": 0,
+  "source_policy": "primary bodies only; dated identity and opinion type recorded separately; no current-employment inference from historical bylines",
+  "views": [
+    {
+      "id": "V1",
+      "person": "Michael Bolin",
+      "company_scope": "OpenAI at January 2026 official byline; March interview continuity supported but not November role",
+      "date": "2026-03-14",
+      "source_ids": [
+        "P01",
+        "P02"
+      ],
+      "status": "core_personal_interview_with_official_identity_support",
+      "decisions": [
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": "V2",
+      "person": "Ryan Lopopolo",
+      "company_scope": "OpenAI; contemporaneous official staff byline",
+      "date": "2026-02-11",
+      "source_ids": [
+        "P03"
+      ],
+      "status": "core_official_signed_engineering_experience",
+      "decisions": [
+        "D2",
+        "D3"
+      ]
+    },
+    {
+      "id": "V3",
+      "person": "Justin Young",
+      "company_scope": "Anthropic official engineering authorship at date; exact title date unverified",
+      "date": "2025-11-26",
+      "source_ids": [
+        "P04",
+        "P05"
+      ],
+      "status": "core_official_authorship_title_temporal_limit",
+      "decisions": [
+        "D3",
+        "D4"
+      ]
+    },
+    {
+      "id": "V4",
+      "person": "Prithvi Rajasekaran",
+      "company_scope": "Anthropic Labs; contemporaneous official byline",
+      "date": "2026-03-24",
+      "source_ids": [
+        "P06"
+      ],
+      "status": "core_official_signed_engineering_experiment",
+      "decisions": [
+        "D3",
+        "D5"
+      ]
+    },
+    {
+      "id": "V5",
+      "people": [
+        "Yifan Shi",
+        "Wei Zhang",
+        "Tianyi Cui"
+      ],
+      "company_scope": "paper-declared affiliation: Shi PKU+DeepSeek-AI, Zhang PKU, Cui DeepSeek-AI",
+      "date": "2026-08-26",
+      "source_ids": [
+        "P07",
+        "P08"
+      ],
+      "status": "core_joint_research_not_individual_statement",
+      "decisions": [
+        "D6"
+      ]
+    },
+    {
+      "id": "V6",
+      "person": "Junyang Lin",
+      "company_scope": "past Qwen affiliation verified at 2025-01-26; company at essay date unconfirmed",
+      "date": "2026-03-26",
+      "source_ids": [
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "status": "supplement_personal_not_counted_as_qwen_employee_view",
+      "decisions": [
+        "D2",
+        "D3",
+        "D5"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "P01",
+      "title": "The New Inner Loop of Software Engineering with Michael Bolin",
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "authors": [
+        "Michael Bolin (interviewee)",
+        "Ksenia Se (interviewer)"
+      ],
+      "publisher": "Turing Post",
+      "publication_date": "2026-03-14",
+      "date_basis": "original interview page date",
+      "category": "first_party_interview_transcript",
+      "locator": "Transcript: Michael answers lines116–141 under What Is the Harness?",
+      "supports": [
+        "工具/训练分布协同；宿主沙箱与模型行为判断的职责区别。"
+      ],
+      "limitations": [
+        "读的是原采访方转录，未逐帧核对视频；不能把编辑导语当受访者原话；不是API契约。"
+      ],
+      "identity_sources": [
+        "P02"
+      ],
+      "short_quote": "making sure that tooling gets used in training",
+      "decision_ids": [
+        "D1",
+        "D2"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P02",
+      "title": "Unrolling the Codex agent loop",
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "authors": [
+        "Michael Bolin"
+      ],
+      "publisher": "OpenAI",
+      "publication_date": "2026-01-23",
+      "date_basis": "official article date",
+      "category": "official_signed_engineering_report",
+      "locator": "Byline; Performance considerations: prompt caching and compaction, lines649–669",
+      "supports": [
+        "发文时Member of Technical Staff归属；前缀缓存与配置更新/压缩的工程取舍。"
+      ],
+      "limitations": [
+        "证明1月归属，辅助3月采访身份，不外推11月职位；历史实现不是当前默认合同。"
+      ],
+      "identity_sources": [
+        "P02"
+      ],
+      "short_quote": null,
+      "decision_ids": [
+        "D1",
+        "D2"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P03",
+      "title": "Harness engineering: leveraging Codex in an agent-first world",
+      "url": "https://openai.com/index/harness-engineering/",
+      "authors": [
+        "Ryan Lopopolo"
+      ],
+      "publisher": "OpenAI",
+      "publication_date": "2026-02-11",
+      "date_basis": "official article date",
+      "category": "official_signed_team_experience",
+      "locator": "Byline; Increasing application legibility; repository knowledge; Increasing levels of autonomy; Entropy and garbage collection",
+      "supports": [
+        "同期Member of the Technical Staff；短知识入口、版本化资料、可观察UI/日志；自治依赖特定仓库投入。"
+      ],
+      "limitations": [
+        "单团队经验，未用其时间估算/PR数量作为普遍收益；不是全面取消人工判断的承诺。"
+      ],
+      "identity_sources": [
+        "P03"
+      ],
+      "short_quote": "give Codex a map, not a 1,000-page instruction manual",
+      "decision_ids": [
+        "D2",
+        "D3"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P04",
+      "title": "Effective harnesses for long-running agents",
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "authors": [
+        "Justin Young"
+      ],
+      "publisher": "Anthropic",
+      "publication_date": "2025-11-26",
+      "date_basis": "official article date",
+      "category": "official_signed_team_experience",
+      "locator": "Environment management; Testing; Getting up to speed; Future work; Footnote1; Authors & acknowledgements",
+      "supports": [
+        "同期官方工程署名与团队工作；增量交接和端到端测试；两个agent仅初始用户提示不同的脚注。"
+      ],
+      "limitations": [
+        "文章未单列当时精确职务；web app示例不证明所有任务；禁止改测试是提示要求；多代理是否更优仍开放。"
+      ],
+      "identity_sources": [
+        "P04",
+        "P05"
+      ],
+      "short_quote": "The system prompt, set of tools, and overall agent harness was otherwise identical.",
+      "decision_ids": [
+        "D3",
+        "D4"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P05",
+      "title": "Long Running Agents: How Outtake built a cyber investigator on Claude",
+      "url": "https://claude.com/ko/resources/webinars/outtake-built-cyber-investigator-claude",
+      "authors": [
+        "Anthropic webinar team"
+      ],
+      "publisher": "Anthropic",
+      "publication_date": null,
+      "date_basis": "page has no exact publication/event date",
+      "category": "official_identity_support_only",
+      "locator": "Featured speakers / 주요 연사: Justin Young — Applied AI @ Anthropic",
+      "supports": [
+        "官方页面将Justin Young列为Applied AI @ Anthropic。"
+      ],
+      "limitations": [
+        "无日期，不精确回填2025-11-26职务；未观看登记后视频，不引用演讲机制或结果。"
+      ],
+      "identity_sources": [],
+      "short_quote": null,
+      "decision_ids": [],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P06",
+      "title": "Harness design for long-running application development",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "authors": [
+        "Prithvi Rajasekaran"
+      ],
+      "publisher": "Anthropic",
+      "publication_date": "2026-03-24",
+      "date_basis": "official article date",
+      "category": "official_signed_engineering_experiment",
+      "locator": "Byline Labs team; Why naive implementations fall short; Iterating on the harness; Removing the sprint construct; DAW phase table",
+      "supports": [
+        "同期Labs团队；逐组件消融；模型升级改变reset/sprint/评审频率收益。"
+      ],
+      "limitations": [
+        "案例而非统计基准；planner改范围；QA以作者偏好校准仍漏检；DAW三轮build/QA不能写成全程一次QA。"
+      ],
+      "identity_sources": [
+        "P06"
+      ],
+      "short_quote": "removing one component at a time",
+      "decision_ids": [
+        "D3",
+        "D5"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P07",
+      "title": "A Programming Paradigm for Spatiotemporal Composability",
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "authors": [
+        "Yifan Shi",
+        "Wei Zhang",
+        "Tianyi Cui"
+      ],
+      "publisher": "Author-deposited research paper (PKU / DeepSeek-AI affiliations)",
+      "publication_date": "2026-08-26",
+      "date_basis": "v1 submission date independently read at P08",
+      "category": "jointly_authored_research_argument",
+      "locator": "PDF first-page affiliations; §1.2.2 printedp5; §3.4 closing printedp31; §5.1 inverse obligations printedp59; §6.1 printedpp70–71; §7.3 printedpp79–80; §8 printedpp82–83",
+      "supports": [
+        "同期原作者声明的DeepSeek-AI归属：Shi和Cui；context模型边界；reload不自动保留组件自有内存；self-evolving harness仍属future validation。",
+        "§6.1区分acquisition与emission，补偿的等价关系与元理论需要重新建立。"
+      ],
+      "limitations": [
+        "作者机构署名，不是独立雇佣档案；共同观点不能独归一人；未独立审完92页证明；不把模型内逆操作推成任意现实副作用回滚。"
+      ],
+      "identity_sources": [
+        "P07",
+        "P08"
+      ],
+      "short_quote": "a component’s own in-memory state does not survive a reload",
+      "decision_ids": [
+        "D6"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P08",
+      "title": "arXiv v1 metadata: A Programming Paradigm for Spatiotemporal Composability",
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "authors": [
+        "Yifan Shi",
+        "Wei Zhang",
+        "Tianyi Cui"
+      ],
+      "publisher": "arXiv",
+      "publication_date": "2026-08-26",
+      "date_basis": "Submitted on 26 Aug 2026",
+      "category": "original_version_and_affiliation_metadata",
+      "locator": "Submitted date and author affiliations",
+      "supports": [
+        "锁定v1日期及三人署名机构对应。"
+      ],
+      "limitations": [
+        "摘要页不用于替代论文正文；作者机构署名不证明具体团队职称。"
+      ],
+      "identity_sources": [],
+      "short_quote": null,
+      "decision_ids": [
+        "D6"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P09",
+      "title": "From 'Reasoning' Thinking to 'Agentic' Thinking",
+      "url": "https://justinlin610.github.io/blog/from-reasoning-to-agentic-thinking/",
+      "authors": [
+        "Junyang Lin"
+      ],
+      "publisher": "Junyang Lin personal site",
+      "publication_date": "2026-03-26",
+      "date_basis": "personal article explicit publication date",
+      "category": "signed_personal_essay_company_attribution_unconfirmed",
+      "locator": "§2 mode tradeoff; §3 workload; §4 environment feedback; §5 infrastructure; §6 reward hacking and prediction",
+      "supports": [
+        "作者观点：思考应服务行动；环境反馈/奖励漏洞/推理预算的取舍；多代理方向属于个人预测。"
+      ],
+      "limitations": [
+        "未获发文同期官方任职证据；不计Qwen在职员工观点；文中未来判断不是经验比较或公司承诺。"
+      ],
+      "identity_sources": [
+        "P10",
+        "P12"
+      ],
+      "short_quote": "Producing a longer reasoning trace doesn’t automatically make a model more intelligent.",
+      "decision_ids": [
+        "D2",
+        "D3",
+        "D5"
+      ],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P10",
+      "title": "Junyang Lin personal homepage",
+      "url": "https://justinlin610.github.io/",
+      "authors": [
+        "Junyang Lin"
+      ],
+      "publisher": "Junyang Lin personal site",
+      "publication_date": null,
+      "date_basis": "homepage no dated employment timeline; accessed current page",
+      "category": "self_description_identity_support",
+      "locator": "Page header: Independent researcher; selected work; latest essay date",
+      "supports": [
+        "访问时本人自述Independent researcher。"
+      ],
+      "limitations": [
+        "非同期公司官方页面，不能回填2026-03-26任职；不据此补写离职具体日期。"
+      ],
+      "identity_sources": [],
+      "short_quote": null,
+      "decision_ids": [],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P11",
+      "title": "Qwen3: Think Deeper, Act Faster",
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "authors": [
+        "Qwen Team"
+      ],
+      "publisher": "Qwen official blog",
+      "publication_date": "2025-04-29",
+      "date_basis": "official team post date",
+      "category": "official_team_product_announcement",
+      "locator": "Byline Qwen Team; Future work / agent training direction",
+      "supports": [
+        "团队公告和个人文章是不同证据类型；团队讨论agent training方向。"
+      ],
+      "limitations": [
+        "集体公告未署名林个人；不能证明2026-03-26任职或为其个人预测背书；不采用产品分数。"
+      ],
+      "identity_sources": [],
+      "short_quote": null,
+      "decision_ids": [],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    },
+    {
+      "id": "P12",
+      "title": "Qwen2.5-1M Technical Report — authorship page",
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-1M/Qwen2_5_1M_Technical_Report.pdf?file=Qwen2_5_1M_Technical_Report.pdf",
+      "authors": [
+        "Qwen Team; Junyang Lin among named coauthors"
+      ],
+      "publisher": "Qwen official resource host",
+      "publication_date": "2025-01-26",
+      "date_basis": "date on original PDF first page",
+      "category": "official_past_affiliation_support_only",
+      "locator": "PDF page1 author list and Qwen Team, Alibaba Group line",
+      "supports": [
+        "2025-01-26过往共同作者与Qwen Team/Alibaba Group机构署名。"
+      ],
+      "limitations": [
+        "只用于过往署名核实，不外推2026年任职；本轮未审此报告实验，不引用性能结果。"
+      ],
+      "identity_sources": [],
+      "short_quote": null,
+      "decision_ids": [],
+      "accessed_date": "2026-11-08",
+      "body_status": "specified_primary_body_sections_read",
+      "used_as_company_promise": false
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1vnbdzn/author_here_any_feedback_for_deepseek_harness/",
+      "reason": "原帖可见作者自称和征求反馈，但本轮所读正文缺少足够具体的作者机制观点，也未建立账号与官方同期身份的完整对应；不为公司覆盖数量计样本。"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "FAIL",
+  "checked": {
+    "conditions": 3150,
+    "input_hashes": 16,
+    "resolved_pointers": 762,
+    "group_records": 219,
+    "document_records": 240,
+    "constructed_file_links": 14,
+    "root_review_records": 38,
+    "bibliographic_enrichment_records": 4,
+    "identity_relationships": 21,
+    "candidate_records": 4,
+    "literal_catalog_URL_pointers": 253
+  },
+  "reader_links": 56,
+  "errors": [
+    "missing reader link SOURCE_INDEX.md -> ../../FORMAL_MODEL.md"
+  ]
+}

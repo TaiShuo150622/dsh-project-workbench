@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "executed_at_utc": "2026-11-08T09:42:26.166573+00:00",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 audit_handoff.py",
+  "pythonhashseeds": [
+    11,
+    97
+  ],
+  "sha256_by_run": [
+    "69a66b802eafaddaf750ff6d4c9537e5dae0451c9ea5a8721bfc0e8207dc6255",
+    "69a66b802eafaddaf750ff6d4c9537e5dae0451c9ea5a8721bfc0e8207dc6255"
+  ],
+  "byte_identical": true
+}

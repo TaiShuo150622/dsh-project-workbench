@@ -1,0 +1,1202 @@
+{
+  "schema_version": 1,
+  "research_line": "china",
+  "version": "0.1.0",
+  "as_of": "2026-11-08",
+  "status": "first_round_ready_for_cross_review",
+  "method": "Primary public sources. Fixed commits for repository claims. Product tests not run; read test definitions separately. Employee perspectives are not official product guarantees.",
+  "sources": [
+    {
+      "id": "CN-DS-01",
+      "url": "https://www.deepseek.com/en/harness/",
+      "title": "DeepSeek Harness official landing",
+      "organization_or_author": "DeepSeek",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_product",
+      "supported_claims": [
+        "DeepSeek Harness is an official open-source developer preview.",
+        "Plugin composition, agent teams and scheduled tasks are presented as product capabilities."
+      ],
+      "limitations": [
+        "Evolving APIs and experimental features; landing page is not runtime acceptance.",
+        "Publication date not stated."
+      ]
+    },
+    {
+      "id": "CN-DS-02",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.md",
+      "title": "DeepSeek Harness README",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "DeepSeek-developed open-source Harness with Cordis-based plugin composition.",
+        "Developer preview compatibility boundary."
+      ],
+      "limitations": [
+        "README is a product/developer statement, not a security audit."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "README.md",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-03",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md",
+      "title": "DeepSeek Harness safety boundary",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Experimental and not security-audited.",
+        "Sandbox and approvals do not guarantee isolation."
+      ],
+      "limitations": [
+        "Do not infer production safety from permission configuration."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "SAFETY.md",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-04",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/session.md",
+      "title": "Session event log and request history",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Durable session log and model-visible history projections are distinct.",
+        "Settled assistant attempt streams are durable; hard process loss before settlement can leave no durable attempt stream.",
+        "Session generation migration is explicit."
+      ],
+      "limitations": [
+        "Logging semantics do not make external actions atomic.",
+        "This source is architecture documentation; selected mechanisms also require code review."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "docs/subsystems/session.md",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-05",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/tool-execution-pipeline.md",
+      "title": "Tool execution pipeline",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Pre-execute normalization precedes monotonic denial guards.",
+        "Missing or unanswered approval denies execution.",
+        "Tool result finalization precedes durable result recording."
+      ],
+      "limitations": [
+        "Guard design is not proof of complete OS mediation."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "docs/tool-execution-pipeline.md",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-06",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/agent-team.md",
+      "title": "Agent team task semantics",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "blockedBy is acyclic; task revisions support CAS.",
+        "writeScopes are advisory normalized prefixes, not locks.",
+        "Completed state satisfies task blockers."
+      ],
+      "limitations": [
+        "Dependency completion does not prove artifact correctness or exclusive file ownership."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "docs/subsystems/agent-team.md",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-07",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-board.ts",
+      "title": "TeamTaskBoard.update",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Expected revision checked before authorized transition.",
+        "Complete transition requires an in-progress task and authorized owner or lead.",
+        "Revision increments before appendAndFlush."
+      ],
+      "limitations": [
+        "No external test evidence requirement appears in this complete transition.",
+        "Journal and filesystem behavior are separate boundaries."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/team/agent-team/src/task-board.ts",
+      "anchors": [
+        "L117",
+        "L128",
+        "L178",
+        "L220"
+      ],
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-DS-08",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-graph.ts",
+      "title": "Task graph validation",
+      "organization_or_author": "deepseek-ai/deepseek-harness",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Rejects missing dependencies, self cycles and dependency cycles."
+      ],
+      "limitations": [
+        "Acyclic task graph alone proves neither safe concurrency nor acceptance."
+      ],
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/team/agent-team/src/task-graph.ts",
+      "snapshot_commit_at": "2026-11-04T08:40:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-01",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/README.md",
+      "title": "SuperAgent prototype scope",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Research prototype is explicitly not an official DeepSeek product.",
+        "Public implementation differs from internal implementation and architecture article; future directions remain unimplemented."
+      ],
+      "limitations": [
+        "Do not import article performance or guarantees into this code."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "README.md",
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-02",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/001-domain.md",
+      "title": "SuperAgent domain model",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Trigger, Policy, Mandate, Ticket, Assignment and Subscription are separate entities.",
+        "Subscription brings context rather than execution authority."
+      ],
+      "limitations": [
+        "Source-local identities do not supply a verified global human identity map."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "docs/001-domain.md",
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-03",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/002-authorization.md",
+      "title": "SuperAgent authorization",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Versioned policy gates requests and mandate scope.",
+        "Policy changes discard stale evaluation; live tickets receive change notification."
+      ],
+      "limitations": [
+        "Notification is not immediate revocation or cancellation of already-running external actions."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "docs/002-authorization.md",
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-04",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/003-execution.md",
+      "title": "SuperAgent execution and recovery",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Each Ticket has worker session and directory; retries keep session/directory and create a new Assignment.",
+        "Host restart recovery asks worker to inspect local and GitHub state before repeating actions.",
+        "Worker commands run as operator OS user without per-command approval.",
+        "Worker slot accounting covers background work and reserves an intervention slot."
+      ],
+      "limitations": [
+        "Ticket directory is not an OS sandbox.",
+        "Restart recovery is inspection-guided, not exactly-once external execution."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "docs/003-execution.md",
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-05",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/app/outbox.ts",
+      "title": "SuperAgent outbound receipt and delivery",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Receipt and reply effect enqueue are atomic; duplicate IDs are ignored.",
+        "External send is awaited before receipt settlement."
+      ],
+      "limitations": [
+        "A crash after send and before settle leaves an uncertainty window; this file alone does not prove exactly-once delivery.",
+        "Need source adapter idempotency or readback for stronger claims."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "src/app/outbox.ts",
+      "anchors": [
+        "L26",
+        "L31",
+        "L48",
+        "L50"
+      ],
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-SA-06",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/core/assignments.ts",
+      "title": "Worker report and ticket completion",
+      "organization_or_author": "deepseek-ai/dsh-superagent-prototype",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Ended ticket or ended assignment rejects report.",
+        "Ready report can complete ticket once followed-thread conditions hold."
+      ],
+      "limitations": [
+        "Selected report transition is not independent verification of the artifact or external side effects."
+      ],
+      "repository": "deepseek-ai/dsh-superagent-prototype",
+      "commit": "8c32a9dc5d72c033816c6a8110b37f40cf94fba4",
+      "path": "src/core/assignments.ts",
+      "anchors": [
+        "L99",
+        "L112",
+        "L128"
+      ],
+      "snapshot_commit_at": "2026-10-31T12:06:31Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-01",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/package.json",
+      "title": "Qwen Code source snapshot version",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_metadata",
+      "supported_claims": [
+        "At fixed main commit, package version is 0.27.0."
+      ],
+      "limitations": [
+        "Development source version is not verified latest stable release."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "package.json",
+      "content_as_of": "2026-11-08T06:06:00Z",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-02",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/conversations-recovery.md",
+      "title": "Conversation writer recovery",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Session writer recovery is scoped to verified liveness domain.",
+        "Foreign host/boot/PID namespace or missing identity is fenced; elapsed time is not takeover proof."
+      ],
+      "limitations": [
+        "Same-host local recovery is not a distributed universal lease service."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/conversations-recovery.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-03",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.ts",
+      "title": "Writer lease identity checks",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "lockStateForRecord treats hostname mismatch and Linux boot/PID-namespace mismatch conservatively as live.",
+        "Same-domain dead PID or replaced process identity may make lock stale."
+      ],
+      "limitations": [
+        "Managed policy and certified takeover have additional conditions; this function is not the entire protocol."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/services/session-writer-lease.ts",
+      "anchors": [
+        "L591",
+        "L595",
+        "L602",
+        "L615"
+      ],
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-04",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "title": "Hosted Workspace operator recovery",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Lease recovery requires fencing writers and explicit operator proof.",
+        "Release does not finish, retry or certify original shell operation.",
+        "Unknown side effects remain unknown; parent exit/EOF/time are insufficient proof that all writers stopped."
+      ],
+      "limitations": [
+        "Experimental Linux original-host procedure.",
+        "Software cannot prove all escaped descendants were stopped."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/hosted-workspace-recovery.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-05",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/multi-agent-coordination.md",
+      "title": "Agent team coordination",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Experimental coordinate supports read-only workers; optional one writer on leader-owned worktree.",
+        "Leader retains merge authority; normal delegation is distinct fallback."
+      ],
+      "limitations": [
+        "No universal distributed teamwork or cross-vendor recovery guarantee."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/features/multi-agent-coordination.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-06",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/memory.md",
+      "title": "Memory, Dream and structured recall",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "QWEN.md instructions and automatically learned memory are distinct.",
+        "Auto-memory index is bounded; linked details and opt-in structured recall supplement it.",
+        "Pinned memory protection differs between background/forked Dream and visible main-agent Dream."
+      ],
+      "limitations": [
+        "Visible main-agent Dream does not have the same deterministic per-turn tool restriction.",
+        "Memory retrieval and summarization do not certify correctness or freshness."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/features/memory.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-07",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/goals.md",
+      "title": "Goal completion evidence",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Goal verifier judges bounded transcript evidence and cannot independently execute checks.",
+        "Missing or insufficient evidence should reject completion."
+      ],
+      "limitations": [
+        "Model-based verifier can err; not formal acceptance proof."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/features/goals.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-08",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.ts",
+      "title": "Goal verifier implementation",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Bounded 256000-byte request and strict accept/reject JSON schema.",
+        "Tool-free side query uses temperature zero and a timeout; one provider attempt.",
+        "Prompt differentiates delivered output, execution output, user input and external fact."
+      ],
+      "limitations": [
+        "Temperature zero is not a correctness theorem.",
+        "Prompt evidence semantics still depend on model judgment."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/goals/goal-verifier.ts",
+      "anchors": [
+        "L18",
+        "L36",
+        "L40",
+        "L231"
+      ],
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-09",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "title": "Goal tool result provenance",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Goal runtime bookkeeping excluded from external evidence.",
+        "exec, agent, advisor and workflow aggregate output classified as execution_output.",
+        "Nested original tool records carry a separate stamp for external_fact evidence."
+      ],
+      "limitations": [
+        "Host must route every relevant writer through this classifier; source inspection is not exhaustive runtime validation.",
+        "The stamp establishes recording provenance/execution category, not tool honesty, target correctness, output completeness, freshness or causal truth."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/goals/goal-tool-result-provenance.ts",
+      "anchors": [
+        "L21",
+        "L68",
+        "L78",
+        "L147"
+      ],
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-10",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/sandbox.md",
+      "title": "Linux execution sandbox",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Operator-only execution policy; project settings cannot select policy.",
+        "bwrap and limited Landlock fallback have different enforcement capabilities.",
+        "Inherited file descriptors and host transport are explicit boundaries."
+      ],
+      "limitations": [
+        "Fallback cannot satisfy all network/masking requirements; unsupported configurations reject.",
+        "Admission probe is not full-session acceptance."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/features/sandbox.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-11",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/scheduled-tasks.md",
+      "title": "Scheduled tasks",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Session-scoped and durable tasks differ.",
+        "Idle dispatch, expiration, jitter and missed-trigger behavior are specified."
+      ],
+      "limitations": [
+        "Scheduling persistence is not atomicity of task side effects."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/features/scheduled-tasks.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-12",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.test.ts",
+      "title": "Writer lease test definitions",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "test_definition",
+      "supported_claims": [
+        "Tests cover process death, malformed locks, transcript change, certified takeover and ownership races."
+      ],
+      "limitations": [
+        "Tests were read, not run in this research.",
+        "Test definitions do not establish universal liveness."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/services/session-writer-lease.test.ts",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-13",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.test.ts",
+      "title": "Goal verifier test definitions",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "test_definition",
+      "supported_claims": [
+        "Tests cover bounded request, tool-free side query, provider failure and cancellation."
+      ],
+      "limitations": [
+        "No test execution this round.",
+        "Parser tests do not establish semantic reliability of model verdict."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/goals/goal-verifier.test.ts",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QC-14",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/evaluation.md",
+      "title": "Qwen Code evaluation protocol",
+      "organization_or_author": "QwenLM/qwen-code",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_evaluation",
+      "supported_claims": [
+        "Documents fixed-model SWE-bench Verified comparison across seven historical harness versions and repeated trials."
+      ],
+      "limitations": [
+        "Historical evaluation does not measure current 0.27.0 durability/permissions.",
+        "Reported results not reproduced here."
+      ],
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/evaluation.md",
+      "snapshot_commit_at": "2026-11-08T06:06:00Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QA-01",
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/README.md",
+      "title": "Qwen-Agent scope",
+      "organization_or_author": "QwenLM/Qwen-Agent",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Qwen team's Apache-2.0 tool-use/application framework includes agents, tools and memory.",
+        "README self-describes relationship to Qwen Chat backend."
+      ],
+      "limitations": [
+        "Public framework repository is not the deployed product's complete source.",
+        "No current hosted deployment acceptance inferred."
+      ],
+      "repository": "QwenLM/Qwen-Agent",
+      "commit": "31a4d36d123688581a9e9744427272b33ce940e0",
+      "path": "README.md",
+      "snapshot_commit_at": "2026-03-04T08:13:57Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QA-02",
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/memory/memory.py",
+      "title": "Qwen-Agent Memory file retrieval",
+      "organization_or_author": "QwenLM/Qwen-Agent",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Memory class manages input documents and retrieves relevant content under a token budget."
+      ],
+      "limitations": [
+        "This module is not by itself a durable task journal or authority store.",
+        "No claim that the whole framework lacks other persistence."
+      ],
+      "repository": "QwenLM/Qwen-Agent",
+      "commit": "31a4d36d123688581a9e9744427272b33ce940e0",
+      "path": "qwen_agent/memory/memory.py",
+      "snapshot_commit_at": "2026-03-04T08:13:57Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-QA-03",
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/agents/fncall_agent.py",
+      "title": "Qwen-Agent function call loop",
+      "organization_or_author": "QwenLM/Qwen-Agent",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Agent loop combines supplied messages, tool calls and tool responses."
+      ],
+      "limitations": [
+        "Calling-loop inspection alone does not establish crash-safe side effects."
+      ],
+      "repository": "QwenLM/Qwen-Agent",
+      "commit": "31a4d36d123688581a9e9744427272b33ce940e0",
+      "path": "qwen_agent/agents/fncall_agent.py",
+      "snapshot_commit_at": "2026-03-04T08:13:57Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-TX-01",
+      "url": "https://cloud.tencent.com/product/acc",
+      "title": "CodeBuddy product forms",
+      "organization_or_author": "Tencent Cloud",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_product",
+      "supported_claims": [
+        "Official Tencent product covers IDE, IDE plugin and CodeBuddy Code CLI."
+      ],
+      "limitations": [
+        "Product family relationship is not proof of shared runtime or open-source status."
+      ]
+    },
+    {
+      "id": "CN-TX-02",
+      "url": "https://www.codebuddy.cn/docs/cli/release-notes/v2.179.3",
+      "title": "CodeBuddy Code v2.179.3 release notes",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_release",
+      "supported_claims": [
+        "Official release page lists CLI 2.179.3, JS SDK 0.3.299 and Python SDK 0.3.298."
+      ],
+      "limitations": [
+        "Publication date not shown; access date recorded.",
+        "Feature docs are rolling pages, not guaranteed frozen to this release."
+      ]
+    },
+    {
+      "id": "CN-TX-03",
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "title": "Agent Teams",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Experimental teams have task dependencies, member contexts and messaging.",
+        "Leader delegation restrictions do not automatically apply to members.",
+        "Resume/rewind do not restore members; task status may lag."
+      ],
+      "limitations": [
+        "Documentation only; full CLI implementation not verified.",
+        "Known-limits shorthand about inherited permissions must be read with the detailed precedence table."
+      ]
+    },
+    {
+      "id": "CN-TX-04",
+      "url": "https://www.codebuddy.cn/docs/cli/checkpointing",
+      "title": "Checkpointing",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Checkpoints can rewind conversation, edited files or both.",
+        "File edit tools are tracked; Bash/external/concurrent mutations are not universally captured."
+      ],
+      "limitations": [
+        "Not a global side-effect rollback or Git replacement."
+      ]
+    },
+    {
+      "id": "CN-TX-05",
+      "url": "https://www.codebuddy.cn/docs/cli/memory",
+      "title": "Memory and Typed Memory",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Static CODEBUDDY.md/rules differ from Auto Memory.",
+        "Auto Memory index first 200 lines loaded; typed files use user/feedback/project/reference."
+      ],
+      "limitations": [
+        "Typed fields do not prove truth, freshness or authorization.",
+        "Full runtime implementation not inspected."
+      ]
+    },
+    {
+      "id": "CN-TX-06",
+      "url": "https://www.codebuddy.cn/docs/cli/goal",
+      "title": "Goal evaluation",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Small model evaluator sees current transcript and goal; no independent tools.",
+        "Repeated-blocker rule is prompt instruction rather than enforced counter."
+      ],
+      "limitations": [
+        "A model verdict is not independent external validation.",
+        "Errors preserve goal without proving completion."
+      ]
+    },
+    {
+      "id": "CN-TX-07",
+      "url": "https://www.codebuddy.cn/docs/cli/scheduled-tasks",
+      "title": "Scheduled tasks",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Default tasks session-scoped; durable tasks use persistent task sessions.",
+        "Documented cross-process reservation and daemon takeover prevent duplicate scheduled-instance starts.",
+        "Idle queue and no missed-trigger backfill."
+      ],
+      "limitations": [
+        "Documented scheduling mutual exclusion does not prove exactly-once external effects."
+      ]
+    },
+    {
+      "id": "CN-TX-08",
+      "url": "https://www.codebuddy.cn/docs/cli/permissions",
+      "title": "Permission resolution",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Documents pretool hook, deny/allow/ask, trust and mode evaluation.",
+        "Noninteractive unresolved approval denies."
+      ],
+      "limitations": [
+        "Hook precedence and permission guarantees need runtime adversarial tests.",
+        "No source-level proof in this line."
+      ]
+    },
+    {
+      "id": "CN-TX-09",
+      "url": "https://www.codebuddy.cn/docs/cli/hooks",
+      "title": "Hooks",
+      "organization_or_author": "Tencent CodeBuddy",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_documentation",
+      "supported_claims": [
+        "Command hooks and prompt hooks are distinct; PreToolUse can block.",
+        "Hook configuration snapshots and timeouts are documented."
+      ],
+      "limitations": [
+        "Timeout fail-open/fail-closed details were not fully established.",
+        "Prompt hook is model judgment."
+      ]
+    },
+    {
+      "id": "CN-TR-01",
+      "url": "https://cloud.tencent.com/document/product/248/125043",
+      "title": "接入 tRPC-Agent-Go",
+      "organization_or_author": "Tencent Cloud",
+      "published_at": "2026-03-24",
+      "accessed_at": "2026-11-08",
+      "category": "official_product",
+      "supported_claims": [
+        "Tencent official documentation identifies tRPC-Agent-Go as Tencent open-source Go agent framework."
+      ],
+      "limitations": [
+        "Integration documentation not a full protocol proof."
+      ],
+      "date_kind": "last_updated"
+    },
+    {
+      "id": "CN-TR-02",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/docs/mkdocs/en/graph.md",
+      "title": "Graph execution and checkpoints",
+      "organization_or_author": "trpc-group/trpc-agent-go",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_repository_documentation",
+      "supported_claims": [
+        "Graph supports sequential/parallel/conditional/cyclic execution, retries, checkpoints and interrupt/resume.",
+        "Failed node attempts do not apply state deltas; runtime state restore has explicit override rules.",
+        "Cache recommended for pure functions."
+      ],
+      "limitations": [
+        "Internal state-write suppression does not undo arbitrary external node side effects.",
+        "Documentation scope distinct from product deployment."
+      ],
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "docs/mkdocs/en/graph.md",
+      "snapshot_commit_at": "2026-11-06T10:21:26Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-TR-03",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/checkpoint.go",
+      "title": "Checkpoint schema",
+      "organization_or_author": "trpc-group/trpc-agent-go",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Lineage, namespace, parent checkpoint, pending writes/sends and interrupt state are explicit."
+      ],
+      "limitations": [
+        "Checkpoint identity is not an external-effect idempotency key."
+      ],
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "graph/checkpoint.go",
+      "snapshot_commit_at": "2026-11-06T10:21:26Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-TR-04",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "title": "Checkpoint save error paths",
+      "organization_or_author": "trpc-group/trpc-agent-go",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Initial and loop checkpoint save failures have logged nonfatal paths.",
+        "Explicit resume load errors differ from fresh-run fallback."
+      ],
+      "limitations": [
+        "Not every checkpoint failure halts execution; do not assert universal durable step commits."
+      ],
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "graph/executor.go",
+      "anchors": [
+        "L479",
+        "L1583",
+        "L1754"
+      ],
+      "snapshot_commit_at": "2026-11-06T10:21:26Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-TR-05",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor_checkpoint_test.go",
+      "title": "Checkpoint error and resume tests",
+      "organization_or_author": "trpc-group/trpc-agent-go",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "test_definition",
+      "supported_claims": [
+        "Defines tests permitting initial checkpoint-save error without stopping run.",
+        "Explicit resume GetTuple error test requires no Done success and error event.",
+        "Tests include pending-write restore and interrupt-before/after semantics."
+      ],
+      "limitations": [
+        "Read only; not executed here.",
+        "Mocked tests and specific cases are not a universal recovery theorem."
+      ],
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "graph/executor_checkpoint_test.go",
+      "anchors": [
+        "L181",
+        "L277",
+        "L428",
+        "L1784"
+      ],
+      "snapshot_commit_at": "2026-11-06T10:21:26Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-WB-01",
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/README.md",
+      "title": "WorkBuddy Bench evaluation framework",
+      "organization_or_author": "Tencent/workbuddy-bench",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_evaluation",
+      "supported_claims": [
+        "Public framework uses task-specific sandbox workspaces and tests across Code/Web/Office/Security.",
+        "Framework captures patches, trajectories, test results and efficiency; datasets separate."
+      ],
+      "limitations": [
+        "Framework open-source status does not make CodeBuddy CLI itself fully open source.",
+        "Licensed under repository Tencent license, not assumed Apache/MIT."
+      ],
+      "repository": "Tencent/workbuddy-bench",
+      "commit": "625b2233093ae4f23e76be28c1f341d41cc70373",
+      "path": "README.md",
+      "snapshot_commit_at": "2026-08-20T06:07:27Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-WB-02",
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/configs/harnesses/codebuddy-code/CONFIG.md",
+      "title": "Version-scoped benchmark harness settings",
+      "organization_or_author": "Tencent/workbuddy-bench",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "official_evaluation",
+      "supported_claims": [
+        "Harness version determines explicit deny-list/settings preset; missing mapping fails.",
+        "Runtime manifest records redacted effective configuration.",
+        "Context compaction parameters differ by CLI versions."
+      ],
+      "limitations": [
+        "Historical benchmark runtime settings do not establish latest CLI behavior."
+      ],
+      "repository": "Tencent/workbuddy-bench",
+      "commit": "625b2233093ae4f23e76be28c1f341d41cc70373",
+      "path": "configs/harnesses/codebuddy-code/CONFIG.md",
+      "snapshot_commit_at": "2026-08-20T06:07:27Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-WB-03",
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/src/workbuddy_bench/judge/runners/rule/script_verifier_resilience.py",
+      "title": "Fixed-denominator verifier handling",
+      "organization_or_author": "Tencent/workbuddy-bench",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "open_source_implementation",
+      "supported_claims": [
+        "Declared checks determine denominator; unexecuted checks become failures.",
+        "Transformation guards independent checks against early-abort score inflation."
+      ],
+      "limitations": [
+        "Targets supported script shapes, not arbitrary judge correctness.",
+        "No benchmark run performed."
+      ],
+      "repository": "Tencent/workbuddy-bench",
+      "commit": "625b2233093ae4f23e76be28c1f341d41cc70373",
+      "path": "src/workbuddy_bench/judge/runners/rule/script_verifier_resilience.py",
+      "anchors": [
+        "L1",
+        "L235",
+        "L493"
+      ],
+      "snapshot_commit_at": "2026-08-20T06:07:27Z",
+      "date_note": "File first-publication date not established; snapshot_commit_at is the fixed repository commit date, not this file's publication date."
+    },
+    {
+      "id": "CN-WB-04",
+      "url": "https://arxiv.org/abs/2607.20911v1",
+      "title": "Tencent WorkBuddy Bench paper",
+      "organization_or_author": "Tencent WorkBuddy Bench Team",
+      "published_at": "2026-07-23",
+      "accessed_at": "2026-11-08",
+      "category": "official_research",
+      "supported_claims": [
+        "Construction, scoring protocol and reproducible task release are described.",
+        "Different subset scoring instruments mean no suite-wide aggregate."
+      ],
+      "limitations": [
+        "Open tasks do not eliminate contamination; authors rely on task construction and versioning.",
+        "Benchmark scores not reproduced here."
+      ]
+    },
+    {
+      "id": "CN-PE-DS-01",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/discussions/5120",
+      "title": "插件作者升级 skill 讨论",
+      "organization_or_author": "Tianyi Cui / tianyicui",
+      "published_at": "2026-08-30",
+      "accessed_at": "2026-11-08",
+      "category": "employee_public_view",
+      "supported_claims": [
+        "Author considers an official plugin-author migration skill and asks community for existing work."
+      ],
+      "limitations": [
+        "Historical proposal, not proof that skill shipped or migration compatibility is guaranteed."
+      ],
+      "affiliation_sources": [
+        "CN-PE-DS-02",
+        "CN-PE-DS-03"
+      ]
+    },
+    {
+      "id": "CN-PE-DS-02",
+      "url": "https://github.com/tianyicui",
+      "title": "Tianyi Cui public profile",
+      "organization_or_author": "Tianyi Cui",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "public_identity",
+      "supported_claims": [
+        "Public account identifies DeepSeek affiliation."
+      ],
+      "limitations": [
+        "Public profile is mutable; historical role exact title not inferred."
+      ]
+    },
+    {
+      "id": "CN-PE-DS-03",
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "title": "A Programming Paradigm for Spatiotemporal Composability",
+      "organization_or_author": "Yifan Shi, Wei Zhang, Tianyi Cui",
+      "published_at": "2026-08-26",
+      "accessed_at": "2026-11-08",
+      "category": "author_research",
+      "supported_claims": [
+        "Paper lists Tianyi Cui affiliation DeepSeek-AI.",
+        "Cordis formalizes reversible effects and reactive coeffects with mediated-effect assumptions."
+      ],
+      "limitations": [
+        "Do not extend local reversal results to arbitrary irreversible external actions.",
+        "Abstract/metadata and architectural framing read; full 92-page proof not independently verified."
+      ]
+    },
+    {
+      "id": "CN-PE-QW-01",
+      "url": "https://github.com/QwenLM/qwen-code/issues/2036",
+      "title": "Reduce memory usage of long-running tasks",
+      "organization_or_author": "wenshao; later maintainer response by yiliang114",
+      "published_at": "2026-03-02",
+      "accessed_at": "2026-11-08",
+      "category": "employee_public_view",
+      "supported_claims": [
+        "wenshao reported long-session RAM and resume/model-switching cost in March 2026.",
+        "Maintainer June26 response says paths improved in v0.19.2+ and closes issue."
+      ],
+      "limitations": [
+        "Personal usage report is historical, not a current benchmark or Qwen team official specification.",
+        "Maintainer collaborator status alone not separately treated as Alibaba employment proof."
+      ],
+      "last_substantive_update": "2026-06-26",
+      "affiliation_sources": [
+        "CN-PE-QW-02"
+      ]
+    },
+    {
+      "id": "CN-PE-QW-02",
+      "url": "https://github.com/wenshao",
+      "title": "Shaojin Wen public profile",
+      "organization_or_author": "Shaojin Wen",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "public_identity",
+      "supported_claims": [
+        "Profile self-identifies Alibaba and Aliyun DataWorks Tech Leader."
+      ],
+      "limitations": [
+        "Does not establish Qwen Code product role; employee perspective is individual."
+      ]
+    },
+    {
+      "id": "CN-PE-TX-01",
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "title": "汪晟杰 CodeBuddy original interview",
+      "organization_or_author": "汪晟杰; interviewer/editor Tina (InfoQ)",
+      "published_at": "2025-09-10",
+      "accessed_at": "2026-11-08",
+      "category": "employee_original_interview",
+      "supported_claims": [
+        "First-person views favor compression plus external storage, CDE asynchronous execution, human review for high-risk changes, and team coordination.",
+        "Tool auditability/composability presented as design goals."
+      ],
+      "limitations": [
+        "2025 historical interview; design intent not proof of current enforcement.",
+        "Reported productivity numbers excluded because no reproducible protocol established.",
+        "Interview's checkpoint means human review point; current rewind docs use checkpoint differently."
+      ],
+      "affiliation_sources": [
+        "CN-PE-TX-02"
+      ]
+    },
+    {
+      "id": "CN-PE-TX-02",
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "title": "腾讯官方活动讲师身份",
+      "organization_or_author": "Tencent Cloud Developer Community",
+      "published_at": "2026-03-21",
+      "accessed_at": "2026-11-08",
+      "category": "public_identity",
+      "supported_claims": [
+        "Official event lists 汪晟杰 as CodeBuddy chief product manager / Tencent Cloud product expert."
+      ],
+      "limitations": [
+        "Supports identity at event date; not a current employment guarantee."
+      ],
+      "date_kind": "event_date"
+    },
+    {
+      "id": "CN-MISS-01",
+      "url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "title": "SuperAgent architecture article original WeChat candidate",
+      "organization_or_author": "DeepSeek Harness (linked candidate; page inaccessible)",
+      "published_at": null,
+      "accessed_at": "2026-11-08",
+      "category": "unverified_original",
+      "supported_claims": [],
+      "limitations": [
+        "Original page fetch failed; article author/performance claims not adopted from mirrors.",
+        "Prototype README confirms article title but not its every claim."
+      ],
+      "retrieval_status": "inaccessible"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "reviewed_at_utc": "2026-11-08T10:25:02.201168+00:00",
+  "page": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html",
+  "viewport": "1200x900",
+  "theme": "light",
+  "image_sha256": "ca6cd6e5307aa5f48ff8e4bf368610afe90d36f1cfd8d4a77d91ee733c4d79c7",
+  "observations": [
+    "Title, metadata and main text readable at desktop width",
+    "Left section navigation visible and separated from content",
+    "Resource types table fits main column at top portion inspected"
+  ],
+  "scope": "Visual inspection of one screenshot; not all diagrams, mobile or interactive controls"
+}

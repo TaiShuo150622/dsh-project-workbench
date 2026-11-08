@@ -1,0 +1,3564 @@
+{
+  "schema_version": 1,
+  "equality": "literal exact address; fragments preserved",
+  "entries": [
+    {
+      "url": "../../../../../record/README.md",
+      "kind": "legacy_local_reference",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/0"
+      },
+      "later_occurrences": [],
+      "render_as_link": false,
+      "interpretation": "Literal legacy address, scoped by the C07 originating catalogue; not relative to C11."
+    },
+    {
+      "url": "https://a2a-protocol.org/v0.3.0/specification/",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/9",
+          "url_binding": {
+            "url": "https://a2a-protocol.org/v0.3.0/specification/",
+            "kind": "literal",
+            "origin_pointer": "/sources/9/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://a2a-protocol.org/v1.0.1/specification/",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_7.json#/entries/2",
+          "url_binding": {
+            "url": "https://a2a-protocol.org/v1.0.1/specification/",
+            "kind": "literal",
+            "origin_pointer": "/entries/2/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/4",
+          "url_binding": {
+            "url": "https://a2a-protocol.org/v1.0.1/specification/",
+            "kind": "literal",
+            "origin_pointer": "/sources/4/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://aclanthology.org/2024.acl-long.747.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/1"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/2"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/1105.2255",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/3"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.03629v3",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/4"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.11366v4",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/5"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.16291v2",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/6"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.16653v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/7"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2308.10144v3",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/8"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.10762v4",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/9"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.20911v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/10"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/11"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/12"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2308.10144v3",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/13"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2310.08560v2",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/14"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2403.12968v2",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/15"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2410.10762v4",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/16"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/17"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2412.07986v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/18"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2502.12110v11",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/19"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/20"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/21"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/22"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_8.json#/entries/2",
+          "url_binding": {
+            "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+            "kind": "literal",
+            "origin_pointer": "/entries/2/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "west/evidence-disputes/sources.json#/literature/0",
+          "url_binding": {
+            "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+            "kind": "literal",
+            "origin_pointer": "/literature/0/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        },
+        {
+          "record": "west/evidence-disputes/literature.json#/sources/0",
+          "url_binding": {
+            "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+            "kind": "literal",
+            "origin_pointer": "/sources/0/url"
+          },
+          "role": "mirrored_bibliography",
+          "is_mirror": true
+        }
+      ]
+    },
+    {
+      "url": "https://claude.com/ko/resources/webinars/outtake-built-cyber-investigator-claude",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/23"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://cloud.tencent.com/document/product/248/125043",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/24"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://cloud.tencent.com/product/acc",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/25"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/26"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/27"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/user-input",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/28"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/checkpointing",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/29"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/memory",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/30"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/31"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/32"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/33"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/34"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/architecture",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/35"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/36"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/environments/security",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/37"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/errors",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/38"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/39"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/40"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/41"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.dbos.dev/production/hosting-with-kubernetes",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/42"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.dbos.dev/python/tutorials/upgrading-workflows",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/43"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.dbos.dev/typescript/tutorials/upgrading-workflows",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/44"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.docker.com/engine/storage/drivers/overlayfs-driver/",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_9.json#/entries/2",
+          "url_binding": {
+            "url": "https://docs.docker.com/engine/storage/drivers/overlayfs-driver/",
+            "kind": "literal",
+            "origin_pointer": "/entries/2/url"
+          },
+          "role": "mirrored_primary_read",
+          "is_mirror": true
+        },
+        {
+          "record": "resource-lifecycle/sources.json#/sources/2",
+          "url_binding": {
+            "url": "https://docs.docker.com/engine/storage/drivers/overlayfs-driver/",
+            "kind": "literal",
+            "origin_pointer": "/sources/2/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/45"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_9.json#/entries/0",
+          "url_binding": {
+            "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+            "kind": "literal",
+            "origin_pointer": "/entries/0/url"
+          },
+          "role": "mirrored_primary_read",
+          "is_mirror": true
+        },
+        {
+          "record": "resource-lifecycle/sources.json#/sources/0",
+          "url_binding": {
+            "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+            "kind": "literal",
+            "origin_pointer": "/sources/0/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://docs.temporal.io/develop/safe-deployments",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/46"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://docs.temporal.io/production-deployment/worker-deployments/recover-pinned-workflows",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/47"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/48"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/49"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/ExpeL/blob/e41ec9a24823e7b560c561ab191441b56d9bcefc/agent/expel.py#L420-L447",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/50"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/voyager.py#L265-L269",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/51"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/52"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/agents/fncall_agent.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/53"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen-Agent/blob/31a4d36d123688581a9e9744427272b33ce940e0/qwen_agent/memory/memory.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/54"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/evaluation.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/55"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/conversations-recovery.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/56"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/goals.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/57"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/memory.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/58"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/multi-agent-coordination.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/59"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/sandbox.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/60"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/features/scheduled-tasks.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/61"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/62"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/package.json",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/63"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/64"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.test.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/65"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-verifier.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/66"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.test.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/67"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/services/session-writer-lease.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/68"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/QwenLM/qwen-code/issues/2036",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/69"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/README.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/14",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/README.md",
+            "kind": "literal",
+            "origin_pointer": "/inputs/14/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client.js",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/6",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/6/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client/app.js",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/5",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client/app.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/5/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/cordis.patch.yml",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/13",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/cordis.patch.yml",
+            "kind": "literal",
+            "origin_pointer": "/inputs/13/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/70"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/0",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/0/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/package.json",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/12",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/package.json",
+            "kind": "literal",
+            "origin_pointer": "/inputs/12/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/71"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/8",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/README.md",
+            "kind": "literal",
+            "origin_pointer": "/inputs/8/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/kernel.mjs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/72"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/7",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/record/kernel.mjs",
+            "kind": "literal",
+            "origin_pointer": "/inputs/7/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/scripts/build.mjs",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/11",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/scripts/build.mjs",
+            "kind": "literal",
+            "origin_pointer": "/inputs/11/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/73"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/2",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/2/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        },
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/0",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+            "kind": "constructed_fixed_file",
+            "derivation": {
+              "repository": "TaiShuo150622/dsh-project-workbench",
+              "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+              "path": "server/native.js"
+            },
+            "remote_availability": "NOT_RECHECKED_BY_C11"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/6",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+            "kind": "literal",
+            "origin_pointer": "/sources/6/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/6",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/native.js",
+            "kind": "literal",
+            "origin_pointer": "/sources/6/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/74"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/1",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/1/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        },
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/1",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+            "kind": "constructed_fixed_file",
+            "derivation": {
+              "repository": "TaiShuo150622/dsh-project-workbench",
+              "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+              "path": "server/projects.js"
+            },
+            "remote_availability": "NOT_RECHECKED_BY_C11"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/7",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+            "kind": "literal",
+            "origin_pointer": "/sources/7/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/7",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/projects.js",
+            "kind": "literal",
+            "origin_pointer": "/sources/7/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/store.js",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/75"
+      },
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/3",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/store.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/3/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        },
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/2",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/store.js",
+            "kind": "constructed_fixed_file",
+            "derivation": {
+              "repository": "TaiShuo150622/dsh-project-workbench",
+              "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+              "path": "server/store.js"
+            },
+            "remote_availability": "NOT_RECHECKED_BY_C11"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/worktrees.js",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/4",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/server/worktrees.js",
+            "kind": "literal",
+            "origin_pointer": "/inputs/4/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/desktop-contract.test.mjs",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/9",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/desktop-contract.test.mjs",
+            "kind": "literal",
+            "origin_pointer": "/inputs/9/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/projects.test.mjs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/76"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/support/record-fixture.mjs",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/10",
+          "url_binding": {
+            "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/tests/support/record-fixture.mjs",
+            "kind": "literal",
+            "origin_pointer": "/inputs/10/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/77"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/configs/harnesses/codebuddy-code/CONFIG.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/78"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/Tencent/workbuddy-bench/blob/625b2233093ae4f23e76be28c1f341d41cc70373/src/workbuddy_bench/judge/runners/rule/script_verifier_resilience.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/79"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/80"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/A-mem/blob/f9a173dec325d84fcc97e7828775c7b241c33466/test_advanced.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/81"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/82"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/configs/splits/manifest_confirm.json",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/83"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/docs/reproduce.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/84"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/bench/longmemeval/judge.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/85"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/WujiangXu/Flex-Amem/blob/37ba0ce2b4d14f6746e819b6a2d728ad74c364f2/src/flexamem/memory/store.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/86"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_8.json#/entries/1",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+            "kind": "literal",
+            "origin_pointer": "/entries/1/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/4",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+            "kind": "literal",
+            "origin_pointer": "/sources/4/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_8.json#/entries/0",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+            "kind": "literal",
+            "origin_pointer": "/entries/0/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/5",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+            "kind": "literal",
+            "origin_pointer": "/sources/5/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/5",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+            "kind": "literal",
+            "origin_pointer": "/sources/5/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/a2aproject/A2A/blob/8d57eba286de756176892518a8fc39b0ac2ccefb/docs/specification.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/9",
+          "url_binding": {
+            "url": "https://github.com/a2aproject/A2A/blob/8d57eba286de756176892518a8fc39b0ac2ccefb/docs/specification.md",
+            "kind": "literal",
+            "origin_pointer": "/sources/9/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/cookbook/02_agents/18_checkpointing/README.md#L1-L48",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/87"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/88"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/89"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/cancellation_management/redis_cancellation_manager.py#L198-L227",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/90"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/concurrency.py#L1-L17",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/91"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/run/status_persist.py#L254-L335",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/92"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/tests/integration/agents/test_external_session_fencing.py#L1-L155",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/93"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/permission.ts#L94-L101",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/94"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/context.ts#L44-L54",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/95"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/9c7212c99a69b9d1c644fc30ad79068124aab1a7/packages/core/src/session/run-coordinator.ts#L1-L170",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/96"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/97"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/examples/session_stores/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/98"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_resume.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/99"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/session_store.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/100"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/2209f2c134fee914c0f75733b631a5fc238ca846/src/claude_agent_sdk/_internal/transcript_mirror_batcher.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/101"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/102"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/103"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/104"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_queue.py#L70-L131",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/105"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_recovery.py#L1-L77",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/106"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_sys_db.py#L1521-L1595",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/107"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/108"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/109"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/cordis-tutorial/02-lifecycle-and-effects.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/110"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/19",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+            "kind": "literal",
+            "origin_pointer": "/inputs/19/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/agent-team.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/111"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/subsystems/session.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/112"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/docs/tool-execution-pipeline.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/113"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/api-request-trust.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/16",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/api-request-trust.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/16/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/browser-auth.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/20",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/browser-auth.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/20/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/client/rpc.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/18",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/client/rpc.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/18/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/http-bridge.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/21",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/http-bridge.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/21/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_6.json#/entries/0",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/entries/0/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/15",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/15/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_6.json#/entries/1",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+            "kind": "literal",
+            "origin_pointer": "/entries/1/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/17",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/17/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/22",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc.ts",
+            "kind": "literal",
+            "origin_pointer": "/inputs/22/url"
+          },
+          "role": "fixed_code_reading",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/114"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/115"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/116"
+      },
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_5.json#/entries/2",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/entries/2/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/contracts.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/117"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/events.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/118"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/119"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/120"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/121"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/122"
+      },
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_5.json#/entries/1",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+            "kind": "literal",
+            "origin_pointer": "/entries/1/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/123"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/124"
+      },
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_5.json#/entries/0",
+          "url_binding": {
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/entries/0/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-board.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/125"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/team/agent-team/src/task-graph.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/126"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/scripts/cordis-core-lifecycle.spec.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/127"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/package.json",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/128"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/events.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/129"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/130"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/131"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/reflect.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/132"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/utils.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/133"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/discussions/5120",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/134"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/135"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/001-domain.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/136"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/002-authorization.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/137"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/003-execution.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/138"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/app/outbox.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/139"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/src/core/assignments.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/140"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/agent/README.md#L1-L400",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/141"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/README.md#L269-L333",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/142"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/143"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/144"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/session/session.ts#L193-L217",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/145"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/types.ts#L1175-L1190",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/146"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/channels/last_value.py#L46-L71",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/147"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_loop.py#L463-L559",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/148"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/pregel/_retry.py#L131-L143",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/149"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/langchain-ai/langgraph/blob/e5e37b5d70dbfd93c7006bd90a658c6179a95946/libs/langgraph/langgraph/types.py#L99-L104",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/150"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/README.md#L1-L82",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/151"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution-abort-race.test.ts#L39-L70",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/152"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/153"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/154"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/memory-operation.ts#L1-L60",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/155"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/interrupted-turn-record.ts#L435-L518",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/156"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/websocket/listener/recovery-authority-guard.ts#L8-L74",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/157"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md#L1-L39",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/158"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/microsoft/LLMLingua/blob/01b9e9481d7395e1e83a48df4a062b11f6304325/experiments/llmlingua2/README.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/159"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/ext-tasks/blob/cc9aaac1047a9440b07486e38f37060bbebeef4c/specification/2026-07-28/tasks.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/0",
+          "url_binding": {
+            "url": "https://github.com/modelcontextprotocol/ext-tasks/blob/cc9aaac1047a9440b07486e38f37060bbebeef4c/specification/2026-07-28/tasks.md",
+            "kind": "literal",
+            "origin_pointer": "/sources/0/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2025-11-25/basic/utilities/tasks.mdx",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/8",
+          "url_binding": {
+            "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2025-11-25/basic/utilities/tasks.mdx",
+            "kind": "literal",
+            "origin_pointer": "/sources/8/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/index.mdx",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/3",
+          "url_binding": {
+            "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/index.mdx",
+            "kind": "literal",
+            "origin_pointer": "/sources/3/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/160"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/patterns/cancellation.mdx",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/2",
+          "url_binding": {
+            "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/patterns/cancellation.mdx",
+            "kind": "literal",
+            "origin_pointer": "/sources/2/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/transports/streamable-http.mdx",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/1",
+          "url_binding": {
+            "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/transports/streamable-http.mdx",
+            "kind": "literal",
+            "origin_pointer": "/sources/1/fixed_url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/161"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/162"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py#L33-L116",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/163"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/nodejs/node/blob/v24.6.0/doc/api/child_process.md",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_9.json#/entries/1",
+          "url_binding": {
+            "url": "https://github.com/nodejs/node/blob/v24.6.0/doc/api/child_process.md",
+            "kind": "literal",
+            "origin_pointer": "/entries/1/url"
+          },
+          "role": "mirrored_primary_read",
+          "is_mirror": true
+        },
+        {
+          "record": "resource-lifecycle/sources.json#/sources/1",
+          "url_binding": {
+            "url": "https://github.com/nodejs/node/blob/v24.6.0/doc/api/child_process.md",
+            "kind": "literal",
+            "origin_pointer": "/sources/1/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/app-server-protocol/src/protocol/v2/user_verification.rs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/164"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/core/src/session/rollout_reconstruction.rs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/165"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/748ab55ca7de0b647d9a7a9d9a8e70e00f28666d/codex-rs/ext/skills/src/render.rs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/166"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/167"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/guide.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/168"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sandbox/memory.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/169"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/sessions/index.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/170"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/171"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/172"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/173"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/174"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_state.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/175"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/deferred-tools.md#L95-L137",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/176"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/overview.md#L1-L44",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/177"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/durable_execution/temporal.md#L267-L274",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/178"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/docs/message-history.md#L681-L729",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/179"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/toolsets/approval_required.py#L1-L33",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/180"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/181"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/182"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/183"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/184"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/185"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/activity/src/index.ts#L16-L54",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/186"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/187"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/188"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/activity.ts#L86-L110",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/189"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/worker/src/worker-tuner.ts#L155-L210",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/190"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/workflow/src/workflow.ts#L215-L277",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/191"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/tianyicui",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/192"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/docs/mkdocs/en/graph.md",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/193"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/checkpoint.go",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/194"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/195"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor_checkpoint_test.go",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/196"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/wenshao",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/197"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/198"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://justinlin610.github.io/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/199"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://justinlin610.github.io/blog/from-reasoning-to-agentic-thinking/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/200"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/pubs/chandy.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/201"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/pubs/time-clocks.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/202"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/tla/book-21-07-04.pdf",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_7.json#/entries/0",
+          "url_binding": {
+            "url": "https://lamport.azurewebsites.net/tla/book-21-07-04.pdf",
+            "kind": "literal",
+            "origin_pointer": "/entries/0/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "china/progress-conditions/sources.json#/sources/0",
+          "url_binding": {
+            "url": "https://lamport.azurewebsites.net/tla/book-21-07-04.pdf",
+            "kind": "literal",
+            "origin_pointer": "/sources/0/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/203"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/fsync.2.html",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/204"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/rename.2.html",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/205"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/206"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/8",
+          "url_binding": {
+            "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
+            "kind": "literal",
+            "origin_pointer": "/sources/8/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/3",
+          "url_binding": {
+            "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
+            "kind": "literal",
+            "origin_pointer": "/sources/3/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/2",
+          "url_binding": {
+            "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation",
+            "kind": "literal",
+            "origin_pointer": "/sources/2/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/1",
+          "url_binding": {
+            "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http",
+            "kind": "literal",
+            "origin_pointer": "/sources/1/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/207"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://nodejs.org/docs/latest-v24.x/api/child_process.html",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_9.json#/failed_candidates/0",
+          "url_binding": {
+            "url": "https://nodejs.org/docs/latest-v24.x/api/child_process.html",
+            "kind": "literal",
+            "origin_pointer": "/failed_candidates/0/url"
+          },
+          "role": "mirrored_candidate",
+          "is_mirror": true
+        },
+        {
+          "record": "resource-lifecycle/sources.json#/failed_candidates/0",
+          "url_binding": {
+            "url": "https://nodejs.org/docs/latest-v24.x/api/child_process.html",
+            "kind": "literal",
+            "origin_pointer": "/failed_candidates/0/url"
+          },
+          "role": "failed_candidate",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://nodejs.org/download/release/v24.10.0/docs/api/fs.html",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/208"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://openai.com/index/harness-engineering/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/209"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://openai.com/index/unlocking-the-codex-harness/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/210"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/211"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/212"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/213"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/214"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/215"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/216"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/217"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/218"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/219"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-1M/Qwen2_5_1M_Technical_Report.pdf?file=Qwen2_5_1M_Technical_Report.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/220"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://qwenlm.github.io/blog/qwen3/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/221"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/7",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/7/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/8",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/8/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/9",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/9/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/6",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/6/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/5",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/5/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/4",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/4/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/3",
+          "url_binding": {
+            "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+            "kind": "literal",
+            "origin_pointer": "/files/3/source"
+          },
+          "role": "source_fingerprint",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_7.json#/entries/1",
+          "url_binding": {
+            "url": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+            "kind": "literal",
+            "origin_pointer": "/entries/1/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/0",
+          "url_binding": {
+            "url": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+            "kind": "literal",
+            "origin_pointer": "/sources/0/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        }
+      ]
+    },
+    {
+      "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+      "kind": "external_http",
+      "C07_pointer": null,
+      "later_occurrences": [
+        {
+          "record": "ROOT_SOURCE_REVIEW_8.json#/entries/3",
+          "url_binding": {
+            "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+            "kind": "literal",
+            "origin_pointer": "/entries/3/url"
+          },
+          "role": "root_reopen",
+          "is_mirror": false
+        },
+        {
+          "record": "west/evidence-disputes/sources.json#/literature/1",
+          "url_binding": {
+            "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+            "kind": "literal",
+            "origin_pointer": "/literature/1/url"
+          },
+          "role": "primary_declaration",
+          "is_mirror": false
+        },
+        {
+          "record": "west/evidence-disputes/literature.json#/sources/1",
+          "url_binding": {
+            "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+            "kind": "literal",
+            "origin_pointer": "/sources/1/url"
+          },
+          "role": "mirrored_bibliography",
+          "is_mirror": true
+        }
+      ]
+    },
+    {
+      "url": "https://www.anthropic.com/research/advanced-tool-use",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/222"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/223"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/224"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/225"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/226"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/managed-agents",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/227"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.anthropic.com/research/multi-agent-research-system",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/228"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~val/15MayPODS.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/229"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/230"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/checkpointing",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/231"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/goal",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/232"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/hooks",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/233"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/memory",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/234"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/permissions",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/235"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/release-notes/v2.179.3",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/236"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.codebuddy.cn/docs/cli/scheduled-tasks",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/237"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/238"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.cs.cornell.edu/courses/cs530/2005sp/papers/sagas.pdf",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/239"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.deepseek.com/en/harness/",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/240"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/241"
+      },
+      "later_occurrences": []
+    },
+    {
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "kind": "external_http",
+      "C07_pointer": {
+        "file": "china/consolidated-sources/url-index.json",
+        "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+        "json_pointer": "/entries/242"
+      },
+      "later_occurrences": []
+    }
+  ]
+}

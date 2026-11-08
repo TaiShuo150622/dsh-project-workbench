@@ -1,0 +1,442 @@
+{
+  "package": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader",
+  "checked_open_events": [
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/validate_index_portable.py",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/validate_index_portable.py",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/validate_index_portable.py",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/source-index.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/source-index.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/scope-and-inputs.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/scope-and-inputs.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/reading-observations.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/reading-observations.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/identity-opinion-bindings.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/identity-opinion-bindings.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/url-index.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/url-index.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/china/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/china/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/china/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/china/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/foundations/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/foundations/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/foundations/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/foundations/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/sources.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/inputs/west/sources.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/README.md",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/README.md",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/SOURCE_INDEX.md",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/SOURCE_INDEX.md",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/validate_index_portable.py",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/validate_index_portable.py",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/source-index.json",
+      "mode": "r",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/source-index.json",
+      "mode": "None",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/portable-validation-receipt.json",
+      "mode": "w",
+      "inside_copied_package": true
+    },
+    {
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/portable-fix-audit/relocated/isolated-reader/china/consolidated-sources/portable-validation-receipt.json",
+      "mode": "None",
+      "inside_copied_package": true
+    }
+  ],
+  "all_workspace_opens_inside_copy": true,
+  "exit_code": 0
+}

@@ -1,0 +1,31 @@
+{
+  "review_type": "model_authored_independent_local_checks",
+  "source_script_sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89",
+  "audit_script_sha256": "2ec01f1b7e6abc8d8e7353c292f6d398f680ea764d9fc15725191e06f8c4c2ae",
+  "formula_truth_table_cases": 3872,
+  "independently_evaluated_fixed_point_cases": 117128,
+  "count_consistency_graphs": 10,
+  "independent_acceptance_state_count": 238244,
+  "rerun_json_equal": true,
+  "common_mode_mutation_probe": {
+    "mutation": "interpret each AND clause as OR; do not alter either fixed-point solver",
+    "minimal_semantic_error": {
+      "formula": "a AND b",
+      "atoms": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected": false,
+      "mutated": true
+    },
+    "check_support_returned_without_error": true,
+    "networks": 14641,
+    "stale_seed_failing_transitions": 51282,
+    "clear_all_descendants_failing_transitions": 83028
+  },
+  "elapsed_seconds": 10.414269416,
+  "meaning": "Original formula semantics matched independent bitmask evaluation in the stated finite domain. The mutation probe demonstrates the shared semantic dependency of the original oracles; it does not assert a bug in the frozen correct evaluator."
+}

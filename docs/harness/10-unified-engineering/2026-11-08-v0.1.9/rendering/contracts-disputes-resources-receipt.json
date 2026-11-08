@@ -1,0 +1,50 @@
+{
+  "batch": "contracts-disputes-resources",
+  "records": [
+    {
+      "source": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "source_sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "offline": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "06fe570e35fe43a939796fd1f3ed52c72f20924dcc6434bc8952be30e03b523a",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:51:42.972414+00:00"
+    },
+    {
+      "source": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.md",
+      "source_sha256": "1b08a43a8e6d682c1be06c0d9556e8a9ae1d70cb2a37b4cd52053584fe1662e4",
+      "offline": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "c447bf432c62863496469e3e26f62f047a06d86a9379d075c8a83c1a12920989",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:52:01.382824+00:00"
+    },
+    {
+      "source": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "source_sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "offline": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "c379b09084ae7361fdd637b952c03aceb24c628e9d59130bec536ffde8ead9b7",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:52:18.047671+00:00"
+    },
+    {
+      "source": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1.md",
+      "source_sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35",
+      "offline": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "dcf3897d48ed55b21dc064262a06f09ea47d614c1ef224ba0b78edaef224b581",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:52:33.361281+00:00"
+    },
+    {
+      "source": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "source_sha256": "6f0ebe4f2261a8967f8de96340c28c2e3f5625c40ab3e0061c6ed9b6edd4a04d",
+      "offline": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "48a7ee0389ec5bc09dc24907de7275bc023331ca87f0acb64286d5be5976b4f5",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T09:52:51.865210+00:00"
+    }
+  ]
+}

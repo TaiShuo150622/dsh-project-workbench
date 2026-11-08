@@ -1,0 +1,103 @@
+{
+  "round": "R19",
+  "checked_at_utc": "2026-11-08T11:07:24.348085+00:00",
+  "kind": "model_semantic_review_and_document_integrity_only",
+  "input_checks": [
+    {
+      "path": "inputs/M12/CONTRACT.md",
+      "expected_sha256": "815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/M12/scenarios.json",
+      "expected_sha256": "8253941a3692f5e805aa3a1142804f2faf0de83bf5134a977c8908cf1df6a478",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/M12/sources.json",
+      "expected_sha256": "677959e0d912edcd8819c77bd4c9e3281468c292de02ce1333a150190b0141db",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/M12/validation.json",
+      "expected_sha256": "a11a7492ba4eae34588fb036d5f32943e99029dcc92c0ee3b2bbd0cdd27e5d6f",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/basis/FORMAL_MODEL.md",
+      "expected_sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "frozen_matches": true,
+      "live_source_matches": false
+    },
+    {
+      "path": "inputs/basis/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "expected_sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/basis/west/evidence-disputes/state-definition.json",
+      "expected_sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/basis/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "expected_sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/basis/mechanisms/coverage-contract/contract.json",
+      "expected_sha256": "c6a524ee2527ae570c85a1a12aa69e3bc596d48ccba716b95a4776c1b63b0b85",
+      "frozen_matches": true,
+      "live_source_matches": true
+    },
+    {
+      "path": "inputs/basis/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "expected_sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c",
+      "frozen_matches": true,
+      "live_source_matches": true
+    }
+  ],
+  "all_frozen_match": true,
+  "author_output_hash_checks": [
+    {
+      "path": "inputs/M12/sources.json",
+      "matches": true
+    },
+    {
+      "path": "inputs/M12/CONTRACT.md",
+      "matches": true
+    },
+    {
+      "path": "inputs/M12/scenarios.json",
+      "matches": true
+    }
+  ],
+  "source_derivation_references_resolve": true,
+  "case_ids": [
+    "RR01",
+    "RR02",
+    "RR03",
+    "RR04"
+  ],
+  "scenario_status": "PROPOSED_NOT_RUN",
+  "actual_scenario_execution": false,
+  "product_tests": 0,
+  "new_model_proofs": 0,
+  "network_calls": 0,
+  "human_review_claimed": false,
+  "identity_note": "gpt-6-astra per dispatcher, not independently authenticated",
+  "not_reviewed": [
+    "all historical source documents in full",
+    "C13 type migrations",
+    "legal compliance",
+    "real collector/deleter/restore implementation",
+    "physical erasure or model forgetting"
+  ]
+}

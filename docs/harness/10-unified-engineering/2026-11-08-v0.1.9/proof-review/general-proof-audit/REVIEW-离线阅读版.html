@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="e5486ae3bc54">
+<title>R-03：DAG 与预算 Lean 一般证明的独立模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#固定输入-编译与公理">固定输入、编译与公理</a></li><li class="l2"><a href="#dag-定理与-p5-的对应">DAG 定理与 P5 的对应</a></li><li class="l3"><a href="#一般性与前提各自承担的责任">一般性与前提各自承担的责任</a></li><li class="l3"><a href="#ga01-读取集合可以在两轮之间改变-readme-的排除句过窄">GA01：读取集合可以在两轮之间改变，README 的排除句过窄</a></li><li class="l2"><a href="#预算定理与-p13-的对应">预算定理与 P13 的对应</a></li><li class="l3"><a href="#真实费用字段与各转移">真实费用字段与各转移</a></li><li class="l3"><a href="#预算前提可满足且六类转移确有非零轨迹">预算前提可满足且六类转移确有非零轨迹</a></li><li class="l3"><a href="#ga02-releasecertified-没有刻画动作-代际与证书防重放">GA02：ReleaseCertified 没有刻画动作、代际与证书防重放</a></li><li class="l2"><a href="#审查见证的执行与证据边界">审查见证的执行与证据边界</a></li><li class="l2"><a href="#交接判断">交接判断</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-03：DAG 与预算 Lean 一般证明的独立模型审查</h1>
+</header>
+<p>结论：<strong>两份冻结证明独立编译通过，未发现形式定理错误、结论被直接塞进前提或只能靠空前提成立的问题。</strong> DAG 证明覆盖任意有限前缀上的确定性局部求值；预算证明覆盖所定义六类原子转移组成的任意有限轨迹。它们均比固定小域枚举更一般，但仍是抽象协议证明，不是需求正确性、世界事实或产品实现精化证明。</p>
+<p>本轮有两项措辞/表达范围建议：DAG README 将“动态改变依赖”一概排除过窄，更新之间改变读取集合也可能满足现有定理；预算 <code>ReleaseCertified</code> 的类型只包含负担数值与金额，不能表达动作/代际绑定。后者 README 已大体限定为外部精化，建议再用精确类型说明消除“已刻画证书协议”的误读。</p>
+<p>这是不同模型的独立模型审查与本地 Lean 编译，没有人类审核。未改作者文件、产品代码、首两轮输出，未提交或推送，未调用网络或模型 API。</p>
+<h2 id="固定输入-编译与公理">固定输入、编译与公理</h2>
+<p>输入于 <code>2026-11-08T07:21:17.773351+00:00</code> 保存为本线副本，完整清单见 <a href="INPUT_MANIFEST.json">INPUT_MANIFEST.json</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">输入</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">IncrementalDag.lean</td><td style="text-align:left"><code>b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083</code></td></tr><tr><td style="text-align:left">DAG README.md</td><td style="text-align:left"><code>831ba5400a0689c8c37c9651ed844edf4200fbe3dc97b3594d550e6a7d0e6639</code></td></tr><tr><td style="text-align:left">BudgetSafety.lean</td><td style="text-align:left"><code>857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a</code></td></tr><tr><td style="text-align:left">预算 README.md</td><td style="text-align:left"><code>4877ae2efbf25742b3c27e926b04c389c036d229a267ae23fc351b00bd105ede</code></td></tr><tr><td style="text-align:left">预算绑定 FORMAL_MODEL.md</td><td style="text-align:left"><code>3997acfe5998ef37ec0fdc90f947bd8314f93dafd21b87cb205282da3d61139a</code></td></tr></tbody></table></div>
+<p>使用已提供的 Lean 4.35.0，commit <code>eb6cafb7290e8bd5f2937522d8d804f58f02bafc</code>；本线实际二进制 SHA 为 <code>d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf</code>。发行归档来源核验由 root 完成，本线没有重做下载核验。独立编译记录见 <a href="compile_receipt.json">compile_receipt.json</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">原证明副本</th><th style="text-align:left">编译结果</th><th style="text-align:left">公理输出</th></tr></thead><tbody><tr><td style="text-align:left">DAG</td><td style="text-align:left">退出 0，约 4.95 秒，stderr 空</td><td style="text-align:left">主定理为 <code>propext, Classical.choice, Quot.sound</code>；完整求值一致性为 <code>propext, Quot.sound</code></td></tr><tr><td style="text-align:left">预算</td><td style="text-align:left">退出 0，约 5.48 秒，stderr 空</td><td style="text-align:left">所打印五个定理均为 <code>propext, Quot.sound</code></td></tr></tbody></table></div>
+<p>输出与作者回执一致。源文件没有自定义 axiom、sorry/admit 占位或 native_decide；编译公理列表没有 sorryAx。<code>omega</code> 等策略产生内核检查的证明项，并不因此成为外部世界观测器。标准逻辑基础与实际 Lean 工具链仍在信任边界内。</p>
+<h2 id="dag-定理与-p5-的对应">DAG 定理与 P5 的对应</h2>
+<p>主定理 <code>incremental_equals_full</code> 没有假设局部计算已经等于全量结果。它先证明全量 sweep 的一致性，再从旧一致性、闭包和规则不变推导闭包外相等，最后按扫描长度证明局部 sweep 前缀正确。这条链路真实使用了依赖局部性和拓扑顺序。</p>
+<h3 id="一般性与前提各自承担的责任">一般性与前提各自承担的责任</h3>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">内容</th><th style="text-align:left">本轮判断</th></tr></thead><tbody><tr><td style="text-align:left">任意有限 n</td><td style="text-align:left">n 是未固定的自然数参数，结论对所有 i&lt;n 成立；不是把 n=4 的归约例子当一般证明。</td></tr><tr><td style="text-align:left">无限函数域</td><td style="text-align:left">Values 使用 Nat→α，但 Topological 保证 i&lt;n 只可依赖 j&lt;i&lt;n；范围外 seed 不会影响范围内输出。</td></tr><tr><td style="text-align:left">影响集合</td><td style="text-align:left">Closed 要求 selected 对新依赖的后继闭合，可保守多选，不要求最小集合。sameRule 强制所有实质规则变化进入 selected。</td></tr><tr><td style="text-align:left">输入完整性</td><td style="text-align:left">Local 对任意两状态量化。只有在所有声明依赖一致时输出必一致，才成立；隐藏时钟、权限、外部网络或未声明读会破坏它。</td></tr><tr><td style="text-align:left">旧缓存</td><td style="text-align:left">oldConsistent 要求旧值已经满足旧规则；对任意陈旧缓存不提供正确性保证。该条件没有预先假设新结果。</td></tr><tr><td style="text-align:left">求值函数</td><td style="text-align:left">允许任意确定性函数和任意值类型，不要求单调或仅 AND/OR；证明的是相对于同一新规则全量求值的等价，不另证明这些规则的业务含义正确。</td></tr><tr><td style="text-align:left">算法代价</td><td style="text-align:left">sweep 扫描整个 0…n−1 前缀，只跳过未选节点的规则求值。未证明 O(影响子图) 总时间，函数式 put 的查询代价和节点计算代价也未建模。README 已明确这一点。</td></tr></tbody></table></div>
+<p>Topological/Local 是可检验或需要外部证明的工程义务，不是自动从一个名叫 DAG 的数据结构获得的事实。依赖提取器漏边时，不能套用定理。例如根由 10 改 20、子节点读取根+1，却把 deps 声明为空并只选根，局部值为 <code>(20,11)</code>，全量值为 <code>(20,21)</code>。空 deps 此时虽然满足 Topological 和 Closed，却不满足 Local。这是完整性前提的必要性说明，不是满足定理假设的反例。</p>
+<p>P5 原始“影响不等于失效”命题与本定理不同：本定理支持在影响集内重新计算，而非直接清空。它并未单独证明任意证据 AND/OR 规则、信任规则或撤回来源本身合理；这些应由上层业务语义决定。</p>
+<h3 id="ga01-读取集合可以在两轮之间改变-readme-的排除句过窄">GA01：读取集合可以在两轮之间改变，README 的排除句过窄</h3>
+<p><strong>分类：低优先级文案范围修正，不是证明错误。</strong> 位置：<code>inputs/dag/README.md:40</code>。</p>
+<p>原句把正递归、含否定循环与“动态改变依赖”并列为没有合法当前拓扑假设的情况。实际上定理只要求 <strong>newRules 的完整 deps</strong> 合法、变更规则进入 selected，以及 selected 按该 deps 闭合；它不要求旧规则与新规则读取同一个前驱。</p>
+<p>本线不是只声称可能，而是构造并通过了 Lean 实例：</p>
+<pre data-lang="text"><code>节点0=10，节点1=7。
+旧节点2读取节点0+1，旧值11。
+新节点2读取节点1+1，新值8。
+新依赖只有 1→2；selected={2}；节点0、1保留旧值。</code></pre>
+<p>在 <a href="witnesses/DagWitness.lean">witnesses/DagWitness.lean</a> 中，<code>locality</code>、<code>topological</code>、<code>closed</code>、<code>oldConsistent</code>、<code>sameOutside</code> 均逐一证明，再调用原 <code>incremental_equals_full</code> 得到 <code>changed_read_set_instance</code>。因此这也证明主定理至少具有一个非平凡、非全选、确实更新值的可满足实例。</p>
+<p>建议改成：“单次 sweep 期间规则/依赖变化，或两轮更新后尚未重新建立完整依赖、合法拓扑编号与影响集合时，不能套用该定理。两轮之间改变读取集合，在新图仍满足全部前提时可以适用。”无需修改证明。</p>
+<h2 id="预算定理与-p13-的对应">预算定理与 P13 的对应</h2>
+<p><code>Safe</code> 同时包含负担覆盖、诚实记账等式与 exposure 上限。单步定理只在源状态假设 Safe，再按六个具体构造证明目标状态 Safe。除 Reserve 的准入守卫之外，没有把目标 Safe 作为合法 Step 的前提。Reserve 检查总额是协议本身必须执行的准入规则，不是循环论证。</p>
+<h3 id="真实费用字段与各转移">真实费用字段与各转移</h3>
+<p><code>actualSpent</code> 是独立字段，Spend 与 Close 增加它；Settle 只把 hidden 转到 settled，不再增加真实消费。等式 <code>actualSpent=settled+Σhidden</code> 由初态与具体转移保持，不是将 actualSpent 定义成账本合计后直接宣称正确。</p>
+<p>但这里“真实”仍是模型解释：真实系统若出现一个没有映射到 Spend/Close 的消费，或消费超过当前 future，这条世界行为根本不是已证明的合法 Run。Lean 不能靠字段名称证明现实费用没有漏记。README 98–110 已明确该限制，应随定理一并保留。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">转移</th><th style="text-align:left">证明真正使用的边界</th></tr></thead><tbody><tr><td style="text-align:left">Reserve</td><td style="text-align:left">exposure+cap+extraClosing≤budget；把新收尾义务一同计入，而非忽略新增清理成本。</td></tr><tr><td style="text-align:left">Spend</td><td style="text-align:left">cost≤future；hidden 增量等于 actualSpent 增量，future 等额下降，reserved 不动。</td></tr><tr><td style="text-align:left">Settle</td><td style="text-align:left">cost≤hidden；配合旧覆盖可推出 cost≤reserved，保证 Nat 截断减法不掩盖减多了。</td></tr><tr><td style="text-align:left">Release</td><td style="text-align:left">amount≤future；future 与 reserved 等额减少，hidden 和已花不变。其世界真实性另见 GA02。</td></tr><tr><td style="text-align:left">Close</td><td style="text-align:left">cost≤closing；实际消费和结算同步增加。延迟上报的收尾费用必须另映射为普通 obligation，不能偷偷当同步 Close。</td></tr><tr><td style="text-align:left">Cancel</td><td style="text-align:left">预算投影原样保持，不能解除 hidden/future。它是无新成本的取消事件抽象；真实取消操作有费用时须另记 Spend/Close。</td></tr></tbody></table></div>
+<p>Run 只由 refl 与 snoc 生成，对任意有限长度归纳；actions 是任意有限列表，Reserve 可继续追加，费用和预算为任意 Nat，没有固定数值枚举上限。结论因此适用于每一个合法有限前缀，不需要任务终止、未来公平调度或最终结算。</p>
+<p>该证明是 P13 的一种明确保守协议实现。它没有覆盖所有可能的“满足某种总额不等式”的重新估价、退款、预算下调、币种转换或负担撤回操作。README 明确列出了这些未覆盖转移，没有发现用“任意有限轨迹”偷换为“任意操作都安全”。</p>
+<h3 id="预算前提可满足且六类转移确有非零轨迹">预算前提可满足且六类转移确有非零轨迹</h3>
+<p>本线 <a href="witnesses/BudgetWitness.lean">witnesses/BudgetWitness.lean</a> 构造预算10、初始 closing=1 的合法 Run：</p>
+<pre data-lang="text"><code>Reserve(cap=5,extraClosing=1)
+→ Spend(3)
+→ Settle(2)
+→ Release(1)
+→ Close(1)
+→ Cancel</code></pre>
+<p>末态 <code>settled=3, actualSpent=4, closing=1</code>，唯一负担为 <code>(hidden=1,future=1,reserved=2)</code>。所有 Step 证据逐项构造，调用原 <code>from_empty_finite_run_safe</code> 得到 <code>actualSpent≤10</code>。它包含真实消费、未结算负担和未结束工作，不是空动作/零预算/空 Run 的自明实例。</p>
+<h3 id="ga02-releasecertified-没有刻画动作-代际与证书防重放">GA02：ReleaseCertified 没有刻画动作、代际与证书防重放</h3>
+<p><strong>分类：已声明外部精化边界的精确补充，低优先级；不反驳算术定理。</strong> 位置：<code>inputs/budget/BudgetSafety.lean:91–101,123–130,190–198</code>，README:42、94–106。</p>
+<p>类型为 <code>Obligation → Nat → Prop</code>，其中 Obligation 只有 hidden、future、reserved 三个数。它没有动作ID、资源、代际、负担版本或证书身份。因此只要两个动作的三个数相等，同一个关系证明即可用于两者。<code>step_preserves</code> 的 Release 分支也没有使用 certified 证明来推导算术性质；它只使用旧覆盖、amount 界及字段更新。</p>
+<p>本线 Lean 构造了具体类型边界见证：</p>
+<pre data-lang="text"><code>两个独立列表项 A、B 都是 (hidden=0,future=3,reserved=3)。
+numericCertificate(a,k) := a=(0,3,3) 且 k=3。
+同一个 certificate 证明先用于 A 的 Release(3)，再用于 B 的 Release(3)。
+两步构成合法 Run，两个项都变成 (0,0,0)。</code></pre>
+<p><code>same_numeric_certificate_reused</code> 由 Lean 编译通过，且不依赖任何公理。它说明不能把此关系称为已实现的、逐动作绑定的证书协议。若世界里只有 A 的未来费用真的解除，B 仍可能花费，那么这个世界状态已不再忠实映射到模型的 future=0；若 B 随后消费，就不满足模型 Spend 的界。故世界可能超支不构成对该合法 Run 定理的反例，而是精化失败。</p>
+<p>README 已明确身份不在证明中，且特别承认恒真关系不保证现实负担解除，这些限定基本充分。本轮建议只需补充上面的数值相同复用边界，并称其为“抽象 Release 许可关系；真实性与作用域在精化中提供”。也可将名称改为 ReleaseAllowed，但不是定理成立的必要改动。若以后要验证真实证书协议，再另建包含动作/代际/负担版本的模型；不要为了这个算术引理把整个认证系统搬入。</p>
+<h2 id="审查见证的执行与证据边界">审查见证的执行与证据边界</h2>
+<p><a href="build_witnesses.py">build_witnesses.py</a> 将冻结作者源码原样作为前缀，仅在本线生成副本末尾追加审查实例。两个实例文件均独立编译退出0，约12秒，见 <a href="witness_receipt.json">witness_receipt.json</a>。DAG 见证有两条 unused simp argument 的风格提示，不影响证明完成；原作者文件编译没有这些提示。</p>
+<p>见证并不代替一般证明：它们用于证明关键前提确实可满足、动态读集例外确实存在、证书参数类型确实允许数值复用。一般节点数和一般有限轨迹仍由作者的原定理提供。</p>
+<h2 id="交接判断">交接判断</h2>
+<p>两份定理均可作为限定范围内的一般规格证明交付。建议修正 DAG README 的动态读集表述，并补充预算关系的动作绑定限制；没有依据要求撤销原编译成功结论，也没有发现要靠增加“目标状态已安全”前提才能补好的漏洞。</p>
+<p>交付时应并列呈现：形式陈述、可满足前提、实际编译、公理依赖、外部精化义务。尤其不要把 Lean 接受 <code>Local</code>/<code>ReleaseCertified</code> 的证明参数，写成 Lean 已验证真实依赖提取或真实释放证书。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

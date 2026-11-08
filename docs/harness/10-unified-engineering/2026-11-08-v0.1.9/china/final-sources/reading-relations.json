@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "root_reading_matches": [
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_5.json#/entries/0",
+      "source_matches": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/3",
+          "relation": "SAME_FIXED_REF_PATH",
+          "reading_scope_not_overwritten": true
+        },
+        {
+          "C07_url_entry": {
+            "file": "china/consolidated-sources/url-index.json",
+            "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+            "json_pointer": "/entries/124"
+          },
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_5.json#/entries/1",
+      "source_matches": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/5",
+          "relation": "SAME_FIXED_REF_PATH",
+          "reading_scope_not_overwritten": true
+        },
+        {
+          "C07_url_entry": {
+            "file": "china/consolidated-sources/url-index.json",
+            "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+            "json_pointer": "/entries/122"
+          },
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_5.json#/entries/2",
+      "source_matches": [
+        {
+          "record": "proof-review/relay-durability-audit/SOURCE_MANIFEST.json#/files/9",
+          "relation": "SAME_FIXED_REF_PATH",
+          "reading_scope_not_overwritten": true
+        },
+        {
+          "C07_url_entry": {
+            "file": "china/consolidated-sources/url-index.json",
+            "file_sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f",
+            "json_pointer": "/entries/116"
+          },
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_6.json#/entries/0",
+      "source_matches": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/15",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_6.json#/entries/1",
+      "source_matches": [
+        {
+          "record": "west/trusted-entry-map/sources.json#/inputs/17",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_7.json#/entries/0",
+      "source_matches": [
+        {
+          "record": "china/progress-conditions/sources.json#/sources/0",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_7.json#/entries/1",
+      "source_matches": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/0",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_7.json#/entries/2",
+      "source_matches": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/4",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_8.json#/entries/0",
+      "source_matches": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/5",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_8.json#/entries/1",
+      "source_matches": [
+        {
+          "record": "mechanisms/interop-contracts/sources.json#/sources/4",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_8.json#/entries/2",
+      "source_matches": [
+        {
+          "record": "west/evidence-disputes/sources.json#/literature/0",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    },
+    {
+      "root_observation": "ROOT_SOURCE_REVIEW_8.json#/entries/3",
+      "source_matches": [
+        {
+          "record": "west/evidence-disputes/sources.json#/literature/1",
+          "relation": "EXACT_URL",
+          "reading_scope_not_overwritten": true
+        }
+      ],
+      "new_independent_work_count": 0,
+      "runtime_inferred": false
+    }
+  ],
+  "exact_record_mirrors": [
+    {
+      "record": "west/evidence-disputes/literature.json#/sources/0",
+      "same_record_as": "west/evidence-disputes/sources.json#/literature/0",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    },
+    {
+      "record": "west/evidence-disputes/literature.json#/sources/1",
+      "same_record_as": "west/evidence-disputes/sources.json#/literature/1",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    },
+    {
+      "record": "ROOT_SOURCE_REVIEW_9.json#/entries/0",
+      "same_record_as": "resource-lifecycle/sources.json#/sources/0",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    },
+    {
+      "record": "ROOT_SOURCE_REVIEW_9.json#/entries/1",
+      "same_record_as": "resource-lifecycle/sources.json#/sources/1",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    },
+    {
+      "record": "ROOT_SOURCE_REVIEW_9.json#/entries/2",
+      "same_record_as": "resource-lifecycle/sources.json#/sources/2",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    },
+    {
+      "record": "ROOT_SOURCE_REVIEW_9.json#/failed_candidates/0",
+      "same_record_as": "resource-lifecycle/sources.json#/failed_candidates/0",
+      "relation": "EXACT_JSON_MIRROR",
+      "new_read_or_work_count": 0
+    }
+  ]
+}

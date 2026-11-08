@@ -1,0 +1,19 @@
+{
+  "completed_at_utc": "2026-11-08T07:45:18.456790+00:00",
+  "mutation": "Only isolated expiry-none.cfg: INVARIANTS Init instead of INVARIANTS TypeOK NoDuplicate",
+  "original_cfg_sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+  "mutated_cfg_sha256": "f984503b698a935fe53feb5c7c99f3c21410414882f78bddda7d1450cdc5a634",
+  "runner_sha256": "87c273c62dbce044f3aa3d5075513bf17481cf34d97afe10e6663f3253d2043a",
+  "command": [
+    "python3",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/runner-probe/run_expiry.py",
+    "--jar",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+    "--output",
+    "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/expiry-contract-audit/runner-probe-results"
+  ],
+  "runner_exit_code": 0,
+  "stdout": "{\"mode\": \"none\", \"exit_code\": 12, \"summary\": [\"Error: Invariant Init is violated.\", \"Error: The behavior up to this point is:\", \"2 states generated, 2 distinct states found, 0 states left on queue.\", \"The depth of the complete state graph search is 2.\", \"Finished in 00s at (2026-11-07 23:45:16)\"]}\n{\"mode\": \"admission\", \"exit_code\": 12, \"summary\": [\"Error: Invariant NoDuplicate is violated.\", \"Error: The behavior up to this point is:\", \"131 states generated, 81 distinct states found, 8 states left on queue.\", \"The depth of the complete state graph search is 10.\", \"Finished in 00s at (2026-11-07 23:45:17)\"]}\n{\"mode\": \"commit\", \"exit_code\": 0, \"summary\": [\"Model checking completed. No error has been found.\", \"115 states generated, 66 distinct states found, 0 states left on queue.\", \"The depth of the complete state graph search is 10.\", \"Finished in 00s at (2026-11-07 23:45:18)\"]}\n",
+  "stderr": "",
+  "meaning": "A successful runner with an Init violation demonstrates exit-code-only matching; it does not invalidate the original NoDuplicate traces."
+}

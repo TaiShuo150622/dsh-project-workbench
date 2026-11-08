@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="75e9d6075d47">
+<title>W13 · 旧意图补漏核对备忘</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#六项处理建议">六项处理建议</a></li><li class="l2"><a href="#已覆盖-不重复扩展">已覆盖，不重复扩展</a></li><li class="l2"><a href="#一个贯穿例子-链接检查器的新能力">一个贯穿例子：链接检查器的新能力</a></li><li class="l2"><a href="#阅读边界">阅读边界</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">2026-11-08</span><span class="chip">只读公开归档；对照统一主稿 v0.1.5。</span></div>
+<h1>W13 · 旧意图补漏核对备忘</h1>
+</header>
+<p><strong>结论：主线已经连起来，没有发现需要新增一批功能的空白。</strong> 仍建议补强两项旧稿明确需求，交代一项历史已拍板计划的承接，再明确一条记录规则；另两项旧提案写清暂缓。以下“已明确/已拍板”来自公开稿自身标记，未回查私人会话，不能当作新施工授权。</p>
+<p>对照输入：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">统一主稿 v0.1.5</a>，SHA-256 <code>28d373e48c8305e2ccb51c77e9c4bcf1f2b1c11c9e58215c2f0af9453ea813af</code>；通读 428 行。公开原稿固定于 <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code>。</p>
+<h2 id="六项处理建议">六项处理建议</h2>
+<p><strong>IC01 · 改进对象包括工作流结构，采用时机也是决定的一部分</strong></p>
+<p>V3 自身将变更范围、生效时机列为已经明确需求；具体算法/底座仍待定。</p>
+<p>现有落点：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L250–286</a>；<a href="../../ARCHITECTURE-离线阅读版.html">ARCH L29–31</a>；<a href="../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">I L105–107</a>。双循环已覆盖，但主文和 I07 容易读成主要从失败中抽经验；新能力带来的机会、模块替换/结构重构，以及何时采用的比较较弱。</p>
+<p>建议：主文增一两句：新证据和新能力也能发起改进；在共同未来期限内比较保持、小修、替换、重构，并分别选择现在、下一模块或下一项目采用；结果是变更提案及复核义务。 不恢复旧净价值公式为已校准决策器，不增加 I01；自动试验/迁移授权仍待定。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L31–64</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L154–232</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L286–310</a>。</p>
+<p><strong>IC02 · 统一契约不等于把各领域的目标、预算和评价合成一个总分</strong></p>
+<p>V3 L57/L871 明确各领域独立管理；未决定跨领域统一资源分配。</p>
+<p>现有落点：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L54–92</a>；<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L238–248</a>；<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L273–297</a>。主文统一内核、预算与责任接管写得较细，却未显式重述领域边界，容易让读者推成自动跨领域权衡。</p>
+<p>建议：总体架构补一句：各领域目标、预算、评价保留各自作用域；共享协议和物理资源约束不自动引入跨领域价值换算或预算转移授权。 这不禁止共享机器容量治理；跨预算机制可作为能力研究，但实际转移仍需另定授权和归属。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L46–64</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L255–264</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L477–479</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">V3 L866–881</a>。</p>
+<p><strong>IC03 · H0 记录/技能试点尚需说明如何与 P/B、H/I 衔接</strong></p>
+<p>H0 稿头标为 2026-10-19 已拍板，末尾列 P1/P2/P4/P5 决定；§2 仍遗留“建议、需确认”标题。可确认是历史已采纳计划，不能据此替每个内部方案补出独立批准。 它不是当前开发状态。</p>
+<p>现有落点：<a href="../../DESIGN_RECONCILIATION-离线阅读版.html">RECON L26–41</a>；<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L353–385</a>；<a href="../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">I L94–107</a>。新文保留预测/检查/诊断语义和 P→B 排期，却未列 DSH-first 的意外记录、教训条目、发生时写入/校验与方法技能这一历史计划的承接状态。</p>
+<p>建议：沿革表加一行：H0 的方法模块可映射到 I05/I07 或独立试点，但继续、合并还是撤销原计划尚未在本轮决定；不能从新编号推定旧计划已完成或已放弃。 不恢复旧 40 题/80%/两周≥30 条等阈值与排期，不把旧 DSH 版本能力当现状；自用/不做商店仅保留历史语境，公开文档不等于安装分发产品。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%A8%BF.md">H0 L5–28</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%A8%BF.md">H0 L77–107</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%A8%BF.md">H0 L152–199</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%A8%BF.md">H0 L381–392</a>。</p>
+<p><strong>IC04 · 用户决定与 AI 提议必须在记录中保持不同身份</strong></p>
+<p>当前 Record 稿明确不可退让的语义边界；早期记录稿也强调来源标注和用户事件锚点。不是本轮新增产品功能。</p>
+<p>现有落点：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L121–152</a>；<a href="../../ARCHITECTURE-离线阅读版.html">ARCH L33–48</a>。来源/认证/授权已覆盖；摘要抽取不能替用户补理由、把助手提议写成已决定，尚缺一句直接可读的规则。</p>
+<p>建议：在 Record 材料分层后加一句：用户决定须能定位到相应用户事件；助手建议、模型推断和实际批准分型，未记录理由保留未知。 身份真实不保证内容真实；引用锚点检查也不等于用户已批准所有相关动作。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC0 L45–48</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC0 L214–230</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC12 L46–46</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC12 L376–376</a>。</p>
+<p><strong>IC05 · 会话外人工操作捕获保留为后续接入问题</strong></p>
+<p>REC0 是早期历史设计，提出 shell/编辑器/notebook 捕获；未找到其已批准进入本轮首切片的证据。</p>
+<p>现有落点：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L125–129</a>；<a href="../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">I L103–107</a>。当前三时序以会话轮后为入口，旧稿对用户在会话外改文件、回退代码的关注没有独立去向；不能因此承诺全域监听。</p>
+<p>建议：范围说明列为暂缓：未来按明确项目/渠道接入外部观察；首轮可用显式导入/已授权工具读回保留原改动和来源，不需要常驻采集器。 文件差异不能直接证明由人产生；来源未识别应标未知。永久全量保留、无成本捕获、时间戳证明未见答案均不继承。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC0 L3–17</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC0 L30–48</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">REC0 L122–134</a>。</p>
+<p><strong>IC06 · 状态合并与后台呈现员没有被旧稿批准，不补成默认功能</strong></p>
+<p>DAG11 L29、L329、L360–368 明确待用户回答；正文状态合并、订阅与呈现员都是提案。</p>
+<p>现有落点：<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">MAIN L176–200</a>；<a href="../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">I L100–100</a>。统一语义可保留，但不能让读者误以为已决定迁移两个插件的状态、自动开图或把选区变成执行授权。</p>
+<p>建议：专题索引明确暂缓工作单元合并、图节点订阅、后台呈现员；已可继承的交互约束是稳定选择、草稿不自动发送、新旧视图/失败可辨。 view seq 只挡旧视图回执，不是普通命令的 history 绑定；UI cancel 不证明后端工作停止。历史耗时目标不升为性能承诺。</p>
+<p>依据：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/11-%E5%80%9F%E9%89%B4SuperAgent%E6%9E%B6%E6%9E%84%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">DAG11 L174–249</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/11-%E5%80%9F%E9%89%B4SuperAgent%E6%9E%B6%E6%9E%84%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">DAG11 L253–303</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/11-%E5%80%9F%E9%89%B4SuperAgent%E6%9E%B6%E6%9E%84%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">DAG11 L327–368</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/08-%E9%9D%A2%E6%9D%BF%E5%8D%8F%E8%AE%AEv2%E7%AC%AC%E4%B8%80%E7%89%88.md">DAG08 L19–53</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/08-%E9%9D%A2%E6%9D%BF%E5%8D%8F%E8%AE%AEv2%E7%AC%AC%E4%B8%80%E7%89%88.md">DAG08 L74–95</a>。</p>
+<h2 id="已覆盖-不重复扩展">已覆盖，不重复扩展</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">方向</th><th style="text-align:left">当前覆盖与结论</th></tr></thead><tbody><tr><td style="text-align:left">工具发现/加载/权限</td><td style="text-align:left">已覆盖能力目录、投影、形态与退出通道；3–8 工具及旧实验阈值已正确收窄。</td></tr><tr><td style="text-align:left">条件提问与自主推进</td><td style="text-align:left">已保留先查约束、关键歧义才问与授权不重复；无需新增提问流程。</td></tr><tr><td style="text-align:left">Record 三时序与自主本体</td><td style="text-align:left">已覆盖执行前独立组装、增量水位与本体消融；不退回仅历史问答。只复用 W09 原选读范围与本轮行命中。</td></tr><tr><td style="text-align:left">远程 A/B 与本地 UI</td><td style="text-align:left">据 W09 原选读范围已映射每会话环境绑定、双模式与断线边界；没有证据要求本轮同时实现 A/B。未重读剩余全文。</td></tr><tr><td style="text-align:left">浏览器平台扩展</td><td style="text-align:left">能力声明与可替换执行边界已有落点；Win/Linux/Edge/Firefox/云后端是旧建议，未发现本轮遗漏的已采纳跨平台交付承诺。</td></tr><tr><td style="text-align:left">实时讨论输入</td><td style="text-align:left">W09 已全文核读，主稿已接时序/问题版本约束；本轮不重复，也不恢复活跃度方向。</td></tr></tbody></table></div>
+<h2 id="一个贯穿例子-链接检查器的新能力">一个贯穿例子：链接检查器的新能力</h2>
+<p>这是帮助阅读的假想例子，没有运行、也不增加默认任务。个人演示仓库正在交付 Markdown 链接检查器；用户在现有工具中手动回退一段解析逻辑，说明应保留一种语法。记录层保存这条实际纠正、来源和对象版本，未说明的理由仍标未知；无法确认回退作者时只记观察，不猜成人工意图。工作台把相关文件与检查作为稳定引用带入讨论，DAG 提供改动前影响范围。</p>
+<p>此时发现一个新的解析库：它没有使当前任务失败，但可能改善下一阶段。系统分别提出“本次小修”“替换解析模块”“下一项目采用”，在同一预定期限下比较交付质量、验证/迁移成本和人的工作量。当前运行保持固定版本，是否改变采用时机另行决定。远程执行如断线，按已选 A/B 模式核对原环境和效果；不能为了试新库中断健康任务。最终留下当前交付与一份有采用条件、时机和复核安排的改进候选，而不是因一次成功自动发布新工具。</p>
+<p>这个例子把 IC01 的“工作流改变决定”与 Record、DAG、远程路径相连。领域范围保持个人 Coding；不引入公司、量化或活跃度内容。</p>
+<h2 id="阅读边界">阅读边界</h2>
+<p>先盘点 7 个实际目录的 96 份 Markdown 元数据，哈希去重后没有完全相同内容的组；排除 2 份 activity 正文。选了 8 份此前未在 W09/W12 正文清单中的稿件，7 份通读、总体 v0.3 只读明确列出的决定/流程段。最新 Record、远程和实时稿复用先前范围；没有把选读或目录索引写成全文覆盖。详见 <a href="../../统一Harness工程与形式化基础讨论稿-v0.1.5.md">当前对照主稿</a>、<a href="READING-离线阅读版.html">阅读清单</a>、<a href="reading-list.json">机器清单</a> 与 <a href="mapping.json">逐条映射</a>。</p>
+<p>本轮不更新外部产品现状、不复测旧实验、不修改产品与旧稿、不提交或推送。新主稿若修改，应按输入 SHA 重查相应行；本备忘不自动代表对新版本仍存在遗漏。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

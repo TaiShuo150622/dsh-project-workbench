@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "validated_at_utc": "2026-11-08T10:06:28.374219+00:00",
+  "capture_cutoff_utc": "2026-11-08T08:35:43.419998+00:00",
+  "script_sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74",
+  "source_index_sha256": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b",
+  "network_requests": 0,
+  "scope": "Frozen metadata traceability, association preservation and local navigation; no external-source content verification or product test.",
+  "checked": {
+    "conditions": 3150,
+    "input_hashes": 16,
+    "resolved_pointers": 762,
+    "group_records": 219,
+    "document_records": 240,
+    "constructed_file_links": 14,
+    "root_review_records": 38,
+    "bibliographic_enrichment_records": 4,
+    "identity_relationships": 21,
+    "candidate_records": 4,
+    "literal_catalog_URL_pointers": 253
+  },
+  "reader_links": [
+    {
+      "file": "README.md",
+      "target": "SOURCE_INDEX.md",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "source-index.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "reading-observations.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "identity-opinion-bindings.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "url-index.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "scope-and-inputs.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "execution_receipt.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "validation_receipt.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "SHA256SUMS",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "reproducibility_receipt.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "README.md",
+      "target": "portable-validator-derivation.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../中国Harness机制核查讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/authority-scope/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/lifecycle-migration/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/cordis-boundary/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/cordis-boundary/READING_COVERAGE.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/context-evaluation/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/work-improvement/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../中国Harness机制核查讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "identity-opinion-bindings.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/practitioner-views/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../../FORMAL_MODEL.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/foundations/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../budget-proof/README.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "../bounded-models/README.md",
+      "role": "merged_research_navigation",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/china/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/foundations/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/cordis-boundary/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/work-improvement/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/context-evaluation/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/practitioner-views/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/west/authority-scope/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/lifecycle-migration/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "source-index.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "inputs/mechanisms/durability-boundary/sources.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "reading-observations.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "scope-and-inputs.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    },
+    {
+      "file": "SOURCE_INDEX.md",
+      "target": "execution_receipt.json",
+      "role": "within_index",
+      "exists_at_validation": true
+    }
+  ],
+  "errors": [],
+  "status": "PASS"
+}

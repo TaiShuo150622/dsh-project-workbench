@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0",
+  "study_id": "M12",
+  "title": "Record 内容处置与重处理的有限纸面契约",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "execution_scope_note": "actual_execution=false 指产品/合成模型/验收协议；文档 JSON/引用/哈希校验另记 validation.json。",
+  "accessed_at_utc": "2026-11-08T10:59:44.895300+00:00",
+  "input_root": "integration worktree; file paths relative to repository root",
+  "source_policy": "仅重读已有个人公开设计/本轮研究；未新增外部论文、厂商产品调研或法律资料。",
+  "inputs": [
+    {
+      "id": "R01",
+      "path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "date": "2026-11-06",
+      "coverage": [
+        [
+          632,
+          669
+        ]
+      ],
+      "lines": 1288,
+      "title": "Harness 底座架构重评讨论稿 v0.1.6",
+      "author_or_institution": "个人 Harness 设计资料；公开整理版",
+      "date_note": "公开整理日期；不作为当前产品验证日期。",
+      "claims": [
+        "原旧稿明确更正/有效期与删除不同，删除记忆需要检查索引、摘要、缓存残留。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R02",
+      "path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "date": "2026-11-06",
+      "coverage": [
+        [
+          266,
+          302
+        ]
+      ],
+      "lines": 413,
+      "title": "Record 智能记忆与自主上下文组装，源 v0.1.2 公开整理版",
+      "author_or_institution": "个人 Harness 设计资料；公开整理版",
+      "date_note": "公开整理日期；不作为当前产品验证日期。",
+      "claims": [
+        "原 Record 设计要求抽取/本体/组装策略版本化；撤销、删除、人工修正不能在重处理时无声复活。",
+        "本轮不重新核 SQLite/PostgreSQL 产品事实，也不采用具体数据库。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R03",
+      "path": "docs/research/harness-20261107/FORMAL_MODEL.md",
+      "sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "date": "2026-11-07",
+      "coverage": [
+        [
+          1,
+          87
+        ],
+        [
+          156,
+          172
+        ]
+      ],
+      "lines": 245,
+      "title": "统一 Harness 形式模型工作稿",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "P1 同日志重放依赖完整相同输入；P3 只追加条件下 Recorded 单调。",
+        "主体撤权、副本删除与可用性不同；派生发布、原文可读和可重新核验分开。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R04",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "8208c6371f85580289fe4a7003b52850a28286aa3f91f96962ec4503cac78814",
+      "date": "2026-11-08",
+      "coverage": [
+        [
+          35,
+          80
+        ]
+      ],
+      "lines": 221,
+      "title": "统一 Harness 架构与切片工作稿",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "原件保留策略另定；允许删除内容并仅保留获准最小审计元数据；不承诺所有历史永久保留。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R05",
+      "path": "docs/research/harness-20261107/west/evidence-disputes/state-definition.json",
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa",
+      "date": "2026-11-08",
+      "coverage": "全文",
+      "lines": 211,
+      "title": "W11 evidence-disputes state-definition",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "W11 WithdrawObservation 保留按 observation 身份的迟到 tombstone；CorrectObservation 是合成内存原子处理。",
+        "没有真实 ACL、覆盖采集、崩溃持久更正或一般内容删除模型。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R06",
+      "path": "docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "date": "2026-11-08",
+      "coverage": [
+        [
+          18,
+          24
+        ],
+        [
+          44,
+          54
+        ],
+        [
+          75,
+          88
+        ],
+        [
+          158,
+          178
+        ]
+      ],
+      "lines": 196,
+      "title": "Record 证据争议与修正讨论稿 v0.1.0",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "撤回不产生反证；纠正先验证替代关系；早到撤回不得被迟到原观察复活。",
+        "四态不是世界真值/行动权限，缺少可见材料不能制造一致。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R07",
+      "path": "docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c",
+      "date": "2026-11-08",
+      "coverage": [
+        [
+          1,
+          181
+        ]
+      ],
+      "lines": 181,
+      "title": "主体权限与结果可见性讨论稿 v0.1.0",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "Grant、内容生命周期、证据有效性和独立发布范围分别处理。",
+        "发布决定绑定 validityDependencies；可消费、可读原文、可再核验不等价。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R08",
+      "path": "docs/research/harness-20261107/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "date": "2026-11-08",
+      "coverage": "全文；复用本线前轮，重核有限域/尾部/披露条件",
+      "lines": 121,
+      "title": "有限声明域覆盖契约讨论稿 v0.1.0",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "coverage 只能由有限域、切点与逐项合格收据导出；访问拒绝不可静默删分母。",
+        "受限摘要与元数据披露单独授权；不能证明模型遗忘或无语义泄漏。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R09",
+      "path": "docs/research/harness-20261107/ROOT_LEGACY_REVIEW.json",
+      "sha256": "8565d53c07ab619b370cb8714975291e9528665cb12f96951bbdd80c43a87e03",
+      "date": "2026-11-08",
+      "coverage": "全文元数据 44 行；只援用删除/重处理及新增类型迁移记录，不代替原稿定向阅读。",
+      "lines": 44,
+      "title": "ROOT_LEGACY_REVIEW",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "root 已定向复核旧底座删除残留与 Record 重处理约束；此记录不代替本线源文阅读。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    },
+    {
+      "id": "R10",
+      "path": "docs/research/harness-20261107/china/legacy-closure/COVERAGE.md",
+      "sha256": "5ea9655f14660da6b291e3573a75e67dbf151180b2138f440ef92c7c8efef44e",
+      "date": "2026-11-08",
+      "coverage": "定向读取 L31 D04、L47 后续方向；未声称全文。",
+      "lines": 49,
+      "title": "C13 legacy-closure COVERAGE",
+      "author_or_institution": "Codex / personal Harness research lines",
+      "date_note": "源文标注日期/本轮研究日期；内容身份以所列 SHA 固定。",
+      "claims": [
+        "C13 D04 找回类型身份、合类映射、拆类待核与删除传播；本 M12 只处理删除/重处理，类型迁移留后续。"
+      ],
+      "limits": [
+        "仅列明范围已读；未重跑源文测试、证明、产品或历史实验。"
+      ]
+    }
+  ],
+  "contract_derivations": [
+    {
+      "id": "RC01",
+      "topic": "分型处置不互相冒充",
+      "source_ids": [
+        "R03",
+        "R05",
+        "R06",
+        "R07"
+      ],
+      "proposal": "证据资格、当前授权、内容保管、限定审计及派生发布分别判断。"
+    },
+    {
+      "id": "RC02",
+      "topic": "有限副本与残留范围",
+      "source_ids": [
+        "R01",
+        "R02",
+        "R04",
+        "R08"
+      ],
+      "proposal": "冻结受管表示域和处理规则，元数据也受保留/披露政策约束。"
+    },
+    {
+      "id": "RC03",
+      "topic": "迟到生产者与旧快照",
+      "source_ids": [
+        "R02",
+        "R03",
+        "R05",
+        "R08"
+      ],
+      "proposal": "来源版本/lineage 与处置水位绑定；写入/发布重检与处置有共同顺序或等价保证，恢复先补处置控制状态。"
+    },
+    {
+      "id": "RC04",
+      "topic": "删除后审计与重放",
+      "source_ids": [
+        "R03",
+        "R04",
+        "R07"
+      ],
+      "proposal": "删除 payload 不继承原 P1 完整输入或 P3 无限保留；受限历史表示与逐字重放分开。"
+    },
+    {
+      "id": "RC05",
+      "topic": "派生结果依赖",
+      "source_ids": [
+        "R07",
+        "R08"
+      ],
+      "proposal": "单主体撤权不自动删独立发布；新的有效明确删除范围也不能被旧 release 永久豁免。"
+    }
+  ],
+  "review": {
+    "kind": "SAME_MODEL_SEPARATE_CONTEXT_READ_ONLY_REVIEW",
+    "agent": "retention_counterreview",
+    "independent_model": false,
+    "product_or_model_experiment_execution": false,
+    "reviewed_inputs": [
+      "R03",
+      "R04",
+      "R05",
+      "R07",
+      "R08"
+    ],
+    "key_findings_integrated": [
+      "按 observationId 的 tombstone 不自动阻止从旧 source 重新提取新 ID。",
+      "独立摘要既不能被别人的局部撤权误删，也不因曾发布而永久豁免新的有效处置。",
+      "正文删去后，旧回执/快照/内联 manifest 仍可能返回原文；受限审计与完整原文重放须分开。"
+    ]
+  },
+  "unproven_assumptions": [
+    "真实认证和处置权由宿主提供；本文不判断法律依据。",
+    "有限域枚举/lineage 和缺口可核；无法发现任意语义改写副本。",
+    "指定写入/交付入口全部受到所声明的处置一致性约束；单个 epoch 字段不是证明。",
+    "控制标记的保留许可与回流窗口可协调；不能假定永久保存。",
+    "后端删除回执的语义明确；本文不扩展成物理介质擦除、外部世界清除或模型遗忘。",
+    "没有借有限覆盖的 complete 创造新的万能完成状态；处理覆盖不等于真实删除效果。"
+  ],
+  "scope_exclusions": [
+    "不新建中心存储",
+    "不操作真实资料、备份、服务或凭据",
+    "不实施删除器/迁移器/模型遗忘",
+    "不提供法律合规建议",
+    "不扩展 D04 类型迁移的实现"
+  ],
+  "reread_updates": [
+    {
+      "id": "R04",
+      "previous_sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "reread_sha256": "8208c6371f85580289fe4a7003b52850a28286aa3f91f96962ec4503cac78814",
+      "reason": "Root integrated legacy-closure/adoption amendments during the review; relevant sections reread, compatible with this proposal."
+    },
+    {
+      "id": "R09",
+      "previous_sha256": "d1bf8ca600e109327388675608cbca35890a93fdec3435528c4614a0691c7664",
+      "reread_sha256": "8565d53c07ab619b370cb8714975291e9528665cb12f96951bbdd80c43a87e03",
+      "reason": "Root integrated legacy-closure/adoption amendments during the review; relevant sections reread, compatible with this proposal."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "actions": {
+    "correct": {
+      "states": 364,
+      "transitions": 1664,
+      "max_shortest_depth": 11
+    },
+    "omit_dispatch_recheck": {
+      "states": 364,
+      "transitions": 1672,
+      "max_shortest_depth": 11
+    },
+    "cancel_means_not_applied": {
+      "states": 308,
+      "transitions": 1356,
+      "max_shortest_depth": 10
+    }
+  },
+  "support": {
+    "formula_count_per_node": 121,
+    "networks": 14641,
+    "stable_assignments_checked": 117128,
+    "transitions_checked": 351384,
+    "additions_checked": 175692,
+    "withdrawals_checked": 175692,
+    "clear_all_descendants_failing_transitions": 25875,
+    "stale_seed_failing_transitions": 22362
+  },
+  "budget": {
+    "correct": {
+      "states": 264,
+      "transitions": 776,
+      "max_shortest_depth": 8
+    },
+    "forget_unreported": {
+      "states": 1862,
+      "transitions": 7255,
+      "max_shortest_depth": 11
+    }
+  },
+  "acceptance": {
+    "states": 238244,
+    "transitions": 1393170,
+    "max_shortest_depth": 13
+  },
+  "checks_passed": true
+}

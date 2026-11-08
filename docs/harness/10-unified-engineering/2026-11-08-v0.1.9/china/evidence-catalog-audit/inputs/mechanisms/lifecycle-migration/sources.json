@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0.0",
+  "topic": "M-05 长期任务跨版本续接",
+  "status": "STATIC_RESEARCH_COMPLETE",
+  "accessed_at_utc": "2026-11-08",
+  "actual_execution": false,
+  "source_group_count": 6,
+  "evidence_policy": "官方文档与固定源码的静态阅读；文档提交日期不是特性发布日期，未固定或运行 SDK/服务版本。DBOS Python/TypeScript 为同机制配对核对。",
+  "sources": [
+    {
+      "id": "T1",
+      "title": "Safe deployments",
+      "author_or_institution": "Temporal documentation maintainers",
+      "date": {
+        "kind": "documentation_snapshot_commit",
+        "value": "2026-11-06T19:42:02Z"
+      },
+      "url": "https://docs.temporal.io/develop/safe-deployments",
+      "repository": "temporalio/documentation",
+      "commit": "3fcf3f34596030d06979e9e3c68ab4964900b4a9",
+      "file": "docs/develop/safe-deployments.mdx",
+      "permalink": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/develop/safe-deployments.mdx",
+      "reading_coverage": "Read complete 112-line raw MDX. Relevant ranges 9–52 and 77–112.",
+      "claims": [
+        "区分确定工作流代码与活动代码；破坏兼容的变化需要版本隔离或 patch。",
+        "用相同候选代码重放既有历史，再部署 worker；给定历史是验证输入。",
+        "该快照明确 eager start 不遵守 worker versioning。"
+      ],
+      "limits": [
+        "未运行 replay test 或 server；不证明所有历史及未来分支。",
+        "未据此断言所有 SDK 或后续版本均存在相同 eager-start 限制。"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Recover pinned Workflows",
+      "author_or_institution": "Temporal documentation maintainers",
+      "date": {
+        "kind": "documentation_snapshot_commit",
+        "value": "2026-11-06T19:42:02Z"
+      },
+      "url": "https://docs.temporal.io/production-deployment/worker-deployments/recover-pinned-workflows",
+      "repository": "temporalio/documentation",
+      "commit": "3fcf3f34596030d06979e9e3c68ab4964900b4a9",
+      "file": "docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "permalink": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "reading_coverage": "Read complete 253-line raw MDX. Decision logic 99–124, signal/update choices 128–196, closed reset and eventual visibility 199–242.",
+      "claims": [
+        "已有 pinned workflow 不随新流量回退自动迁移；覆盖路由仍需要 replay-safe 目标。",
+        "重启能力和状态完整性决定恢复路线，reset 后消息重应用有不同选择。",
+        "关闭执行 reset 非幂等；Visibility 最终一致；排空与清理有独立条件。"
+      ],
+      "limits": [
+        "面向启用 worker versioning 的 pinned 工作流及指定部署模式；不是任意工作流恢复定理。",
+        "文档对特定 Running 查询批操作的幂等说明不推出外部副作用 exactly-once。"
+      ]
+    },
+    {
+      "id": "D1",
+      "title": "Upgrading Workflows — Python and TypeScript",
+      "author_or_institution": "DBOS documentation maintainers",
+      "date": {
+        "kind": "documentation_snapshot_commit",
+        "value": "2026-10-30T21:07:51Z"
+      },
+      "url": "https://docs.dbos.dev/python/tutorials/upgrading-workflows",
+      "repository": "dbos-inc/dbos-docs",
+      "commit": "d280ec8f513ecfd39f68784ce598d28832d4557e",
+      "file": "docs/python/tutorials/upgrading-workflows.md",
+      "permalink": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "paired_file": {
+        "url": "https://docs.dbos.dev/typescript/tutorials/upgrading-workflows",
+        "file": "docs/typescript/tutorials/upgrading-workflows.md",
+        "permalink": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/typescript/tutorials/upgrading-workflows.md"
+      },
+      "reading_coverage": "Read full Python 224 lines and TypeScript 226 lines. Python patch internals 102–110, auto-upgrade 112–150, default version 153–174; paired TypeScript 111–174.",
+      "claims": [
+        "patch 由当前位置的历史决定分支；升级前启动但尚未到达该位置的任务可走新分支。",
+        "废弃与删除 marker 分阶段；过早移除或漏 patch 会出现步骤不兼容。",
+        "默认工作流源码哈希是 application version，可覆盖配置；通常只恢复版本匹配的任务。",
+        "auto-upgrade 是 Enterprise 功能且要求破坏性改动已 patch；PENDING 旧进程可能仍在运行；文档只承诺协调结果记录。"
+      ],
+      "limits": [
+        "未读取并发执行协议实现，未运行任何 DBOS 代码；结果记录协调不等于目标端无重复效果。",
+        "Python grace 单位秒、TypeScript 毫秒；API 与单位不能跨 SDK 套用。",
+        "源码版本标签不构成解释器、依赖、工具语义和 payload codec 全兼容证明；这是本研究推断。"
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "Hosting DBOS Applications with Kubernetes",
+      "author_or_institution": "DBOS documentation maintainers",
+      "date": {
+        "kind": "documentation_snapshot_commit",
+        "value": "2026-10-30T21:07:51Z"
+      },
+      "url": "https://docs.dbos.dev/production/hosting-with-kubernetes",
+      "repository": "dbos-inc/dbos-docs",
+      "commit": "d280ec8f513ecfd39f68784ce598d28832d4557e",
+      "file": "docs/production/hosting-with-kubernetes.md",
+      "permalink": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/production/hosting-with-kubernetes.md",
+      "reading_coverage": "Only introductory conceptual sections lines 1–62 of 890 read. Most relevant: database privilege separation 31–38, workflow upgrades 50–57.",
+      "claims": [
+        "活动应用版本可各用独立 Deployment，HTTP 新流量路由最新，旧版本排空后退出；也可采用单 Deployment 加兼容 patch。",
+        "系统数据库迁移可独立于应用权限执行。"
+      ],
+      "limits": [
+        "未审读后续部署演练或云环境配置，未操作 Kubernetes。",
+        "新流量路由、数据库模式升级与历史执行兼容不能互相替代；是本文提出的分层。"
+      ]
+    },
+    {
+      "id": "C1",
+      "title": "A Programming Paradigm for Spatiotemporal Composability",
+      "authors": [
+        "Yifan Shi",
+        "Wei Zhang",
+        "Tianyi Cui"
+      ],
+      "author_or_institution": "Paper authors; title-page affiliations Peking University and DeepSeek-AI",
+      "date": {
+        "kind": "arxiv_v1_submission",
+        "value": "2026-08-26T08:22:19Z"
+      },
+      "url": "https://arxiv.org/abs/2608.25512v1",
+      "full_text_url": "https://arxiv.org/pdf/2608.25512v1",
+      "version": "v1",
+      "pdf_pages": 92,
+      "pdf_sha256": "390775dbc9debdcf2ed1b076eed013387ca057630be3cb594617b2b742e48cf0",
+      "reading_coverage": "This round re-read §7.3, PDF pages 79–80. Prior selected proof/implementation review is ../cordis-boundary/READING_COVERAGE.md; not repeated in full.",
+      "claims": [
+        "Cordis reload reverts tracked effects and reapplies from a clean slate; component-owned in-memory state does not survive unless in a longer-lived dependency.",
+        "DSU-style forward migration atop revertible effects is future work in v1."
+      ],
+      "limits": [
+        "不是持久工作流任意版本的状态迁移协议；不推出远端不可逆效果恢复。",
+        "未重读或验证全部 92 页证明，本轮没有建立论文到 DSH 实现的形式精化关系。"
+      ]
+    },
+    {
+      "id": "C2",
+      "title": "DeepSeek Harness vendored Cordis Fiber lifecycle implementation",
+      "author_or_institution": "deepseek-ai/deepseek-harness repository contributors",
+      "date": {
+        "kind": "repository_commit",
+        "value": "2026-11-04T08:40:00Z"
+      },
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746",
+      "repository": "deepseek-ai/deepseek-harness",
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "file": "vendor/cordis/src/fiber.ts",
+      "permalink": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "raw_file_sha256": "b64c3a97f15f0381479dcf3d25965e56dc4cecfa4a0881fc055a49f65b9945df",
+      "reading_coverage": "This round directly fetched fixed raw file, inspected 681–746; prior round read broader Fiber/tool integration. Fixed raw file has 820 lines; locators refer to raw source, not web parser line numbering.",
+      "claims": [
+        "reload stores dependencies and checks local epoch around execution.",
+        "unload waits for dependents and disposer tasks; caught cleanup exceptions are logged; if the logger returns normally, dependency relationships are released before reload/inactive transition."
+      ],
+      "limits": [
+        "Static reading only; no third-party code executed.",
+        "该切片未提供跨进程持久任务状态迁移或目标端效果终止证明；没有宣称整个仓库绝无其他能力。"
+      ]
+    }
+  ],
+  "proposal_only_topics": [
+    "session resume 与耐久控制点的区分",
+    "不可变事件与只读 upcast 协议",
+    "完整执行组合与模型输出重放边界",
+    "工具/副作用身份、旧请求迟到、权限撤回",
+    "知识索引重建与当前权限",
+    "有限支持窗口、责任交接及退役条件"
+  ]
+}

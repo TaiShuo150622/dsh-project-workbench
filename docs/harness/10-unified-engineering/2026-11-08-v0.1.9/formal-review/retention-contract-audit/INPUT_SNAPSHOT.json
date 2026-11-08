@@ -1,0 +1,65 @@
+{
+  "captured_at_utc": "2026-11-08T11:04:30.145622+00:00",
+  "files": [
+    {
+      "path": "inputs/M12/CONTRACT.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/retention-replay-contract/CONTRACT.md",
+      "sha256": "815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f",
+      "bytes": 6825
+    },
+    {
+      "path": "inputs/M12/scenarios.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/retention-replay-contract/scenarios.json",
+      "sha256": "8253941a3692f5e805aa3a1142804f2faf0de83bf5134a977c8908cf1df6a478",
+      "bytes": 12612
+    },
+    {
+      "path": "inputs/M12/sources.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/retention-replay-contract/sources.json",
+      "sha256": "677959e0d912edcd8819c77bd4c9e3281468c292de02ce1333a150190b0141db",
+      "bytes": 13466
+    },
+    {
+      "path": "inputs/M12/validation.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/retention-replay-contract/validation.json",
+      "sha256": "a11a7492ba4eae34588fb036d5f32943e99029dcc92c0ee3b2bbd0cdd27e5d6f",
+      "bytes": 3227
+    },
+    {
+      "path": "inputs/basis/FORMAL_MODEL.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "sha256": "b9f14c9ef19391acdc042d78487c71b01ec857e2863182ccb1cc7f82e0e746b4",
+      "bytes": 37579
+    },
+    {
+      "path": "inputs/basis/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "bytes": 16436
+    },
+    {
+      "path": "inputs/basis/west/evidence-disputes/state-definition.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evidence-disputes/state-definition.json",
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa",
+      "bytes": 7164
+    },
+    {
+      "path": "inputs/basis/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "bytes": 7803
+    },
+    {
+      "path": "inputs/basis/mechanisms/coverage-contract/contract.json",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/coverage-contract/contract.json",
+      "sha256": "c6a524ee2527ae570c85a1a12aa69e3bc596d48ccba716b95a4776c1b63b0b85",
+      "bytes": 15618
+    },
+    {
+      "path": "inputs/basis/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c",
+      "bytes": 17561
+    }
+  ]
+}

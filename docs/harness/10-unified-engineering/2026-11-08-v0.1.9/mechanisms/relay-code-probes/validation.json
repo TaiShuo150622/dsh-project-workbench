@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "validated_at_utc": "2026-11-08T08:41:41.400278+00:00",
+  "probe_execution": true,
+  "real_host_execution": false,
+  "product_sources_modified": false,
+  "m06_artifacts_match_existing_manifest": true,
+  "checks": {
+    "source_copies_equal_fixed_git_objects": true,
+    "probe_results_and_assertions": true,
+    "probe_count": 5,
+    "local_markdown_links": 7,
+    "probe_source_matches_executed_sha": true,
+    "input_manifest_matches_executed_sha": true
+  },
+  "artifact_sha256": {
+    "README.md": "0e51ba42e985817c54dd6385534aa7ffa08e32ef1eda5889cd3ac1a52ba81ba5",
+    "input-manifest.json": "1f37d56daa82a153166970e553c498562fb3236a2b9e4a267c08f42f87fea48b",
+    "inputs/native.mjs": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+    "inputs/projects.mjs": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+    "results.json": "588c43f485fe0e62aecaf5795e850e2545efc22406d5a1ce88727889cc82f098",
+    "run-probes.mjs": "4ac85f16a2be3997e0d29490acbedb6e1d17dea1e3174b82d48f9be983382db8"
+  },
+  "limits": [
+    "Only controlled fakes supplied storage behavior.",
+    "No real host loss, durability or external-effect claim."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "copied_at_utc": "2026-11-08T09:55:03.650369+00:00",
+  "files": [
+    {
+      "path": "mechanisms/composition-review/REVIEW.md",
+      "source_worktree": "mechanisms",
+      "bytes": 4949,
+      "sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d"
+    },
+    {
+      "path": "mechanisms/composition-review/counterexamples.json",
+      "source_worktree": "mechanisms",
+      "bytes": 6134,
+      "sha256": "2636353f0cbf6c8c801c7c4b546537717341f588db50d78cf0f756169378d895"
+    },
+    {
+      "path": "mechanisms/composition-review/inputs.json",
+      "source_worktree": "mechanisms",
+      "bytes": 4603,
+      "sha256": "0cb10b502ce5cccb54e31bebc46cca8cf76d248769e084ec661daa6c6d2a45e9"
+    },
+    {
+      "path": "mechanisms/composition-review/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 1106,
+      "sha256": "de1676c6295059959798e85cbdbd7efc9aef49ade227ad8a21f94decdea80092"
+    }
+  ]
+}

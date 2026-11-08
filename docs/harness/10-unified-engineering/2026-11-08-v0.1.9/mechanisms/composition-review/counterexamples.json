@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "status": "CONSTRUCTED_NOT_RUN",
+  "actual_execution": false,
+  "cases": [
+    {
+      "id": "CR01",
+      "sources": [
+        "F",
+        "A",
+        "W11",
+        "W11-state",
+        "M08",
+        "M08-map"
+      ],
+      "composition_edge": "protocol status → observation predicate → assessment → local accept/Record Acceptance",
+      "construction": "Synthetic task requires a valid report at a fixed version; that report does not exist. The interface observations below are compatible with this world.",
+      "trace": [
+        {
+          "step": 1,
+          "observation": "MCP tools/call task status=completed; CallToolResult.isError=true",
+          "scope": "Underlying method returned an ordinary tool result; no valid report witness."
+        },
+        {
+          "step": 2,
+          "observation": "Workbench phase changes review→completed via local accept",
+          "scope": "Local workflow transition; no Record Acceptance binding supplied."
+        },
+        {
+          "step": 3,
+          "unsafe_adapter": "Creates positive observation for 'report meets criterion', sets coverage=complete and Accepted=true solely from the two status strings."
+        }
+      ],
+      "unsafe_conclusion": "The report is valid and may be published.",
+      "reason": "Protocol result, task criterion and acceptance binding are different predicates. W11 truth/action_permission remain NOT_COMPUTED and cannot repair an incorrectly scoped input claim.",
+      "safe_relation": "Preserve raw method outcome and local transition; evaluate the actual report criterion under explicit coverage/policy before a separate acceptance/authorization decision.",
+      "counterexample_target": "Naive cross-layer promotion, not P3/P5 or a verified product path.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "validation_scope": "Only document/schema/reference consistency is checked. No simulator or adapter executed."
+    },
+    {
+      "id": "CR02",
+      "sources": [
+        "F",
+        "C08",
+        "R12",
+        "R12-code",
+        "M08",
+        "M08-map"
+      ],
+      "composition_edge": "protocol completion of handoff wrapper → responsibility receipt → original effect/budget state",
+      "construction": "An old action remains unknown and can still consume within its outstanding bound. A distinct wrapper task is to deliver/accept a custody packet.",
+      "trace": [
+        {
+          "step": 1,
+          "observation": "Recipient accepts custody for explicit obligation o/action a/generation g; effect remains unknown."
+        },
+        {
+          "step": 2,
+          "observation": "Provider marks the handoff wrapper A2A task COMPLETED."
+        },
+        {
+          "step": 3,
+          "unsafe_adapter": "Collapses wrapper task ID/scope with original action; invokes model-like terminal resolution and releases the old budget claim."
+        }
+      ],
+      "unsafe_conclusion": "The original external action can no longer consume or write.",
+      "reason": "HandoffReceived/custody and wrapper-task success do not supply R12's assumed authoritative terminal fact. R12 unknown permits future consumption; terminal excludes it by assumption, not by ACK.",
+      "safe_relation": "Update obligation owner/acceptanceKind only; retain original effect identity, unknown state and budget claim until appropriately scoped target evidence and settlement rules apply.",
+      "counterexample_target": "Invalid refinement into ObserveAuthoritativeTerminal; no real-host effect was executed.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "validation_scope": "Only document/schema/reference consistency is checked. No simulator or adapter executed."
+    },
+    {
+      "id": "CR03",
+      "sources": [
+        "F",
+        "A",
+        "W11",
+        "C08",
+        "R12",
+        "R12-code",
+        "M08-map"
+      ],
+      "composition_edge": "handoff watermark/old assessment → new host current policy → operation Grant",
+      "construction": "History h1 has a cut at sequence 10 under policy pi1; a read/Observe Grant belongs to a named principal and expires at T. No Settle Grant exists. The consumer profile requires current operation-specific authorization.",
+      "trace": [
+        {
+          "step": 1,
+          "observation": "Assessment and handoff receipt bind h1/incarnation1/10, old policy, obligation/action generation and Observe scope."
+        },
+        {
+          "step": 2,
+          "observation": "The source appends counterevidence or revocation after the cut. A new host has local history h2/incarnation2/10 and explicit ClockObserved(T+1).",
+          "scope": "The same integer does not identify the same prefix. Tail completeness is not established."
+        },
+        {
+          "step": 3,
+          "unsafe_adapter": "Compares watermark integers only, treats previous coverage as complete, reuses old Observe receipt as authorization for recipient's Settle operation."
+        }
+      ],
+      "unsafe_conclusion": "Old assessment is current and the new Settle operation is authorized.",
+      "reason": "History namespace, tail coverage, policy/time inputs, authenticated actor and operation scope were dropped. A historically true observation is not a current operation grant.",
+      "safe_relation": "Keep namespaced cuts and explicit coverage/loss; re-evaluate relevant policy/time/subject inputs and check the exact operation Grant. Unknown tail stays unknown; it is not manufactured counterevidence.",
+      "counterexample_target": "Unsafe composition under an explicitly strong current-authorization profile. R12 does not model Commit/Settle actor/Grant, so this is not claimed as a violation found in its original state graph.",
+      "status": "CONSTRUCTED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NO_RUNTIME_RESULT",
+      "validation_scope": "Only document/schema/reference consistency is checked. No simulator or adapter executed."
+    }
+  ]
+}

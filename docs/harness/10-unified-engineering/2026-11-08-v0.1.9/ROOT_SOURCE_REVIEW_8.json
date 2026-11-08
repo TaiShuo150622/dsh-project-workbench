@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "accessed_at_utc": "2026-11-08T09:44:03.698686+00:00",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "INTEROP-root-a2a-fixed-proto",
+      "title": "A2A v1.0.1 fixed proto binding",
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+      "blob_sha": "400cdbad934654e27d7abbae1e145923eb40ac52",
+      "location": "Selected fixed-file lines 60-91, especially 76-80",
+      "root_review_note": "SubscribeToTask HTTP annotation uses GET; compare the same-release specification table before selecting a binding profile. No deployed SDK behavior was tested.",
+      "status": "fixed_primary_code_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "INTEROP-root-a2a-fixed-spec",
+      "title": "A2A v1.0.1 fixed specification binding and response mode",
+      "url": "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+      "blob_sha": "382185a53b312cd6a60f5ac536ec5a356437ce77",
+      "location": "Selected fixed-file lines 1159-1180 and 428-453; prior versioned-page selected reading is separate",
+      "root_review_note": "Method table uses POST for SubscribeToTask while proto uses GET. The execution configuration states default blocking behavior with return_immediately. Root preserves the same-release difference rather than silently resolving it through an untested SDK.",
+      "status": "fixed_primary_document_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "DISPUTE-root-four-values",
+      "title": "Making Belnap Useful Four-Valued Logic Useful, Sutcliffe Pelletier Hazen 2018",
+      "url": "https://cdn.aaai.org/ocs/17599/17599-77711-1-PB.pdf",
+      "location": "PDF pages 1-2, returned lines 0-183, background and selected conditional discussion",
+      "root_review_note": "Four values and truth/information orders are established prior work. Designated logical values include Both; the Harness operation policy remains a separate proposed mechanism. Root did not reread Belnap 1977 originals or adopt the paper conditional extensions.",
+      "status": "primary_paper_selected_text_reopened",
+      "runtime_tested": false
+    },
+    {
+      "id": "DISPUTE-root-provenance",
+      "title": "Provenance Semirings, Green Karvounarakis Tannen 2007",
+      "url": "https://web.cs.ucdavis.edu/~green/papers/pods07.pdf",
+      "location": "Initial web returned PDF pages 1-2 and start of page 3, lines 0-216; direct official-PDF fetch and pypdf extraction then read complete PDF pages 3-4 (positive relational algebra and provenance polynomials). Two web range retries timed out before successful direct fetch.",
+      "root_review_note": "Selected sections distinguish joint and alternative derivations and explain why a flat contributor set loses how-provenance. Root uses this as prior work, not as a proof of Harness retraction, opposing evidence, temporal applicability or authorization. Statistical independence requires separate assumptions. Full paper not read, paper not redistributed.",
+      "status": "primary_paper_selected_text_reopened",
+      "runtime_tested": false,
+      "sha256": "74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0"
+    }
+  ]
+}

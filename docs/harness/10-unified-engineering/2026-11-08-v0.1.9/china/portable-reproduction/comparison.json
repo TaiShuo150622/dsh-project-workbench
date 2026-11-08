@@ -1,0 +1,455 @@
+{
+  "status": "PASS",
+  "compared_at_utc": "2026-11-08T10:31:41.081887+00:00",
+  "scope": "Frozen exported research-model reproduction, same macOS host; not new scientific or product evidence",
+  "conditions_checked": 184,
+  "errors": [],
+  "first_model_failure": null,
+  "execution_input_hashes_unchanged": 49,
+  "lean": [
+    {
+      "id": "lean-dag",
+      "stdout_byte_equal": true,
+      "stderr_empty": true,
+      "axioms_printed": [
+        "'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]"
+      ],
+      "stdout_sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03"
+    },
+    {
+      "id": "lean-budget",
+      "stdout_byte_equal": true,
+      "stderr_empty": true,
+      "axioms_printed": [
+        "'HarnessBudget.step_preserves' depends on axioms: [propext, Quot.sound]",
+        "'HarnessBudget.run_preserves' depends on axioms: [propext, Quot.sound]",
+        "'HarnessBudget.actual_spent_le_exposure' depends on axioms: [propext, Quot.sound]",
+        "'HarnessBudget.finite_run_budget_safety' depends on axioms: [propext, Quot.sound]",
+        "'HarnessBudget.from_empty_finite_run_safe' depends on axioms: [propext, Quot.sound]"
+      ],
+      "stdout_sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20"
+    }
+  ],
+  "deterministic_results": [
+    {
+      "id": "python-bounded",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35",
+      "new_sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35"
+    },
+    {
+      "id": "C08-progress",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "06f7d86aa443c9752cf51652988991362ffb13480e59e195e89425844db24c92",
+      "new_sha256": "06f7d86aa443c9752cf51652988991362ffb13480e59e195e89425844db24c92"
+    },
+    {
+      "id": "W11-disputes",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449",
+      "new_sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449"
+    },
+    {
+      "id": "R12-handoff",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4",
+      "new_sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4"
+    },
+    {
+      "id": "R12-secondary-check",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae",
+      "new_sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae"
+    },
+    {
+      "id": "R14-resource",
+      "byte_equal": true,
+      "json_equal": true,
+      "baseline_sha256": "c0f24296f8b0e0a9d6dbf344bc31c67fe74b5bdec7d7712f73d52b810781e20e",
+      "new_sha256": "c0f24296f8b0e0a9d6dbf344bc31c67fe74b5bdec7d7712f73d52b810781e20e"
+    }
+  ],
+  "TLC_cases": [
+    {
+      "id": "combined",
+      "exit_code": 0,
+      "same_semantics": true,
+      "counts": [
+        1360,
+        624,
+        0
+      ],
+      "violations": [],
+      "trace_states": 0,
+      "error_lines": [],
+      "state_and_action_trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_no_error": true,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "2291d510543fefd7fe833d22c80fd8a7c551c9e3ca1501496bd24f31091ae312",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "4c4bb2d8354972620e9a6b8a3bd5c7a6df6110e2a708ac8220553a3015c66150",
+      "historical_log_derived_sha256": "0d92e679a2f77637c3f4583399544efd9d055a114b66d1f4ecdc9727aa1bf7f4",
+      "new_log_sha256": "80e87b7309856ec84ee74313e71327cb223f80f5d1ba2000d53918637ca7e416",
+      "raw_log_bytes_equal": false,
+      "outcome": "complete_finite_safety_check"
+    },
+    {
+      "id": "fence-only",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        44,
+        39,
+        24
+      ],
+      "violations": [
+        "NoDuplicateEffect"
+      ],
+      "trace_states": 5,
+      "error_lines": [
+        "Error: Invariant NoDuplicateEffect is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "65b1c6b217bce3e0fbb364638896cd608cc292a0d5c7ccd089f42e757b15d60a",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "20973596795d766d0a83b3cf981e80fa35618f16ec46ae7d51f2cd5cbf4ee0fa",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "427077a89e06d259f53fb83b6f61fe9184e2bc75ef966a070a081642ec2205fb",
+      "historical_log_derived_sha256": "167f9a2785e3cf9297908aefde8ff403412ea46f416de54abc5779a8e72d753f",
+      "new_log_sha256": "4c5aa2745a0f4b36acd233575dadd797c8fd4a881a65916764d28f0746ff720f",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "dedupe-only",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        19,
+        18,
+        11
+      ],
+      "violations": [
+        "NoStaleCommit"
+      ],
+      "trace_states": 4,
+      "error_lines": [
+        "Error: Invariant NoStaleCommit is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "33e7f787c6f1762a9a4c42acc314de2e8f1b81b0687e5790dba7bc401be9588c",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "524aa728ff1d88e45bd4a8e25e708f9cf6df37dc2d6c29cfd7594e56aac131e9",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "a97e08820cff2e73df5c009c1bbbfbcc75abeb5c13c51ad72b1f4751266e0ef0",
+      "historical_log_derived_sha256": "f6cf2f96fb20b4df3cbb3871dc3aebffdafdc4d288f6a5c61d4cbce740076881",
+      "new_log_sha256": "2f9c91dc0f0a38573e431dc8f1c2b21199f9b4d5771cb28d79e35955a13df0d3",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "unstable-key",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        44,
+        39,
+        24
+      ],
+      "violations": [
+        "NoDuplicateEffect"
+      ],
+      "trace_states": 5,
+      "error_lines": [
+        "Error: Invariant NoDuplicateEffect is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "77502a3a887982bff96fb89db28ac8ee71651f07722895d83ce432912cfb1f1d",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "2c141b2207e373e672f767a6bc747f4f798463fa40b0206a9791ddd5b594c243",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "025becb9c8377e92f7ec7ab4d324cda0c0dc5633bab5b333326aea002c1d5820",
+      "historical_log_derived_sha256": "76d1f2ac21bfd1471364092fd2039c87b8bb2c997907d979e825e819439bf6c3",
+      "new_log_sha256": "542f1cd3d2f71ab53b914e62559811ac2a7d52b2930cb44eb2bccdb436887158",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "cancel-is-not-rollback",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        21,
+        19,
+        11
+      ],
+      "violations": [
+        "NoCommitAfterLocalCancel"
+      ],
+      "trace_states": 4,
+      "error_lines": [
+        "Error: Invariant NoCommitAfterLocalCancel is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "8eca1b9c2411b508ffcedd1748269391a2681fc9a131b54dbc3f0e92d2ec66c6",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "0255a5f6c5d03c1bb2e5b7bad8ed0fd45b67e0bab053b23334825da17420f166",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "a3c3160b6fbb039e7de5dfb3dd9bbdc9f668fbda14e95fd3ec67cd1d532d307f",
+      "historical_log_derived_sha256": "303edd3c788628fe7f4594c2a2ccf0d6c20ba90a2119562ffee85ff8da36a162",
+      "new_log_sha256": "53feb70c6994057fd3fe65336aded22cad02888aae25e95f8a78739c8b4d72e3",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "world-is-not-ledger",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        8,
+        8,
+        5
+      ],
+      "violations": [
+        "WorldEffectAlwaysKnown"
+      ],
+      "trace_states": 3,
+      "error_lines": [
+        "Error: Invariant WorldEffectAlwaysKnown is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "d68d222529c9a85a6817942980f789ea8edda5150fb6b037e2887f9abe114dc2",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "7ba2cd34814c5c94225512d7cf4b5e7a0d06ae3a7d4541950df5124605fa5b9e",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "2f7e49e26ca0472b13d2d946a665dc661d8ef05d444ef21b26cc5645d2c46d49",
+      "historical_log_derived_sha256": "8b51fb3c79ad706ad0df2ca0d5d938ec4bfc079fc2ab39155acce7ed6cf5f903",
+      "new_log_sha256": "052e35c6293473002952e90bf117332d9783dc0db7175de3a5653eaf3a6e7ad3",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "expiry-none",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        109,
+        59,
+        3
+      ],
+      "violations": [
+        "NoDuplicate"
+      ],
+      "trace_states": 10,
+      "error_lines": [
+        "Error: Invariant NoDuplicate is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "128a896026de05cc4ff669a3bfbc22f2cf2aa48c8506a36e8b3025b0225786c5",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+      "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "historical_log_original_sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3",
+      "historical_log_derived_sha256": "5473ade767a99b02a3b60e4d7baa77ed700d5c2b0b6f3e8229b7ae7ecbf29a69",
+      "new_log_sha256": "cdcccff8346206b279189d1968d599f85d14fb243a510a9bab5e28c053c966d9",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "expiry-admission",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        131,
+        81,
+        8
+      ],
+      "violations": [
+        "NoDuplicate"
+      ],
+      "trace_states": 10,
+      "error_lines": [
+        "Error: Invariant NoDuplicate is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "128a896026de05cc4ff669a3bfbc22f2cf2aa48c8506a36e8b3025b0225786c5",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+      "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "historical_log_original_sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557",
+      "historical_log_derived_sha256": "112fe22bd995d9c0c2d4b779358c2988de4071f510a015c1ac0785b657e2853e",
+      "new_log_sha256": "6fc80df5559bb7202618e1c7dd109c6f6d70f06984d5798b5fe1f4835c343824",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "expiry-commit",
+      "exit_code": 0,
+      "same_semantics": true,
+      "counts": [
+        115,
+        66,
+        0
+      ],
+      "violations": [],
+      "trace_states": 0,
+      "error_lines": [],
+      "state_and_action_trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_no_error": true,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+      "model_sha256": "c6f6c41d37ad1d3fc567cac48182042da9fdf2cd45c74f40dc14ddaf3f98cdd4",
+      "historical_log_original_sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45",
+      "historical_log_derived_sha256": "103edd0d010efa77fe8af0c286c8fa7d932c6a641d5236170b56ed07364dd95f",
+      "new_log_sha256": "2ce90053d4fdb915039a7c89826a7cae828133194239a4132bc6444a3ca2d4f7",
+      "raw_log_bytes_equal": false,
+      "outcome": "complete_finite_safety_check"
+    },
+    {
+      "id": "relay-memory",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        81,
+        51,
+        4
+      ],
+      "violations": [
+        "NoLostSent"
+      ],
+      "trace_states": 10,
+      "error_lines": [
+        "Error: Invariant NoLostSent is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "cc2a4c6fa6edcbfa9ce9cffaa5632f913e0b4085475256602dff1b6987d6f6de",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "model_sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "historical_log_original_sha256": "1352858e9228975479c9216e59d1ee5c7ff87151d6f5bb945d84b84484649eba",
+      "historical_log_derived_sha256": "ca7dfa44ebd7449abb215acf890e7ce9369c001321a90692cc4e90b32c70edb0",
+      "new_log_sha256": "505b2fe4be776230db2e61c53cb890817439e454efe20045c5e10f4db3c85dc8",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "relay-durable",
+      "exit_code": 0,
+      "same_semantics": true,
+      "counts": [
+        87,
+        52,
+        0
+      ],
+      "violations": [],
+      "trace_states": 0,
+      "error_lines": [],
+      "state_and_action_trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_no_error": true,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "model_sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "historical_log_original_sha256": "5333a6fd298de1c6c31bd56355f4539d91213e1206fb06c9155b93f9463c40e1",
+      "historical_log_derived_sha256": "0cfff394bddc46d335fbaf13f9c9724ebfc501c5f1b2022be21e96ee7b95723a",
+      "new_log_sha256": "bbe093dcb3d93a765c1b9163e4634494794ed5f6da63c838b30de896e7cd05af",
+      "raw_log_bytes_equal": false,
+      "outcome": "complete_finite_safety_check"
+    },
+    {
+      "id": "relay-error",
+      "exit_code": 12,
+      "same_semantics": true,
+      "counts": [
+        13,
+        12,
+        4
+      ],
+      "violations": [
+        "ErrorProvesAbsence"
+      ],
+      "trace_states": 5,
+      "error_lines": [
+        "Error: Invariant ErrorProvesAbsence is violated.",
+        "Error: The behavior up to this point is:"
+      ],
+      "state_and_action_trace_sha256": "eccbee5fc7d3bfef7e84b44cb731cb612edb75b47425319e5fc6822c77423d7f",
+      "complete_no_error": false,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "model_sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "historical_log_original_sha256": "867ed06c95eefe10a4091ba998b81ac8184c5016af411c920c2c5f540ac81bce",
+      "historical_log_derived_sha256": "08cffefd0e460aaf242f21f90c65b46e3f8f92b9ce0b227ec3733a601d10b553",
+      "new_log_sha256": "a0aaedcf82f0a18b0d9470a2229d0e70283543cae7d4dfc40355e4bf330a7d51",
+      "raw_log_bytes_equal": false,
+      "outcome": "expected_counterexample"
+    },
+    {
+      "id": "fence-property",
+      "exit_code": 0,
+      "same_semantics": true,
+      "counts": [
+        1265,
+        604,
+        0
+      ],
+      "violations": [],
+      "trace_states": 0,
+      "error_lines": [],
+      "state_and_action_trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_no_error": true,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "e9184c4f40eb3aaf9edf5c32790c69a12176fbbc98f4091b4df9d5fff0a41dd0",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "3ad0b47c4f05edd5081a76fe14a82d94a1d0207fde48efc37a023fd89bb870da",
+      "historical_log_derived_sha256": "c4ecc33f2cfd0af069f69da341be4dae72a9499e86de5e6aff241d8467db8aac",
+      "new_log_sha256": "35caeb23bbcaf228f54e2d99a538ddcec8249d726e2395dde681ee98607d2e31",
+      "raw_log_bytes_equal": false,
+      "outcome": "complete_finite_safety_check"
+    },
+    {
+      "id": "dedupe-property",
+      "exit_code": 0,
+      "same_semantics": true,
+      "counts": [
+        1564,
+        660,
+        0
+      ],
+      "violations": [],
+      "trace_states": 0,
+      "error_lines": [],
+      "state_and_action_trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete_no_error": true,
+      "banner": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+      "config_sha256": "49a715a9f1d47e4b6e98d693b15cbfabf494af79268d7f04bf2067d94bbc3961",
+      "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+      "historical_log_original_sha256": "70619e6a283333440404008f2caf84541711e2bde731b2f315690d63e5b17f65",
+      "historical_log_derived_sha256": "9b615a9f0970537f05dab3b21e330170703d00f251657baad971d307d75f43fa",
+      "new_log_sha256": "f2a4d392083f25d5b06c480607908bf7f613195ec0f3cf7bb7d235fb8d6bac85",
+      "raw_log_bytes_equal": false,
+      "outcome": "complete_finite_safety_check"
+    }
+  ],
+  "TLC_totals": {
+    "configurations": 14,
+    "complete_safety": 5,
+    "expected_counterexamples": 9
+  },
+  "raw_TLC_log_difference_reason": "new timestamps, process IDs, fingerprint seeds and execution paths; state/action traces and semantic summaries are compared separately",
+  "comparison_script_sha256": "7b79e96aa096a465cd0432ef417f6664fc9d6ddd2e32cf6671d675d142273134",
+  "no_models_rerun_by_comparison": true
+}

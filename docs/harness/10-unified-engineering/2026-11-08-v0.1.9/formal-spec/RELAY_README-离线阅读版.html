@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="5bff95c526bc">
+<title>持久回执与内存去重：有限状态模型</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#对象-范围与假设">对象、范围与假设</a></li><li class="l2"><a href="#与固定源码的关系">与固定源码的关系</a></li><li class="l2"><a href="#三个配置的实际结果">三个配置的实际结果</a></li><li class="l2"><a href="#复跑与运行器校验">复跑与运行器校验</a></li><li class="l2"><a href="#下一步的证据缺口">下一步的证据缺口</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">4 项待办</span></div>
+<h1>持久回执与内存去重：有限状态模型</h1>
+</header>
+<p>2026-11-08 UTC · 本轮新建的条件模型；不运行工作台、DSH 宿主或真实崩溃注入。</p>
+<p>一次调用返回、消息在当前内存里可见、宿主形成持久回执、工作台写入 sent，不能互相替代。本模型把 <a href="../mechanisms/durability-boundary/README-离线阅读版.html">M-06 的 DC04 条件路径</a>缩成一个可枚举系统，检查内存命中早退的后果与一种更强接纳条件。它不声称已证明完整产品存在可利用故障，也不是一次实际数据丢失事件。</p>
+<h2 id="对象-范围与假设">对象、范围与假设</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">变量 / 条件</th><th style="text-align:left">本模型含义</th><th style="text-align:left">没有包括什么</th></tr></thead><tbody><tr><td style="text-align:left">live</td><td style="text-align:left">同一消息 ID 在目标当前进程的可接纳历史/队列中可见</td><td style="text-align:left">不验证模型是否理解消息，不模拟消息消费、取消、删除</td></tr><tr><td style="text-align:left">durable</td><td style="text-align:left">对应目标记录已经跨过所声明的持久屏障</td><td style="text-align:left">不证明文件系统、设备掉电或任意后端实现符合这个屏障</td></tr><tr><td style="text-align:left">sent</td><td style="text-align:left">工作台已保存“不再投递此 ID”的标记</td><td style="text-align:left">不证明收件方业务完成或下游效果只有一次</td></tr><tr><td style="text-align:left">error</td><td style="text-align:left">本次投递/保存过程报告了错误</td><td style="text-align:left">不等于目标没有收到，且保留标志也可能是历史错误</td></tr><tr><td style="text-align:left">phase</td><td style="text-align:left">check、append、flush、returned 与 idle 之间的调用阶段</td><td style="text-align:left">不表示真实函数的每个微步或所有并发交错</td></tr><tr><td style="text-align:left">calls / failures / crashes</td><td style="text-align:left">至多两次投递调用、一次失败、一次进程崩溃</td><td style="text-align:left">不覆盖无界重试、多个消息、多个目标、恶意主体或网络故障全集</td></tr></tbody></table></div>
+<p>前提固定：出站意图已存在；消息内容和 ID 不变；接收方是可以用同 ID 重试的 worker→lead 汇报路径；目标有对应的活动写句柄；工作台的标记在本次进程重启模型下可恢复。崩溃丢弃未保存的 live 状态，保留 durable 及工作台标记。没有施加调度公平性或完成期限；检查的是安全性质，不证明活性。</p>
+<p>真实 worker 的 phase 失败/恢复会采用其他分支，不能不加条件套用本例。真实存储失败也可能已经部分提交；<code>TargetWriteFailure</code> 明确选择目标未提交的分支，不能从一般异常直接推断该事实。<code>LaterDrain</code> 允许后续保存成功；反例只是展示崩溃前没有经过成功 drain 的可行抽象前缀，不主张系统永远无法补救。</p>
+<h2 id="与固定源码的关系">与固定源码的关系</h2>
+<p>研究输入的工作台提交为 <code>7264be1</code>，DSH 为 <code>fcc0ad4</code>。这组版本用于条件对照，未核实用户当时实际加载的宿主版本和后端。</p>
+<ul><li><code>Native.deliver</code> 先读 <code>snapshotEvents</code>/live inbox，命中 ID 就返回；新消息走 <code>followup</code>，然后 await service-wide <code>flush</code>。</li><li>DSH 的 <code>snapshotEvents</code> 读取内存 log；session commit 先加入内存事件。持久服务契约明确 append 可见性弱于 flush 的耐久屏障。</li><li>JSONL drain 失败时把批次放回 buffer 并暂停定时 drain；后续显式 drain 可重试。全服务 flush 会尝试其他写句柄，聚合失败，故某个异常也可能来自其他会话。</li><li>工作台 await deliver 后再单独保存 sent；对于给 lead 的汇报，重试投递可以清 error 并再次处理同一 ID。</li></ul>
+<p>完整定位与后端限制见 <a href="../mechanisms/durability-boundary/sources.json">M-06 来源链</a>。root 额外核读 persistence <code>index.ts:125–187</code>、JSONL <code>storage.ts:267–360,503–528</code> 和 session <code>index.ts:892–911</code>；这仍不是实现到本模型的形式精化证明。</p>
+<h2 id="三个配置的实际结果">三个配置的实际结果</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">配置</th><th style="text-align:left">模型规则与性质</th><th style="text-align:left">TLC 实际结果</th><th style="text-align:left">可以得出的结论</th></tr></thead><tbody><tr><td style="text-align:left">relay-memory</td><td style="text-align:left">重复 ID 仅凭 live 返回；检查 <code>sent ⇒ live ∨ durable</code></td><td style="text-align:left">81 generated / 51 distinct / queue 4，9 次转移得到反例</td><td style="text-align:left">此组前提下，标记 sent 后仍可能在重启时丢失目标记录</td></tr><tr><td style="text-align:left">relay-durable</td><td style="text-align:left">live 命中但没有 durable 时仍需 flush；检查上述性质及 <code>sent ⇒ durable</code></td><td style="text-align:left">87 generated / 52 distinct / queue 0，完整有限检查通过</td><td style="text-align:left">更强条件在这个有限模型中保住已标记消息；不证明最终一定能保存</td></tr><tr><td style="text-align:left">relay-error</td><td style="text-align:left">使用更强规则，检查错误推断 <code>error ⇒ ¬durable</code></td><td style="text-align:left">13 generated / 12 distinct / queue 4，4 次转移得到反例</td><td style="text-align:left">全局 flush 因其他 writer 失败时，目标记录可以已经保存；错误不能当未收到证明</td></tr></tbody></table></div>
+<p>反例配置在发现首个反例时停止，不能把 visited 计数叫作全部可达状态数。工具为官方 release v1.7.4 所带 TLC2 2.19、Java 17.0.6；jar SHA256 为 <code>936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88</code>。</p>
+<p>第一条最短反例的九次转移：Start → Check → Append → TargetWriteFailure → RetryDelivery → Start → Check（live 命中早退）→ MarkSent → Crash。最后 <code>sent=true</code>，而 <code>live=false,durable=false</code>。这只解释消息记录的恢复边界，下游业务是否执行不在模型中。</p>
+<p>第三条反例：Start → Check → Append → OtherWriterFailure。目标 <code>durable=true</code> 而错误为 true。因本地 sent 标记保存失败而报告错误的分支也被建模，但不是该配置返回的最短反例。</p>
+<h2 id="复跑与运行器校验">复跑与运行器校验</h2>
+<p>在当前目录运行，jar 路径替换为经过独立核对的本地工具：</p>
+<pre data-lang="sh"><code>python3 run_relay.py --jar /path/to/tla2tools.jar --output relay-rerun</code></pre>
+<p>模型：<a href="DurableRelay.tla">DurableRelay.tla</a>。原始结果：<a href="relay-results/receipt.json">receipt.json</a>、<a href="relay-results/memory.log">内存早退反例</a>、<a href="relay-results/durable.log">完整通过</a>、<a href="relay-results/error.log">错误归因反例</a>。</p>
+<p>运行器同时检查退出码、不变量名称、错误行与状态计数；通过配置要求完整结束且队列为零。另在隔离副本把 memory 配置改成检查 Init，TLC 仍返回反例退出码12，但运行器退出1并拒绝把它当预期反例。<a href="relay-runner-negative-control/receipt.json">负对照回执</a>。没有覆盖原模型或修改产品。</p>
+<h2 id="下一步的证据缺口">下一步的证据缺口</h2>
+<ul class=task-list><li><input type="checkbox" disabled> 不同模型审阅模型、最短轨迹、源代码映射和运行器负对照。</li><li><input type="checkbox" disabled> 在获准的隔离真实宿主上，固定后端与目标写句柄，实际构造对应故障并核查重启后的历史；当前未执行。</li><li><input type="checkbox" disabled> 如实施更强确认规则，明确目标级 ACK、失败归因、调用取消与超时，不依赖整个服务任意其他会话都保存成功。</li><li><input type="checkbox" disabled> 对 worker 目标、消息消费、多个 ID、跨进程写者与掉电故障分别设计模型/测试；不能直接沿用这里的通过标签。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

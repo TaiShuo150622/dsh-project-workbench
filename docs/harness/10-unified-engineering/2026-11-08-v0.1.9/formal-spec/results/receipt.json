@@ -1,0 +1,123 @@
+{
+  "started_at": "2026-11-08T06:57:09.290461+00:00",
+  "tool_jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+  "model_sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54",
+  "runner_sha256": "1c3c380038663e9c2bd61cd5ccfb9a89f8c32aa0bfdfff29c39950644c63b85c",
+  "scope": "Finite MaxSends=3, two epochs, one immutable logical action; no liveness claim",
+  "cases": [
+    {
+      "config": "combined",
+      "config_sha256": "2291d510543fefd7fe833d22c80fd8a7c551c9e3ca1501496bd24f31091ae312",
+      "exit_code": 0,
+      "expected_violation": null,
+      "observed_violations": [],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 1360,
+        "distinct": 624,
+        "queue_remaining": 0
+      },
+      "trace_states": 0,
+      "log": "combined.log",
+      "log_sha256": "4c4bb2d8354972620e9a6b8a3bd5c7a6df6110e2a708ac8220553a3015c66150",
+      "complete_exploration": true
+    },
+    {
+      "config": "fence-only",
+      "config_sha256": "20973596795d766d0a83b3cf981e80fa35618f16ec46ae7d51f2cd5cbf4ee0fa",
+      "exit_code": 12,
+      "expected_violation": "NoDuplicateEffect",
+      "observed_violations": [
+        "NoDuplicateEffect"
+      ],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 44,
+        "distinct": 39,
+        "queue_remaining": 24
+      },
+      "trace_states": 5,
+      "log": "fence-only.log",
+      "log_sha256": "427077a89e06d259f53fb83b6f61fe9184e2bc75ef966a070a081642ec2205fb",
+      "complete_exploration": false
+    },
+    {
+      "config": "dedupe-only",
+      "config_sha256": "524aa728ff1d88e45bd4a8e25e708f9cf6df37dc2d6c29cfd7594e56aac131e9",
+      "exit_code": 12,
+      "expected_violation": "NoStaleCommit",
+      "observed_violations": [
+        "NoStaleCommit"
+      ],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 19,
+        "distinct": 18,
+        "queue_remaining": 11
+      },
+      "trace_states": 4,
+      "log": "dedupe-only.log",
+      "log_sha256": "a97e08820cff2e73df5c009c1bbbfbcc75abeb5c13c51ad72b1f4751266e0ef0",
+      "complete_exploration": false
+    },
+    {
+      "config": "unstable-key",
+      "config_sha256": "2c141b2207e373e672f767a6bc747f4f798463fa40b0206a9791ddd5b594c243",
+      "exit_code": 12,
+      "expected_violation": "NoDuplicateEffect",
+      "observed_violations": [
+        "NoDuplicateEffect"
+      ],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 44,
+        "distinct": 39,
+        "queue_remaining": 24
+      },
+      "trace_states": 5,
+      "log": "unstable-key.log",
+      "log_sha256": "025becb9c8377e92f7ec7ab4d324cda0c0dc5633bab5b333326aea002c1d5820",
+      "complete_exploration": false
+    },
+    {
+      "config": "cancel-is-not-rollback",
+      "config_sha256": "0255a5f6c5d03c1bb2e5b7bad8ed0fd45b67e0bab053b23334825da17420f166",
+      "exit_code": 12,
+      "expected_violation": "NoCommitAfterLocalCancel",
+      "observed_violations": [
+        "NoCommitAfterLocalCancel"
+      ],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 21,
+        "distinct": 19,
+        "queue_remaining": 11
+      },
+      "trace_states": 4,
+      "log": "cancel-is-not-rollback.log",
+      "log_sha256": "a3c3160b6fbb039e7de5dfb3dd9bbdc9f668fbda14e95fd3ec67cd1d532d307f",
+      "complete_exploration": false
+    },
+    {
+      "config": "world-is-not-ledger",
+      "config_sha256": "7ba2cd34814c5c94225512d7cf4b5e7a0d06ae3a7d4541950df5124605fa5b9e",
+      "exit_code": 12,
+      "expected_violation": "WorldEffectAlwaysKnown",
+      "observed_violations": [
+        "WorldEffectAlwaysKnown"
+      ],
+      "expectation_matched": true,
+      "counts": {
+        "generated": 8,
+        "distinct": 8,
+        "queue_remaining": 5
+      },
+      "trace_states": 3,
+      "log": "world-is-not-ledger.log",
+      "log_sha256": "2f7e49e26ca0472b13d2d946a665dc661d8ef05d444ef21b26cc5645d2c46d49",
+      "complete_exploration": false
+    }
+  ],
+  "completed_at": "2026-11-08T06:57:15.489838+00:00",
+  "all_expectations_matched": true
+}

@@ -1,0 +1,21 @@
+{
+  "validated_at_utc": "2026-11-08T07:45:36.158761+00:00",
+  "json_files_parsed": [
+    "probes.json",
+    "inputs.json",
+    "execution_receipt.json",
+    "probes.initial.json",
+    "refinement-matrix.json",
+    "inputs/specifications/catalog.json"
+  ],
+  "input_hashes_checked": 13,
+  "frozen_product_and_test_files_unchanged": 8,
+  "matrix_objects": 12,
+  "matrix_cases": 16,
+  "matrix_code_references_checked": 68,
+  "local_document_links_checked": 16,
+  "receipt_hashes_match": true,
+  "real_adapter_execution_claimed": false,
+  "all_checks_passed": true,
+  "limitations": "Editorial/hash/link validation only. No new product behavior, external adapter or theorem checked by this validation."
+}

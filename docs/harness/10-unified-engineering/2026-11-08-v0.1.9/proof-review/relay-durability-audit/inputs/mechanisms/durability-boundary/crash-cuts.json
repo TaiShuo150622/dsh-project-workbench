@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_id": "M06-DURABILITY-CUTS",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "result": "NOT_RUN",
+  "fixed_baseline": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "fixed_host": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "purpose": "Candidate finite-model cuts and future isolated observation protocol, not a runner or product test.",
+  "execution_scope": "Read-only source research; no imports of product code, no kill/restart/power experiments, no business writes.",
+  "model_axes": {
+    "application_volatile": [
+      "Store instance state and Promise queue",
+      "Record state/journal/request map",
+      "DSH Session live log/inbox and JSONL buffered batch"
+    ],
+    "os_visible": [
+      "Formal projects.json pathname and content visible through OS",
+      "Host log bytes visible to local reads"
+    ],
+    "stable_storage": [
+      "Only the prefixes/names guaranteed by a frozen OS/filesystem/device durability profile"
+    ],
+    "message_layers": [
+      "outbox intent",
+      "live acceptance by message ID",
+      "target durable receipt",
+      "local outbox sent marker"
+    ],
+    "world_effect": [
+      "not_observed",
+      "committed_with_target_evidence",
+      "unknown"
+    ],
+    "historical_receipt": "An immutable receipt from an earlier command; not a current grant or a fresh send permission."
+  },
+  "profile_parameters_to_freeze": [
+    "OS/filesystem/mount/device and Node version",
+    "process crash versus OS/power failure",
+    "single Store instance versus multiple writers",
+    "target active JSONL writer and live-event routing",
+    "failure at target drain versus unrelated handle versus rollback failure",
+    "later successful drain allowed before crash",
+    "message ID namespace/content identity/retention",
+    "meaning of API acknowledgment and replay receipt",
+    "finite transition bound or future observation window"
+  ],
+  "obligations": [
+    {
+      "id": "DR01",
+      "description": "One authoritative writer or conflict detection, with read-check-write and idempotency checks in the actual serialized boundary."
+    },
+    {
+      "id": "DR02",
+      "description": "Define durability level and atomic relationship of authoritative state, outbound intent and request identity/receipt; baseline Store only couples projects/outbox."
+    },
+    {
+      "id": "DR03",
+      "description": "Retain send intent, stable action/message identity and current admission conditions across crash; local commit is not remote submission."
+    },
+    {
+      "id": "DR04",
+      "description": "Distinguish live ID presence from durable recipient acceptance; failed writes and retries retain responsibility for the durability barrier."
+    },
+    {
+      "id": "DR05",
+      "description": "Distinguish target receipt, unrelated flush failure, local sent-marker failure and actual business effect; errors do not prove absence."
+    },
+    {
+      "id": "DR06",
+      "description": "Restore exact command identities from durable authoritative journal and treat repeated receipts as historical, never as renewed authorization."
+    }
+  ],
+  "classification": {
+    "SUCCESS": "Frozen profile's applicable property is supported by declared observations; safe refusal may pass a contract but is not business completion.",
+    "FAILURE": "An explicit tested property is contradicted by an observable trace under its declared assumptions; a model counterexample is not proof of an incident.",
+    "UNSUPPORTED": "Required capability/profile/probe is absent or the trace violates a stated precondition, so that product assurance cannot be evaluated.",
+    "UNKNOWN": "Evidence cannot distinguish commit/no-commit or target/other failure within the frozen observation scope.",
+    "NOT_RUN": "Current value for every cut; neither model enumeration nor product fault injection was executed in this line."
+  },
+  "cuts": [
+    {
+      "id": "DC01",
+      "title": "临时文件、替换、内存发布与回执的崩溃切点",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR02"
+      ],
+      "source_refs": [
+        "B0",
+        "N1",
+        "L1"
+      ],
+      "code_locations": [
+        "server/store.js:15–26"
+      ],
+      "initial_state": [
+        "Choose existing valid main file S0 or initially absent file as separate variants.",
+        "One Store writer, no concurrent mutations; next state S1 contains both project delta and outbox intent."
+      ],
+      "cut_points": [
+        "After callback, before temporary write completes",
+        "After writeFile resolves, before rename",
+        "After rename resolves, before this.state assignment",
+        "After this.state publication, before caller receives result",
+        "After caller receives result, before an unproven stable-storage boundary"
+      ],
+      "perturbation": "A future model may drop only the layers specified by process-crash or power-failure profile; no crash is performed here.",
+      "observables": [
+        "caller receipt or absent/unknown receipt",
+        "read-only recovered main-file JSON/digest",
+        "presence of temporary file as diagnostic only",
+        "declared storage-barrier trace"
+      ],
+      "oracle": {
+        "success": [
+          "Under local atomic-rename and process-only failure assumptions, no partial new JSON is exposed as the authoritative main file by the replacement sequence.",
+          "If durable completion is claimed, acknowledgment follows the profile's required data and namespace barriers."
+        ],
+        "failure": [
+          "An acknowledged durability guarantee is contradicted by recovery under the same frozen guarantee.",
+          "State and intent recover from different versions despite a claimed atomic pair."
+        ],
+        "unsupported": [
+          "No defined power-failure contract: a process-restart observation cannot evaluate power-loss durability."
+        ],
+        "unknown": [
+          "Ambiguous rename/write error, missing authoritative path without commit evidence, or unfixed filesystem semantics."
+        ]
+      },
+      "baseline_static_prediction": "Single Store stages both state and intent together, but has no explicit sync step. This is absence of a demonstrated power-loss guarantee, not evidence that data has actually been lost."
+    },
+    {
+      "id": "DC02",
+      "title": "两个 Store 与外层判重的交错",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR01",
+        "DR02"
+      ],
+      "source_refs": [
+        "B0"
+      ],
+      "code_locations": [
+        "server/store.js:7–17,22–24",
+        "server/projects.js:72–110"
+      ],
+      "initial_state": [
+        "Variant A: two Store instances independently open the same S0; they may be in one process or different processes.",
+        "Variant B: one Store, two concurrent Projects.dispatch calls with the same dispatch key both read the pre-change project."
+      ],
+      "cut_points": [
+        "A and B both read S0 before either replacement",
+        "Writer A replaces S0 with S0+a and receives success; writer B later replaces with S0+b",
+        "Both duplicate-key checks return absent before queued push callbacks run"
+      ],
+      "perturbation": "Enumerate these interleavings in a future model only.",
+      "observables": [
+        "writer/request identity and returned result",
+        "reopened file contents",
+        "dispatch key and generated thread IDs",
+        "presence or absence of an enforced single-writer/CAS rejection"
+      ],
+      "oracle": {
+        "success": [
+          "A claimed multi-writer adapter preserves both nonconflicting updates or rejects/retries a detectable conflict.",
+          "Same-key concurrent operation produces one semantic dispatch or an explicit conflict when that idempotency property is claimed."
+        ],
+        "failure": [
+          "Both writes acknowledge yet one accepted update is overwritten under a claimed serializable multi-writer profile.",
+          "Same-key calls create two threads under a claimed concurrent duplicate-suppression property."
+        ],
+        "unsupported": [
+          "An enforced and externally verified single-writer-only contract excludes the two-writer variant; mere comment or per-instance queue is not enforcement."
+        ],
+        "unknown": [
+          "Cannot associate acknowledgments and recovered state with the same file incarnation."
+        ]
+      },
+      "baseline_static_prediction": "The queue is per-instance. Duplicate-key check lies outside the queued mutation. These source-level schedules are possible unless a surrounding constraint excludes them; no runtime reproduction has occurred."
+    },
+    {
+      "id": "DC03",
+      "title": "意图已提交但消息尚未交给宿主",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR02",
+        "DR03"
+      ],
+      "source_refs": [
+        "B0",
+        "A1"
+      ],
+      "code_locations": [
+        "server/projects.js:121–125",
+        "server/projects.js:189–205",
+        "server/projects.js:249–280"
+      ],
+      "initial_state": [
+        "A committed JSON version contains a relay ID M with sent=false and matching project state.",
+        "The destination is a worker in one variant and the lead in another; keep their recovery policies distinct."
+      ],
+      "cut_points": [
+        "After Store intent commit but before Native.deliver",
+        "After recovery marks inactive worker interrupted, before any explicit resume"
+      ],
+      "perturbation": "Application process crash before delivery; stable intent preservation is a profile assumption, not inferred from Store acknowledgment.",
+      "observables": [
+        "recovered outbox ID/content",
+        "recovered thread phase",
+        "delivery request count for M",
+        "explicit user resume/retry request and any new generation/relay ID"
+      ],
+      "oracle": {
+        "success": [
+          "Recovered committed intent is visible or its missing guarantee is explicitly reported.",
+          "An interrupted worker is not silently restarted; a hold is reported as hold, not as completed delivery.",
+          "New retry/generation retains a relation to the old unresolved attempt rather than treating old execution as impossible."
+        ],
+        "failure": [
+          "Intent is silently dropped while its associated state is claimed committed under the same durability contract.",
+          "An unsent intent is reported as remote business success, or the documented recovery gate is bypassed."
+        ],
+        "unsupported": [
+          "No durable storage profile exists to justify a recovery guarantee."
+        ],
+        "unknown": [
+          "The submitter cannot establish whether pre-crash intent reached the committed storage version."
+        ]
+      },
+      "baseline_static_prediction": "Workbench deliberately leaves inactive workers interrupted and does not promise unconditional automatic at-least-once redelivery. Native session creation before local association is an additional adjacent orphan seam, not simulated here."
+    },
+    {
+      "id": "DC04",
+      "title": "live ID 早退绕过失败的目标耐久屏障",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR03",
+        "DR04",
+        "DR05"
+      ],
+      "source_refs": [
+        "B0"
+      ],
+      "code_locations": [
+        "server/native.js:40–47",
+        "server/projects.js:152–155,267–286",
+        "DSH packages/core/agent-loop/src/agent.ts:170–180",
+        "DSH packages/core/session/src/index.ts:892–905",
+        "DSH packages/session/session-persistence-jsonl/src/storage.ts:294–312,508–522"
+      ],
+      "initial_state": [
+        "Use a worker-report relay to the lead. The lead is not a thread target, so a failed delivery does not change its thread phase and same-ID retry_delivery remains reachable.",
+        "Target has an active routed JSONL write handle. M is not yet durably present; no model assumptions about business completion."
+      ],
+      "cut_points": [
+        "followup publishes live inbox/session event M",
+        "Target drain fails before commit, or append rollback succeeds; buffered M is retained",
+        "User requests retry_delivery, clearing the outbox error",
+        "Native sees live M and returns before flush; outbox.sent marker commits",
+        "Process crashes before any later successful target drain"
+      ],
+      "perturbation": "Future model chooses explicit target-no-commit failure and forbids a later successful drain until the crash. A generic flush rejection is insufficient to choose this trace.",
+      "observables": [
+        "lead relay M and retry_delivery request",
+        "target-specific drain/failure boundary or controlled synthetic write failure",
+        "live inbox/history query before retry",
+        "whether any persistence barrier runs on the duplicate path",
+        "recovered target history and recovered outbox.sent"
+      ],
+      "oracle": {
+        "success": [
+          "A durable-delivery implementation does not acknowledge the duplicate as durable until the old batch is proven committed or a new target barrier succeeds.",
+          "If it cannot do so, the result retains uncertainty and the intent remains recoverable."
+        ],
+        "failure": [
+          "Under target-no-commit plus no-later-drain assumptions, sent=true survives while recovery lacks M, contradicting a claimed durable recipient-acceptance property."
+        ],
+        "unsupported": [
+          "Target is a failed worker whose phase gate prevents same-M retry, rather than the specified lead path.",
+          "Actual backend has a different visibility/durability contract or no target-scoped fault/probe exists."
+        ],
+        "unknown": [
+          "Flush failed only on another session, rollback outcome is ambiguous, or some later drain may have persisted M."
+        ]
+      },
+      "baseline_static_prediction": "Fixed DSH separates live publication from durable drain and retains failed batches; Native's duplicate branch skips the barrier. This establishes the relevant code seam, not an observed lost-message incident."
+    },
+    {
+      "id": "DC05",
+      "title": "目标已保存而全局 flush 或 sent 标记失败",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR04",
+        "DR05"
+      ],
+      "source_refs": [
+        "B0",
+        "A1"
+      ],
+      "code_locations": [
+        "server/projects.js:278–286",
+        "DSH packages/session/session-persistence-jsonl/src/storage.ts:508–522"
+      ],
+      "initial_state": [
+        "Message M reaches the target's durable prefix.",
+        "The local outbox still has sent=false; external business effects have their own unknown/not-observed state."
+      ],
+      "cut_points": [
+        "Variant A: target writer succeeds, another active writer fails, service-wide flush rejects",
+        "Variant B: service flush succeeds, Store.change for sent marker fails",
+        "Optional process crash after either failure and before durable reconciliation"
+      ],
+      "perturbation": "Future isolated fault profile injects a different-writer failure or local marker-write failure; target persistence remains independently observable.",
+      "observables": [
+        "target-scoped durable message query",
+        "AggregateError member/session attribution",
+        "local marker write result and subsequent error-state write result",
+        "recovered outbox status",
+        "separate business target effect evidence if any"
+      ],
+      "oracle": {
+        "success": [
+          "Failure is classified at its actual boundary; it is not proof target delivery failed.",
+          "Retry preserves M identity and checks recipient state; receipt is not promoted to task/business success."
+        ],
+        "failure": [
+          "The system treats the exception as proof of no target acceptance and issues an unsafe new semantic action.",
+          "Local sent or accepted message alone is used as proof of business effect."
+        ],
+        "unsupported": [
+          "No target-scoped observation or controlled unrelated-writer failure is available."
+        ],
+        "unknown": [
+          "Global failure or local persistence failure lacks sufficient attribution; target result remains unknown rather than definitely absent."
+        ]
+      },
+      "baseline_static_prediction": "The current Projects catch may report a not-delivered message even when the failed step is marker persistence or another session's flush. This is an interpretation boundary, not proof any duplicate business effect occurred."
+    },
+    {
+      "id": "DC06",
+      "title": "旧回执、撤权和仅恢复 snapshot",
+      "status": "PROPOSED_NOT_RUN",
+      "actual_execution": false,
+      "result": "NOT_RUN",
+      "obligation_refs": [
+        "DR02",
+        "DR03",
+        "DR06"
+      ],
+      "source_refs": [
+        "B0"
+      ],
+      "code_locations": [
+        "record/kernel.mjs:116–135",
+        "record/kernel.mjs:205–217",
+        "record/kernel.mjs:293–304",
+        "record/kernel.mjs:350–386",
+        "record/README.md:Command envelope and Action model"
+      ],
+      "initial_state": [
+        "A command Q has historical receipt R in a complete in-memory journal; a later distinct command revokes authorization or cancels the task.",
+        "Variant A restores a complete authenticated durable journal. Variant B has only a read snapshot; no durable adapter is assumed."
+      ],
+      "cut_points": [
+        "After model apply returns R but before any adapter persistence",
+        "After current authorization changes, before exact Q redelivery",
+        "After restart with full journal versus an attempted snapshot-only restoration"
+      ],
+      "perturbation": "Future model varies whether the exact request identity and current grant state survive; no real commands are sent.",
+      "observables": [
+        "journal/source digest and stream incarnation",
+        "receipt cursor before/after exact retry",
+        "current task authorization and revision",
+        "outbound request count caused by duplicate response",
+        "snapshot-only recovery's explicit unsupported/error result"
+      ],
+      "oracle": {
+        "success": [
+          "Exact retry may return R unchanged without creating a new event, renewing authorization or sending another external request.",
+          "Different content with reused requestId is rejected.",
+          "Only a complete supported recovery path claims restored command deduplication; a read snapshot is not advertised as a durable kernel restore."
+        ],
+        "failure": [
+          "Adapter treats old authorize/dispatch receipt as current permission or fresh send trigger.",
+          "Restart loses dedup identities but reuses stream identity while claiming exact retry safety.",
+          "In-memory apply success is called durable acknowledgment without an implemented persistence boundary."
+        ],
+        "unsupported": [
+          "No durable Record adapter exists: persistence recovery is explicitly unsupported, as in S1."
+        ],
+        "unknown": [
+          "Journal or current grant provenance cannot be authenticated/bounded, or receipt cannot be tied to its history incarnation."
+        ]
+      },
+      "baseline_static_prediction": "Record intentionally returns historical receipts and does no I/O. The potential violation is an adapter's incorrect refinement, not the known-request branch itself."
+    }
+  ],
+  "reporting": {
+    "required": [
+      "case_id",
+      "profile_id",
+      "assumptions",
+      "observation_refs",
+      "model_or_runtime",
+      "verdict",
+      "business_effect_status",
+      "unresolved_gaps"
+    ],
+    "current": "NOT_RUN",
+    "separate_results": [
+      "model counterexample under assumptions",
+      "product fault reproduction",
+      "process-restart recovery",
+      "power-loss durability",
+      "target business effect"
+    ],
+    "not_claimed": [
+      "general exactly-once",
+      "database alone solves dual-write gap",
+      "absence of fsync proves historical data loss"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "method": "independent finite TLC execution, isolated runner negative control, fixed source review; no product runtime execution",
+  "checks": {
+    "model_receipts_match": true,
+    "independent_counts_match_author": true,
+    "all_expected_outcomes": true,
+    "input_hashes_match": true
+  },
+  "traces": {
+    "memory": {
+      "state_labels": [
+        "Initial predicate",
+        "Start line 32, col 10 to line 34, col 71 of module DurableRelay",
+        "Check line 36, col 10 to line 40, col 78 of module DurableRelay",
+        "Append line 42, col 11 to line 44, col 73 of module DurableRelay",
+        "TargetWriteFailure line 50, col 23 to line 53, col 74 of module DurableRelay",
+        "RetryDelivery line 69, col 18 to line 71, col 86 of module DurableRelay",
+        "Start line 32, col 10 to line 34, col 71 of module DurableRelay",
+        "Check line 36, col 10 to line 40, col 78 of module DurableRelay",
+        "MarkSent line 60, col 13 to line 62, col 75 of module DurableRelay",
+        "Crash line 77, col 10 to line 80, col 63 of module DurableRelay"
+      ],
+      "transition_count": 9
+    },
+    "error": {
+      "state_labels": [
+        "Initial predicate",
+        "Start line 32, col 10 to line 34, col 71 of module DurableRelay",
+        "Check line 36, col 10 to line 40, col 78 of module DurableRelay",
+        "Append line 42, col 11 to line 44, col 73 of module DurableRelay",
+        "OtherWriterFailure line 55, col 23 to line 58, col 65 of module DurableRelay"
+      ],
+      "transition_count": 4
+    }
+  },
+  "model_sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+  "runner_sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+  "source_manifests": [
+    "INPUT_MANIFEST.json",
+    "SOURCE_MANIFEST.json"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "validated_at_utc": "2026-11-08T08:01:17.359952+00:00",
+  "validation_execution": true,
+  "actual_execution": false,
+  "scenario_execution": false,
+  "third_party_code_execution": false,
+  "product_or_service_execution": false,
+  "checks": [
+    {
+      "check": "JSON, unique IDs, source/contract refs and NOT_RUN status",
+      "passed": true,
+      "counts": {
+        "source_groups": 6,
+        "contracts": 8,
+        "scenarios": 6
+      }
+    },
+    {
+      "check": "local Markdown file links",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "check": "discussion-draft structure",
+      "passed": true,
+      "stdout": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/mechanisms/docs/research/harness-20261107/mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md：版本 v0.1.0，9 个章节，3 张图，0 个错误，0 个警告"
+    },
+    {
+      "check": "HTML generated and basic structure contains 3 Mermaid blocks",
+      "passed": true,
+      "visual_inspection": false
+    },
+    {
+      "check": "basic scoped sensitive-pattern scan",
+      "passed": true,
+      "hits_by_pattern": {
+        "private_home_path": [],
+        "private_key_header": [],
+        "credential_assignment": []
+      },
+      "limitation": "Not a security audit."
+    }
+  ],
+  "artifact_sha256": {
+    "README.md": "629854d1cad4cfd720557613613bcc3cfd405d89a2db2580b9abee24480a2684",
+    "contracts.json": "8416737af21f1cd046071ce19f9676f55dcab1bdf2c31a49e62e203b7263f60f",
+    "fault-scenarios.json": "c6e5cb625440f8494dbce2c820276c70fc1bce8e3b0e629b6d701eb8ebc587d6",
+    "sources.json": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+    "长期任务跨版本续接讨论稿-v0.1.0.html": "74ddd9a1e84d87b06e9dcd203e8c44fd972ab63de2154d036c0e4ed6ee962b1c",
+    "长期任务跨版本续接讨论稿-v0.1.0.md": "c48f3b690ddcf923b1f8b548a99b7694d23035d71bc2e61a0bcaaea35ff85069"
+  },
+  "scope": "Only lifecycle-migration research artifacts; no commit, push, migration runner or host acceptance."
+}

@@ -1,0 +1,801 @@
+{
+  "task": "W12",
+  "status": "SOURCE_BASED_DESIGN_CONTINUITY_REVIEW_NOT_PRODUCT_DECISION",
+  "created_at_utc": "2026-11-08T09:39:58.068039+00:00",
+  "decisions": [
+    {
+      "id": "DC01",
+      "classification": "保留决定",
+      "decision": "完整面板平台 P01–P15 先行，之后 B01–B12 工作台扩展；H01–H08 与 I01–I07 是研究/验收切片。",
+      "old": [
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            6,
+            8
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            197,
+            205
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            69,
+            82
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-R",
+          "lines_1_based": [
+            20,
+            20
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            94,
+            107
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            127,
+            137
+          ]
+        },
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            356,
+            358
+          ]
+        }
+      ],
+      "conflict": "新稿的“首切片”容易被读成新的产品第一项；现行衔接稿只说历史关系，未完整复述 P/B 范围。",
+      "handling": "总入口并列显示产品交付顺序和研究验证顺序。D02 如选择先做独立状态视图，必须单独记录其例外范围、产物和不替代的 P/B 工作；本轮不替用户批准。"
+    },
+    {
+      "id": "DC02",
+      "classification": "保留决定＋需重决/冻结",
+      "decision": "先完成阶段 A；设计、契约、任务卡、允许文件和验证入口成组同步，再按单写者推进。",
+      "old": [
+        {
+          "source_id": "PN-S",
+          "lines_1_based": [
+            77,
+            108
+          ]
+        },
+        {
+          "source_id": "PN-S",
+          "lines_1_based": [
+            161,
+            166
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            700,
+            725
+          ]
+        },
+        {
+          "source_id": "PN-B",
+          "lines_1_based": [
+            48,
+            54
+          ]
+        },
+        {
+          "source_id": "P-09",
+          "lines_1_based": [
+            41,
+            44
+          ]
+        },
+        {
+          "source_id": "P-11",
+          "lines_1_based": [
+            1,
+            1
+          ]
+        },
+        {
+          "source_id": "P-13",
+          "lines_1_based": [
+            1,
+            1
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            79,
+            86
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            133,
+            137
+          ]
+        }
+      ],
+      "conflict": "6369a62 是交接输入，不是正式冻结提交；P11/P13 尚未显式依赖 P10，M2 原在 P09 后；主稿已提出修正但未改执行卡。",
+      "handling": "冻结单登记采用完整提交和待决阻断范围，先同步批准链、公共 Canvas、选择依赖和 M2，再开受影响卡。研究材料存在不替代阶段 A，既有独立工作不必全部推倒。"
+    },
+    {
+      "id": "DC03",
+      "classification": "保留决定",
+      "decision": "dsh-panels 持有只读展示和交互状态；工作台持有项目、线程、目标、工作树与实时发布生命周期；会话正文与执行归宿主。",
+      "old": [
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            71,
+            78
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            271,
+            320
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            32,
+            56
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            201,
+            205
+          ]
+        },
+        {
+          "source_id": "WB-C",
+          "lines_1_based": [
+            133,
+            147
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            192,
+            192
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            39,
+            51
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            100,
+            104
+          ]
+        }
+      ],
+      "conflict": "统一 Record 或公共面板容易被误当成替换全部业务存储/原生会话的总平台；有 timeline 也不等于 B08 运行条已接线。",
+      "handling": "保留独立插件与同一业务权威，向面板交付版本化视图。实时正文与索引分开；B09 的幂等、更新/结束和审计边界沿 WB-P 115/123 行补冻结；独立服务只在新部署需求证明必要时讨论。"
+    },
+    {
+      "id": "DC04",
+      "classification": "保留原则＋需重决映射",
+      "decision": "状态由后端同一事实来源计算；运行阶段、当前证据支持、产物可用与用户验收分别呈现。",
+      "old": [
+        {
+          "source_id": "WB-C",
+          "lines_1_based": [
+            18,
+            35
+          ]
+        },
+        {
+          "source_id": "B-02",
+          "lines_1_based": [
+            26,
+            43
+          ]
+        },
+        {
+          "source_id": "WB-C",
+          "lines_1_based": [
+            120,
+            131
+          ]
+        },
+        {
+          "source_id": "B-08",
+          "lines_1_based": [
+            26,
+            29
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            110,
+            118
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            79,
+            92
+          ]
+        },
+        {
+          "source_id": "N-A",
+          "lines_1_based": [
+            144,
+            157
+          ]
+        }
+      ],
+      "conflict": "旧 display.done 来自 phase.completed；旧 timeline 规定 end=null 前端画进行中，而 B08 对崩溃缺结束事件写 interrupted。二者不能直接提升为 Record 完成/活性事实。",
+      "handling": "先冻结状态映射、等待配对和存活观察；未核实则明确未知/待恢复。保留业务 display 名称和来源，新增 Record 状态区可并列，不能借统一绿灯消除区别。"
+    },
+    {
+      "id": "DC05",
+      "classification": "保留决定＋需冻结边界",
+      "decision": "项目目标独立于 DSH 单会话 /goal；线程报证据，项目目标完成由用户确认。",
+      "old": [
+        {
+          "source_id": "WB-C",
+          "lines_1_based": [
+            80,
+            90
+          ]
+        },
+        {
+          "source_id": "B-05",
+          "lines_1_based": [
+            25,
+            42
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            114,
+            114
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            35,
+            35
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            81,
+            86
+          ]
+        },
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            164,
+            164
+          ]
+        }
+      ],
+      "conflict": "旧 B05 允许总对话改文字和标准，但未完整防止用 criteria.done、删除标准或整体替换绕过完成权；S1 普通 merge 不覆盖一般 Coding 目标。",
+      "handling": "把目标及标准修订、证据提交、完成确认拆成有版本命令，来源由可信入口派生。新 Record 验收不能自动把普通 Coding 目标改成 PR merge，也不授予模型用户完成权。"
+    },
+    {
+      "id": "DC06",
+      "classification": "保留决定",
+      "decision": "地图边携带类型与证据，推断边不驱动动作；终端框图只做简单图画法，整屏运行条留给后续工作台。",
+      "old": [
+        {
+          "source_id": "WB-C",
+          "lines_1_based": [
+            92,
+            110
+          ]
+        },
+        {
+          "source_id": "B-06",
+          "lines_1_based": [
+            27,
+            45
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            56,
+            56
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            556,
+            585
+          ]
+        },
+        {
+          "source_id": "P-12",
+          "lines_1_based": [
+            34,
+            57
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-R",
+          "lines_1_based": [
+            13,
+            18
+          ]
+        },
+        {
+          "source_id": "N-R",
+          "lines_1_based": [
+            43,
+            55
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            100,
+            100
+          ]
+        },
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            190,
+            192
+          ]
+        }
+      ],
+      "conflict": "“统一 DAG”可能误将关系图、支持图和工作流视为同一种可执行图；新增全屏或放开 workflow/subagent 不在旧平台范围。",
+      "handling": "保留 fact/inferred 和稳定实体；布局不决定依赖真值。新有限无环支持只约束验收公式，不禁止工作流循环；P12 框图与 B08 真实运行数据分别验收。"
+    },
+    {
+      "id": "DC07",
+      "classification": "保留决定＋待冻结协议",
+      "decision": "UI 选择→检查→引用已有明确路径，面板不写回用户数据、不覆盖草稿；对象身份与资料版本必须稳定。",
+      "old": [
+        {
+          "source_id": "PN-C",
+          "lines_1_based": [
+            260,
+            282
+          ]
+        },
+        {
+          "source_id": "P-11",
+          "lines_1_based": [
+            34,
+            58
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            299,
+            318
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            387,
+            400
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            17,
+            17
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            75,
+            92
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            100,
+            100
+          ]
+        }
+      ],
+      "conflict": "旧引用文本只有标题/id/路径，不足以绑定跨版本对象；行号仅在同快照稳定，mtime-size 不证明业务快照；当前 UI 选择也不能重绑旧命令历史。",
+      "handling": "在 I02 和 P02/P03/P11/P13 共同冻结引用身份与快照/失效规则。UI 选中、引用不等于执行授权；来源不可保证快照时显示支持边界，不静默宣称一致。"
+    },
+    {
+      "id": "DC08",
+      "classification": "需重决/冻结，不能默改默认",
+      "decision": "custom 的人工批准与模型工具分开；路径持续信任是旧默认，内容哈希模式是更严格候选。",
+      "old": [
+        {
+          "source_id": "PN-C",
+          "lines_1_based": [
+            209,
+            227
+          ]
+        },
+        {
+          "source_id": "P-10",
+          "lines_1_based": [
+            32,
+            49
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            318,
+            318
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            339,
+            352
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            811,
+            824
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            81,
+            92
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            133,
+            133
+          ]
+        },
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            164,
+            164
+          ]
+        }
+      ],
+      "conflict": "新操作参数/版本绑定不能被读成“每次渲染器内容变化都必须重批”；旧路径信任也不能变成忽略 profile、读取范围扩大或撤销的永久全局授权。",
+      "handling": "先命名清楚批准对象：路径信任、固定内容还是某次具体动作。按选定模式绑定主体/profile/范围；read/network 扩大和撤销语义先冻结。历史批准与每次动作准入分别判断，本轮不选模式。"
+    },
+    {
+      "id": "DC09",
+      "classification": "保留研究方向，具体底座需重决",
+      "decision": "任务、会话、进程、工作树与环境分开；读、搜、改、测绑定同一完整工作区版本，长任务与其恢复义务保留。",
+      "old": [
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            17,
+            31
+          ]
+        },
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            65,
+            95
+          ]
+        },
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            718,
+            734
+          ]
+        },
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            758,
+            812
+          ]
+        },
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            831,
+            855
+          ]
+        },
+        {
+          "source_id": "RT",
+          "lines_1_based": [
+            898,
+            906
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-R",
+          "lines_1_based": [
+            19,
+            21
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            101,
+            104
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            127,
+            137
+          ]
+        },
+        {
+          "source_id": "N-M",
+          "lines_1_based": [
+            92,
+            92
+          ]
+        }
+      ],
+      "conflict": "共享基础/私有变化是环境提案，不等于已采用 OverlayFS、COW、云宿主或特定远程 A/B；恢复环境不回滚外部效果，工作树也不提供进程隔离。",
+      "handling": "保留版本视图与不打断正常任务的条件，后续适配明确环境代际和来源。底座、具体共享实现与远程模式以固定场景证据决定；资源主线由总稿补充，本专题不再定义资源模型或收益数字。"
+    },
+    {
+      "id": "DC10",
+      "classification": "历史事实不继承",
+      "decision": "交接包核对、旧探针、旧测试、任务卡计划、条件估时与新软件交付是不同证据。",
+      "old": [
+        {
+          "source_id": "WB-R",
+          "lines_1_based": [
+            44,
+            64
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            18,
+            26
+          ]
+        },
+        {
+          "source_id": "WB-P",
+          "lines_1_based": [
+            157,
+            171
+          ]
+        },
+        {
+          "source_id": "PN-R",
+          "lines_1_based": [
+            64,
+            83
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            608,
+            644
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            729,
+            746
+          ]
+        },
+        {
+          "source_id": "PN-O",
+          "lines_1_based": [
+            784,
+            799
+          ]
+        },
+        {
+          "source_id": "PN-S",
+          "lines_1_based": [
+            161,
+            218
+          ]
+        },
+        {
+          "source_id": "P-15",
+          "lines_1_based": [
+            32,
+            54
+          ]
+        },
+        {
+          "source_id": "B-12",
+          "lines_1_based": [
+            27,
+            46
+          ]
+        }
+      ],
+      "later": [
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            9,
+            11
+          ]
+        },
+        {
+          "source_id": "N-I",
+          "lines_1_based": [
+            53,
+            53
+          ]
+        },
+        {
+          "source_id": "N-IR",
+          "lines_1_based": [
+            7,
+            13
+          ]
+        }
+      ],
+      "conflict": "17 项旧测试、54 文件一致、60 帧/512 MiB 探针、35–48 日估时都不能作为本轮产品或资源通过；公开归档没有 run-card/count-tests 等执行附件。",
+      "handling": "每卡验证、审查、真实宿主、集成与发布分别留证。从真实源码仓和新冻结版本恢复执行入口；旧数量与估时只作历史，不据此自动设上线日、稳定版或实施状态。"
+    }
+  ],
+  "decision_guide": [
+    {
+      "id": "Q1",
+      "question": "产品交付顺序与 I01 的先行验证怎么并存？",
+      "recommended_start": "保留 P→B 产品顺序；先冻结阶段 A，并把 I01 的语义验证单列。",
+      "alternative": "经明确范围裁定，先在现有工作台放独立 Record 状态区。",
+      "change_evidence": "真实身份入口可验证，独立视图不会造成两套状态/引用契约，且有明确可验证收益。",
+      "related": [
+        "DC01",
+        "DC02"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "业务事实与跨端写入由谁持有？",
+      "recommended_start": "沿原单数据目录单写者，工作台管业务、宿主管会话，面板读版本视图。",
+      "alternative": "出现跨宿主共享需求后，由统一服务持有存储，或明确独立数据目录。",
+      "change_evidence": "实际部署要求多个进程同时写同一项目；原单实例队列无法覆盖所需一致性。",
+      "related": [
+        "DC03",
+        "DC09"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "项目目标和标准由谁确认完成？",
+      "recommended_start": "沿用用户确认目标完成，模型提交建议与证据；先补 criteria 修订与来源边界。",
+      "alternative": "为明确子类结果制定有范围的委托验收政策，另留用户项目级接受。",
+      "change_evidence": "某类标准具备独立可核的判据、可信执行证据及用户认可的委托范围。",
+      "related": [
+        "DC04",
+        "DC05"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "图和面板什么时候可以触发修改？",
+      "recommended_start": "继续只读显示、稳定选择、引用和影响提示；操作另走可信命令入口。",
+      "alternative": "为少数明确动作增设操作控件，独立冻结参数、批准与反馈。",
+      "change_evidence": "只读引用路径反复造成可观测负担，而新控件能保留相同对象/版本并通过负向边界验收。",
+      "related": [
+        "DC06",
+        "DC07"
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "custom 批准的是路径、内容还是具体动作？",
+      "recommended_start": "先把旧路径持续信任的准确含义、profile、权限扩大和撤销写清，不默改选择。",
+      "alternative": "固定内容哈希批准；或对具体敏感动作单独审批。",
+      "change_evidence": "内容变化的实际风险和人工确认负担有场景证据，能说明哪一粒度合适。",
+      "related": [
+        "DC08"
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "何时重新选择 DSH、Pi 或另一底座？",
+      "recommended_start": "以当前 DSH 工作台为适配对照，先验证所需语义；原候选不当既定替换决定。",
+      "alternative": "薄内核、自有服务或其他宿主作为同任务对照。",
+      "change_evidence": "关键身份/历史/状态/效果路径在已冻结 DSH 接入无法满足，替代方案在同任务证据与全成本上更合适。",
+      "related": [
+        "DC01",
+        "DC09"
+      ]
+    },
+    {
+      "id": "Q7",
+      "question": "首个远程模式和环境怎么选？",
+      "recommended_start": "I01 不绑定远程目标；I06 再按任务和已核能力选择单一 A/B 样例。",
+      "alternative": "A 本地 Agent＋远端工具；B 远端 Agent；或保持本地交付。",
+      "change_evidence": "所需文件/终端/审批/网络归属、断连恢复与未知效果处理能在某一模式形成完整回执。",
+      "related": [
+        "DC09"
+      ]
+    },
+    {
+      "id": "Q8",
+      "question": "何时可以说平台交付，而不仅是研究材料完成？",
+      "recommended_start": "按新冻结卡与 M1–M3 取真实证据，功能、体验、资源和安装分别报告。",
+      "alternative": "先交付范围更窄且明确标为模拟/接口试验的成果，保留未验收项。",
+      "change_evidence": "独立安装、真实桌面/TUI、组合路径与恢复达到已冻结判据；旧数字和文档检查不足以改变状态。",
+      "related": [
+        "DC10",
+        "DC02"
+      ]
+    }
+  ],
+  "scope": [
+    "No product route chosen or changed.",
+    "No old drafts changed; W09 remains unchanged.",
+    "No new external research or runtime execution.",
+    "Resource model is owned by the integration line; only inherited task/environment constraints are mapped here."
+  ],
+  "reading_list": "reading-list.json",
+  "task_entries": "task-entries.json"
+}

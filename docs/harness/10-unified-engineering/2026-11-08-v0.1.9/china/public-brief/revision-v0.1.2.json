@@ -1,0 +1,12 @@
+{
+  "revision": "v0.1.2",
+  "date_utc": "2026-11-08T09:57:29.916426+00:00",
+  "reason": "Preserve P01-P15 then B01-B12 product sequence; I slices remain research and acceptance",
+  "model_or_result_changed": false,
+  "files": [
+    {
+      "path": "登记文案-v0.1.2.md",
+      "sha256": "dea70d59fa9daba6286e46811f8bcd6bc7c1c073530dbad72912865654a13c2d"
+    }
+  ]
+}

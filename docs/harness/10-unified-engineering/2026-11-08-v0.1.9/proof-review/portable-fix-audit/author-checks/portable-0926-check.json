@@ -1,0 +1,7 @@
+{
+  "copy_of": "reader-preview-20261108T0926Z",
+  "validator_sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74",
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"PASS\",\n  \"checked\": {\n    \"conditions\": 3150,\n    \"input_hashes\": 16,\n    \"resolved_pointers\": 762,\n    \"group_records\": 219,\n    \"document_records\": 240,\n    \"constructed_file_links\": 14,\n    \"root_review_records\": 38,\n    \"bibliographic_enrichment_records\": 4,\n    \"identity_relationships\": 21,\n    \"candidate_records\": 4,\n    \"literal_catalog_URL_pointers\": 253\n  },\n  \"reader_links\": 56,\n  \"errors\": []\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,121 @@
+{
+  "records": [
+    {
+      "source": "west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "source_sha256": "b266ddd59427fe4d902b190088d2fda37876b14183ff680a7d98d383ca0b3097",
+      "offline": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "8d8e4b7435f21850ff98694cd68ac09a7cee54ea92de010656d35a3dcdc9056b",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:45:38.446592+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "source_sha256": "334580e90656d9853cc79f3fe0bd3146ccfa39296aef30e2de75790078ed7a87",
+      "offline": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "855f03ef3b69851a2c37159b3f0e52ccfe8f0b31310cb477b520c85593d2986c",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:46:08.996044+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "source_sha256": "105c69bdc61fc7fcb72271f58354534edbea6e6ae1eaff147f52b6a7be2f30d8",
+      "offline": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "475e07d9f4c153fd8f6e743d81a06b1749f6ddf136ed410a25f0f5bce022da3d",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:46:29.166848+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+      "source_sha256": "fbe5f707e58f3536e842b9bb1190d01fc7a007434adcffb10204dd043f70df3b",
+      "offline": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "259e74cd8692374a870a48270e7224d7c097787f184987d66bbb16f44980832f",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:46:47.357019+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+      "source_sha256": "79cf5f1ce81b2e41eee5a9865c41e4d28f75ab6f5374b28929de12ab794b8a5c",
+      "offline": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "11601d313e229b414651b133ab7ff798001206a6be839571b13a51e1e1963f70",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:47:05.976600+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+      "source_sha256": "2ee67c821ce38c2b948cc75861677db1aaad7cd50d5f3757204093982c6414ec",
+      "offline": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "840b1c54f6f41c3e98d58e1872cc52b88e0ccc06347b4e79f7e52e5385a4b11b",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:47:27.652762+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+      "source_sha256": "5c130d31a693da8c039c89c3e47e7fa3a9fd01d65ca9660e48aeac43c2e6bc3d",
+      "offline": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "4eb66b3faadfab533e9548b7cf4588ec3267cb37189add943abb01ddbae9850a",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:47:47.649789+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "source_sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867",
+      "offline": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "08ac8eee67a25b3245a859359b3027898eac6dcc7caebdbbd762fcdec5bd43cd",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:48:09.450015+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "source_sha256": "c48f3b690ddcf923b1f8b548a99b7694d23035d71bc2e61a0bcaaea35ff85069",
+      "offline": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "ccd8f137a789771d74017f6f708911a78a26cddd9f4d7a64614092beb96f90f5",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:48:31.348617+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "source_sha256": "7b5e1e55384ba9a61e3378a13e63d8685d784022bff9d4cd346a00647c86aa69",
+      "offline": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "20d75f6711b5461300d5cfc17a7773d0b4ca3e59eafefdd103a8d63a28250b6b",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:48:48.611322+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "source_sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "offline": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "48e4a91213c4b47934083715c00e54f90e0cf375de75d8979112d21088447386",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:49:09.737066+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "source_sha256": "c28d81faf38fe68daf26a07ba2337b7e274bfd9695a349f6008f917b5a31491f",
+      "offline": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "a549e03ed48cb197961acae586a55d94296bc924582d9ba3025f016bba1104d9",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:49:28.924758+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    },
+    {
+      "source": "适配契约与贯穿场景讨论稿-v0.1.1.md",
+      "source_sha256": "32e2fc71df489af9d8558743fff51ff5966a92a7f69f2acf7e363671345ab7bd",
+      "offline": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html",
+      "offline_sha256": "5e6a165d2da130ecfbae42d68e14d6387a2f3e7ebaf6d19f628361e70f5fccbe",
+      "diagrams": 3,
+      "completed_at_utc": "2026-11-08T08:49:48.695953+00:00",
+      "status": "GENERATED_PENDING_BROWSER_CHECK"
+    }
+  ]
+}

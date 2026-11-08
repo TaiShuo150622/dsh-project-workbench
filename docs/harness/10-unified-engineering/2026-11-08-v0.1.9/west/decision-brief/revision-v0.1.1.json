@@ -1,0 +1,17 @@
+{
+  "revision": "v0.1.1",
+  "date_utc": "2026-11-08T09:57:29.917542+00:00",
+  "reason": "Preserve adopted product order and separate existing theory from proposed engineering composition",
+  "model_or_result_changed": false,
+  "files": [
+    {
+      "path": "MEMO-v0.1.1.md",
+      "sha256": "d944e9d1d08434d9619ac7506cc3fb1e9d52a5763e8b428c5f486ed6e3be387e"
+    }
+  ],
+  "clarification_after_R16": {
+    "at_utc": "2026-11-08T10:22:39.120636+00:00",
+    "change": "Label v0.1.5 as memo input snapshot instead of current main manuscript; link and claims unchanged",
+    "previous_sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a"
+  }
+}

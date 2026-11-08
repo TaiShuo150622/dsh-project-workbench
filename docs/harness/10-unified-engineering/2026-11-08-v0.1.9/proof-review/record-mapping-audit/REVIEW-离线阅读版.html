@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="9562c6d858ed">
+<title>R-05：Record S1 精化映射的独立模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#五项探针究竟说明什么">五项探针究竟说明什么</a></li><li class="l3"><a href="#rm01-rf03-的动作不是来源撤回">RM01：RF03 的动作不是来源撤回</a></li><li class="l2"><a href="#验收-并发令牌与已存决定适用性确实不同">验收：并发令牌与已存决定适用性确实不同</a></li><li class="l2"><a href="#合成证据与适配层责任">合成证据与适配层责任</a></li><li class="l2"><a href="#首个最小桥接切片-受作用域约束的命令入口">首个最小桥接切片：受作用域约束的命令入口</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-05：Record S1 精化映射的独立模型审查</h1>
+</header>
+<p><strong>结论：报告的窄域映射和 acceptanceRevision 分析基本准确；RF03 应明确归为表达能力缺口。</strong> 五项轨迹不是五个产品缺陷，也不是已有 AND/OR 算法的五个反例。认证、外部效果和持久性均未被这些合成探针验证。首个桥接可从历史与认证主体绑定的适配入口开始，无须立即改内核。</p>
+<p>本轮是模型源码审查，非人类审核。完整阅读冻结 kernel、fixture、探针、REPORT 和内核 README，并核读矩阵与执行回执；没有重复执行20条测试或8条探针，没有修改产品或其他作者文件。输入固定于 <a href="INPUT_MANIFEST.json">INPUT_MANIFEST.json</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">主要输入</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">kernel.mjs</td><td style="text-align:left"><code>1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8</code></td></tr><tr><td style="text-align:left">record-fixture.mjs</td><td style="text-align:left"><code>533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea</code></td></tr><tr><td style="text-align:left">refinement-probes.mjs</td><td style="text-align:left"><code>799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401</code></td></tr><tr><td style="text-align:left">REPORT.md</td><td style="text-align:left"><code>ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe</code></td></tr></tbody></table></div>
+<h2 id="五项探针究竟说明什么">五项探针究竟说明什么</h2>
+<p>位置均指 <code>inputs/inputs/record/kernel.mjs</code> 或 <code>inputs/refinement-probes.mjs</code>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">探针</th><th style="text-align:left">独立判断</th><th style="text-align:left">准确分类与限制</th></tr></thead><tbody><tr><td style="text-align:left">RF01</td><td style="text-align:left">beginAttempt只存actor/host/session；reserve复制当前task.specVersion，旧attempt可以获得v2动作（kernel:183–188,282–290）</td><td style="text-align:left"><strong>缺少尝试规格绑定。</strong> 可反驳“attempt不可变地绑定创建时规格”的直接映射；“新attempt必自动退休旧attempt”是另一个待选政策，不是一般模型天然要求。fixture的USER是合成角色，v2修订不是已核实的真人授权。</td></tr><tr><td style="text-align:left">RF02</td><td style="text-align:left">普通envelope没有streamId，目标task/revision只在被调用实例中查；两实例本地ID碰撞时错路由可修改新实例（118,171–179）</td><td style="text-align:left"><strong>入口历史绑定义务。</strong> acceptance token的跨历史保护不能外推到普通命令；不是已证明可绕过一个正确认证/路由适配器的漏洞。</td></tr><tr><td style="text-align:left">RF03</td><td style="text-align:left">第二条同结果观察留在journal，但complete返回旧completion，不新增可单独撤回的支持项（73–88）；探针随后撤回整个completion</td><td style="text-align:left"><strong>表达能力/精化缺口。</strong> 不是“仅撤回w1后OR算法错误清掉w2”；详见下文。</td></tr><tr><td style="text-align:left">RF04</td><td style="text-align:left">checkAction扫描包括自己的所有占位，dispatch明确排除本action（90–101,293–304）</td><td style="text-align:left"><strong>接口阶段语义不同。</strong> 直接否定两者是同一guard；把前者当新动作预检查、后者当已有预留的最终准入即可，无须修改既有语义。</td></tr><tr><td style="text-align:left">RF05</td><td style="text-align:left">首次完成创建available=true，无独立可用性观察或q字段（73–84,342–348）</td><td style="text-align:left"><strong>投影保证不足。</strong> 不能单靠current-result声称独立观察过的Usable_L(t,q,n)，更不能声称世界可用；不是证明产物实际不可用。后续已知失效不会被重复历史观察重置，这个控制有效。</td></tr></tbody></table></div>
+<h3 id="rm01-rf03-的动作不是来源撤回">RM01：RF03 的动作不是来源撤回</h3>
+<p>探针调用 <code>withdrawCompletion(completionId, reason)</code>（probe:88），kernel:236–250 无条件撤回指定当前结论。<code>reason=&#x27;first source attribution withdrawn&#x27;</code> 只是文本，不把命令变成 <code>withdrawObservation(w1)</code>。即使一个系统真的支持 OR，<strong>显式撤回整个结论</strong>也可能合理地停止使用该结论。</p>
+<p>因此，该轨迹不能单独证伪“仅撤回w1时仍由w2支持”的规则。它与源码共同确认的是：S1原生API/投影没有独立支持项、来源撤回命令与支持公式；重复observationRef并未形成原生OR见证。REPORT:64–66和矩阵已部分承认这一点，建议统一称“5项经实际轨迹核实的映射差异”，RF03标记为representation gap。无需把它改标为产品失败，也不能把relatedTaskId当证据支持边。</p>
+<h2 id="验收-并发令牌与已存决定适用性确实不同">验收：并发令牌与已存决定适用性确实不同</h2>
+<p>REPORT:90–92的区别正确。tokenFor包含task.acceptanceRevision；新acceptResult要求提交token与当前token完全相同（62–71,269–280），随后accepted记录旧计数，task计数加1。读取current-acceptance则匹配有效completion、result、availabilityRevision（342–348），不比较这个写入计数。</p>
+<p>最小源码推导：token计数0 → 新接受写入accepted计数0、task计数1 → 当前验收仍为真；另一新请求重用token0被拒绝。若把“适用”定义为accepted计数必须等于task当前计数，会错误地让刚写入的决定失效。相同requestId的精确重送又是历史收据重放（121–125），不能当新接受或新发送许可。</p>
+<p>没有显式artifactVersion也不自动是缺陷：窄域resultId已绑定spec及mergeSha。当前政策是固定代码，不能据此声称支持可变政策、时钟或按q的验收；但不应为补齐通用字段数量而机械改内核。</p>
+<h2 id="合成证据与适配层责任">合成证据与适配层责任</h2>
+<p>fixture中的USER/AGENT/VERIFIER均是对象字面量，SHA与observationRef也是合成数据。kernel只做角色、形状和作用域校验；reference存在不证明远端发送者终止。报告整体明确了这些边界，没有把probe成功升级为真实认证、GitHub效果或C01–C16适配通过。20条选定测试通过是作者回执中的本地结果，本线没有独立重跑或作外部状态确认。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">缺口</th><th style="text-align:left">可以由适配层解决的部分</th><th style="text-align:left">不能只靠改名解决的部分</th></tr></thead><tbody><tr><td style="text-align:left">历史/主体</td><td style="text-align:left">私有kernel句柄绑定history；从可信会话导出角色与命名空间主体；拒绝错路由</td><td style="text-align:left">裸kernel仍可被绕过时，外层门禁没有完整覆盖</td></tr><tr><td style="text-align:left">attempt版本/代际</td><td style="text-align:left">适配侧记录创建时spec与执行身份，发送前检查明确的续用/退休政策</td><td style="text-align:left">sidecar和kernel更新必须有一致性规则；不能丢弃旧动作迟到证据</td></tr><tr><td style="text-align:left">OR支持</td><td style="text-align:left">独立证据服务维护公式与来源撤回，向kernel提交经过聚合判断的完成变化</td><td style="text-align:left">仅重复verifyCompletion或改reason文字不等于实现OR；若称S1原生支持，需真正扩展原生契约</td></tr><tr><td style="text-align:left">可用性q</td><td style="text-align:left">另做有来源的消费观察/当前策略；S1 available仅作窄域条件</td><td style="text-align:left">单主体403不能写成共享markUnavailable；没有q证据不能显示“可下载/可供此人使用”</td></tr><tr><td style="text-align:left">持久/真实发送</td><td style="text-align:left">适配服务建立持久intent、统一资源权威与目标读回</td><td style="text-align:left">现有同步apply及sent标签本身不提供这些保证</td></tr></tbody></table></div>
+<h2 id="首个最小桥接切片-受作用域约束的命令入口">首个最小桥接切片：受作用域约束的命令入口</h2>
+<p>仅设计，建议先闭合RF02及actor信任入口，复用RF04的正确阶段语义；不同时加入通用图、费用或新调度器。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">项目</th><th style="text-align:left">建议</th></tr></thead><tbody><tr><td style="text-align:left">目标</td><td style="text-align:left">一个宿主、一个既有history、一个私有S1实例：每次命令明确属于哪个历史和哪个已认证主体；外部调用者不能直接调用kernel</td></tr><tr><td style="text-align:left">数据/契约</td><td style="text-align:left">外层请求绑定historyId、requestId及精确payload；可信宿主会话给出(identityAuthority,subject)和允许角色；适配层采用无碰撞主体映射后生成kernel actor。响应标记历史收据与当前查询的区别</td></tr><tr><td style="text-align:left">安全约束</td><td style="text-align:left">路由/身份检查先于apply；body中的actor不作为认证来源；不自动把旧重试改写为最新revision；checkAction只表示新动作预检查，dispatch仅产生发送意图；本切片不产生真实外部写入</td></tr><tr><td style="text-align:left">验收</td><td style="text-align:left">两history同taskId/revision时错历史请求被拒且内核未调用；伪造user/verifier字段无效；精确重送不生成第二次接纳/发送意图；自己的reservation使checkAction wait但仍可按dispatch规则准入；验收计数增加不废止已存决定</td></tr><tr><td style="text-align:left">阻断项</td><td style="text-align:left">尚未选定可信宿主身份来源，或有绕过门禁的kernel入口；未明确history归属和主体到角色的当前政策。没有这些依据，只能标为入口模拟，不能标认证已完成</td></tr><tr><td style="text-align:left">后续边界</td><td style="text-align:left">不在此切片宣称RF01不可变attempt、通用OR、Usable_q、崩溃持久性或真实发送已完成；下一切片再选其中一个，保留未支持状态</td></tr></tbody></table></div>
+<p>该切片不要求改kernel源码，也不承诺内存边界之外的效果。若选择把sidecar、持久化或外部发送一并加入，应另行扩大验收范围，不能继承本切片的通过标签。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.0",
+  "study_id": "M11",
+  "title": "统一 Harness 采用成本反方审查",
+  "status": "STATIC_REVIEW_NOT_COST_MEASUREMENT",
+  "prepared_at_utc": "2026-11-08T10:35:00Z",
+  "scope": "个人通用 Harness；只读固定研究输入/公开源码；没有产品修改、实验或发布。",
+  "input_root": "integration worktree at read time; paths relative to repository root",
+  "actual_product_execution": false,
+  "cost_experiment_executed": false,
+  "claim_scope": "六项默认值取舍是本研究建议；成本是机制推断，未测工时、延迟、人工或收益；文档验证另记。",
+  "inputs": [
+    {
+      "id": "E01",
+      "path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "title": "统一 Harness 工程与形式化基础讨论稿 v0.1.6",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；重点 L54–177、180–307、359–393",
+      "lines": 436,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "主稿已反对全量重造，保留有限阶段、可替换策略、P/B 产品顺序；没有成本收益实测。",
+        "ARCH 十步与完整能力表仍需在具体操作上选择适用检查。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E02",
+      "path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "37dc3e3e9727eb65838334652a0988babbb490e2fd448a7429805f02f5f59d09",
+      "title": "统一 Harness 架构与切片工作稿",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；重点 §1、4、6–10",
+      "lines": 213,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "统一层是逻辑边界，不要求十个微服务。",
+        "13 段公共契约和能力声明是提案；真实接口/存储/宿主待冻结。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E03",
+      "path": "docs/research/harness-20261107/west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0.md",
+      "sha256": "6f0ebe4f2261a8967f8de96340c28c2e3f5625c40ab3e0061c6ed9b6edd4a04d",
+      "title": "旧设计决定与统一 Harness 衔接讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；DC01–DC09，八问 Q1–Q8；不重跑原卡",
+      "lines": 221,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "完整面板 P01–P15 先于 B01–B12；H/I 不自动重排产品。",
+        "单数据目录单写者、业务/会话/面板归属、路径信任仍是原决定。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E04",
+      "path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "title": "可信入口与 Coding 交付实施任务书讨论稿 v0.1.1",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；I01–I07、D01–D03；全部 proposed",
+      "lines": 171,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "I01–I07 全部为 proposed；普通 Coding 不等同 S1 普通 merge。",
+        "I02 可先用有界显式关系；I05–I07 是后续不同收益假设。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E05",
+      "path": "docs/research/harness-20261107/west/decision-brief/MEMO.md",
+      "sha256": "9df02995ad608d1140e3eadbfa672da5abaf49230fa4966da8e77eb6131fd532",
+      "title": "统一 Harness 工程决策备忘 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；原 v0.1.0",
+      "lines": 28,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "原 decision-brief 提倡小语义内核、简单检索基线和全成本评价。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E06",
+      "path": "docs/research/harness-20261107/west/decision-brief/MEMO-v0.1.1.md",
+      "sha256": "d944e9d1d08434d9619ac7506cc3fb1e9d52a5763e8b428c5f486ed6e3be387e",
+      "title": "统一 Harness 工程决策备忘 v0.1.1",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；核 P/B 衔接修订",
+      "lines": 30,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "修订 decision-brief 显式保留 P/B，区分已有材料与未来产品。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E07",
+      "path": "docs/research/harness-20261107/mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.md",
+      "sha256": "1b08a43a8e6d682c1be06c0d9556e8a9ae1d70cb2a37b4cd52053584fe1662e4",
+      "title": "跨宿主协议与有损适配契约讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；MCP/A2A/Native 范围、loss、无 task 句柄及待补桥接",
+      "lines": 184,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "MCP/A2A/Native 相同状态名不提供相同保证；弱消息接口不自动提供 durable task。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E08",
+      "path": "docs/research/harness-20261107/mechanisms/composition-review/REVIEW.md",
+      "sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+      "title": "M09 跨专题组合审查 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；评估/验收/授权、Handoff 与原效果分别保存",
+      "lines": 39,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "保留 Observation/EvidenceState/Assessment、当前权限、效果及责任边界；纯翻译不增强证据。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E09",
+      "path": "docs/research/harness-20261107/mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "title": "有限声明域覆盖契约讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；有限域、目标、切点、tail、受限披露",
+      "lines": 121,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "coverage 对有限域、target、切点及收据成立，访问拒绝不删分母，披露单独授权。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E10",
+      "path": "docs/research/harness-20261107/west/trusted-entry-map/MAP.md",
+      "sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1",
+      "title": "W10 · 可信入口与身份边界决策材料",
+      "date": "2026-11-08",
+      "reading_coverage": "全文；W10 标准链、所有入口限定范围、D01 备选",
+      "lines": 78,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "固定 DSH 标准 carrier 的 owner gate 可复用；仍缺 I01 history/角色映射。",
+        "owner 不等于每位自然人或每次人工验收，其他 carrier 与同进程隔离未证明。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E11",
+      "path": "docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766",
+      "title": "DSH 项目工作台：后端建议与实施时间计划（评审稿）",
+      "date": "2026-11-06",
+      "reading_coverage": "L1–18、190–205；仅用原 P/B 顺序、业务归属及无新增依赖边界；未引用旧性能、星数、估时",
+      "lines": 205,
+      "author_or_institution": "个人 Harness 历史设计；公开整理版，原署名未在所读范围确认",
+      "claims": [
+        "历史产品决定为完整面板先行，工作台保留业务，平台提供显示。",
+        "无新增运行时依赖边界尚未被新调研改变。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E12",
+      "path": "docs/harness/05-panels/docs/handoff/panels/CONTRACT.md",
+      "sha256": "40d1829386ab952f48135a0154a914e91b3e093c3c82f5c7e1b1f1d9c7b4867c",
+      "title": "接口契约",
+      "date": "2026-11-06",
+      "reading_coverage": "L205–230、255–286；旧批准粒度和选择引用契约；历史实测没有复测",
+      "lines": 349,
+      "author_or_institution": "个人 Harness 历史设计；公开整理版，原署名未在所读范围确认",
+      "claims": [
+        "旧 custom 采用工作区+渲染器路径批准，普通内容变化不重新问，network 变化需问。",
+        "面板选择不覆盖草稿，模型补充工具不修改用户数据。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E13",
+      "path": "docs/research/harness-20261107/mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+      "sha256": "3699dc387498f16fd38cd165c2290196233ffc7e84190efee9b2498a4fb22867",
+      "title": "自主推进与工作方式改进讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "L35–110；有限策略、原研究适用范围及成本边界；重读 sources.json 中 Reflexion/AFlow 条目",
+      "lines": 218,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "计划、评审、经验、工作流搜索应有任务域与完整成本，外层轮数不等于总调用上限。",
+        "本轮不将特定论文基准或作者报告推成现代 Coding 通用收益。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E14",
+      "path": "docs/research/harness-20261107/mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+      "sha256": "c48f3b690ddcf923b1f8b548a99b7694d23035d71bc2e61a0bcaaea35ff85069",
+      "title": "长期任务跨版本续接讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "L1–95；版本路由、重放、旧效果、退役与索引重建区别；重读来源 T1/T2 条目",
+      "lines": 162,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "会话、解码、重放、接管、工具效果和索引兼容分别判定，旧代码退役仍保留效果责任。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E15",
+      "path": "docs/research/harness-20261107/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "sha256": "7b5e1e55384ba9a61e3378a13e63d8685d784022bff9d4cd346a00647c86aa69",
+      "title": "持久状态、发送意图与效果边界讨论稿 v0.1.0",
+      "date": "2026-11-08",
+      "reading_coverage": "L35–88；单写者/进程/掉电、outbox/宿主 flush/内存内核不同承诺",
+      "lines": 140,
+      "author_or_institution": "Codex / personal Harness research lines",
+      "claims": [
+        "单 Store 队列不等于跨实例互斥；进程与掉电承诺不同；现有 Record 是内存模型。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    },
+    {
+      "id": "E16",
+      "path": "docs/handoff/ui-backend/CONTRACT.md",
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b",
+      "title": "接口契约",
+      "date": "2026-11-06",
+      "reading_coverage": "L130–151；实时资料与业务数据原分层，未以 end=null 证明存活",
+      "lines": 159,
+      "author_or_institution": "个人 Harness 历史设计；公开整理版，原署名未在所读范围确认",
+      "claims": [
+        "原实时发布内容与项目业务、会话正文有不同归属；没有重验历史时间线规则。"
+      ],
+      "limitations": [
+        "本轮静态阅读及引用核对，不继承原稿中的历史测试或证明为真实产品验收。"
+      ]
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "P01",
+      "title": "DeepSeek Harness RPC host admission and exact route gate",
+      "authors": [
+        "DeepSeek Harness contributors"
+      ],
+      "commit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "date": null,
+      "date_note": "未重新查 commit 日期，身份由固定提交与文件路径限定。",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/client/connection/src/rpc-host.ts",
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7",
+      "read_lines": [
+        [
+          129,
+          136
+        ],
+        [
+          215,
+          222
+        ]
+      ],
+      "accessed_at": "2026-11-08",
+      "verification": "RAW_FIXED_SOURCE_REOPENED_NOT_EXECUTED",
+      "claims": [
+        "admit 由 BrowserAuth 认证来源得到 Peer；精确 fetch 路由拒绝非 owner Peer。"
+      ],
+      "limits": [
+        "此片段不证明完整其他 carrier、安装版本、逐人身份或每次人工批准。",
+        "web GitHub 页面 fetch 超时后使用公开 raw URL 默认 TLS 读取；没有执行源码。"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Project workbench native conversation and diff view",
+      "authors": [
+        "Personal dsh-project-workbench contributors"
+      ],
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "date": null,
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/client/app.js",
+      "sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "read_lines": [
+        [
+          76,
+          135
+        ]
+      ],
+      "accessed_at": "2026-11-08",
+      "verification": "RAW_FIXED_SOURCE_REOPENED_NOT_EXECUTED",
+      "claims": [
+        "原生会话嵌入、打开主区、差异预览和既有线程接受操作已经有代码入口。"
+      ],
+      "limits": [
+        "静态入口存在不是当前 UI/宿主通过，不证明稳定版本引用、Record 验收或产品安装验收。"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Project workbench project tools and host integration",
+      "authors": [
+        "Personal dsh-project-workbench contributors"
+      ],
+      "commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "date": null,
+      "url": "https://github.com/TaiShuo150622/dsh-project-workbench/blob/7264be10387963f4d575d8688ed8573f4c16c8c4/index.js",
+      "sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "read_lines": [
+        [
+          9,
+          84
+        ]
+      ],
+      "accessed_at": "2026-11-08",
+      "verification": "RAW_FIXED_SOURCE_REOPENED_NOT_EXECUTED",
+      "claims": [
+        "插件注入会话/agents/权限/沙箱/持久服务；工具检查注册 agent 对象。",
+        "project_report 将 review 说明为等待人工评阅而非 accepted/merged。"
+      ],
+      "limits": [
+        "不据注入列表推出所有强保证；模型说明文字不是 verifier；不把旧 Projects 当 Record 接线。"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Scale to many tools with tool search",
+      "authors": [
+        "Anthropic / Claude Code documentation"
+      ],
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search#how-tool-search-works",
+      "date": null,
+      "version": "mutable official documentation read 2026-11-08; no fixed release asserted",
+      "accessed_at": "2026-11-08",
+      "read_scope": "正文 How tool search works；web extract L91–130，尤其 L105–106；未用页面其他产品规模数字作结论。",
+      "verification": "OFFICIAL_PAGE_REOPENED_NOT_BENCHMARKED",
+      "claims": [
+        "文档称搜索增加一次往返；在定义可舒适放入上下文的小工具集上，直接加载通常更快。"
+      ],
+      "limits": [
+        "厂商的条件说明，未给本项目测量；不推工具数量的通用最优值，也不证明所有模型和网关均同样。"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "AFlow optimizer outer and inner budgets",
+      "authors": [
+        "FoundationAgents/AFlow contributors"
+      ],
+      "commit": "289d5544cfb5698799b207b931a392aadc9e9c1a",
+      "date": "2025-04-15T09:52:02Z",
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+      "read_scope": "本轮复核 E13 及其 sources.json WI-C02；原 M04 核过 L32–46、105–113、130–181，本轮未重新取上游文件。",
+      "verification": "REUSED_PREVIOUS_FIXED_PRIMARY_READING_NOT_RERUN",
+      "claims": [
+        "外层轮数不能用作生成/验证/重试的总调用硬上限。"
+      ],
+      "limits": [
+        "不估算本工程费用；不把 AFlow 实验收益当通用 Coding 收益。"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "Temporal safe deployments and pinned workflow recovery",
+      "authors": [
+        "Temporal documentation maintainers"
+      ],
+      "commit": "3fcf3f34596030d06979e9e3c68ab4964900b4a9",
+      "date": "2026-11-06T19:42:02Z",
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/develop/safe-deployments.mdx",
+      "secondary_url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "read_scope": "本轮复核 E14 及 sources.json T1/T2；原 M05 全文核过 safe deployments 112 行与 pinned recovery 253 行，本轮未重新抓取。",
+      "verification": "REUSED_PREVIOUS_FIXED_PRIMARY_READING_NOT_RERUN",
+      "claims": [
+        "成熟执行组件已有版本路由/重放/排空机制；选择组件仍承担兼容和旧版本退役条件。"
+      ],
+      "limits": [
+        "未选择 Temporal 底座，未部署或运行 replay；不声称数据库或引擎替代目标端幂等、授权和业务验收。"
+      ]
+    }
+  ],
+  "decision_evidence": [
+    {
+      "id": "AC01",
+      "source_ids": [
+        "E04",
+        "E07",
+        "P02",
+        "P03"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "id": "AC02",
+      "source_ids": [
+        "E02",
+        "E03",
+        "E11",
+        "E14",
+        "E15",
+        "E16",
+        "P02",
+        "P06"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "id": "AC03",
+      "source_ids": [
+        "E01",
+        "E03",
+        "E04"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "id": "AC04",
+      "source_ids": [
+        "E01",
+        "E04",
+        "E09"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "id": "AC05",
+      "source_ids": [
+        "E03",
+        "E08",
+        "E10",
+        "E12",
+        "P01",
+        "P03"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    },
+    {
+      "id": "AC06",
+      "source_ids": [
+        "E01",
+        "E04",
+        "E05",
+        "E06",
+        "E13",
+        "P04",
+        "P05"
+      ],
+      "status": "PROPOSED_NOT_ADOPTED"
+    }
+  ],
+  "review_limitations": [
+    "同模型不同上下文研究，不称独立模型审查。",
+    "16 份本地输入按列明范围读取，并非所有旧归档全文。",
+    "未运行采纳实验、兼容测试、适配器或产品。",
+    "六项反方建议保留 P/B 产品承诺与已采纳长期方向，不授予实施/发布权限。",
+    "不会因某操作资料不足而取消整个项目；但相应强制义务缺失时仍阻断依赖它的操作。"
+  ]
+}

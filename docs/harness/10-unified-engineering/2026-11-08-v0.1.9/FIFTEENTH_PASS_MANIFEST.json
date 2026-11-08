@@ -1,0 +1,221 @@
+{
+  "copied_at_utc": "2026-11-08T08:43:36.895941+00:00",
+  "files": [
+    {
+      "path": "china/consolidated-sources/README.md",
+      "source_worktree": "china",
+      "bytes": 4023,
+      "sha256": "c5ceb4dce8ea941ebd205e71ead119263d01120e382065bd49788ff26c8aeb82"
+    },
+    {
+      "path": "china/consolidated-sources/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 2706,
+      "sha256": "465e622107f98739e21a62d977d6876134bbaff87b3a1a98e981208360a06bd2"
+    },
+    {
+      "path": "china/consolidated-sources/SOURCE_INDEX.md",
+      "source_worktree": "china",
+      "bytes": 12932,
+      "sha256": "40d8abd95e26bb90f9ef39ee90d259ff80e3b5f7c74bb8491de97cdcb69bfe24"
+    },
+    {
+      "path": "china/consolidated-sources/build_index.py",
+      "source_worktree": "china",
+      "bytes": 18939,
+      "sha256": "c2fde1aa0b93c2db8f42ce59cd608a046a4185423203dfecb2e6a0d4fc24b11c"
+    },
+    {
+      "path": "china/consolidated-sources/execution_receipt.json",
+      "source_worktree": "china",
+      "bytes": 1736,
+      "sha256": "a04bb0207f1495e233fa6dc1ab5a56ee1300df0e2e45a631bbe8de351dc4728a"
+    },
+    {
+      "path": "china/consolidated-sources/identity-opinion-bindings.json",
+      "source_worktree": "china",
+      "bytes": 14703,
+      "sha256": "519aa89cde8cc89d18358776c186d8d6a165129fa00db08e87afe96b821c1bea"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+      "source_worktree": "china",
+      "bytes": 2811,
+      "sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW.json",
+      "source_worktree": "china",
+      "bytes": 4886,
+      "sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_2.json",
+      "source_worktree": "china",
+      "bytes": 6016,
+      "sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_3.json",
+      "source_worktree": "china",
+      "bytes": 3590,
+      "sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/ROOT_SOURCE_REVIEW_4.json",
+      "source_worktree": "china",
+      "bytes": 4154,
+      "sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/china/sources.json",
+      "source_worktree": "china",
+      "bytes": 56172,
+      "sha256": "710749cbe19bfd57a97fbc5c3254a366cd83a15ba237992b91855c0ca3b22600"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/foundations/sources.json",
+      "source_worktree": "china",
+      "bytes": 8304,
+      "sha256": "15d84d3d11983837262133e132c841b0bb908e0ab049e0a7b773e6477ec38ea1"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/mechanisms/cordis-boundary/sources.json",
+      "source_worktree": "china",
+      "bytes": 21712,
+      "sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/mechanisms/durability-boundary/sources.json",
+      "source_worktree": "china",
+      "bytes": 11448,
+      "sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/mechanisms/lifecycle-migration/sources.json",
+      "source_worktree": "china",
+      "bytes": 9903,
+      "sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/mechanisms/sources.json",
+      "source_worktree": "china",
+      "bytes": 51832,
+      "sha256": "55243b9e543a08720e3269588ab77a1fbb36742e391f3107d3b9480bcf1db22e"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/mechanisms/work-improvement/sources.json",
+      "source_worktree": "china",
+      "bytes": 17301,
+      "sha256": "539906226eb850da5c77c0c0c09a8f30c0d164bf032b94a219f4921b1e0b0f1f"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/west/authority-scope/sources.json",
+      "source_worktree": "china",
+      "bytes": 10432,
+      "sha256": "0d6e3645795d3e9dcb6bf941bc1823ad323e5f0aee910a1a218d836d01bc9805"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/west/context-evaluation/sources.json",
+      "source_worktree": "china",
+      "bytes": 18622,
+      "sha256": "79ec2d1c5d31b5aaee63bcb7a0bac462ed2ac33b3133fab72e98928a52b68648"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/west/practitioner-views/sources.json",
+      "source_worktree": "china",
+      "bytes": 16647,
+      "sha256": "3fa01e480aa85267c66ea18d5b8af56df5a2244d33bbc23307746a47da541b05"
+    },
+    {
+      "path": "china/consolidated-sources/inputs/west/sources.json",
+      "source_worktree": "china",
+      "bytes": 40680,
+      "sha256": "77cdb7030daa80539262f512e6f1dca830815173d0103ad6b30c58eccff7d157"
+    },
+    {
+      "path": "china/consolidated-sources/reading-observations.json",
+      "source_worktree": "china",
+      "bytes": 54339,
+      "sha256": "13acbe7477ca23c4745c0c078b1ceafcba00103b83318fa9b2fdad9a41095827"
+    },
+    {
+      "path": "china/consolidated-sources/reproducibility_receipt.json",
+      "source_worktree": "china",
+      "bytes": 1040,
+      "sha256": "5de363c8f61326e5ce4875c11d2c303b43da5cc1af4bd309ec33205120dcffb9"
+    },
+    {
+      "path": "china/consolidated-sources/scope-and-inputs.json",
+      "source_worktree": "china",
+      "bytes": 156822,
+      "sha256": "b829818fc3b45ed7290d38c7a006d2e83d9bf40738bdf837691f9aa174ba56fd"
+    },
+    {
+      "path": "china/consolidated-sources/source-index.json",
+      "source_worktree": "china",
+      "bytes": 831910,
+      "sha256": "4d53759135f78f806e89e3bdac53bd4c6c2119e4a731bf229ac3e77d1d68852b"
+    },
+    {
+      "path": "china/consolidated-sources/url-index.json",
+      "source_worktree": "china",
+      "bytes": 89259,
+      "sha256": "e4c82f6f8f301f3ec2d205bf7a72f42379c1a1804ffa3af3f328c96811e4428f"
+    },
+    {
+      "path": "china/consolidated-sources/validate_index.py",
+      "source_worktree": "china",
+      "bytes": 9461,
+      "sha256": "66510164642653bd6eb2eeac81418cb8c5a1a80011011cb9440cc5bcbacb01fa"
+    },
+    {
+      "path": "china/consolidated-sources/validation_receipt.json",
+      "source_worktree": "china",
+      "bytes": 10492,
+      "sha256": "c5b076667cc0cdb4df4b08080981ba175d10878a18c05f36fab94693028f6966"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/README.md",
+      "source_worktree": "mechanisms",
+      "bytes": 5628,
+      "sha256": "0e51ba42e985817c54dd6385534aa7ffa08e32ef1eda5889cd3ac1a52ba81ba5"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/input-manifest.json",
+      "source_worktree": "mechanisms",
+      "bytes": 1080,
+      "sha256": "1f37d56daa82a153166970e553c498562fb3236a2b9e4a267c08f42f87fea48b"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/inputs/native.mjs",
+      "source_worktree": "mechanisms",
+      "bytes": 3044,
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/inputs/projects.mjs",
+      "source_worktree": "mechanisms",
+      "bytes": 19203,
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/results.json",
+      "source_worktree": "mechanisms",
+      "bytes": 15768,
+      "sha256": "588c43f485fe0e62aecaf5795e850e2545efc22406d5a1ce88727889cc82f098"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/run-probes.mjs",
+      "source_worktree": "mechanisms",
+      "bytes": 14169,
+      "sha256": "4ac85f16a2be3997e0d29490acbedb6e1d17dea1e3174b82d48f9be983382db8"
+    },
+    {
+      "path": "mechanisms/relay-code-probes/validation.json",
+      "source_worktree": "mechanisms",
+      "bytes": 1205,
+      "sha256": "03cbafea92d4ff6cd1efa765552cda848d4c32c144bdd48cdd016dd17233f1fb"
+    }
+  ]
+}

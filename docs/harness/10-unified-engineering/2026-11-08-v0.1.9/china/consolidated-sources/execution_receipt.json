@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-08T08:35:43.419998+00:00",
+  "started_at_utc": "2026-11-08T08:41:18.731623+00:00",
+  "finished_at_utc": "2026-11-08T08:41:18.866182+00:00",
+  "input_mode": "frozen_capture",
+  "script_sha256": "c2fde1aa0b93c2db8f42ce59cd608a046a4185423203dfecb2e6a0d4fc24b11c",
+  "network_requests": 0,
+  "original_files_modified": false,
+  "prior_C05_modified": false,
+  "captured_input_files": 16,
+  "inputs_changed_during_capture": [],
+  "counts": {
+    "original_catalog_files": 11,
+    "catalog_group_records": 219,
+    "source_collection_groups": 215,
+    "m06_groups": 4,
+    "document_occurrences": 240,
+    "literal_document_URL_occurrences": 226,
+    "constructed_pinned_file_links": 14,
+    "literal_document_exact_URL_unique": 209,
+    "all_document_exact_URL_unique_including_constructed": 223,
+    "root_review_files": 4,
+    "root_review_observations": 38,
+    "root_only_URL_entities": 4,
+    "bibliography_enrichment_records": 4,
+    "new_readings_from_bibliography_supplement": 0,
+    "combined_exact_URL_keys_including_constructed_and_root": 243,
+    "candidate_records_including_failed_and_excluded": 4,
+    "unadopted_candidate_inside_catalog_groups": 1,
+    "author_item_reading_status_counts": {
+      "CATALOG_SCOPE_ONLY; ITEM_READ_STATUS_UNSPECIFIED": 99,
+      "EXPLICIT_BODY_UNAVAILABLE_UNADOPTED": 1,
+      "ENTRY_READING_SCOPE_DECLARED": 118,
+      "NESTED_FILE_RETRIEVAL_AND_RANGES_DECLARED": 1
+    },
+    "m06_repository_files": {
+      "workbench": 7,
+      "dsh": 7
+    },
+    "identity_relationships": 21,
+    "opinion_or_authorship_view_groups": 9,
+    "total_JSON_files_seen": 182,
+    "excluded_frozen_input_JSON": 48,
+    "excluded_non_source_JSON": 118
+  }
+}

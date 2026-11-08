@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="7c6b14dfaed6">
+<title>本轮基线与需要统一的问题</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#新旧证据的关系">新旧证据的关系</a></li><li class="l2"><a href="#统一工作的第一批问题">统一工作的第一批问题</a></li><li class="l2"><a href="#下一步">下一步</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>本轮基线与需要统一的问题</h1>
+</header>
+<p>2026-11-07（America/Los_Angeles）· root 核查记录。此文件是研究工作记录，不是最终架构决定。</p>
+<h2 id="新旧证据的关系">新旧证据的关系</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">材料</th><th style="text-align:left">当前可用结论</th><th style="text-align:left">不能据此推出</th></tr></thead><tbody><tr><td style="text-align:left">公开讨论归档，默认分支 <code>b9d4484</code></td><td style="text-align:left">已有主题与版本索引，可作为设计意图来源</td><td style="text-align:left">所有讨论功能都已经实现</td></tr><tr><td style="text-align:left">Record PR #1，<code>7264be1</code></td><td style="text-align:left">已有同步确定性任务内核；PR 仍 Draft、未合并默认分支；固定 SHA 的 GitHub CI 为 success</td><td style="text-align:left">生产持久化、认证、真实工具拦截或 DSH 集成已通过</td></tr><tr><td style="text-align:left">PR 描述中的第三轮报告</td><td style="text-align:left">记录 58 项 CI 测试、19 个变异及 76 条额外有界轨迹；本轮未重新下载其全部原始产物</td><td style="text-align:left">有界轨迹穷尽全部交错、模型审查等同证明、所有不同宿主都已验收</td></tr><tr><td style="text-align:left">Record v0.1.2 记忆稿</td><td style="text-align:left">提出轮后摄入、后台整理、执行前自主选材和确定性编译</td><td style="text-align:left">当前任务内核已经实现记忆抽取、自动本体或上下文组装</td></tr><tr><td style="text-align:left">工作台与 Panels 交接</td><td style="text-align:left">工作台已有项目/线程/工作树能力；Panels 与 B01–B12 提供后续设计</td><td style="text-align:left">交接任务和画板可以直接当已完成产品</td></tr><tr><td style="text-align:left">DAG 与远程稿</td><td style="text-align:left">通用图、版本、会话、跨宿主边界已有讨论</td><td style="text-align:left">图全部无环、真实远程副作用已受事务保护</td></tr></tbody></table></div>
+<p>公开核查入口：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/pull/1">Record PR #1</a>、<a href="https://github.com/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773">固定输入的 CI</a>。API 快照另存 <code>baseline-github.json</code>。</p>
+<h2 id="统一工作的第一批问题">统一工作的第一批问题</h2>
+<ol><li>Record 至少包含三种不同职责：授权与任务事实、可撤回的证据及经验、面向当前目标的上下文编译；三者需要关联身份，但不能拥有同样的写入权威。</li><li>状态内核中“已完成”、结果当前可用、当前验收仍适用分别成立；DAG 依赖边必须声明依赖哪一种事实，不能只读一个绿色状态。</li><li>固定操作的 PR 证据判据不自动推广到自然语言任务。需要将可判定验收、需要人工判断和探索性目标分开建模。</li><li>任务图、实际尝试图、知识/证据图、代码依赖图、资源冲突图是不同对象。重试和反馈允许循环；可通过时间展开形成执行事件 DAG，但不能因此把知识结构强制成 DAG。</li><li>未知副作用不是失败。取消任务、撤回授权或换执行者并不能证明旧发送者已终止；恢复需要结合目标端幂等、真实 fencing 或可核查终态。</li><li>事件游标、任务修订、定义版本、结果版本、验收版本、权限版本和宿主 incarnation 不应合成一个粗粒度版本号；需要明确每条观察和动作依赖哪些版本。</li><li>上下文编译能检查引用存在、版本/权限与预算，不能仅凭格式证明语义充分或事实为真。应从“可追溯充分性义务”而非“最短摘要”定义接口。</li><li>现有主干稿中的 Pi、当前工作台 DSH、其他执行端，应作为可替换宿主与适配契约重新讨论，不把历史候选变成已选定底座。</li><li>最新 PR 特别留下主体 ID 命名空间问题。形式模型应区分认证主体、角色、会话和代理关系，不能把模型提供的 <code>actor.id</code> 当真实认证。</li><li>用户要求“记录属于 Harness 的一部分”，因此总稿的边界应覆盖目标—证据—执行—验证—经验—改进的闭环，记录功能服务整条闭环，而非取代所有模块。</li></ol>
+<h2 id="下一步">下一步</h2>
+<ul><li>阅读代码中的事件转移与判据，对上述语义写出精确状态域和假设。</li><li>用外部实现与员工公开讨论检验这些模块划分是否遗漏工程经验。</li><li>为每个候选命题给反例和可测行为，不把大系统的愿景包装成已证明的性质。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

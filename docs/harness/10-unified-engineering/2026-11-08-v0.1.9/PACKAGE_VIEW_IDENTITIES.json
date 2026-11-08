@@ -1,0 +1,201 @@
+{
+  "scope": "render stage and packaged view are different byte identities",
+  "views": [
+    {
+      "render_receipt": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "e9f1822adbaa94a65f54eabb3c2ed9a8709b49b9f9c04cb9584b9415e847b92b",
+      "packaged_html": "china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "d189cafc2ca7b5e8093ea59d1263d1588e18999e14b7ac146ce86f6c9ff29992"
+    },
+    {
+      "render_receipt": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "3440d04610e4ba394e109d105aaf5b2a7bd6db5c9282c3ce16ad28984675e6f9",
+      "packaged_html": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "3440d04610e4ba394e109d105aaf5b2a7bd6db5c9282c3ce16ad28984675e6f9"
+    },
+    {
+      "render_receipt": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "d69a5ae716c6f3798ba438c7a2aa88d98a5d59ae6ec3c0f6c9f33a981318eea9",
+      "packaged_html": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "333adf9cb166ce39e5da5f0fd21ea3f9e4b3cc739cdf067f7577a37c143edccd"
+    },
+    {
+      "render_receipt": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "c32887b126b5d369576a23d989b9706b3a5007480db66e9e517179557a8c8040",
+      "packaged_html": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "c32887b126b5d369576a23d989b9706b3a5007480db66e9e517179557a8c8040"
+    },
+    {
+      "render_receipt": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "31bf5ed3c242d214aa34efcbb2c0df965328cd83c25e6512f59f90a500e7c734",
+      "packaged_html": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "31bf5ed3c242d214aa34efcbb2c0df965328cd83c25e6512f59f90a500e7c734"
+    },
+    {
+      "render_receipt": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "c447bf432c62863496469e3e26f62f047a06d86a9379d075c8a83c1a12920989",
+      "packaged_html": "mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "6673c10577232f235c37924cb92227a7ae7872d24c931cdbccf0e129411e9bdb"
+    },
+    {
+      "render_receipt": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "dbce4d52cbe2bdf0cf40567485c4c6d0e6e3828de7ceced0dc68907f3d60346b",
+      "packaged_html": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "f1ad957ced815b8e28f2560439c6bdf2a22dfaf8a480b222fbc5f617143d4562"
+    },
+    {
+      "render_receipt": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "8300819cc8e7bf3f76733aaaecfd8f838e72add6ca00a94bfb69223770d6a8a0",
+      "packaged_html": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "43b58504578b8ed50a92be7fdf38bc08201de51ff9b3f4ad54b41cd2a698f29a"
+    },
+    {
+      "render_receipt": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "00f87e33be7de082cbfe1c639e40f7933f52156c6a7b5ce8873edc8a53031317",
+      "packaged_html": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "67a3b8bdc5eb95b522685931f11bb5447e72089dd69dd0542e10e600faa98b95"
+    },
+    {
+      "render_receipt": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "c379b09084ae7361fdd637b952c03aceb24c628e9d59130bec536ffde8ead9b7",
+      "packaged_html": "proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "00c829577cd4231e3e8ebb8e417cd9d8a0d97397b9741a3d87446939d594fe03"
+    },
+    {
+      "render_receipt": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "dcf3897d48ed55b21dc064262a06f09ea47d614c1ef224ba0b78edaef224b581",
+      "packaged_html": "resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "fff52dbd568de511b23fdbb5c93f51d75817aecb1bd9b7c2c9c59a6b7f306193"
+    },
+    {
+      "render_receipt": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "8f55a8bf908c07463be65f213213661a8785eaa62fd4ac173a55fcecd5fa2413",
+      "packaged_html": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "8f55a8bf908c07463be65f213213661a8785eaa62fd4ac173a55fcecd5fa2413"
+    },
+    {
+      "render_receipt": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "0814280fb5bfb4ea302803b73912a06779cc8301008740d8b646951d6ab8aea1",
+      "packaged_html": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "0814280fb5bfb4ea302803b73912a06779cc8301008740d8b646951d6ab8aea1"
+    },
+    {
+      "render_receipt": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "48a7ee0389ec5bc09dc24907de7275bc023331ca87f0acb64286d5be5976b4f5",
+      "packaged_html": "west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "15d7bd9ae4973f1e3242ce9821ae6de41332bec7b79572355e038b9925814f86"
+    },
+    {
+      "render_receipt": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "947e6595c3c5258226e0a836d12a841db1b332719e3341d2a975885e9fde85ca",
+      "packaged_html": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "92adc579c1aed3d8434238713a111ef71dba29180b0c13e0913eb7c747824099"
+    },
+    {
+      "render_receipt": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "06fe570e35fe43a939796fd1f3ed52c72f20924dcc6434bc8952be30e03b523a",
+      "packaged_html": "west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "e0146393dced4c56c92bc457adb42116529f090fea791bf0888c07ed0da9e957"
+    },
+    {
+      "render_receipt": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "109ec00e5d2160045d5c954a40f647b217ab1eef68f72a0073ece58a4ed509cb",
+      "packaged_html": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "ca857f62c527bdad20df3b1ee1883f7183107ad812e8948dbd613337e5cb3f43"
+    },
+    {
+      "render_receipt": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "6a2ba09cea22fca6fe3c63edc49893f3521b66fd4ec69f1733253e5f805f745e",
+      "packaged_html": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "b8dcfdd7fe2567b9dfa2c0291b2d93e09e97be95148ada6bf26f8ca291ce4172"
+    },
+    {
+      "render_receipt": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "29380b17e6915b858bb7e482da2e2665e30edaaa49077f788141d0f4d11f27e0",
+      "packaged_html": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html",
+      "packaged_html_sha256": "29380b17e6915b858bb7e482da2e2665e30edaaa49077f788141d0f4d11f27e0"
+    },
+    {
+      "render_receipt": "west/trusted-entry-map/MAP-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8",
+      "packaged_html": "west/trusted-entry-map/MAP-离线阅读版.html",
+      "packaged_html_sha256": "af9161d718082207307cbaeb777823ef7151ef2dca215ec88eec878c31f0fad8"
+    },
+    {
+      "render_receipt": "west/worked-example/EXAMPLE-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "b988fba51331193440ae33ab114b8a1b59f3a0484232549064a41c9cfed4d2b9",
+      "packaged_html": "west/worked-example/EXAMPLE-离线阅读版.html",
+      "packaged_html_sha256": "b988fba51331193440ae33ab114b8a1b59f3a0484232549064a41c9cfed4d2b9"
+    },
+    {
+      "render_receipt": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "d8868ccf5e1d26a1f5641c564959ab788e05ece4eb46b8cd40cc67707fd96ced",
+      "packaged_html": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "e0410952be30036f1ebc5038700a21a52ba75fca5573bb041c15c0bae702674b"
+    },
+    {
+      "render_receipt": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "44e6e88ebea403440c8127ff9d25cec2355f85e6f6f68cc059894d5e927d3954",
+      "packaged_html": "统一Harness工程与形式化基础讨论稿-v0.1.2-离线阅读版.html",
+      "packaged_html_sha256": "2c2364aab8df5d39cf2339d446515632b0dd206e3a84cd160dcdf94451a2c38d"
+    },
+    {
+      "render_receipt": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "53e5ba88236921f610adab1c8d46572666d78245d40f8f5fbd2477d1f6d69aa6",
+      "packaged_html": "统一Harness工程与形式化基础讨论稿-v0.1.4-离线阅读版.html",
+      "packaged_html_sha256": "b8d5da40eaf9431a74b797518eadefedeb6ccf2a32ab05a89d15de987e9f7679"
+    },
+    {
+      "render_receipt": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "294a58a9bc2472a1fa2782dd18a71654ba65c91c9f391db0109b2006b8a31d2f",
+      "packaged_html": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.html",
+      "packaged_html_sha256": "ff4736d97f27fc61df249822dc8eed1a8b690fa2a88181d5b8da741a256f1889"
+    },
+    {
+      "render_receipt": "统一Harness工程与形式化基础讨论稿-v0.1.8-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "8ab889c416c53710364b1489ca326a54f878ed76eae3c2ce5217c52446722a5e",
+      "packaged_html": "统一Harness工程与形式化基础讨论稿-v0.1.8-离线阅读版.html",
+      "packaged_html_sha256": "1beabbbf1330f92ae5c478c1128eb64384ed5f1d252fdd5d6e2d69acfb77b174"
+    },
+    {
+      "render_receipt": "统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "c62582e4d7663e7b0b07ebcab7d4355881497b137606824f8f5545a77efd6fe3",
+      "packaged_html": "统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.html",
+      "packaged_html_sha256": "8713742998e8bb30853644320615d25d46f334b6aeae25300b248a180f6d48d8"
+    },
+    {
+      "render_receipt": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.render-receipt.json",
+      "role": "historical_pre_export_render_stage",
+      "pre_export_output_sha256": "c35e0acd5c6969b6ef12df0afd1a3dc9daf3d224bdc226d36c4edefa5456900e",
+      "packaged_html": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html",
+      "packaged_html_sha256": "04d33fc8a0b24cc4e43886f535e286439423a0093a9c4a3966bd4a513b137032"
+    }
+  ]
+}

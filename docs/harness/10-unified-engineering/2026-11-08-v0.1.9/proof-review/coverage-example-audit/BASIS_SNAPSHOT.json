@@ -1,0 +1,14 @@
+[
+  {
+    "path": "inputs/R16-basis/FORMAL_MODEL.md",
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/reader-composition-audit/inputs/FORMAL_MODEL.md",
+    "sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+    "meaning": "R16 already reviewed frozen M09-integrated basis, also matches M10 I01/I02; not a new capture of mutable root"
+  },
+  {
+    "path": "inputs/R16-basis/ARCHITECTURE.md",
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/reader-composition-audit/inputs/ARCHITECTURE.md",
+    "sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+    "meaning": "R16 already reviewed frozen M09-integrated basis, also matches M10 I01/I02; not a new capture of mutable root"
+  }
+]

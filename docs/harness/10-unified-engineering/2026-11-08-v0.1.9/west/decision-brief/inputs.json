@@ -1,0 +1,160 @@
+{
+  "task": "W-08",
+  "captured_at_utc": "2026-11-08T08:17:22+00:00",
+  "memo_status": "DECISION_PROPOSAL_NOT_PRODUCT_COMMITMENT",
+  "inputs": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.2.md",
+      "sha256": "b13b9cd1c433cb0dd52c628b82be95992a5e0a3bbfc9a21ebc559366cdb2671a",
+      "use": "最新主线、研究/产品状态与待证贡献",
+      "section_locations": [
+        {
+          "heading_prefix": "## 动机",
+          "lines": [
+            32
+          ]
+        },
+        {
+          "heading_prefix": "## 条件推导与可验证命题",
+          "lines": [
+            260
+          ]
+        },
+        {
+          "heading_prefix": "## 相关工作",
+          "lines": [
+            289
+          ]
+        },
+        {
+          "heading_prefix": "## 待证命题与下一步",
+          "lines": [
+            358
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "use": "七片顺序、首片边界及用户待决范围",
+      "section_locations": [
+        {
+          "heading_prefix": "## 首切片 I01",
+          "lines": [
+            55
+          ]
+        },
+        {
+          "heading_prefix": "## 递进切片与门槛",
+          "lines": [
+            94
+          ]
+        },
+        {
+          "heading_prefix": "## 实施前要决定的三个选项",
+          "lines": [
+            127
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/west/docs/research/harness-20261107/west/implementation-taskbook/slice-checklist.json",
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804",
+      "use": "未运行状态与最终阶段验收",
+      "section_locations": [],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/西方Harness机制核查讨论稿-v0.1.1.md",
+      "sha256": "b266ddd59427fe4d902b190088d2fda37876b14183ff680a7d98d383ca0b3097",
+      "use": "OpenAI/Anthropic 已核能力和不能外推的边界",
+      "section_locations": [
+        {
+          "heading_prefix": "## 三、OpenAI 机制矩阵",
+          "lines": [
+            49
+          ]
+        },
+        {
+          "heading_prefix": "## 四、Anthropic/Claude 机制矩阵",
+          "lines": [
+            70
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/中国Harness机制核查讨论稿-v0.1.0.md",
+      "sha256": "334580e90656d9853cc79f3fe0bd3146ccfa39296aef30e2de75790078ed7a87",
+      "use": "DeepSeek/Qwen/腾讯任务、来源、图及恢复边界",
+      "section_locations": [
+        {
+          "heading_prefix": "## 任务与权限的总体架构",
+          "lines": [
+            40
+          ]
+        },
+        {
+          "heading_prefix": "## 记录与上下文",
+          "lines": [
+            74
+          ]
+        },
+        {
+          "heading_prefix": "## 长期执行与恢复",
+          "lines": [
+            96
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+      "sha256": "105c69bdc61fc7fcb72271f58354534edbea6e6ae1eaff147f52b6a7be2f30d8",
+      "use": "开源编排候选的源码机制及条件",
+      "section_locations": [
+        {
+          "heading_prefix": "## 相关工作",
+          "lines": [
+            67
+          ]
+        },
+        {
+          "heading_prefix": "## 可直接借鉴的机制与隐含条件",
+          "lines": [
+            86
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "dedfe8b1de2e1b1c84cc714fcaa79e4efa4a9cd14a9d27f8f308b23157648a9f",
+      "use": "与既有信息到工作流、预测检查、面板和长期方向的衔接",
+      "section_locations": [
+        {
+          "heading_prefix": "## 1.",
+          "lines": [
+            7
+          ]
+        }
+      ],
+      "evidence_scope": "Existing local material; original external sources and tests not independently refreshed in W-08."
+    }
+  ],
+  "not_claimed": [
+    "validated novelty",
+    "product implementation",
+    "base framework choice",
+    "investment decision",
+    "new benchmark results"
+  ],
+  "source_revalidation": "No new web research; mechanisms inherit the fixed versions and limitations of the cited research."
+}

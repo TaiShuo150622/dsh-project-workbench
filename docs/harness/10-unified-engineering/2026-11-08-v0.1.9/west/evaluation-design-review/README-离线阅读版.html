@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="daa9f4c8abc1">
+<title>最小评估起跑与阅读顺序</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#与-mechanisms-work-improvement-的关系">与 mechanisms/work-improvement 的关系</a></li><li class="l2"><a href="#两处口径不能混用">两处口径不能混用</a></li><li class="l2"><a href="#本轮交接状态">本轮交接状态</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>最小评估起跑与阅读顺序</h1>
+</header>
+<blockquote><p>当前阅读版： <a href="最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html">讨论稿 v0.1.1</a> 与 <a href="design-v0.1.1.json">设计 v0.1.1</a>。root 按 R-06 修正 A 场景阶段终点；下列 v0.1.0 和 design.json 保留为原交接输入，未运行状态不变。</p></blockquote>
+<h1 id="最小评估起跑与阅读顺序">最小评估起跑与阅读顺序</h1>
+<p>2026-11-08 UTC。建议以本目录的 <strong>12-run pilot</strong> 作为后续最小起跑方案：三条贯穿场景，各两个任务家族，每家族基础/候选配对一次。它校准量表、观察链和成本，不证明效果，也不保证统计功效。所有协议仍为 PROPOSED_NOT_RUN；夹具、runner、实际预算和执行授权未建立。</p>
+<p>阅读顺序：先看<a href="最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html">当前讨论稿</a>，再看<a href="review-离线阅读版.html">原审查意见</a>，实施时按<a href="design-v0.1.1.json">当前可机读设计</a>冻结版本、样本、上限与终点。不要把本目录和其他方案的任务数相加成默认计划。</p>
+<h2 id="与-mechanisms-work-improvement-的关系">与 mechanisms/work-improvement 的关系</h2>
+<p>已快速核对 <a href="../../mechanisms/work-improvement/minimal-experiments.json">minimal-experiments.json</a>，两份设计的主要目标和阶段不同，不存在必须同时执行的关系。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">设计</th><th style="text-align:left">回答的问题</th><th style="text-align:left">运行规模/角色</th><th style="text-align:left">建议关系</th></tr></thead><tbody><tr><td style="text-align:left">W-05 三场景</td><td style="text-align:left">任务质量、人工、连续性、恢复、成本能否被可靠分开测量</td><td style="text-align:left">12 次目标任务运行</td><td style="text-align:left">默认先做的校准 pilot；不证明收益</td></tr><tr><td style="text-align:left">mechanisms W01</td><td style="text-align:left">明确候选/预测/查证/重规划方法包是否有价值</td><td style="text-align:left">12 张任务卡 × 2 条件 × 2 重复 = 48 episode</td><td style="text-align:left">后续可选；任务卡可启发夹具，但不是给 pilot 再加 48 次</td></tr><tr><td style="text-align:left">W-05 冻结经验扩展</td><td style="text-align:left">同一开发事实的原始/摘要经验是否迁移</td><td style="text-align:left">18 次目标运行，另有至少 2 次开发轨迹生产及建库调用</td><td style="text-align:left">校准通过后按需要选用；仍非成长效果证明</td></tr><tr><td style="text-align:left">mechanisms W02</td><td style="text-align:left">有范围、教训和反例的经验包是否改善适用性</td><td style="text-align:left">72 留出 episode，训练/开发/提炼成本另计</td><td style="text-align:left">更大且不同估计对象的可选方案；不是 18 次之后自动追加</td></tr><tr><td style="text-align:left">mechanisms W03</td><td style="text-align:left">已可用基线上的候选流程删改能否带来净收益</td><td style="text-align:left">受限候选搜索与独立留出；预算独立冻结</td><td style="text-align:left">有合格基线和具体改进假设后才考虑</td></tr></tbody></table></div>
+<p>另一个 <a href="../../mechanisms/conformance/catalog.json">conformance 目录</a> 提供有限轨迹契约检查，可选择相关条目做夹具预检。它不等于业务效果评估，也不自动添加 16 组模型任务。</p>
+<h2 id="两处口径不能混用">两处口径不能混用</h2>
+<p><strong>预算 profile 不同。</strong> mechanisms 的候选上限是 8 次模型调用、累计 64k 输入；W-05 为每次输入 8k、任务内最多 40 次模型调用。两者都未正式冻结，不是同成本实验。借用某张任务卡时明确选择一个 profile，不能取两边宽松项组合，不能在不同上限下归因给策略。所有内部格式修复、诊断、摘要和重试均纳入真实调用计量。</p>
+<p><strong>经验对比的估计对象不同。</strong> W02 B1 检索成功轨迹，B2 含带反例的教训/作用域过滤，适合报告经验方法包整体差异；即使来自同一原始池，两臂实际暴露的事实也可能不同。本目录 18 次扩展要求 raw/summary 来自相同完整开发事实，较接近表示方法对比。不能把 W02 的结果直接称为摘要表示本身的因果收益。两者均隔离规则库和轨迹库，留出反馈不回流本轮。</p>
+<p>共同底线一致：不把 unknown 当完成，不删除失败/超时/不支持样本，不允许方法改自己的金标准，不以最终推理成本掩盖候选/维护成本，不把小样本或有限证明外推为普遍优势。为当前/后续决定或明确验证、审计、监测义务服务的查询可以有价值；确认未变不是天然无效工作。</p>
+<h2 id="本轮交接状态">本轮交接状态</h2>
+<p>主稿结构检查通过：9 个章节、3 张图、0 错误、0 警告。design.json 解析及运行数量一致性检查通过；这些都是文档检查，未执行实验。</p>
+<p>输入 hash 均在 design.json。ARCHITECTURE 在审查过程中补入上一轮权限/消费者字段，本轮已重新读正文并记录新 hash；三场景设计未因此变化。其余 root/agent 文件只读，未改写、提交或推送。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

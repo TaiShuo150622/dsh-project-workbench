@@ -1,0 +1,1657 @@
+{
+  "task": "C13",
+  "checked_at_utc": "2026-11-08T10:50:52.161973+00:00",
+  "result": "PASS",
+  "counts": {
+    "checks": 328,
+    "failed": 0,
+    "inputs": 21,
+    "decision_reference_objects": 49,
+    "markdown_links": 17
+  },
+  "command": "python3 validate.py --source-root <exact-input-checkout>",
+  "validator_sha256": "9640b6591f3cc8d7e8b88b2d57e71718ace240cc62f2f6cdba21da9f999707e0",
+  "scope": "Static input bytes, declared ranges, citations and links; not approval authenticity, factual truth, implementation or runtime.",
+  "checks": [
+    {
+      "check": "unique_input_ids",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:INDEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:INDEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:INDEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:MANIFEST",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:MANIFEST",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:MANIFEST",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:W09",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:W09",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:W09",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:W12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:W12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:W12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:W13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:W13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:W13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:MAIN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:MAIN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:MAIN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MAIN:123",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MAIN:361",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:ARCH",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:ARCH",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:ARCH",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:ARCH:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_range:ARCH",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:RECON",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:RECON",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:RECON",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:RECON:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_range:RECON",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:I",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:I",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:I",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:I:94",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:W13-MEMO",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:W13-MEMO",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:W13-MEMO",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:W13-MEMO:55",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:RT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:RT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:RT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:RT:394",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:RT:936",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:RT:1228",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:WF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:WF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:WF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:WF:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_range:WF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:REC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:REC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:REC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:REC:146",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:REC:331",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:REM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:REM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:REM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:REM:131",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:H0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:H0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:H0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:H0:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:SEC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:SEC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:SEC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SEC:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SEC:77",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SEC:364",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:SET",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:SET",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:SET",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SET:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SET:80",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SET:471",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:SET:642",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:MULTI",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:MULTI",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:MULTI",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:279",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:372",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:615",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:649",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:744",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:844",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:MULTI:958",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:DAG1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:DAG1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:DAG1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:DAG1:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_range:DAG1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:DAG2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:DAG2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:DAG2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:DAG2:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_range:DAG2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exists:NATIVE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sha:NATIVE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "line_count:NATIVE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:NATIVE:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:NATIVE:108",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:NATIVE:612",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:NATIVE:864",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "input_range:NATIVE:1280",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:RT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prior_same_bytes:RT:RT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:WF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:REC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prior_same_bytes:REC:OLD04",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prior_same_bytes:REC:REC12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:REM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prior_same_bytes:REM:OLD07",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prior_same_bytes:REM:REM",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:H0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:SEC",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:SET",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:MULTI",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:DAG1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:DAG2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_identity:NATIVE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "body_count",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "read_depth_counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:1:303",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:1:371",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:1:387",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:1:410",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:2:214",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:2:393",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:3:114",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:4:88",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:5:104",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:5:129",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:103",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:202",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:250",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:272",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:324",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:377",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:6:392",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:7:131",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:7:176",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:8:46",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:8:61",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:9:9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:10:31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:10:169",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:10:184",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:11:367",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:12:37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:12:181",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:12:207",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:13:27",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:14:101",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:199",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:224",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:275",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:360",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:375",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:15:403",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:16:660",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:17:127",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:17:251",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:18:41",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:18:207",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:19",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:19:14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:19:87",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:20:103",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:21",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:18",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:80",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:475",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:504",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:642",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:21:659",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:22",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:22:108",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:22:207",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:23",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:23:166",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:23:240",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:24",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:24:25",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:24:313",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:24:383",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:24:416",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:24:649",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:25",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:618",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:642",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:689",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:889",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:25:1286",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:26",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:26:176",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:26:244",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:27",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:27:61",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:27:108",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:27:130",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:28:1057",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:28:1084",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:29",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:29:240",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:29:391",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:30",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:30:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:30:60",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:30:112",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:30:181",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:30:207",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:31:21",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:32",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:35",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:88",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:119",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:165",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:32:224",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:33",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:33:530",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:34",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:34:172",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:34:281",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:34:367",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:35",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:35:31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:36",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:36:77",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:37",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:37:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:38",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:38:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:39",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:39:61",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:40:184",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:40:367",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:41",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:41:100",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:41:166",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:42",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:42:15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:42:29",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:43",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:43:100",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:44",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:44:93",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:44:265",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:44:331",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:45",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:45:384",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:45:412",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:46",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:46:292",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:47",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:47:958",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:48",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:48:116",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_identity:49",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:49:11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "reference_read_scope:49:392",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_manifest_items_classified",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_status_tallies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "activity_bodies_excluded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_relative:17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "link_exists:17",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths:COVERAGE.md",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths:reading-list.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths:selection.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths:inputs.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths:decisions.json",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

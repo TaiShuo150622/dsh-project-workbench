@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "relations": [
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://github.com/modelcontextprotocol/ext-tasks/blob/cc9aaac1047a9440b07486e38f37060bbebeef4c/specification/2026-07-28/tasks.md",
+        "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/0",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/transports/streamable-http.mdx",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/1",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/patterns/cancellation.mdx",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/2",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/index.mdx",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/3",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://a2a-protocol.org/v1.0.1/specification/",
+        "https://github.com/a2aproject/A2A/blob/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/4",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2025-11-25/basic/utilities/tasks.mdx",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/8",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "CATALOGUE_DECLARED_REPRESENTATIONS",
+      "urls": [
+        "https://a2a-protocol.org/v0.3.0/specification/",
+        "https://github.com/a2aproject/A2A/blob/8d57eba286de756176892518a8fc39b0ac2ccefb/docs/specification.md"
+      ],
+      "record": "mechanisms/interop-contracts/sources.json#/sources/9",
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "FoundationAgents/AFlow",
+      "ref": "289d5544cfb5698799b207b931a392aadc9e9c1a",
+      "path": "scripts/optimizer.py",
+      "urls": [
+        "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+        "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "agno-agi/agno",
+      "ref": "f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68",
+      "path": "libs/agno/agno/db/postgres/async_postgres.py",
+      "urls": [
+        "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+        "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "dbos-inc/dbos-transact-py",
+      "ref": "236142bd7a99ff77d04becf5f405a60d6f330591",
+      "path": "dbos/_core.py",
+      "urls": [
+        "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+        "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/core/agent-loop/src/inbox.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/inbox.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/core/session/src/index.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/session/session-persistence-jsonl/src/index.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/session/session-persistence-jsonl/src/storage.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/session/session-persistence/src/handle.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/handle.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "packages/session/session-persistence/src/index.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+        "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "deepseek-ai/deepseek-harness",
+      "ref": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "path": "vendor/cordis/src/fiber.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "earendil-works/pi",
+      "ref": "6e2222a8dda06e3d69fad46d630f152f5873567a",
+      "path": "packages/durable/src/harness/tool.ts",
+      "urls": [
+        "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+        "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "letta-ai/letta-code",
+      "ref": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "path": "src/agent/approval-execution.ts",
+      "urls": [
+        "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+        "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "modelcontextprotocol/modelcontextprotocol",
+      "ref": "94f4ebc8ecb3764584bc30d5139d57c03692b734",
+      "path": "schema/2026-07-28/schema.ts",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "openai/openai-agents-python",
+      "ref": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "path": "src/agents/_tool_invocation.py",
+      "urls": [
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "openai/openai-agents-python",
+      "ref": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "path": "src/agents/run_context.py",
+      "urls": [
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "pydantic/pydantic-ai",
+      "ref": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "path": "pydantic_ai_slim/pydantic_ai/usage.py",
+      "urls": [
+        "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+        "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_REPOSITORY_REF_PATH_REPRESENTATIONS",
+      "repository": "temporalio/sdk-typescript",
+      "ref": "615a684ac41a22c881df11157775e326843f7b04",
+      "path": "packages/common/src/activity-options.ts",
+      "urls": [
+        "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+        "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60"
+      ],
+      "not_proof_of_byte_identity": true,
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://code.claude.com/docs/en/sub-agents",
+      "urls": [
+        "https://code.claude.com/docs/en/sub-agents",
+        "https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py",
+      "urls": [
+        "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+        "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L32-L46"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+      "urls": [
+        "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+        "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py#L4892-L4990"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+      "urls": [
+        "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+        "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py#L2309-L2326"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+      "urls": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts",
+        "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/vendor/cordis/src/fiber.ts#L681-L746"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+      "urls": [
+        "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+        "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts#L130-L246"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+      "urls": [
+        "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+        "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts#L446-L533"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+      "urls": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts",
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+      "urls": [
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py",
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+      "urls": [
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py",
+        "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+      "urls": [
+        "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+        "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py#L548-L605"
+      ],
+      "not_merged_reading_scope": true
+    },
+    {
+      "type": "SAME_PAGE_DIFFERENT_FRAGMENT",
+      "base": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+      "urls": [
+        "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+        "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts#L13-L60"
+      ],
+      "not_merged_reading_scope": true
+    }
+  ],
+  "explicit_version_boundaries": [
+    {
+      "family": "MCP Tasks",
+      "separate_versions": [
+        "2025-11-25",
+        "2026-07-28"
+      ],
+      "reason": "legacy core/requestor-directed and newer extension scope must not be conflated"
+    },
+    {
+      "family": "A2A",
+      "separate_versions": [
+        "v0.3.0",
+        "v1.0.1"
+      ],
+      "reason": "legacy resubscribe and v1 task subscriptions are different versioned contracts"
+    },
+    {
+      "family": "A2A v1.0.1",
+      "separate_files": [
+        "docs/specification.md",
+        "specification/a2a.proto"
+      ],
+      "reason": "same-release POST/GET subscription-binding difference preserved; not duplicate identical text"
+    }
+  ],
+  "no_unique_article_or_paper_total_claimed": true
+}

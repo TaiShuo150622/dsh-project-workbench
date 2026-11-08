@@ -1,0 +1,39 @@
+{
+  "at_utc": "2026-11-08T12:24:34.125376+00:00",
+  "scope": "Root recovery review of interrupted C14: exact slice dependencies and bibliography namespace checked; crosswalk compared with previously read M11/M12/C13; no new independent review or execution",
+  "interrupted_source_sha256": "f4b609fd5d707a3e094627ad777190bf8ba3630e7860348ad3a64c90b0cf401e",
+  "inputs": [
+    {
+      "path": "west/implementation-taskbook/slice-checklist.json",
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804"
+    },
+    {
+      "path": "mechanisms/coverage-contract/sources.json",
+      "sha256": "631176905be87105a155d48fe8ec54008dd56060da48ed1ab6ad96ddbc55e299"
+    },
+    {
+      "path": "mechanisms/adoption-cost-review/MEMO.md",
+      "sha256": "57a9a135a9f2768245373af7425645bc7e8e98421e8c8eccfecaed4b34b7636e"
+    },
+    {
+      "path": "mechanisms/retention-replay-contract/CONTRACT.md",
+      "sha256": "815887c2f3f17496bd7a68279f972c16bbb4f227a7764ea3c298a7500c230c9f"
+    },
+    {
+      "path": "china/legacy-closure/COVERAGE.md",
+      "sha256": "5ea9655f14660da6b291e3573a75e67dbf151180b2138f440ef92c7c8efef44e"
+    },
+    {
+      "path": "统一Harness工程与形式化基础讨论稿-v0.1.8.md",
+      "sha256": "91217c6d21ba6970400b907f24f197d39be01e6b0578c01b9594530a47e2f9d0"
+    },
+    {
+      "path": "FORMAL_MODEL.md",
+      "sha256": "6bc81aa9a68139aceb0c4a2c528376b2410165c0ca1c59c201890e9ea39be521"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "862af77407c9eb97745248cf6905f884448266b8dc8dd7a879fdcf2fd1e56d8c"
+    }
+  ]
+}

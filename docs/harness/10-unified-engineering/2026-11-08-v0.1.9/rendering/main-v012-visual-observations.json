@@ -1,0 +1,51 @@
+{
+  "recorded_at_utc": "2026-11-08T08:59:38.492984+00:00",
+  "source": "root browser observations in task tool history; not a new run",
+  "main_version": "v0.1.2",
+  "desktop": [
+    1200,
+    739
+  ],
+  "mobile": [
+    430,
+    932
+  ],
+  "main_figures": 6,
+  "main_navigation_targets": 14,
+  "document_overflow_observed": false,
+  "offline_dark_light_checks": {
+    "visible_figures_each_theme": 6,
+    "external_scripts": 0,
+    "resource_requests": 0,
+    "first_diagram_expand_local_scroll": true,
+    "theme_toggle_observed": true
+  },
+  "screenshots": [
+    {
+      "file": "main-v012-desktop.png",
+      "role": "local visual inspection screenshot; outside share package",
+      "sha256": "485ccb88861223ad141fd3f7171623cbc3ceba3fb2aaa06af83495ebe952120b"
+    },
+    {
+      "file": "main-v012-mobile.png",
+      "role": "local visual inspection screenshot; outside share package",
+      "sha256": "38d06057baeff1e41ef423c34151328f8a5c4733da2dfd943f37af8b20119e94"
+    },
+    {
+      "file": "main-v012-architecture.png",
+      "role": "local visual inspection screenshot; outside share package",
+      "sha256": "5a434f3e86b2321dc123954d45f991f40a43e14c024c5f5bef8c9aa50e6b4e93"
+    },
+    {
+      "file": "main-v012-offline-dark-expanded.png",
+      "role": "local visual inspection screenshot; outside share package",
+      "sha256": "768d0592f78fd4643ce8f07d30dfef4dfa61b7dfb8a34fc0d1489c31c073eaf5"
+    },
+    {
+      "file": "mechanisms-offline-mobile.png",
+      "role": "local visual inspection screenshot; outside share package",
+      "sha256": "6f04ec11ec9e37f84bf1da9237a80a807aca6dc623c93ce6bc2ac664309520f2"
+    }
+  ],
+  "scope": "reading presentation only; no product acceptance"
+}

@@ -1,0 +1,9 @@
+{
+  "reason": "First light capture inherited dark theme from a different localhost origin; assertion rejected it.",
+  "preserved": [
+    "01-light.json",
+    "01-dark.json"
+  ],
+  "resumed": "Recaptured only light at correct origin; reused successful dark SVG; embedded final output.",
+  "new_light": "01-light-recovered.json"
+}

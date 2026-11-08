@@ -1,0 +1,824 @@
+{
+  "kind": "R12 finite budget/ownership/capability model; not integrated",
+  "capacity_per_budget": 2,
+  "old_obligation_bound": 2,
+  "reports": [
+    {
+      "mode": "conservative-same",
+      "states": 720,
+      "edges": 1989,
+      "violations": {},
+      "transfer_phases": [
+        "none"
+      ],
+      "effect_states": [
+        "settled",
+        "terminal",
+        "unknown"
+      ],
+      "initial": {
+        "owner": "sender",
+        "packet": false,
+        "acceptance": "none",
+        "receiver_grant": false,
+        "active_budget": "A",
+        "transfer": "none",
+        "claim_a": 2,
+        "claim_b": 0,
+        "settled_a": 0,
+        "settled_b": 0,
+        "hidden_cost": 0,
+        "effect": "unknown",
+        "unauthorized_resolution": false,
+        "crashed": false
+      }
+    },
+    {
+      "mode": "conservative-cross",
+      "states": 1008,
+      "edges": 2760,
+      "violations": {},
+      "transfer_phases": [
+        "committed",
+        "done",
+        "none",
+        "prepared"
+      ],
+      "effect_states": [
+        "settled",
+        "terminal",
+        "unknown"
+      ],
+      "initial": {
+        "owner": "sender",
+        "packet": false,
+        "acceptance": "none",
+        "receiver_grant": false,
+        "active_budget": "A",
+        "transfer": "none",
+        "claim_a": 2,
+        "claim_b": 0,
+        "settled_a": 0,
+        "settled_b": 0,
+        "hidden_cost": 0,
+        "effect": "unknown",
+        "unauthorized_resolution": false,
+        "crashed": false
+      }
+    },
+    {
+      "mode": "ack-releases",
+      "states": 1260,
+      "edges": 3555,
+      "violations": {
+        "active_liability_covered": [
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ],
+        "world_exposure_limits": [
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AdmitAndSpendFreshA",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 1,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ],
+        "actual_cost_limits": [
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 1,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AdmitAndSpendFreshA",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 1,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ],
+        "ledger_limits": [
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 1,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "ObserveAuthoritativeTerminal",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "terminal",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "terminal",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AdmitAndSpendFreshA",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 1,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "terminal",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "SettleOnce",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 3,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "settled",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ]
+      },
+      "transfer_phases": [
+        "none"
+      ],
+      "effect_states": [
+        "settled",
+        "terminal",
+        "unknown"
+      ],
+      "initial": {
+        "owner": "sender",
+        "packet": false,
+        "acceptance": "none",
+        "receiver_grant": false,
+        "active_budget": "A",
+        "transfer": "none",
+        "claim_a": 2,
+        "claim_b": 0,
+        "settled_a": 0,
+        "settled_b": 0,
+        "hidden_cost": 0,
+        "effect": "unknown",
+        "unauthorized_resolution": false,
+        "crashed": false
+      }
+    },
+    {
+      "mode": "release-first",
+      "states": 1260,
+      "edges": 3600,
+      "violations": {
+        "active_liability_covered": [
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "ReleaseSourceBeforeDestination",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "released",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ],
+        "world_exposure_limits": [
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "ReleaseSourceBeforeDestination",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "released",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AdmitAndSpendFreshA",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "released",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 1,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ],
+        "actual_cost_limits": [
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 1,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OldEffectConsumes",
+            "state": {
+              "owner": "sender",
+              "packet": false,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptCustody",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "ReleaseSourceBeforeDestination",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "released",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AdmitAndSpendFreshA",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "custody",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "released",
+              "claim_a": 0,
+              "claim_b": 0,
+              "settled_a": 1,
+              "settled_b": 0,
+              "hidden_cost": 2,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          }
+        ]
+      },
+      "transfer_phases": [
+        "done",
+        "none",
+        "released"
+      ],
+      "effect_states": [
+        "settled",
+        "terminal",
+        "unknown"
+      ],
+      "initial": {
+        "owner": "sender",
+        "packet": false,
+        "acceptance": "none",
+        "receiver_grant": false,
+        "active_budget": "A",
+        "transfer": "none",
+        "claim_a": 2,
+        "claim_b": 0,
+        "settled_a": 0,
+        "settled_b": 0,
+        "hidden_cost": 0,
+        "effect": "unknown",
+        "unauthorized_resolution": false,
+        "crashed": false
+      }
+    },
+    {
+      "mode": "ack-is-capability",
+      "states": 828,
+      "edges": 2268,
+      "violations": {
+        "authorized_resolution": [
+          {
+            "action": "OfferBoundPacket",
+            "state": {
+              "owner": "sender",
+              "packet": true,
+              "acceptance": "none",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "AcceptResolve",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "resolve",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "unknown",
+              "unauthorized_resolution": false,
+              "crashed": false
+            }
+          },
+          {
+            "action": "ObserveAuthoritativeTerminal",
+            "state": {
+              "owner": "receiver",
+              "packet": true,
+              "acceptance": "resolve",
+              "receiver_grant": false,
+              "active_budget": "A",
+              "transfer": "none",
+              "claim_a": 2,
+              "claim_b": 0,
+              "settled_a": 0,
+              "settled_b": 0,
+              "hidden_cost": 0,
+              "effect": "terminal",
+              "unauthorized_resolution": true,
+              "crashed": false
+            }
+          }
+        ]
+      },
+      "transfer_phases": [
+        "none"
+      ],
+      "effect_states": [
+        "settled",
+        "terminal",
+        "unknown"
+      ],
+      "initial": {
+        "owner": "sender",
+        "packet": false,
+        "acceptance": "none",
+        "receiver_grant": false,
+        "active_budget": "A",
+        "transfer": "none",
+        "claim_a": 2,
+        "claim_b": 0,
+        "settled_a": 0,
+        "settled_b": 0,
+        "hidden_cost": 0,
+        "effect": "unknown",
+        "unauthorized_resolution": false,
+        "crashed": false
+      }
+    }
+  ],
+  "expected_violation_sets_match": {
+    "conservative-same": true,
+    "conservative-cross": true,
+    "ack-releases": true,
+    "release-first": true,
+    "ack-is-capability": true
+  },
+  "limits": [
+    "One old obligation, two policy budgets, two actors; controller operations atomic and durable.",
+    "A destination reservation cannot be reclaimed after commit; abort only precedes commit.",
+    "Transfer reattributes all unsettled liability under an authorized policy; no claim about legal invoice transfers.",
+    "Settlement blocked during transfer; no parallel sender after owner CAS, no fencing implementation modeled.",
+    "Old actual consumption may grow up to a fixed total unreported bound of 2; no unbounded keepalive.",
+    "Grant validation and terminal authority modeled as booleans/atomic trusted actions, not authentication implementations.",
+    "No fairness or deadline claim; safe paths may remain blocked forever."
+  ]
+}

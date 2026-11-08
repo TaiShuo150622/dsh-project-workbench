@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "topic": "C08 progress, liveness and termination conditions",
+  "accessed_at_utc": "2026-11-08T08:58:19.012756+00:00",
+  "actual_execution": "Only the separate standard-library finite-state research helper was executed; no product/library/model experiment.",
+  "sources": [
+    {
+      "id": "C08-S01",
+      "url": "https://lamport.azurewebsites.net/tla/book-21-07-04.pdf",
+      "title": "Specifying Systems: The TLA+ Language and Tools for Hardware and Software Engineers",
+      "authors": [
+        "Leslie Lamport"
+      ],
+      "organization": "Author-hosted book; author listed Microsoft Research",
+      "published_at": "2002-07",
+      "publication_date_basis": "PDF front matter states first printing July 2002; copyright page says 2003.",
+      "version": "First-printing text version 2002-06-18; PDF recreated 2021-07-04",
+      "accessed_at": "2026-11-08",
+      "category": "primary_formal_methods_textbook",
+      "reading_coverage": [
+        "Returned PDF text at §8.4: equivalences (8.7)–(8.9), printed p98 / PDF p115.",
+        "§8.6 strong fairness definitions (8.32)–(8.33), comparison to weak fairness; printed pp106–107 / PDF pp123–124.",
+        "§9.2 timed bound distinction, printed pp122–124 / PDF pp139–141 (returned search excerpts).",
+        "§9.4 clock non-advancement/Zeno example and warning, printed pp128–131 / PDF pp145–148 (returned excerpts)."
+      ],
+      "supported_claims": [
+        "Weak fairness concerns persistent enabledness; strong fairness also constrains repeatedly enabled actions.",
+        "Untimed eventual execution and real-time upper bounds are distinct requirements.",
+        "A time-bound formula must not be satisfied merely by preventing time from advancing."
+      ],
+      "limitations": [
+        "Only specified returned PDF text excerpts were read; not the complete book or every proof.",
+        "Two follow-up open-at-line tool calls failed; no claim of those additional reads.",
+        "No whole PDF or third-party chapter is stored in this package.",
+        "Harness-specific obligation/ranking/handoff proposals and finite examples are our deductions, not claims made by this book."
+      ],
+      "retrieval_status": "selected_primary_PDF_text_read"
+    }
+  ],
+  "our_inference_boundary": "C08-L1–L4 are conditional reasoning proposals with small finite examples, not newly machine-proved unbounded liveness theorems. Existing project inputs are fingerprinted separately in inputs.json."
+}

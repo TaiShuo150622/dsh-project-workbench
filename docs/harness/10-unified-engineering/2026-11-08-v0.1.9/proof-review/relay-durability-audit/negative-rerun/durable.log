@@ -1,0 +1,17 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 105 and seed -3199017315251332373 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 82829] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/relay-durability-audit/negative-run/DurableRelay.tla
+Parsing file __LOCAL_TMP__/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module DurableRelay
+Starting... (2026-11-08 00:30:25)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-08 00:30:25.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 9.9E-17
+87 states generated, 52 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 10.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 3).
+Finished in 00s at (2026-11-08 00:30:25)

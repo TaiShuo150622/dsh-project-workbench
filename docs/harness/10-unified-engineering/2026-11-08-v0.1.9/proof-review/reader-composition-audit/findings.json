@@ -1,0 +1,22 @@
+{
+  "round": "R16",
+  "kind": "model_document_review",
+  "scope": "frozen v0.1.6; excludes M10 and later revisions",
+  "must_fix": [],
+  "clarifications": [
+    {
+      "id": "RC01",
+      "classification": "navigation_label_optional",
+      "location": "inputs/west/decision-brief/MEMO-v0.1.1.md:30",
+      "quote": "当前主稿 v0.1.5",
+      "reason": "Frozen README current version is v0.1.6; memo may still legitimately cite its historical basis.",
+      "minimal_change": "Label 本备忘依据的主稿 v0.1.5; retain historical link and hashes.",
+      "affects_scientific_conclusions": false
+    }
+  ],
+  "conclusion": "No mandatory semantic correction found in the scoped frozen documents.",
+  "product_acceptance": false,
+  "new_machine_proofs": 0,
+  "model_reruns": 0,
+  "human_review_claimed": false
+}

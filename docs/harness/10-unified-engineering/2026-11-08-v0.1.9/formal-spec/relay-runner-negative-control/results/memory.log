@@ -1,0 +1,34 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 107 and seed -5449102024210576868 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 81962] (Mac OS X 26.5 aarch64, Oracle Corporation 17.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file __LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla
+Parsing file __LOCAL_TMP__/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module DurableRelay
+Starting... (2026-11-08 00:26:38)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-08 00:26:39.
+Error: Invariant Init is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ live = FALSE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "idle"
+/\ durable = FALSE
+/\ calls = 0
+
+State 2: <Start line 32, col 10 to line 34, col 71 of module DurableRelay>
+/\ live = FALSE
+/\ failures = 0
+/\ error = FALSE
+/\ crashes = 0
+/\ sent = FALSE
+/\ phase = "check"
+/\ durable = FALSE
+/\ calls = 1
+
+2 states generated, 2 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 2.
+Finished in 00s at (2026-11-08 00:26:39)

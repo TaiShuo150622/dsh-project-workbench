@@ -1,0 +1,112 @@
+{
+  "task": "W14",
+  "status": "ILLUSTRATIVE_NOT_RUN",
+  "started_at_utc": "2026-11-08T10:09:45Z",
+  "captured_at_utc": "2026-11-08T10:15:03.755622+00:00",
+  "sources": [
+    {
+      "id": "EVIDENCE",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "repository_relative_path": "docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "link": "../evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "version": "v0.1.0",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "line_count": 196,
+      "read_ranges_1_based": [
+        [
+          42,
+          88
+        ],
+        [
+          146,
+          162
+        ]
+      ],
+      "read_mode": "W14_SELECTED_BODY",
+      "supports_in_example": "同键正反观察、不同版本隔离、来源根去重、纠正与撤回、查看/搜证/发布政策。",
+      "limitation": "机制或研究提案的来源，不证明本故事中的角色/能力/权限/产物存在或已经运行。"
+    },
+    {
+      "id": "HANDOFF",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "link": "../../proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "version": "v0.1.1",
+      "sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "line_count": 172,
+      "read_ranges_1_based": [
+        [
+          15,
+          28
+        ],
+        [
+          84,
+          112
+        ]
+      ],
+      "read_mode": "W14_SELECTED_BODY",
+      "supports_in_example": "未决义务、动作代际、责任和预算分离；保管不等于有权解决；当前权限另查。",
+      "limitation": "机制或研究提案的来源，不证明本故事中的角色/能力/权限/产物存在或已经运行。"
+    },
+    {
+      "id": "SLICES",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "link": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "version": "v0.1.1",
+      "sha256": "8bbb4470f19b380e593edf7e46a4a0a63ab2f4e63096a21c8525109b1e1939e1",
+      "line_count": 171,
+      "read_ranges_1_based": [
+        [
+          98,
+          109
+        ]
+      ],
+      "read_mode": "W14_SELECTED_BODY",
+      "supports_in_example": "I02–I07 用户路径、版本/引用、未知效果、三时序、远程模式与经验对照的边界。",
+      "limitation": "机制或研究提案的来源，不证明本故事中的角色/能力/权限/产物存在或已经运行。"
+    },
+    {
+      "id": "VISION",
+      "path": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/01-vision/harness-discussion-v0.3.md",
+      "repository_relative_path": "docs/harness/01-vision/harness-discussion-v0.3.md",
+      "link": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "version": "v0.3",
+      "sha256": "673e7c5f272d4209cb7332d89e746f56c70c4ebd92a712dfef7385edc74b3ec1",
+      "line_count": 907,
+      "read_ranges_1_based": [
+        [
+          154,
+          232
+        ],
+        [
+          234,
+          264
+        ],
+        [
+          286,
+          310
+        ]
+      ],
+      "read_mode": "REUSED_W13_READ_SCOPE_HASH_CONFIRMED",
+      "supports_in_example": "保持/小修/替换/重构、采用时机、共同未来期限、实际效果与完整成本。",
+      "limitation": "机制或研究提案的来源，不证明本故事中的角色/能力/权限/产物存在或已经运行。"
+    }
+  ],
+  "assumptions": [
+    "公开演示仓库、s0/s1/s2、r0/r1/r2、v1/v2、c1/c2 均虚构。",
+    "两个来源先作同键相反声明；错误归属被核实之后才按纠正事件重归旧键。",
+    "创建 PR 适配器及其终态/阻断迟到写入/计费/结算能力均假设，不是当前 Record S1 支持声明。",
+    "责任接纳、用户批准、操作权限和最终验收均未真实发生。",
+    "两个结尾是在不同证据条件下的说明，不是两次实际实验。"
+  ],
+  "not_done": [
+    "implementation",
+    "API invocation",
+    "user approval",
+    "external research",
+    "runtime execution",
+    "commit",
+    "push"
+  ]
+}

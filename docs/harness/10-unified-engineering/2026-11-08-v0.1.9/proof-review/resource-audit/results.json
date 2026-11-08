@@ -1,0 +1,228 @@
+{
+  "scope": "R14 finite assumptions check; not a product fault or memory benchmark",
+  "snapshot_assignments": 23328,
+  "admitted_snapshots_checked": 7803,
+  "accounting_examples": [
+    {
+      "case": "two users, one physical allocation",
+      "physical_allocations": [
+        {
+          "allocation": "p1",
+          "logical": "same-content",
+          "size": 2
+        }
+      ],
+      "use_refs": [
+        "taskA->p1",
+        "taskB->p1"
+      ],
+      "correct_total": 2,
+      "per_user_sum": 4,
+      "classification": "Overcount is conservative for an upper bound, but not precise physical usage."
+    },
+    {
+      "case": "same logical content, different physical allocations",
+      "capacity": 2,
+      "physical_allocations": [
+        {
+          "allocation": "p1",
+          "logical": "same-content",
+          "size": 2
+        },
+        {
+          "allocation": "p2",
+          "logical": "same-content",
+          "size": 2
+        }
+      ],
+      "wrong_content_dedup_total": 2,
+      "actual_total": 4,
+      "classification": "Violates complete physical-allocation accounting premise, not RL1 itself."
+    },
+    {
+      "case": "overlapping admission transients",
+      "capacity": 3,
+      "stable_bounds": [
+        1,
+        1
+      ],
+      "simultaneous_transients": [
+        1,
+        1
+      ],
+      "wrong_single_transition_T": 1,
+      "wrong_ledger": 3,
+      "actual_peak": 4,
+      "classification": "T must cover aggregate overlap; per-transition peak is insufficient."
+    }
+  ],
+  "reference_models": [
+    {
+      "variant": "unique-generation-tokens",
+      "states": 180,
+      "edges": 304,
+      "violations": {}
+    },
+    {
+      "variant": "naive-counter",
+      "states": 656,
+      "edges": 1908,
+      "violations": {
+        "count_matches_unique_tokens": [
+          {
+            "action": "AcquireCurrentToken0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 1,
+              "tokens": 1,
+              "issued": 1,
+              "count": 1,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "AcquireCurrentToken1",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 3,
+              "tokens": 3,
+              "issued": 3,
+              "count": 2,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "EndActualUse0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 3,
+              "issued": 3,
+              "count": 2,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "ReleaseCallback0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 1,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "ReleaseCallback0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 0,
+              "freed_epochs": 0
+            }
+          }
+        ],
+        "no_use_of_released_allocation": [
+          {
+            "action": "AcquireCurrentToken0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 1,
+              "tokens": 1,
+              "issued": 1,
+              "count": 1,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "AcquireCurrentToken1",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 3,
+              "tokens": 3,
+              "issued": 3,
+              "count": 2,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "EndActualUse0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 3,
+              "issued": 3,
+              "count": 2,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "ReleaseCallback0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 1,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "ReleaseCallback0",
+            "state": {
+              "epoch": 0,
+              "phase": "active",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 0,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "Retire",
+            "state": {
+              "epoch": 0,
+              "phase": "retiring",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 0,
+              "freed_epochs": 0
+            }
+          },
+          {
+            "action": "ReleaseAllocation",
+            "state": {
+              "epoch": 0,
+              "phase": "released",
+              "users": 2,
+              "tokens": 2,
+              "issued": 3,
+              "count": 0,
+              "freed_epochs": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Actual usages and bounds are synthetic given truths.",
+    "Acquire/retire/free are atomic; all uses are registered and ended truthfully.",
+    "No queued external callbacks other than explicit token releases; no real process, allocator or filesystem.",
+    "No liveness, cleanup deadline, memory return to OS, or authority implementation is proved."
+  ]
+}

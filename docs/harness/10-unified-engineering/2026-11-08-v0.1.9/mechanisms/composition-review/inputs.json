@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "status": "STATIC_COMPOSITION_REVIEW",
+  "review_round": "M09",
+  "snapshot_at_utc": "2026-11-08T09:50:33Z",
+  "new_external_sources": false,
+  "product_execution": false,
+  "model_execution": false,
+  "source_files": [
+    {
+      "id": "F",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/FORMAL_MODEL.md",
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa",
+      "coverage": "§1–3、§5、§7、§8、§10；通读全文"
+    },
+    {
+      "id": "A",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "0e00d0313d7bfa640678c6923905bd490ba795a0e6d2a8d44a02b031876ca3d5",
+      "coverage": "§3–7、§10；通读全文"
+    },
+    {
+      "id": "W11",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0.md",
+      "sha256": "a7d231c84881f39d705a6db71953fe1de0677dc1b0ebee7cdfe379f50dece3a0",
+      "coverage": "全文，重点最小表示、候选操作政策与 P3/P5 衔接"
+    },
+    {
+      "id": "W11-state",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/evidence-disputes/state-definition.json",
+      "sha256": "fbbb5d0d77b208431885d9502a322e9379428016e74dd4f54bdb292b357588aa",
+      "coverage": "NOT_COMPUTED、candidate operation policy 与未实现范围"
+    },
+    {
+      "id": "W11-code",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/west/evidence-disputes/bounded_check.py",
+      "sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd",
+      "coverage": "L70–111 view/candidate_policy；只读，未执行"
+    },
+    {
+      "id": "C08",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.md",
+      "sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed",
+      "coverage": "全文，尤其四终点、C08-L3、水位之后尾部责任"
+    },
+    {
+      "id": "R12",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "coverage": "v0.1.0 全文后补读 v0.1.1 新增范围；L118、138、164–166"
+    },
+    {
+      "id": "R12-revision",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/handoff-composition/revision-v0.1.1.json",
+      "sha256": "e875c9f0622ecc1485be0d977b7cc0d0d015b53cc0c3e30e0a590ae5dd7e5a5b",
+      "coverage": "完整读取；确认模型/结果未变"
+    },
+    {
+      "id": "R12-code",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/handoff-composition/check_handoff.py",
+      "sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c",
+      "coverage": "L16–109 状态、liability、successors、直接不变量；只读，未执行"
+    },
+    {
+      "id": "M08",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0.md",
+      "sha256": "1b08a43a8e6d682c1be06c0d9556e8a9ae1d70cb2a37b4cd52053584fe1662e4",
+      "coverage": "全文；采用已冻结并导入 integration 的版本"
+    },
+    {
+      "id": "M08-map",
+      "worktree": "integration",
+      "repository_relative_path": "docs/research/harness-20261107/mechanisms/interop-contracts/mapping.json",
+      "sha256": "768ed292c8dc826e45a1fc5bd1d312b4fae9fc1658cdc24045a198616b412e66",
+      "coverage": "IC01–IC09 与 envelope_fields"
+    }
+  ],
+  "scope_notes": [
+    "The two core documents were unchanged between initial read and 09:50:33Z readback; parent accepted adding Assessment but that edit was not yet present in this frozen snapshot.",
+    "W11 is evidence-disputes; W09/W12 labels are not used as aliases.",
+    "R12 v0.1.1 supersedes the initially read v0.1.0 for final scope statements.",
+    "This is a same-model, different-context integration review, not an independent-model formal proof.",
+    "No source, product, prior-round output, test or receipt was modified."
+  ]
+}

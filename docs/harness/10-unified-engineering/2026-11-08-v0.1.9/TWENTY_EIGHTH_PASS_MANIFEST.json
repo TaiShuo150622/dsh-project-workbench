@@ -1,0 +1,199 @@
+{
+  "copied_at_utc": "2026-11-08T10:01:39.266394+00:00",
+  "files": [
+    {
+      "path": "proof-review/portable-fix-audit/INPUT_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 189292,
+      "sha256": "93caeaf4462bcfafad17a85fe6905cdcc34a1920242da7eafff0f6f6665f84bd"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/OUTPUT_HASHES.json",
+      "source_worktree": "proof-review",
+      "bytes": 1598,
+      "sha256": "6e8859a47b37f741b96a1c89e7f90a2d6168af5a6ce6935e768e6ca5d21ff463"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/REVIEW.md",
+      "source_worktree": "proof-review",
+      "bytes": 6216,
+      "sha256": "27ce11edabdd6fb0ba973ba7f790a8969535e56898ec8042503b6b65e557f917"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/TOOL_SNAPSHOT.json",
+      "source_worktree": "proof-review",
+      "bytes": 586,
+      "sha256": "9f15ca8438d845110ca04a0a3e61e9b0fee2f85d18444fd14e8221e5ffea765c"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/author-checks/portable-0926-check.json",
+      "source_worktree": "proof-review",
+      "bytes": 664,
+      "sha256": "6e7f06e9b8cdec781ec77fad9d8f97a5e3b871c4dd72a9001943d61f3a65025f"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/author-checks/render-identities-0926.json",
+      "source_worktree": "proof-review",
+      "bytes": 208,
+      "sha256": "380409f175cb9a2d22b1af77ce1910decd362fe4eadb8fc9672d56cf4c5882eb"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/author-checks.json",
+      "source_worktree": "proof-review",
+      "bytes": 506,
+      "sha256": "d5dad746d3eb1cef8a6b88d22dc17147783f675a608e3ac841c53d8c6069a50c"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/execution_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 2766,
+      "sha256": "25226be922ab44c60db1923dd1105f7b4b00e133a369674c90bb37abdaf4ce82"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/findings.json",
+      "source_worktree": "proof-review",
+      "bytes": 1320,
+      "sha256": "7af0dc47b78815076529de8f4a1457de9ace3a7dfbca7dbcbbfb015c089b439f"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/identity_checks.json",
+      "source_worktree": "proof-review",
+      "bytes": 49052,
+      "sha256": "35673a1ff471ddb2f59d3a2fed77a393a12e70b667d1b6ec133b1313b975c220"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/DERIVATION.json",
+      "source_worktree": "proof-review",
+      "bytes": 472010,
+      "sha256": "b28cebdc41c02951222ac2051e32c25a37e0a1b541906acf6a962db192f06f56"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/PACKAGE_MANIFEST.json",
+      "source_worktree": "proof-review",
+      "bytes": 189254,
+      "sha256": "2300ad422ff5d2373a4f0c2018deab73707e0cc4dde000b04282a0e1a7abf897"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/PACKAGE_NOTES.md",
+      "source_worktree": "proof-review",
+      "bytes": 1813,
+      "sha256": "e5aa565f6ac94048328f3ffa47b6ea72d225ca1bdba439fe084dc57fde39b40a"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/PACKAGE_VIEW_IDENTITIES.json",
+      "source_worktree": "proof-review",
+      "bytes": 9193,
+      "sha256": "069e4004cf4a59f321d140033e29dc9061ede59c5eb209ff7f55abc7a18a309a"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/READING_ENTRY_CHECK.json",
+      "source_worktree": "proof-review",
+      "bytes": 815,
+      "sha256": "19c71d8e4b94eae393a0902dafc5bc931531f8c9db58e4d002d91a1f71e8f83d"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/README.md",
+      "source_worktree": "proof-review",
+      "bytes": 7065,
+      "sha256": "4fb7b5f54278f217204e0482a02d8ab136fc8e394780a6e47c4f747475a54839"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/REPRODUCE.md",
+      "source_worktree": "proof-review",
+      "bytes": 6919,
+      "sha256": "9f7a4edf19bbdbc89c4ec37943b3694c211b035f556de92ea946e05e4d485153"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/build_reader_package.py",
+      "source_worktree": "proof-review",
+      "bytes": 10806,
+      "sha256": "c3b79a98e26ad9081f56bc0cacacb2722b9c041f82117213ccf6250682d2905a"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/inputs/validate_index_portable.py",
+      "source_worktree": "proof-review",
+      "bytes": 9540,
+      "sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/navigation_checks.json",
+      "source_worktree": "proof-review",
+      "bytes": 74798,
+      "sha256": "52e282d234a777987b737d1b5c520fd39bfc036495884fcb72503b29ae4b3dc5"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/negative-open-audit.json",
+      "source_worktree": "proof-review",
+      "bytes": 27986,
+      "sha256": "534a3649f8a211843a664ed76a1f06c6bb5606cd87c53daecb96cac3ff6238b9"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/negative.stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/negative.stdout.json",
+      "source_worktree": "proof-review",
+      "bytes": 494,
+      "sha256": "68464f35f3b8951c71df4a7f064037aa514cf5f846c8142b54ef302c957185bf"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/positive-open-audit.json",
+      "source_worktree": "proof-review",
+      "bytes": 28074,
+      "sha256": "52dbe6e2538f0ce158bbe290f758547d9ea324224f2ce4f665aacdc2b35fdc02"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/positive.stderr.txt",
+      "source_worktree": "proof-review",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/positive.stdout.json",
+      "source_worktree": "proof-review",
+      "bytes": 424,
+      "sha256": "94184acfb1b57733deba90ef11f147c7432084f39fdd2d86b3f236031dc589ef"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/receipt_restoration_check.json",
+      "source_worktree": "proof-review",
+      "bytes": 3866,
+      "sha256": "f3b9500f0b722b3f88077389c66df074fac8c5f750d8c4b7d3ad3bfa33a03040"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/run_isolated.py",
+      "source_worktree": "proof-review",
+      "bytes": 1187,
+      "sha256": "f46549508c059108d19bc279c19d7223ea464eeb4f1013b5293a50453fa7869e"
+    },
+    {
+      "path": "proof-review/portable-fix-audit/verification_receipt.json",
+      "source_worktree": "proof-review",
+      "bytes": 1030,
+      "sha256": "56e68f4fcf1bb0fcc9bf4dd43857bf1a84e816fdf6c73e79b4ca66082753ac0a"
+    }
+  ],
+  "excluded_duplicate_evidence_trees": [
+    {
+      "path": "historical-render-inputs",
+      "files": 36,
+      "bytes": 2628758,
+      "ordered_entries_sha256": "a1ffb7f0d079450632496b6c5eaf3ce74e7fd2be26ebe23fb8fb292738dff243"
+    },
+    {
+      "path": "negative",
+      "files": 965,
+      "bytes": 14328625,
+      "ordered_entries_sha256": "0d654fd4f0fe6c02b62a8943f83a777e5897ba6f37583e0008b1151952e0e425"
+    },
+    {
+      "path": "relocated",
+      "files": 965,
+      "bytes": 14328554,
+      "ordered_entries_sha256": "d1cd8f52aa20ecac19428759588758e3821cbdcdc3eef60beb054817c195a845"
+    }
+  ]
+}

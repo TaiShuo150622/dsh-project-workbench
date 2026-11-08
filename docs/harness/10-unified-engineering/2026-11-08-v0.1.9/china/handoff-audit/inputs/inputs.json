@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-11-08T09:21:11.360158+00:00",
+  "sources": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "copy": "inputs/FORMAL_MODEL.md",
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0.md",
+      "copy": "inputs/C08.md",
+      "sha256": "c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/budget-proof/BudgetSafety.lean",
+      "copy": "inputs/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a"
+    }
+  ],
+  "external_sources_added": 0
+}

@@ -1,0 +1,13 @@
+{
+  "read_after_independent_checks": true,
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/validation/portable-0926-check.json",
+      "sha256": "6e7f06e9b8cdec781ec77fad9d8f97a5e3b871c4dd72a9001943d61f3a65025f"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/validation/render-identities-0926.json",
+      "sha256": "380409f175cb9a2d22b1af77ce1910decd362fe4eadb8fc9672d56cf4c5882eb"
+    }
+  ]
+}

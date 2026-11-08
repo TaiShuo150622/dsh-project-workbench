@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "validated_at_utc": "2026-11-08T10:35:47.875510+00:00",
+  "frozen_export": "reader-preview-20261108T101039Z",
+  "export_copied_files_rechecked_unchanged": 148,
+  "top_level_frozen_reading_inputs_rechecked": 3,
+  "execution_related_input_hashes_unchanged": 49,
+  "outer_commands": 13,
+  "first_model_failure": null,
+  "TLC_configurations": 14,
+  "TLC_complete_safety_checks": 5,
+  "TLC_expected_counterexamples": 9,
+  "deterministic_result_files_byte_identical": 6,
+  "comparison_conditions": 184,
+  "comparison_sha256": "a5c1fb305715f42d9b74ea8dba820222628a49287a38c259ff7b6dd4f8289d64",
+  "run_driver_sha256": "4f34b42c2956b18b35443407fe35a79320a6aa0a290af704184d34aed615e739",
+  "launcher_sha256": "0f10292b2a2f80d253d1b1744ea49067ad499620363fba81ab8d96e6f19f692a",
+  "model_or_product_reruns_during_validation": false,
+  "product_tests_run": false,
+  "cross_platform_claim": false,
+  "import_files": [
+    "REVIEW.md",
+    "IMPORT_SCOPE.md",
+    "input-manifest.json",
+    "execution-receipt.json",
+    "launch-receipt.json",
+    "tool-versions.json",
+    "comparison.json",
+    "final-validation.json"
+  ],
+  "local_execution_tree_excluded": true
+}

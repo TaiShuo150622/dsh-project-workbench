@@ -1,0 +1,149 @@
+{
+  "captured_at_utc": "2026-11-08T08:45:02.341557+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/receipt.json",
+      "snapshot": "formal-spec/results/receipt.json",
+      "sha256": "20417d59bb1f59cda0d0a84cc655cbaa5e73c2f6ebae036ca7ba20ba34bb5c5f",
+      "bytes": 4094
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/feature-results/receipt.json",
+      "snapshot": "formal-spec/feature-results/receipt.json",
+      "sha256": "dc3e2efaf1357a65f044d2ecd422f08f6283f2351e2474f0ac838a1dd2212ec8",
+      "bytes": 1264
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/receipt.json",
+      "snapshot": "formal-spec/expiry-checked-results/receipt.json",
+      "sha256": "13c7ec36b4f90ca52478a04f47b6c66549288437c8acf6aa2d2b7ceed0a02e8f",
+      "bytes": 4414
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/receipt.json",
+      "snapshot": "formal-spec/relay-results/receipt.json",
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac",
+      "bytes": 4380
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/compile_receipt.json",
+      "snapshot": "dag-proof/compile_receipt.json",
+      "sha256": "844d41e64c26db631092aeb095480e1d0c1be4bf50c51681ff77fdd9ca32b95e",
+      "bytes": 745
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/dag-proof/IncrementalDag.lean",
+      "snapshot": "dag-proof/IncrementalDag.lean",
+      "sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+      "bytes": 8107
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/budget-proof/execution_receipt.json",
+      "snapshot": "china/budget-proof/execution_receipt.json",
+      "sha256": "b67cf8aa950ce1c7d4985402eeed369ee006b9ab0a6c6124292ca9daafa1fbaa",
+      "bytes": 2030
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/budget-proof/BudgetSafety.lean",
+      "snapshot": "china/budget-proof/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "bytes": 11464
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/record-refinement/REPORT-v0.1.1.md",
+      "snapshot": "china/record-refinement/REPORT-v0.1.1.md",
+      "sha256": "3a470eb06f8c4205395c44566db2b5f65fbdeb3e50e14d57c9f7c60ed316ee84",
+      "bytes": 15454
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/record-refinement/REPORT.md",
+      "snapshot": "china/record-refinement/REPORT.md",
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe",
+      "bytes": 14657
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/fence-only.log",
+      "snapshot": "formal-spec/results/fence-only.log",
+      "sha256": "427077a89e06d259f53fb83b6f61fe9184e2bc75ef966a070a081642ec2205fb",
+      "bytes": 3122
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/unstable-key.log",
+      "snapshot": "formal-spec/results/unstable-key.log",
+      "sha256": "025becb9c8377e92f7ec7ab4d324cda0c0dc5633bab5b333326aea002c1d5820",
+      "bytes": 3124
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/cancel-is-not-rollback.log",
+      "snapshot": "formal-spec/results/cancel-is-not-rollback.log",
+      "sha256": "a3c3160b6fbb039e7de5dfb3dd9bbdc9f668fbda14e95fd3ec67cd1d532d307f",
+      "bytes": 2566
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/combined.log",
+      "snapshot": "formal-spec/results/combined.log",
+      "sha256": "4c4bb2d8354972620e9a6b8a3bd5c7a6df6110e2a708ac8220553a3015c66150",
+      "bytes": 1727
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/world-is-not-ledger.log",
+      "snapshot": "formal-spec/results/world-is-not-ledger.log",
+      "sha256": "2f7e49e26ca0472b13d2d946a665dc661d8ef05d444ef21b26cc5645d2c46d49",
+      "bytes": 2317
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/results/dedupe-only.log",
+      "snapshot": "formal-spec/results/dedupe-only.log",
+      "sha256": "a97e08820cff2e73df5c009c1bbbfbcc75abeb5c13c51ad72b1f4751266e0ef0",
+      "bytes": 2567
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/feature-results/dedupe-property.log",
+      "snapshot": "formal-spec/feature-results/dedupe-property.log",
+      "sha256": "70619e6a283333440404008f2caf84541711e2bde731b2f315690d63e5b17f65",
+      "bytes": 1726
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/feature-results/fence-property.log",
+      "snapshot": "formal-spec/feature-results/fence-property.log",
+      "sha256": "3ad0b47c4f05edd5081a76fe14a82d94a1d0207fde48efc37a023fd89bb870da",
+      "bytes": 1727
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/none.log",
+      "snapshot": "formal-spec/expiry-checked-results/none.log",
+      "sha256": "6ab1b25c316d8dd5976cdcff92e69bb6e09472933fa37a45630f6e9f85c7abe3",
+      "bytes": 3277
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/commit.log",
+      "snapshot": "formal-spec/expiry-checked-results/commit.log",
+      "sha256": "52bbb1bb0fd412a9408fcfce33778d2df2e4005bf317d9752da27853f81b7e45",
+      "bytes": 1529
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-checked-results/admission.log",
+      "snapshot": "formal-spec/expiry-checked-results/admission.log",
+      "sha256": "ea73a29c313726eca897ccf508bc2f8eb9bd76489640163dceb0d632988fa557",
+      "bytes": 3276
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/memory.log",
+      "snapshot": "formal-spec/relay-results/memory.log",
+      "sha256": "1352858e9228975479c9216e59d1ee5c7ff87151d6f5bb945d84b84484649eba",
+      "bytes": 3172
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/durable.log",
+      "snapshot": "formal-spec/relay-results/durable.log",
+      "sha256": "5333a6fd298de1c6c31bd56355f4539d91213e1206fb06c9155b93f9463c40e1",
+      "bytes": 1275
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/error.log",
+      "snapshot": "formal-spec/relay-results/error.log",
+      "sha256": "867ed06c95eefe10a4091ba998b81ac8184c5016af411c920c2c5f540ac81bce",
+      "bytes": 2138
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "revision": "v0.1.1",
+  "date_utc": "2026-11-08T09:57:29.918020+00:00",
+  "reason": "R14 concurrent transient bound, unused reserve transfer and generation-scoped idempotent use tokens",
+  "model_or_result_changed": false,
+  "files": [
+    {
+      "path": "资源归属与环境生命周期讨论稿-v0.1.1.md",
+      "sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35"
+    }
+  ]
+}

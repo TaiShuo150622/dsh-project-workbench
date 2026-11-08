@@ -1,0 +1,34 @@
+{
+  "status": "FAIL",
+  "checked": {
+    "conditions": 3149,
+    "input_hashes": 16,
+    "resolved_pointers": 762,
+    "group_records": 219,
+    "document_records": 240,
+    "constructed_file_links": 14,
+    "root_review_records": 38,
+    "bibliographic_enrichment_records": 4,
+    "identity_relationships": 21,
+    "candidate_records": 4,
+    "literal_catalog_URL_pointers": 253
+  },
+  "reader_links": 55,
+  "errors": [
+    "missing reader link SOURCE_INDEX.md -> ../中国Harness机制核查讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../west/西方Harness机制核查讨论稿-v0.1.1.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/机制对照与反例讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/cordis-boundary/READING_COVERAGE.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../中国Harness机制核查讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0.md",
+    "missing reader link SOURCE_INDEX.md -> ../../FORMAL_MODEL.md",
+    "missing reader link SOURCE_INDEX.md -> ../budget-proof/README.md",
+    "missing reader link SOURCE_INDEX.md -> ../bounded-models/README.md"
+  ]
+}

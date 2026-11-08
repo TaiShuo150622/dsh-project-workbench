@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="1e4910ab3dd5">
+<title>第四轮复核与交接入口</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#先读哪些文件">先读哪些文件</a></li><li class="l2"><a href="#root-独立复核最短路径">root 独立复核最短路径</a></li><li class="l2"><a href="#最重要的修订">最重要的修订</a></li><li class="l2"><a href="#尚未决定和未验证">尚未决定和未验证</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>第四轮复核与交接入口</h1>
+</header>
+<p>2026-11-08 UTC。状态：相关原文和固定源码静态核查完成；提案/用例未运行。未改 integration、前三轮或产品代码；未提交、推送、调用模型 API、读取凭据或触碰远程任务。</p>
+<h2 id="先读哪些文件">先读哪些文件</h2>
+<ol><li><code>主体权限与结果可见性讨论稿-v0.1.0.md</code>：结论、五组证据、消费谓词、委派与派生发布、最终动作审批。</li><li><code>amendments.md</code>：按 FORMAL 与 ARCHITECTURE 现有章节给精确局部改法，含 C14a/b/c。</li><li><code>contract-cases.md</code>：15 个未运行的输入/转移/oracle，其中 T01、T02、T05 是最低 C14 组合。</li><li><code>sources.json</code>：五组原始来源；多个子文档逐一给 URL/路径/定位，分清规范、产品文档和源码机制。</li></ol>
+<h2 id="root-独立复核最短路径">root 独立复核最短路径</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">入口</th><th style="text-align:left">本次看到的事实</th><th style="text-align:left">需特别保留的限定</th></tr></thead><tbody><tr><td style="text-align:left"><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx">MCP 授权安全规范</a> 的 Audience / Privilege Restriction</td><td style="text-align:left">凭据限定资源服务；上游另取 token</td><td style="text-align:left">不是业务数据 ACL；不是派生摘要发布政策</td></tr><tr><td style="text-align:left"><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276">MCP schema</a> 的 Annotations；另看 L1900</td><td style="text-align:left">audience 是 user/assistant 提示；工具注解不保证行为</td><td style="text-align:left">不能把显示角色当实际 principal 接收名单</td></tr><tr><td style="text-align:left"><a href="https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/docs/human_in_the_loop.md#L49">OpenAI HITL</a> 以及 Keep approval state on server</td><td style="text-align:left">持久批准按工具类别有不同共享边界；服务端负责认证授权</td><td style="text-align:left">不得称 SDK 只有 call ID 检查：另读 <a href="https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165">参数指纹 L165</a> 与 <a href="https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L596">差异拒绝 L596</a></td></tr><tr><td style="text-align:left"><a href="https://code.claude.com/docs/en/agent-sdk/permissions#how-permissions-are-evaluated">Claude 权限流程</a>、<a href="https://code.claude.com/docs/en/agent-sdk/user-input#respond-to-tool-requests">允许修改输入</a></td><td style="text-align:left">callback 非必经；允许返回修改后的输入</td><td style="text-align:left">我们要求审批覆盖最终输入，不把这个要求冒充已核完整产品保证</td></tr><tr><td style="text-align:left"><a href="https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent">Claude 子代理</a>；同页 Permission modes / Subagent output scanning</td><td style="text-align:left">子可有父工具面没有的服务；返回内容不携带用户授权</td><td style="text-align:left">无法由子代理名称/工具列表推导严格能力衰减；动态文档无固定源码证明</td></tr></tbody></table></div>
+<h2 id="最重要的修订">最重要的修订</h2>
+<p><code>Usable</code> 的自由变量应有消费请求 q；权限撤回、原件副本删除、结果整项撤销发布、证据被反驳四者分开。尤其 C14b 不应写“一个副本删除即所有派生结果都不可用”，需要指定唯一副本和消费对原件的要求。</p>
+<p>本轮还指出一个过度约束风险：要求任何消费者都可读全部祖先，会让获授权发布的汇总无法共享；把任何摘要当公共又过于宽松。建议单独记录受权发布决定，保留原文审计可达性与结果消费权的差异。它是待决定的应用契约，当前来源没有替我们决定该业务政策。</p>
+<h2 id="尚未决定和未验证">尚未决定和未验证</h2>
+<p>未决定：派生发布在源撤权/删除后是否仍有效；旧验收在评审角色改变后是否仍适用；跨主体代办首版范围；策略依赖精确度；可实现执行点撤回的适配器。</p>
+<p>未验证：任何新增谓词/用例的产品实现、分布式一致性、语义无泄漏或模型遗忘。只运行文档结构和 JSON 格式检查；其结果不等于这些性质成立。</p>
+<p>本轮检查记录：主稿 discussion-draft 检查通过，9 个章节、3 张图、0 错误、0 警告；sources.json 由 Python json.tool 解析通过。以上不是契约测试或来源独立复核。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

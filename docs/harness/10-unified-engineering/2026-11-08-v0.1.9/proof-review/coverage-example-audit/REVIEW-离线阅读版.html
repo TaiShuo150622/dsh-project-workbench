@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="c24ae1e56668">
+<title>R17：有限 coverage 契约与贯穿例子审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#输入与审查方法">输入与审查方法</a></li><li class="l2"><a href="#关键判定">关键判定</a></li><li class="l2"><a href="#最小纸面核对">最小纸面核对</a></li><li class="l2"><a href="#仍属外部义务-而非新发现的正文缺陷">仍属外部义务，而非新发现的正文缺陷</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R17：有限 coverage 契约与贯穿例子审查</h1>
+</header>
+<p>结论：在冻结 M10/W14 的本次定向范围内，<strong>未发现必须修改的具体错误，也不建议为措辞偏好扩正文</strong>。M10 给出有明确前提的有限处理覆盖关系，未声称获得真实采集或认证能力；W14 用假想能力解释交付路径，未把产物可读、取消 ACK 或接管升级为原动作终态或负担解除。</p>
+<p>这是模型逻辑审查加文件完整性检查，不是人类审核、机械证明、运行试验或产品验收。模型标识按调度为 gpt-6-astra，本报告不独立认证该身份。原作者文件未改；本轮没有执行模型、API、产品或宿主操作，没有提交或推送。</p>
+<h2 id="输入与审查方法">输入与审查方法</h2>
+<p>M10 正文 SHA-256：<code>bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc</code>。W14 EXAMPLE SHA-256：<code>e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7</code>，均匹配任务指定值。</p>
+<p>完整冻结两目录的 11 份文件；逐字阅读两正文、README、结构化契约、三个纸面反例、来源记录及作者 validation。HTML 仅保存并核哈希，未做视觉审阅。另保留 R16 的 FORMAL/ARCH 两份依据，其哈希正好是 M10 I01/I02 所用版本；这是已审冻结依据，不冒称重新读取作者当前可变主稿。清单见 <a href="INPUT_SNAPSHOT.json">INPUT_SNAPSHOT.json</a>、<a href="BASIS_SNAPSHOT.json">BASIS_SNAPSHOT.json</a>。</p>
+<p>先直接比较声明、条件与例子，再读取和核对作者自查；作者 <code>PASS</code> 不作为本线语义结论的依据。9 项作者回执文件哈希均匹配；8 条契约与三个案例的引用闭合。这些只是文档完整性检查，不是 coverage 算法运行。</p>
+<h2 id="关键判定">关键判定</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">核对点</th><th style="text-align:left">冻结定位</th><th style="text-align:left">本线判断</th></tr></thead><tbody><tr><td style="text-align:left">complete 的来源</td><td style="text-align:left">M10 正文:29、33–47；contract CV01–CV04</td><td style="text-align:left">分母来自固定任务域或有枚举契约的目录，不从可见搜索结果倒推。合格收据逐义务核对并导出缺项；身份、枚举、适用性未解决时不 complete。条件性的“所有已声明义务均满足”没有证明声明域对现实足够。</td></tr><tr><td style="text-align:left">target 与读取边界</td><td style="text-align:left">M10 正文:47、65；contract HandlingReceipt.evidence、CV03、CP-LOG</td><td style="text-align:left">摄入、上下文注入、评估检查不能互换。结构化契约明确 assembled bytes、outbound request、provider-acknowledged representation 是各自可观测边界，未由本地组装推成提供方隐藏预处理或模型正确使用。</td></tr><tr><td style="text-align:left">不可见来源与合法摘要</td><td style="text-align:left">M10 正文:71–87；contract CV06–CV07</td><td style="text-align:left">访问失败不删内部必需来源；合法摘要仅在义务允许该 issuer/mode/scope 时替代限定评估。消费者无需读取全部祖先，但这不产生原文权限或原文注入覆盖。发布者/版本/recipients/permittedUses 与失效依赖另行绑定。</td></tr><tr><td style="text-align:left">披露缺项</td><td style="text-align:left">M10 正文:87；contract CoverageReport.disclosure、CV07</td><td style="text-align:left">内部 gap 与公开输出分开，连隐藏来源数量、冲突和缺项存在性也受披露政策约束。没有要求为了证明不完整而向无权主体公开受限元数据。</td></tr><tr><td style="text-align:left">快照与尾部</td><td style="text-align:left">M10 正文:43、65–67；contract CV02、CV05</td><td style="text-align:left">各日志携 history/incarnation/cut；连续尾部及其处理义务不能用附文件替代。局部切点不自动构成因果闭合或全局快照，旧报告不覆盖切点后世界；新版本和相关更正触发适用性复核。</td></tr><tr><td style="text-align:left">complete 与真假/成功/许可</td><td style="text-align:left">M10 正文:45–47；contract CV04、CV08；W14:11–12</td><td style="text-align:left">检查发现失败或冲突可以完成检查义务，不能据此产生正支持、任务成功、行动许可或验收。W14 更正错误运行归属后仍要求重评覆盖与其他交付条件。</td></tr><tr><td style="text-align:left">远端未知与接管</td><td style="text-align:left">W14:13–14、29–31</td><td style="text-align:left">取消 ACK 不证明停止/无迟到写/费用终止；接管保留原 o1/a1/g1、unknown、占位及待结算负担。查询和结算分别核当前权限。结尾 B 只支持指定人于 t 的读取观察和范围内审阅；结尾 A 另假设终态、旧代际后续写入约束、计费终止/结清、资源及约定验收。</td></tr><tr><td style="text-align:left">产品事实与正向路径</td><td style="text-align:left">W14:3、9–15、29、33；W14 README</td><td style="text-align:left">所有能力和批准开头明确假设，PR 例子不扩充当前 S1 或 I04。规格变化、补丁、冲突纠正、接续核查与新库机会构成可理解的交付路径；普通小编辑不被强制套用全部分支。</td></tr></tbody></table></div>
+<h2 id="最小纸面核对">最小纸面核对</h2>
+<p>以下是本线直接推导，用于尝试打破声明；<strong>不是运行结果、穷举检查或新增产品反例</strong>。未找到绕过文本所列前提却仍被允许的错误结论。</p>
+<ol><li>固定域 <code>{a,b}</code>，仅 a 有合格收据，b 拒绝访问。按原域不能 complete；若连目录边界也无法确认则 unknown 并保留 b 的已知缺项。对外不必披露 b 的身份或存在性。CV01/CV04/CV06/CV07 同时适用，没有靠删分母或泄露来“修复”。</li><li>唯一义务是“按 p 检查 a”，合格收据的 verdict=fail。该处理义务可完整，业务支持仍可为否；反之若义务是注入原文，只有获准评估摘要仍不能满足。CV03 的 target/mode 区分排除了两种混淆。</li><li>k=10、c=12，有 11/12 两事件的范围收据，但第 11 项未完成要求的处理。连续枚举本身不能推出完整上下文义务。若 13 在 c 后到达，旧报告的历史范围不改变，当前使用另核 freshness/tail 政策；不能声称覆盖世界此刻。</li><li>评估者能读原件、消费者不能读；只有评估权限而无适用发布权限。内部 assessment 覆盖可 complete，外发仍不获准。后来取得限定发布权限，只能输出获准投影，不能把内容摘要或改写自动当作解密/降权。</li><li>a1 超时 → cancel ACK → o1 新 owner 接纳 → 指定审阅者读到 s2。没有 a1 终态/旧发送者约束/结算证据，仍只能进入 W14 结尾 B；原义务与负担不能清除。结尾 A 所需额外条件在正文中列明，不从这条短轨迹推出。</li></ol>
+<h2 id="仍属外部义务-而非新发现的正文缺陷">仍属外部义务，而非新发现的正文缺陷</h2>
+<p>真实身份与收据认证、固定枚举的可靠性、实际输入捕获、摘要忠实性、具体授权及结算通道尚需宿主精化。M10 已把这些放在条件或缺口中；增加字段并不能替代其实现。本轮不建议把这些全部搬入纸面契约或另开通用理论。</p>
+<p>本轮不重新联网核对 LoCoMo/A2A 两处原始引文，也未复核 sources.json 中所有历史材料的全文或当前外部产品状态；这些引用不承担本轮有限集合与披露边界的直接推导。没有执行 coverage collector/validator，没有新增模型计数或证明数。来源可在本轮后变更，结论始终绑定冻结哈希。详见 <a href="verification_receipt.json">verification_receipt.json</a> 与 <a href="findings.json">findings.json</a>。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

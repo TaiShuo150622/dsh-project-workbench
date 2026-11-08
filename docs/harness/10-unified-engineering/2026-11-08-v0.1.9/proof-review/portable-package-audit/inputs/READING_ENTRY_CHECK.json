@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-11-08T08:41:41.783277+00:00",
+  "scope": "file existence only; no anchor/network/meaning check",
+  "files": {
+    "README.md": {
+      "sha256": "cc88d7d94316dc39e574519b3ec79ecabe58c770a79ebc760a35a14ed573cc98",
+      "local_links": 28,
+      "missing": []
+    },
+    "EVIDENCE.md": {
+      "sha256": "db1487bae92ca1b15d47be05a1fe29aed56b98b6a7ba14eca6eac9e74b1e71a9",
+      "local_links": 23,
+      "missing": []
+    },
+    "REPRODUCE.md": {
+      "sha256": "d3c63317144255bd9bea2bba0bdef2d98f9246ccf1f37c0dba491e0ec6712749",
+      "local_links": 10,
+      "missing": []
+    },
+    "统一Harness工程与形式化基础讨论稿-v0.1.3.md": {
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1",
+      "local_links": 29,
+      "missing": []
+    }
+  }
+}

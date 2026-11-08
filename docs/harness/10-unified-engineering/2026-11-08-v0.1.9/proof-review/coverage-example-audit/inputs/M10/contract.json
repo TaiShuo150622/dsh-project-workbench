@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSED_NOT_IMPLEMENTED",
+  "actual_execution": false,
+  "purpose": "A finite declared-domain coverage contract. This is a proposed data/check relation, not a shipped schema, collector or validator.",
+  "coverage_targets": [
+    "source_ingestion",
+    "context_obligations",
+    "assessment_checks"
+  ],
+  "coverage_values": {
+    "complete": "All required handling obligations in this exact declared domain/snapshot have qualifying evidence, with no required gap and no unresolved verification prerequisite.",
+    "partial": "Domain/boundary is known and at least one required handling obligation/range is known unfulfilled; retain every known gap.",
+    "unknown": "The domain boundary or required evidence authenticity/applicability cannot be established; retain known gaps as well."
+  },
+  "does_not_compute": [
+    "world_truth",
+    "semantic_completeness_over_all_relevant_information",
+    "model_understanding_or_correct_use",
+    "business_task_completion",
+    "action_permission"
+  ],
+  "input_rejects": [
+    "caller-provided coverage=complete as evidence",
+    "unverified caller boolean authenticated/verified as proof",
+    "post-filter visible source list replacing the agreed domain",
+    "a stream ending or a search returning no hits as universal closure"
+  ],
+  "records": {
+    "CoverageSpec": {
+      "identity": [
+        "specId",
+        "revision",
+        "issuer_ref",
+        "authorization_or_task_contract_ref",
+        "scope_digest"
+      ],
+      "scope": [
+        "target",
+        "claim_or_task_definition_ref",
+        "q.consumer",
+        "q.operation",
+        "q.recipients",
+        "purpose/resourceScope when policy reads them"
+      ],
+      "domain": [
+        "finite required obligation IDs",
+        "finite explicit source IDs OR frozen enumerator/registry identity and membership rule",
+        "required/optional classification fixed before checking",
+        "empty-domain allowance and basis",
+        "domain-change rule and authority"
+      ],
+      "handling": [
+        "required handling mode per obligation",
+        "allowed receipt/evaluator types",
+        "check_policy_version",
+        "failure/negative/conflict outcome treatment",
+        "dependency declaration"
+      ]
+    },
+    "SnapshotSet": {
+      "sources": [
+        "origin_ref",
+        "source_identity",
+        "source_version_or_content_digest",
+        "enumeration_receipt_ref"
+      ],
+      "logs": [
+        "historyId",
+        "incarnation",
+        "from_exclusive",
+        "through_inclusive",
+        "range_receipt_ref"
+      ],
+      "consistency": [
+        "fixed pagination/snapshot semantics when used",
+        "causal/atomic consistency requirement if the task needs it",
+        "enumerator authority and authenticated end-of-range evidence",
+        "cross-source cuts recorded separately; no assumed global snapshot"
+      ],
+      "time": [
+        "event_time",
+        "available_at",
+        "validity_window",
+        "observed_at",
+        "clock_evidence_if_applicability_reads_time"
+      ]
+    },
+    "HandlingReceipt": {
+      "binding": [
+        "receiptId",
+        "specId/revision",
+        "obligationId",
+        "target",
+        "exact source/snapshot/range refs",
+        "method/evaluator version"
+      ],
+      "evidence": [
+        "actual output or input-materialization reference",
+        "content digest/ranges where required",
+        "result/verdict including negative or conflict",
+        "authenticated issuer/evaluator verification reference",
+        "operation/evaluation authority reference",
+        "recorded gap/failure refs",
+        "capture_boundary (assembled bytes / outbound serialized request / provider acknowledged representation, as actually observable)",
+        "request/input identity and the exact boundary receipt; no inference that hidden provider preprocessing or model understanding was observed"
+      ],
+      "not_sufficient": [
+        "a model saying I read it",
+        "an index item count alone",
+        "raw source hash without origin authentication",
+        "approval text in a conversation"
+      ]
+    },
+    "CoverageReport": {
+      "binding": [
+        "reportId",
+        "specId/revision",
+        "snapshotSetRef",
+        "receiptRefs",
+        "check_policy_version",
+        "evaluator_ref"
+      ],
+      "derived": [
+        "per-condition check results with evidence references",
+        "required obligations minus qualified-receipt obligations",
+        "missing source IDs/ranges retained internally",
+        "verification prerequisites unresolved",
+        "coverage value"
+      ],
+      "applicability": [
+        "q",
+        "policy/version/time dependencies actually read",
+        "effective range of the report",
+        "revocation/correction references",
+        "tail/update obligations"
+      ],
+      "disclosure": [
+        "protected detailed report reference",
+        "separately authorized projection/release reference; never export all protected IDs by default"
+      ]
+    },
+    "AssessmentRelease": {
+      "binding": [
+        "assessmentId/version",
+        "evaluator_ref",
+        "evaluation_authority_ref",
+        "declared domain/snapshot/cut refs",
+        "check_policy_version",
+        "output_version/digest",
+        "verification_ref"
+      ],
+      "publication": [
+        "publisher_ref",
+        "publish_Grant_ref OR already authorized applicable shared-release policy",
+        "transformation_version",
+        "recipients",
+        "permittedUses",
+        "validityDependencies",
+        "authorized metadata/verdict projection"
+      ],
+      "semantics": [
+        "may satisfy an assessment obligation only if that obligation permits this issuer/mode/scope",
+        "does not assert raw source was included in the consumer's context",
+        "does not by itself give consumer evidence-read or revalidate permissions"
+      ]
+    }
+  },
+  "clauses": [
+    {
+      "id": "CV01",
+      "title": "Freeze the finite denominator",
+      "conditions": [
+        "Domain membership and obligation meaning come from the versioned task/coverage contract, not the current caller's readable search results.",
+        "A fixed explicit list may be sufficient as the declared domain; it is not proof the list contains all world-relevant sources.",
+        "An enumerated domain requires a snapshot/end-of-enumeration contract from the relevant authority.",
+        "Empty domains require an explicit rule; an empty search result cannot waive nonempty requirements."
+      ],
+      "rejection": "Changed membership/waiver without an authorized new revision does not repair old coverage.",
+      "design_input_refs": [
+        "I01",
+        "I03",
+        "I05"
+      ]
+    },
+    {
+      "id": "CV02",
+      "title": "Bind a checkable snapshot",
+      "conditions": [
+        "Each item/range is tied to an origin/source identity and version or namespaced log cut.",
+        "A final page or stream close is usable as closure evidence only when the selected source contract actually gives it that meaning.",
+        "Duplicate pages, missing sequence ranges, inconsistent snapshot tokens and unknown origin incarnation are retained as gaps/verification uncertainty.",
+        "Multiple source cuts are a vector of declared snapshots; if causal closure is required, missing declared predecessors prevent complete."
+      ],
+      "rejection": "No global snapshot or real-world freshness is inferred from local sequence numbers or successful GETs.",
+      "design_input_refs": [
+        "I01",
+        "P02"
+      ]
+    },
+    {
+      "id": "CV03",
+      "title": "Require target-specific handling evidence",
+      "conditions": [
+        "For each required obligation, check the exact source/version/range, method and authenticated allowed issuer.",
+        "A context obligation requiring exact raw bytes uses the actual request/input digest and relevant byte/range mapping; an unmaterialized pointer is insufficient.",
+        "An assessment obligation may permit a bounded authorized evaluator's attestation; that attestation records what was checked, not universal truth.",
+        "Negative and conflicting evaluated outcomes may fulfill a check-performing obligation; not-run, inaccessible input or unresolved parsing does not silently become a completed content check.",
+        "If an obligation is only to check accessibility, a scoped access-denied observation may fulfill that different obligation; it never changes a content-reading obligation retroactively."
+      ],
+      "design_input_refs": [
+        "I04",
+        "I05",
+        "I07"
+      ]
+    },
+    {
+      "id": "CV04",
+      "title": "Derive complete from obligations and evidence",
+      "conditions": [
+        "Derive the finite missing set from required IDs/ranges and qualifying receipts; never accept a caller's complete flag.",
+        "Resolve required authenticity/applicability/closure prerequisites through evidence references supplied by the trusted collection/authorization boundary.",
+        "Only all such conditions with no required gap yield complete for the exact target and snapshot.",
+        "The report contains the per-condition evidence and missing-set derivation so another authorized checker can reproduce the finite judgment."
+      ],
+      "conditional_claim": "Assuming the domain and collection/verification evidence are sound under the chosen contracts, complete implies every declared required handling obligation is covered at that snapshot. It does not establish that those contracts reflect all relevant reality.",
+      "design_input_refs": [
+        "I03",
+        "I05",
+        "P01"
+      ]
+    },
+    {
+      "id": "CV05",
+      "title": "Preserve the background tail and applicability",
+      "conditions": [
+        "An index build records the source cut it processed, processing method/version and unresolved failures.",
+        "For a request cut c after processed cut k, account for the complete namespaced raw interval (k,c] and its required handling, not just attach a tail file.",
+        "An event received after c is outside the old as-of claim; use for a current decision requires the stated freshness/version/tail policy.",
+        "A new registry revision or relevant correction changes current applicability; an old report retains its historical scope and may be challenged if its prior evidence was wrong.",
+        "Unrelated changes need not invalidate a report when all actual dependencies are declared and unchanged; otherwise use conservative re-evaluation rather than claim minimal invalidation."
+      ],
+      "design_input_refs": [
+        "I02",
+        "I07"
+      ]
+    },
+    {
+      "id": "CV06",
+      "title": "Do not remove inaccessible sources",
+      "conditions": [
+        "A known required but inaccessible source stays in the evaluator's protected domain and gap ledger.",
+        "A source/evaluation authority can supply a permitted bounded attestation only where the obligation permits that mode; it does not imply direct access by the consumer.",
+        "Dropping a required source or changing handling mode requires a visible versioned scope change authorized by the existing task/policy, not automatic per-read filtering."
+      ],
+      "disclosure_boundary": "Source IDs, counts, names, conflict content and even existence of particular gaps may be sensitive; only the authorized projection is released.",
+      "design_input_refs": [
+        "I03",
+        "I06"
+      ]
+    },
+    {
+      "id": "CV07",
+      "title": "Separate evaluation from publication and use",
+      "conditions": [
+        "Read/evaluate authority does not imply publish authority.",
+        "A minimal assessment summary can be released to a consumer without raw-source access when the release policy/Grant covers exact output version, recipients and permitted use.",
+        "Do not require every downstream consumer to read all ancestors; separately report canConsumeResult, canReadEvidence and canRevalidate when disclosure permits.",
+        "If the requested result cannot be disclosed, return only a policy-permitted unavailable/next-step response; do not leak protected gap details to explain it.",
+        "Validity/revocation depends on the release decision's actual inputs; summary rewriting is not an automatic downgrade of restrictions."
+      ],
+      "design_input_refs": [
+        "I06"
+      ]
+    },
+    {
+      "id": "CV08",
+      "title": "Keep the claim finite",
+      "conditions": [
+        "No task terminal status or action permit is created solely from complete coverage.",
+        "No guarantee that the model understood/used injected material, that an evaluator was factually correct, or that no unregistered relevant source exists.",
+        "Origin authentication, reliable source enumeration, actual-input capture, clocks, access checks and faithful summary assessment must be supplied by concrete host/authority contracts.",
+        "This document defines no universal third completion state, new world-truth logic or implemented measurement system."
+      ],
+      "design_input_refs": [
+        "I01",
+        "I03",
+        "I07"
+      ]
+    }
+  ],
+  "execution_plan": "No coverage engine or finite semantic checker is executed in this round. Only document/JSON/reference validation will run.",
+  "smallest_candidate_profiles": [
+    {
+      "id": "CP-FILES",
+      "target": "source_ingestion",
+      "finite_domain": "An authorized CoverageSpec explicitly names two immutable source object versions a@digestA and b@digestB. This is the declared task scope, not all relevant world information.",
+      "observable_evidence": [
+        "Protected original domain manifest and its authorization reference",
+        "For each required object, acquired byte-materialization reference and observed digest tied to the expected origin/version",
+        "Receipt authentication/collector identity checked through the declared host boundary, not through caller verified=true"
+      ],
+      "finite_derivation": "Compare required object identities/versions with qualified captured-object receipts. Missing b stays a gap even when a is the only readable object. Different bytes or ambiguous origin do not qualify.",
+      "not_proven": [
+        "whether the chosen two objects are semantically enough",
+        "source honesty",
+        "reader understanding",
+        "actual host currently provides these capture receipts"
+      ]
+    },
+    {
+      "id": "CP-LOG",
+      "target": "context_obligations",
+      "finite_domain": "One authority-defined append log incarnation, a fixed accepted prefix through c, an index processed through k, and explicitly required context obligations.",
+      "observable_evidence": [
+        "Namespaced source checkpoint and range/continuity evidence under a declared log contract",
+        "Index build identity, processed cut, method version and unresolved errors",
+        "Raw records in (k,c] plus receipts showing the required handling and actual request/input materialization"
+      ],
+      "finite_derivation": "Check prefix identity, exact tail interval and obligation-specific input/assessment receipts. Head advancement after c does not change the old as-of scope, but may change applicability to the current request.",
+      "not_proven": [
+        "that all external world events entered this log",
+        "global consistency with other sources",
+        "semantic fidelity of arbitrary summarization",
+        "permissions at a later dispatch point"
+      ]
+    }
+  ]
+}

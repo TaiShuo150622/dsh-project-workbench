@@ -1,0 +1,21 @@
+{
+  "source_worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "captured_at_utc": "2026-11-08T06:38:52.888156+00:00",
+  "note": "Working-tree documents were uncommitted; per-file SHA-256 is the actual specification identity. Git HEAD alone does not identify these inputs.",
+  "inputs": [
+    {
+      "name": "FORMAL_MODEL.md",
+      "snapshot": "inputs/FORMAL_MODEL.md",
+      "sha256": "17b53da7356e0c50bd28ebde33fd2c0ece0460c6a0507b89de6a726b4b9977b2",
+      "bytes": 26534,
+      "source_worktree_relative_path": "integration/docs/research/harness-20261107/FORMAL_MODEL.md"
+    },
+    {
+      "name": "ARCHITECTURE.md",
+      "snapshot": "inputs/ARCHITECTURE.md",
+      "sha256": "c82c879ee28d080ff623acbc22eb58db356269ed90617a982af11443c4827ce1",
+      "bytes": 19345,
+      "source_worktree_relative_path": "integration/docs/research/harness-20261107/ARCHITECTURE.md"
+    }
+  ]
+}

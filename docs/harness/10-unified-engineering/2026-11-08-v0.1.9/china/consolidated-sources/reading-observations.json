@@ -1,0 +1,1388 @@
+{
+  "schema_version": 1,
+  "author_declarations_reference": "source-index.json#/source_groups",
+  "root_observations": [
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/0",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/0"
+      },
+      "original_review_id": "CN-QC-09",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "lines": "1–180"
+      },
+      "version_binding": {
+        "repository": "QwenLM/qwen-code",
+        "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+        "path": "packages/core/src/goals/goal-tool-result-provenance.ts"
+      },
+      "status": "primary_text_reopened",
+      "note": "确认运行记账/聚合输出/原始工具记录的分类；分类不证明世界事实为真。",
+      "runtime_tested": false,
+      "blob_sha": "2c68879056b56c0ae866d566b72e63c38ef5e46e",
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/22",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/1",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/1"
+      },
+      "original_review_id": "CN-TR-04-a",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "lines": "462–501"
+      },
+      "version_binding": {
+        "repository": "trpc-group/trpc-agent-go",
+        "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+        "path": "graph/executor.go"
+      },
+      "status": "primary_text_reopened",
+      "note": "确认初始checkpoint失败仅Debug记录后继续。",
+      "runtime_tested": false,
+      "blob_sha": "5130d5cd3a7d7f88924874efbffc08a0e0feb142",
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/43",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/2",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/2"
+      },
+      "original_review_id": "CN-TR-04-b",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "lines": "1569–1610"
+      },
+      "version_binding": {
+        "repository": "trpc-group/trpc-agent-go",
+        "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+        "path": "graph/executor.go"
+      },
+      "status": "primary_text_reopened",
+      "note": "确认maybeCreateLoopCheckpoint失败路径不返回错误，仅记录日志。",
+      "runtime_tested": false,
+      "blob_sha": "5130d5cd3a7d7f88924874efbffc08a0e0feb142",
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/43",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/3",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/3"
+      },
+      "original_review_id": "CN-QC-04",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "lines": "full document"
+      },
+      "version_binding": {
+        "repository": "QwenLM/qwen-code",
+        "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+        "path": "docs/users/hosted-workspace-recovery.md"
+      },
+      "status": "primary_text_reopened",
+      "note": "确认恢复只回收准确Workspace holder，不完成或重试原Shell，逃逸写者终止仍依赖操作员声明。",
+      "runtime_tested": false,
+      "blob_sha": "fec588da8fb8c4f81f890ae02396969a2a0b2a97",
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/17",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/4",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/4"
+      },
+      "original_review_id": "A20",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "How the worker handles memory; Read-only stores and conflicts"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "服务端store权威，冲突覆盖本地；write/edit成功仍可能在同步时丢失修改。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/sources.json#/sources/37",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/5",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/5"
+      },
+      "original_review_id": "CN-TX-03",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "委派模式; 已知限制"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "成员不继承领导delegate限制；resume/rewind不恢复团队成员；权限细表需优先于末尾简写。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/33",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/6",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/6"
+      },
+      "original_review_id": "GH-01",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "Merge asynchronously; Get result"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "202是接纳；enqueued对该请求终结但不是已合并；UUID结果24小时后过期404，需要PR本体读回。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/40",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/7",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/7"
+      },
+      "original_review_id": "CN-PE-TX-01",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "技术决策的核心：上下文、规则与协作"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "原始问答讨论压缩/外部存储、CDE、单多代理和检查点；未采用未公开评测方法的效率数字。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/54",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW.json#/entries/8",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW.json",
+        "file_sha256": "f110462378dd01519c2b59c05e4db642e79e1f3506253b69cbc54d8738de2f62",
+        "json_pointer": "/entries/8"
+      },
+      "original_review_id": "CN-PE-TX-02",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "2026-03-21议程14:50"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "官方页标明汪晟杰当时CodeBuddy产品身份，不作为当前任职保证。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "china/sources.json#/sources/55",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/0",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/0"
+      },
+      "original_review_id": "TM-01",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/temporalio/sdk-typescript/blob/615a684ac41a22c881df11157775e326843f7b04/packages/common/src/activity-options.ts",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "1–85"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "三种取消模式的承诺和心跳条件已重读；等待结束也不等于外部效果回滚。",
+      "runtime_tested": false,
+      "blob_sha": "a9852b6317ffc38139f93664e47bc269b208e57b",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/31",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/1",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/1"
+      },
+      "original_review_id": "AG-05",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/agno-agi/agno/blob/f45ccee83dcd332c6a2cf46b0a0add3e7f7d3e68/libs/agno/agno/db/postgres/async_postgres.py",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "4892–4990"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "行锁、expected_attempt与session metadata同事务已核；其范围是这些存储写入。",
+      "runtime_tested": false,
+      "blob_sha": "87d7619e5e23098b4471b28af59cb4dddc36279b",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/29",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/2",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/2"
+      },
+      "original_review_id": "DB-01",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/dbos-inc/dbos-transact-py/blob/236142bd7a99ff77d04becf5f405a60d6f330591/dbos/_core.py",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "2497–2561"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "函数返回后再记结果；取消不记结果可重跑，外部效果未知窗口仍需目标契约。",
+      "runtime_tested": false,
+      "blob_sha": "6e13e605f645fb91e0d0817851acf0bf2aa6ee36",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/36",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/3",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/3"
+      },
+      "original_review_id": "PI-02",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/earendil-works/pi/blob/6e2222a8dda06e3d69fad46d630f152f5873567a/packages/durable/src/harness/tool.ts",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "130–246"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "恢复execute分支检查旧/新replay=safe并直接run；初始beforeTool与最终参数重验不同路径。",
+      "runtime_tested": false,
+      "blob_sha": "9fe1d2279337b729e4a1f648b5db9c314fca743c",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/1",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/4",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/4"
+      },
+      "original_review_id": "LT-02",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/letta-ai/letta-code/blob/9176d8c0b16f408e9240422a98379a423e2176c3/src/agent/approval-execution.ts",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "446–533"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "忽略abort的工具可在宽限期后detached，返回中断与真实工具结束不同。",
+      "runtime_tested": false,
+      "blob_sha": "7c5f1d3204661ea43c38f4e1dcad44e1cd2fae4c",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/20",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/5",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/5"
+      },
+      "original_review_id": "PA-05",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/0f7648a1b0685389ea368ea4f7b754b393cea8c7/pydantic_ai_slim/pydantic_ai/usage.py",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "548–605"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "请求数统计已提交响应，部分重试不计；token限制可在响应后核查，预估非默认。",
+      "runtime_tested": false,
+      "blob_sha": "447e1775a55be77ef460fda79ea13d528de2f38d",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/sources.json#/sources/16",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/6",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/6"
+      },
+      "original_review_id": "CTX-LME-table3",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "Table 3"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "已核Round原文value与K=V+fact对比，GPT-4o Top10 .670至.720，不作跨论文排名。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/context-evaluation/sources.json#/sources/0",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/7",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/7"
+      },
+      "original_review_id": "CTX-LME-grader",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "24–42"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "知识更新评分允许旧新同现；时间数量容忍off-by-one，不能等同严格执行纠错指标。",
+      "runtime_tested": false,
+      "blob_sha": "4732f3772b04a2b9069121ade304e6320494abc2",
+      "document_matches": [
+        {
+          "document_id": "west/context-evaluation/sources.json#/sources/6",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/8",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/8"
+      },
+      "original_review_id": "CTX-Flex-confirm",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/html/2610.33274v1",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "§4.1,§5.2 Table3,Limitations,§E.1"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "已核147任务表，时间线与完整法相近；LME汇总参与设计；冻结与运行时间关系仍属作者报告。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/context-evaluation/sources.json#/sources/5",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/9",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/9"
+      },
+      "original_review_id": "PV-Bolin",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.turingpost.com/p/bolincodex",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "本人问答124–141"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "读到模型循环和宿主沙箱分工；未把编辑Quick answer视为本人原话。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/practitioner-views/sources.json#/sources/0",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "document_id": "west/sources.json#/sources/15",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/10",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/10"
+      },
+      "original_review_id": "PV-Lopopolo",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://openai.com/index/harness-engineering/",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "署名/日期与repository legibility主线"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "官方署名Ryan Lopopolo；工程经验范围是一项内部项目，速度估算未作为验证。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/practitioner-views/sources.json#/sources/2",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "document_id": "west/sources.json#/sources/3",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/11",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/11"
+      },
+      "original_review_id": "PV-Rajasekaran",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "署名/日期；Removing the sprint construct；DAW phase table"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "逐项消融和模型更新改变收益；取消sprint后仍有三轮build/QA，不解释成完全取消评价。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/context-evaluation/sources.json#/sources/16",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "document_id": "west/practitioner-views/sources.json#/sources/5",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "document_id": "west/sources.json#/sources/18",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_2.json#/entries/12",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_2.json",
+        "file_sha256": "a197384dca3d2f6fe7c7019b4f514de923f2b96b789685e55baad4f9d5cb57bd",
+        "json_pointer": "/entries/12"
+      },
+      "original_review_id": "Cordis-root",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/pdf/2608.25512v1",
+      "dates": {
+        "accessed_at": "2026-11-08"
+      },
+      "locations": {
+        "location": "首页，§5.1.1，§6.1，§7.3"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "核共同署名和机构；inverse/commutation为作者义务；外部emission不在回退状态内；reload自有内存不自动保留。另以pdftoppm渲染第59页并目视确认Algorithm1第6/17行及f after g约定；只列局部记号方向疑点，非主定理反驳。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/practitioner-views/sources.json#/sources/6",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "original_URL_pointer": {
+            "file": "mechanisms/cordis-boundary/sources.json",
+            "file_sha256": "8ddba532c5605e859eb13095d50f4f19088a1aec3250732f760bec084ade2a87",
+            "json_pointer": "/sources/0/full_text_url"
+          },
+          "relation": "EXACT_ALTERNATE_URL; READING_SCOPE_SEPARATE"
+        },
+        {
+          "original_URL_pointer": {
+            "file": "mechanisms/lifecycle-migration/sources.json",
+            "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+            "json_pointer": "/sources/4/full_text_url"
+          },
+          "relation": "EXACT_ALTERNATE_URL; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [
+        {
+          "document_id": "china/sources.json#/sources/51",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        },
+        {
+          "document_id": "mechanisms/cordis-boundary/sources.json#/sources/0",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        },
+        {
+          "document_id": "mechanisms/lifecycle-migration/sources.json#/sources/4",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        },
+        {
+          "document_id": "west/practitioner-views/sources.json#/sources/7",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        }
+      ],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/0",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/0"
+      },
+      "original_review_id": "AUTH-OpenAI-invocation",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/_tool_invocation.py#L165",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "165–231"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "批准作用域与语义字段构成指纹；参数规范化进入identity，不能说仅按call ID批准。",
+      "runtime_tested": false,
+      "blob_sha": "8685e3ec6e191e982bb2d3194c27b3a85772520b",
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/2/primary_documents/1",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/1",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/1"
+      },
+      "original_review_id": "AUTH-OpenAI-reuse",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/openai/openai-agents-python/blob/27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9/src/agents/run_context.py#L582",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "582–612"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "已登记call ID的类型、scope或fingerprint变化会抛错；静态路径不证明所有目标规范化安全。",
+      "runtime_tested": false,
+      "blob_sha": "92cf584d0145da019d5ebeffe69c4c3a21f32c5e",
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/2/primary_documents/2",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/2",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/2"
+      },
+      "original_review_id": "AUTH-MCP-annotations",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/schema/2026-07-28/schema.ts#L2276",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "2270–2295"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "Annotations.audience 是 user/assistant Role[] 内容用途提示，与OAuth资源audience及应用数据ACL不同。",
+      "runtime_tested": false,
+      "blob_sha": "0abde3c55dd07ee038c8614ce74f116150ff1c8c",
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/1",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/3",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/3"
+      },
+      "original_review_id": "AUTH-MCP-token",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/94f4ebc8ecb3764584bc30d5139d57c03692b734/docs/specification/2026-07-28/basic/authorization/security-considerations.mdx",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "Token Audience Binding; Access Token Privilege Restriction"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "规范要求目标服务验证凭据接收者，上游使用另发凭据，不允许直接透传。规范要求不等于部署已符合。",
+      "runtime_tested": false,
+      "blob_sha": "b45830c74d4801c04605943b50a86eb17de52025",
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/0",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/4",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/4"
+      },
+      "original_review_id": "AUTH-Claude-order",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "How permissions are evaluated"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "hooks/deny/ask/mode/allow多个阶段可以决定调用；canUseTool不是所有路径的唯一拦截点。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/3",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        },
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/3/primary_documents/0",
+          "relation": "EXACT_URL",
+          "constructed_document_URL": false
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/5",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/5"
+      },
+      "original_review_id": "AUTH-Claude-child-tools",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://code.claude.com/docs/en/sub-agents#scope-mcp-servers-to-a-subagent",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "513–551"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "子代理可有主会话没有的inline MCP连接，受信任及管理策略限制。工具面不是授权集合，不能要求所有工具名严格父子子集。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [
+        {
+          "document_id": "west/authority-scope/sources.json#/sources/4",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        },
+        {
+          "document_id": "west/sources.json#/sources/29",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_3.json#/entries/6",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_3.json",
+        "file_sha256": "b316cf1d08ac0f749be2de89453612ffd98d349c8c7a57684ce88cc384c7050a",
+        "json_pointer": "/entries/6"
+      },
+      "original_review_id": "TTL-AWS-original",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "dates": {
+        "accessed_at": "2026-11-08T07:38:22.079938+00:00"
+      },
+      "locations": {
+        "location": "Retries and semantic equivalence; Late arriving requests; Same client request ID different intent"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "业务意图/调用方身份、迟到请求和保留期分别明确；本文有限期限模型是自己的抽象，不当作AWS实现复现。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [],
+      "bibliography_enrichment_ids": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/0"
+      ],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/0",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/0"
+      },
+      "original_review_id": "WI-AFlow-inner-loop",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/FoundationAgents/AFlow/blob/289d5544cfb5698799b207b931a392aadc9e9c1a/scripts/optimizer.py#L130-L181",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "110–190"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "有限外层轮数不限制内部候选生成 while True 的总调用；未执行或估算费用。",
+      "runtime_tested": false,
+      "blob_sha": "36a6cfc5e8774260ccf3036c059d536938b677c3",
+      "document_matches": [
+        {
+          "document_id": "mechanisms/work-improvement/sources.json#/sources/7",
+          "relation": "SAME_URL_WITHOUT_FRAGMENT; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/1",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/1"
+      },
+      "original_review_id": "WI-Reflexion-ablation",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "Table 3; result interpretation"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "Rust50 60/52/60/68是作者有限消融结果；生成测试的假阳性可提前接受错误答案，不是形式保证。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [
+        {
+          "document_id": "mechanisms/work-improvement/sources.json#/sources/3",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        }
+      ],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/2",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/2"
+      },
+      "original_review_id": "WI-ExpeL-ablation",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/html/2308.10144v3",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "Table 3; limitations"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "HotpotQA 28±1.4/29±0.4/39±1.7对照与纳入reflection提炼的退化；有限上下文和纯文字任务边界。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [
+        {
+          "document_id": "mechanisms/work-improvement/sources.json#/sources/4",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        }
+      ],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/3",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/3"
+      },
+      "original_review_id": "WI-AFlow-results",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://arxiv.org/html/2410.10762v4",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "Table 1; Figure 4; experimental setup"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "六数据集 GPT-4o-mini 76→80.3，测试三次；图中测试推理费用不覆盖搜索和人工成本。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [
+        {
+          "document_id": "mechanisms/work-improvement/sources.json#/sources/5",
+          "relation": "SAME_ARXIV_WORK_AND_VERSION_DIFFERENT_REPRESENTATION; NO_BODY_EQUIVALENCE_CHECK"
+        }
+      ],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/4",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/4"
+      },
+      "original_review_id": "TOOLS-Anthropic-search",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.anthropic.com/research/advanced-tool-use",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "tool definitions, search, programmatic calls, examples"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "官方58工具约55k及134k上下文为指定案例；发现/执行/示例分开，不视为任意工具规模的收益保证。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [],
+      "bibliography_enrichment_ids": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/1"
+      ],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/5",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/5"
+      },
+      "original_review_id": "TOOLS-Anthropic-code",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "definition and intermediate-result context costs"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "介绍工具声明与中间结果的上下文成本、代码环境内处理思路；未据此断言所有任务更优。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [],
+      "bibliography_enrichment_ids": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/2"
+      ],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/6",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/6"
+      },
+      "original_review_id": "TOOLS-Claude-SDK",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "97–114 and supported deployments"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "默认最多返回5项、压缩后再发现、增加往返延迟；小目录提前给出可更快，数字不当通用最优。",
+      "runtime_tested": false,
+      "blob_sha": null,
+      "document_matches": [],
+      "related_work": [],
+      "bibliography_enrichment_ids": [
+        "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/3"
+      ],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/7",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/7"
+      },
+      "original_review_id": "MIG-Temporal-pinned",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/temporalio/documentation/blob/3fcf3f34596030d06979e9e3c68ab4964900b4a9/docs/production-deployment/worker-deployments/recover-pinned-workflows.mdx",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "99–253"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "逐策略区分重启属性/状态完整性；对已关闭历史的相同reset命令会再次终止先前重置运行并新开；Visibility最终一致，特定Running查询幂等不代表目标效果无重复。",
+      "runtime_tested": false,
+      "blob_sha": "d902efce1a62737c6ba4e90146c270461d85702b",
+      "document_matches": [
+        {
+          "original_URL_pointer": {
+            "file": "mechanisms/lifecycle-migration/sources.json",
+            "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+            "json_pointer": "/sources/1/permalink"
+          },
+          "relation": "EXACT_ALTERNATE_URL; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    },
+    {
+      "id": "ROOT_SOURCE_REVIEW_4.json#/entries/8",
+      "origin": {
+        "file": "ROOT_SOURCE_REVIEW_4.json",
+        "file_sha256": "c783e5ca4dcbe04015fb3edafc810078945b20393cd3cb43bfc5bb4d80c933a7",
+        "json_pointer": "/entries/8"
+      },
+      "original_review_id": "MIG-DBOS-patch",
+      "reviewer": "root_additional_read_observation",
+      "url": "https://github.com/dbos-inc/dbos-docs/blob/d280ec8f513ecfd39f68784ce598d28832d4557e/docs/python/tutorials/upgrading-workflows.md",
+      "dates": {
+        "accessed_at": "2026-11-08T08:04:57.096899+00:00"
+      },
+      "locations": {
+        "location": "76–174"
+      },
+      "version_binding": {},
+      "status": "primary_text_reopened",
+      "note": "patch由历史位置决定；提前开始但未经过该点也可走新分支；auto-upgrade Enterprise；旧PENDING进程可仍执行，仅一个结果记录不等于一个外部效果。",
+      "runtime_tested": false,
+      "blob_sha": "d335b1917e4de41bdc787b89b5e40375bd87540d",
+      "document_matches": [
+        {
+          "original_URL_pointer": {
+            "file": "mechanisms/lifecycle-migration/sources.json",
+            "file_sha256": "d3688fd236ab627447379f0c71a3165b78c8d3b0eacf1bd2befa197cf0573205",
+            "json_pointer": "/sources/2/permalink"
+          },
+          "relation": "EXACT_ALTERNATE_URL; READING_SCOPE_SEPARATE"
+        }
+      ],
+      "related_work": [],
+      "bibliography_enrichment_ids": [],
+      "never_overwrites_author_read_status": true
+    }
+  ],
+  "bibliography_enrichments": [
+    {
+      "id": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/0",
+      "origin": {
+        "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+        "file_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+        "json_pointer": "/entries/0"
+      },
+      "role": "BIBLIOGRAPHIC_ENRICHMENT_ONLY",
+      "not_new_source_or_reading": true,
+      "review_ids": [
+        "ROOT_SOURCE_REVIEW_3.json#/entries/6"
+      ],
+      "fields": {
+        "review_id": "TTL-AWS-original",
+        "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+        "title": "Making retries safe with idempotent APIs",
+        "authors": [
+          "Malcolm Featonby"
+        ],
+        "institution": "Amazon Web Services / Amazon Builders Library",
+        "publication_date": null,
+        "date_note": "No publication date visible in the accessed article; accessed date is not substituted.",
+        "kind": "official_authored_engineering_article",
+        "attribution_locator": "title and byline 213–220; About the author 479–483",
+        "attribution_limit": "Official page states an AWS engineering role; no independent present employment verification."
+      }
+    },
+    {
+      "id": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/1",
+      "origin": {
+        "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+        "file_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+        "json_pointer": "/entries/1"
+      },
+      "role": "BIBLIOGRAPHIC_ENRICHMENT_ONLY",
+      "not_new_source_or_reading": true,
+      "review_ids": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/4"
+      ],
+      "fields": {
+        "review_id": "TOOLS-Anthropic-search",
+        "url": "https://www.anthropic.com/research/advanced-tool-use",
+        "title": "Introducing advanced tool use on the Claude Developer Platform",
+        "authors": [
+          "Bin Wu"
+        ],
+        "institution": "Anthropic Engineering",
+        "publication_date": "2025-11-24",
+        "kind": "official_authored_engineering_article",
+        "attribution_locator": "publication and team 21–27; Authors & acknowledgements 514–517",
+        "attribution_limit": "Named contributors are distinct from the written-by author; a publication-time official team article, not separate personal endorsements."
+      }
+    },
+    {
+      "id": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/2",
+      "origin": {
+        "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+        "file_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+        "json_pointer": "/entries/2"
+      },
+      "role": "BIBLIOGRAPHIC_ENRICHMENT_ONLY",
+      "not_new_source_or_reading": true,
+      "review_ids": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/5"
+      ],
+      "fields": {
+        "review_id": "TOOLS-Anthropic-code",
+        "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+        "title": "Code execution with MCP: Building more efficient agents",
+        "authors": [
+          "Adam Jones",
+          "Conor Kelly"
+        ],
+        "institution": "Anthropic Engineering",
+        "publication_date": "2025-11-04",
+        "kind": "official_authored_engineering_article",
+        "attribution_locator": "publication and team 20–26; Authors & acknowledgements 258–262",
+        "attribution_limit": "Official joint article, not independently established present employment."
+      }
+    },
+    {
+      "id": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json#/entries/3",
+      "origin": {
+        "file": "ROOT_BIBLIOGRAPHY_SUPPLEMENT.json",
+        "file_sha256": "31bafd8fb6d74c2aa964043cc2550214c5109f4e67ba98e1f6c8476cbaa885ec",
+        "json_pointer": "/entries/3"
+      },
+      "role": "BIBLIOGRAPHIC_ENRICHMENT_ONLY",
+      "not_new_source_or_reading": true,
+      "review_ids": [
+        "ROOT_SOURCE_REVIEW_4.json#/entries/6"
+      ],
+      "fields": {
+        "review_id": "TOOLS-Claude-SDK",
+        "url": "https://code.claude.com/docs/en/agent-sdk/tool-search",
+        "title": "Scale to many tools with tool search",
+        "authors": [],
+        "institution": "Anthropic / Claude Code Docs",
+        "publication_date": null,
+        "date_note": "Dynamic documentation; no dated individual byline shown.",
+        "kind": "official_product_documentation",
+        "attribution_locator": "title/navigation 90–104",
+        "attribution_limit": "Product documentation, not an individual employee opinion."
+      }
+    }
+  ],
+  "rules": [
+    "Root rereads do not manufacture author full-text reading.",
+    "Book metadata completion is not a new observation or independent source.",
+    "A source URL with two locators retains two reading/claim scopes."
+  ]
+}

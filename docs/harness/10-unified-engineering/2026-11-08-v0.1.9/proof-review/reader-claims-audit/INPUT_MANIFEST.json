@@ -1,0 +1,119 @@
+{
+  "frozen_at_utc": "2026-11-08T08:43:28.463683+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "snapshot": "统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1",
+      "bytes": 41058
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/README.md",
+      "snapshot": "README.md",
+      "sha256": "cc88d7d94316dc39e574519b3ec79ecabe58c770a79ebc760a35a14ed573cc98",
+      "bytes": 6302
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/EVIDENCE.md",
+      "snapshot": "EVIDENCE.md",
+      "sha256": "db1487bae92ca1b15d47be05a1fe29aed56b98b6a7ba14eca6eac9e74b1e71a9",
+      "bytes": 7501
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/REPRODUCE.md",
+      "snapshot": "REPRODUCE.md",
+      "sha256": "d3c63317144255bd9bea2bba0bdef2d98f9246ccf1f37c0dba491e0ec6712749",
+      "bytes": 5609
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "snapshot": "FORMAL_MODEL.md",
+      "sha256": "9d0015cfcd871b162ff6d282ec33f755171750ef7bcfe32db909a58b7d804933",
+      "bytes": 32981
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "snapshot": "ARCHITECTURE.md",
+      "sha256": "902071ad4aaeaa26b22913fdbb451ccdd220590c45b470908cd85d6627f348d1",
+      "bytes": 22348
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/README.md",
+      "snapshot": "west/implementation-taskbook/README.md",
+      "sha256": "e374e7c2f9cd237591302e41c9350862c4480cebeb6c5be2ff008b63d5bd9a8e",
+      "bytes": 1532
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.html",
+      "snapshot": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.html",
+      "sha256": "55c8684f416c8841a98bb9c02cad7a4d01a2f536574f160a2b16c0ed9670f601",
+      "bytes": 31893
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/inputs.json",
+      "snapshot": "west/implementation-taskbook/inputs.json",
+      "sha256": "83fe0e264065d502eb77a79bf2f89ac3b1142ab9d9202da83b486c60a1a998c8",
+      "bytes": 8192
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/validation.json",
+      "snapshot": "west/implementation-taskbook/validation.json",
+      "sha256": "9433bab8f8d409a036822b7bcd320fb7f380b229ac0b7b8355e7ee6cfd7456ac",
+      "bytes": 6339
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "snapshot": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0.md",
+      "sha256": "2b036a38370e65a11a10c8e2f75d3c8d92e55790962c72e88795b26b4cb20a23",
+      "bytes": 19465
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/SHA256SUMS",
+      "snapshot": "west/implementation-taskbook/SHA256SUMS",
+      "sha256": "9136859fbac049a26ea8334a54aff415267fe37fa9d017b1838efdd7df5717bc",
+      "bytes": 581
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/implementation-taskbook/slice-checklist.json",
+      "snapshot": "west/implementation-taskbook/slice-checklist.json",
+      "sha256": "046d4339d061e5481e60a006fe858e2e6fa7847aaa6348c25ae6221c4e306804",
+      "bytes": 22437
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/design-v0.1.1.json",
+      "snapshot": "west/evaluation-design-review/design-v0.1.1.json",
+      "sha256": "a340d5c4452ef26242cd88dd4e162dc7c996984843502f4c798fd028ea37c6b1",
+      "bytes": 26603
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "snapshot": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1.md",
+      "sha256": "c28d81faf38fe68daf26a07ba2337b7e274bfd9695a349f6008f917b5a31491f",
+      "bytes": 18303
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "snapshot": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.0.md",
+      "sha256": "659c7f777345520baf7729c30caad296a51e824961aa5d7dc28d30b1fd2539ab",
+      "bytes": 17383
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/README.md",
+      "snapshot": "west/evaluation-design-review/README.md",
+      "sha256": "6192963c31013d20a38b8d145ccf11c3179a98331f8aeb17150c33160e424e69",
+      "bytes": 4445
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/review.md",
+      "snapshot": "west/evaluation-design-review/review.md",
+      "sha256": "7da7b5f5f320d3305e82e08d948aac1741221a8308dfc1039aa67e145a6fec15",
+      "bytes": 6010
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/design.json",
+      "snapshot": "west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "bytes": 24497
+    }
+  ]
+}

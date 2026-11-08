@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-11-08T06:09:00Z",
+  "pr": {
+    "url": "https://github.com/TaiShuo150622/dsh-project-workbench/pull/1",
+    "number": 1,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "codex/dsh-project-workbench",
+    "base_sha": "b9d44847d72883bf5116c72f445c31618d7cc020",
+    "head": "codex/record-task-lifecycle",
+    "head_sha": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+    "title": "feat(record): 实现 S1 任务内核与分轮对抗测试",
+    "body": "旧会话中的待办会在其他会话已完成后继续触发执行。本 PR 增加宿主无关的 Record S1 状态内核，用统一任务身份、固定范围的完成证据、独立验收记录和版本化读写处理这一问题，并接入 GitHub CI 与当前 Codex 会话调度的 GPT-6.1-Sol max 对抗测试。\n\n实现包括：交办及请求去重、取消和关联重新交办、定义修订、客观完成退出执行、错误完成纠正、结果可用性与验收 token、动作预留及最终发送检查、未知动作占用、日志回放和单调快照。内核为同步内存单写者模型；actor 和 GitHub 观察由可信适配层提供。本 PR 不提供生产持久化、真实认证、宿主工具拦截或 DSH 接入。\n\n## 实际验证\n\n| 轮次 | 输入提交 | GitHub CI | CI 后 GPT-6.1-Sol max |\n| --- | --- | --- | --- |\n| 1 | `82115a4bb8352ea24d31bc14552ae78c68d289f2` | [42428569198 / 1](https://github.com/TaiShuo150622/dsh-project-workbench/actions/runs/42428569198)：44 测试、构建、19 变异通过 | 两个独立上下文；独立复现后确认 4 类问题，采纳 9 项测试 |\n| 2 | `0f8353ab1f4be72922bad7c479e1fb78b4b40896` | [42429483715 / 1](https://github.com/TaiShuo150622/dsh-project-workbench/actions/runs/42429483715)：53 测试、构建、19 变异通过 | 一个独立上下文；独立复现后修复最终发送重检及跨历史验收身份，采纳 5 项测试 |\n| 3 | `7264be10387963f4d575d8688ed8573f4c16c8c4` | [42430397773 / 1](https://github.com/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773)：58 测试、构建、19 变异通过 | 一个独立上下文；41 项 Record 回归通过，76 条有界交错轨迹由主会话独立复跑全部通过，未发现已确认契约内的新缺陷；未新增永久测试 |\n\n每轮 CI artifact 绑定实际提交、requestedHead、run ID / attempt 和完整日志；已下载核对 clean checkout 与提交身份。19 个变异为 11 个既有工作台变异和 8 个 Record 变异。当前 58 项测试含 17 项既有工作台测试、27 项初始 Record 测试、14 项采纳的模型候选；模型候选中 7 项在修复前失败，7 项为正向对照。\n\n模型仅在独立副本产出候选，主会话复核语义、独立复现并修改实现。第一轮有一项原预期被否决并由生成者改为更严格的终态证明用例；第二轮明确补充独立日志的 token 身份约束。未通过删除或放宽原断言制造通过。多个上下文不宣传为不同模型交叉审查。\n\n## 阅读入口与范围\n\n- [S1 契约](https://github.com/TaiShuo150622/dsh-project-workbench/blob/codex/record-task-lifecycle/record/README.md)\n- [逐轮审查记录](https://github.com/TaiShuo150622/dsh-project-workbench/blob/codex/record-task-lifecycle/docs/record/reviews/README.md)\n- [后置测试协议](https://github.com/TaiShuo150622/dsh-project-workbench/blob/codex/record-task-lifecycle/docs/record/ADVERSARIAL.md)\n\nGitHub 自动执行确定性 CI；模型调用由当前 Codex 会话调度。没有配置模型 API Secret，也未部署会话结束后继续监听的常驻任务。PR 保持 Draft、未合并默认分支；S1 范围验证不代表真实多宿主产品验收。\n\n最终后置审查覆盖到第三轮 CI 的同一提交 `7264be10387963f4d575d8688ed8573f4c16c8c4`。76 条轨迹是额外本地审查探针，不计入 GitHub CI 的 58 项测试。原样探针、派发配置、CI 原始产物和独立复跑日志已由当前会话归档；最后的只读审查没有再改变代码提交。\n\n接入前仍需明确主体 ID 的命名空间：当前所有权按 `actor.id` 比较，契约尚未规定它是否跨 `kind` 全局唯一。最后一轮记录了这一观察，没有将未约定的角色切换行为判为已确认漏洞，也不据此宣称真实认证已验证。"
+  },
+  "workflow_runs": [
+    {
+      "id": 42430397773,
+      "name": "Record and workbench CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 3,
+      "jobs_url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/jobs",
+      "logs_url": "https://api.github.com/repos/TaiShuo150622/dsh-project-workbench/actions/runs/42430397773/logs",
+      "workflow_id": 410761918
+    }
+  ],
+  "note": "GitHub API confirms PR/head and CI conclusion. Test and adversarial counts are reported in PR body; raw artifacts have not been re-downloaded in this research run."
+}

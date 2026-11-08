@@ -1,0 +1,12 @@
+[
+  {
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/render-tools/build_reader_package.py",
+    "copy": "inputs/build_reader_package.py",
+    "sha256": "c3b79a98e26ad9081f56bc0cacacb2722b9c041f82117213ccf6250682d2905a"
+  },
+  {
+    "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/consolidated-sources/validate_index_portable.py",
+    "copy": "inputs/validate_index_portable.py",
+    "sha256": "b660c054ef59c8cd5aa7365bafc18b4ea621495e52acc5373c6bb254d11dab74"
+  }
+]

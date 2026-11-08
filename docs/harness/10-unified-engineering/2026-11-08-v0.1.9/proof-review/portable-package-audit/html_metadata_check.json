@@ -1,0 +1,401 @@
+[
+  {
+    "file": "ARCHITECTURE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "BASELINE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "DESIGN_RECONCILIATION-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "EVIDENCE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "FORMAL_MODEL-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "REPRODUCE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/bounded-models/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/bounded-models/TRACES-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/budget-proof/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/consolidated-sources/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/consolidated-sources/SOURCE_INDEX-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/evidence-catalog-audit/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/record-refinement/README-current-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/record-refinement/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/record-refinement/REPORT-v0.1.1-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/record-refinement/REPORT-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "china/record-refinement/TRACES-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "dag-proof/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "formal-spec/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "formal-spec/RELAY_README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/conformance/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/conformance/review-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/cordis-boundary/READING_COVERAGE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/cordis-boundary/status-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/durability-boundary/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/formal-model-review-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/lifecycle-migration/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/relay-code-probes/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "mechanisms/work-improvement/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/TASK-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/expiry-contract-audit/REPAIR_REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/expiry-contract-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/general-proof-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/model-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/reader-claims-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/record-mapping-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/relay-durability-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/snapshot-errata-check/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "proof-review/work-policy-audit/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "root-model-replay/TRACES-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/architecture-reader-review/READING_ROUTE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/architecture-reader-review/REVIEW-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/authority-scope/amendments-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/authority-scope/contract-cases-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/authority-scope/review-packet-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/context-evaluation/evaluation-contract-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/context-evaluation/review-packet-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/decision-brief/MEMO-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/evaluation-design-review/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/evaluation-design-review/review-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/historical-coverage/COVERAGE-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/historical-coverage/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/implementation-taskbook/README-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/practitioner-views/review-packet-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  },
+  {
+    "file": "west/review-packet-离线阅读版.html",
+    "derivation_html_matches": true,
+    "derivation_md_matches": true,
+    "build_source_matches": true,
+    "build_output_matches": false
+  }
+]

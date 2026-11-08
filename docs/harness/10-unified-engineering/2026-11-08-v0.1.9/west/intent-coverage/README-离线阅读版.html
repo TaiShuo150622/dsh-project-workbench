@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="891b6a5339fa">
+<title>W13 · 旧意图覆盖核对</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#先列最新-代表入口-再选择补读">先列最新/代表入口，再选择补读</a></li><li class="l2"><a href="#结果怎样进入总稿">结果怎样进入总稿</a></li><li class="l2"><a href="#验证与限制">验证与限制</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>W13 · 旧意图覆盖核对</h1>
+</header>
+<p>本包回答：统一主稿 v0.1.5 是否漏掉旧公开稿的重要意图。只有文档研究与检查结果，没有产品修改、运行实验或发布。</p>
+<p>先读 <a href="MEMO-离线阅读版.html">补漏备忘</a>，再查 <a href="mapping.json">逐条机器映射</a>；阅读深度和哈希见 <a href="READING-离线阅读版.html">READING.md</a> / <a href="reading-list.json">reading-list.json</a>。<a href="inventory.json">inventory.json</a> 保存选稿之前的路径、版本探索所需元数据和内容哈希。</p>
+<h2 id="先列最新-代表入口-再选择补读">先列最新/代表入口，再选择补读</h2>
+<p>这里的“最新”只指已公开归档内的版本关系，不表示外部产品今天的最新状态。先对指定七目录全部 Markdown 做内容哈希去重，96 条元数据中无完全相同内容；2 份 activity 正文未读、未哈希。数值版本不跨主题排序。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">实际目录</th><th style="text-align:left">最新/代表版本</th><th style="text-align:left">入口</th><th style="text-align:left">本轮选择与理由</th></tr></thead><tbody><tr><td style="text-align:left">01-vision</td><td style="text-align:left">总体 v0.3（v0.1/v0.2 为历史）</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">总体 v0.3</a></td><td style="text-align:left">选读决定与流程；资源和外部框架调研段不重复核验</td></tr><tr><td style="text-align:left">02-methods</td><td style="text-align:left">方法线没有单一总版本：H0 v1、主动性 v0.1.1、工具面 v0.1.0</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-19-Agent%E6%A1%86%E6%9E%B6%E4%B8%8B%E4%B8%80%E8%BD%AE%E5%BC%80%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%A8%BF.md">H0</a>、<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E4%B8%BB%E5%8A%A8%E6%80%A7%E4%B8%8E%E6%8F%90%E9%97%AE%E8%BE%B9%E7%95%8C%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">主动性</a>、<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E5%B7%A5%E5%85%B7%E9%9D%A2%E8%AE%BE%E8%AE%A1%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">工具面</a></td><td style="text-align:left">三份新选；Agent/Workflow 已由 root 衔接，本文不再读全稿</td></tr><tr><td style="text-align:left">04-memory</td><td style="text-align:left">Record v0.1.2；文件源 v0.2 明确是历史 v0.1.1</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">当前 Record</a>；<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/%E4%BC%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%B8%B8%E9%A9%BBAgent%E8%AE%BE%E8%AE%A1-%E6%BA%90v0.1-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">早期常驻记录 v0.1</a></td><td style="text-align:left">当前稿沿用 W09 的 1–145 行；本轮只补已列明命中。早期捕获稿新全文读，不能替代当前方向</td></tr><tr><td style="text-align:left">06-dag</td><td style="text-align:left">current 目录为公开现行入口，内部协议/提案各有自己的版本</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/08-%E9%9D%A2%E6%9D%BF%E5%8D%8F%E8%AE%AEv2%E7%AC%AC%E4%B8%80%E7%89%88.md">面板协议 v2</a>、<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/11-%E5%80%9F%E9%89%B4SuperAgent%E6%9E%B6%E6%9E%84%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">借鉴 Super-agent v0.1.0</a></td><td style="text-align:left">两份新全文读；第一屏收口已读。current 文件夹不等于所有提案已批准</td></tr><tr><td style="text-align:left">07-remote</td><td style="text-align:left">双运行模式 v0.1.1；rc.5 兼容记录为历史测试</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/07-remote/DSH-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E5%8F%8C%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">远程 v0.1.1</a></td><td style="text-align:left">复用 W09 1–130 行，不重读或据此声称全文覆盖</td></tr><tr><td style="text-align:left">08-browser</td><td style="text-align:left">稳定文件名协议：CONTRACTS/LIFECYCLE/OPERATION-LOG/SECURITY 等；平台路线独立</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md">ARCHITECTURE-PLATFORM</a></td><td style="text-align:left">核心协议 W09 已读；本轮新读平台路线。日期和 provider 版本保留历史语境</td></tr><tr><td style="text-align:left">09-extensions</td><td style="text-align:left">实时讨论 2026-10-28（未编号）；CLI 发展史为历史补充</td><td style="text-align:left"><a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/09-extensions/discussion/%E5%AE%9E%E6%97%B6%E8%AE%A8%E8%AE%BA%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%BC%80%E6%BA%90%E6%96%B9%E6%A1%88%E8%B0%83%E7%A0%94-2026-10-28-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">实时讨论工作台</a></td><td style="text-align:left">实时稿 W09 全读；CLI 史不提供需补的新意图，本轮只留索引覆盖；activity 排除</td></tr></tbody></table></div>
+<p>新补读恰好 8 份：总体、H0、主动性、工具面、早期记录、DAG 协议、DAG 借鉴、浏览器平台路线。7 份通读，总体选读正文 498 行（明确行段见清单）；8 份均不在 W09/W12 的既读正文条目中，且字节与固定提交一致。这里没有重新宣称全部 192 附件逐页核读。</p>
+<h2 id="结果怎样进入总稿">结果怎样进入总稿</h2>
+<ul><li>IC01–IC02：补强已有明确需求，适合各加一两句；没有新增默认实验或实施切片。</li><li>IC03：给历史 H0 计划一个明确承接状态，不重启旧排期，也不宣称已经完成。</li><li>IC04：把当前 Record 已有的来源语义写得更直接。</li><li>IC05–IC06：明确暂缓的旧提案，不能作为已采纳功能清单。</li></ul>
+<p>主稿/专题/实施章节落点已在 mapping.json 逐项列出。本包沿用 <a href="../historical-coverage/README-离线阅读版.html">W09 原覆盖快照</a> 与 <a href="../design-continuity/README-离线阅读版.html">W12 决定沿革</a>，不倒改它们。</p>
+<h2 id="验证与限制">验证与限制</h2>
+<p>运行的检查只包含 JSON 解析、引用路径存在、文件哈希、引用行范围和阅读范围一致性。详见 <a href="validation.json">validation.json</a>。不把这些检查写成产品验收；没有外部检索、付费模型调用、真实远程动作、代码改动、提交或推送。</p>
+<p>正文对照冻结为 v0.1.5 / SHA-256 <code>28d373e48c8305e2ccb51c77e9c4bcf1f2b1c11c9e58215c2f0af9453ea813af</code>。root 若更新草稿，应按差异重新判断本包建议是否仍成立。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

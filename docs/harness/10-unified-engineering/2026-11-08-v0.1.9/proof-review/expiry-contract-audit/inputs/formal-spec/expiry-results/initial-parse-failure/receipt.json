@@ -1,0 +1,86 @@
+[
+  {
+    "mode": "none",
+    "start_utc": "2026-11-08T07:31:51.926250+00:00",
+    "end_utc": "2026-11-08T07:31:52.360938+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/states-none",
+      "-config",
+      "expiry-none.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 150,
+    "expected_exit_code": 12,
+    "model_sha256": "ef65cf4a863e156458a4c9b413b77238ba88e9a729732b13f09af8f752225fd6",
+    "config_sha256": "affb69c90d81f26553889d55cbd285cf8e7ea126a677287dc3cb9a90f8dca7fd",
+    "log_sha256": "009e2e572bb1bc7099d6c0602e88269e5406a742e863e1e7c80b627a8eff4b0a",
+    "summary_lines": [
+      "Error: Parsing or semantic analysis failed.",
+      "Finished in 00s at (2026-11-07 23:31:52)"
+    ]
+  },
+  {
+    "mode": "admission",
+    "start_utc": "2026-11-08T07:31:52.361163+00:00",
+    "end_utc": "2026-11-08T07:31:52.549412+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/states-admission",
+      "-config",
+      "expiry-admission.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 150,
+    "expected_exit_code": 12,
+    "model_sha256": "ef65cf4a863e156458a4c9b413b77238ba88e9a729732b13f09af8f752225fd6",
+    "config_sha256": "60e03aa6ca7dad2f4c7c6c31a9b7ca2ffe99fb556076509aa9f49ecbf36abe56",
+    "log_sha256": "9922ee8230b07e853b70a651ce0c123c8c081a52bf99970df8b94f45076beecf",
+    "summary_lines": [
+      "Error: Parsing or semantic analysis failed.",
+      "Finished in 00s at (2026-11-07 23:31:52)"
+    ]
+  },
+  {
+    "mode": "commit",
+    "start_utc": "2026-11-08T07:31:52.549639+00:00",
+    "end_utc": "2026-11-08T07:31:52.770087+00:00",
+    "command": [
+      "java",
+      "-XX:+UseParallelGC",
+      "-cp",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/tla2tools-1.7.4.jar",
+      "tlc2.TLC",
+      "-workers",
+      "1",
+      "-metadir",
+      "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/expiry-results/states-commit",
+      "-config",
+      "expiry-commit.cfg",
+      "ExpiryContract.tla"
+    ],
+    "exit_code": 150,
+    "expected_exit_code": 0,
+    "model_sha256": "ef65cf4a863e156458a4c9b413b77238ba88e9a729732b13f09af8f752225fd6",
+    "config_sha256": "8605c94f2c239763ec5634444a7ecd67650ad62adcd831a077f4da4c41e2f5aa",
+    "log_sha256": "b50a76ddac60ffecd098b4cfd7ea1e7841754afa3fa5cb6e18db9106cc02d2c0",
+    "summary_lines": [
+      "Error: Parsing or semantic analysis failed.",
+      "Finished in 00s at (2026-11-07 23:31:52)"
+    ]
+  }
+]

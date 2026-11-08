@@ -1,0 +1,101 @@
+{
+  "captured_at_utc": "2026-11-08T06:56:50.063128+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/README.md",
+      "snapshot": "inputs/python/README.md",
+      "bytes": 13643,
+      "sha256": "a2d19115b61fe58d08be9457b077b248419a99d204599b8e7d163f2c1ba0e73b"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/TRACES.md",
+      "snapshot": "inputs/python/TRACES.md",
+      "bytes": 15894,
+      "sha256": "0ad67a9053b3b257452e752868c1d947e2e67f96880ddc5d449819d72c322b46"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/execution_receipt.json",
+      "snapshot": "inputs/python/execution_receipt.json",
+      "bytes": 1148,
+      "sha256": "27339ecb14445f577c8f364cceaf614e297cdbd3a6eda1ec4623336675efd0a5"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/inputs/ARCHITECTURE.md",
+      "snapshot": "inputs/python/inputs/ARCHITECTURE.md",
+      "bytes": 19345,
+      "sha256": "c82c879ee28d080ff623acbc22eb58db356269ed90617a982af11443c4827ce1"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/inputs/FORMAL_MODEL.md",
+      "snapshot": "inputs/python/inputs/FORMAL_MODEL.md",
+      "bytes": 26534,
+      "sha256": "17b53da7356e0c50bd28ebde33fd2c0ece0460c6a0507b89de6a726b4b9977b2"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/inputs.json",
+      "snapshot": "inputs/python/inputs.json",
+      "bytes": 896,
+      "sha256": "34673684de2d8f384bebcb4bf1cbae34615b30efd552a987f9b83973a02ba7a5"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/model_check.py",
+      "snapshot": "inputs/python/model_check.py",
+      "bytes": 28263,
+      "sha256": "d420787a6afcc64a7c9b7b5c14d6826b8992655365c038f14bdb8971dbc6da89"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/bounded-models/results.json",
+      "snapshot": "inputs/python/results.json",
+      "bytes": 55745,
+      "sha256": "4b4d3a428aa50aa84e98964417a1b49ed6015d91c81a498d00d9e20129cc8c35"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/EffectContract.tla",
+      "snapshot": "inputs/tla/EffectContract.tla",
+      "bytes": 3605,
+      "sha256": "b32d87d9c0fd19945490b78f8fd9ebf82abafd19cb9c7a00458845ff8e14dd54"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/README.md",
+      "snapshot": "inputs/tla/README.md",
+      "bytes": 2895,
+      "sha256": "6de96eaef835b0688d9ae5ad274bfdab8ff5bb10622098ab3b21f080332b3af7"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/cancel-is-not-rollback.cfg",
+      "snapshot": "inputs/tla/cancel-is-not-rollback.cfg",
+      "bytes": 178,
+      "sha256": "0255a5f6c5d03c1bb2e5b7bad8ed0fd45b67e0bab053b23334825da17420f166"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/combined.cfg",
+      "snapshot": "inputs/tla/combined.cfg",
+      "bytes": 185,
+      "sha256": "2291d510543fefd7fe833d22c80fd8a7c551c9e3ca1501496bd24f31091ae312"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/dedupe-only.cfg",
+      "snapshot": "inputs/tla/dedupe-only.cfg",
+      "bytes": 186,
+      "sha256": "524aa728ff1d88e45bd4a8e25e708f9cf6df37dc2d6c29cfd7594e56aac131e9"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/fence-only.cfg",
+      "snapshot": "inputs/tla/fence-only.cfg",
+      "bytes": 186,
+      "sha256": "20973596795d766d0a83b3cf981e80fa35618f16ec46ae7d51f2cd5cbf4ee0fa"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/unstable-key.cfg",
+      "snapshot": "inputs/tla/unstable-key.cfg",
+      "bytes": 186,
+      "sha256": "2c141b2207e373e672f767a6bc747f4f798463fa40b0206a9791ddd5b594c243"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/world-is-not-ledger.cfg",
+      "snapshot": "inputs/tla/world-is-not-ledger.cfg",
+      "bytes": 176,
+      "sha256": "7ba2cd34814c5c94225512d7cf4b5e7a0d06ae3a7d4541950df5124605fa5b9e"
+    }
+  ]
+}

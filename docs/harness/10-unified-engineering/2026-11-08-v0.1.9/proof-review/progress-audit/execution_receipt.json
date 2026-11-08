@@ -1,0 +1,46 @@
+{
+  "recorded_at_utc": "2026-11-08T09:13:30.639585+00:00",
+  "source_unchanged": true,
+  "changed_source_files": [],
+  "input_snapshot_sha256": "52cc21c0b9da1e890fe7b077f164082f8677f8b72b0f12236e74f5e140b6bd9b",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "check_progress.py"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/progress-audit/run",
+      "observed_exit_code": 0,
+      "receipt": "run/execution_receipt.json",
+      "results_byte_identical_to_frozen": true
+    },
+    {
+      "argv": [
+        "python3",
+        "oracle_check.py"
+      ],
+      "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/progress-audit",
+      "observed_exit_code": 0,
+      "stdout": {
+        "author_cases": 21,
+        "random_cases": 1200,
+        "mutants_detected": 3,
+        "status": "PASS"
+      },
+      "results": "oracle_results.json"
+    }
+  ],
+  "independent_bad_prefix_comparison": {
+    "cases": 21,
+    "all_existence_and_minimum_lengths_match": true
+  },
+  "not_executed": [
+    "Lean",
+    "TLC",
+    "product",
+    "real host",
+    "external API",
+    "network"
+  ],
+  "identity": "Separate-context model review plus local Python execution, not human review."
+}

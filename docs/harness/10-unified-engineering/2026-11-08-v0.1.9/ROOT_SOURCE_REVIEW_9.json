@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "accessed_at_utc": "2026-11-08T09:36:09.934040+00:00",
+  "status": "primary_source_selected_reading",
+  "entries": [
+    {
+      "id": "RL-S1",
+      "title": "Linux kernel cgroup v2 documentation",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+      "version": "living official documentation, accessed 2026-11-08",
+      "read_range": "Introduction lines 18-23; cgroup.freeze 467-478; memory.high/max 700-726 in returned text",
+      "supports": [
+        "process hierarchy membership differs from already-existing descendant migration",
+        "throttle, hard limit and freezing have different behavior"
+      ],
+      "not_supported": [
+        "current local kernel capabilities",
+        "strict no-overshoot physical bound",
+        "workload performance or successful completion"
+      ],
+      "runtime_tested": false
+    },
+    {
+      "id": "RL-S2",
+      "title": "Node.js child_process API",
+      "url": "https://github.com/nodejs/node/blob/v24.6.0/doc/api/child_process.md",
+      "version": "v24.6.0",
+      "blob_sha": "de45bf328d9fdb09b326f796981d3224e164e962",
+      "read_range": "900-1050, especially options.detached and unref",
+      "supports": [
+        "parent event-loop reference and child process lifetime differ"
+      ],
+      "not_supported": [
+        "current product process tree was measured or stopped"
+      ],
+      "runtime_tested": false
+    },
+    {
+      "id": "RL-S3",
+      "title": "Docker classic overlay2 storage driver",
+      "url": "https://docs.docker.com/engine/storage/drivers/overlayfs-driver/",
+      "version": "living official documentation, accessed 2026-11-08",
+      "read_range": "scope lines 33-43; page cache/copy-up 281-305 in returned text",
+      "supports": [
+        "same underlying file page-cache sharing and first-write copy-up"
+      ],
+      "not_supported": [
+        "containerd snapshotter equivalence",
+        "all process heaps are shared",
+        "this project RAM savings"
+      ],
+      "runtime_tested": false
+    }
+  ],
+  "failed_candidates": [
+    {
+      "url": "https://nodejs.org/docs/latest-v24.x/api/child_process.html",
+      "status": "web tool inaccessible; fixed official GitHub release documentation used instead"
+    }
+  ],
+  "note": "Same root resource sources, not three additional independent works; these records mirror the scope already used by the resource draft."
+}

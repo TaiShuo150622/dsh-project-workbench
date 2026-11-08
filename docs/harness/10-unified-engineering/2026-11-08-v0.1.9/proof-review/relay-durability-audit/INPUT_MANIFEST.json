@@ -1,0 +1,173 @@
+{
+  "captured_at_utc": "2026-11-08T08:29:21.336419+00:00",
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/DurableRelay.tla",
+      "snapshot": "formal-spec/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "bytes": 4187
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-memory.cfg",
+      "snapshot": "formal-spec/relay-memory.cfg",
+      "sha256": "c71f6c32609e7eee106fe2c8b8166a42c292a4f41b165f6d7fa3971439bed351",
+      "bytes": 98
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-durable.cfg",
+      "snapshot": "formal-spec/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "bytes": 118
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-error.cfg",
+      "snapshot": "formal-spec/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "bytes": 107
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/run_relay.py",
+      "snapshot": "formal-spec/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "bytes": 3338
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/RELAY_README.md",
+      "snapshot": "formal-spec/RELAY_README.md",
+      "sha256": "c60c1603bac897c4435d28d8d43a777eec812285e887313b066236bad4e2274f",
+      "bytes": 6518
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/memory.log",
+      "snapshot": "formal-spec/relay-results/memory.log",
+      "sha256": "1352858e9228975479c9216e59d1ee5c7ff87151d6f5bb945d84b84484649eba",
+      "bytes": 3172
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/durable.log",
+      "snapshot": "formal-spec/relay-results/durable.log",
+      "sha256": "5333a6fd298de1c6c31bd56355f4539d91213e1206fb06c9155b93f9463c40e1",
+      "bytes": 1275
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/error.log",
+      "snapshot": "formal-spec/relay-results/error.log",
+      "sha256": "867ed06c95eefe10a4091ba998b81ac8184c5016af411c920c2c5f540ac81bce",
+      "bytes": 2138
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-results/receipt.json",
+      "snapshot": "formal-spec/relay-results/receipt.json",
+      "sha256": "e6d3cc7fe84fc4666a5bf6b313a4f448e823a85a1f6beb5298b8e14b274f56ac",
+      "bytes": 4380
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/stdout.txt",
+      "snapshot": "formal-spec/relay-runner-negative-control/stdout.txt",
+      "sha256": "96f07f55e23709fcc84c5539f459f8ae7f1eb2aed80d6ef0fa38d5fc05b6d4c0",
+      "bytes": 893
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/stderr.txt",
+      "snapshot": "formal-spec/relay-runner-negative-control/stderr.txt",
+      "sha256": "8732e2db9e8cb414704f8e00d027de57617d753d8fb122443ada14c7903e023b",
+      "bytes": 37
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/receipt.json",
+      "snapshot": "formal-spec/relay-runner-negative-control/receipt.json",
+      "sha256": "4d229999e56926b6d6582378d0be8c72ab7350bfa318d10e47734698777369a8",
+      "bytes": 358
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "snapshot": "formal-spec/relay-runner-negative-control/fixture/relay-durable.cfg",
+      "sha256": "a0c50bef63171dd5f89954e4700084267206a5aca4e539bbc8da6819bdc3e4ca",
+      "bytes": 118
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "snapshot": "formal-spec/relay-runner-negative-control/fixture/relay-memory.cfg",
+      "sha256": "b005b15b90599ecf9771bc9a565dc719b3c48b360f5dfc35dfe91e5c06b6a8d3",
+      "bytes": 85
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "snapshot": "formal-spec/relay-runner-negative-control/fixture/run_relay.py",
+      "sha256": "5b734d061decb6d6bb7c0fcf57f7e1cdc3f17cdc99ddee4b6f72c3f6f752adc3",
+      "bytes": 3338
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "snapshot": "formal-spec/relay-runner-negative-control/fixture/DurableRelay.tla",
+      "sha256": "833ef47b06e0626e8c0421ec240319956e8ff2d1f39e231f25fcb8068016d2f4",
+      "bytes": 4187
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "snapshot": "formal-spec/relay-runner-negative-control/fixture/relay-error.cfg",
+      "sha256": "d2e6e31ed93eed17af3e82385b242354de51f4bb3a26c051ba42c511b7467870",
+      "bytes": 107
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/results/memory.log",
+      "snapshot": "formal-spec/relay-runner-negative-control/results/memory.log",
+      "sha256": "e2ee3640d6736c2080d7ae87288b3915df384c81bb1dfe42252c93ea97c09c59",
+      "bytes": 1415
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/results/durable.log",
+      "snapshot": "formal-spec/relay-runner-negative-control/results/durable.log",
+      "sha256": "438c63ca4241eee807831fc1d4cebb53e9342a8ea9a43576f01f628614a870ff",
+      "bytes": 1314
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/results/error.log",
+      "snapshot": "formal-spec/relay-runner-negative-control/results/error.log",
+      "sha256": "f1dbd6141eb20c7de051530875584f3844c37fa0401631297f15d6f9ae7a77a6",
+      "bytes": 2176
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/formal-spec/relay-runner-negative-control/results/receipt.json",
+      "snapshot": "formal-spec/relay-runner-negative-control/results/receipt.json",
+      "sha256": "ee14319fe178a02f6fd87a1ad6db5362bb0d48a230d150a7a6846d494e1aa5c1",
+      "bytes": 4436
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/sources.json",
+      "snapshot": "mechanisms/durability-boundary/sources.json",
+      "sha256": "b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520",
+      "bytes": 11448
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.html",
+      "snapshot": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.html",
+      "sha256": "e8847e0bfa582fadbefd1c6d6473c7705c4f0c4219d467379bdc14ccbfb590da",
+      "bytes": 26840
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/crash-cuts.json",
+      "snapshot": "mechanisms/durability-boundary/crash-cuts.json",
+      "sha256": "fd79d786d2f2d35a9e71b1bad6885b15627db6b15a653500ac58e27ae628cefa",
+      "bytes": 20615
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/README.md",
+      "snapshot": "mechanisms/durability-boundary/README.md",
+      "sha256": "4b71ddef904c7feafebe7b6b68abe52ca4b3af02aa32f4f776f5cf3e5da5c601",
+      "bytes": 1972
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/validation.json",
+      "snapshot": "mechanisms/durability-boundary/validation.json",
+      "sha256": "b8e0e689ab206fe0215a0885553f79fec3168c7b32a5cb8cbc022963c0a92972",
+      "bytes": 1675
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "snapshot": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0.md",
+      "sha256": "7b5e1e55384ba9a61e3378a13e63d8685d784022bff9d4cd346a00647c86aa69",
+      "bytes": 15609
+    }
+  ]
+}

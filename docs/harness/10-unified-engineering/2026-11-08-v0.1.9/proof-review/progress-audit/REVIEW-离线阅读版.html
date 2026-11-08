@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="0345f084b029">
+<title>R11 C08 推进与终止条件：独立模型审查</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#固定输入与复跑">固定输入与复跑</a></li><li class="l2"><a href="#公平性与搜索范围">公平性与搜索范围</a></li><li class="l2"><a href="#独立-oracle-与针对性检查">独立 oracle 与针对性检查</a></li><li class="l2"><a href="#条件命题与现实映射">条件命题与现实映射</a></li><li class="l2"><a href="#未查与结论限度">未查与结论限度</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R11 C08 推进与终止条件：独立模型审查</h1>
+</header>
+<p>在冻结输入与其声明的有限事件图语义范围内，<strong>未发现需要修订的实质错误</strong>。独立复跑得到 21 配置、162 状态、239 显式边、11 个公平反例、6 个错误前缀，完整 results 字节与作者结果一致；这只是第一层核对。另用不采用作者位掩码积图搜索的 SCC 算法、直接闭走枚举、错误前缀层次枚举及三项针对性测试交叉检查，未找到算法分歧。一般 L1–L4 仍是带显式前提的纸面推导，没有新增 Lean 证明，也不并入旧 14 项 TLC 配置。</p>
+<p>本报告是<strong>模型审查加本地 Python 执行</strong>，不是人类审查或产品验收。不同模型 gpt-6-astra 来自父任务调度说明，本报告不独立认证运行时身份。所有写入位于本线 <code>progress-audit/</code>，原来源未改；没有外部调用、产品导入、TLC 或 Lean 执行。</p>
+<h2 id="固定输入与复跑">固定输入与复跑</h2>
+<p>原目录及捕获时间、全部 14 文件的 SHA/长度见 <a href="INPUT_SNAPSHOT.json">INPUT_SNAPSHOT.json</a>，副本保存在 <code>inputs/</code>。本轮执行输出单独在 <code>run/</code>，不覆盖冻结输入。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">输入</th><th style="text-align:left">SHA256</th></tr></thead><tbody><tr><td style="text-align:left">主稿 v0.1.0</td><td style="text-align:left"><code>c4b1d0dd1da77ed07dc7c4018b05b1fafa082b861275d695095208f4062b08ed</code></td></tr><tr><td style="text-align:left">check_progress.py</td><td style="text-align:left"><code>548a4b6812609cc80967ef2eb8d4d6a47d09e6e3ccedceb02b445c4d58604d6b</code></td></tr><tr><td style="text-align:left">results.json</td><td style="text-align:left"><code>06f7d86aa443c9752cf51652988991362ffb13480e59e195e89425844db24c92</code></td></tr></tbody></table></div>
+<p><code>python3 check_progress.py</code> 在执行副本退出 0，Python 3.9.0；输出 results SHA 与上表相同。原来源各文件收尾哈希未变。<a href="execution_receipt.json">执行回执</a>、<a href="run/execution_receipt.json">作者程序本轮回执</a>。</p>
+<h2 id="公平性与搜索范围">公平性与搜索范围</h2>
+<p><strong>WF/SF 判定正确对应所声明的事件标签语义。</strong> <code>check_progress.py:88–95</code> 在完整图判断动作族可用性。在周期尾部，WF 的违例是“每个周期状态均可用却不执行”，SF 的违例是“至少某周期状态可用却不执行”。这分别对应 disabledSomewhere OR taken、NOT enabledSomewhere OR taken。有限前缀不改变这些条件。动作族包含多个标签时，fairness 约束该族，不能强制选择某个成功结果；M03 与 M16 正好显示这个区别。</p>
+<p><strong>积状态搜索保留复合闭走。</strong> 第 97–134 行对可达且避开目标的每个 anchor 搜索 <code>(state, enabledSomewhere, disabledSomewhere, actionTaken)</code>；同一原图状态可伴随不同累积信息重访。闭环测试先于 seen 去重，所以长度正且信息不变的合法回环也不会漏掉。FIFO 搜索对每个 anchor 得到最短合法闭走，anchor 的避目标前缀由 BFS 给出；取最小总长度及对应前缀，剪枝仅删除必然更长的候选。因此宣称的是<strong>前缀加闭走的最短总事件数</strong>，不是物理时间最短，也不要求前缀和闭走各自独立达到全局最小。</p>
+<p><strong>无反例范围的完备性论证适用。</strong> 对有限图的公平无限路径，取无限重访状态和无限重访边；越过最后一次有限出现后，它们可相互抵达。把这些状态及公平规则要求的边拼为一个有限闭走，即可保留 WF/SF 条件。因此搜可重复顶点的闭走足够；仅枚举简单环则不足。这个论证不把任意现实停顿或未列出的 stuttering 自动加入图中，README 已明确限制为显式事件图。</p>
+<p><strong>Halt 没有偷换为忙等。</strong> 第 110 行只为原始无出边的状态加入分析用 Halt。M09 的有限拒绝因此可作为“最终未接受”的无限表示，但不是控制器真的继续执行。<code>longest_raw_path</code> 不计 Halt，分别保留实际控制路径是否终止与目标是否最终成立；正文和结果也明确区分。</p>
+<h2 id="独立-oracle-与针对性检查">独立 oracle 与针对性检查</h2>
+<p><a href="oracle_check.py">oracle_check.py</a> 与 <a href="oracle_results.json">oracle_results.json</a> 给出可复跑实现和结果。独立性边界是：<strong>固定图和动作标签共享，判定算法独立</strong>；没有建立独立的产品或环境模型。</p>
+<ol><li><strong>SCC 存在性 oracle</strong>：在避目标可达图中构造互达分量。若 WF 在整个分量始终可用却无所需内部边，则任何子行为均不能满足该 WF；若 SF 可用但无内部动作边，递归删除这些可用状态并重新分解。若各规则都可由完整分量的状态/内部边满足，则存在遍历其必要部分的公平闭走。这不使用作者的 mask product。21 个作者图以及固定种子 <code>20261108</code> 的 1200 个随机有限图均与作者算法一致；随机图为 1–5 状态、0–3 条 WF/SF 规则，可有重叠动作族、目标和死端。</li><li><strong>最短性</strong>：对作者的 11 个正例直接逐层枚举原图走步，检查每个可能的闭合后缀及其公平性，不用掩码压缩；均得到相同最短总长度。另以层次可达集合核全部 21 配置的错误前缀是否存在和最短长度，均匹配，包括 6 个实际错误前缀。</li><li><strong>复合闭走反例</strong>：三状态图 <code>0 --a→ 1 --back→ 0 --b→ 2 --back→ 0</code>，对 a、b 各加 SF。两个简单环各漏一个无限可用动作，因此不公平；4 步复合闭走公平。作者算法正确返回 4，简单环限定会漏报。</li><li><strong>错误 enabled mutant</strong>：M02 删除通往目标的 Deliver 边后再判断 enabled，会把 QuerySame 自环错判公平；完整图 oracle 拒绝该假反例，定位了必须使用完整图可用性的原因。</li><li><strong>WF/SF 替换 mutant</strong>：M04 的间歇可用情形在 WF 下有公平避目标循环，换成 SF 后没有。交叉检查辨认了这一语义变动，未把所有 fairness 混成一个判定。</li></ol>
+<p>随机测试和针对性测试能增加对实现的信心，不构成检查器的一般机器正确性证明。作者 <code>replay_lasso</code> 本身与生成器共享图，故本报告没有把其通过当作完全独立 oracle。</p>
+<h2 id="条件命题与现实映射">条件命题与现实映射</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">项目</th><th style="text-align:left">本轮判断与必要边界</th></tr></thead><tbody><tr><td style="text-align:left">L1，主稿第 56–60 行</td><td style="text-align:left">有限冻结阶段、<code>0≤a≤K</code>、真推进才重置、其他辅助步减一、终态秩 0，可得自然数秩严格下降。阶段含最终判断；不是仅给查询贴新名字。模型最长 15 步与保守初始秩 17 不冲突。工具返回前提已列出，步骤界不推出墙钟期限或底层效果结束。</td></tr><tr><td style="text-align:left">L2，第 88–92 行</td><td style="text-align:left">非增自然数秩若永远为正，最终稳定；持续可用且 WF 的<strong>真实降秩动作族</strong>与稳定秩矛盾。这里依赖每个被执行的推进结果确实降秩，不能以 Attempt 族的公平替代。稿件明确列了这项义务，并将就绪与有权主体最终接受分开。</td></tr><tr><td style="text-align:left">L3，第 108–110 行</td><td style="text-align:left">时间余量、返回界、可靠保存、接收能力/授权和责任规则是前提；eventually 无截止上界。M12 的迟到有限前缀仍可延长为最终公平接收，没有混淆安全截止失败与公平失败。图内以收到时钟不晚于 D 判定，不能据此推出真实服务上界。</td></tr><tr><td style="text-align:left">L4，第 131 行</td><td style="text-align:left">这是有限准入窗口的逐项覆盖条件，联合可调度性仍待真实系统验证；观察“未变”可履行新到期义务，窗口关闭不能补漏检。未声称无限服务完成。</td></tr><tr><td style="text-align:left">责任 ACK</td><td style="text-align:left">M10 的 <code>AcceptResponsibility</code> 是显式带接纳含义的抽象动作；合格且愿意接管是环境前提。它不证明认证、持久 ACK 协议或接收容量。正文交接包绑定、水位和迟到尾部要求避免把消息 ACK 当责任接管；unknown 在交接后保留。</td></tr><tr><td style="text-align:left">无限版本/义务</td><td style="text-align:left">M07/M15 的奇偶是商抽象；存在不断增加实际 ID 的提升轨迹，足以展示反例，不授权旧身份复用，也不证明所有实际无界行为均被该抽象覆盖。</td></tr></tbody></table></div>
+<p>本文没有发现把成功结论隐藏成一般无条件保证的情形。L1 的实际阶段检查、L2 的有效成果和权限、L3 的时延/保存/接收责任，以及 L4 的负载容量仍是实现精化义务；稿件已将它们列为条件或缺口，不宜将其改写成已实现功能。</p>
+<h2 id="未查与结论限度">未查与结论限度</h2>
+<p>本轮未重新核查 Lamport 引文页面、9 份既有输入的全部正文或 HTML 视觉效果；未运行真实产品、宿主、网络和计时实验。未新增一般 Lean 证明，也没有为旧三份 TLA 模型添加 fairness 或变更其既有计数。没有必须修订项，因此 <code>findings.json</code> 的缺陷列表为空；这不表示任何真实系统已获得终止、成功或期限保证。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

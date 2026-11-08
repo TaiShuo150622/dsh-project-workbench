@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "execution_kind": "frozen_source_synchronous_probe",
+  "base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "node_version": "v24.6.0",
+  "cases": [
+    {
+      "id": "RF01",
+      "title": "An attempt created under v1 can reserve and dispatch the v2 scope",
+      "category": "refinement_gap",
+      "claim_under_review": "Every S1 attempt is bound to its creation specVersion and a successor retires its write authority.",
+      "outcome": "COUNTEREXAMPLE_REPRODUCED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "create v1 and begin A1",
+          "observed": {
+            "taskId": "task:1",
+            "specVersion": 1,
+            "attempt": {
+              "id": "attempt:2",
+              "host": "dsh",
+              "sessionId": "session-a",
+              "actorId": "session-a"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "event": "revise to v2 and begin A2",
+          "observed": {
+            "specVersion": 2,
+            "newAttempt": "attempt:4"
+          }
+        },
+        {
+          "step": 3,
+          "event": "A1 uses current revision to reserve and dispatch",
+          "observed": {
+            "id": "action:5",
+            "taskId": "task:1",
+            "attemptId": "attempt:2",
+            "actorId": "session-a",
+            "spec": {
+              "kind": "pull_request_merge",
+              "repositoryId": "repo-1",
+              "pullRequestId": "pr-1",
+              "targetRef": "refs/heads/pilot",
+              "sourceSha": "4444444444444444444444444444444444444444",
+              "mergeMethod": "merge"
+            },
+            "specVersion": 2,
+            "authorizationRevision": 2,
+            "status": "sent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF02",
+      "title": "A command routed to another history can mutate its colliding local task ID",
+      "category": "refinement_gap",
+      "claim_under_review": "Every S1 command independently rejects a different history incarnation.",
+      "outcome": "COUNTEREXAMPLE_REPRODUCED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "independent histories collide on local ID and revision",
+          "observed": {
+            "oldStream": "project:old",
+            "freshStream": "project:fresh",
+            "taskId": "task:1",
+            "oldSource": "old-assignment",
+            "freshSource": "fresh-assignment",
+            "command": {
+              "type": "cancel",
+              "payload": {
+                "reason": "cancel the old assignment only"
+              },
+              "actor": {
+                "kind": "user",
+                "id": "owner"
+              },
+              "requestId": "request:2",
+              "taskId": "task:1",
+              "expectedRevision": 1
+            }
+          }
+        },
+        {
+          "step": 2,
+          "event": "route the unmodified old command into the fresh kernel",
+          "observed": {
+            "receipt": {
+              "streamId": "project:fresh",
+              "cursor": 2,
+              "requestId": "request:2",
+              "taskId": "task:1",
+              "revision": 2
+            },
+            "freshStatus": "cancelled",
+            "oldStatus": "open"
+          }
+        },
+        {
+          "step": 3,
+          "event": "control: cross-history acceptance token",
+          "observed": {
+            "rejected": "ACCEPTANCE_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF03",
+      "title": "A repeated same-result observation does not become an alternative support witness",
+      "category": "refinement_gap",
+      "claim_under_review": "S1 completion withdrawal implements general OR-support preservation.",
+      "outcome": "COUNTEREXAMPLE_REPRODUCED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "accept two same-result observations",
+          "observed": {
+            "completionCount": 1,
+            "retainedWitness": "observer:first",
+            "journalObservationRefs": [
+              "observer:first",
+              "observer:independent-second"
+            ]
+          }
+        },
+        {
+          "step": 2,
+          "event": "withdraw the one current completion",
+          "observed": {
+            "supported": false,
+            "status": "disputed",
+            "completionCount": 1,
+            "secondObservationRemainsInJournal": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF04",
+      "title": "New-action precheck is not the dispatch guard for an existing reservation",
+      "category": "refinement_gap",
+      "claim_under_review": "checkAction is the same admissibility predicate as dispatchAction for a reserved action.",
+      "outcome": "COUNTEREXAMPLE_REPRODUCED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "query checkAction after own reservation",
+          "observed": {
+            "actionId": "action:3",
+            "decision": {
+              "decision": "wait",
+              "reason": "action-unresolved",
+              "actionId": "action:3"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "event": "dispatch the same reservation",
+          "observed": {
+            "status": "sent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF05",
+      "title": "The first historical merge observation initializes availability without a separate readback",
+      "category": "refinement_gap",
+      "claim_under_review": "S1 current-result alone establishes independently observed Usable_L(t,q,n).",
+      "outcome": "COUNTEREXAMPLE_REPRODUCED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "supply only the documented ordinary-merge observation",
+          "observed": {
+            "evidenceFields": [
+              "provider",
+              "repositoryId",
+              "pullRequestId",
+              "targetRef",
+              "sourceSha",
+              "mergeMethod",
+              "merged",
+              "mergeSha",
+              "parents",
+              "observationRef"
+            ],
+            "result": {
+              "id": "result:81f0b8b61f8d5549b9e5cc53c34de7a8583673b3f0adbb52818717938d41310a",
+              "fingerprint": "81f0b8b61f8d5549b9e5cc53c34de7a8583673b3f0adbb52818717938d41310a",
+              "mergeSha": "3333333333333333333333333333333333333333",
+              "available": true,
+              "availabilityRevision": 1
+            },
+            "currentResult": true,
+            "separateAvailabilityReadSubmitted": false
+          }
+        },
+        {
+          "step": 2,
+          "event": "control: later known invalidation survives a repeated merge observation",
+          "observed": {
+            "historicalCompletion": true,
+            "currentResult": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF06",
+      "title": "A post-assignment completion conflict rolls back the draft action mutation",
+      "category": "scoped_control",
+      "claim_under_review": "A rejected synchronous command publishes no state, event or request receipt.",
+      "outcome": "SCOPED_BEHAVIOR_CONFIRMED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "sent action exists while a different completion has been accepted",
+          "observed": {
+            "action": {
+              "id": "action:3",
+              "taskId": "task:1",
+              "attemptId": "attempt:2",
+              "actorId": "session-a",
+              "spec": {
+                "kind": "pull_request_merge",
+                "repositoryId": "repo-1",
+                "pullRequestId": "pr-1",
+                "targetRef": "refs/heads/pilot",
+                "sourceSha": "1111111111111111111111111111111111111111",
+                "mergeMethod": "merge"
+              },
+              "specVersion": 1,
+              "authorizationRevision": 1,
+              "status": "sent"
+            },
+            "completion": "completion:5"
+          }
+        },
+        {
+          "step": 2,
+          "event": "resolveAction assigns succeeded in the draft, then complete rejects; repeat stays rejected",
+          "observed": {
+            "error": "COMPLETION_CONFLICT",
+            "currentActionStatus": "sent",
+            "cursorUnchanged": true,
+            "journalUnchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF07",
+      "title": "C01 must use explicit successor mode for a completed S1 task",
+      "category": "scoped_control",
+      "claim_under_review": "The supported C01 variant rejects in-place completed-task mutation and does not inherit acceptance.",
+      "outcome": "SCOPED_BEHAVIOR_CONFIRMED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "reject in-place mutation and create a related new assignment",
+          "observed": {
+            "rejected": "INVALID_TRANSITION",
+            "oldTaskId": "task:1",
+            "newTaskId": "task:4",
+            "oldAccepted": true,
+            "newAccepted": false,
+            "newSpecVersion": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "RF08",
+      "title": "Cancellation and late evidence retain separate task and action outcomes",
+      "category": "scoped_control",
+      "claim_under_review": "Cancellation of a sent action does not assert not_applied; late trusted success stays attributed to the old action.",
+      "outcome": "SCOPED_BEHAVIOR_CONFIRMED",
+      "trace": [
+        {
+          "step": 1,
+          "event": "cancel after dispatch",
+          "observed": {
+            "taskStatus": "cancelled",
+            "actionStatus": "sent"
+          }
+        },
+        {
+          "step": 2,
+          "event": "record uncertainty and create successor assignment",
+          "observed": {
+            "successorDecision": {
+              "decision": "wait",
+              "reason": "action-unresolved",
+              "actionId": "action:3"
+            }
+          }
+        },
+        {
+          "step": 3,
+          "event": "accept a trusted synthetic late result",
+          "observed": {
+            "oldTaskStatus": "cancelled",
+            "oldActionStatus": "succeeded",
+            "successorDecision": {
+              "decision": "verify",
+              "reason": "prior-result",
+              "actionId": "action:3"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 8,
+    "assertion_failures": 0,
+    "refinement_gap_counterexamples": 5,
+    "scoped_controls": 3
+  },
+  "limitations": [
+    "No network, authentication, target effects, crash persistence or concurrent process execution.",
+    "COUNTEREXAMPLE_REPRODUCED rejects the quoted stronger mapping, not the narrower documented S1 contract.",
+    "These are short constructed traces, not exhaustive state enumeration or a formal simulation proof."
+  ]
+}

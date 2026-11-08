@@ -1,0 +1,211 @@
+{
+  "task": "W11",
+  "status": "PROPOSED_RESEARCH_CONTRACT_WITH_EXECUTED_BOUNDED_MODEL",
+  "not_product_contract": true,
+  "i01_scope_changed": false,
+  "rf03_classification": "REPRESENTATION_GAP",
+  "claim_key_proposal": {
+    "fields": [
+      "historyIncarnation",
+      "subject",
+      "predicate",
+      "objectOrSpecVersion",
+      "evaluationRegime",
+      "validityTimeOrWindow",
+      "consumerWhenApplicable",
+      "operationWhenApplicable",
+      "recipientsWhenApplicable",
+      "purposeWhenApplicable"
+    ],
+    "rule": "Compare explicit scope contract, not arrival order or semantic similarity alone. Different times/versions/principals/purposes can denote different claims.",
+    "model_subset": [
+      "history",
+      "subject",
+      "predicate",
+      "version",
+      "consumer",
+      "purpose"
+    ],
+    "fixed_in_model": [
+      "history=h1",
+      "subject=artifact:demo"
+    ],
+    "varied_in_isolation_check": [
+      "predicate",
+      "version",
+      "consumer",
+      "purpose"
+    ],
+    "not_modelled": [
+      "validity window",
+      "evaluation regime",
+      "recipients",
+      "real principal namespace resolution"
+    ]
+  },
+  "observation_proposal": {
+    "fields": [
+      "observationId",
+      "issuer",
+      "claimKey",
+      "explicitPolarity",
+      "evidenceDigestOrControlledRef",
+      "observedAt",
+      "acceptedSequence",
+      "parserAndCriterionVersion",
+      "rootRefs",
+      "lineageResolution"
+    ],
+    "separations": [
+      "authenticated source does not imply correct content",
+      "admissible input does not imply true world fact",
+      "current evidence qualification is policy-bound",
+      "receipt order is not object version or valid time"
+    ]
+  },
+  "evidence_projection": {
+    "inputs": [
+      "exact claim key",
+      "prefix or watermark",
+      "evaluation policy",
+      "qualified non-retired positive observations",
+      "qualified non-retired explicit opposing observations"
+    ],
+    "positive": "S+ = exists eligible support witness",
+    "negative": "S- = exists eligible explicit opposing witness; not NOT(S+)",
+    "labels": [
+      {
+        "support": false,
+        "oppose": false,
+        "state": "NEITHER"
+      },
+      {
+        "support": true,
+        "oppose": false,
+        "state": "SUPPORT_ONLY"
+      },
+      {
+        "support": false,
+        "oppose": true,
+        "state": "OPPOSE_ONLY"
+      },
+      {
+        "support": true,
+        "oppose": true,
+        "state": "BOTH"
+      }
+    ],
+    "world_truth": "NOT_COMPUTED",
+    "statistical_independence": "UNDETERMINED",
+    "action_permission": "NOT_COMPUTED"
+  },
+  "lineage": {
+    "known_duplicate_root": "Deduplicate per polarity; wrappers do not multiply canonical roots.",
+    "unknown_root": "Keep partial/unknown; do not invent independence.",
+    "distinct_roots": "May be correlated, independence remains undetermined.",
+    "same_root_opposite_reports": "Can still be BOTH; diagnosis may implicate interpretations rather than independent measurements."
+  },
+  "control_events": [
+    {
+      "event": "Assert",
+      "modelled": true,
+      "effect": "Immutable observation identity, explicit positive or negative atom."
+    },
+    {
+      "event": "WithdrawObservation",
+      "modelled": true,
+      "effect": "Retire selected observation without asserting negation; retain tombstone for late arrivals.",
+      "limitation": "Synthetic issuer namespace authority only."
+    },
+    {
+      "event": "CorrectObservation",
+      "modelled": true,
+      "effect": "Validate replacement and scope before atomic retirement/addition; keep old observation.",
+      "limitation": "Synthetic in-memory atomic update, no crash or transaction proof."
+    },
+    {
+      "event": "Challenge",
+      "modelled": false,
+      "effect": "A request to review, not automatically eligible opposing evidence."
+    },
+    {
+      "event": "HoldOrWithdrawAssessment",
+      "modelled": false,
+      "effect": "Change use of one assessment, not source-observation existence."
+    },
+    {
+      "event": "Adjudicate",
+      "modelled": false,
+      "effect": "Versioned authorized disposition with reasons; does not erase conflict or establish truth."
+    }
+  ],
+  "candidate_operation_policy": {
+    "status": "ILLUSTRATIVE_PROPOSED_APPLICATION_POLICY_NOT_FOUR_VALUE_THEOREM",
+    "version": "demo-conservative-v1",
+    "binding": [
+      "exact model claim key",
+      "operation",
+      "policy version",
+      "event watermark"
+    ],
+    "view": "Any evidence state can reach separate access/authority check.",
+    "seek_evidence": "Any state can reach separate tool/budget/authority check.",
+    "publish": "Only SUPPORT_ONLY with synthetically complete coverage reaches candidate evidence gate; others UNKNOWN pending review.",
+    "possible_results": [
+      "READY_FOR_AUTH_CHECK",
+      "UNKNOWN"
+    ],
+    "not_implied": [
+      "truth",
+      "all business obligations met",
+      "current authorization",
+      "dispatch permission",
+      "universal policy"
+    ],
+    "required_in_real_adapter": [
+      "Bind every policy input including coverage/criterion/adjudication/permissions as applicable.",
+      "Check operation and object version again before action.",
+      "Represent restricted evidence without silently declaring conflict absent.",
+      "Specify allowed exceptions/adjudication separately; retain contrary evidence."
+    ],
+    "unimplemented": [
+      "real ACL",
+      "coverage measurement",
+      "obligation completion",
+      "authorization",
+      "dispatch",
+      "human exception workflow"
+    ]
+  },
+  "execution": {
+    "script": "bounded_check.py",
+    "results": "check-results.json",
+    "counts": {
+      "named_checks": 14,
+      "four_observation_assignments": 81,
+      "arrival_permutations": 24,
+      "claim_keys": 16,
+      "ordered_key_isolation_pairs": 240,
+      "illustrative_bad_policy_counterexamples": 5,
+      "candidate_operation_policy_checks": 18
+    },
+    "bounded_only": true,
+    "counts_must_not_be_summed_as_general_proof": true
+  },
+  "future_obligations_not_run": [
+    "Unknown or partial lineage resolution",
+    "Restricted evidence and audience-scoped summaries",
+    "Authority verification before a pre-arrival withdrawal tombstone is admitted",
+    "Time-window and criterion equivalence across observations",
+    "Crash-atomic durable correction",
+    "General compound support/opposition formulas or recursion",
+    "Product adapter refinement and task benefit evaluation"
+  ],
+  "formal_model_revision_proposal": [
+    "Do not alias S+ to unrestricted Supported when that predicate releases actions.",
+    "Add EvidenceState and versioned Assessment with input watermark, support/counter references, coverage and disposition.",
+    "Bind readiness to operation and current claim/policy versions; unresolved evidence remains UNKNOWN in the example publish policy.",
+    "Preserve P5 positive derivation formula; any opposing formula must be explicit, not absence of positive proof.",
+    "No blanket failure propagation; any proof depends on complete declared inputs and existing finite-DAG assumptions."
+  ]
+}

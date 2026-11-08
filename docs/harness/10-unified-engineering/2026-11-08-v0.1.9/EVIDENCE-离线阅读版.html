@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="6b8ab717ba05">
+<title>证据与结论状态</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#已实际执行的核查">已实际执行的核查</a></li><li class="l2"><a href="#已核查但没有运行产品的材料">已核查但没有运行产品的材料</a></li><li class="l2"><a href="#尚未执行的验证计划">尚未执行的验证计划</a></li><li class="l2"><a href="#已修正的问题">已修正的问题</a></li><li class="l2"><a href="#证据保管与实际工程缺口">证据保管与实际工程缺口</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>证据与结论状态</h1>
+</header>
+<p>本轮最明确的成果是把不同保证的对象拆开，并为若干条件命题提供可复核证明和反例。<strong>模型正确、源码路径可达、真实环境运行成功和用户任务完成是四种不同证据。</strong> 下表只在对应范围内使用“通过”。</p>
+<h2 id="已实际执行的核查">已实际执行的核查</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">编号</th><th style="text-align:left">对象</th><th style="text-align:left">执行结果</th><th style="text-align:left">入口与限制</th></tr></thead><tbody><tr><td style="text-align:left">E01</td><td style="text-align:left">有限 DAG 的局部重算</td><td style="text-align:left">Lean 4.35.0 编译，一般定理及非空例子通过；不同模型线独立编译和改变读取集的实例</td><td style="text-align:left"><a href="dag-proof/README-离线阅读版.html">证明说明</a>、<a href="proof-review/general-proof-audit/REVIEW-离线阅读版.html">独立审查</a>。对任意有限节点前缀，要求确定性、完整依赖、合法拓扑、旧状态一致和完整影响闭包；不证明提取器或性能</td></tr><tr><td style="text-align:left">E02</td><td style="text-align:left">保守预算上界</td><td style="text-align:left">任意有限合法转移链的 Lean 证明编译；独立非零消费实例通过</td><td style="text-align:left"><a href="china/budget-proof/README-离线阅读版.html">预算说明</a>、<a href="proof-review/general-proof-audit/REVIEW-离线阅读版.html">独立审查</a>。真实消费必须被上界覆盖；数值释放凭据没有自动证明主体/动作身份或实际终止</td></tr><tr><td style="text-align:left">E03</td><td style="text-align:left">准入、支持撤回、预算、验收</td><td style="text-align:left">Python 有限模型实际穷尽检查；削弱变体给出反例；root 及审查线复跑</td><td style="text-align:left"><a href="china/bounded-models/README-离线阅读版.html">范围与计数</a>、<a href="proof-review/model-audit/REVIEW-离线阅读版.html">语义审查</a>。支持公式的原算法与 oracle 共享解释函数，后加不同表达的核查及变异说明此边界</td></tr><tr><td style="text-align:left">E04</td><td style="text-align:left">目标效果与迟到提交</td><td style="text-align:left">EffectContract 八配置、ExpiryContract 三配置已运行</td><td style="text-align:left"><a href="formal-spec/README-离线阅读版.html">TLA+ 入口</a>。一个逻辑意图，固定有限发送/代际/时间域，目标原子假设；没有任意并发或真实目标结论</td></tr><tr><td style="text-align:left">E05</td><td style="text-align:left">持久接纳与 sent</td><td style="text-align:left">DurableRelay 三配置：9 步丢失接纳记录反例、52 状态完整安全检查、4 步全局错误不等于目标缺失反例；不同模型线独立复跑</td><td style="text-align:left"><a href="formal-spec/RELAY_README-离线阅读版.html">模型</a>、<a href="proof-review/relay-durability-audit/REVIEW-离线阅读版.html">独立审查</a>。worker→lead、目标未提交、崩溃前无补救、sent 可恢复等条件；未在真实宿主复现</td></tr><tr><td style="text-align:left">E06</td><td style="text-align:left">Record S1 固定实现映射</td><td style="text-align:left">20 条选定既有测试通过；8 个派生探针，5 项映射差异、3 个控制</td><td style="text-align:left"><a href="china/record-refinement/REPORT-v0.1.1-离线阅读版.html">修正版报告</a>、<a href="proof-review/record-mapping-audit/REVIEW-离线阅读版.html">独立审查</a>。使用合成角色/观察；入口认证、存储和实际外部效果不在这些测试内</td></tr><tr><td style="text-align:left">E07</td><td style="text-align:left">运行器错误接受检查</td><td style="text-align:left">Expiry runner 首版只看退出码的缺口已修正；改查 Init 的负对照被拒绝；Relay runner 同类独立负对照也被拒绝</td><td style="text-align:left"><a href="proof-review/expiry-contract-audit/REPAIR_REVIEW-离线阅读版.html">Expiry 修正</a>、<a href="proof-review/relay-durability-audit/REVIEW-离线阅读版.html">Relay 审查</a>。只覆盖冻结工具格式与这类替换，不证明能识别任意坏日志</td></tr><tr><td style="text-align:left">E08</td><td style="text-align:left">工作台方法的条件代码探针</td><td style="text-align:left">固定 Native/Projects 源码副本配可控模拟接口；5 个探针、22 个断言通过</td><td style="text-align:left"><a href="mechanisms/relay-code-probes/README-离线阅读版.html">探针说明</a>。仅验证实际方法在声明 fake 条件下的控制流，未执行真实 DSH、磁盘、网络或进程崩溃</td></tr><tr><td style="text-align:left">E09</td><td style="text-align:left">自主推进、终止、期限与责任接纳</td><td style="text-align:left">21 个有限图：162 状态、239 显式边、11 公平反例、6 错误前缀；独立 SCC oracle 与最短见证核查，另 1,200 个随机图一致</td><td style="text-align:left"><a href="china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html">条件稿</a>、<a href="proof-review/progress-audit/REVIEW-离线阅读版.html">独立审查</a>。公平性按事件标签与完整图可用性定义，Halt 仅补齐终止行为；一般 L1–L4 没有新 Lean 证明，无实际长期任务或真实期限保证</td></tr><tr><td style="text-align:left">E10</td><td style="text-align:left">争议证据与修正</td><td style="text-align:left">原四态模型及定向检查复现；独立事件集 oracle 核对 5040 混合排列、70560 前缀键投影、20736 资格赋值与 4032 异键对</td><td style="text-align:left"><a href="west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html">提案</a>、<a href="proof-review/evidence-dispute-audit/REVIEW-离线阅读版.html">独立审查</a>。这些范围不相加为覆盖率；无真实 ACL/coverage 测量，四态不判断世界真值，操作权限未计算</td></tr><tr><td style="text-align:left">E11</td><td style="text-align:left">接管与未结算负担连续性</td><td style="text-align:left">原 5 配置、5076 状态、14172 边及 8 条原失败轨迹最短长度由另一研究线复现；新增历史账本与逐边检查</td><td style="text-align:left"><a href="proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html">当前 v0.1.1</a>、<a href="china/handoff-audit/REVIEW-离线阅读版.html">C10 审查</a>。共享转移生成器；R=0，仅终态观察授权入模，跨预算需可重归属政策及持续有效占位；未组合进旧 Lean</td></tr><tr><td style="text-align:left">E12</td><td style="text-align:left">资源计量与引用释放条件</td><td style="text-align:left">RL1 算术在 7803 个满足准入的合成快照核对；正确引用模型 180 状态/304 边，重复扣数变体 7 步误释放</td><td style="text-align:left"><a href="resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html">资源 v0.1.1</a>、<a href="proof-review/resource-audit/REVIEW-离线阅读版.html">R14 审查</a>。不是内存基准或新一般机器证明；错误计数违反真实使用前提，不能称 RL2 的反例</td></tr></tbody></table></div>
+<p>E04–E05 共 <strong>14 个主配置：5 个完整有限安全检查通过，9 个找到预期反例</strong>。预期反例是主动检验一个过强命题或削弱机制，不是 9 个产品事故；独立复跑、负对照和初始解析失败不新增配置数量。各模型域不同，状态数不相加为产品覆盖率。“完整安全检查”只指所声明有限可达域搜索结束且未见指定违例，不指业务完成或整个工程安全。E09 是另一个 Python 有限图检查器，不加入这 14 项计数。</p>
+<p>E03 中验收模型访问 238,244 个状态，支持模型检查 117,128 个固定点赋值，描述的是枚举域大小。没有据此算真实任务通过率、可靠性概率或运行收益。TLA+ 遇首反例停止的计数也不能称全图穷尽。</p>
+<p>E10–E12 是新增的独立专题核查，不加入 E04–E05 的 14 个配置，也不增加两项 Lean 一般证明的数量。不同研究线独立推导检查式仍可能共享原转移遗漏；结果中明确记录这些共同前提。</p>
+<h2 id="已核查但没有运行产品的材料">已核查但没有运行产品的材料</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">材料</th><th style="text-align:left">可用来支持</th><th style="text-align:left">不可用来支持</th></tr></thead><tbody><tr><td style="text-align:left">官方产品文档与固定开源代码</td><td style="text-align:left">特定版本声明的机制、接口、控制流及限制</td><td style="text-align:left">我们已购买/运行该服务、所有部署配置有同样行为</td></tr><tr><td style="text-align:left">论文正文、图表与作者开源实现</td><td style="text-align:left">作者在明确任务和设定中报告的结果；代码的具体逻辑</td><td style="text-align:left">本轮重现实验、跨任务普遍收益、独立验证作者全部数据</td></tr><tr><td style="text-align:left">员工/作者署名公开讨论</td><td style="text-align:left">该作者在当时身份下的观点或经验</td><td style="text-align:left">公司承诺、当前在职身份、产品功能已经交付</td></tr><tr><td style="text-align:left">Record PR 与 CI 公开状态</td><td style="text-align:left">核读时该提交存在、PR 状态及相应 CI 状态</td><td style="text-align:left">PR 已合并、全部历史测试本轮已复跑、真实用户验收</td></tr><tr><td style="text-align:left">原公开讨论归档</td><td style="text-align:left">之前提过的目标、接口草案、历史检查及设计沿革</td><td style="text-align:left">当前统一实现已支持所有旧稿功能</td></tr></tbody></table></div>
+<p>来源册保存版本、链接及读取范围。访问失败或只见摘要的候选不作为已读全文；同一论文 PDF/HTML、同一个源码的不同位置和不同审查线重读，不冒充不同研究。</p>
+<h2 id="尚未执行的验证计划">尚未执行的验证计划</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">编号</th><th style="text-align:left">计划</th><th style="text-align:left">目前状态</th></tr></thead><tbody><tr><td style="text-align:left">N01</td><td style="text-align:left">16 组真实适配场景、43 个细化变体</td><td style="text-align:left"><a href="mechanisms/conformance/catalog.json">目录</a>全部未运行；扩展说明中的新增变体不自动加入原 43 的计数</td></tr><tr><td style="text-align:left">N02</td><td style="text-align:left">3 场景、6 家族、2 条件的 12 次校准</td><td style="text-align:left"><a href="west/evaluation-design-review/design-v0.1.1.json">设计 v0.1.1</a>尚未运行；正常终点包括全部约定阶段及最终验收，提前退出另列</td></tr><tr><td style="text-align:left">N03</td><td style="text-align:left">七个实施切片、29 项行为检查</td><td style="text-align:left"><a href="west/implementation-taskbook/slice-checklist.json">任务书清单</a>为 PROPOSED_NOT_RUN；不是已有 29 条通过测试</td></tr><tr><td style="text-align:left">N04</td><td style="text-align:left">记忆/上下文收益对照及后续成长实验</td><td style="text-align:left"><a href="west/context-evaluation/protocol.json">上下文协议</a>、<a href="mechanisms/work-improvement/minimal-experiments.json">工作改进协议</a>未运行；不同方案预算不能相加为默认试验</td></tr><tr><td style="text-align:left">N05</td><td style="text-align:left">跨版本迁移与持久切点故障注入</td><td style="text-align:left"><a href="mechanisms/lifecycle-migration/fault-scenarios.json">迁移场景</a>、<a href="mechanisms/durability-boundary/crash-cuts.json">持久切点</a>仍未运行实际宿主</td></tr><tr><td style="text-align:left">N06</td><td style="text-align:left">MCP/A2A/Native 跨宿主映射</td><td style="text-align:left"><a href="mechanisms/interop-contracts/acceptance.json">六个见证</a>全部 PROPOSED_NOT_RUN；固定规范和九条映射是静态研究，未实现 wire 适配</td></tr><tr><td style="text-align:left">N07</td><td style="text-align:left">资源生命周期六类真实场景</td><td style="text-align:left"><a href="resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html">验证路线</a>全部未运行；R14 的合成引用模型不替代真实进程、文件与内存观察</td></tr><tr><td style="text-align:left">N08</td><td style="text-align:left">有限域覆盖采集与贯穿交付</td><td style="text-align:left"><a href="mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html">覆盖契约</a>及三个构造反例未执行；<a href="west/worked-example/EXAMPLE-离线阅读版.html">七阶段例子</a>为 ILLUSTRATIVE_NOT_RUN。<a href="proof-review/coverage-example-audit/REVIEW-离线阅读版.html">R17</a>是纸面一致性审查，不新增运行或形式证明</td></tr><tr><td style="text-align:left">N09</td><td style="text-align:left">指定内容处置与防止重处理复活</td><td style="text-align:left"><a href="mechanisms/retention-replay-contract/scenarios.json">四个处置见证</a>全部 PROPOSED_NOT_RUN；<a href="formal-review/retention-contract-audit/REVIEW-离线阅读版.html">R19 独立审查</a>只核对纸面契约，不证明实际副本已删除或原历史可完整恢复</td></tr></tbody></table></div>
+<p>模型检查的成功不能把 N01/N05 改成已运行。E08 的源码 mock 探针只验证它实际调用的方法及注入假设，不能替代真实 writer、目标端与掉电试验。</p>
+<h2 id="已修正的问题">已修正的问题</h2>
+<ul><li><strong>解释器同源</strong>：两个算法一致可能共享错误语义。保留原结果，增加不同表达的检查与变异，见 <a href="proof-review/model-audit/REVIEW-离线阅读版.html">model audit</a>。</li><li><strong>期限 runner 的错误接受</strong>：相同退出码不代表命中了目标不变量；当前运行器核对名称与完整结束条件，原日志仍保留。</li><li><strong>Record RF03</strong>：撤回整个完成结论不能模拟撤回一个独立支持项。修正版按表达能力差异解释，不把结果称为 OR 算法反例。</li><li><strong>两次输入捕获</strong>：Record 映射报告原写先 p,κ 后 q，实际两份是相同 SHA 的 q 版；<a href="proof-review/snapshot-errata-check/REVIEW-离线阅读版.html">勘误核对</a>确认探针与源码输入未因此变化。</li><li><strong>实验终点</strong>：首次基础验收不是多阶段任务的正常终点；<a href="proof-review/work-policy-audit/REVIEW-离线阅读版.html">工作策略审查</a>已反馈进最小评估 v0.1.1 及实施任务书。</li><li><strong>接管范围</strong>：C10 指出模型未带入非零收尾预留，授权只检查终态观察。v0.1.1 明确 R=0 及其他操作未建模；原模型和回执不变。</li><li><strong>资源实现义务</strong>：R14 使并发瞬态合计、预留使用转记、引用 token/代际与幂等释放更明确；不把这些修订包装成新的物理资源保证。</li></ul>
+<h2 id="证据保管与实际工程缺口">证据保管与实际工程缺口</h2>
+<p>历史接收 manifest、输入 SHA、工具版本、退出码、原始日志和独立审查各自保留。哈希证明字节身份，不能单独证明作者、真实来源或执行环境可信。自动化审查使用不同上下文或不同模型；没有把它称为人类审核。</p>
+<p>阅读包也接受了独立核查：<a href="proof-review/portable-package-audit/REVIEW-离线阅读版.html">R10</a>指出来源校验器依赖工作区路径、渲染中间回执不能代表最终 HTML 两项缺口。<a href="proof-review/portable-fix-audit/REVIEW-离线阅读版.html">R15 修复复核</a>随后在搬迁副本中通过 3150 条条件，并拒绝读取原 checkout 补缺的负对照；70 个生成视图和 18 个离线视图身份一致。旧导出实际排除的 14 个阶段回执已恢复，早先口头数字 13 已更正。该审查仅覆盖 09:26 中间包，较晚材料仍须在最终导出核对；<a href="proof-review/portable-fix-audit/IMPORT_SCOPE-离线阅读版.html">整合范围</a>说明未重复打包的执行副本。</p>
+<p>本轮仍缺真实的可信入口、持久化精化、目标级耐久确认、权限撤回一致性、真实效果对账，以及完整任务的质量/成本测量。这些缺口对应下一轮切片，不能通过增加形式符号、来源条目或日志数量消除。</p>
+<p><a href="china/portable-reproduction/REVIEW-离线阅读版.html">C12 导出布局复现</a>另核对 10:10 中间包：两项 Lean、原 bounded 模型、14 个 TLC 配置及推进/争议/接管/资源小模型均按既定命题复现，六份确定性结果逐字一致；13 条外层命令退出 0，184 条比较条件通过。没有重跑产品、真实宿主或 API，不增加模型配置数；这是同一台 macOS 的布局和派生身份核查，也不代替最终阅读包的导航验收。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

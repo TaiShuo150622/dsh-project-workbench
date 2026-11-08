@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="ee336c416c6f">
+<title>来源索引：先选择问题，再核对证据</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#1-公司-产品与宿主机制">1. 公司、产品与宿主机制</a></li><li class="l2"><a href="#2-状态-恢复-权限与外部效果">2. 状态、恢复、权限与外部效果</a></li><li class="l2"><a href="#3-论文-上下文选择与工作方式">3. 论文、上下文选择与工作方式</a></li><li class="l2"><a href="#4-作者观点-先确认谁在什么时候说了什么">4. 作者观点：先确认谁在什么时候说了什么</a></li><li class="l2"><a href="#5-形式基础与本项目的证明">5. 形式基础与本项目的证明</a></li><li class="l2"><a href="#6-目录清单与计数口径">6. 目录清单与计数口径</a></li><li class="l2"><a href="#7-未读-未采用与未知状态">7. 未读、未采用与未知状态</a></li><li class="l2"><a href="#8-从结论追到原文件-sha-与-json-pointer">8. 从结论追到原文件、SHA 与 JSON pointer</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>来源索引：先选择问题，再核对证据</h1>
+</header>
+<p>这份入口对应 2026-11-08 08:35:43 UTC 捕获的来源元数据。下面的主题稿用于理解研究结论，冻结的 <code>inputs/</code> 用于还原本轮具体引用。主题稿本身不是第三方原始来源，也不因此增加来源数量。</p>
+<h2 id="1-公司-产品与宿主机制">1. 公司、产品与宿主机制</h2>
+<p>先读 <a href="../中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html">中国 Harness 机制核查讨论稿</a> 和 <a href="../../west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html">西方 Harness 机制核查讨论稿</a>。前者覆盖 DeepSeek Harness、腾讯相关 agent/coding 方案、Qwen-Agent 与 Qwen Code；后者覆盖 Codex、Claude 及相关 agent 框架。查原始证据时分别进入 <a href="inputs/china/sources.json">中国目录快照</a> 与 <a href="inputs/west/sources.json">西方目录快照</a>。</p>
+<p>阅读范围是官方契约、选定固定提交的源码路径、公开署名文章或访谈中与问题相关的段落。每一类都有各自限制：文档承诺不能直接扩大到所有适配器；源码存在不能证明当前部署启用；员工观点不能替代产品规范。报告中的“本轮未找到”也不等于“产品不支持”。</p>
+<h2 id="2-状态-恢复-权限与外部效果">2. 状态、恢复、权限与外部效果</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">要回答的问题</th><th style="text-align:left">先读讨论稿</th><th style="text-align:left">再查原始目录与范围</th></tr></thead><tbody><tr><td style="text-align:left">恢复、取消、unknown、幂等、调度有什么现成机制与反例？</td><td style="text-align:left"><a href="../../mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html">机制对照与反例</a></td><td style="text-align:left"><a href="inputs/mechanisms/sources.json">机制目录</a>：固定源码路径与官方文档；未运行这些上游实现</td></tr><tr><td style="text-align:left">结果可见性、主体权限、委托和批准如何绑定？</td><td style="text-align:left"><a href="../../west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html">主体权限与结果可见性</a></td><td style="text-align:left"><a href="inputs/west/authority-scope/sources.json">权限目录</a>：5 个来源家族展开为多个主文档；规范与我们的设计提案分开</td></tr><tr><td style="text-align:left">长期任务跨版本续接能保证到哪一层？</td><td style="text-align:left"><a href="../../mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html">长期任务跨版本续接</a></td><td style="text-align:left"><a href="inputs/mechanisms/lifecycle-migration/sources.json">M-05 目录</a>：6 组，保留 docs 版本、固定源码及 Python/TypeScript 配对文件</td></tr><tr><td style="text-align:left">组合和生命周期约束能否直接保证外部效果？</td><td style="text-align:left"><a href="../../mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html">Cordis 组合与外部效果边界</a></td><td style="text-align:left"><a href="inputs/mechanisms/cordis-boundary/sources.json">目录</a>及<a href="../../mechanisms/cordis-boundary/READING_COVERAGE-离线阅读版.html">读取范围说明</a>：选定定理、证明与固定源码，未执行实现</td></tr><tr><td style="text-align:left">落盘、确认、发送与 outbox 的先后如何区分？</td><td style="text-align:left"><a href="../../mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html">持久状态与发送效果边界</a></td><td style="text-align:left"><a href="inputs/mechanisms/durability-boundary/sources.json">M-06 目录</a>：4 组，其中 B0 是 14 个代码文件，另有 Node.js、Linux 手册和 AWS outbox 文档</td></tr></tbody></table></div>
+<p>M-06 的 B0 逐文件记录 <code>workbench</code> 与 <code>dsh</code>，有固定 commit、blob、路径、行范围和静态取回说明。工作台链接由仓库、commit 和 path 构造；本轮索引没有确认该 commit 已在远端可读。Linux 手册的日期不是本机 macOS 的持久性证明。AWS outbox 是公开设计说明，不是本工作台已具备该实现的证明。</p>
+<h2 id="3-论文-上下文选择与工作方式">3. 论文、上下文选择与工作方式</h2>
+<p><a href="../../west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html">Record 上下文与任务收益评价</a> 对应 <a href="inputs/west/context-evaluation/sources.json">18 条目录记录</a>；<a href="../../mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html">自主推进与工作方式改进</a> 对应 <a href="inputs/mechanisms/work-improvement/sources.json">10 条目录记录</a>。这些入口用于区分上下文是否被使用、任务收益是否改善，以及工作选择和经验改进需要什么评价。</p>
+<p>论文的摘要、方法、结果、预算和限制，以及源码中的相关函数，各自保留读取范围。读过相关章节不等于全文逐页审计；文中报告的实验不是本轮复现。本轮没有为这些研究调用模型 API、下载数据集或执行第三方模型实验。arXiv 的 abs、HTML、PDF 可能属于同一篇同版本作品，但这里不会据此合并阅读范围或断言正文完全等价。</p>
+<h2 id="4-作者观点-先确认谁在什么时候说了什么">4. 作者观点：先确认谁在什么时候说了什么</h2>
+<p>中国三组观点见<a href="../中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html">中国讨论稿中的员工公开观点部分</a>，西方与补充观点见<a href="../../west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html">工程作者观点归属与设计取舍</a>。机器关系见 <a href="identity-opinion-bindings.json">identity-opinion-bindings.json</a>，原始字段分别在<a href="inputs/china/sources.json">中国目录</a>与<a href="inputs/west/practitioner-views/sources.json">观点目录</a>。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">人或作者组</th><th style="text-align:left">原目录入口</th><th style="text-align:left">归属方式与限制</th></tr></thead><tbody><tr><td style="text-align:left">Tianyi Cui / tianyicui</td><td style="text-align:left">中国 <code>CN-PE-DS-01</code>，身份 <code>CN-PE-DS-02/03</code></td><td style="text-align:left">2026-08-30 个人公开迁移 skill 提议；不证明该 skill 已发布</td></tr><tr><td style="text-align:left">wenshao</td><td style="text-align:left">中国 <code>CN-PE-QW-01</code>，身份 <code>CN-PE-QW-02</code></td><td style="text-align:left">2026-03-02 个人使用报告；同一 issue 的 yiliang114 后续维护者回应是另一个发言主体，不由 collaborator 标签推断其雇佣关系</td></tr><tr><td style="text-align:left">汪晟杰</td><td style="text-align:left">中国 <code>CN-PE-TX-01</code>，身份 <code>CN-PE-TX-02</code></td><td style="text-align:left">2025-09-10 原访谈；Tina 是采访/编辑角色，不能把所有发言混为联合作者结论</td></tr><tr><td style="text-align:left">Michael Bolin</td><td style="text-align:left">观点 <code>V1</code> / <code>P01–P02</code></td><td style="text-align:left">个人访谈与同期官方署名身份分开；不推定 11 月现职</td></tr><tr><td style="text-align:left">Ryan Lopopolo</td><td style="text-align:left"><code>V2</code> / <code>P03</code></td><td style="text-align:left">官方署名工程经验；不自动成为所有产品场景的契约</td></tr><tr><td style="text-align:left">Justin Young</td><td style="text-align:left"><code>V3</code> / <code>P04–P05</code></td><td style="text-align:left">官方文章作者与职位时间证据分别保留，职位的精确时间有限制</td></tr><tr><td style="text-align:left">Prithvi Rajasekaran</td><td style="text-align:left"><code>V4</code> / <code>P06</code></td><td style="text-align:left">官方署名工程实验；报告实验与本轮复现分开</td></tr><tr><td style="text-align:left">Yifan Shi、Wei Zhang、Tianyi Cui</td><td style="text-align:left"><code>V5</code> / <code>P07–P08</code></td><td style="text-align:left"><strong>联合研究</strong>；保留论文列出的各人单位，不拆成三条个人独立表态</td></tr><tr><td style="text-align:left">Junyang Lin</td><td style="text-align:left"><code>V6</code> / <code>P09–P12</code></td><td style="text-align:left">个人文章；既往 Qwen 归属不证明文章发表时的公司身份，未计为已确认的同期 Qwen 员工观点</td></tr></tbody></table></div>
+<p>上述是 <strong>9 个观点或署名分组</strong>，不是 9 名当前员工或 9 个独立背书。21 条身份关联是出处关系，也不是 21 名员工。短 ID 必须连同目录使用：不同目录都可能出现 <code>P01</code>。</p>
+<p><a href="inputs/ROOT_BIBLIOGRAPHY_SUPPLEMENT.json">根代理书目补充</a>另补 4 个既有观察的书目信息：Malcolm Featonby 的 AWS 官方署名文章、Bin Wu 的 Anthropic 官方署名文章、Adam Jones 与 Conor Kelly 的联合官方文章，以及没有个人署名的 Claude SDK 文档。联合作者与致谢贡献者不能拆成独立个人观点；机构文档不能虚构个人作者。此补充没有新增阅读观察或独立来源。</p>
+<h2 id="5-形式基础与本项目的证明">5. 形式基础与本项目的证明</h2>
+<p>先读<a href="../../FORMAL_MODEL-离线阅读版.html">统一形式模型</a>，再通过 <a href="inputs/foundations/sources.json">foundations 来源目录</a>追溯其 12 个基础条目。每个条目只支撑目录写出的主张与范围，不能把引用一份经典论文理解为已经验证我们的实现。</p>
+<p>本项目的 <a href="../budget-proof/README-离线阅读版.html">预算一般证明</a>、<a href="../bounded-models/README-离线阅读版.html">有限模型与反例</a>属于我们的推导与验证产物，不是新增第三方文献。Lean/TLA/Python 的结果、真实 Record 实现和外部系统行为需要分别取证；来源索引不代替这些执行回执。</p>
+<h2 id="6-目录清单与计数口径">6. 目录清单与计数口径</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">原始目录</th><th style="text-align:right">组记录数</th><th style="text-align:left">schema / 阅读边界</th></tr></thead><tbody><tr><td style="text-align:left"><a href="inputs/china/sources.json">china/sources.json</a></td><td style="text-align:right">57</td><td style="text-align:left">公司事实、代码、身份与观点；含 1 个正文不可取回候选</td></tr><tr><td style="text-align:left"><a href="inputs/west/sources.json">west/sources.json</a></td><td style="text-align:right">39</td><td style="text-align:left">主要原文、固定源码与署名观点；没有产品运行实验</td></tr><tr><td style="text-align:left"><a href="inputs/mechanisms/sources.json">mechanisms/sources.json</a></td><td style="text-align:right">41</td><td style="text-align:left">静态源码和官方文档；仓库固定提交不等于稳定 release</td></tr><tr><td style="text-align:left"><a href="inputs/foundations/sources.json">foundations/sources.json</a></td><td style="text-align:right">12</td><td style="text-align:left">基础文献与代表来源；失败地址另记</td></tr><tr><td style="text-align:left"><a href="inputs/mechanisms/cordis-boundary/sources.json">Cordis 边界</a></td><td style="text-align:right">15</td><td style="text-align:left">指定证明和源码范围</td></tr><tr><td style="text-align:left"><a href="inputs/mechanisms/work-improvement/sources.json">工作改进</a></td><td style="text-align:right">10</td><td style="text-align:left">相关方法、结果和限制；没有复现</td></tr><tr><td style="text-align:left"><a href="inputs/west/context-evaluation/sources.json">上下文评价</a></td><td style="text-align:right">18</td><td style="text-align:left">论文、代码及指标边界；没有模型实验</td></tr><tr><td style="text-align:left"><a href="inputs/west/practitioner-views/sources.json">作者观点</a></td><td style="text-align:right">12</td><td style="text-align:left">6 个显式观点分组；个人、联合研究与身份来源分开</td></tr><tr><td style="text-align:left"><a href="inputs/west/authority-scope/sources.json">权限范围</a></td><td style="text-align:right">5</td><td style="text-align:left">来源家族包含 <code>primary_documents[]</code>；不是 5 篇文章</td></tr><tr><td style="text-align:left"><a href="inputs/mechanisms/lifecycle-migration/sources.json">跨版本续接 M-05</a></td><td style="text-align:right">6</td><td style="text-align:left">配对文件与文档版本保留；提交日期不是特性发布日期</td></tr><tr><td style="text-align:left"><a href="inputs/mechanisms/durability-boundary/sources.json">持久性边界 M-06</a></td><td style="text-align:right">4</td><td style="text-align:left"><code>groups[] / workbench / dsh / files[] / urls[]</code>；B0 单组有 14 个文件</td></tr></tbody></table></div>
+<p>11 份目录共 219 组，展开为 240 个文档出现记录。226 条文档 URL 是原文写出的，14 条固定文件链接由明确字段构造。原文文档 URL 精确去重为 209 个；连同构造链接为 223 个。加上 root 复核使用的地址表示后，地址索引为 243 个键，其中 4 个 root-only URL 对应此次书目补充。</p>
+<p>精确去重保留 fragment、版本和 URL 字符串原样，不跟随重定向，也不把 <code>main</code> 改写成推测的 commit。同 URL 的不同行范围、声明、作者阅读和 root 复核仍是独立记录；不同 URL 即使被标为同作品相关表示，也不强行合并。书目缺少发表日期时保持未知，访问日期、代码提交日期、手册页面日期和渲染日期不冒充发表日期。</p>
+<h2 id="7-未读-未采用与未知状态">7. 未读、未采用与未知状态</h2>
+<p>当前索引有 118 组明确的条目级读取字段，1 组 M-06 B0 的嵌套文件取回与范围声明，99 组只有目录级或未细化到条目的读取信息，以及 1 组明确正文不可用、未采用的候选。这是<strong>元数据的细化程度</strong>，不是阅读量排行榜。99 组不能自动标成“未读”，也不能补写“全文已读”；应回到原目录和具体报告的局部范围。</p>
+<p>可定位的未采用候选共有 4 条：</p>
+<ul><li>中国 <code>CN-MISS</code> 微信页面正文取回失败；未从镜像借用作者或性能主张。它仍占原目录的 1 个组记录。</li><li>foundations 的 Penn 地址是明确的 <code>search-discovered</code>，正文 403；用 F-04 替代，不能称 Penn 全文已读。</li><li>foundations 的 Princeton PDF 403；F-07 使用 Cornell 托管的原论文，保留两个地址的不同访问状态。</li><li>practitioner 的 Reddit 原帖正文可见，但机制观点和同期身份依据不足，未采用；这条属于“读到但未采用”，不能归为“未读”。</li></ul>
+<p>M-06 L1 的限制另外记载 OpenGroup POSIX 页面在发现阶段返回 403，但没有给出具体地址。本索引保留这段限制，不制造一个可定位的新 URL 记录。未采用候选不参与主张证成；目录组数量中包含候选时已经明示。</p>
+<h2 id="8-从结论追到原文件-sha-与-json-pointer">8. 从结论追到原文件、SHA 与 JSON pointer</h2>
+<p>例如核对 M-06 中工作台 Store 的范围：</p>
+<ol><li>打开 <a href="source-index.json">source-index.json</a>，找到组 ID <code>mechanisms/durability-boundary/sources.json#/groups/0</code>，确认其声明和限制。</li><li>找到文档 ID <code>mechanisms/durability-boundary/sources.json#/groups/0/workbench/files/0</code>。它保存文件路径、blob、范围以及静态取回说明；<code>url_origin</code> 明确标记链接的构造方式。</li><li>打开 <a href="inputs/mechanisms/durability-boundary/sources.json">M-06 冻结原目录</a>，按 JSON pointer <code>/groups/0/workbench/files/0</code> 定位原字段。原文件 SHA-256 为 <code>b5785899ca9f79368f917905b06e589b015fa2f822b0b5f71d6839d78d7e0520</code>。</li><li>如需查 root 是否另读过相关材料，再查 <a href="reading-observations.json">reading-observations.json</a>。没有关联就保持未记录，不能由原作者阅读推出 root 已复核。书目 enrichment 也不是另一次阅读。</li></ol>
+<p>每条机器记录的 <code>origin</code> 都保留原文件名、完整 SHA-256 和 JSON pointer。<code>inputs/</code> 只是这些 JSON 元数据的冻结副本，不在来源数量里再次计数。捕获时普查的 182 个 JSON 中，纳入 16 份（11 目录、4 复核、1 补书目），排除 48 个 <code>inputs/</code> 副本和 118 个其他产物。manifest、验证回执、模型输出、审查报告与重复输入均不冒充第三方来源。</p>
+<p>后续 <code>ROOT_SOURCE_REVIEW_5</code> 与 R-08 代码复核不在本快照范围；阅读它们不会自动改写这里的 38 条 root 观察。所有计数及完整纳入/排除清单以 <a href="scope-and-inputs.json">scope-and-inputs.json</a>和<a href="execution_receipt.json">执行回执</a>为准。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

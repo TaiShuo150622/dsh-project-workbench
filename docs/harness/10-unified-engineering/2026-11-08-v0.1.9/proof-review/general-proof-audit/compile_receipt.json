@@ -1,0 +1,36 @@
+{
+  "lean_version": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lean_binary_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+  "cases": [
+    {
+      "label": "dag",
+      "command": [
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/lean-4.35.0-darwin_aarch64/bin/lean",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/inputs/dag/IncrementalDag.lean"
+      ],
+      "source_sha256": "b49bd9da7e2627486f75c39212d4d0867890ff88b166cb5a2060e42084746083",
+      "started_at_utc": "2026-11-08T07:22:49.811311+00:00",
+      "elapsed_seconds": 4.948687124999999,
+      "exit_code": 0,
+      "stdout": "'HarnessDag.incremental_equals_full' depends on axioms: [propext, Classical.choice, Quot.sound]\n'HarnessDag.full_sweep_consistent' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "stdout_sha256": "f11f3796cc71aea61bf0fb9cfe8a51959f35715c90c1101688b3b53e2ac4bf03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "budget",
+      "command": [
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/tooling/lean-4.35.0-darwin_aarch64/bin/lean",
+        "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/general-proof-audit/inputs/budget/BudgetSafety.lean"
+      ],
+      "source_sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "started_at_utc": "2026-11-08T07:22:49.811838+00:00",
+      "elapsed_seconds": 5.4786484170000005,
+      "exit_code": 0,
+      "stdout": "'HarnessBudget.step_preserves' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.run_preserves' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.actual_spent_le_exposure' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.finite_run_budget_safety' depends on axioms: [propext, Quot.sound]\n'HarnessBudget.from_empty_finite_run_safe' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "stdout_sha256": "8de7c23c713734d4f1068c9149d2fc65747fdce930e072daad8778db39712c20",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

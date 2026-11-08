@@ -1,0 +1,341 @@
+{
+  "status": "PASS",
+  "scope": "INDEPENDENT_BOUNDED_RESEARCH_MODEL",
+  "model_sha256": "6fd35501fc65d3d0ac82acd9770999f071dde08976bd7db7b5456c620dc0d0cd",
+  "counts": {
+    "named_checks": 14,
+    "four_observation_assignments": 81,
+    "arrival_permutations": 24,
+    "claim_keys": 16,
+    "ordered_key_isolation_pairs": 240,
+    "illustrative_bad_policy_counterexamples": 5,
+    "candidate_operation_policy_checks": 18
+  },
+  "named_checks": [
+    {
+      "id": "C01_same_key_conflict",
+      "actual": "BOTH",
+      "expected": "BOTH",
+      "note": "Authenticated/admitted observations can still conflict; no world truth inferred."
+    },
+    {
+      "id": "C02_late_old_version",
+      "actual": "OPPOSE_ONLY",
+      "expected": "OPPOSE_ONLY",
+      "note": "Receipt order does not replace scoped version identity."
+    },
+    {
+      "id": "C03_withdraw_is_not_negation",
+      "actual": "NEITHER",
+      "expected": "NEITHER",
+      "note": "Source withdrawal removes support without fabricating opposition."
+    },
+    {
+      "id": "C04_alternative_survives",
+      "actual": "SUPPORT_ONLY",
+      "expected": "SUPPORT_ONLY",
+      "note": "Separate root remains; no statistical independence is asserted."
+    },
+    {
+      "id": "C05_same_root_not_three_sources",
+      "actual": 1,
+      "expected": 1,
+      "note": "Duplicate receptions and wrappers do not multiply canonical origin roots."
+    },
+    {
+      "id": "C06_independence_unknown",
+      "actual": "UNDETERMINED",
+      "expected": "UNDETERMINED",
+      "note": "Deduplication does not establish independence."
+    },
+    {
+      "id": "C07_explicit_correction",
+      "actual": "OPPOSE_ONLY",
+      "expected": "OPPOSE_ONLY",
+      "note": "One correction retires a specified assertion and records a new assertion."
+    },
+    {
+      "id": "C08_history_kept",
+      "actual": true,
+      "expected": true,
+      "note": "Correction does not delete the original statement."
+    },
+    {
+      "id": "C09_invalid_correction_atomic",
+      "actual": true,
+      "expected": true,
+      "note": "Only synthetic namespace control checked, not real credentials."
+    },
+    {
+      "id": "C10_withdraw-first",
+      "actual": "NEITHER",
+      "expected": "NEITHER",
+      "note": "Late original statement cannot revive a retained withdrawal reference."
+    },
+    {
+      "id": "C10_observe-first",
+      "actual": "NEITHER",
+      "expected": "NEITHER",
+      "note": "Late original statement cannot revive a retained withdrawal reference."
+    },
+    {
+      "id": "C11_no_explosion",
+      "actual": "NEITHER",
+      "expected": "NEITHER",
+      "note": "This model has no inference rule from a contradiction to an unrelated atom."
+    },
+    {
+      "id": "C12_unqualified_sources",
+      "actual": "NEITHER",
+      "expected": "NEITHER",
+      "note": "Identity/admissibility are supplied synthetic inputs; no checker implemented."
+    },
+    {
+      "id": "C13_support_does_not_grant_action",
+      "actual": "NOT_COMPUTED",
+      "expected": "NOT_COMPUTED",
+      "note": "Four-state projection deliberately makes no action decision."
+    }
+  ],
+  "policy_checks": [
+    {
+      "id": "NEITHER:view",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "NEITHER:seek_evidence",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "NEITHER:publish",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "NO_APPLICABLE_SUPPORT"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "OPPOSE_ONLY:view",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "OPPOSE_ONLY:seek_evidence",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "OPPOSE_ONLY:publish",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "COUNTEREVIDENCE_REQUIRES_REVIEW"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "SUPPORT_ONLY:view",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "SUPPORT_ONLY:seek_evidence",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "SUPPORT_ONLY:publish",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "CANDIDATE_EVIDENCE_GATE_ONLY"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "BOTH:view",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "BOTH:seek_evidence",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "READY_FOR_AUTH_CHECK",
+        "reason": "INVESTIGATION_NOT_ENDORSEMENT"
+      },
+      "expected_readiness": "READY_FOR_AUTH_CHECK"
+    },
+    {
+      "id": "BOTH:publish",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "UNRESOLVED_CONFLICT"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "object_version_changed",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "STALE_OR_WRONG_SCOPE"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "operation_changed",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "STALE_OR_WRONG_SCOPE"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "policy_version_changed",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "STALE_OR_WRONG_SCOPE"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "coverage_unknown",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "INCOMPLETE_EVIDENCE_COVERAGE"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "counterevidence_invalidates_cached_assessment",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "STALE_OR_WRONG_SCOPE"
+      },
+      "expected_readiness": "UNKNOWN"
+    },
+    {
+      "id": "fresh_conflict_assessment_is_still_unknown",
+      "actual": {
+        "action_permission": "NOT_COMPUTED",
+        "fact_truth": "NOT_COMPUTED",
+        "readiness": "UNKNOWN",
+        "reason": "UNRESOLVED_CONFLICT"
+      },
+      "expected_readiness": "UNKNOWN"
+    }
+  ],
+  "counterexamples": [
+    {
+      "policy": "latest_received_wins",
+      "trace": [
+        "a:1",
+        "b:1"
+      ],
+      "wrong": "OPPOSE_ONLY",
+      "reference": "BOTH"
+    },
+    {
+      "policy": "absence_of_support_means_negative",
+      "trace": [
+        "a:1",
+        "withdraw a:1"
+      ],
+      "wrong": "OPPOSE_ONLY",
+      "reference": "NEITHER"
+    },
+    {
+      "policy": "ignore_version_and_latest_wins",
+      "trace": [
+        "b:1",
+        "d:1"
+      ],
+      "wrong": "SUPPORT_ONLY",
+      "reference": "OPPOSE_ONLY"
+    },
+    {
+      "policy": "count_wrapper_rows_as_independent",
+      "trace": [
+        "a:1",
+        "a:1",
+        "c:1"
+      ],
+      "wrong_independent_count": 3,
+      "canonical_positive_roots": 1,
+      "reference_independence": "UNDETERMINED"
+    },
+    {
+      "policy": "supported_boolean_releases_publication",
+      "trace": [
+        "a:1",
+        "b:1"
+      ],
+      "wrong_release": true,
+      "candidate_readiness": "UNKNOWN",
+      "action_permission": "NOT_COMPUTED",
+      "note": "Illustrative app policy counterexample; not a truth-value theorem or existing product defect."
+    }
+  ],
+  "limits": [
+    "Not Record S1, not a product test, not a general proof.",
+    "Synthetic authority, admissibility and canonical root lineage.",
+    "No global truth oracle, statistical independence or probability.",
+    "No arbitrary support formulas, recursion, execution permission or ACL implementation.",
+    "Candidate operation policy assumes synthetic coverage; not a universal policy or shipped behavior.",
+    "Only the enumerated bounded inputs and named traces were run."
+  ]
+}

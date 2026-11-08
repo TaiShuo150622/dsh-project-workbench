@@ -1,0 +1,360 @@
+{
+  "scope": "mobile light DOM/render/network check with external HTTPS mocked unavailable; not a visual or product acceptance",
+  "viewport": [
+    430,
+    932
+  ],
+  "rows": [
+    {
+      "file": "west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "d8868ccf5e1d26a1f5641c564959ab788e05ece4eb46b8cd40cc67707fd96ced",
+      "checked_at_utc": "2026-11-08T08:54:36.549198+00:00",
+      "observed": {
+        "title": "西方 Harness 机制核查讨论稿 v0.1.1",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "3440d04610e4ba394e109d105aaf5b2a7bd6db5c9282c3ce16ad28984675e6f9",
+      "checked_at_utc": "2026-11-08T08:54:40.210432+00:00",
+      "observed": {
+        "title": "中国 Harness 机制核查讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "00f87e33be7de082cbfe1c639e40f7933f52156c6a7b5ce8873edc8a53031317",
+      "checked_at_utc": "2026-11-08T08:54:44.024286+00:00",
+      "observed": {
+        "title": "统一 Harness 开源机制研究讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "0814280fb5bfb4ea302803b73912a06779cc8301008740d8b646951d6ab8aea1",
+      "checked_at_utc": "2026-11-08T08:54:49.201309+00:00",
+      "observed": {
+        "title": "Record 上下文与任务收益评价讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "8f55a8bf908c07463be65f213213661a8785eaa62fd4ac173a55fcecd5fa2413",
+      "checked_at_utc": "2026-11-08T08:54:53.265856+00:00",
+      "observed": {
+        "title": "主体权限与结果可见性讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "29380b17e6915b858bb7e482da2e2665e30edaaa49077f788141d0f4d11f27e0",
+      "checked_at_utc": "2026-11-08T08:54:58.497701+00:00",
+      "observed": {
+        "title": "工程作者观点归属与设计取舍讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "d69a5ae716c6f3798ba438c7a2aa88d98a5d59ae6ec3c0f6c9f33a981318eea9",
+      "checked_at_utc": "2026-11-08T08:55:03.595668+00:00",
+      "observed": {
+        "title": "Cordis 组合与外部效果边界讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "8300819cc8e7bf3f76733aaaecfd8f838e72add6ca00a94bfb69223770d6a8a0",
+      "checked_at_utc": "2026-11-08T08:55:08.674729+00:00",
+      "observed": {
+        "title": "自主推进与工作方式改进讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "dbce4d52cbe2bdf0cf40567485c4c6d0e6e3828de7ceced0dc68907f3d60346b",
+      "checked_at_utc": "2026-11-08T08:55:13.180264+00:00",
+      "observed": {
+        "title": "长期任务跨版本续接讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "31bf5ed3c242d214aa34efcbb2c0df965328cd83c25e6512f59f90a500e7c734",
+      "checked_at_utc": "2026-11-08T08:55:18.681976+00:00",
+      "observed": {
+        "title": "持久状态、发送意图与效果边界讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.0-离线阅读版.html",
+      "sha256": "109ec00e5d2160045d5c954a40f647b217ab1eef68f72a0073ece58a4ed509cb",
+      "checked_at_utc": "2026-11-08T08:55:22.521048+00:00",
+      "observed": {
+        "title": "可信入口与 Coding 交付实施任务书讨论稿 v0.1.0",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "947e6595c3c5258226e0a836d12a841db1b332719e3341d2a975885e9fde85ca",
+      "checked_at_utc": "2026-11-08T08:55:26.958818+00:00",
+      "observed": {
+        "title": "最小评估与可证伪价值讨论稿 v0.1.1",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    },
+    {
+      "file": "适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html",
+      "sha256": "c35e0acd5c6969b6ef12df0afd1a3dc9daf3d224bdc226d36c4edefa5456900e",
+      "checked_at_utc": "2026-11-08T08:55:31.277301+00:00",
+      "observed": {
+        "title": "适配契约与贯穿场景讨论稿 v0.1.1",
+        "theme": "light",
+        "viewport": 430,
+        "documentWidth": 430,
+        "figures": 3,
+        "visibleSVG": 3,
+        "externalScripts": 0,
+        "resourceRequests": [],
+        "brokenNavigation": [],
+        "embeddedMode": "embedded-svg-light-dark"
+      },
+      "checks": {
+        "diagram_count": true,
+        "visible_diagram_count": true,
+        "no_document_overflow": true,
+        "no_external_scripts": true,
+        "zero_resource_requests": true,
+        "navigation_anchors_resolve": true,
+        "static_mode": true
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/REPORT.md",
+      "snapshot": "inputs/author/REPORT.md",
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe",
+      "bytes": 14657
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/inputs.json",
+      "snapshot": "inputs/author/inputs.json",
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9",
+      "bytes": 6031
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/inputs/specifications/FORMAL_MODEL.md",
+      "snapshot": "inputs/author/inputs/specifications/FORMAL_MODEL.md",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "snapshot": "inputs/author/inputs/specifications/FORMAL_MODEL-q-update.md",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/inputs/record/kernel.mjs",
+      "snapshot": "inputs/author/inputs/record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "bytes": 26038
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/inputs/tests/support/record-fixture.mjs",
+      "snapshot": "inputs/author/inputs/tests/support/record-fixture.mjs",
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea",
+      "bytes": 2458
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/refinement-probes.mjs",
+      "snapshot": "inputs/author/refinement-probes.mjs",
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401",
+      "bytes": 12171
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/china/docs/research/harness-20261107/china/record-refinement/probes.json",
+      "snapshot": "inputs/author/probes.json",
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903",
+      "bytes": 10863
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/record-mapping-audit/REVIEW.md",
+      "snapshot": "inputs/r05/REVIEW.md",
+      "sha256": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "bytes": 8217
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/record-mapping-audit/findings.json",
+      "snapshot": "inputs/r05/findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "bytes": 4252
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/record-mapping-audit/verification_receipt.json",
+      "snapshot": "inputs/r05/verification_receipt.json",
+      "sha256": "2c8df7ebec5f71b172fad687ebcd0e462f68f40cd43b66653c8fde7090b82c30",
+      "bytes": 816
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/record-mapping-audit/INPUT_MANIFEST.json",
+      "snapshot": "inputs/r05/INPUT_MANIFEST.json",
+      "sha256": "fd7cf11e7bfe056abf81026684df48c1518c92664e36b0f2715f4460dd743689",
+      "bytes": 9943
+    }
+  ]
+}

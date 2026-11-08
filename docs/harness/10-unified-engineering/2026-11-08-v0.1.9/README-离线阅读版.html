@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="c2900c9fe9bd">
+<title>统一 Harness 工程研究 · 阅读入口</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#先读哪几份">先读哪几份</a></li><li class="l2"><a href="#按问题继续读">按问题继续读</a></li><li class="l2"><a href="#公司-开源项目与公开观点">公司、开源项目与公开观点</a></li><li class="l2"><a href="#对外介绍的简版">对外介绍的简版</a></li><li class="l2"><a href="#复核入口">复核入口</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>统一 Harness 工程研究 · 阅读入口</h1>
+</header>
+<p>第一次打开建议先读<a href="START_HERE-离线阅读版.html">成果导读与五项待决策事项</a>，术语可查<a href="west/semantic-glossary/GLOSSARY-离线阅读版.html">中文速查</a>；本页保留全部专题和复核入口。</p>
+<p>这批材料把项目工作台、Coding、Record、DAG、远程执行与工作方式改进放在同一套工作语义下讨论：<strong>目标有版本，行动有权限，结果有证据，未知效果保留责任，复杂策略用实际收益判断是否采用。</strong> 用一个小的 Coding 交付闭环检验这些边界；原产品顺序仍为完整通用面板 P01–P15，再接工作台 B01–B12，研究切片不自动替换它。</p>
+<p>这是 2026-11-08 七小时研究窗口中的本地研究集，当前主稿为 <strong>v0.1.9</strong>。这里的形式证明和有限检查不等于产品已经实现、发布或通过真实宿主验收。工作台/Record 输入固定在 <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code>；后续分支变化不会自动改变本轮结论。最终导出与检查状态见交付回执；研究窗口曾因执行额度限制中断，未完成支线不计入已验证成果。</p>
+<h2 id="先读哪几份">先读哪几份</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">顺序</th><th style="text-align:left">材料</th><th style="text-align:left">阅读目的</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left"><a href="west/decision-brief/MEMO-v0.1.1-离线阅读版.html">一页决策摘要 v0.1.1</a></td><td style="text-align:left">先看建议保留什么、复用什么、用什么判断投入价值</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><a href="west/worked-example/EXAMPLE-离线阅读版.html">贯穿例子</a>，再读<a href="统一Harness工程与形式化基础讨论稿-v0.1.9-离线阅读版.html">统一讨论稿 v0.1.9</a></td><td style="text-align:left">先以假想 Coding 交付理解路径，再看统一对象、组件关系和主要结论；例子未运行</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><a href="west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">产品决定与八问导览</a>，再读<a href="west/implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1-离线阅读版.html">七个研究验收切片</a></td><td style="text-align:left">分清原产品顺序、阶段 A 冻结和新语义验证；29 项检查仍是提案</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><a href="EVIDENCE-离线阅读版.html">证据与状态索引</a></td><td style="text-align:left">区分证明、有限模型、源码探针、外部作者结果和未运行计划</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left"><a href="west/evaluation-design-review/最小评估与可证伪价值讨论稿-v0.1.1-离线阅读版.html">最小评估 v0.1.1</a></td><td style="text-align:left">看怎样用 12 次校准暴露观察链问题；尚不能宣称收益</td></tr></tbody></table></div>
+<p>主稿是当前阅读入口；旧 v0.1.0–v0.1.8 保留修订历史。<code>inputs/</code>、<code>historical-inputs/</code>、<code>repair-inputs/</code>、<code>source-inputs/</code> 保存审阅或复跑时的固定输入，其中的相对链接有些只在原目录成立，不能拿它们代替当前导航。各专题自己的版本号独立，不与主稿强行对齐。</p>
+<h2 id="按问题继续读">按问题继续读</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">问题</th><th style="text-align:left">主要材料</th><th style="text-align:left">需要一起看的边界</th></tr></thead><tbody><tr><td style="text-align:left">各模块究竟共享什么</td><td style="text-align:left"><a href="ARCHITECTURE-离线阅读版.html">架构工作稿</a>、<a href="west/trusted-entry-map/MAP-离线阅读版.html">可信入口路径</a>、<a href="DESIGN_RECONCILIATION-离线阅读版.html">既有方向衔接</a>、<a href="west/historical-coverage/COVERAGE-离线阅读版.html">旧主题覆盖与边界</a></td><td style="text-align:left">共享身份、契约与证据；没有决定重写宿主或从零实现全部组件</td></tr><tr><td style="text-align:left">后期契约怎样进入实施路线</td><td style="text-align:left"><a href="ROADMAP_CLOSURE-离线阅读版.html">路线收敛说明</a></td><td style="text-align:left">保留分支依赖，内容处置、迁移和覆盖按实际操作触发，不扩大 I01</td></tr><tr><td style="text-align:left">第一版是否变得过于沉重</td><td style="text-align:left"><a href="mechanisms/adoption-cost-review/MEMO-离线阅读版.html">采用成本反方备忘</a></td><td style="text-align:left">按具体操作选择必要保证；不能绕过保护，也不要求每次编辑启用完整协议；采用成本尚未实测</td></tr><tr><td style="text-align:left">Record 如何用于上下文</td><td style="text-align:left"><a href="west/context-evaluation/Record上下文与任务收益评价讨论稿-v0.1.0-离线阅读版.html">上下文与任务收益</a></td><td style="text-align:left">三条时间路径、实际上下文控制、完整成本；复杂记忆收益未测</td></tr><tr><td style="text-align:left">现有 Record 与统一模型差多少</td><td style="text-align:left"><a href="china/record-refinement/REPORT-v0.1.1-离线阅读版.html">修正后的映射报告</a>、<a href="china/record-refinement/README-current-离线阅读版.html">修正说明</a></td><td style="text-align:left">20 条既有测试和 8 个探针；RF03 是表达能力缺口，非 OR 算法反例</td></tr><tr><td style="text-align:left">结果可用性和权限如何区分</td><td style="text-align:left"><a href="west/authority-scope/主体权限与结果可见性讨论稿-v0.1.0-离线阅读版.html">主体权限研究</a></td><td style="text-align:left">消费者、操作、接收范围及派生发布分别判断</td></tr><tr><td style="text-align:left">DAG 如何处理更正与撤回</td><td style="text-align:left"><a href="FORMAL_MODEL-离线阅读版.html">形式模型 P5</a>、<a href="dag-proof/README-离线阅读版.html">DAG 一般证明</a></td><td style="text-align:left">完整读取依赖与无环前提；影响范围不等于全部失效</td></tr><tr><td style="text-align:left">支持和反对证据同时存在怎么办</td><td style="text-align:left"><a href="west/evidence-disputes/Record证据争议与修正讨论稿-v0.1.0-离线阅读版.html">四态与操作政策</a>、<a href="proof-review/evidence-dispute-audit/REVIEW-离线阅读版.html">独立集合核查</a></td><td style="text-align:left">证据状态、覆盖判断、完成支持和操作权限分开；不能用自报 complete 补隐藏反证</td></tr><tr><td style="text-align:left">什么范围可以称为覆盖完整</td><td style="text-align:left"><a href="mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html">有限声明域覆盖契约</a>、<a href="proof-review/coverage-example-audit/REVIEW-离线阅读版.html">契约与例子审查</a></td><td style="text-align:left">固定域、切点和逐项处理收据；合法摘要与实际原文输入分开；纸面提案未实现</td></tr><tr><td style="text-align:left">删除或更正后怎样避免旧内容复活</td><td style="text-align:left"><a href="mechanisms/retention-replay-contract/CONTRACT-离线阅读版.html">内容处置与重处理契约</a></td><td style="text-align:left">撤权、删除与证据资格分别处理；旧 worker 和恢复路径按处置水位检查，四见证未运行</td></tr><tr><td style="text-align:left">恢复为何不能直接重试</td><td style="text-align:left"><a href="适配契约与贯穿场景讨论稿-v0.1.1-离线阅读版.html">适配契约与场景</a>、<a href="formal-spec/README-离线阅读版.html">效果模型</a></td><td style="text-align:left">幂等、fencing、期限、取消与对账分别声明</td></tr><tr><td style="text-align:left">收到消息为何不等于存好了</td><td style="text-align:left"><a href="mechanisms/durability-boundary/持久状态与发送效果边界讨论稿-v0.1.0-离线阅读版.html">持久边界研究</a>、<a href="formal-spec/RELAY_README-离线阅读版.html">接纳模型</a></td><td style="text-align:left">内存命中、目标耐久确认、sent 标记各自成事实；真实宿主故障未复现</td></tr><tr><td style="text-align:left">长任务如何跨版本继续</td><td style="text-align:left"><a href="mechanisms/lifecycle-migration/长期任务跨版本续接讨论稿-v0.1.0-离线阅读版.html">生命周期与迁移</a></td><td style="text-align:left">历史解码、重放、接管、未来授权、旧效果解决不能互相替代</td></tr><tr><td style="text-align:left">如何既推进工作又改进方法</td><td style="text-align:left"><a href="mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html">自主推进与工作改进</a></td><td style="text-align:left">有限候选、明确查询用途、已采纳义务、留出反馈及全部费用</td></tr><tr><td style="text-align:left">长任务何时结束或交接</td><td style="text-align:left"><a href="china/progress-conditions/自主推进与终止条件讨论稿-v0.1.0-离线阅读版.html">推进与终止条件</a>、<a href="proof-review/progress-audit/REVIEW-离线阅读版.html">独立模型审查</a></td><td style="text-align:left">有限停止、最终验收、服务窗口、责任接纳分开；公平性没有期限保证</td></tr><tr><td style="text-align:left">换执行者后旧责任和费用去哪了</td><td style="text-align:left"><a href="proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1-离线阅读版.html">接管研究 v0.1.1</a>、<a href="china/handoff-audit/REVIEW-离线阅读版.html">独立复核</a></td><td style="text-align:left">同预算换 owner 保留旧负担；跨预算有限模型 R=0，仅终态观察授权入模</td></tr><tr><td style="text-align:left">不同协议的完成能否互译</td><td style="text-align:left"><a href="mechanisms/interop-contracts/跨宿主协议与有损适配契约讨论稿-v0.1.0-离线阅读版.html">MCP/A2A/Native 适配契约</a></td><td style="text-align:left">保留提供方、版本、声明范围及 loss/unknown；六个见证未运行</td></tr><tr><td style="text-align:left">如何释放界面资源又保留长任务</td><td style="text-align:left"><a href="resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1-离线阅读版.html">资源归属与生命周期 v0.1.1</a>、<a href="proof-review/resource-audit/REVIEW-离线阅读版.html">条件审查</a></td><td style="text-align:left">费用、占用、速率、保留、期限分别计量；共享物理分配和 token/代际单列</td></tr><tr><td style="text-align:left">Cordis 的保证到哪里</td><td style="text-align:left"><a href="mechanisms/cordis-boundary/Cordis-组合与外部效果边界讨论稿-v0.1.0-离线阅读版.html">组合与外部效果边界</a></td><td style="text-align:left">可恢复内部状态与外部 emission 分开；未来设想不是现成功能</td></tr></tbody></table></div>
+<h2 id="公司-开源项目与公开观点">公司、开源项目与公开观点</h2>
+<ul><li><a href="west/西方Harness机制核查讨论稿-v0.1.1-离线阅读版.html">OpenAI、Anthropic 与西方产品机制</a>：产品、SDK、托管服务和代码分别标记，不把同一公司的不同层混为一种能力。</li><li><a href="china/中国Harness机制核查讨论稿-v0.1.0-离线阅读版.html">DeepSeek、腾讯、Qwen 与中国作者讨论</a>：固定源码、官方产品文档、研究原型与有身份依据的公开观点。</li><li><a href="mechanisms/机制对照与反例讨论稿-v0.1.0-离线阅读版.html">代表性开源机制与反例</a>：从具体调用及状态边界理解恢复、工具、图与资源。</li><li><a href="west/practitioner-views/工程作者观点归属与设计取舍讨论稿-v0.1.0-离线阅读版.html">署名工程作者观点</a>：每条保留作者、日期与归属依据；个人文章不自动代表公司立场。</li><li><a href="china/consolidated-sources/SOURCE_INDEX-离线阅读版.html">按主题组织的来源入口</a>：先按问题选原文，再查原目录 SHA 与 JSON pointer；冻结于 08:35:43 UTC。后续三个固定 DSH 文件的 root 阅读另见 <a href="ROOT_SOURCE_REVIEW_5.json">补充复核</a>，不追改旧索引计数；完整后续入口见<a href="SOURCE_UPDATES-离线阅读版.html">来源增补</a>。</li><li><a href="china/final-sources/SOURCE_INDEX-离线阅读版.html">增补主题与联合地址索引</a>：冻结于 09:49:56 UTC，连接可信入口、推进条件、争议证据、MCP/A2A、资源及 W12 沿革；289 个精确地址键不是 289 篇独立文章，后续 W13、M10/M11/M12、C13 等输入另列于来源增补。</li><li><a href="china/evidence-catalog-audit/README-离线阅读版.html">来源目录审查</a>：说明条目、URL、引用位置和实际读取范围为何不能互相当作篇数或覆盖率。该审查是固定时点快照，新增专题另有自己的来源册。</li></ul>
+<h2 id="对外介绍的简版">对外介绍的简版</h2>
+<p><a href="china/public-brief/登记文案-v0.1.2-离线阅读版.html">登记简介与合作想法 v0.1.2</a>按“个人插件作者为主、附带团队探索”整理项目工作台的方向、当前成果与希望讨论的支持。它是待讨论文案，未填写或提交表单；成果只采用已取得的研究证据，不把待做适配写成已交付功能。</p>
+<h2 id="复核入口">复核入口</h2>
+<p><a href="FORMAL_MODEL-离线阅读版.html">形式模型</a>定义自然语言命题和假设；<a href="EVIDENCE-离线阅读版.html">证据索引</a>连接实际程序、日志和审查；<a href="REPRODUCE-离线阅读版.html">复跑说明</a>给出工具版本及最短执行路径。研究脚本只检查声明模型或隔离输入，不接真实外部效果。</p>
+<p>编号各有范围：P1–P15 是形式命题，P01–P15 是历史面板任务卡；H0 是早期方法试点，H01–H08 与 I01–I07 是本轮研究验收切片。阅读和实施时应同时带材料名称，避免把同字母编号当成一条连续排期。</p>
+<p><code>*_PASS_MANIFEST.json</code> 记录每次从研究线复制文件时的哈希，属于历史接收记录；后续编辑阅读页后，它们不再等同最终包的完整性清单。最终导出另给文件清单和派生转换映射。原始回执保留本地，分享副本如替换个人路径，会同时标注原始与派生 SHA，不伪装成未变的原件。</p>
+<p>本轮没有修改产品行为、部署服务或新增公开发布；公司项目、量化实现/数据、凭据和私人会话不进入阅读包。旧公开讨论中的历史方案只作为来源与设计沿革，不自动升级为当前实现事实。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

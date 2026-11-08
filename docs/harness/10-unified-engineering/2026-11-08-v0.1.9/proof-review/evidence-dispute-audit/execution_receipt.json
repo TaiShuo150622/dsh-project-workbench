@@ -1,0 +1,14 @@
+{
+  "executed_at_utc": "2026-11-08T09:28:06.597032+00:00",
+  "command": [
+    "python3",
+    "bounded_check.py"
+  ],
+  "cwd": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/proof-review/docs/research/harness-20261107/proof-review/evidence-dispute-audit/run",
+  "exit_code": 0,
+  "json_equal": true,
+  "byte_equal": true,
+  "stdout_sha256": "40b16a0e9c486d49f953eb4c4e805c5f8fdc9b13f40903c4391e2d2f86299449",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "external_calls": 0
+}

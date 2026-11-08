@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-08T08:37:46.245854+00:00",
+  "read_window_utc": "2026-11-08T08:21:58Z/2026-11-08T08:33:57Z",
+  "status": "partial_cross_review",
+  "entries": [
+    {
+      "id": "DUR-root-flush",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence/src/index.ts",
+      "location": "125–187",
+      "root_review_note": "区分追加可见与显式 flush；flush 汇集当前所有 writer 的异常，不能把全局异常反推每个目标都未存。",
+      "status": "fixed_primary_source_reopened",
+      "runtime_tested": false,
+      "blob_sha": "951c60b31f2254d7950a3c3a450e4c0ffbc5efcc"
+    },
+    {
+      "id": "DUR-root-jsonl-drain",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts",
+      "location": "267–360; 503–528",
+      "root_review_note": "drain 失败恢复缓冲并暂停定时 drain；显式 drain 可恢复重试；flushAll 聚合多个 writer，目标成功与全局失败可以共存。",
+      "status": "fixed_primary_source_reopened",
+      "runtime_tested": false,
+      "blob_sha": "197dcbc270cd153c8cb8b897359378d46963daa8"
+    },
+    {
+      "id": "DUR-root-memory-append",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts",
+      "location": "892–911",
+      "root_review_note": "commit 写内存 log 不等待持久屏障；这里只确认可见与持久分离的切点，不验证当前运行后端。",
+      "status": "fixed_primary_source_reopened",
+      "runtime_tested": false,
+      "blob_sha": "e9baee1b82d877eb90f67b3a7beae3d14b650442"
+    }
+  ],
+  "scope_note": "此清单记录此前独立 GitHub fetch_file 读取的三个文件范围；R08 的十份固定源码快照是另一审查线证据，不计作本线新增文章。"
+}

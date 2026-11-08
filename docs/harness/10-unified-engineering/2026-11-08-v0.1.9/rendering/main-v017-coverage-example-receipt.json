@@ -1,0 +1,32 @@
+{
+  "batch": "main-v017-coverage-example",
+  "records": [
+    {
+      "source": "统一Harness工程与形式化基础讨论稿-v0.1.7.md",
+      "source_sha256": "9280513c015eeb4be2bdc156116ea56a9641fb8bce72212119aac5e001cd2e82",
+      "offline": "统一Harness工程与形式化基础讨论稿-v0.1.7-离线阅读版.html",
+      "offline_sha256": "294a58a9bc2472a1fa2782dd18a71654ba65c91c9f391db0109b2006b8a31d2f",
+      "diagrams": 6,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T10:26:21.556305+00:00"
+    },
+    {
+      "source": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0.md",
+      "source_sha256": "bae5044bfbd6241585c50389e6e9dd2361678e37a5babe41d51b695616bfa1bc",
+      "offline": "mechanisms/coverage-contract/有限声明域覆盖契约讨论稿-v0.1.0-离线阅读版.html",
+      "offline_sha256": "c32887b126b5d369576a23d989b9706b3a5007480db66e9e517179557a8c8040",
+      "diagrams": 3,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T10:26:45.225090+00:00"
+    },
+    {
+      "source": "west/worked-example/EXAMPLE.md",
+      "source_sha256": "e97706abebb663d2405a9e083a801356659ea32f7fe7b9279965c839162679f7",
+      "offline": "west/worked-example/EXAMPLE-离线阅读版.html",
+      "offline_sha256": "b988fba51331193440ae33ab114b8a1b59f3a0484232549064a41c9cfed4d2b9",
+      "diagrams": 1,
+      "status": "GENERATED_PENDING_BROWSER_CHECK",
+      "completed_at_utc": "2026-11-08T10:27:02.572939+00:00"
+    }
+  ]
+}

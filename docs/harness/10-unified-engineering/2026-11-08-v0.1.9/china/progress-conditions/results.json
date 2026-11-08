@@ -1,0 +1,1454 @@
+{
+  "schema_version": 1,
+  "kind": "C08 finite auxiliary models; independent of P1-P15 counts",
+  "model_cases": [
+    {
+      "id": "C08-M01-zero-cost-loop",
+      "state_fields": [
+        "phase",
+        "spent"
+      ],
+      "initial": {
+        "phase": "run",
+        "spent": 0
+      },
+      "reachable_states": 2,
+      "explicit_edges": 2,
+      "action_counts": {
+        "QuerySame": 1,
+        "Deliver": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [],
+      "fair_lasso_search_product_states": 1,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "phase": "run",
+              "spent": 0
+            },
+            "action": "QuerySame",
+            "to": {
+              "phase": "run",
+              "spent": 0
+            }
+          }
+        ],
+        "total_edges": 1
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "B=1. Every state has spent<=1; QuerySame has zero model cost. Does not assert real queries are free."
+    },
+    {
+      "id": "C08-M02-fair-deliver",
+      "state_fields": [
+        "phase",
+        "spent"
+      ],
+      "initial": {
+        "phase": "run",
+        "spent": 0
+      },
+      "reachable_states": 2,
+      "explicit_edges": 2,
+      "action_counts": {
+        "QuerySame": 1,
+        "Deliver": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "delivery",
+          "mode": "WF",
+          "actions": [
+            "Deliver"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 1,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Fairness on the continuously enabled productive action excludes M01; no time bound follows."
+    },
+    {
+      "id": "C08-M03-busy-is-not-progress",
+      "state_fields": [
+        "pending",
+        "heartbeat"
+      ],
+      "initial": {
+        "pending": true,
+        "heartbeat": 0
+      },
+      "reachable_states": 4,
+      "explicit_edges": 4,
+      "action_counts": {
+        "Background": 2,
+        "Discharge": 2
+      },
+      "analysis_only_Halt_loops": 2,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "any_work",
+          "mode": "WF",
+          "actions": [
+            "Background",
+            "Discharge"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 4,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "pending": true,
+              "heartbeat": 0
+            },
+            "action": "Background",
+            "to": {
+              "pending": true,
+              "heartbeat": 1
+            }
+          },
+          {
+            "from": {
+              "pending": true,
+              "heartbeat": 1
+            },
+            "action": "Background",
+            "to": {
+              "pending": true,
+              "heartbeat": 0
+            }
+          }
+        ],
+        "total_edges": 2
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Background performs real state changes. Aggregate work fairness does not discharge the pending obligation."
+    },
+    {
+      "id": "C08-M04-intermittent-WF",
+      "state_fields": [
+        "available",
+        "done"
+      ],
+      "initial": {
+        "available": true,
+        "done": false
+      },
+      "reachable_states": 3,
+      "explicit_edges": 3,
+      "action_counts": {
+        "CloseWindow": 1,
+        "Discharge": 1,
+        "OpenWindow": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "discharge",
+          "mode": "WF",
+          "actions": [
+            "Discharge"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 4,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "available": true,
+              "done": false
+            },
+            "action": "CloseWindow",
+            "to": {
+              "available": false,
+              "done": false
+            }
+          },
+          {
+            "from": {
+              "available": false,
+              "done": false
+            },
+            "action": "OpenWindow",
+            "to": {
+              "available": true,
+              "done": false
+            }
+          }
+        ],
+        "total_edges": 2
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": ""
+    },
+    {
+      "id": "C08-M05-intermittent-SF",
+      "state_fields": [
+        "available",
+        "done"
+      ],
+      "initial": {
+        "available": true,
+        "done": false
+      },
+      "reachable_states": 3,
+      "explicit_edges": 3,
+      "action_counts": {
+        "CloseWindow": 1,
+        "Discharge": 1,
+        "OpenWindow": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "discharge",
+          "mode": "SF",
+          "actions": [
+            "Discharge"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 6,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Environment alternates availability in this graph; SF is an extra premise, not an implemented scheduler property."
+    },
+    {
+      "id": "C08-M06-unavailable-even-SF",
+      "state_fields": [
+        "effect"
+      ],
+      "initial": {
+        "effect": "unknown"
+      },
+      "reachable_states": 1,
+      "explicit_edges": 1,
+      "action_counts": {
+        "PollUnknown": 1
+      },
+      "analysis_only_Halt_loops": 0,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "resolution",
+          "mode": "SF",
+          "actions": [
+            "Resolve"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 1,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "effect": "unknown"
+            },
+            "action": "PollUnknown",
+            "to": {
+              "effect": "unknown"
+            }
+          }
+        ],
+        "total_edges": 1
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Resolve is never enabled; its SF is vacuous. No duplicate external send is allowed by this graph."
+    },
+    {
+      "id": "C08-M07-fixed-goal",
+      "state_fields": [
+        "revision_parity",
+        "produced",
+        "accepted"
+      ],
+      "initial": {
+        "revision_parity": 0,
+        "produced": false,
+        "accepted": false
+      },
+      "reachable_states": 3,
+      "explicit_edges": 2,
+      "action_counts": {
+        "Produce": 1,
+        "Accept": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 2,
+      "fairness": [
+        {
+          "name": "production",
+          "mode": "WF",
+          "actions": [
+            "Produce"
+          ]
+        },
+        {
+          "name": "acceptance",
+          "mode": "WF",
+          "actions": [
+            "Accept"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 3,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "revision_parity is a quotient of an ever-increasing revision counter, not permission to reuse old version identities. ReviseGoal resets current evidence; the loop lifts by incrementing the real counter."
+    },
+    {
+      "id": "C08-M07-changing-goal",
+      "state_fields": [
+        "revision_parity",
+        "produced",
+        "accepted"
+      ],
+      "initial": {
+        "revision_parity": 0,
+        "produced": false,
+        "accepted": false
+      },
+      "reachable_states": 6,
+      "explicit_edges": 8,
+      "action_counts": {
+        "ReviseGoal": 4,
+        "Produce": 2,
+        "Accept": 2
+      },
+      "analysis_only_Halt_loops": 2,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "production",
+          "mode": "WF",
+          "actions": [
+            "Produce"
+          ]
+        },
+        {
+          "name": "acceptance",
+          "mode": "WF",
+          "actions": [
+            "Accept"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 15,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "revision_parity": 0,
+              "produced": false,
+              "accepted": false
+            },
+            "action": "ReviseGoal",
+            "to": {
+              "revision_parity": 1,
+              "produced": false,
+              "accepted": false
+            }
+          },
+          {
+            "from": {
+              "revision_parity": 1,
+              "produced": false,
+              "accepted": false
+            },
+            "action": "Produce",
+            "to": {
+              "revision_parity": 1,
+              "produced": true,
+              "accepted": false
+            }
+          },
+          {
+            "from": {
+              "revision_parity": 1,
+              "produced": true,
+              "accepted": false
+            },
+            "action": "ReviseGoal",
+            "to": {
+              "revision_parity": 0,
+              "produced": false,
+              "accepted": false
+            }
+          }
+        ],
+        "total_edges": 3
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "revision_parity is a quotient of an ever-increasing revision counter, not permission to reuse old version identities. ReviseGoal resets current evidence; the loop lifts by incrementing the real counter."
+    },
+    {
+      "id": "C08-M08-bounded-controller",
+      "state_fields": [
+        "stageA",
+        "stageB",
+        "auxiliaryLeft",
+        "outcome"
+      ],
+      "initial": {
+        "stageA": 2,
+        "stageB": 2,
+        "auxiliaryLeft": 2,
+        "outcome": "running"
+      },
+      "reachable_states": 28,
+      "explicit_edges": 57,
+      "action_counts": {
+        "AdvanceA": 18,
+        "AdvanceB": 18,
+        "QuerySame": 18,
+        "Accept": 3
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 15,
+      "fairness": [],
+      "fair_lasso_search_product_states": 297,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Two obligations with two fixed stages each, one acceptance stage, K=2 auxiliary steps. Successful stage completion is assumed, not established for arbitrary Coding work."
+    },
+    {
+      "id": "C08-M08-query-cap-mutant",
+      "state_fields": [
+        "stageA",
+        "stageB",
+        "auxiliaryLeft",
+        "outcome"
+      ],
+      "initial": {
+        "stageA": 2,
+        "stageB": 2,
+        "auxiliaryLeft": 2,
+        "outcome": "running"
+      },
+      "reachable_states": 10,
+      "explicit_edges": 22,
+      "action_counts": {
+        "AdvanceA": 6,
+        "AdvanceB": 6,
+        "QuerySame": 9,
+        "Accept": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [],
+      "fair_lasso_search_product_states": 9,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "stageA": 2,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "QuerySame",
+            "to": {
+              "stageA": 2,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            }
+          }
+        ],
+        "total_edges": 1
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Two obligations with two fixed stages each, one acceptance stage, K=2 auxiliary steps. Successful stage completion is assumed, not established for arbitrary Coding work."
+    },
+    {
+      "id": "C08-M09-stopped-is-not-accepted",
+      "state_fields": [
+        "stageA",
+        "stageB",
+        "auxiliaryLeft",
+        "outcome"
+      ],
+      "initial": {
+        "stageA": 2,
+        "stageB": 2,
+        "auxiliaryLeft": 2,
+        "outcome": "running"
+      },
+      "reachable_states": 29,
+      "explicit_edges": 60,
+      "action_counts": {
+        "AdvanceA": 18,
+        "AdvanceB": 18,
+        "QuerySame": 18,
+        "Accept": 3,
+        "Reject": 3
+      },
+      "analysis_only_Halt_loops": 2,
+      "longest_raw_path_if_acyclic": 15,
+      "fairness": [],
+      "fair_lasso_search_product_states": 318,
+      "fair_counterexample": {
+        "prefix": [
+          {
+            "from": {
+              "stageA": 2,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "AdvanceA",
+            "to": {
+              "stageA": 1,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            }
+          },
+          {
+            "from": {
+              "stageA": 1,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "AdvanceA",
+            "to": {
+              "stageA": 0,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            }
+          },
+          {
+            "from": {
+              "stageA": 0,
+              "stageB": 2,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "AdvanceB",
+            "to": {
+              "stageA": 0,
+              "stageB": 1,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            }
+          },
+          {
+            "from": {
+              "stageA": 0,
+              "stageB": 1,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "AdvanceB",
+            "to": {
+              "stageA": 0,
+              "stageB": 0,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            }
+          },
+          {
+            "from": {
+              "stageA": 0,
+              "stageB": 0,
+              "auxiliaryLeft": 2,
+              "outcome": "running"
+            },
+            "action": "Reject",
+            "to": {
+              "stageA": 0,
+              "stageB": 0,
+              "auxiliaryLeft": 2,
+              "outcome": "rejected"
+            }
+          }
+        ],
+        "cycle": [
+          {
+            "from": {
+              "stageA": 0,
+              "stageB": 0,
+              "auxiliaryLeft": 2,
+              "outcome": "rejected"
+            },
+            "action": "Halt",
+            "to": {
+              "stageA": 0,
+              "stageB": 0,
+              "auxiliaryLeft": 2,
+              "outcome": "rejected"
+            }
+          }
+        ],
+        "total_edges": 6
+      },
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "stageA": 2,
+            "stageB": 2,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          },
+          "action": "AdvanceA",
+          "to": {
+            "stageA": 1,
+            "stageB": 2,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          }
+        },
+        {
+          "from": {
+            "stageA": 1,
+            "stageB": 2,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          },
+          "action": "AdvanceA",
+          "to": {
+            "stageA": 0,
+            "stageB": 2,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          }
+        },
+        {
+          "from": {
+            "stageA": 0,
+            "stageB": 2,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          },
+          "action": "AdvanceB",
+          "to": {
+            "stageA": 0,
+            "stageB": 1,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          }
+        },
+        {
+          "from": {
+            "stageA": 0,
+            "stageB": 1,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          },
+          "action": "AdvanceB",
+          "to": {
+            "stageA": 0,
+            "stageB": 0,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          }
+        },
+        {
+          "from": {
+            "stageA": 0,
+            "stageB": 0,
+            "auxiliaryLeft": 2,
+            "outcome": "running"
+          },
+          "action": "Reject",
+          "to": {
+            "stageA": 0,
+            "stageB": 0,
+            "auxiliaryLeft": 2,
+            "outcome": "rejected"
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": "All actual controller paths terminate; the lasso ends in analysis-only Halt at a rejected terminal state."
+    },
+    {
+      "id": "C08-M10-ack-transfer",
+      "state_fields": [
+        "packet",
+        "ack",
+        "localStopped",
+        "owner",
+        "unknown"
+      ],
+      "initial": {
+        "packet": false,
+        "ack": false,
+        "localStopped": false,
+        "owner": "sender",
+        "unknown": true
+      },
+      "reachable_states": 5,
+      "explicit_edges": 5,
+      "action_counts": {
+        "Offer": 1,
+        "AcceptResponsibility": 2,
+        "LocalStop": 2
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 3,
+      "fairness": [
+        {
+          "name": "recipient_acceptance",
+          "mode": "WF",
+          "actions": [
+            "AcceptResponsibility"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 6,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Packet binds an unresolved effect; acknowledgement transfers responsibility but does not resolve that effect. Willing/authorized receiver is an explicit environment premise."
+    },
+    {
+      "id": "C08-M10-offer-transfer-mutant",
+      "state_fields": [
+        "packet",
+        "ack",
+        "localStopped",
+        "owner",
+        "unknown"
+      ],
+      "initial": {
+        "packet": false,
+        "ack": false,
+        "localStopped": false,
+        "owner": "sender",
+        "unknown": true
+      },
+      "reachable_states": 5,
+      "explicit_edges": 5,
+      "action_counts": {
+        "Offer": 1,
+        "AcceptResponsibility": 2,
+        "LocalStop": 2
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 3,
+      "fairness": [
+        {
+          "name": "recipient_acceptance",
+          "mode": "WF",
+          "actions": [
+            "AcceptResponsibility"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 6,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "packet": false,
+            "ack": false,
+            "localStopped": false,
+            "owner": "sender",
+            "unknown": true
+          },
+          "action": "Offer",
+          "to": {
+            "packet": true,
+            "ack": false,
+            "localStopped": false,
+            "owner": "receiver",
+            "unknown": true
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": "Packet binds an unresolved effect; acknowledgement transfers responsibility but does not resolve that effect. Willing/authorized receiver is an explicit environment premise."
+    },
+    {
+      "id": "C08-M11-local-stop-is-not-handoff",
+      "state_fields": [
+        "packet",
+        "ack",
+        "localStopped",
+        "owner",
+        "unknown"
+      ],
+      "initial": {
+        "packet": false,
+        "ack": false,
+        "localStopped": false,
+        "owner": "sender",
+        "unknown": true
+      },
+      "reachable_states": 5,
+      "explicit_edges": 5,
+      "action_counts": {
+        "Offer": 1,
+        "AcceptResponsibility": 2,
+        "LocalStop": 2
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 3,
+      "fairness": [
+        {
+          "name": "recipient_acceptance",
+          "mode": "WF",
+          "actions": [
+            "AcceptResponsibility"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 6,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "packet": false,
+            "ack": false,
+            "localStopped": false,
+            "owner": "sender",
+            "unknown": true
+          },
+          "action": "Offer",
+          "to": {
+            "packet": true,
+            "ack": false,
+            "localStopped": false,
+            "owner": "sender",
+            "unknown": true
+          }
+        },
+        {
+          "from": {
+            "packet": true,
+            "ack": false,
+            "localStopped": false,
+            "owner": "sender",
+            "unknown": true
+          },
+          "action": "LocalStop",
+          "to": {
+            "packet": true,
+            "ack": false,
+            "localStopped": true,
+            "owner": "sender",
+            "unknown": true
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": ""
+    },
+    {
+      "id": "C08-M12-fair-but-late",
+      "state_fields": [
+        "clock",
+        "phase"
+      ],
+      "initial": {
+        "clock": 0,
+        "phase": "run"
+      },
+      "reachable_states": 15,
+      "explicit_edges": 22,
+      "action_counts": {
+        "Tick": 12,
+        "Prepare": 5,
+        "Ack": 5
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 6,
+      "fairness": [
+        {
+          "name": "time",
+          "mode": "WF",
+          "actions": [
+            "Tick"
+          ]
+        },
+        {
+          "name": "prepare",
+          "mode": "WF",
+          "actions": [
+            "Prepare"
+          ]
+        },
+        {
+          "name": "receiver",
+          "mode": "WF",
+          "actions": [
+            "Ack"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 45,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "clock": 0,
+            "phase": "run"
+          },
+          "action": "Tick",
+          "to": {
+            "clock": 1,
+            "phase": "run"
+          }
+        },
+        {
+          "from": {
+            "clock": 1,
+            "phase": "run"
+          },
+          "action": "Tick",
+          "to": {
+            "clock": 2,
+            "phase": "run"
+          }
+        },
+        {
+          "from": {
+            "clock": 2,
+            "phase": "run"
+          },
+          "action": "Tick",
+          "to": {
+            "clock": 3,
+            "phase": "run"
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": "Every fair behavior eventually receives, but deadline D=3 is not guaranteed. Any bad finite prefix can extend by Prepare/Ack and then stop fairly."
+    },
+    {
+      "id": "C08-M13-bounded-deadline",
+      "state_fields": [
+        "clock",
+        "phase",
+        "unknown"
+      ],
+      "initial": {
+        "clock": 0,
+        "phase": "run",
+        "unknown": true
+      },
+      "reachable_states": 6,
+      "explicit_edges": 5,
+      "action_counts": {
+        "Work": 1,
+        "Prepare": 2,
+        "Ack": 2
+      },
+      "analysis_only_Halt_loops": 2,
+      "longest_raw_path_if_acyclic": 3,
+      "fairness": [],
+      "fair_lasso_search_product_states": 8,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "D=3, cutoff=1; each transition consumes one discrete time unit. Prepare and recipient Ack take <=1 unit each only in the conservative case. Unknown remains true after receipt."
+    },
+    {
+      "id": "C08-M13-receiver-delay-mutant",
+      "state_fields": [
+        "clock",
+        "phase",
+        "unknown"
+      ],
+      "initial": {
+        "clock": 0,
+        "phase": "run",
+        "unknown": true
+      },
+      "reachable_states": 9,
+      "explicit_edges": 9,
+      "action_counts": {
+        "Work": 1,
+        "Prepare": 2,
+        "Ack": 3,
+        "DelayAck": 3
+      },
+      "analysis_only_Halt_loops": 4,
+      "longest_raw_path_if_acyclic": 4,
+      "fairness": [],
+      "fair_lasso_search_product_states": 20,
+      "fair_counterexample": {
+        "prefix": [
+          {
+            "from": {
+              "clock": 0,
+              "phase": "run",
+              "unknown": true
+            },
+            "action": "Work",
+            "to": {
+              "clock": 1,
+              "phase": "run",
+              "unknown": true
+            }
+          },
+          {
+            "from": {
+              "clock": 1,
+              "phase": "run",
+              "unknown": true
+            },
+            "action": "Prepare",
+            "to": {
+              "clock": 2,
+              "phase": "offered",
+              "unknown": true
+            }
+          },
+          {
+            "from": {
+              "clock": 2,
+              "phase": "offered",
+              "unknown": true
+            },
+            "action": "DelayAck",
+            "to": {
+              "clock": 3,
+              "phase": "offered",
+              "unknown": true
+            }
+          },
+          {
+            "from": {
+              "clock": 3,
+              "phase": "offered",
+              "unknown": true
+            },
+            "action": "DelayAck",
+            "to": {
+              "clock": 4,
+              "phase": "offered",
+              "unknown": true
+            }
+          }
+        ],
+        "cycle": [
+          {
+            "from": {
+              "clock": 4,
+              "phase": "offered",
+              "unknown": true
+            },
+            "action": "Halt",
+            "to": {
+              "clock": 4,
+              "phase": "offered",
+              "unknown": true
+            }
+          }
+        ],
+        "total_edges": 5
+      },
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "clock": 0,
+            "phase": "run",
+            "unknown": true
+          },
+          "action": "Work",
+          "to": {
+            "clock": 1,
+            "phase": "run",
+            "unknown": true
+          }
+        },
+        {
+          "from": {
+            "clock": 1,
+            "phase": "run",
+            "unknown": true
+          },
+          "action": "Prepare",
+          "to": {
+            "clock": 2,
+            "phase": "offered",
+            "unknown": true
+          }
+        },
+        {
+          "from": {
+            "clock": 2,
+            "phase": "offered",
+            "unknown": true
+          },
+          "action": "DelayAck",
+          "to": {
+            "clock": 3,
+            "phase": "offered",
+            "unknown": true
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": "D=3, cutoff=1; each transition consumes one discrete time unit. Prepare and recipient Ack take <=1 unit each only in the conservative case. Unknown remains true after receipt."
+    },
+    {
+      "id": "C08-M14-service-missed",
+      "state_fields": [
+        "clock",
+        "completedMask",
+        "stopped"
+      ],
+      "initial": {
+        "clock": 0,
+        "completedMask": 0,
+        "stopped": false
+      },
+      "reachable_states": 14,
+      "explicit_edges": 13,
+      "action_counts": {
+        "TimePasses": 6,
+        "ObserveDue0": 1,
+        "ObserveDue1": 2,
+        "CloseWindow": 4
+      },
+      "analysis_only_Halt_loops": 4,
+      "longest_raw_path_if_acyclic": 5,
+      "fairness": [],
+      "fair_lasso_search_product_states": 55,
+      "fair_counterexample": {
+        "prefix": [
+          {
+            "from": {
+              "clock": 0,
+              "completedMask": 0,
+              "stopped": false
+            },
+            "action": "TimePasses",
+            "to": {
+              "clock": 1,
+              "completedMask": 0,
+              "stopped": false
+            }
+          },
+          {
+            "from": {
+              "clock": 1,
+              "completedMask": 0,
+              "stopped": false
+            },
+            "action": "ObserveDue0",
+            "to": {
+              "clock": 2,
+              "completedMask": 1,
+              "stopped": false
+            }
+          },
+          {
+            "from": {
+              "clock": 2,
+              "completedMask": 1,
+              "stopped": false
+            },
+            "action": "TimePasses",
+            "to": {
+              "clock": 3,
+              "completedMask": 1,
+              "stopped": false
+            }
+          },
+          {
+            "from": {
+              "clock": 3,
+              "completedMask": 1,
+              "stopped": false
+            },
+            "action": "TimePasses",
+            "to": {
+              "clock": 4,
+              "completedMask": 1,
+              "stopped": false
+            }
+          },
+          {
+            "from": {
+              "clock": 4,
+              "completedMask": 1,
+              "stopped": false
+            },
+            "action": "CloseWindow",
+            "to": {
+              "clock": 4,
+              "completedMask": 1,
+              "stopped": true
+            }
+          }
+        ],
+        "cycle": [
+          {
+            "from": {
+              "clock": 4,
+              "completedMask": 1,
+              "stopped": true
+            },
+            "action": "Halt",
+            "to": {
+              "clock": 4,
+              "completedMask": 1,
+              "stopped": true
+            }
+          }
+        ],
+        "total_edges": 6
+      },
+      "shortest_bad_prefix": [
+        {
+          "from": {
+            "clock": 0,
+            "completedMask": 0,
+            "stopped": false
+          },
+          "action": "TimePasses",
+          "to": {
+            "clock": 1,
+            "completedMask": 0,
+            "stopped": false
+          }
+        },
+        {
+          "from": {
+            "clock": 1,
+            "completedMask": 0,
+            "stopped": false
+          },
+          "action": "ObserveDue0",
+          "to": {
+            "clock": 2,
+            "completedMask": 1,
+            "stopped": false
+          }
+        },
+        {
+          "from": {
+            "clock": 2,
+            "completedMask": 1,
+            "stopped": false
+          },
+          "action": "TimePasses",
+          "to": {
+            "clock": 3,
+            "completedMask": 1,
+            "stopped": false
+          }
+        },
+        {
+          "from": {
+            "clock": 3,
+            "completedMask": 1,
+            "stopped": false
+          },
+          "action": "TimePasses",
+          "to": {
+            "clock": 4,
+            "completedMask": 1,
+            "stopped": false
+          }
+        },
+        {
+          "from": {
+            "clock": 4,
+            "completedMask": 1,
+            "stopped": false
+          },
+          "action": "CloseWindow",
+          "to": {
+            "clock": 4,
+            "completedMask": 1,
+            "stopped": true
+          }
+        }
+      ],
+      "expected_outcome_matched": true,
+      "notes": "Finite window [0,4], two due observations in slots 1 and 3. An observation can report no change and still discharge its due obligation. Closing is not retrospective coverage."
+    },
+    {
+      "id": "C08-M14-service-scheduled",
+      "state_fields": [
+        "clock",
+        "completedMask",
+        "stopped"
+      ],
+      "initial": {
+        "clock": 0,
+        "completedMask": 0,
+        "stopped": false
+      },
+      "reachable_states": 6,
+      "explicit_edges": 5,
+      "action_counts": {
+        "TimePasses": 2,
+        "ObserveDue0": 1,
+        "ObserveDue1": 1,
+        "CloseWindow": 1
+      },
+      "analysis_only_Halt_loops": 1,
+      "longest_raw_path_if_acyclic": 5,
+      "fairness": [],
+      "fair_lasso_search_product_states": 15,
+      "fair_counterexample": null,
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Finite window [0,4], two due observations in slots 1 and 3. An observation can report no change and still discharge its due obligation. Closing is not retrospective coverage."
+    },
+    {
+      "id": "C08-M15-finite-queue-open-closure",
+      "state_fields": [
+        "current_id_parity",
+        "pending"
+      ],
+      "initial": {
+        "current_id_parity": 0,
+        "pending": 1
+      },
+      "reachable_states": 2,
+      "explicit_edges": 2,
+      "action_counts": {
+        "DischargeAndAdmitNext": 2
+      },
+      "analysis_only_Halt_loops": 0,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "complete_current",
+          "mode": "WF",
+          "actions": [
+            "DischargeAndAdmitNext"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 4,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "current_id_parity": 0,
+              "pending": 1
+            },
+            "action": "DischargeAndAdmitNext",
+            "to": {
+              "current_id_parity": 1,
+              "pending": 1
+            }
+          },
+          {
+            "from": {
+              "current_id_parity": 1,
+              "pending": 1
+            },
+            "action": "DischargeAndAdmitNext",
+            "to": {
+              "current_id_parity": 0,
+              "pending": 1
+            }
+          }
+        ],
+        "total_edges": 2
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "Each step completes the current obligation and admits a distinct new one under the same goal. Queue size is always one; the obligation universe is unbounded. Parity quotient lifts to successive fresh natural-number IDs, never ID reuse."
+    },
+    {
+      "id": "C08-M16-fair-attempts-can-all-fail",
+      "state_fields": [
+        "attempt_parity",
+        "passed"
+      ],
+      "initial": {
+        "attempt_parity": 0,
+        "passed": false
+      },
+      "reachable_states": 4,
+      "explicit_edges": 4,
+      "action_counts": {
+        "AttemptFails": 2,
+        "AttemptPasses": 2
+      },
+      "analysis_only_Halt_loops": 2,
+      "longest_raw_path_if_acyclic": null,
+      "fairness": [
+        {
+          "name": "attempt",
+          "mode": "WF",
+          "actions": [
+            "AttemptFails",
+            "AttemptPasses"
+          ]
+        }
+      ],
+      "fair_lasso_search_product_states": 4,
+      "fair_counterexample": {
+        "prefix": [],
+        "cycle": [
+          {
+            "from": {
+              "attempt_parity": 0,
+              "passed": false
+            },
+            "action": "AttemptFails",
+            "to": {
+              "attempt_parity": 1,
+              "passed": false
+            }
+          },
+          {
+            "from": {
+              "attempt_parity": 1,
+              "passed": false
+            },
+            "action": "AttemptFails",
+            "to": {
+              "attempt_parity": 0,
+              "passed": false
+            }
+          }
+        ],
+        "total_edges": 2
+      },
+      "shortest_bad_prefix": null,
+      "expected_outcome_matched": true,
+      "notes": "A productive option exists, and attempts run fairly, but outcome choice can always fail. Scheduling fairness is not an assumption of favorable external outcomes."
+    }
+  ],
+  "failed_expectations": [],
+  "limits": [
+    "No product code is imported. No external effect, API or model call occurs.",
+    "Fairness is an explicit assumption on labelled events; this is not a TLC run.",
+    "No finite graph proves unbounded real-world liveness or a physical time bound.",
+    "A no-counterexample result is exhaustive only for the listed finite graph and fairness.",
+    "Halt loops encode maximal finite failure, not ongoing controller execution."
+  ]
+}

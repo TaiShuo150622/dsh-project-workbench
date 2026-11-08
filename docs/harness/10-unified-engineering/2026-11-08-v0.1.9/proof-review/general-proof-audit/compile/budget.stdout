@@ -1,0 +1,5 @@
+'HarnessBudget.step_preserves' depends on axioms: [propext, Quot.sound]
+'HarnessBudget.run_preserves' depends on axioms: [propext, Quot.sound]
+'HarnessBudget.actual_spent_le_exposure' depends on axioms: [propext, Quot.sound]
+'HarnessBudget.finite_run_budget_safety' depends on axioms: [propext, Quot.sound]
+'HarnessBudget.from_empty_finite_run_safe' depends on axioms: [propext, Quot.sound]

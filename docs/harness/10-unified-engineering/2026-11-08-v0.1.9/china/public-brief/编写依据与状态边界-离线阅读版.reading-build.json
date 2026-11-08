@@ -1,0 +1,15 @@
+{
+  "source_sha256": "f92e010c3100f9022f2958697c493cc8f5fb23318a79b8eb545dd4d9fb37db7d",
+  "source_sha1": "043cc53302ad43bf481b482ee12f48ed4b1ffdc1",
+  "output_sha256": "7d43bdbabe3f1b69b77458e1bfa865e85b0d7ed9c42340134da1e6afaa766a61",
+  "reference_definitions": 0,
+  "resolved_uses": 0,
+  "transform": "standard reference links expanded and angle-bracket destinations normalized in rendering input only; original Markdown/source metadata preserved; responsive wrapping CSS",
+  "offline_raw_mermaid_mode": true,
+  "renderer_output_sha256_before_package_transform": "60aae9f33e772e97cc433e5b267fb5c45f274dd1751e9795e6894d77b09c7a0b",
+  "post_render_transforms": [
+    "data favicon",
+    "internal reader links resolved to available HTML views"
+  ],
+  "output_sha256_role": "final packaged HTML bytes"
+}

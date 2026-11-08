@@ -1,0 +1,119 @@
+{
+  "copied_at_utc": "2026-11-08T10:10:08.317571+00:00",
+  "files": [
+    {
+      "path": "china/final-sources/COUNTING.md",
+      "source_worktree": "china",
+      "bytes": 4264,
+      "sha256": "72f4b476c5b85556124bf8382b7bc1d34dc4b04bd63f9d750e31d69ba7e647d5"
+    },
+    {
+      "path": "china/final-sources/README.md",
+      "source_worktree": "china",
+      "bytes": 3680,
+      "sha256": "56ba43c4c892a4343e2688a2b83e4ed207284d9d62b13e7683fd2161e2be2222"
+    },
+    {
+      "path": "china/final-sources/SHA256SUMS",
+      "source_worktree": "china",
+      "bytes": 1570,
+      "sha256": "5c7e9548100dd528bb39e6e1a6bf0021b35903d067f675227ec2f8b37557980d"
+    },
+    {
+      "path": "china/final-sources/SOURCE_INDEX.md",
+      "source_worktree": "china",
+      "bytes": 5188,
+      "sha256": "3bfa51ebcca3070f94b8093b9227b12a5f7020b8f49a98a5c44529e7e912989f"
+    },
+    {
+      "path": "china/final-sources/build.stdout.txt",
+      "source_worktree": "china",
+      "bytes": 1460,
+      "sha256": "aac24cb696e2851cf97efba315fa5e5090afe4e8cf75807a279241bf34ee17d4"
+    },
+    {
+      "path": "china/final-sources/build_supplement.py",
+      "source_worktree": "china",
+      "bytes": 19714,
+      "sha256": "0a75f92a2951e91ce7e37de6cf98513b25af448a6b52ef64529e339203a3dc84"
+    },
+    {
+      "path": "china/final-sources/c07-portable-validation.json",
+      "source_worktree": "china",
+      "bytes": 10651,
+      "sha256": "bcc1e96d97bd08a5b866c993305db6b2664ef213b262adb37b8918e3d5f1d5d8"
+    },
+    {
+      "path": "china/final-sources/counts.json",
+      "source_worktree": "china",
+      "bytes": 1289,
+      "sha256": "3f1334e0ae8bea0dbd79ca375b3fc019b7aaf5bccef768f553334c4a4e1b5eb0"
+    },
+    {
+      "path": "china/final-sources/manifest.json",
+      "source_worktree": "china",
+      "bytes": 4536,
+      "sha256": "f2bb4a361688299fbb1abc9d86fee9327a9291b75051052a99bc95991b4b047b"
+    },
+    {
+      "path": "china/final-sources/portable-execution-receipt.json",
+      "source_worktree": "china",
+      "bytes": 7731,
+      "sha256": "5580927a6f4349e31972cc656014efacd53b40ed8bada3b55b9aa8191fb4775b"
+    },
+    {
+      "path": "china/final-sources/reading-relations.json",
+      "source_worktree": "china",
+      "bytes": 6885,
+      "sha256": "7ddfa6ae028c13036112b2a5eb9007225d241ba21ebdd9d7ffd87cff98337323"
+    },
+    {
+      "path": "china/final-sources/redacted-validation-receipt.json",
+      "source_worktree": "china",
+      "bytes": 13103,
+      "sha256": "eb2690345035aa24830cc94068a0ed07bafa82c484b4080c40a387bd06f6a89e"
+    },
+    {
+      "path": "china/final-sources/redaction-impact.json",
+      "source_worktree": "china",
+      "bytes": 20480,
+      "sha256": "5af5a6d957bb49abbbd325efc4ea9e6ed071fe2a1c8affa52a4463d364e58ee0"
+    },
+    {
+      "path": "china/final-sources/representation-relations.json",
+      "source_worktree": "china",
+      "bytes": 21622,
+      "sha256": "85cc778afd7957004d884e36e021529e8c5addb47ea02d6acbcb32640410e679"
+    },
+    {
+      "path": "china/final-sources/supplement-index.json",
+      "source_worktree": "china",
+      "bytes": 280299,
+      "sha256": "a3510674cda5f3ebfcdfb4f4dc495ab1dadc7c53463f704b68572fe8f13f9317"
+    },
+    {
+      "path": "china/final-sources/union-url-index.json",
+      "source_worktree": "china",
+      "bytes": 143556,
+      "sha256": "26bd837ec13fda4000dd01816307be7c33dcc4965c8aa30991d0deea99fcb2c3"
+    },
+    {
+      "path": "china/final-sources/validate_portable.py",
+      "source_worktree": "china",
+      "bytes": 10600,
+      "sha256": "39f0a51e895e4da47f7c8d47ac3d2c4079b44d480856e7c193f9c9d51685f4c2"
+    },
+    {
+      "path": "china/final-sources/validation_receipt.json",
+      "source_worktree": "china",
+      "bytes": 12797,
+      "sha256": "9117b40e3ec504619b7df471880b09fb4bc51ecbc1fbbda80e4a4d9dfa41baca"
+    },
+    {
+      "path": "china/final-sources/verify_in_share_copy.py",
+      "source_worktree": "china",
+      "bytes": 10213,
+      "sha256": "7c68e1450580b25581cccff5856675e44a7ed44568d9598ab07e6cbf5392a236"
+    }
+  ]
+}

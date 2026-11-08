@@ -1,0 +1,110 @@
+{
+  "verified_at_utc": "2026-11-08T07:46:29.629754+00:00",
+  "method": "Independent TLC execution of frozen model/cfg followed by explicit invariant-name, completion, count, trace-length and SHA checks",
+  "original_runner_exit_code_observed": 0,
+  "cases": [
+    {
+      "mode": "none",
+      "evidence": [
+        {
+          "run": "original",
+          "violations": [
+            "NoDuplicate"
+          ],
+          "counts": {
+            "generated": 109,
+            "distinct": 59,
+            "queue_remaining": 3
+          },
+          "trace_states": 10,
+          "trace_transitions": 9,
+          "complete": false,
+          "log_sha256": "3b1380f323a2f219ceadeba59392ac4cbfe8d0aa2a6645d553306f37329894db"
+        },
+        {
+          "run": "rerun",
+          "violations": [
+            "NoDuplicate"
+          ],
+          "counts": {
+            "generated": 109,
+            "distinct": 59,
+            "queue_remaining": 3
+          },
+          "trace_states": 10,
+          "trace_transitions": 9,
+          "complete": false,
+          "log_sha256": "e5da2d18924c63dbd9cbf4d359cd696a2d17fd15bd5aef6390074fd3fd13c712"
+        }
+      ]
+    },
+    {
+      "mode": "admission",
+      "evidence": [
+        {
+          "run": "original",
+          "violations": [
+            "NoDuplicate"
+          ],
+          "counts": {
+            "generated": 131,
+            "distinct": 81,
+            "queue_remaining": 8
+          },
+          "trace_states": 10,
+          "trace_transitions": 9,
+          "complete": false,
+          "log_sha256": "303ed36a305da6187d8b21384a6c73ca9cbccb576ef13afcde8fe95bf7441c43"
+        },
+        {
+          "run": "rerun",
+          "violations": [
+            "NoDuplicate"
+          ],
+          "counts": {
+            "generated": 131,
+            "distinct": 81,
+            "queue_remaining": 8
+          },
+          "trace_states": 10,
+          "trace_transitions": 9,
+          "complete": false,
+          "log_sha256": "ebda2ad9272eef7b6d6b177d2677f7fb66ecc204129f0d47af7d749755ecb45b"
+        }
+      ]
+    },
+    {
+      "mode": "commit",
+      "evidence": [
+        {
+          "run": "original",
+          "violations": [],
+          "counts": {
+            "generated": 115,
+            "distinct": 66,
+            "queue_remaining": 0
+          },
+          "trace_states": 0,
+          "trace_transitions": 0,
+          "complete": true,
+          "log_sha256": "0581996803e4c67811795c0af849d5e4853b5de0205fb914836f08c726df2ce9"
+        },
+        {
+          "run": "rerun",
+          "violations": [],
+          "counts": {
+            "generated": 115,
+            "distinct": 66,
+            "queue_remaining": 0
+          },
+          "trace_states": 0,
+          "trace_transitions": 0,
+          "complete": true,
+          "log_sha256": "9ddc3fbe81785897183c6d1a10f2d2b5740e2e453fb7c83b2c8a8c1a758b3be6"
+        }
+      ]
+    }
+  ],
+  "runner_wrong_invariant_probe_confirmed": true,
+  "historical_parse_failure_runs_excluded": true
+}

@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "task": "W-07",
+  "document_version": "0.1.0",
+  "status": "PROPOSED_NOT_RUN",
+  "execution_authorized_by_this_document": false,
+  "execution_ready": false,
+  "first_slice": "I01",
+  "first_slice_external_writes": false,
+  "existing_product_baseline_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "story": {
+    "name": "个人 Markdown 相对链接检查器",
+    "status": "ILLUSTRATIVE_FIXTURE_NOT_BUILT",
+    "S1_scope": "ordinary PR merge delivery batch only; Coding work thread/checks remain separately typed"
+  },
+  "scenario_finality": {
+    "freeze_before_execution": true,
+    "stages": [
+      "initial_work",
+      "initial_evidence",
+      "scheduled_correction_note_or_handoff",
+      "continue_and_reverify",
+      "final_phase_acceptance"
+    ],
+    "scenario_variant_selects_and_freezes_applicable_perturbations": true,
+    "early_acceptance_is_terminal_success": false,
+    "success_requires": [
+      "all scheduled perturbation/handoff stages complete",
+      "final definition evidence and acceptance applicable",
+      "unresolved effects settled as required by frozen scenario"
+    ],
+    "permitted_early_stop": [
+      "safety breach",
+      "budget/resource cutoff",
+      "documented unrecoverable blocker"
+    ],
+    "early_stop_classification": "blocked_or_truncated_not_final_success",
+    "driver_must_not_delegate_phase_skipping_to_model": true
+  },
+  "decisions": [
+    {
+      "id": "D01",
+      "question": "可信身份与当前角色来自哪个真实入口？",
+      "required_before": [
+        "I01"
+      ]
+    },
+    {
+      "id": "D02",
+      "question": "首片复用工作台状态区还是等待通用面板契约？",
+      "required_before": [
+        "I01 UI",
+        "I02"
+      ]
+    },
+    {
+      "id": "D03",
+      "question": "I04 实际普通 merge 目标与授权；I06 选择哪一个 A/B 模式及隔离环境？",
+      "required_before": [
+        "I04",
+        "I06"
+      ]
+    }
+  ],
+  "slices": [
+    {
+      "id": "I01",
+      "title": "history 绑定可信入口与正确状态呈现",
+      "depends_on": [],
+      "goal": "一个宿主、一个明确历史代际、一个私有同步内核；受控命令和状态视图，无真实外部发送。",
+      "affected_data": [
+        "HistoryBinding(history incarnation, host instance, private kernel handle)",
+        "原 requestId、精确命令、expectedRevision 或 token",
+        "可信 identityAuthority+subject 和当前角色",
+        "历史 receipt 与 current projection 的独立水位"
+      ],
+      "contracts": [
+        "先绑定原请求历史和可信身份，再做去重、task 查找和 apply",
+        "建议命令白名单 read/note/pause/cancel/acceptResult，实施前冻结",
+        "当前 UI 选择不得重写旧请求历史",
+        "历史回执读取也受当前读取权限约束"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "record/kernel.mjs",
+          "index.js",
+          "client/app.js"
+        ],
+        "proposed": [
+          "trusted command gateway",
+          "Record projection adapter",
+          "scoped status block"
+        ],
+        "kernel_change_required": false
+      },
+      "reuse_evidence": [
+        "kernel:116-135,335-368",
+        "kernel:62-71,269-280,342-348",
+        "index:38-47",
+        "client/app:95-135",
+        "record-mapping-audit minimal bridge"
+      ],
+      "constraints": [
+        "body actor/role 不是认证来源",
+        "不自动升级旧 revision/token",
+        "受控客户端与工具无 apply 旁路；不宣称隔离任意同进程恶意插件",
+        "verifier 外部写入和真实发送关闭",
+        "旧线程 accept 不映射为 Record acceptance",
+        "空内核不复用旧历史代际"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I01-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "两个历史同 task:1、revision=1、actor，requestId 未用；H1 旧 cancel 投 H2 在 apply 前拒绝，两历史状态与日志不变",
+          "required_evidence": [
+            "入口调用追踪",
+            "前后 snapshot/journal"
+          ]
+        },
+        {
+          "id": "I01-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "请求体伪造 user/verifier 或超出当前角色不能获得权限",
+          "required_evidence": [
+            "真实可信身份依据",
+            "拒绝轨迹"
+          ]
+        },
+        {
+          "id": "I01-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "精确重送仅返回旧收据，无新事件；改 payload 复用 requestId 失败",
+          "required_evidence": [
+            "request/receipt/cursor",
+            "事件数量"
+          ]
+        },
+        {
+          "id": "I01-A04",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "切换 UI 历史后，在途命令和迟到响应仍属原历史，旧 snapshot 不盖新状态",
+          "required_evidence": [
+            "真实 UI 回执",
+            "来源/历史/cursor 对照"
+          ]
+        },
+        {
+          "id": "I01-A05",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "新验收计数递增后已存决定仍适用；新请求旧 token 被拒，精确重送仅旧收据",
+          "required_evidence": [
+            "token/accepted/task counter",
+            "current-acceptance 查询"
+          ]
+        },
+        {
+          "id": "I01-A06",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "无独立 q 观察显示当前访问未核实；线程接受、Record 接受、发送意图分别标明来源",
+          "required_evidence": [
+            "状态 API 投影",
+            "真实 UI 回执"
+          ]
+        },
+        {
+          "id": "I01-A07",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "私有夹具中自身 reservation 可使 checkAction wait，dispatch 依自身规则准入；产品入口仍无发送",
+          "required_evidence": [
+            "阶段语义测试",
+            "入口白名单覆盖"
+          ]
+        },
+        {
+          "id": "I01-A08",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "无法证明可信完整恢复时使用显式新历史，不用空内核冒充旧历史连续状态",
+          "required_evidence": [
+            "重启场景回执",
+            "history 注册"
+          ]
+        },
+        {
+          "id": "I01-A09",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "状态轨迹的全部冻结纠正/备注/交接阶段走完后才判断最终成功，首次完成/接受不中止场景",
+          "required_evidence": [
+            "冻结阶段表",
+            "driver 阶段游标",
+            "最终验收回执"
+          ]
+        },
+        {
+          "id": "I01-A10",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "撤回完成后，历史 completion 记录仍可查，但当前支持与验收可为 false；historical-completion API 不被直接译成历史曾完成。",
+          "required_evidence": [
+            "completion 历史",
+            "三个独立投影值",
+            "真实 UI 对照"
+          ]
+        }
+      ],
+      "blockers": [
+        "D01 未确定可信身份和当前角色政策",
+        "原请求 history binding 不可验证",
+        "受控调用路径存在旁路",
+        "只有字面量演员而无真实身份依据"
+      ],
+      "not_claimed": [
+        "崩溃耐久",
+        "真实 GitHub 效果",
+        "任意 q 可用",
+        "通用 OR 图",
+        "immutable attempt",
+        "生产认证完成"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I02",
+      "title": "选择引用与改动前影响",
+      "depends_on": [
+        "I01"
+      ],
+      "goal": "视图与讨论保持同一对象版本，展示明确关系下的改动影响。",
+      "affected_data": [
+        "EntityRef(history, object, version, source scope, view watermark)",
+        "引用胶囊",
+        "有类型关系与覆盖缺口"
+      ],
+      "contracts": [
+        "选择提供材料而不授权",
+        "引用不覆盖既有草稿",
+        "影响与失效分开"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "client/app.js UI shell"
+        ],
+        "proposed": [
+          "selection/reference adapter",
+          "bounded typed-impact projection"
+        ]
+      },
+      "reuse_evidence": [
+        "panels overall-discussion:94-101",
+        "DAG first-screen plan",
+        "client/app:131 only legacy graph opening"
+      ],
+      "constraints": [
+        "旧引用不静默更新",
+        "打开图按钮不是完整引用能力",
+        "先有限显式关系，不宣称自动完整提取或 OR"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I02-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "选中对象进入讨论仍是同一版本，跨项目不串引用",
+          "required_evidence": [
+            "实体引用",
+            "UI 回执"
+          ]
+        },
+        {
+          "id": "I02-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "草稿保留，失效引用有原因和来源",
+          "required_evidence": [
+            "草稿前后对照"
+          ]
+        },
+        {
+          "id": "I02-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "需求变化显示影响路径、覆盖缺口及待复核检查，不因可达一律删除证据",
+          "required_evidence": [
+            "固定关系夹具",
+            "影响输出"
+          ]
+        }
+      ],
+      "blockers": [
+        "D02 或最终面板引用契约未冻结",
+        "无稳定实体身份",
+        "覆盖范围不可解释"
+      ],
+      "not_claimed": [
+        "通用面板完成",
+        "完整依赖提取",
+        "S1 原生 AND/OR"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I03",
+      "title": "尝试绑定与持久接纳",
+      "depends_on": [
+        "I01"
+      ],
+      "goal": "明确 attempt 的规格/身份，并在声明故障模型下恢复命令、收据和相关状态。",
+      "affected_data": [
+        "AttemptBinding(spec, execution identity, environment generation)",
+        "command/receipt/sidecar/reservation/intent 一致性",
+        "历史代际注册"
+      ],
+      "contracts": [
+        "显式续用或退休政策",
+        "冻结 ACK 级别和存储故障模型",
+        "共享资源唯一权威与事务"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "kernel replay",
+          "server/store.js pattern only"
+        ],
+        "proposed": [
+          "persistent history gateway",
+          "atomic attempt/intent storage"
+        ]
+      },
+      "reuse_evidence": [
+        "kernel:183-188,282-290",
+        "record-refinement RF01/RF06",
+        "server/store:17-29"
+      ],
+      "constraints": [
+        "新 attempt 不天然退休旧 attempt",
+        "迟到真实效果仍可记录",
+        "task CAS 不代替跨任务占位",
+        "必要状态未持久前不发耐久 ACK"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I03-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "声明崩溃点恢复后命令/收据/sidecar 一致，精确重送不重复接纳",
+          "required_evidence": [
+            "故障注入与恢复日志"
+          ]
+        },
+        {
+          "id": "I03-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "旧规格 attempt 按冻结政策被拒或显式重绑，同时保留旧效果观察",
+          "required_evidence": [
+            "版本/代际轨迹"
+          ]
+        },
+        {
+          "id": "I03-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "恢复后未决占位仍存在；同一资源不由独立权威重复放行",
+          "required_evidence": [
+            "占位恢复与冲突轨迹"
+          ]
+        }
+      ],
+      "blockers": [
+        "ACK/故障模型未定",
+        "sidecar 与 kernel 可半更新",
+        "资源权威范围未定"
+      ],
+      "not_claimed": [
+        "任意分布式耐久",
+        "真实发送",
+        "预算上限证明"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I04",
+      "title": "实际交付与最终阶段验收",
+      "depends_on": [
+        "I02",
+        "I03"
+      ],
+      "goal": "把选中需求、代码/检查产物、普通 merge 交付批次与用户验收接成真实闭环。",
+      "affected_data": [
+        "固定 repository/PR/ref/source SHA",
+        "最终有效调用与授权",
+        "可信观察/结果/acceptance token",
+        "Coding 检查来源及 thread-task 显式关联",
+        "冻结扰动/交接阶段表"
+      ],
+      "contracts": [
+        "目标和写入范围冻结",
+        "实际发送完整覆盖",
+        "旧回执不发新动作",
+        "单主体失权与全局失效分开",
+        "最终阶段才有全场景成功"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "S1 merge/acceptance semantics",
+          "workbench thread/worktree shell"
+        ],
+        "proposed": [
+          "real effect sender/verifier",
+          "artifact/check provenance"
+        ]
+      },
+      "reuse_evidence": [
+        "kernel:34-60,230-280,293-325",
+        "ARCHITECTURE H03",
+        "authority-scope"
+      ],
+      "constraints": [
+        "不伪造 verifier",
+        "测试通过不冒充 merge",
+        "取消 ACK 不证明终止",
+        "单主体 403 不调用全局 markUnavailable",
+        "S1 仍限普通 merge"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I04-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "发送前后、效果后回执前故障均核对实际目标，唯一效果或保留 unknown",
+          "required_evidence": [
+            "独立目标读回",
+            "intent/action/observation"
+          ]
+        },
+        {
+          "id": "I04-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "历史 dispatch receipt 重送不再次发送",
+          "required_evidence": [
+            "发送器调用记录"
+          ]
+        },
+        {
+          "id": "I04-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "选中需求追到产物/检查/交付批次，旧 token 不能接受新版本；完成后新需求用显式 successor",
+          "required_evidence": [
+            "UI 路径",
+            "token 与 successor"
+          ]
+        },
+        {
+          "id": "I04-A04",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "全部冻结纠正/备注/交接完成后，最终定义、证据和验收适用才判成功；安全/预算早停单列",
+          "required_evidence": [
+            "冻结阶段表",
+            "driver 阶段游标",
+            "最终状态与早停分类"
+          ]
+        }
+      ],
+      "blockers": [
+        "D03 实际目标和写入范围未选",
+        "观察无法认证",
+        "发送旁路未覆盖",
+        "新任务超出 S1",
+        "driver 首次验收提前停机"
+      ],
+      "not_claimed": [
+        "S1 实现一般 Coding 规格",
+        "真实远程组合通过"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I05",
+      "title": "Record 三时序与执行前上下文",
+      "depends_on": [
+        "I01",
+        "I03"
+      ],
+      "goal": "轮后增量、后台索引、调用前选材各司其职，并核对实际输入及后续动作。",
+      "affected_data": [
+        "原始事件/水位",
+        "后台派生索引",
+        "ContextManifest",
+        "当前权限/义务"
+      ],
+      "contracts": [
+        "未完成整理的最新纠错直接覆盖",
+        "证据可追溯",
+        "独立模型和本体可替换"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "source/history identities"
+        ],
+        "proposed": [
+          "incremental ingest",
+          "rebuildable index",
+          "selector/compiler"
+        ]
+      },
+      "reuse_evidence": [
+        "public Record v0.1.2:50-83",
+        "W-05 evaluation design"
+      ],
+      "constraints": [
+        "摘要不覆盖唯一原件",
+        "历史授权不授权当前动作",
+        "全历史常驻不是默认",
+        "成本含维护/重试/人工"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I05-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "实际最终输入含最新纠错、义务与来源版本，预算不足报告缺口",
+          "required_evidence": [
+            "最终输入 manifest",
+            "时间切分夹具"
+          ]
+        },
+        {
+          "id": "I05-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "无记忆/简单检索基线与候选同任务域/预算，不能用 QA 命中率替代任务成功",
+          "required_evidence": [
+            "配对方案",
+            "全分母成本"
+          ]
+        },
+        {
+          "id": "I05-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "权限变化后材料与输出范围一致，历史正文不提升权限",
+          "required_evidence": [
+            "消费范围变化轨迹"
+          ]
+        }
+      ],
+      "blockers": [
+        "无法观察最终输入",
+        "任务/纠错/权限夹具未冻结",
+        "只量检索命中率"
+      ],
+      "not_claimed": [
+        "自主本体必要",
+        "压缩必然降低成本",
+        "语义无遗漏"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I06",
+      "title": "一个远程模式与长任务接续",
+      "depends_on": [
+        "I03",
+        "I04"
+      ],
+      "goal": "在一个隔离环境先验证 A 或 B 一种模式，保留会话/环境/效果归属。",
+      "affected_data": [
+        "session/host/environment/process generation",
+        "通道归属",
+        "能力声明",
+        "在途任务/资源用量/结算"
+      ],
+      "contracts": [
+        "一个模式一个目标",
+        "重连不重发旧请求",
+        "取消/退出/停止/效果分别观察"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "remote A/B design",
+          "host adapters after compatibility check"
+        ],
+        "proposed": [
+          "selected remote adapter",
+          "recovery/resource projection"
+        ]
+      },
+      "reuse_evidence": [
+        "public remote v0.1.1",
+        "ARCHITECTURE H06/H07"
+      ],
+      "constraints": [
+        "不杀任务或重跑来重连",
+        "失联显示最后观察",
+        "无硬上界不承诺精确费用停止",
+        "保留收尾对账通道"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I06-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "断线重连后文件/终端/审批/历史仍属绑定环境",
+          "required_evidence": [
+            "隔离环境观察",
+            "UI-host 关联"
+          ]
+        },
+        {
+          "id": "I06-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "重连不重发 prompt/动作，断连不是停止证据",
+          "required_evidence": [
+            "请求标识",
+            "进程/效果读回"
+          ]
+        },
+        {
+          "id": "I06-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "在途用量保留未知和结算状态，资源边界与声明一致",
+          "required_evidence": [
+            "资源记录",
+            "最后观察时间"
+          ]
+        }
+      ],
+      "blockers": [
+        "D03 模式/目标未定",
+        "身份与版本能力未冻结",
+        "I03/I04 恢复未通过"
+      ],
+      "not_claimed": [
+        "A/B 都完成",
+        "任意云兼容",
+        "离线期间必然持续运行"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    },
+    {
+      "id": "I07",
+      "title": "有边界的经验复用",
+      "depends_on": [
+        "I04",
+        "I05"
+      ],
+      "goal": "判断经验候选在留出任务是否值得复用，允许拒绝额外复杂度。",
+      "affected_data": [
+        "适用范围经验包",
+        "规则/轨迹/索引冻结",
+        "反馈来源/留出任务",
+        "质量/人工负担/全分母成本"
+      ],
+      "contracts": [
+        "开发与留出隔离",
+        "规则和轨迹共同隔离",
+        "先测量校准再决定成长试验"
+      ],
+      "candidate_modules": {
+        "reuse": [
+          "W-05 12-run calibration",
+          "work-improvement optional protocols"
+        ],
+        "proposed": [
+          "frozen experience candidate workflow"
+        ]
+      },
+      "reuse_evidence": [
+        "evaluation-design-review/design.json",
+        "mechanisms/work-improvement/README.md"
+      ],
+      "constraints": [
+        "同任务修好不等于泛化",
+        "失败/超时留分母",
+        "候选不能改评价标准",
+        "模型升级重做消融"
+      ],
+      "acceptance_checks": [
+        {
+          "id": "I07-A01",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "先按已有 12-run 校准量表/观察链，不承诺效应或功效",
+          "required_evidence": [
+            "冻结协议",
+            "校准日志"
+          ]
+        },
+        {
+          "id": "I07-A02",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "后续成长有开发/留出隔离，费用含构建、诊断、失败与人工",
+          "required_evidence": [
+            "来源谱系",
+            "全分母成本"
+          ]
+        },
+        {
+          "id": "I07-A03",
+          "status": "PROPOSED_NOT_RUN",
+          "expected": "未获预定义收益可拒绝候选，报告不能外推范围",
+          "required_evidence": [
+            "采纳/拒绝记录"
+          ]
+        }
+      ],
+      "blockers": [
+        "预算/量表/来源切分未冻",
+        "反馈泄漏",
+        "只有自评或条件成功成本"
+      ],
+      "not_claimed": [
+        "系统已成长",
+        "跨域泛化",
+        "复杂 Harness 必然更好"
+      ],
+      "status": "PROPOSED_NOT_RUN"
+    }
+  ]
+}

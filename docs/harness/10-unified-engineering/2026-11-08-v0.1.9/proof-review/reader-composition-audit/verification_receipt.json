@@ -1,0 +1,116 @@
+{
+  "completed_at_utc": "2026-11-08T10:13:26.286986+00:00",
+  "operation": "read-only claim/evidence/premise audit; frozen byte verification",
+  "input_count": 12,
+  "all_frozen_hashes_match": true,
+  "checks": [
+    {
+      "path": "inputs/统一Harness工程与形式化基础讨论稿-v0.1.6.md",
+      "expected_sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "frozen_sha256": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "0202ead6ccf69ea8b08219354ec9ec40b6c8b9c1fe349cc0cd116b9ee2013178",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "inputs/FORMAL_MODEL.md",
+      "expected_sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+      "frozen_sha256": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "ef39988eb65e4b80506e057ba349bfcbdbe704c673cbd0f10923a4ec4863e5a6",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "inputs/ARCHITECTURE.md",
+      "expected_sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+      "frozen_sha256": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "b4724e16ab7bb5f3e5fcd88eabe96faf87748421db18c9c6512ad0f108d7f100",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "inputs/EVIDENCE.md",
+      "expected_sha256": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+      "frozen_sha256": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "ec0c0116b9acd146d608c951cd23c2a6c88c6b8b29d48bb70967b4af4bae79a7",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "inputs/DESIGN_RECONCILIATION.md",
+      "expected_sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+      "frozen_sha256": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "f8a0fd9528c67e25a68f979283b217b52b1375a514ecb0f0e1a0b3cd662b5346",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "inputs/README.md",
+      "expected_sha256": "0d8236215e720c77e9fb058adb8471bee74059264ce7d4416eea7e210e5506aa",
+      "frozen_sha256": "0d8236215e720c77e9fb058adb8471bee74059264ce7d4416eea7e210e5506aa",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "2286016d1b3af726e22d4e3e4b58d6257ab5487596dcad7efaaffd698b9b2071",
+      "live_source_matches_frozen": false
+    },
+    {
+      "path": "inputs/west/decision-brief/MEMO-v0.1.1.md",
+      "expected_sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+      "frozen_sha256": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "1e8524c825b31e1fc546e201251c2244c85aecced8d353ab95496be567899b1a",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "evidence-inputs/mechanisms/composition-review/REVIEW.md",
+      "expected_sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+      "frozen_sha256": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "d32088fc6e5b725ed224fe475856b72ffe1f67ab3e586c2bfecf078721fd4a1d",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "evidence-inputs/west/intent-coverage/MEMO.md",
+      "expected_sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+      "frozen_sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "evidence-inputs/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.1.md",
+      "expected_sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "frozen_sha256": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "ee5e45e8cabd73780ea4a5c7a4556758b965a5d82fe53bdbd583e96f0163d281",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "evidence-inputs/china/handoff-audit/REVIEW.md",
+      "expected_sha256": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861",
+      "frozen_sha256": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "1ce7b4f910d19c8e7a6344d6c83d2267a62fe4d4391b44901a841a9d63136861",
+      "live_source_matches_frozen": true
+    },
+    {
+      "path": "evidence-inputs/resource-lifecycle/资源归属与环境生命周期讨论稿-v0.1.1.md",
+      "expected_sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35",
+      "frozen_sha256": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35",
+      "frozen_matches": true,
+      "live_source_sha256_at_completion": "146c9119adb812cdc6c0f256a44dd516374a7e1fe1b22e6b0c793ecc494f3e35",
+      "live_source_matches_frozen": true
+    }
+  ],
+  "executed_research_models": [],
+  "product_operations": [],
+  "network_calls": 0,
+  "not_reviewed": [
+    "M10 coverage work",
+    "post-snapshot revisions",
+    "all external citations re-verification",
+    "final package completeness"
+  ],
+  "author_assertions_not_independent_execution": [
+    "EVIDENCE model and proof counts were checked for scope wording; not rerun in R16"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "copied_at_utc": "2026-11-08T08:19:44.042640+00:00",
+  "files": [
+    {
+      "source_worktree": "west",
+      "path": "west/decision-brief/MEMO.md",
+      "bytes": 4562,
+      "sha256": "9df02995ad608d1140e3eadbfa672da5abaf49230fa4966da8e77eb6131fd532"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/decision-brief/inputs.json",
+      "bytes": 5887,
+      "sha256": "ad32f857c3eeed1b520bc9311dd754b95d362c234561959721750ea513c85b41"
+    },
+    {
+      "source_worktree": "west",
+      "path": "west/decision-brief/validation.json",
+      "bytes": 1312,
+      "sha256": "52d069c37de69ddd541b2d42ac0a1067e3432435827e7beb2594dacfb5629b89"
+    }
+  ]
+}

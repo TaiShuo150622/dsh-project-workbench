@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="e0f68b6bbdbf">
+<title>研究成果导读与待决策事项</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>研究成果导读与待决策事项</h1>
+</header>
+<p>这轮把工作台、Coding、Record、DAG、远程执行和长期改进连成一份可检验的工程方案，补上来源、条件证明、反例与实施依据。统一运行链路仍待接通。第一次阅读，先分清以下六项。</p>
+<ol><li><strong>已有代码：工作台与 Record。</strong> 固定版本工作台代码已有项目、线程、原生会话和 worktree 关联，以及基本状态与差异展示。Record S1 研究内核在普通 PR 合并的窄场景中已有确定性重放、普通命令精确重试和版本绑定验收等能力；它处于草稿 PR，尚未接入工作台可信命令入口。这些是本轮研究的固定输入。</li><li><strong>新增设计：把交付路径连起来。</strong> UI 选择形成稳定引用，改动前看影响，执行后按当前版本验收；Record 为下一步提供依据，DAG 指出受影响部分，远程未知效果保留责任与费用负担。新资料还可形成“保持、小修、替换，以及何时采用”的工作方法提案。整体属于待实施设计。</li><li><strong>已完成两项条件证明。</strong> 在明确的有限无环依赖等前提下，局部重算与全量重算一致；在预算模型的合法转移规则下，有限执行轨迹不突破约定上界。证明已编译并经复核，真实系统是否满足前提仍须工程验证。</li><li><strong>已运行有限检查，保留反例。</strong> 证据冲突、更正、取消、迟到消息、接管和资源等模型，连同固定源码探针，帮助找出不能混用的状态与边界。它们检查声明模型或隔离输入，尚未证明真实宿主中的完整恢复与交付。</li><li><strong>已有实施和评价方案，尚未执行。</strong> 七个 I 切片从可信入口与正确状态显示逐步扩展。小规模试点评价任务成功、人工负担、连续性、恢复和全部成本，先校准观察链；复杂记忆、多代理或工作流尚无本项目收益结论。</li><li><strong>已有可讨论的对外材料。</strong> 机制对照、来源册、复核与复跑入口、假想交付例子及登记简介已经整理。登记文案仍待讨论，未提交；未来适配器与统一产品不能列成已交付成果。</li></ol>
+<p><strong>建议阅读顺序：</strong> 先读<a href="../worked-example/EXAMPLE-离线阅读版.html">链接检查器例子</a>，理解正向交付与两种收尾；其中角色、产物和权限均是假设，未运行。再读<a href="../decision-brief/MEMO-v0.1.1-离线阅读版.html">决策摘要</a>和<a href="../../统一Harness工程与形式化基础讨论稿-v0.1.6.md">统一主稿 v0.1.6</a>，讨论结构与取舍。需要核对成果时，按项打开<a href="../../EVIDENCE-离线阅读版.html">证据页</a>及<a href="../../REPRODUCE-离线阅读版.html">复跑说明</a>；全部专题保留在<a href="../../README-离线阅读版.html">完整索引</a>。</p>
+<p><strong>实施顺序保留：先完整通用面板 P01–P15，再工作台 B01–B12。</strong> H/I 是研究验收路径；不能自行替换原排期。进入实施前，需要用户明确五项：</p>
+<ul><li><strong>首批范围与验收人。</strong> 阶段 A 冻结哪些卡片、接口与完成条件；若提前做 I01 的独立验证，明确它如何回到 P/B 计划。</li><li><strong>首个宿主与入口。</strong> 先支持哪个宿主版本、哪条受信入口及何种身份粒度；实际身份能力另行核验，不能由请求正文自报。</li><li><strong>远程采用方式。</strong> 首次接真实目标时选本地 Agent 调远程工具（A）还是远程 Agent（B），以及断线后的责任者。首片只验证命令与状态，不必提前承诺远程产品形态。</li><li><strong>交付及收尾标准。</strong> 首个演示任务允许哪些动作，谁验收当前版本；产物可审阅而动作、费用仍未知时，哪些义务必须保留。</li><li><strong>是否继续增加复杂度。</strong> 最想减少哪种人工负担，需守住什么质量与总成本边界，得到什么证据才扩大 Record、DAG 或自动改进。先冻结评价办法，不预设复杂方案必胜。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

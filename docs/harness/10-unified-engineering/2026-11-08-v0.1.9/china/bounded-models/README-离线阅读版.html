@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="6c530682bf97">
+<title>四类 Harness 规格的有限状态检查 v0.1.0</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#文件与复跑">文件与复跑</a></li><li class="l2"><a href="#枚举方法与结果">枚举方法与结果</a></li><li class="l2"><a href="#模型一-准入时无冲突-不等于所有时刻-active-数量至多一">模型一：准入时无冲突，不等于所有时刻 active 数量至多一</a></li><li class="l2"><a href="#模型二-and-or-与递归支持撤回">模型二：AND/OR 与递归支持撤回</a></li><li class="l2"><a href="#模型三-费用上报延迟不释放负担">模型三：费用上报延迟不释放负担</a></li><li class="l2"><a href="#模型四-绑定版本-适用性输入与备注">模型四：绑定版本、适用性输入与备注</a></li><li class="l2"><a href="#怎样审读和怎样使用结论">怎样审读和怎样使用结论</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip ver">v0.1.0</span></div>
+<h1>四类 Harness 规格的有限状态检查 v0.1.0</h1>
+</header>
+<p>本轮检查支持四个结论：发送点重新检查冲突是必要的；递归支持撤回不能从旧真值继续自支持；未上报费用仍必须占用预算；验收应绑定相关版本和适用性输入，无关备注不应使其失效。正确规则在下述有限域内未发现违反，故意削弱的变体均产生了反例。</p>
+<p>这是<strong>规格模型检查</strong>，没有调用产品代码、模型 API、生产任务、外部工具效果或远端资源。没有证明实际实现满足这些模型，也没有证明无限状态系统的安全性或活性。</p>
+<h2 id="文件与复跑">文件与复跑</h2>
+<ul><li><a href="model_check.py">model_check.py</a>：Python 标准库程序，包含状态域、转移、BFS、公式枚举、独立 oracle 和变体。</li><li><a href="results.json">results.json</a>：完整计数、转移覆盖、最短反例、输入和程序 SHA-256。</li><li><a href="TRACES-离线阅读版.html">TRACES.md</a>：可直接阅读的完整状态轨迹。</li><li><a href="inputs.json">inputs.json</a>：规格身份；<a href="inputs/FORMAL_MODEL.md">FORMAL_MODEL.md</a>、<a href="inputs/ARCHITECTURE.md">ARCHITECTURE.md</a> 是读取时的原样快照。</li><li><a href="execution_receipt.json">execution_receipt.json</a>：本机执行回执、Python 版本及产物散列。</li></ul>
+<p>在本目录执行：</p>
+<pre data-lang="bash"><code>python3 model_check.py</code></pre>
+<p>独立复跑且保留现有输出：</p>
+<pre data-lang="bash"><code>python3 model_check.py --output-dir review-output</code></pre>
+<p>本轮实际使用 Python 3.9.0 标准库运行；不安装依赖，不联网。程序先检查输入快照散列；失败、状态上限超出、正确变体违反性质或预期坏变体未触发都会以非零码退出。输出的 <code>checks_passed=true</code> 表示正确有限模型通过、故意错误的猜想和变体被反例击中，不能解读为所有尝试的不变量都成立。</p>
+<p>输入工作树 HEAD 为 <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code>，但两份工作稿当时尚未提交，<strong>HEAD 不足以标识实际输入</strong>。本轮最终固定：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">快照</th><th style="text-align:left">SHA-256</th></tr></thead><tbody><tr><td style="text-align:left">FORMAL_MODEL.md</td><td style="text-align:left"><code>17b53da7356e0c50bd28ebde33fd2c0ece0460c6a0507b89de6a726b4b9977b2</code></td></tr><tr><td style="text-align:left">ARCHITECTURE.md</td><td style="text-align:left"><code>c82c879ee28d080ff623acbc22eb58db356269ed90617a982af11443c4827ce1</code></td></tr></tbody></table></div>
+<p>规格后来更新不会被程序静默读入；必须主动换快照并重新核对模型。原稿中的 P4/P5/P7–P8/P13 是主要对应条款，架构的工作契约和适配保证等级提供边界。</p>
+<h2 id="枚举方法与结果">枚举方法与结果</h2>
+<p>BFS 从明确初态出发，保存每个首次到达状态的父边。没有深度截断、随机抽样、对称消减或偏序消减；达到状态上限会失败，不能作为通过。所有已发现失败后仍继续穷尽可达图。第一条违反边的路径因此是在<strong>该模型、初态与原子事件粒度下</strong>的最短轨迹。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">模型/变体</th><th style="text-align:right">可达状态</th><th style="text-align:right">转移边</th><th style="text-align:right">最长最短路径</th><th style="text-align:left">结果</th></tr></thead><tbody><tr><td style="text-align:left">两动作，正确规则</td><td style="text-align:right">364</td><td style="text-align:right">1,664</td><td style="text-align:right">11</td><td style="text-align:left">每个 send 点无其他未解决冲突；取消不等于效果解决</td></tr><tr><td style="text-align:left">两动作，省略 dispatch 重检</td><td style="text-align:right">364</td><td style="text-align:right">1,672</td><td style="text-align:right">11</td><td style="text-align:left">6 步违反 send 点性质</td></tr><tr><td style="text-align:left">两动作，取消直接记未生效</td><td style="text-align:right">308</td><td style="text-align:right">1,356</td><td style="text-align:right">10</td><td style="text-align:left">3 步产生无依据的效果解决</td></tr><tr><td style="text-align:left">预算，保守规则 B=4、R=1</td><td style="text-align:right">264</td><td style="text-align:right">776</td><td style="text-align:right">8</td><td style="text-align:left">四项预算性质全部保持</td></tr><tr><td style="text-align:left">预算，丢弃已花未报负担</td><td style="text-align:right">1,862</td><td style="text-align:right">7,255</td><td style="text-align:right">11</td><td style="text-align:left">3 步失去负担覆盖；8 步最终费用超限</td></tr><tr><td style="text-align:left">验收，九个绑定字段与适用性输入</td><td style="text-align:right">238,244</td><td style="text-align:right">1,393,170</td><td style="text-align:right">13</td><td style="text-align:left">精确绑定匹配事件 oracle；两个错误变体各 2 步失败</td></tr></tbody></table></div>
+<p>支持模型另枚举 121 种公式/节点、两个节点的 14,641 个网络；检查 117,128 个稳定输入赋值和 351,384 次单根更新，其中增加、撤回各 175,692 次。正确重算全部匹配独立最小不动点 oracle。旧值初始化在 22,362 个转移失配；直接清空影响后代在 25,875 个转移失配。计数是限定域中的覆盖数，不是真实产品故障率。</p>
+<p>完整操作分布保存在 <code>transition_coverage</code>，包括 reserve、send、success、no-effect evidence、unknown、撤回、cancel、未发送放弃和 sender termination。支持模型的聚焦 BFS 则另给出指定递归例子和 AND/OR 例子的最短轨迹。</p>
+<h2 id="模型一-准入时无冲突-不等于所有时刻-active-数量至多一">模型一：准入时无冲突，不等于所有时刻 active 数量至多一</h2>
+<p>状态域为两个相互冲突的动作 A/B，每个动作有阶段 <code>idle / reserved / dispatched / success / not_applied / unknown / abandoned</code>，以及独立的 <code>cancel_requested</code>、<code>sender_stopped</code> 位。初态均 idle。每个动作最多发出一次；证据可以反复撤回和重新确认，循环历史按相同有限状态合并。</p>
+<p><code>reserved / dispatched / unknown</code> 是该模型中的未解决占位。所有 reserve 和 send 都处在同一个串行权威状态边界；正确规则的 send 再检查另一动作的当前占位。模型假定其他授权、定义和预算条件有效，取消请求仍会阻止尚未发送的本动作。它没有模拟真实的数据库原子实现或目标端 fencing。</p>
+<p>正确模型主动反驳了错误猜想 <code>active &lt;= 1</code>，最短 5 步：</p>
+<pre data-lang="text"><code>reserve A → send A → success A → reserve B → withdraw evidence A
+最终：A=unknown，B=reserved。</code></pre>
+<p>这时应保留两个事实，禁止 B 的后续发送。省略 dispatch 重检的变体在上述轨迹追加 <code>send B</code>，第 6 步失败。正确与坏变体恰好具有相同的可达状态数量，但转移边不同；仅比较状态数或最终看板不足以验证此性质。</p>
+<p>第二个变体将 <code>cancel A</code> 直接写成 <code>not_applied</code>，最短为 <code>reserve A → send A → cancel A</code>。检查器指控的是“仅取消事件不能提供效果解决证据”这个规格违反；<strong>它没有凭空观察一个真实远端提交</strong>。sender termination 也不修改效果阶段。未发送的 reservation 可以通过单独 <code>abandon_unsent</code> 结束，因为在此模型中尚未发生 send。</p>
+<p>限制：success/no-effect evidence 先作为被接纳的观察输入；模型允许后来撤回它们。它不证明观察真实、不证明物理世界任何时刻没有两个效果、不涵盖绕过权威控制器的发送者，也不涵盖同一逻辑动作的多次网络尝试。P7 检查的是准入点的账本谓词。</p>
+<h2 id="模型二-and-or-与递归支持撤回">模型二：AND/OR 与递归支持撤回</h2>
+<p>三个根事实 <code>a,b,c</code> 为独立布尔输入，两个派生结论 <code>y,z</code>。每个结论公式是最多两个 AND 分支的 OR；每个 AND 有 1–2 个原子，原子可来自五个事实/结论。空公式代表 false。不含否定、概率、时间、信任等级或无限证明树。</p>
+<p>正确算法从 bottom <code>(false,false)</code> 迭代。独立 oracle <strong>不运行这套迭代</strong>：枚举派生结论的全部四个赋值，找出所有满足方程的固定点，再按分量偏序寻找最小固定点。对每个正确稳定状态检查全部单根增加与撤回，这给出该有限域内的逐步保持检查。针对两个指定网络另做完整 BFS，避免只展示手写例子。</p>
+<p>必须保留的循环反例是：</p>
+<pre data-lang="text"><code>y = a OR z
+z = y
+
+初态 a=b=c=false，y=z=false
+add a      → y=z=true
+withdraw a → 旧值初始化仍为 true,true；最小不动点为 false,false</code></pre>
+<p>该聚焦 BFS 最短 2 步。旧值不是假的计算缓存而已：它选择了另一个固定点，形成无根自支持。整个公式域中还会发现更小结构的自环 <code>z=a OR z</code>，同样为 2 步，两个例子都保留。</p>
+<p>AND/OR 网络 <code>y=(a AND b) OR c, z=y</code> 中，撤回 a 属于影响范围，但 c 仍可支持 y、z。直接清空后代的变体最短 3 步：<code>add a → add c → withdraw a</code>，把本应由 c 支持的 y/z 错清空。若希望 AND 分支也曾被满足，可先令 a=b=c=true 再撤回 a；结论同样保持，但这条路径不被称为最短。</p>
+<p>全公式域反例不是把所有网络混在同一张 BFS 图里，而是枚举正确稳定状态及一步更新后，选择最少根添加前缀。这里的 2/3 步最短性另有简单下界：初态没有真根，第一次增加从 bottom 出发不会出错，所以旧值自支持不可能少于一次增加、一次撤回；清空后代要错误删除替代支持，至少需要两个真根，否则撤回唯一真根后正确最小不动点也全为 false，因此至少两次增加、一次撤回。聚焦 BFS 独立确认所列具体网络的长度。</p>
+<p>当前规格第一版验收支持公式限定无环；本模型中的正递归部分是<strong>验证未来扩展的边界和反例</strong>，不是声称首版已经采用正递归。含否定循环须另设语义，本轮没有检查。全域计数只覆盖所列 DNF 形状，不能推出任意大小公式、任意 SCC 更新算法都正确。</p>
+<h2 id="模型三-费用上报延迟不释放负担">模型三：费用上报延迟不释放负担</h2>
+<p>物理 oracle 记录每个动作已花未报的 <code>h</code> 与仍可能消费的 <code>f</code>；账本记录预留 <code>r</code>，另有已结算 <code>U</code> 和收尾剩余 <code>R</code>。硬预算准入检查 <code>U + Σr + R + r_new &lt;= B</code>。正确动作实际消费只把 f 转入 h；收到费用结算时才把 h 转入 U，并原子减少对应 r。停止必须提供可信的未来负担解除，才能释放那部分 f，已经消费的 h 保留。</p>
+<p>枚举域：两个动作各最多预留一次；整数费用、每次预留 1..B；消费量覆盖每个 1..f 的选择；结算本次所有已报费用；显式停止可解除尚未消费的剩余额；收尾费用从 R 转入 U。全枚举使用 B=4、初始 R=1。另用同一转移函数重放所要求的 B=10 特定场景。</p>
+<p>四个观察性质分别是：<code>r_i &gt;= h_i+f_i</code>、账本总额不超 B、物理最坏总负担不超 B、所有动作与收尾结束后的最终 U 不超 B。后两项读取模型中的物理负担，不能只靠被变体破坏的账本自证。</p>
+<p>错误变体把 r 改成 f，等于释放已花未报费用。指定反例如下；R=0：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:right">步</th><th style="text-align:left">事件</th><th style="text-align:right">U</th><th style="text-align:left">A: r/h/f</th><th style="text-align:left">B: r/h/f</th><th style="text-align:right">账本 U+Σr</th><th style="text-align:right">物理已花及可能花 U+Σh+Σf</th></tr></thead><tbody><tr><td style="text-align:right">0</td><td style="text-align:left">初态</td><td style="text-align:right">0</td><td style="text-align:left">0/0/0</td><td style="text-align:left">0/0/0</td><td style="text-align:right">0</td><td style="text-align:right">0</td></tr><tr><td style="text-align:right">1</td><td style="text-align:left">A 预留 10</td><td style="text-align:right">0</td><td style="text-align:left">10/0/10</td><td style="text-align:left">0/0/0</td><td style="text-align:right">10</td><td style="text-align:right">10</td></tr><tr><td style="text-align:right">2</td><td style="text-align:left">A 已花 8，未上报</td><td style="text-align:right">0</td><td style="text-align:left">10/8/2</td><td style="text-align:left">0/0/0</td><td style="text-align:right">10</td><td style="text-align:right">10</td></tr><tr><td style="text-align:right">3</td><td style="text-align:left">错误释放已花的 8</td><td style="text-align:right">0</td><td style="text-align:left">2/8/2</td><td style="text-align:left">0/0/0</td><td style="text-align:right">2</td><td style="text-align:right">10</td></tr><tr><td style="text-align:right">4</td><td style="text-align:left">B 再预留 8</td><td style="text-align:right">0</td><td style="text-align:left">2/8/2</td><td style="text-align:left">8/0/8</td><td style="text-align:right">10</td><td style="text-align:right">18</td></tr><tr><td style="text-align:right">5</td><td style="text-align:left">A 再花 2</td><td style="text-align:right">0</td><td style="text-align:left">2/10/0</td><td style="text-align:left">8/0/8</td><td style="text-align:right">10</td><td style="text-align:right">18</td></tr><tr><td style="text-align:right">6</td><td style="text-align:left">B 花 8</td><td style="text-align:right">0</td><td style="text-align:left">2/10/0</td><td style="text-align:left">8/8/0</td><td style="text-align:right">10</td><td style="text-align:right">18</td></tr><tr><td style="text-align:right">7</td><td style="text-align:left">A 结算 10</td><td style="text-align:right">10</td><td style="text-align:left">0/0/0</td><td style="text-align:left">8/8/0</td><td style="text-align:right">18</td><td style="text-align:right">18</td></tr><tr><td style="text-align:right">8</td><td style="text-align:left">B 结算 8</td><td style="text-align:right">18</td><td style="text-align:left">0/0/0</td><td style="text-align:left">0/0/0</td><td style="text-align:right">18</td><td style="text-align:right">18</td></tr></tbody></table></div>
+<p>正确规则在第 2 步仍持有 10，不允许 B 的预留。18&gt;10 是指定的 8 步场景，不称所有超支中的全局最短。B=4、R=1 的坏变体由 BFS 给出另一条最短 8 步最终超支轨迹，结算总额 5&gt;4；失去负担覆盖本身在第 3 步已经可检测。</p>
+<p>限制：h/f 是模型为判断上界是否真实而保留的 oracle 信息，生产控制器未必能直接读取；模型假定工具不能超过已预留上界，价格不变、没有未计入的子任务和保活费用，收尾义务确实被 R 覆盖。停止释放使用可信的剩余负担解除，不是取消信号。没有建模每条日志的真实费用或成本预测误差。真实上界取不到时，不能套用这个条件性结论。</p>
+<h2 id="模型四-绑定版本-适用性输入与备注">模型四：绑定版本、适用性输入与备注</h2>
+<p>枚举 P4 的九个绑定分量：historyId、taskId、specVersion、witnessId、resultId、artifactVersion、availabilityRevision、acceptancePolicyVersion、decisionRevision。每个分量最多从 0 更新为 1；备注也最多更新一次；每条运行最多接纳一次验收。这里更新的是当前待判断对象的引用/版本；historyId 等身份变化表示判断上下文切换，不允许原地改写历史对象的不可变身份。</p>
+<p><code>D_valid</code> 抽象规则实际读取的权限、证据有效性、显式时钟、新鲜度等输入的合取。四类 invalidation 事件都可触发 D 从 true 变 false，但多个 false 原因合并为一个抽象状态；本轮没有枚举全部 ACL、时间数值和失效原因组合。另有显式验收撤回位。</p>
+<p>正确判定比较完整绑定向量并检查 D 和撤回。独立事件 oracle 在接纳时置有效，只在绑定字段更新、读取输入失效或验收撤回时清除，备注更新不清除；它不比较版本向量。整个可达图对照这两种表达。</p>
+<ul><li>漏绑 specVersion 的变体：<code>accept → update specVersion</code>，2 步错误保留旧验收。</li><li>绑定全局 revision 的变体：<code>accept → update unrelated note</code>，2 步错误废止仍适用的验收。</li></ul>
+<p>“无关备注”是规格声明的条件，不是对任何自由文本都成立。用户在备注中改变约束、引入撤回或让规则读取新字段，应进入相关输入更新。模型不覆盖 ABA 版本复用、恢复失效后重新验收、未建模的业务绑定分量或真实时钟误差。</p>
+<h2 id="怎样审读和怎样使用结论">怎样审读和怎样使用结论</h2>
+<p>建议先读 <code>action_steps</code>/<code>dispatch_conflict_free</code>，再读支持公式的迭代与枚举 oracle，接着检查预算中的 h/f/r 分离，最后核对验收字段列表和 D 抽象。运行程序后可以从 <code>TRACES.md</code> 逐事件核算；完整 JSON 保留计数，不将文字描述作为测试通过证据。</p>
+<p>值得进入总稿的结论是已有错误猜想和削弱条件被明确反驳，以及正确有限模型在声明边界内保持了性质。尚不能推出：实际 Record 内核已实现这些转移、持久化和准入是线性化的、授权来自可信主体、工具返回是真实世界事实、真实费用有硬上界，或任意长期任务最终完成。</p>
+<p>后续实现精化应把每个模型事件映射到产品的命令/收据/持久化点，并注入重复、崩溃、迟到、认证失败和真实工具不确定性。此处没有替产品提前签署这些验收。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

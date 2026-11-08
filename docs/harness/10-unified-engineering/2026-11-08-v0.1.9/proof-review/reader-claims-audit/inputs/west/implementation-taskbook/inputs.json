@@ -1,0 +1,136 @@
+{
+  "task": "W-07",
+  "captured_at_utc": "2026-11-08T08:08:46+00:00",
+  "external_sources_reopened": false,
+  "product_tests_rerun": false,
+  "inputs": [
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/record/kernel.mjs",
+      "repository_relative_path": "record/kernel.mjs",
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/record/README.md",
+      "repository_relative_path": "record/README.md",
+      "sha256": "7c2b26a598cdc7c8d05031bc0f0730b3188226892e385c0bf8376bd40fd18567",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/index.js",
+      "repository_relative_path": "index.js",
+      "sha256": "6ab05504e3f142813480cb89c61f5c883c6f520731796adce84b4f9e0c5cf96c",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/server/native.js",
+      "repository_relative_path": "server/native.js",
+      "sha256": "0b5ba4a2cad4e301273f499e0a91a27661d740781118d8e4897cb08a2b6b4400",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/client/app.js",
+      "repository_relative_path": "client/app.js",
+      "sha256": "289c6df2f44c6e9eb8aad79faae06b008879ecbf67c7ae79326172328db5ea6b",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/server/projects.js",
+      "repository_relative_path": "server/projects.js",
+      "sha256": "565ab91d3c9cba7e1d171844d719ee04d4a6f4288673e073143f1454c7839713",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/server/store.js",
+      "repository_relative_path": "server/store.js",
+      "sha256": "7cbe2a3c1f2a35f3b152cb07219918824a7e8e8fc156d115d63a895e5f79933c",
+      "role": "fixed_product_source",
+      "git_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "working_copy_matches_fixed_commit": true
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.1.md",
+      "sha256": "7dab5eebe93a1cd7f32ad290e7ab5a26e2f49821cfb6e88e433101b536ad3dbe",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/ARCHITECTURE.md",
+      "repository_relative_path": "docs/research/harness-20261107/ARCHITECTURE.md",
+      "sha256": "902071ad4aaeaa26b22913fdbb451ccdd220590c45b470908cd85d6627f348d1",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "repository_relative_path": "docs/research/harness-20261107/DESIGN_RECONCILIATION.md",
+      "sha256": "dedfe8b1de2e1b1c84cc714fcaa79e4efa4a9cd14a9d27f8f308b23157648a9f",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/record-refinement/REPORT.md",
+      "repository_relative_path": "docs/research/harness-20261107/china/record-refinement/REPORT.md",
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/china/record-refinement/execution_receipt.json",
+      "repository_relative_path": "docs/research/harness-20261107/china/record-refinement/execution_receipt.json",
+      "sha256": "35707075492d60f9866ad82688969f8682a0a666f8f268f9a18eee55f078fcf6",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/proof-review/record-mapping-audit/REVIEW.md",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/record-mapping-audit/REVIEW.md",
+      "sha256": "8c54475d2f1940b2d917825a9929f4a453e2c882691157dc7f693f9f5d89fc3c",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/proof-review/record-mapping-audit/findings.json",
+      "repository_relative_path": "docs/research/harness-20261107/proof-review/record-mapping-audit/findings.json",
+      "sha256": "129a264904b610a5e6d2857538517bd459b9a7c447f656ab8ef12a94ea73dfb6",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/05-panels/docs/design/overall-discussion.md",
+      "repository_relative_path": "docs/harness/05-panels/docs/design/overall-discussion.md",
+      "sha256": "1479c6b526d160900d8b12096d48184dd5dccc45854dc943387780d043ea6b45",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/07-第一屏收口计划-2026-10-17.md",
+      "sha256": "84364cb100b1246e9906face729afb803a69d7e9a409de71c7cc69cdaa69fac1",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "role": "existing_design_or_research"
+    },
+    {
+      "source": "__LOCAL_HOME__/Documents/Codex/2026-11-06/zh/work/harness-seven-hours/integration/docs/research/harness-20261107/west/evaluation-design-review/design.json",
+      "repository_relative_path": "docs/research/harness-20261107/west/evaluation-design-review/design.json",
+      "sha256": "e21486e70d26372adca5e3bcbfdf8d66154d168703287a1d79b834eab71a6438",
+      "role": "existing_design_or_research"
+    }
+  ]
+}

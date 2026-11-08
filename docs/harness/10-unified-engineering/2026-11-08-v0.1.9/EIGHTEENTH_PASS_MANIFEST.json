@@ -1,0 +1,89 @@
+{
+  "copied_at_utc": "2026-11-08T09:03:56.910004+00:00",
+  "files": [
+    {
+      "path": "west/trusted-entry-map/MAP.md",
+      "source_worktree": "west",
+      "bytes": 11798,
+      "sha256": "e07ff4f8671cdb0d5bad3c4d3911bd61f6a3c180ead67e132253570129a72ab1"
+    },
+    {
+      "path": "west/trusted-entry-map/README.md",
+      "source_worktree": "west",
+      "bytes": 1369,
+      "sha256": "e771f8c604a9eba07243abdd4fd137580bdffd41870cb7fb398d9932c4894104"
+    },
+    {
+      "path": "west/trusted-entry-map/entry-map.json",
+      "source_worktree": "west",
+      "bytes": 43840,
+      "sha256": "ce6985aebc412d252d57dbb59a00efe20b24b68f0d406f1f44632f45b1e24162"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/FETCH.json",
+      "source_worktree": "west",
+      "bytes": 3537,
+      "sha256": "36496b3a8164b46aa1c61f92d172f6abd8c95598a7c75066e53826d5a66230d5"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/docs/persistence-changes/2026-10-13-user-rpc-principal.md",
+      "source_worktree": "west",
+      "bytes": 2396,
+      "sha256": "bd102c1867feab15cbe5f6cba2e43fb9311ede680d936db7c2e925b18aa3ed98"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/api-request-trust.ts",
+      "source_worktree": "west",
+      "bytes": 8787,
+      "sha256": "879a4f497ad41355771303a5956851da04661be24b08435fe7bf13d42e1e3b9b"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/browser-auth.ts",
+      "source_worktree": "west",
+      "bytes": 16185,
+      "sha256": "f1ebdb9fa8706414852420393d9f34b2d604a128928a2f5852d4832ce38b45f7"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/client/rpc.ts",
+      "source_worktree": "west",
+      "bytes": 7351,
+      "sha256": "8a55426351dfc3b4150b6fdd60daf20735824cbb90b4b806321ec442c639e460"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/http-bridge.ts",
+      "source_worktree": "west",
+      "bytes": 5034,
+      "sha256": "182a668579ec5701489f54449bb4b0e63e80b77f90edc147b993b1acba4bae86"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/index.ts",
+      "source_worktree": "west",
+      "bytes": 6978,
+      "sha256": "33a14e80298e0a0bc7bafef515d853d13584cd2433844b3dc2a89d4980d315e1"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc-host.ts",
+      "source_worktree": "west",
+      "bytes": 15605,
+      "sha256": "55cd4aaf34103aba890146a8168ec88ba45c0373e55367a74d4f547ed579bcf7"
+    },
+    {
+      "path": "west/trusted-entry-map/source-inputs/dsh/packages/client/connection/src/rpc.ts",
+      "source_worktree": "west",
+      "bytes": 13015,
+      "sha256": "74ba5632fea441a4c76de677ddeb840de51a775b42514c0908a3ef207339d94b"
+    },
+    {
+      "path": "west/trusted-entry-map/sources.json",
+      "source_worktree": "west",
+      "bytes": 22800,
+      "sha256": "8045e2549851a19e8a47ec28e45311173bf588f39603887b67d87885c45f1c3e"
+    },
+    {
+      "path": "west/trusted-entry-map/validation.json",
+      "source_worktree": "west",
+      "bytes": 9551,
+      "sha256": "d5643c6051409aca436b3242c62dc478690af6a00fbd3247ae820a0625c2cfab"
+    }
+  ]
+}

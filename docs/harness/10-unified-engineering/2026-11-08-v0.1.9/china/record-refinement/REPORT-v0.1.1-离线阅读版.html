@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="a4d197a3597b">
+<title>Record S1 → 统一 Harness 模型的精化对照 · 整合订正版 v0.1.1</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#1-输入-证据和复查入口">1. 输入、证据和复查入口</a></li><li class="l2"><a href="#2-可以成立的窄映射">2. 可以成立的窄映射</a></li><li class="l2"><a href="#3-五个实际轨迹揭示的映射差异">3. 五个实际轨迹揭示的映射差异</a></li><li class="l3"><a href="#rf01-旧-attempt-可进入新规格">RF01：旧 Attempt 可进入新规格</a></li><li class="l3"><a href="#rf02-普通命令的历史身份依赖路由">RF02：普通命令的历史身份依赖路由</a></li><li class="l3"><a href="#rf03-重复观察留在日志-但不是替代支持">RF03：重复观察留在日志，但不是替代支持</a></li><li class="l3"><a href="#rf04-checkaction-不是已有预留的-dispatch-guard">RF04：checkAction 不是已有预留的 dispatch guard</a></li><li class="l3"><a href="#rf05-首次-available-true-没有独立可用性观察">RF05：首次 available=true 没有独立可用性观察</a></li><li class="l2"><a href="#4-验收向量的有效映射条件">4. 验收向量的有效映射条件</a></li><li class="l2"><a href="#5-c01-c16-的适用范围">5. C01–C16 的适用范围</a></li><li class="l2"><a href="#6-下一步应冻结的最小义务">6. 下一步应冻结的最小义务</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip ver">v0.1.1</span></div>
+<h1>Record S1 → 统一 Harness 模型的精化对照 · 整合订正版 v0.1.1</h1>
+</header>
+<p>2026-11-08 UTC · C-04（原作者内部编号 R-04）· 冻结产品基线 <code>7264be10387963f4d575d8688ed8573f4c16c8c4</code></p>
+<blockquote><p>订正说明：原 <a href="REPORT-离线阅读版.html">REPORT.md</a> 与原始探针、输入和回执不变。本版整合 <a href="../../proof-review/record-mapping-audit/REVIEW-离线阅读版.html">R-05 语义审查</a>及 <a href="../../proof-review/snapshot-errata-check/REVIEW-离线阅读版.html">R-07 快照核对</a>，修正 RF03 的反例口径和 FORMAL 捕获历史叙述。没有重跑测试、改变产品或制造新实验结果。</p></blockquote>
+<p>Record S1 已经实现一组有价值的<strong>同步内存语义</strong>：严格作用域的普通 PR 合并证据、完成与验收分离、证据撤回、跨任务资源占位、最终派发重检、精确请求去重和确定性重放。它还不是统一 Harness 模型的完整实现。最需要避免的误映射有五项：旧尝试未绑定定义版本、普通命令未携带历史身份、重复观察没有形成 OR 支持、预检查与最终派发不是同一个谓词、首次合并观察默认建立“可用”结果。</p>
+<p>本轮从未改动产品源码；只读执行其冻结副本。<strong>20 条选定现有测试通过；8 条短轨迹核实了 5 项映射差异和 3 个窄域控制行为，断言失败为 0。真实适配器 C01–C16 一条也没有运行。</strong> 其中 RF03 是独立支持项的表达能力缺口，不能把整结论撤回解释为仅撤回一条来源的 OR 算法反例。原探针的状态字符串保留在历史回执中，以本订正版与独立审查限定其含义；这些结果不等于 S1 违反已声明边界，也不构成任意轨迹的精化证明。</p>
+<h2 id="1-输入-证据和复查入口">1. 输入、证据和复查入口</h2>
+<p>真实实现位于 china 工作树的 <code>record/kernel.mjs</code>，共 387 行。逐字核对该文件、README、夹具和五份现有测试与冻结提交相同；执行后再次核对源文件散列，全部未变。副本保存在 <a href="inputs/record/kernel.mjs">inputs/record/kernel.mjs</a> 与 <a href="inputs/tests">inputs/tests</a>，引用行号与原文件一致。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">材料</th><th style="text-align:left">本轮用途与状态</th></tr></thead><tbody><tr><td style="text-align:left"><a href="inputs.json">输入清单</a></td><td style="text-align:left">每个源路径、冻结提交或工作稿身份、SHA-256、捕获时间；研究工作稿不能只用共同 git HEAD 标识</td></tr><tr><td style="text-align:left"><a href="refinement-matrix.json">结构化精化矩阵</a></td><td style="text-align:left">12 个对象映射、C01–C16 全部映射；已实现内存行为、部分实现和 S1 未支持分别标记</td></tr><tr><td style="text-align:left"><a href="TRACES-离线阅读版.html">实际短轨迹</a> / <a href="probes.json">原始 JSON</a></td><td style="text-align:left">五项映射差异、三个控制；保留原命令、观察和状态字符串，RF03 的解释按订正说明</td></tr><tr><td style="text-align:left"><a href="execution_receipt.json">执行回执</a></td><td style="text-align:left">命令参数、Node 版本、开始/结束时间、退出码、输出与源码散列、20 条选定测试计数</td></tr><tr><td style="text-align:left"><a href="existing-tests.stdout.txt">现有测试原始输出</a></td><td style="text-align:left">只选与撤回、绑定、准入、未知效果、回放有关的 20 项；未运行全项目测试</td></tr><tr><td style="text-align:left"><a href="refinement-probes.mjs">探针源码</a></td><td style="text-align:left">只调用冻结内核与原测试夹具，不提供网络或持久存储替身</td></tr></tbody></table></div>
+<p>规格读取了 integration 的 FORMAL_MODEL、ARCHITECTURE、适配契约讨论稿以及 mechanisms 的 conformance/catalog.json，均保留内容快照。两次保存的 FORMAL 快照内容相同，均已采用 <code>Usable_L(t,q,n)</code>，<code>q=(consumer, operation, recipients)</code>；再次捕获未引入内容变化。<a href="inputs/specifications/FORMAL_MODEL-q-update.md">第二次捕获</a>的文件名与原 inputs.json 中“Later working draft”只说明再次保存，不能作为内容升级证据。两份 SHA 均为 <code>a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd</code>。</p>
+<h2 id="2-可以成立的窄映射">2. 可以成立的窄映射</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">统一模型对象或事件</th><th style="text-align:left">S1 实际实现与定位</th><th style="text-align:left">能保留什么；不能扩张到哪里</th></tr></thead><tbody><tr><td style="text-align:left">TaskDefinition</td><td style="text-align:left"><code>spec()</code> 34–41；创建 140–169；修订 219–228</td><td style="text-align:left">固定仓库/PR/目标分支/source SHA/普通 merge；不是任意研究、交付、部署任务协议</td></tr><tr><td style="text-align:left">ObservationAccepted / CompletionWitness</td><td style="text-align:left"><code>evidence()</code> 49–60；<code>complete()</code> 73–88；<code>verifyCompletion</code> 230–234</td><td style="text-align:left">校验合成输入的形状、作用域和父提交关系；调用者必须另外认证 verifier 并核实真实 GitHub 状态</td></tr><tr><td style="text-align:left">Recorded / Supported</td><td style="text-align:left">日志和 completions 保留声明；<code>currentCompletion()</code> 47；<code>dependency()</code> 342–348</td><td style="text-align:left"><code>historical-completion</code> 实际近似 Supported，撤回后为 false；不能把它读成“历史上曾记录过完成”</td></tr><tr><td style="text-align:left">WitnessWithdrawn</td><td style="text-align:left"><code>withdrawCompletion</code> 236–250</td><td style="text-align:left">使当前完成失效、保留旧验收；匹配的 succeeded 动作恢复 unknown。没有通用支持图传播</td></tr><tr><td style="text-align:left">Reserve</td><td style="text-align:left"><code>actionDecision()</code> 90–101；<code>reserveAction</code> 282–291</td><td style="text-align:left">同一实例中检查并建立资源占位；冲突键为 <code>(repositoryId,targetRef)</code>，不依赖仅任务级 revision 来防跨任务竞争</td></tr><tr><td style="text-align:left">DispatchIntent</td><td style="text-align:left"><code>dispatchAction</code> 293–304</td><td style="text-align:left">再查当前 task/授权/规格/其他未决动作，然后把状态改成 sent；<strong>没有真实发送调用或持久出站队列</strong></td></tr><tr><td style="text-align:left">Cancel / unknown / terminal proof</td><td style="text-align:left"><code>cancel</code> 205–209；<code>resolveAction</code> 306–325</td><td style="text-align:left">已发动作不因任务取消而释放；not_applied 要求两个真值及 reference；这些值是可信模拟输入，不是内核观察到进程终止</td></tr><tr><td style="text-align:left">AcceptanceGiven</td><td style="text-align:left"><code>tokenFor()</code> 62–71；<code>acceptResult</code> 269–280</td><td style="text-align:left">绑定 stream/task/spec/completion/result/availability/acceptance 写入版本；备注不影响该向量</td></tr><tr><td style="text-align:left">原子接纳与重放</td><td style="text-align:left"><code>apply()</code> 116–135；<code>replay()</code> 360–368</td><td style="text-align:left">正常同步调用与校验失败的内存事务边界；给定完整日志可重放。没有崩溃持久性或外部效果事务</td></tr></tbody></table></div>
+<p><code>apply()</code> 先复制状态，在 draft 上完成校验和变更，之后同步发布 state、event、receipt。RF06 特意选了一条<strong>已经修改 draft 动作状态、随后完成证据冲突才抛错</strong>的路径：原动作仍是 sent，快照和日志不变，重复失败请求仍失败。这比仅在入口形状校验时报错更能检验本地回滚边界，但仍不包含进程在发布三项之间崩溃的模型。</p>
+<p>P7 的局部准入条件可以映射到一个实例；不能因此写成“任意时刻 active ≤ 1”。现有 R2-S01 测试实际建立了 A unknown 与 B reserved 共存，拒绝 B 的派发且保持其原预留，终态证明到达后 B 才能继续。这与统一模型的限定一致。若两个 RecordKernel 分别管理同一目标，没有共同资源权威或持久事务，本轮的局部串行化结论不能跨实例使用。</p>
+<h2 id="3-五个实际轨迹揭示的映射差异">3. 五个实际轨迹揭示的映射差异</h2>
+<h3 id="rf01-旧-attempt-可进入新规格">RF01：旧 Attempt 可进入新规格</h3>
+<p>轨迹：在规格 v1 开始 A1 → 用户修订到 v2 → 另一 actor 开始 A2 → A1 持有者使用最新 task revision 预留并派发。</p>
+<p>结果：派发成功；action 同时记录 <code>attemptId=A1</code> 和 <code>specVersion=2</code>。<code>beginAttempt</code> 183–188 只保存 id/host/sessionId/actorId；<code>reserveAction</code> 284–290 检查 actorId 并复制<strong>当前任务</strong>规格，没有 A1 的原始规格版本可比较。</p>
+<p>这不说明未经用户授权扩大了任务：轨迹中 v2 已由用户显式授权。它否定的是“旧尝试自身已绑定 v1，而且 A2 出现就自动退休 A1 权限”的映射。现有 S1 没有当前尝试指针、host/environment generation 或执行者权限代际。适配器必须另行维护这些关联；同时不能因此丢弃 A1 已发动作的迟到真实证据。</p>
+<h3 id="rf02-普通命令的历史身份依赖路由">RF02：普通命令的历史身份依赖路由</h3>
+<p>轨迹：两个独立 history 各创建一次任务，sourceId 不同而本地 ID 同为 <code>task:1</code>、revision 同为 1 → 将旧 history 的原封不动 cancel 命令送进新 kernel。</p>
+<p>结果：新任务被取消，旧任务仍 open。<code>apply()</code> 118 的 envelope 没有 streamId；task 查找与 revision 校验只作用于接收该调用的实例。相反，同一探针的控制轨迹证明跨 history 的 acceptance token 被 <code>ACCEPTANCE_CONFLICT</code> 拒绝。</p>
+<p>所以普通命令的 <code>(historyId,taskId)</code> 绑定是未来适配器的责任，不能从 token 的防串历史能力外推到所有命令。路由器可在外层绑定并认证历史，未必必须改内核字段；但必须存在可核查的拒绝错误路由机制。主体也需由认证层规范化：当前 attempt/action 只比较平面 actorId，没有 <code>(authority,subject)</code> 命名空间。</p>
+<h3 id="rf03-重复观察留在日志-但不是替代支持">RF03：重复观察留在日志，但不是替代支持</h3>
+<p>轨迹：用两个不同 observationRef 提交同一 merge 结果 → 撤回当前完成。</p>
+<p>结果：日志保留两次 verifyCompletion，task 只有一个 completion，仍引用第一次 evidence；<code>complete()</code> 84 在结果相同时返回旧 completion。撤回这个 completion 后 Supported 为 false。探针仅把第二条观察设为合成的候选替代来源，没有证明两个真实观察者独立。</p>
+<p>这说明 S1 不能忠实表达 <code>w1 ∨ w2</code>，更不能借用 P5 的局部重算定理宣称已经实现 AND/OR 支持撤回。它不是在一个已建模的 OR 图上算错了，而是尚未建立那个图。C03/C04 对 S1 应标为未支持；relatedTaskId 不是证据支持边。</p>
+<h3 id="rf04-checkaction-不是已有预留的-dispatch-guard">RF04：checkAction 不是已有预留的 dispatch guard</h3>
+<p>轨迹：预留动作 A → 调用 <code>checkAction(task)</code> → 调用 <code>dispatchAction(A)</code>。</p>
+<p>结果：前者返回 <code>wait/action-unresolved</code>，指向自己的 A；后者成功改成 sent。<code>actionDecision()</code> 97 查任意 active action；<code>dispatchAction</code> 302 明确排除自身。</p>
+<p>两个接口服务不同阶段。把 checkAction 包装成“已有 reservation 的发送前必须 allow”会使合法动作被自己的预留阻塞。适配器应把它映射为新动作预检查；真正发送前的权威转移必须调用 dispatchAction，并明确这仍只是发送意图准入。返回历史 dispatch receipt 也不能被包装器解释成一次新的发送授权。</p>
+<h3 id="rf05-首次-available-true-没有独立可用性观察">RF05：首次 available=true 没有独立可用性观察</h3>
+<p>轨迹：只提交文档规定的历史普通合并证据，没有独立访问、产物副本或消费检查 → 查询 current-result。</p>
+<p>结果：<code>complete()</code> 80 初始化 <code>available:true</code>，current-result 为 true。输入没有 observedAt、principal、operation、recipients、访问状态或独立 availability evidence。随后接受全局不可用标记，再重复历史合并观察，current-result 仍 false；这一已知失效保护有效。</p>
+<p>因此 S1 的精确含义是“当前完成证据有效，且绑定结果尚未被接纳为不可用”。它不能单独推出 <code>Usable_L(t,q,n)</code>，更不能推出此刻世界中的 <code>Usable_W</code>。结果本体、某个副本的存在、特定消费请求的允许与适用性都没有分别建模。若未来展示“可下载”“可供某人使用”，必须另有匹配 q 的观察与政策，而不是直接换一个 UI 标签。</p>
+<h2 id="4-验收向量的有效映射条件">4. 验收向量的有效映射条件</h2>
+<p>现有七字段 token 已经挡住陈旧结果按钮、不同 history、不同 task、错误完成修正、availability 修订以及竞争性接纳。source SHA 与 merge SHA 固定在结果指纹中，因此在这个窄任务域里可把不可变产物版本视为 resultId 的内涵，无须仅为字段数量机械增加 artifactVersion。</p>
+<p>但以下条件必须明示：</p>
+<ul><li><code>acceptanceRevision</code> 是接纳命令的乐观并发版本。<code>acceptResult</code> 把当时的值写入 accepted，然后使 task.acceptanceRevision 加 1；<code>dependency(&#x27;current-acceptance&#x27;)</code> 不把旧 accepted 的该值与新值比较。直接将它解释成“有效验收必须等于当前 decisionRevision”会让刚提交的验收马上失效。要分别映射写入竞争控制与已存决定适用性。</li><li>当前 read predicate 为 <code>有效 completion ∧ result.available ∧ 存在匹配 completionId/resultId/availabilityRevision 的 acceptance</code>。它没有独立的 q、政策版本、时钟、新鲜度、验收撤回和主体权限变更输入。接受时的角色限制不能证明后来每种消费语境仍被允许。</li><li>在固定代码、固定政策及可信调用者的 S1 域内，缺少可变政策字段不自动构成漏洞；把 S1 规则扩展到新业务后，旧短向量不再自动充分。</li><li>完成任务不可原地 revise，C01 要使用目录已允许的“显式 successor”变体。RF07 核实原地修改被拒绝、新任务不继承验收；新任务 specVersion 从 1 开始，不能把它误报成原 task 的 v2。</li></ul>
+<h2 id="5-c01-c16-的适用范围">5. C01–C16 的适用范围</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">场景</th><th style="text-align:left">S1 现状</th><th style="text-align:left">必须补足或避免的误判</th></tr></thead><tbody><tr><td style="text-align:left">C01 / C02</td><td style="text-align:left">相关版本保护、显式新任务、无关备注保护在内存中成立</td><td style="text-align:left">C01 不能默认原地修改 completed；完整规则读取集合仍限于固定 S1</td></tr><tr><td style="text-align:left">C03 / C04</td><td style="text-align:left">未支持</td><td style="text-align:left">没有 AND/OR 支持模型与支持循环准入，不能把未知命令被拒绝算作循环检查通过</td></tr><tr><td style="text-align:left">C05</td><td style="text-align:left">局部机制已实现</td><td style="text-align:left">精确重检已由 R2-S01 执行；实际出站覆盖、共同权威域和存储事务未实现</td></tr><tr><td style="text-align:left">C06 / C09</td><td style="text-align:left">有未决动作和迟到证据的模拟语义</td><td style="text-align:left">没有目标故障注入或认证读回；cancel 不自动把 sent 改成 unknown，更不会变 not_applied</td></tr><tr><td style="text-align:left">C07 / C08</td><td style="text-align:left">无目标 fencing / 目标幂等</td><td style="text-align:left">本地 authorizationRevision 与 requestId 去重不是目标端保证</td></tr><tr><td style="text-align:left">C10 / C11</td><td style="text-align:left">有固定 spec 和角色规则；文本不直接授权</td><td style="text-align:left">无认证、最终工具参数拦截、当前政策服务或上下文恢复机制</td></tr><tr><td style="text-align:left">C12 / C13</td><td style="text-align:left">未支持</td><td style="text-align:left">没有费用账本、预留成本、时钟、expiry 或 freshness；P13 一般证明没有证明 S1</td></tr><tr><td style="text-align:left">C14</td><td style="text-align:left">已知全局结果失效能传播</td><td style="text-align:left">默认可用不等于独立可用性读回；没有按 q 的消费判断与副本模型</td></tr><tr><td style="text-align:left">C15</td><td style="text-align:left">内存回滚、精确重试、完整日志重放可用</td><td style="text-align:left">无持久 ACK、崩溃恢复存储、日志认证；旧回执始终只是历史回执</td></tr><tr><td style="text-align:left">C16</td><td style="text-align:left">尝试 ID 和迟到动作归属部分存在</td><td style="text-align:left">没有尝试规格/代际、当前尝试权限与普通命令的跨 history 自校验</td></tr></tbody></table></div>
+<p><a href="refinement-matrix.json">矩阵</a> 对每条场景分别记录函数行号、已有测试是实际选跑还是只读审查、探针 ID 和下一条精化义务。所有 <code>real_adapter_scenario_status</code> 都保持 <code>NOT_RUN</code>；这些本地结果不更改原 catalog，也没有给任何真实宿主发合格证。</p>
+<h2 id="6-下一步应冻结的最小义务">6. 下一步应冻结的最小义务</h2>
+<p>后续产品切片应先把解释清楚的边界变成适配契约：</p>
+<ol><li><strong>历史与主体入口</strong>：认证后的 <code>(historyId, authority, subject)</code> 如何绑定到一个内核、一个 task/attempt；给出跨历史碰撞的拒绝轨迹。</li><li><strong>尝试与动作分离</strong>：创建尝试时绑定的 spec/环境/权限代际，以及新尝试出现后旧尝试还能做什么。保留旧效果证据通道，不能用退休写权限抹掉物理效果。</li><li><strong>持久接纳与真实发送</strong>：指出冲突扫描与占位的事务点、ACK 级别、发送器使用哪条持久 intent，以及响应丢失后的目标对账；task revision CAS 单独不足以串行化共享资源。</li><li><strong>完成、结果和消费</strong>：保留 S1 当前已知全局失效的语义；另建有来源的副本/消费观察。UI 在缺少观察时显示缺口，不将 available 的默认值当作现时读回。</li><li><strong>支持与验收规则</strong>：只有实现完整 AND/OR 输入和明确政策之后，才将 P4/P5 的一般证明精化到实现；同理，没有费用账本不能沿用 P13 的已证明结论。</li></ol>
+<p>这些是下一轮需要证明的映射义务，本轮没有实施产品改造、接入宿主、认证来源、合并 PR 或发布内容。</p>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

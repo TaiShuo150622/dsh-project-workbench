@@ -1,0 +1,953 @@
+{
+  "task": "W13",
+  "frozen_at_utc": "2026-11-08T10:03:22.644257+00:00",
+  "status": "PASS",
+  "scope": "document integrity only; no product/runtime tests",
+  "checks": {
+    "json_parsed": 4,
+    "input_hashes_checked": 23,
+    "inventory_hashes_checked": 96,
+    "new_archive_files_match_fixed_commit": true,
+    "new_body_selection_count": 8,
+    "new_body_already_in_W09_W12": [],
+    "exact_duplicate_groups": 0,
+    "reference_ranges_checked": 49,
+    "markdown_links_checked": 85,
+    "activity_bodies_excluded": 2
+  },
+  "observed_concurrent_input_update": {
+    "prior_sha256": "111d26e735c88757612307cedcf7d5532cdd70077ac14206c35f0d11c4fad020",
+    "prior_lines": 426,
+    "new_lines": 428,
+    "change": "Added paragraph at L119 plus blank line; exact byte hash of remaining body matches prior input. Added paragraph read in W13.",
+    "checked_at_utc": "2026-11-08T10:02:45.081309+00:00"
+  },
+  "errors": [],
+  "references": [
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          31,
+          64
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          154,
+          232
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          286,
+          310
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          250,
+          286
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "ARCH",
+        "lines": [
+          29,
+          31
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          105,
+          107
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          46,
+          64
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          255,
+          264
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          477,
+          479
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "V3",
+        "lines": [
+          866,
+          881
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          54,
+          92
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          238,
+          248
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          273,
+          297
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "H0",
+        "lines": [
+          5,
+          28
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "H0",
+        "lines": [
+          77,
+          107
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "H0",
+        "lines": [
+          152,
+          199
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "H0",
+        "lines": [
+          381,
+          392
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "RECON",
+        "lines": [
+          26,
+          41
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          353,
+          385
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          94,
+          107
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC0",
+        "lines": [
+          45,
+          48
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC0",
+        "lines": [
+          214,
+          230
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC12",
+        "lines": [
+          46,
+          46
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC12",
+        "lines": [
+          376,
+          376
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          121,
+          152
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "ARCH",
+        "lines": [
+          33,
+          48
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC0",
+        "lines": [
+          3,
+          17
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC0",
+        "lines": [
+          30,
+          48
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "REC0",
+        "lines": [
+          122,
+          134
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          125,
+          129
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          103,
+          107
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "DAG11",
+        "lines": [
+          174,
+          249
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "DAG11",
+        "lines": [
+          253,
+          303
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "DAG11",
+        "lines": [
+          327,
+          368
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "DAG08",
+        "lines": [
+          19,
+          53
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "DAG08",
+        "lines": [
+          74,
+          95
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          176,
+          200
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          100,
+          100
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          154,
+          174
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          273,
+          299
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "RECON",
+        "lines": [
+          70,
+          85
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          121,
+          152
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          103,
+          103
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          204,
+          248
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "I",
+        "lines": [
+          104,
+          104
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          50,
+          50
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          156,
+          172
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "ARCH",
+        "lines": [
+          7,
+          9
+        ]
+      },
+      "within_recorded_read_scope": true
+    },
+    {
+      "reference": {
+        "source_id": "MAIN",
+        "lines": [
+          50,
+          50
+        ]
+      },
+      "within_recorded_read_scope": true
+    }
+  ],
+  "links": [
+    {
+      "document": "README.md",
+      "target": "MEMO.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "mapping.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "READING.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "reading-list.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "inventory.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../../../../harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../historical-coverage/README.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "../design-continuity/README.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "README.md",
+      "target": "validation.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/02-methods/2026-10-22-Agent主动性与提问边界讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/02-methods/2026-10-22-Agent工具面设计讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/08-browser/dsh-chrome/docs/ARCHITECTURE-PLATFORM.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../ARCHITECTURE.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/01-vision/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/02-methods/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/04-memory/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/06-dag/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/07-remote/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../../../../harness/09-extensions/CONTENTS.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../historical-coverage/reading-list.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "READING.md",
+      "target": "../design-continuity/reading-list.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../ARCHITECTURE.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/01-vision/harness-discussion-v0.3.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../DESIGN_RECONCILIATION.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮开发设计稿.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../ARCHITECTURE.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/04-memory/会话记录常驻Agent设计-源v0.1-公开整理版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../implementation-taskbook/可信入口与Coding交付实施任务书讨论稿-v0.1.1.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/11-借鉴SuperAgent架构讨论稿-v0.1.0.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../../../harness/06-dag/current/docs/design/dag-detailed/08-面板协议v2第一版.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "../../统一Harness工程与形式化基础讨论稿-v0.1.5.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "READING.md",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "reading-list.json",
+      "exists_in_west_or_integration": true
+    },
+    {
+      "document": "MEMO.md",
+      "target": "mapping.json",
+      "exists_in_west_or_integration": true
+    }
+  ],
+  "not_performed": [
+    "external source verification",
+    "product modification or execution",
+    "old experiment reproduction",
+    "commit",
+    "push",
+    "HTML rendering"
+  ]
+}

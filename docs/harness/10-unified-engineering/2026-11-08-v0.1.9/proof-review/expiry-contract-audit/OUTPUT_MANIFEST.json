@@ -1,0 +1,39 @@
+{
+  "frozen_input_and_repair_snapshot_hashes_verified": true,
+  "prior_R01_R02_R03_main_outputs_unchanged": true,
+  "json_parse_passed": true,
+  "artifacts": [
+    {
+      "file": "REVIEW.md",
+      "sha256": "da28342d3989ebfc9ace0323df4fe9654b374085f552c671ebdc3f0dc6f22521"
+    },
+    {
+      "file": "REPAIR_REVIEW.md",
+      "sha256": "55cebf63e992d96fbf93f77b7c2fcae7d1926a338b3139a35c7f66513e8ced4d"
+    },
+    {
+      "file": "findings.json",
+      "sha256": "2da61a00fea21ed136ee2fce479d2bd2dc533c2ce8f1de11e9d0f51e3a47204b"
+    },
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "9e669b529391d265482684d1ca612f7344272df93885f606e31966689ae49cfa"
+    },
+    {
+      "file": "REPAIR_INPUT_MANIFEST.json",
+      "sha256": "247538a059e369ce93d2590378b54271f09e24c7d3251ba9209855164992a051"
+    },
+    {
+      "file": "verification_receipt.json",
+      "sha256": "cdf29df7dfe09ae386962776bd8f42a2fa42c764284764534a44f51e10b7f495"
+    },
+    {
+      "file": "runner_probe_receipt.json",
+      "sha256": "82150211c7059c9214a3810a164bd5b76198a708338f53d928d40d3f94c9d00c"
+    },
+    {
+      "file": "repair_verification_receipt.json",
+      "sha256": "8cc3bf72af06054670291bb6a423b6298d761378285d56c40fea3c1e34cd34aa"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "json_parse_passed": true,
+  "frozen_snapshot_hashes_passed": true,
+  "first_round_outputs_unchanged": true,
+  "artifacts": [
+    {
+      "file": "REVIEW.md",
+      "sha256": "bd51b4829517c303110f3699bb2810ad58672bcaef3c454941cc381946b7fe52",
+      "bytes": 13505
+    },
+    {
+      "file": "findings.json",
+      "sha256": "34e4cf765a48a1b249041261338379556e02485b1b7a430971ac765a5bd4826d",
+      "bytes": 4942
+    },
+    {
+      "file": "audit_checks.py",
+      "sha256": "2ec01f1b7e6abc8d8e7353c292f6d398f680ea764d9fc15725191e06f8c4c2ae",
+      "bytes": 5405
+    },
+    {
+      "file": "audit_checks.json",
+      "sha256": "f052487efe0cac50142308cc2176e7f7a49d946fac141570ba4e603689eb8061",
+      "bytes": 1260
+    },
+    {
+      "file": "execution_receipt.json",
+      "sha256": "63313edb3fe89db2f5ad55467c77fabcda0d52bc9dd104fcb2a35e2d3542d3fc",
+      "bytes": 1034
+    },
+    {
+      "file": "INPUT_MANIFEST.json",
+      "sha256": "5e5abd1f9886af1d836acbd636ed3b748bc66081cf54cc14df14b6165a5000a5",
+      "bytes": 5352
+    },
+    {
+      "file": "TLC_RECEIPT_MANIFEST.json",
+      "sha256": "8fa452f2d67d0c436c98ece4509ba7dc61088a3be3727e20389dd9da232c6111",
+      "bytes": 2490
+    }
+  ]
+}

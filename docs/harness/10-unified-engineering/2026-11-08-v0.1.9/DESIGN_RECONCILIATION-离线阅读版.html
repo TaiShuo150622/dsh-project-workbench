@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="9cbabf70b040">
+<title>既有讨论与统一模型的衔接</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#1-决定-研究主张与历史观察分开">1. 决定、研究主张与历史观察分开</a></li><li class="l2"><a href="#2-预测-检查-意外-的记录契约">2. “预测—检查—意外”的记录契约</a></li><li class="l2"><a href="#3-意外处理如何进入有类型图">3. 意外处理如何进入有类型图</a></li><li class="l2"><a href="#4-如何衡量-减少审查">4. 如何衡量“减少审查”</a></li><li class="l2"><a href="#5-工具-主动性与工作流的历史提案">5. 工具、主动性与工作流的历史提案</a></li><li class="l2"><a href="#6-连接既有公开材料">6. 连接既有公开材料</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span><span class="chip">2026-11-07</span><span class="chip">研究工作稿。这里只比较已公开的通用稿件与固定 Record 代码，不引用公司或量化内部实施材料。</span></div>
+<h1>既有讨论与统一模型的衔接</h1>
+</header>
+<p>统一工程应继承已有问题意识，并修正旧稿中过强或已受新证据影响的表述。下表中的“建议调整”是本轮提案，不追改原稿，不自动替用户决定底座、实施顺序或产品行为。</p>
+<h2 id="1-决定-研究主张与历史观察分开">1. 决定、研究主张与历史观察分开</h2>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">原有方向/表述</th><th style="text-align:left">本轮处理</th><th style="text-align:left">需要保留或补充的条件</th></tr></thead><tbody><tr><td style="text-align:left">信息进入决策，并持续改善工作流</td><td style="text-align:left">保留为总工程主线</td><td style="text-align:left">当前任务循环和工作方式改进循环分别验收；不能只建设任务状态看板</td></tr><tr><td style="text-align:left">工作流本身可小修、替换、重构，采用时机也应比较</td><td style="text-align:left">补强为变更提案的明确对象</td><td style="text-align:left">新能力也可触发；在共同未来期限下比较现在/试验后/下一模块/下一项目，计入验证、迁移和切换成本</td></tr><tr><td style="text-align:left">各领域独立管理目标、预算和评价</td><td style="text-align:left">保留作用域</td><td style="text-align:left">共享协议和机器容量治理不自动授权跨领域预算转移，也不伪造一个共同价值分数</td></tr><tr><td style="text-align:left">Record 记忆、上下文与执行记录关联</td><td style="text-align:left">保留，并拆分写入权威</td><td style="text-align:left">控制事件、原始观察、派生知识、当前投影分开；自主抽取不直接写入完成或授权</td></tr><tr><td style="text-align:left">DAG 贯穿计划、代码、证据与执行</td><td style="text-align:left">保留，但增加关系类型</td><td style="text-align:left">一种边不能同时表示先后、因果、替代证明和资源冲突；首版验收支持公式无环</td></tr><tr><td style="text-align:left">先锁定预测，再做检查</td><td style="text-align:left">保留为可选方法策略</td><td style="text-align:left">绑定任务定义、尝试、检查规则、输入与环境版本；顺序由可信事件/调度边界确认，不能只比较客户端时间</td></tr><tr><td style="text-align:left">模板由人审一次，之后只审偏离</td><td style="text-align:left">改成有条件的复用目标</td><td style="text-align:left">模板、生成器、检查器、依赖和适用域都应有版本；环境/规则变化可触发复核，首次审查不是永久保证</td></tr><tr><td style="text-align:left">必须保证的进检查器，经常变化的进上下文</td><td style="text-align:left">保留分层原则</td><td style="text-align:left">检查器只能保证它实际编码且执行边界覆盖的性质；无法机械判定的业务目标仍需明确验收者</td></tr><tr><td style="text-align:left">五类意外分别处理</td><td style="text-align:left">保留为诊断起点</td><td style="text-align:left">实现、计划、理解、检查器、环境可以共同作用；允许多个假设和不确定，不以强制单标签替代原因核查</td></tr><tr><td style="text-align:left">假设被推翻，作废所有依赖步骤</td><td style="text-align:left">建议收窄</td><td style="text-align:left">先求影响范围，再按替代证据和版本重算；已发生外部效果不能靠删除任务或代码回滚撤销</td></tr><tr><td style="text-align:left">基础版 Pi 是早期底座候选/决定</td><td style="text-align:left">保留后续重评“最终底座尚未批准”的状态</td><td style="text-align:left">H0 的 DSH-first 试点与最终底座选择分开；底座 v0.1.6 L1057/L1084–1088 要求产品身份独立宿主 ID、先契约小对照</td></tr><tr><td style="text-align:left">通用面板先于工作台后端扩展</td><td style="text-align:left">保留已采纳产品顺序：完整 P01–P15，再接 B01–B12</td><td style="text-align:left">H01–H08 / I01–I07 是研究验收路线；先行视图例外须明确范围，并在阶段 A 同步契约和任务卡，不默改产品顺序</td></tr><tr><td style="text-align:left">完全暂停已采纳研究方向只能由人决定</td><td style="text-align:left">保留用户意图</td><td style="text-align:left">资源/权限不足可停止新动作并保留复核义务；这与主动放弃方向不同。无限资源不足时不承诺持续执行</td></tr><tr><td style="text-align:left">历史合成测试显示截短上下文节省 CPU/传输</td><td style="text-align:left">保留为历史局部证据</td><td style="text-align:left">不升级为真实任务质量不下降、计费 token 减少或本轮新测结果</td></tr><tr><td style="text-align:left">多模型审查降低共享盲区</td><td style="text-align:left">保留，但重新说明证据强度</td><td style="text-align:left">不同模型也是可能相关的审查者；实际执行只覆盖其观察范围。独立性与有效性不能按一个绝对排名替代具体检验</td></tr><tr><td style="text-align:left">长期经验可以进入后训练</td><td style="text-align:left">保留为远期研究方向</td><td style="text-align:left">有来源、授权和明确标签的轨迹才可讨论数据用途；本轮不导出私有会话、不训练模型、不推定所有门禁通过轨迹都是高质量训练样本</td></tr><tr><td style="text-align:left">H0 的 DSH-first 记录/技能试点</td><td style="text-align:left">保留历史已采纳计划的承接问题</td><td style="text-align:left">方法模块可对应 I05/I07；本轮未决定继续、合并或调整，不恢复旧阈值/排期，也不因新编号默认为完成或放弃</td></tr><tr><td style="text-align:left">用户决定与 AI 推断分开</td><td style="text-align:left">保留明确的记录规则</td><td style="text-align:left">用户决定锚到用户事件，未写出的理由保持未知；会话外文件变化不证明人的作者身份</td></tr><tr><td style="text-align:left">会话外捕获、DAG 状态合并和后台呈现员</td><td style="text-align:left">明确暂缓或待决定</td><td style="text-align:left">按未来渠道/产品范围再讨论，不默认监听、合并旧状态或自动开图</td></tr><tr><td style="text-align:left">远程桌面、A/B 双模式与环境选择</td><td style="text-align:left">保留公开旧稿明确记载的产品决定</td><td style="text-align:left">保留 DSH 桌面，每会话选环境，先 SSH 后 Codespaces；I06 选一种模式只限定研究试点，不删另一产品模式</td></tr><tr><td style="text-align:left">跨通道凭据归属与迁移</td><td style="text-align:left">衔接已有 dsh-chrome 方向，不新立插件</td><td style="text-align:left">两类凭据分开；机器型真值按条存 Keychain，env 用引用，模型不见长度；备份/export 暂缓，最小链路验证后迁移且可回退。载体选择本身不证明隔离或迁移完成</td></tr><tr><td style="text-align:left">旧账本与新 Record 的权威衔接</td><td style="text-align:left">作为 I03/I05 之前的存储与迁移问题</td><td style="text-align:left">明确写者、导入去重、旧 ID、纠正/撤回映射和回退；不让两套工具独立裁定同一状态，不推成全系统单数据库</td></tr><tr><td style="text-align:left">持久工作流与 Record 的生命周期</td><td style="text-align:left">引入组合前先确定同一 task/attempt 的控制权威</td><td style="text-align:left">谁调度未来尝试、取消和恢复须明确；产品身份独立于某家会话 ID。不同对象仍可有各自权威，不要求单服务器</td></tr><tr><td style="text-align:left">分类演化、删除与重处理</td><td style="text-align:left">保留为后续记忆存储验收题</td><td style="text-align:left">旧类别映射、待核状态、摘要/索引/缓存与重建范围都需处理；按政策区分删除内容与可保留派生物，不从单主体失权推出全局删除</td></tr></tbody></table></div>
+<h2 id="2-预测-检查-意外-的记录契约">2. “预测—检查—意外”的记录契约</h2>
+<p>这条方法线可以成为统一 Harness 的一个可替换策略模块，而不是每次简单编辑都必须走的高开销流程。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">对象</th><th style="text-align:left">需要绑定</th><th style="text-align:left">形成时点</th><th style="text-align:left">不能推导的事情</th></tr></thead><tbody><tr><td style="text-align:left">Prediction</td><td style="text-align:left">task/spec、attempt、输入版本、预计结果范围、检查规则版本、已知信息范围</td><td style="text-align:left">相关检查第一次派发前，由可信流程提交</td><td style="text-align:left">不能仅凭早时间戳证明作者从未见过相关结果</td></tr><tr><td style="text-align:left">CheckDefinition</td><td style="text-align:left">需求依据、判据、执行器版本、环境要求、负对照</td><td style="text-align:left">检查前冻结，修订另成版本</td><td style="text-align:left">schema 合法不证明判据与真实目标一致</td></tr><tr><td style="text-align:left">CheckRun</td><td style="text-align:left">checkDefinition、input artifact、环境、执行身份、完整输出引用</td><td style="text-align:left">每次实际执行产生独立 run</td><td style="text-align:left">一次通过不覆盖其他环境/数据/产品版本</td></tr><tr><td style="text-align:left">Comparison</td><td style="text-align:left">predictionId、checkRunId、偏差类型和大小</td><td style="text-align:left">观察结果后</td><td style="text-align:left">预测不准不等于代码错，结果很好也可能是检查器遗漏工作</td></tr><tr><td style="text-align:left">Diagnosis</td><td style="text-align:left">候选原因、支持/反驳证据、置信边界、建议措施</td><td style="text-align:left">对偏差分析后，可以继续修订</td><td style="text-align:left">分类文本不能直接授权破坏性回滚或修改检查标准</td></tr><tr><td style="text-align:left">ImprovementProposal</td><td style="text-align:left">lesson、适用范围、候选模板/规则、对照与采纳标准</td><td style="text-align:left">多个失败/收益证据积累后</td><td style="text-align:left">一次经验不自动成为全局强制规则</td></tr></tbody></table></div>
+<p>顺序要求应表达为可信因果关系：<code>PredictionCommitted → CheckDispatched → CheckObserved</code>。若检查早已运行，后写预测不能冒充事前预测；可以标作事后解释。对反复运行同一任务，要记录作者/模型已看到的先前结果，避免把重复试验中的“预测正确”当独立泛化能力。</p>
+<p>如果使用外部可运行终端，系统只能对它实际控制并记录的检查路径给出顺序保证。不能声称通过事件日志证明了人的主观无知，或证明模型训练中从未见过类似问题。</p>
+<h2 id="3-意外处理如何进入有类型图">3. 意外处理如何进入有类型图</h2>
+<p>建议从“自动回滚依赖链”改成“沿已声明关系确定复核义务”。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">新观察</th><th style="text-align:left">首先改变什么</th><th style="text-align:left">后继如何处理</th></tr></thead><tbody><tr><td style="text-align:left">实现违反固定契约</td><td style="text-align:left">当前尝试/产物的验收状态</td><td style="text-align:left">保留原规格和检查器，形成修复尝试；复用未受影响证据</td></tr><tr><td style="text-align:left">计划假设被反驳</td><td style="text-align:left">指定假设的支持状态</td><td style="text-align:left">查依赖该假设的证明路径；替代证据可继续支持，无法支持的任务重新规划</td></tr><tr><td style="text-align:left">检查器不覆盖实际要求</td><td style="text-align:left">检查规则的适用性与证据强度</td><td style="text-align:left">旧输出仍在历史中，但不足以支持原结论；对受影响产物用新规则验证</td></tr><tr><td style="text-align:left">环境与原假设不同</td><td style="text-align:left">环境版本或适用域</td><td style="text-align:left">区分环境修复与代码修复；重新运行前检查外部效果是否可安全重试</td></tr><tr><td style="text-align:left">预测错误但产物符合目标</td><td style="text-align:left">预测/理解模型的评价</td><td style="text-align:left">不自动改正确产物；更新相关知识和下一次预测策略</td></tr></tbody></table></div>
+<p>这不要求首版实现通用自动诊断。先把诊断记录和依据接入已有工作台，让人能看清“改哪里、为什么、哪些旧结果还能用”，再评估自动化收益。</p>
+<h2 id="4-如何衡量-减少审查">4. 如何衡量“减少审查”</h2>
+<p>旧稿用“机器未覆盖的自由度 × 判断所需上下文”帮助理解审查负担；本轮把它保留为启发，不当作已验证的定量定律。</p>
+<p>建议同时记录四组结果：</p>
+<ol><li>交付质量：预先定义的必需行为、严重错误、后续逃逸问题；不能只数通过检查的比例。</li><li>人工成本：审查时间、额外查证次数、返工解释成本和最终接受所需交互。</li><li>自动化成本：模型与工具费用、等待、宿主资源、维护模板和检查器的投入。</li><li>适用范围：任务类型、规模、依赖版本、模板偏离和失败样本，避免把容易任务的收益外推到所有任务。</li></ol>
+<p>比较同一版本模型下的基础流程、加模板/生成器、加检查器、加事前预测、加记忆/检索等条件。可以先做小规模探索确定量表，再冻结留出任务与采纳规则。多组件同时改变时，不能把总收益归给其中一个组件；模型升级后需要重新消融。</p>
+<h2 id="5-工具-主动性与工作流的历史提案">5. 工具、主动性与工作流的历史提案</h2>
+<p>这些方向继续作为可替换策略，而不升格为统一内核的固定参数。</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">旧稿方向</th><th style="text-align:left">本轮保留</th><th style="text-align:left">本轮收窄或补充</th></tr></thead><tbody><tr><td style="text-align:left">完整工具目录与少量可见工具分开</td><td style="text-align:left">能力注册、描述、投影、调用契约和事件分层</td><td style="text-align:left">3–8 个可见工具只是旧稿设计起点；现有 SDK 数量与延迟说明不证明普适最优，须保留发现失败与退出路径</td></tr><tr><td style="text-align:left">工具使用经验难跨会话传递</td><td style="text-align:left">经验进入带版本的说明、示例和可重用制品</td><td style="text-align:left">“每次对话从零、不能传递”过强；文件、技能和版本记忆已能传递，真正问题是适用性、选择与纠错</td></tr><tr><td style="text-align:left">主动查资料后再问人</td><td style="text-align:left">先读已有约束，继续无依赖的工作；会改变结果且无法自行核实的边界才提问</td><td style="text-align:left">查询既可影响下一步，也可履行未来决策、审计、覆盖和监测义务；未知价值的探索需明确学习目标与预算，不要求事先知道答案</td></tr><tr><td style="text-align:left">Agent 与固定 Workflow 按任务选择</td><td style="text-align:left">固定骨干、可复用计划、有限 Agent 与明确失败出口</td><td style="text-align:left">旧稿 40 实例、5/10 点门槛、70% 诊断一致率是未运行提案，没有本轮功效或采纳依据</td></tr><tr><td style="text-align:left">预测被证伪后重规划</td><td style="text-align:left">保留预测—检查—偏差记录</td><td style="text-align:left">环境、目标、输入与接口变化也可触发重规划，不必等待原预测先失败；维护原方向与当前执行策略分开</td></tr><tr><td style="text-align:left">用成功案例比较成本</td><td style="text-align:left">留下对交付质量与人工负担的关注</td><td style="text-align:left">每成功交付成本的分子含同组失败、超时、构建、诊断、维护与人工；成功子集均值另列，不能替换整体分母</td></tr><tr><td style="text-align:left">独立模型选材与后台本体</td><td style="text-align:left">保留轮后摄入、低频整理、调用前选材三时序</td><td style="text-align:left">水位尾部补最新约束；只有实际控制执行模型输入才能检验 prefill 假设，选材成本计入总成本</td></tr><tr><td style="text-align:left">远程 A/B 与面板引用</td><td style="text-align:left">保留每会话环境绑定、稳定实体选择和改动前影响检查</td><td style="text-align:left">旧兼容结果不等于现行跨宿主验收；当前工作台 accept 的线程 phase 不等于 Record 验收令牌</td></tr></tbody></table></div>
+<p>对应旧稿：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E5%B7%A5%E5%85%B7%E9%9D%A2%E8%AE%BE%E8%AE%A1%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.0.md">工具面</a>、<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/02-methods/2026-10-22-Agent%E4%B8%BB%E5%8A%A8%E6%80%A7%E4%B8%8E%E6%8F%90%E9%97%AE%E8%BE%B9%E7%95%8C%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">主动性与提问</a>。本轮对照：<a href="mechanisms/work-improvement/自主推进与工作方式改进讨论稿-v0.1.0-离线阅读版.html">正向工作策略</a>、<a href="west/evaluation-design-review/README-离线阅读版.html">最小评估</a>、<a href="china/record-refinement/REPORT-v0.1.1-离线阅读版.html">Record 映射修正版</a>。</p>
+<h2 id="6-连接既有公开材料">6. 连接既有公开材料</h2>
+<p><a href="west/design-continuity/旧设计决定与统一Harness衔接讨论稿-v0.1.0-离线阅读版.html">十条产品决定沿革与八问导览</a>进一步核对面板/工作台边界、路径持续信任、目标完成权、引用快照及时间线存活判断。它保留 38 份旧档案的具体读取范围，不把旧测试、资源估算或部分同步材料当成当前交付证据。</p>
+<p><a href="west/intent-coverage/MEMO-离线阅读版.html">旧意图补漏</a>另选此前未正文核读的 8 份代表稿，明确 7 份全文与 1 份选段；把工作流变更、领域边界、H0 与决定来源补入当前研究，也给暂缓提案留下去向。没有把目录盘点当作全部正文重读。</p>
+<p><a href="china/legacy-closure/COVERAGE-离线阅读版.html">旧稿覆盖收束</a>再核 11 份代表材料：相对前述清单为 8 份新增正文与 3 份范围扩展，实际为 3 全文、8 选段。它补回远程与凭据的产品沿革，并保留存储、删除和生命周期权威问题；已采纳状态来自公开稿的明确记录，不冒称重新核验了私人批准或当前实现。<a href="ROOT_LEGACY_REVIEW.json">root 定向核读</a>记录汇总作者重看的原段。</p>
+<ul><li>总体循环：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/01-vision/harness-discussion-v0.3.md">总体讨论 v0.3</a>。原有决定和历史资源数字保留原时间语境。</li><li>Coding 方法：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/03-runtime/history/AI%E7%BC%96%E7%A0%81Harness%E4%B8%BB%E5%B9%B2%E8%AE%BE%E8%AE%A1-%E6%BA%90%E6%96%87%E4%BB%B6v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">早期 AI 编码 Harness 主干设计，文件源 v0.1.2 / 正文 v0.1.1</a>。其中“其他框架没有某能力”的历史归纳需以本轮来源重新核实。</li><li>底座边界：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/03-runtime/Harness%20%E5%BA%95%E5%BA%A7%E6%9E%B6%E6%9E%84%E9%87%8D%E8%AF%84%E8%AE%A8%E8%AE%BA%E7%A8%BF%20v0.1.6.md">架构重评 v0.1.6</a>。</li><li>记忆：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/04-memory/Record%E6%99%BA%E8%83%BD%E8%AE%B0%E5%BF%86%E4%B8%8E%E8%87%AA%E4%B8%BB%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%84%E8%A3%85-%E6%BA%90v0.1.2-%E5%85%AC%E5%BC%80%E6%95%B4%E7%90%86%E7%89%88.md">Record 与自主上下文组装</a>。本轮区分它与实际 Record S1 状态内核。</li><li>图：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/06-dag/current/docs/design/dag-detailed/README.md">DAG 当前公开入口</a>。公开摘编没有携带内部完整实现。</li><li>远程：<a href="https://github.com/TaiShuo150622/dsh-project-workbench/blob/b9d44847d72883bf5116c72f445c31618d7cc020/docs/harness/07-remote/DSH-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E5%8F%8C%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%AE%A8%E8%AE%BA%E7%A8%BF-v0.1.1.md">双运行模式 v0.1.1</a>。历史兼容性不视为当前跨宿主验收。</li><li>新统一语义：<a href="FORMAL_MODEL-离线阅读版.html">形式模型工作稿</a>；<a href="ARCHITECTURE-离线阅读版.html">架构与切片工作稿</a>。</li></ul>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

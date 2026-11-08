@@ -1,0 +1,442 @@
+{
+  "schema_version": "1.0",
+  "task": "C13",
+  "frozen_at_utc": "2026-11-08T10:47:48.512416+00:00",
+  "scope": "PUBLIC_ARCHIVE_READ_ONLY",
+  "archive_base_commit": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+  "counts": {
+    "archive_manifest_items": 192,
+    "archive_markdown": 144,
+    "selected_body_files": 11,
+    "new_body_files": 8,
+    "extensions_of_prior_selected_files": 3,
+    "full_body_files": 3,
+    "selected_body_files_not_full": 8,
+    "external_new_sources": 0,
+    "model_runs": 0,
+    "product_tests": 0
+  },
+  "files": [
+    {
+      "id": "RT",
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "relative_link": "../../../../harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "line_count": 1288,
+      "version": "v0.1.6",
+      "kind": "公开摘编",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "EXTENDS_PRIOR_SELECTED",
+      "reader": "runtime_legacy_read",
+      "read_ranges_1_based": [
+        [
+          394,
+          717
+        ],
+        [
+          936,
+          1132
+        ],
+        [
+          1228,
+          1288
+        ]
+      ],
+      "prior_reading": [
+        {
+          "catalogue": "docs/research/harness-20261107/west/design-continuity/reading-list.json",
+          "pointer": "/files/9",
+          "id": "RT",
+          "read_mode": "SELECTED_BODY",
+          "line_ranges": [
+            [
+              1,
+              95
+            ],
+            [
+              718,
+              907
+            ]
+          ],
+          "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b"
+        }
+      ],
+      "decision_ids": [
+        "D04",
+        "D07"
+      ],
+      "notes": "选最新架构重评；跳过外部产品图和资源实测；最终底座仍未批准",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "WF",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "relative_link": "../../../../harness/02-methods/2026-10-22-Agent与Workflow讨论稿-v0.1.0.md",
+      "sha256": "cce4c41da7d1baae4db15d16c04b2ff4eb40404bf443019a8293e1abae21ca0d",
+      "line_count": 257,
+      "version": "v0.1.0",
+      "kind": "公开整理版",
+      "read_mode": "FULL",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "runtime_legacy_read",
+      "read_ranges_1_based": [
+        [
+          1,
+          257
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D08"
+      ],
+      "notes": "研究题/出稿批准与实验执行分开；不继承阈值",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "REC",
+      "repository_relative_path": "docs/harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "relative_link": "../../../../harness/04-memory/Record智能记忆与自主上下文组装-源v0.1.2-公开整理版.md",
+      "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57",
+      "line_count": 413,
+      "version": "v0.1.2",
+      "kind": "公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "EXTENDS_PRIOR_SELECTED",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          146,
+          301
+        ],
+        [
+          331,
+          413
+        ]
+      ],
+      "prior_reading": [
+        {
+          "catalogue": "docs/research/harness-20261107/west/historical-coverage/reading-list.json",
+          "pointer": "/entries/12",
+          "id": "OLD04",
+          "read_mode": "PRIOR_SELECTED_HASH_CONFIRMED",
+          "line_ranges": [
+            [
+              1,
+              145
+            ]
+          ],
+          "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57"
+        },
+        {
+          "catalogue": "docs/research/harness-20261107/west/intent-coverage/reading-list.json",
+          "pointer": "/files/8",
+          "id": "REC12",
+          "read_mode": "PRIOR_HASH_CONFIRMED",
+          "line_ranges": null,
+          "sha256": "4babf3a8ed262e32b926e1fee83ee89cf81b5eb0320e290e96a6c27a78ec3a57"
+        }
+      ],
+      "decision_ids": [
+        "D04"
+      ],
+      "notes": "补既有1–145之外的本体/存储/评估/未决；302–330外部相关工作未读",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "REM",
+      "repository_relative_path": "docs/harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "relative_link": "../../../../harness/07-remote/DSH-远程工作区与双运行模式讨论稿-v0.1.1.md",
+      "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b",
+      "line_count": 423,
+      "version": "v0.1.1",
+      "kind": "公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "EXTENDS_PRIOR_SELECTED",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          131,
+          423
+        ]
+      ],
+      "prior_reading": [
+        {
+          "catalogue": "docs/research/harness-20261107/west/historical-coverage/reading-list.json",
+          "pointer": "/entries/15",
+          "id": "OLD07",
+          "read_mode": "PRIOR_SELECTED_HASH_CONFIRMED",
+          "line_ranges": [
+            [
+              1,
+              130
+            ]
+          ],
+          "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b"
+        },
+        {
+          "catalogue": "docs/research/harness-20261107/west/intent-coverage/reading-list.json",
+          "pointer": "/files/9",
+          "id": "REM",
+          "read_mode": "PRIOR_HASH_CONFIRMED",
+          "line_ranges": null,
+          "sha256": "187b236cba56962a2af4a27c5df933dd8410468a667383fc2e227ca240606d7b"
+        }
+      ],
+      "decision_ids": [
+        "D01"
+      ],
+      "notes": "补既有1–130外的交互修正、实施顺序、约束及确认项",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "H0",
+      "repository_relative_path": "docs/harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "relative_link": "../../../../harness/02-methods/2026-10-19-Agent框架下一轮任务书.md",
+      "sha256": "855886cbf866501c28e232ef934f473f66d34f3dd2eec8e59220a7443ca30b71",
+      "line_count": 258,
+      "version": "未编号 / 2026-10-19",
+      "kind": "历史实施计划（未据此确认完成）",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          198
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D03"
+      ],
+      "notes": "设计稿已由W13全文处理；只补具体真源/写者/组合与试点任务；199–258未读",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "SEC",
+      "repository_relative_path": "docs/harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "relative_link": "../../../../harness/08-browser/security/2026-11-05-跨通道凭据与截图遮罩讨论稿-v0.1.5.md",
+      "sha256": "73f8df126ba39fcd08d4e591fa2e88ead0a004b3f826156338992839dd810291",
+      "line_count": 412,
+      "version": "v0.1.5",
+      "kind": "历史公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          31
+        ],
+        [
+          77,
+          335
+        ],
+        [
+          364,
+          412
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D02"
+      ],
+      "notes": "只提公开产品决定与历史范围；未读真实凭据或配置，外部来源未重核",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "SET",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/PLUGIN-SETTINGS.md",
+      "sha256": "f55a27066e23b584d589297abdcaf331e8d08a7f5d5712ec5073643dcbc6864a",
+      "line_count": 679,
+      "version": "未编号 / 2026-10-19 settings-mvp",
+      "kind": "公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          25
+        ],
+        [
+          80,
+          121
+        ],
+        [
+          471,
+          547
+        ],
+        [
+          642,
+          679
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D05"
+      ],
+      "notes": "核设置源、作用域、迁移和未决；不继承代码/测试状态",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "MULTI",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/MULTI-BROWSER-SANDBOX.md",
+      "sha256": "635796ebb7d51f9a5b36861404ebb0f89d925a0e2d023a29cb51595a481aa42f",
+      "line_count": 983,
+      "version": "未编号 / 主体0.2.13及后续附录",
+      "kind": "公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          39
+        ],
+        [
+          279,
+          321
+        ],
+        [
+          372,
+          420
+        ],
+        [
+          615,
+          629
+        ],
+        [
+          649,
+          692
+        ],
+        [
+          744,
+          799
+        ],
+        [
+          844,
+          898
+        ],
+        [
+          958,
+          983
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D06"
+      ],
+      "notes": "核agent/session/context、状态、资源/持久profile与后续修订；不读旧测试和内存测量细节",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "DAG1",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "relative_link": "../../../../harness/06-dag/current/docs/design/dag-detailed/01-统一口径表.md",
+      "sha256": "241b08a108e0447b84dafbebcef061f09096c02f0834a8349828816736724c66",
+      "line_count": 24,
+      "version": "未编号 / 公开摘编",
+      "kind": "公开摘编",
+      "read_mode": "FULL",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          24
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D09"
+      ],
+      "notes": "短公共摘要，不能反推内部字段或裁定",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "DAG2",
+      "repository_relative_path": "docs/harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "relative_link": "../../../../harness/06-dag/current/docs/design/dag-detailed/02-代码结构与实施路线.md",
+      "sha256": "d0d0c6eee0170c322981454475ac7adca985c0358b73140a6bea7aee3a8dde90",
+      "line_count": 30,
+      "version": "未编号 / 公开摘编",
+      "kind": "公开摘编",
+      "read_mode": "FULL",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          30
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D09"
+      ],
+      "notes": "短公共分层路线，不恢复私有迁移路径",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    },
+    {
+      "id": "NATIVE",
+      "repository_relative_path": "docs/harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "relative_link": "../../../../harness/08-browser/dsh-chrome/docs/DSH-SIDEBAR-NATIVE.md",
+      "sha256": "f09901c22204e1c23aea5cd8fa4170e6d2f0fa5568bb80f909b63fa56d4b3c3d",
+      "line_count": 1376,
+      "version": "未编号 / 2026-10-19 native-sidebar",
+      "kind": "公开整理版",
+      "read_mode": "SELECTED_BODY",
+      "selection_type": "NEW_BODY_SELECTION",
+      "reader": "C13",
+      "read_ranges_1_based": [
+        [
+          1,
+          30
+        ],
+        [
+          108,
+          133
+        ],
+        [
+          612,
+          720
+        ],
+        [
+          864,
+          940
+        ],
+        [
+          1280,
+          1308
+        ]
+      ],
+      "prior_reading": [],
+      "decision_ids": [
+        "D06"
+      ],
+      "notes": "只核主体、持久绑定、授权与生命周期；A0历史组件不等于整体实现",
+      "archive_manifest_sha_matches": true,
+      "status": "HISTORICAL_PUBLIC_DOCUMENT_NOT_CURRENT_IMPLEMENTATION_VERIFICATION"
+    }
+  ],
+  "limits": [
+    "FULL applies only to the stated files; all other bodies are selected ranges.",
+    "runtime_legacy_read is a delegated reader in the same task, not an independent second review.",
+    "Prior catalogue scopes are retained, not relabelled as new reads.",
+    "No external source was reopened; historical assertions and test counts are not current implementation evidence."
+  ],
+  "counts_basis": "New versus prior selected reading is relative to the three frozen W09/W12/W13 catalogues, not a claim about every historical conversation."
+}

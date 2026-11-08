@@ -1,0 +1,79 @@
+{
+  "checked_at_utc": "2026-11-08T08:19:35.324753+00:00",
+  "scope": "R-07 single snapshot provenance erratum; independent model metadata review",
+  "human_review_claimed": false,
+  "executed_tests": false,
+  "executed_probes": false,
+  "manifest_entries": [
+    {
+      "role": "uncommitted_research_specification",
+      "source": "integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "prepared_source": "inputs/specifications/FORMAL_MODEL.md",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904,
+      "identity_note": "Content hash pins the working draft; git HEAD alone does not identify this uncommitted file."
+    },
+    {
+      "role": "parent_requested_q_semantics_update",
+      "source": "integration/docs/research/harness-20261107/FORMAL_MODEL.md",
+      "prepared_source": "inputs/specifications/FORMAL_MODEL-q-update.md",
+      "worktree_head": "7264be10387963f4d575d8688ed8573f4c16c8c4",
+      "captured_at_utc": "2026-11-08T07:37:16.627598+00:00",
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+      "bytes": 31904,
+      "identity_note": "Later working draft captured after parent clarified Usable_L(t,q,n), q=(consumer,operation,recipients). The first snapshot is retained."
+    }
+  ],
+  "recorded_initial_capture_time": "2026-11-08T07:34:09.543383+00:00",
+  "byte_identical": true,
+  "actual_sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd",
+  "both_manifest_hashes_match": true,
+  "initial_snapshot_q_definition_line": 58,
+  "initial_snapshot_q_definition": "- `Usable_L(t,q,n)`：截至该前缀，绑定结果的有效观察满足消费请求 q 所需的存在性、访问性和适用性条件；q 至少包含 consumer、operation、recipients。下文简写 Usable 时固定 q，不能把它当作全局布尔值。",
+  "matches_R05_inputs": [
+    {
+      "path": "REPORT.md",
+      "matches_r05_frozen_copy": true,
+      "sha256": "ca004586d30625b55a046a715a47381ca04171eaf677182a0023b7d7b0bf47fe"
+    },
+    {
+      "path": "inputs.json",
+      "matches_r05_frozen_copy": true,
+      "sha256": "62d259aff024dc3720db0d71c4deb0319abdc3fe98f062af34577553129988d9"
+    },
+    {
+      "path": "inputs/specifications/FORMAL_MODEL.md",
+      "matches_r05_frozen_copy": true,
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    },
+    {
+      "path": "inputs/specifications/FORMAL_MODEL-q-update.md",
+      "matches_r05_frozen_copy": true,
+      "sha256": "a7c3b0b0e37e95a730677149f7d862cdc6fb042b9edd2e5317431ed28d78ebcd"
+    },
+    {
+      "path": "inputs/record/kernel.mjs",
+      "matches_r05_frozen_copy": true,
+      "sha256": "1aa23a691e851aecea009a132d94129271606f8361f179315cf2b2e65f010bd8"
+    },
+    {
+      "path": "inputs/tests/support/record-fixture.mjs",
+      "matches_r05_frozen_copy": true,
+      "sha256": "533c3a671e73d79b1fe7a88a0415a29f50d5acf846b0af9e76b63815239ff8ea"
+    },
+    {
+      "path": "refinement-probes.mjs",
+      "matches_r05_frozen_copy": true,
+      "sha256": "799ffec31c7cb0479638d20499b61087bdcb8864861729d8224c99c01706d401"
+    },
+    {
+      "path": "probes.json",
+      "matches_r05_frozen_copy": true,
+      "sha256": "2f42a1f467a6c0a349fc6b8d37b9f2a8fefa66d7940b4149f7594328bb1ac903"
+    }
+  ],
+  "R05_prior_metadata_assertions_scope": "hash/receipt consistency, not verified semantic version-transition narrative",
+  "finding": "REPORT.md:22 inaccurately describes first capture as p,kappa then changed q; retained files already share the same q definition. Two capture times do not establish a content update.",
+  "impact": "Correct source-history narrative and later-working-draft wording; no change to kernel/fixture/probes, recorded execution outputs, or R05 refinement conclusions. No claim about unretained earlier drafts."
+}

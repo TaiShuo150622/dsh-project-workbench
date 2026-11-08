@@ -1,0 +1,47 @@
+{
+  "copied_at_utc": "2026-11-08T10:05:51.196240+00:00",
+  "files": [
+    {
+      "path": "west/intent-coverage/MEMO.md",
+      "source_worktree": "west",
+      "bytes": 11879,
+      "sha256": "d516bbb12c7a62c3b1a3216bce393499ccaf8b5e84b2ac8dfad379af3b3bd2e5"
+    },
+    {
+      "path": "west/intent-coverage/READING.md",
+      "source_worktree": "west",
+      "bytes": 6529,
+      "sha256": "4aa638327a5940a1243108e6a2bcbe25ea529d4892150a11781e060b27e7518f"
+    },
+    {
+      "path": "west/intent-coverage/README.md",
+      "source_worktree": "west",
+      "bytes": 4788,
+      "sha256": "457712e95f9158a796c9b9a3b3be6b8eb0e1288a4b744a3ea8277e8da021d86f"
+    },
+    {
+      "path": "west/intent-coverage/inventory.json",
+      "source_worktree": "west",
+      "bytes": 28176,
+      "sha256": "c5fa34c310ff19bf85c68a1576c12f34b23b03af5a50e311b03a422b60760d02"
+    },
+    {
+      "path": "west/intent-coverage/mapping.json",
+      "source_worktree": "west",
+      "bytes": 13797,
+      "sha256": "5c21bb5ee416989f5fa9f95bca83e1e9de9da9c42f7f0976ff0c98e5ce6ab6b2"
+    },
+    {
+      "path": "west/intent-coverage/reading-list.json",
+      "source_worktree": "west",
+      "bytes": 19985,
+      "sha256": "773568f4c06ac3048846795ac4c542446db1e87396a81656fe39392b2eae04c0"
+    },
+    {
+      "path": "west/intent-coverage/validation.json",
+      "source_worktree": "west",
+      "bytes": 24069,
+      "sha256": "d35acc45e107334fdbf44b942d80317e23a6a45c770c5cc0c7c6c15cd6a1c98a"
+    }
+  ]
+}

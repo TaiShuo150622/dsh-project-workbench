@@ -1,0 +1,74 @@
+{
+  "captured_at_utc": "2026-11-08T09:31:53.419368+00:00",
+  "source_root": "harness-seven-hours/",
+  "files": [
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/check_handoff.py",
+      "snapshot": "inputs/check_handoff.py",
+      "sha256": "9526297697e0e7bedeb32ebccabf6665b086e375bb62c0be47f4999dd7e7a19c",
+      "bytes": 8801
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/verify_handoff.py",
+      "snapshot": "inputs/verify_handoff.py",
+      "sha256": "a6a5df0d9a594b8d7422f3d4d71b097d1bfb1d845196ac612a0d4672627571d4",
+      "bytes": 4476
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/责任接管与负担连续性讨论稿-v0.1.0.md",
+      "snapshot": "inputs/责任接管与负担连续性讨论稿-v0.1.0.md",
+      "sha256": "905ba62b10901fe4c9925165d7fb8fb575b2dbf3e9f4389a09497e1a97114b75",
+      "bytes": 14372
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/README.md",
+      "snapshot": "inputs/README.md",
+      "sha256": "b890b1b30103b9b9eac141208c372e99bb41766c0a0e976640fc58d5724f820e",
+      "bytes": 976
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/PREMISES.md",
+      "snapshot": "inputs/PREMISES.md",
+      "sha256": "4a7081326bb9a4657110733b00631fe602b93006e80931465e78851837ea11cf",
+      "bytes": 2327
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/results.json",
+      "snapshot": "inputs/results.json",
+      "sha256": "2222388828c09944ed12ea95f8fa7e02d19c99293dd7ce370c31abbd14f1cde4",
+      "bytes": 24026
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/verification_receipt.json",
+      "snapshot": "inputs/verification_receipt.json",
+      "sha256": "aafe8f531953e617ab9208b25f4483b922efeae1d2ded99fc611e9d475a18aae",
+      "bytes": 13073
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/inputs.json",
+      "snapshot": "inputs/inputs.json",
+      "sha256": "5c45a429d099dc8305dc097a1a0c0da021404948d34caf3c8bf9229e92d788f9",
+      "bytes": 1021
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/inputs/BudgetSafety.lean",
+      "snapshot": "inputs/BudgetSafety.lean",
+      "sha256": "857ff81f5fd9ae82cbfde01f0e227fff8bbb4fb4951c2b2f7e038127ac5b4c1a",
+      "bytes": 11464
+    },
+    {
+      "source": "proof-review/docs/research/harness-20261107/proof-review/handoff-composition/inputs/FORMAL_MODEL.md",
+      "snapshot": "inputs/FORMAL_MODEL.md",
+      "sha256": "ce0b2b9a3419f41d7be0f8caafbf672044a5bad6d337d09aaef8a741eec097aa",
+      "bytes": 32997
+    },
+    {
+      "source": "integration/docs/research/harness-20261107/统一Harness工程与形式化基础讨论稿-v0.1.3.md",
+      "snapshot": "inputs/main-v0.1.3.md",
+      "sha256": "7841cff2ef2d67419524abfbedcdbf3fa0d9d1ec881af36041aa20c2763eb4d1",
+      "bytes": 41058
+    }
+  ],
+  "network_sources_added": 0,
+  "snapshot_completed_at_utc": "2026-11-08T09:39:13.313261+00:00"
+}

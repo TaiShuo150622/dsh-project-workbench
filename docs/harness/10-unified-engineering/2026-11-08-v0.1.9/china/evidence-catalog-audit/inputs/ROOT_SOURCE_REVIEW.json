@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "status": "partial_cross_review",
+  "description": "Root additionally reopened selected critical sources after worker primary-source research. This is not exhaustive runtime validation.",
+  "entries": [
+    {
+      "id": "CN-QC-09",
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "packages/core/src/goals/goal-tool-result-provenance.ts",
+      "lines": "1–180",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/packages/core/src/goals/goal-tool-result-provenance.ts",
+      "blob_sha": "2c68879056b56c0ae866d566b72e63c38ef5e46e",
+      "root_review_note": "确认运行记账/聚合输出/原始工具记录的分类；分类不证明世界事实为真。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-TR-04-a",
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "graph/executor.go",
+      "lines": "462–501",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "blob_sha": "5130d5cd3a7d7f88924874efbffc08a0e0feb142",
+      "root_review_note": "确认初始checkpoint失败仅Debug记录后继续。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-TR-04-b",
+      "repository": "trpc-group/trpc-agent-go",
+      "commit": "d44ef706c98e6fd77d4252d7ea7d6252901ac8bc",
+      "path": "graph/executor.go",
+      "lines": "1569–1610",
+      "url": "https://github.com/trpc-group/trpc-agent-go/blob/d44ef706c98e6fd77d4252d7ea7d6252901ac8bc/graph/executor.go",
+      "blob_sha": "5130d5cd3a7d7f88924874efbffc08a0e0feb142",
+      "root_review_note": "确认maybeCreateLoopCheckpoint失败路径不返回错误，仅记录日志。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-QC-04",
+      "repository": "QwenLM/qwen-code",
+      "commit": "cbc6164c267db226b8227da0cf96b0e186026ef9",
+      "path": "docs/users/hosted-workspace-recovery.md",
+      "lines": "full document",
+      "url": "https://github.com/QwenLM/qwen-code/blob/cbc6164c267db226b8227da0cf96b0e186026ef9/docs/users/hosted-workspace-recovery.md",
+      "blob_sha": "fec588da8fb8c4f81f890ae02396969a2a0b2a97",
+      "root_review_note": "确认恢复只回收准确Workspace holder，不完成或重试原Shell，逃逸写者终止仍依赖操作员声明。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "A20",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+      "location": "How the worker handles memory; Read-only stores and conflicts",
+      "root_review_note": "服务端store权威，冲突覆盖本地；write/edit成功仍可能在同步时丢失修改。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-TX-03",
+      "url": "https://www.codebuddy.cn/docs/cli/agent-teams",
+      "location": "委派模式; 已知限制",
+      "root_review_note": "成员不继承领导delegate限制；resume/rewind不恢复团队成员；权限细表需优先于末尾简写。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "GH-01",
+      "url": "https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request-asynchronously",
+      "location": "Merge asynchronously; Get result",
+      "root_review_note": "202是接纳；enqueued对该请求终结但不是已合并；UUID结果24小时后过期404，需要PR本体读回。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-PE-TX-01",
+      "url": "https://www.infoq.cn/article/soadsraioyt8ckqhijx5",
+      "location": "技术决策的核心：上下文、规则与协作",
+      "root_review_note": "原始问答讨论压缩/外部存储、CDE、单多代理和检查点；未采用未公开评测方法的效率数字。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    },
+    {
+      "id": "CN-PE-TX-02",
+      "url": "https://developer.cloud.tencent.com/salon/salon-2433",
+      "location": "2026-03-21议程14:50",
+      "root_review_note": "官方页标明汪晟杰当时CodeBuddy产品身份，不作为当前任职保证。",
+      "status": "primary_text_reopened",
+      "accessed_at": "2026-11-08",
+      "runtime_tested": false
+    }
+  ]
+}

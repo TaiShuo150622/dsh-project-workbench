@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="render.py">
+<meta name="source-sha1" content="d467d1b0ba27">
+<title>R-04 实际运行的短轨迹</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#ffffff;--ink:#1c1b19;--muted:#6b675f;--line:#e4e0d6;--accent:#b4531a;
+--accent-soft:#fdf0e4;--code:#f3f1ec;--link:#1f5fa8;--cap:#7a3a10;--ok:#2f7d4f;--warn:#a86a00;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;
+--muted:#a39f96;--line:#34322e;--accent:#f0915a;--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;
+--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#151412;--panel:#1d1c1a;--ink:#ecebe7;--muted:#a39f96;--line:#34322e;--accent:#f0915a;
+--accent-soft:#2a1f17;--code:#24231f;--link:#8bb8f0;--cap:#f3b98f;--ok:#6fcf97;--warn:#f2c94c;--bad:#ff8a80}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",
+"Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 16px}
+@media (min-width:1040px){.layout{grid-template-columns:240px minmax(0,1fr);gap:40px;padding:0 32px}}
+nav.toc{font-size:14px;line-height:1.5}
+@media (min-width:1040px){nav.toc{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:32px 0}}
+nav.toc details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--panel)}
+@media (min-width:1040px){nav.toc details{border:0;background:none;padding:0;margin:0}nav.toc summary{pointer-events:none}}
+nav.toc summary{cursor:pointer;color:var(--muted);font-weight:600;list-style:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}nav.toc li{margin:4px 0}
+nav.toc li.l3{padding-left:14px;font-size:13px}nav.toc a{color:var(--ink);text-decoration:none;opacity:.8}
+nav.toc a:hover{opacity:1;color:var(--accent)}
+main{min-width:0;padding:24px 0 80px;max-width:820px}
+header.doc{border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:16px}
+header.doc h1{font-size:28px;line-height:1.3;margin:8px 0 12px;letter-spacing:.01em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--panel)}
+.chip.ver{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tools{float:right;margin-top:8px}
+.tools button{font:inherit;font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+border-radius:8px;padding:4px 10px;cursor:pointer}
+h2{font-size:21px;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+header.doc+h2,header.doc+table+h2{border-top:0;margin-top:8px;padding-top:0}
+td:first-child{white-space:nowrap}
+h3{font-size:17px;margin:28px 0 8px}h4,h5,h6{font-size:15px;margin:20px 0 6px}
+p{margin:10px 0}a{color:var(--link)}strong{font-weight:650}
+code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono CJK SC",monospace;
+background:var(--code);border-radius:4px;padding:1px 5px}
+pre{background:var(--code);border-radius:10px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;padding:0}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.55}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}
+ul,ol{padding-left:1.4em;margin:8px 0}li{margin:3px 0}
+ul.task-list{list-style:none;padding-left:.4em}ul.task-list input{margin-right:6px;accent-color:var(--accent)}
+li.done{color:var(--muted)}
+blockquote{margin:14px 0;padding:4px 16px;border-left:3px solid var(--accent);color:var(--muted);background:var(--panel)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.fig-cap{margin:24px 0 6px;color:var(--cap);font-size:15px}
+figure.diagram{margin:0;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}
+figure.diagram pre.mermaid{background:none;margin:0;padding:0;text-align:center}
+.fig-read{color:var(--muted);font-size:14.5px;margin-top:8px}
+.meta-table{font-size:13px;color:var(--muted);margin:0 0 20px}
+.meta-table td{border:0;padding:2px 10px 2px 0}
+.offline-note{font-size:13px;color:var(--muted)}
+img{max-width:100%}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{max-width:none}body{background:#fff}}
+
+/* Reading-copy layout only; code blocks and tables retain local scrolling. */
+main{min-width:0}p,li,h1,h2,h3,a{overflow-wrap:anywhere}:not(pre)>code{overflow-wrap:anywhere;word-break:break-word}pre{max-width:100%}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('doc-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+function toggleTheme(){var r=document.documentElement,cur=r.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';
+r.setAttribute('data-theme',n);try{localStorage.setItem('doc-theme',n)}catch(e){}location.reload()}
+</script>
+<meta name="reference-link-transform" content="expanded-for-renderer">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><details open><summary>目录</summary><ol><li class="l2"><a href="#rf01-an-attempt-created-under-v1-can-reserve-and-dispatch-the-v2-scope">RF01 · An attempt created under v1 can reserve and dispatch the v2 scope</a></li><li class="l2"><a href="#rf02-a-command-routed-to-another-history-can-mutate-its-colliding-local-task-id">RF02 · A command routed to another history can mutate its colliding local task ID</a></li><li class="l2"><a href="#rf03-a-repeated-same-result-observation-does-not-become-an-alternative-support-witness">RF03 · A repeated same-result observation does not become an alternative support witness</a></li><li class="l2"><a href="#rf04-new-action-precheck-is-not-the-dispatch-guard-for-an-existing-reservation">RF04 · New-action precheck is not the dispatch guard for an existing reservation</a></li><li class="l2"><a href="#rf05-the-first-historical-merge-observation-initializes-availability-without-a-separate-readback">RF05 · The first historical merge observation initializes availability without a separate readback</a></li><li class="l2"><a href="#rf06-a-post-assignment-completion-conflict-rolls-back-the-draft-action-mutation">RF06 · A post-assignment completion conflict rolls back the draft action mutation</a></li><li class="l2"><a href="#rf07-c01-must-use-explicit-successor-mode-for-a-completed-s1-task">RF07 · C01 must use explicit successor mode for a completed S1 task</a></li><li class="l2"><a href="#rf08-cancellation-and-late-evidence-retain-separate-task-and-action-outcomes">RF08 · Cancellation and late evidence retain separate task and action outcomes</a></li></ol></details></nav>
+<main>
+<header class="doc">
+<div class="tools"><button type="button" onclick="toggleTheme()">深浅色</button></div>
+<div class="chips"><span class="chip">文档</span></div>
+<h1>R-04 实际运行的短轨迹</h1>
+</header>
+<p>输入为冻结 7264be1 的源码副本；只有同步内存调用。<code>COUNTEREXAMPLE_REPRODUCED</code> 否定每项所引的更强映射，不表示发现了对 S1 已声明范围的违约。没有运行真实适配器 C01–C16。</p>
+<h2 id="rf01-an-attempt-created-under-v1-can-reserve-and-dispatch-the-v2-scope">RF01 · An attempt created under v1 can reserve and dispatch the v2 scope</h2>
+<ul><li>类别：<code>refinement_gap</code></li><li>检查的说法：Every S1 attempt is bound to its creation specVersion and a successor retires its write authority.</li><li>实际结果：<code>COUNTEREXAMPLE_REPRODUCED</code></li><li>create v1 and begin A1</li></ul>
+<pre data-lang="json"><code>{
+  &quot;taskId&quot;: &quot;task:1&quot;,
+  &quot;specVersion&quot;: 1,
+  &quot;attempt&quot;: {
+    &quot;id&quot;: &quot;attempt:2&quot;,
+    &quot;host&quot;: &quot;dsh&quot;,
+    &quot;sessionId&quot;: &quot;session-a&quot;,
+    &quot;actorId&quot;: &quot;session-a&quot;
+  }
+}</code></pre>
+<ol start="2"><li>revise to v2 and begin A2</li></ol>
+<pre data-lang="json"><code>{
+  &quot;specVersion&quot;: 2,
+  &quot;newAttempt&quot;: &quot;attempt:4&quot;
+}</code></pre>
+<ol start="3"><li>A1 uses current revision to reserve and dispatch</li></ol>
+<pre data-lang="json"><code>{
+  &quot;id&quot;: &quot;action:5&quot;,
+  &quot;taskId&quot;: &quot;task:1&quot;,
+  &quot;attemptId&quot;: &quot;attempt:2&quot;,
+  &quot;actorId&quot;: &quot;session-a&quot;,
+  &quot;spec&quot;: {
+    &quot;kind&quot;: &quot;pull_request_merge&quot;,
+    &quot;repositoryId&quot;: &quot;repo-1&quot;,
+    &quot;pullRequestId&quot;: &quot;pr-1&quot;,
+    &quot;targetRef&quot;: &quot;refs/heads/pilot&quot;,
+    &quot;sourceSha&quot;: &quot;4444444444444444444444444444444444444444&quot;,
+    &quot;mergeMethod&quot;: &quot;merge&quot;
+  },
+  &quot;specVersion&quot;: 2,
+  &quot;authorizationRevision&quot;: 2,
+  &quot;status&quot;: &quot;sent&quot;
+}</code></pre>
+<h2 id="rf02-a-command-routed-to-another-history-can-mutate-its-colliding-local-task-id">RF02 · A command routed to another history can mutate its colliding local task ID</h2>
+<ul><li>类别：<code>refinement_gap</code></li><li>检查的说法：Every S1 command independently rejects a different history incarnation.</li><li>实际结果：<code>COUNTEREXAMPLE_REPRODUCED</code></li><li>independent histories collide on local ID and revision</li></ul>
+<pre data-lang="json"><code>{
+  &quot;oldStream&quot;: &quot;project:old&quot;,
+  &quot;freshStream&quot;: &quot;project:fresh&quot;,
+  &quot;taskId&quot;: &quot;task:1&quot;,
+  &quot;oldSource&quot;: &quot;old-assignment&quot;,
+  &quot;freshSource&quot;: &quot;fresh-assignment&quot;,
+  &quot;command&quot;: {
+    &quot;type&quot;: &quot;cancel&quot;,
+    &quot;payload&quot;: {
+      &quot;reason&quot;: &quot;cancel the old assignment only&quot;
+    },
+    &quot;actor&quot;: {
+      &quot;kind&quot;: &quot;user&quot;,
+      &quot;id&quot;: &quot;owner&quot;
+    },
+    &quot;requestId&quot;: &quot;request:2&quot;,
+    &quot;taskId&quot;: &quot;task:1&quot;,
+    &quot;expectedRevision&quot;: 1
+  }
+}</code></pre>
+<ol start="2"><li>route the unmodified old command into the fresh kernel</li></ol>
+<pre data-lang="json"><code>{
+  &quot;receipt&quot;: {
+    &quot;streamId&quot;: &quot;project:fresh&quot;,
+    &quot;cursor&quot;: 2,
+    &quot;requestId&quot;: &quot;request:2&quot;,
+    &quot;taskId&quot;: &quot;task:1&quot;,
+    &quot;revision&quot;: 2
+  },
+  &quot;freshStatus&quot;: &quot;cancelled&quot;,
+  &quot;oldStatus&quot;: &quot;open&quot;
+}</code></pre>
+<ol start="3"><li>control: cross-history acceptance token</li></ol>
+<pre data-lang="json"><code>{
+  &quot;rejected&quot;: &quot;ACCEPTANCE_CONFLICT&quot;
+}</code></pre>
+<h2 id="rf03-a-repeated-same-result-observation-does-not-become-an-alternative-support-witness">RF03 · A repeated same-result observation does not become an alternative support witness</h2>
+<ul><li>类别：<code>refinement_gap</code></li><li>检查的说法：S1 completion withdrawal implements general OR-support preservation.</li><li>实际结果：<code>COUNTEREXAMPLE_REPRODUCED</code></li><li>accept two same-result observations</li></ul>
+<pre data-lang="json"><code>{
+  &quot;completionCount&quot;: 1,
+  &quot;retainedWitness&quot;: &quot;observer:first&quot;,
+  &quot;journalObservationRefs&quot;: [
+    &quot;observer:first&quot;,
+    &quot;observer:independent-second&quot;
+  ]
+}</code></pre>
+<ol start="2"><li>withdraw the one current completion</li></ol>
+<pre data-lang="json"><code>{
+  &quot;supported&quot;: false,
+  &quot;status&quot;: &quot;disputed&quot;,
+  &quot;completionCount&quot;: 1,
+  &quot;secondObservationRemainsInJournal&quot;: true
+}</code></pre>
+<h2 id="rf04-new-action-precheck-is-not-the-dispatch-guard-for-an-existing-reservation">RF04 · New-action precheck is not the dispatch guard for an existing reservation</h2>
+<ul><li>类别：<code>refinement_gap</code></li><li>检查的说法：checkAction is the same admissibility predicate as dispatchAction for a reserved action.</li><li>实际结果：<code>COUNTEREXAMPLE_REPRODUCED</code></li><li>query checkAction after own reservation</li></ul>
+<pre data-lang="json"><code>{
+  &quot;actionId&quot;: &quot;action:3&quot;,
+  &quot;decision&quot;: {
+    &quot;decision&quot;: &quot;wait&quot;,
+    &quot;reason&quot;: &quot;action-unresolved&quot;,
+    &quot;actionId&quot;: &quot;action:3&quot;
+  }
+}</code></pre>
+<ol start="2"><li>dispatch the same reservation</li></ol>
+<pre data-lang="json"><code>{
+  &quot;status&quot;: &quot;sent&quot;
+}</code></pre>
+<h2 id="rf05-the-first-historical-merge-observation-initializes-availability-without-a-separate-readback">RF05 · The first historical merge observation initializes availability without a separate readback</h2>
+<ul><li>类别：<code>refinement_gap</code></li><li>检查的说法：S1 current-result alone establishes independently observed Usable_L(t,q,n).</li><li>实际结果：<code>COUNTEREXAMPLE_REPRODUCED</code></li><li>supply only the documented ordinary-merge observation</li></ul>
+<pre data-lang="json"><code>{
+  &quot;evidenceFields&quot;: [
+    &quot;provider&quot;,
+    &quot;repositoryId&quot;,
+    &quot;pullRequestId&quot;,
+    &quot;targetRef&quot;,
+    &quot;sourceSha&quot;,
+    &quot;mergeMethod&quot;,
+    &quot;merged&quot;,
+    &quot;mergeSha&quot;,
+    &quot;parents&quot;,
+    &quot;observationRef&quot;
+  ],
+  &quot;result&quot;: {
+    &quot;id&quot;: &quot;result:81f0b8b61f8d5549b9e5cc53c34de7a8583673b3f0adbb52818717938d41310a&quot;,
+    &quot;fingerprint&quot;: &quot;81f0b8b61f8d5549b9e5cc53c34de7a8583673b3f0adbb52818717938d41310a&quot;,
+    &quot;mergeSha&quot;: &quot;3333333333333333333333333333333333333333&quot;,
+    &quot;available&quot;: true,
+    &quot;availabilityRevision&quot;: 1
+  },
+  &quot;currentResult&quot;: true,
+  &quot;separateAvailabilityReadSubmitted&quot;: false
+}</code></pre>
+<ol start="2"><li>control: later known invalidation survives a repeated merge observation</li></ol>
+<pre data-lang="json"><code>{
+  &quot;historicalCompletion&quot;: true,
+  &quot;currentResult&quot;: false
+}</code></pre>
+<h2 id="rf06-a-post-assignment-completion-conflict-rolls-back-the-draft-action-mutation">RF06 · A post-assignment completion conflict rolls back the draft action mutation</h2>
+<ul><li>类别：<code>scoped_control</code></li><li>检查的说法：A rejected synchronous command publishes no state, event or request receipt.</li><li>实际结果：<code>SCOPED_BEHAVIOR_CONFIRMED</code></li><li>sent action exists while a different completion has been accepted</li></ul>
+<pre data-lang="json"><code>{
+  &quot;action&quot;: {
+    &quot;id&quot;: &quot;action:3&quot;,
+    &quot;taskId&quot;: &quot;task:1&quot;,
+    &quot;attemptId&quot;: &quot;attempt:2&quot;,
+    &quot;actorId&quot;: &quot;session-a&quot;,
+    &quot;spec&quot;: {
+      &quot;kind&quot;: &quot;pull_request_merge&quot;,
+      &quot;repositoryId&quot;: &quot;repo-1&quot;,
+      &quot;pullRequestId&quot;: &quot;pr-1&quot;,
+      &quot;targetRef&quot;: &quot;refs/heads/pilot&quot;,
+      &quot;sourceSha&quot;: &quot;1111111111111111111111111111111111111111&quot;,
+      &quot;mergeMethod&quot;: &quot;merge&quot;
+    },
+    &quot;specVersion&quot;: 1,
+    &quot;authorizationRevision&quot;: 1,
+    &quot;status&quot;: &quot;sent&quot;
+  },
+  &quot;completion&quot;: &quot;completion:5&quot;
+}</code></pre>
+<ol start="2"><li>resolveAction assigns succeeded in the draft, then complete rejects; repeat stays rejected</li></ol>
+<pre data-lang="json"><code>{
+  &quot;error&quot;: &quot;COMPLETION_CONFLICT&quot;,
+  &quot;currentActionStatus&quot;: &quot;sent&quot;,
+  &quot;cursorUnchanged&quot;: true,
+  &quot;journalUnchanged&quot;: true
+}</code></pre>
+<h2 id="rf07-c01-must-use-explicit-successor-mode-for-a-completed-s1-task">RF07 · C01 must use explicit successor mode for a completed S1 task</h2>
+<ul><li>类别：<code>scoped_control</code></li><li>检查的说法：The supported C01 variant rejects in-place completed-task mutation and does not inherit acceptance.</li><li>实际结果：<code>SCOPED_BEHAVIOR_CONFIRMED</code></li><li>reject in-place mutation and create a related new assignment</li></ul>
+<pre data-lang="json"><code>{
+  &quot;rejected&quot;: &quot;INVALID_TRANSITION&quot;,
+  &quot;oldTaskId&quot;: &quot;task:1&quot;,
+  &quot;newTaskId&quot;: &quot;task:4&quot;,
+  &quot;oldAccepted&quot;: true,
+  &quot;newAccepted&quot;: false,
+  &quot;newSpecVersion&quot;: 1
+}</code></pre>
+<h2 id="rf08-cancellation-and-late-evidence-retain-separate-task-and-action-outcomes">RF08 · Cancellation and late evidence retain separate task and action outcomes</h2>
+<ul><li>类别：<code>scoped_control</code></li><li>检查的说法：Cancellation of a sent action does not assert not_applied; late trusted success stays attributed to the old action.</li><li>实际结果：<code>SCOPED_BEHAVIOR_CONFIRMED</code></li><li>cancel after dispatch</li></ul>
+<pre data-lang="json"><code>{
+  &quot;taskStatus&quot;: &quot;cancelled&quot;,
+  &quot;actionStatus&quot;: &quot;sent&quot;
+}</code></pre>
+<ol start="2"><li>record uncertainty and create successor assignment</li></ol>
+<pre data-lang="json"><code>{
+  &quot;successorDecision&quot;: {
+    &quot;decision&quot;: &quot;wait&quot;,
+    &quot;reason&quot;: &quot;action-unresolved&quot;,
+    &quot;actionId&quot;: &quot;action:3&quot;
+  }
+}</code></pre>
+<ol start="3"><li>accept a trusted synthetic late result</li></ol>
+<pre data-lang="json"><code>{
+  &quot;oldTaskStatus&quot;: &quot;cancelled&quot;,
+  &quot;oldActionStatus&quot;: &quot;succeeded&quot;,
+  &quot;successorDecision&quot;: {
+    &quot;decision&quot;: &quot;verify&quot;,
+    &quot;reason&quot;: &quot;prior-result&quot;,
+    &quot;actionId&quot;: &quot;action:3&quot;
+  }
+}</code></pre>
+</main>
+</div>
+<script>if(innerWidth<1040){var d=document.querySelector('nav.toc details');if(d)d.removeAttribute('open')}</script>
+
+</body>
+</html>

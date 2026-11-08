@@ -1,0 +1,44 @@
+{
+  "captured_at_utc": "2026-11-08T09:36:09.934040+00:00",
+  "input_kind": "public historical design excerpts only",
+  "entries": [
+    {
+      "repository_relative_path": "docs/harness/03-runtime/Harness 底座架构重评讨论稿 v0.1.6.md",
+      "sha256": "b2ac4fa2ce2c76086c44a9a10f4bcefecc5fec572ad72cbd34f178c649319b0b",
+      "line_ranges": [
+        [
+          718,
+          907
+        ]
+      ],
+      "reading_scope": "selected shared workspace, routing, resource and runtime-sharing sections"
+    },
+    {
+      "repository_relative_path": "docs/handoff/ui-backend/CONTRACT.md",
+      "sha256": "a86e8f44ca9ac62e58257ad9f9f8276ea177a396ad586ea3fa0853c99e12834b",
+      "line_ranges": [
+        [
+          1,
+          159
+        ]
+      ],
+      "reading_scope": "full 159-line historical interface contract; not current product implementation"
+    },
+    {
+      "repository_relative_path": "docs/handoff/ui-backend/BACKEND-PLAN-DRAFT.md",
+      "sha256": "c15090566b156a65420778a27de3dd75e50d70e86a9dcb3ab072f7b84f18c766",
+      "line_ranges": [
+        [
+          1,
+          105
+        ],
+        [
+          106,
+          205
+        ]
+      ],
+      "reading_scope": "selected returned text in two separate reads; historical resource and delivery sequence, not a current runtime claim"
+    }
+  ],
+  "large_source_initial_full_read_attempt": "truncated; no whole 03-runtime file reading claim"
+}

@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_id": "M05-MIGRATION-CONTRACTS",
+  "status": "PROPOSED_NOT_RUN",
+  "actual_execution": false,
+  "scope": "Candidate adapter-level migration contracts, not an implemented migration service.",
+  "required_profile_fields": [
+    "profile_id",
+    "host_and_sdk_versions",
+    "source_execution_bundle",
+    "target_execution_bundle",
+    "history_schema_and_codec",
+    "migration_operation_identity",
+    "workflow_run_and_action_namespace",
+    "capability_declarations",
+    "observation_interfaces",
+    "observation_deadlines",
+    "old_version_support_deadline",
+    "artifact_retention_window",
+    "unresolved_obligation_owner",
+    "authorization_semantics"
+  ],
+  "identity_notes": [
+    "application/workflow code version is only one component of execution bundle",
+    "migration operation identity, workflow run identity, business action identity and external idempotency key are different identifiers",
+    "retrying the same semantic external action must not change its identity merely because the adapter build changed"
+  ],
+  "contracts": [
+    {
+      "id": "MC01",
+      "title": "原始证据与迁移身份",
+      "source_refs": [
+        "T2"
+      ],
+      "before": [
+        "Freeze immutable history references and digests, source run/action identities and source/target bundles.",
+        "Assign migration_operation_id with namespace, request parameters and outcome lookup; declare whether the chosen operation is idempotent."
+      ],
+      "after": [
+        "Append explicit predecessor/successor/migration lineage; preserve original records.",
+        "For an uncertain non-idempotent reset receipt, reconcile that same operation before issuing another reset; if no lookup or dedup is available, retain UNKNOWN and assign owner."
+      ],
+      "observables": [
+        "immutable record export and digests",
+        "migration request/receipt journal",
+        "run lineage and operation-status lookup"
+      ],
+      "forbidden_inference": "A repeated HTTP/CLI request with the same text is safe merely because the earlier response was lost."
+    },
+    {
+      "id": "MC02",
+      "title": "事件表示转换不制造过去",
+      "source_refs": [],
+      "proposal": true,
+      "before": [
+        "Declare source/target event schema and converter version, valid input classes, lossy/unsupported cases.",
+        "Preserve raw events separately from the derived read representation."
+      ],
+      "after": [
+        "A transformation cannot strengthen UNKNOWN to success/failure without new evidence.",
+        "Lossy mapping remains explicit; unsupported shapes stop the affected projection or migration rather than inventing defaults.",
+        "Converters are deterministic for the declared inputs; their output retains source references."
+      ],
+      "observables": [
+        "raw and converted event exports",
+        "converter-version metadata",
+        "recorded unsupported/lossy results"
+      ],
+      "forbidden_inference": "A newly required field's default value is an observation that existed in the old event."
+    },
+    {
+      "id": "MC03",
+      "title": "指定历史与执行组合的重放兼容",
+      "source_refs": [
+        "T1",
+        "D1",
+        "C1"
+      ],
+      "before": [
+        "Freeze code, SDK, interpreter, dependencies, codec, workflow/payload schema, plugin and tool semantic profile.",
+        "Publish replay history set, patch-marker classes, included/excluded paths and candidate bundle digest."
+      ],
+      "after": [
+        "Replay verification and deployed candidate use the declared same bundle; mismatch is not covered.",
+        "A replay mismatch prevents automatic continuation of that affected run.",
+        "Recorded model output may be consumed as historical input; invoking a model anew is a new attempt and consumes new budget."
+      ],
+      "observables": [
+        "candidate bundle manifest",
+        "history-set manifest",
+        "replay result by history and bundle",
+        "model invocation/archived-output provenance"
+      ],
+      "forbidden_inference": "All sampled histories replay, therefore all workflows and future business effects are compatible."
+    },
+    {
+      "id": "MC04",
+      "title": "有限期接管与调度责任",
+      "source_refs": [
+        "T2",
+        "D2",
+        "C2"
+      ],
+      "before": [
+        "Freeze routing policy, permitted admission owner/epoch, source and target control checkpoints, message dispositions and support deadline.",
+        "List pending signals/updates/queue items with identities and explicit carry/reapply/exclude decisions."
+      ],
+      "after": [
+        "At each observable admission point, stale scheduling authority is rejected according to the declared protocol.",
+        "Old requests admitted earlier remain independently tracked; owner change does not establish global absence of old execution.",
+        "Deadline infeasibility requires an explicit hold or alternate route with a review date and responsible owner."
+      ],
+      "observables": [
+        "routing/admission receipts with profile and epoch",
+        "message disposition journal",
+        "deadline and ownership records"
+      ],
+      "forbidden_inference": "New owner established at an admission point implies at most one process or external request is active anywhere."
+    },
+    {
+      "id": "MC05",
+      "title": "旧请求、迟到证据与副作用身份",
+      "source_refs": [
+        "D1",
+        "C2"
+      ],
+      "before": [
+        "Freeze semantic action identity, target tenant/account/namespace, canonical payload digest, idempotency-key semantics and retention, effect lookup and termination-proof capabilities.",
+        "List all unresolved old requests and conflicting resource obligations."
+      ],
+      "after": [
+        "A compatible retry retains the old semantic action and dedup identity within the target's supported contract.",
+        "Changed target/parameters or semantic action requires a new authorized action and explicit relation to the old one.",
+        "Late evidence attaches to the old action and may change shared-resource admissibility; it cannot overwrite a successor's result.",
+        "Without target proof, UNKNOWN remains UNKNOWN; retries cannot assume the old effect did not happen."
+      ],
+      "observables": [
+        "outbound request envelopes and receipts",
+        "target-scoped effect lookup or synthetic target log",
+        "action/evidence linkage",
+        "resource-obligation projection"
+      ],
+      "forbidden_inference": "One durable outcome record or a stopped worker proves that the remote effect occurred once or not at all."
+    },
+    {
+      "id": "MC06",
+      "title": "升级不扩大授权",
+      "source_refs": [],
+      "proposal": true,
+      "before": [
+        "Preserve approval/grant target, canonical parameters, operation semantics, scope, expiry and current revocation source.",
+        "Specify which changes are approval-material; a build hash change alone need not be material."
+      ],
+      "after": [
+        "Future actions are rechecked at their declared execution gate using current authority and explicit clock/freshness inputs.",
+        "Changed approval-material parameters cannot inherit the previous approval.",
+        "Historical read/replay does not restore revoked authority; replay requiring effects is not treated as read-only replay."
+      ],
+      "observables": [
+        "approval/grant snapshots and identifiers",
+        "execution-gate decisions and their input versions",
+        "scoped synthetic target requests"
+      ],
+      "forbidden_inference": "A previously approved task or unchanged tool display name authorizes changed future arguments after upgrade."
+    },
+    {
+      "id": "MC07",
+      "title": "索引重建与权限范围",
+      "source_refs": [],
+      "proposal": true,
+      "before": [
+        "Freeze authoritative source references, projection version, coherent watermark/generation and applicable access-control policy.",
+        "Declare cross-generation read behavior and current authorization check at retrieval."
+      ],
+      "after": [
+        "Publish a coherent index generation with source provenance rather than mixing incompatible generations.",
+        "Rebuilding a derived index does not generate business actions or change action outcomes.",
+        "Retrieval applies current rights even when the index was built under older permissions; inaccessible evidence is not returned."
+      ],
+      "observables": [
+        "generation/watermark metadata",
+        "source-linked retrieval results",
+        "access-denied results for scoped test principals",
+        "outbound request audit"
+      ],
+      "forbidden_inference": "An index snapshot grants access forever or is authoritative proof that a task completed."
+    },
+    {
+      "id": "MC08",
+      "title": "旧版本退役与未决义务交接",
+      "source_refs": [
+        "T2",
+        "D1",
+        "D2",
+        "C1"
+      ],
+      "before": [
+        "Declare separate dates for stopping new routing, stopping old workers, removing patch branches/markers, and discarding archived execution artifacts.",
+        "Choose observable drainage and outstanding-request evidence; a single eventually consistent empty query is insufficient.",
+        "Assign a receiver capable of tracking unresolved effects if old workers retire first."
+      ],
+      "after": [
+        "Retirement records show what drained, what was transferred and what remains unknown, with owner and next review deadline.",
+        "Patch deprecation/removal respects relevant history classes; archived artifact retention matches agreed recovery/reset window.",
+        "A support deadline expiring triggers explicit disposition, not an unsupported claim of compatibility or successful completion."
+      ],
+      "observables": [
+        "version routing and drainage status",
+        "active-history inventory with query bounds",
+        "patch-marker compatibility inventory",
+        "handoff receipt and unresolved-obligation ledger",
+        "artifact retention policy"
+      ],
+      "forbidden_inference": "Old code must run forever, or forced upgrade at the deadline proves safe continuation."
+    }
+  ],
+  "measurement_boundary": "Contract adherence and business migration completion are separate measurements. No contract here proves general exactly-once external effects."
+}
