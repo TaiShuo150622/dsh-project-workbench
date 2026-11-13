@@ -4,11 +4,15 @@
   "files": [
     {
       "path": "docs/harness/11-project-management/CONTENTS.md",
-      "sha256": "86e1d38a1f05b536a33037e0d29bb82b9d967400db13c836ee12b302956e4716"
+      "sha256": "978a89a275b413f0e7c6246ad4327a69fc370e17a23ac6b3b5010ca36523cc4c"
+    },
+    {
+      "path": "docs/harness/11-project-management/LIVE_TRIAL.md",
+      "sha256": "b9e9510f58492dea2106fd71c9865828f59c1e8ea95ab3fab45357f6613c65ea"
     },
     {
       "path": "docs/harness/11-project-management/README.md",
-      "sha256": "82bc4a70fb1c355b4bb84ce700ca696971dbb10552d6bff748d50e18b0a12a98"
+      "sha256": "7b436962320703f76e5dbcdf679e5ddf15941445341e6f685bf26f6a88c01bd9"
     },
     {
       "path": "docs/harness/11-project-management/SCENES.md",
@@ -16,7 +20,7 @@
     },
     {
       "path": "docs/harness/11-project-management/VALIDATION.md",
-      "sha256": "bfab0a62ba6000fe67818d5c236c350fab5ef23c8a786d6f14717a0e19afbcab"
+      "sha256": "21403c2a7a46883aedf78af60c6c27a3ef4a5c17798afa569ac119d5fc8ae53e"
     },
     {
       "path": "docs/harness/11-project-management/coordination-discussion-v0.1.1.md",
