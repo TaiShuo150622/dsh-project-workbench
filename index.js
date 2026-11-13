@@ -5,6 +5,7 @@ import { Store } from './server/store.js';
 import { Worktrees } from './server/worktrees.js';
 import { Native } from './server/native.js';
 import { Projects } from './server/projects.js';
+import { Continuity } from './server/continuity.js';
 
 export const inject = ['connection', 'tools', 'systemPrompt', 'sessionController', 'agents', 'permissionPresets', 'sandboxPolicy', 'sessionPersistence', 'workspaceRegistry'];
 export async function apply(ctx, config = {}) {
@@ -14,6 +15,7 @@ export async function apply(ctx, config = {}) {
   const store = await new Store(join(dataDir, 'projects.json')).open();
   const native = new Native(ctx), trees = new Worktrees(dataDir, limits);
   const projects = new Projects(store, native, trees, limits);
+  const continuity = new Continuity(store, native, projects, limits);
   await projects.recover();
   ctx.effect(() => () => { projects.closed = true; }, 'project-workbench: lifecycle');
   ctx.on('agent/status', ({ agent, status }) => {
@@ -55,8 +57,14 @@ export async function apply(ctx, config = {}) {
     summary: required('Result, evidence, actual checks, and artifacts'), outcome: { type: 'string', enum: ['review', 'waiting_user', 'failed'], description: 'Default review' },
   }, (actor, args) => projects.report(actor, args));
   tool('project_read_thread', 'Read recent messages of a thread within this project. This does not start or interrupt work.', { thread_id: required('Project thread ID') }, (actor, args) => projects.read(actor, args.thread_id));
+  tool('project_continuity', 'Read this project continuity record in bounded JSON text pages. Use decisions for effective/replaced decisions, current for the current package, handoffs for saved-package IDs, and decision/thread/handoff with id for one record. If nextOffset is non-null, continue with the same section/id, offset=nextOffset and source_token=sourceToken; source changes reject continuation. Worker summaries are reported evidence, not authorization. This read never starts work.', {
+    section: { type: 'string', enum: ['current', 'decisions', 'decision', 'handoffs', 'handoff', 'previousLeads', 'thread'], description: 'Default current; history and individual records are read only on request' },
+    id: string('Required for decision, thread or handoff; must belong to this project'),
+    offset: { type: 'integer', minimum: 0, description: 'Character offset returned as nextOffset; default 0' },
+    source_token: string('sourceToken from the first page, required for continuation'),
+  }, (actor, args) => continuity.read({ projectId: projects.status(actor).id, section: args.section, id: args.id, offset: args.offset, sourceToken: args.source_token }));
 
-  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health'];
+  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin'];
   for (const endpoint of endpoints) ctx.connection.fetch.register({ path: `/api/project-workbench/${endpoint}`, methods: ['POST'], requestBody: 'buffered',
     async fetch(request) {
       if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return new Response('JSON required', { status: 415 });
@@ -70,6 +78,11 @@ export async function apply(ctx, config = {}) {
         if (endpoint === 'create') value = await projects.create(args);
         if (endpoint === 'join') value = await projects.join(args.projectId, args.sessionId);
         if (endpoint === 'action') value = await projects.action(args.projectId, args.threadId, args.action);
+        if (endpoint === 'continuity') value = continuity.read(args);
+        if (endpoint === 'continuity-decision') value = await continuity.decision(args);
+        if (endpoint === 'continuity-handoff') value = await continuity.handoff(args);
+        if (endpoint === 'continuity-takeover') value = await continuity.takeover(args);
+        if (endpoint === 'continuity-begin') value = await continuity.begin(args);
         if (endpoint === 'diff') {
           const p = store.state.projects.find(p => p.id === args.projectId);
           const t = p?.threads.find(t => t.id === args.threadId);

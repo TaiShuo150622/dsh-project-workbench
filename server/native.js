@@ -18,7 +18,27 @@ export function accepted(events, id) {
 export class Native {
   constructor(ctx) { this.ctx = ctx; }
   running(id) { return this.ctx.agents.get(id)?.status === 'running'; }
-  async inspect(id) { return this.ctx.sessionController.inspect(id); }
+  coordinatorState(id) {
+    const observedAt = new Date().toISOString(), agent = this.ctx.agents.get(id);
+    if (!agent) return { state: 'unknown', observedAt, reason: '会话尚未加载，不能据此认定空闲' };
+    if (agent.status === 'running') return { state: 'running', observedAt, reason: '会话正在运行' };
+    if (agent.status !== 'idle' || !Array.isArray(agent.inbox?.nextTurn) || !Array.isArray(agent.inbox?.nextStep))
+      return { state: 'unknown', observedAt, reason: '无法确认宿主状态或收件箱' };
+    if (agent.inbox.nextTurn.length || agent.inbox.nextStep.length)
+      return { state: 'unknown', observedAt, reason: '会话仍有待处理消息' };
+    return { state: 'idle', observedAt, reason: '宿主已加载且空闲，收件箱为空' };
+  }
+  async inspect(id) {
+    // Older hosts expose the same passive read through SessionController.
+    if (typeof this.ctx.sessionController.inspect === 'function') return this.ctx.sessionController.inspect(id);
+    // Current hosts use read handles. Never resolve an agent just to inspect it:
+    // doing so would turn a status check into session activation.
+    const handle = await this.ctx.sessionPersistence.open(id, 'read');
+    try {
+      const { events } = await handle.read();
+      return { meta: handle.header, inheritedEventCount: handle.inheritedEventCount, events };
+    } finally { await handle.close(); }
+  }
   async ensureWorkspace(id) {
     const info = await this.inspect(id);
     const workspace = await this.ctx.workspaceRegistry.create(info.meta.cwd);
@@ -27,15 +47,21 @@ export class Native {
   async create(cwd, title, mode) {
     const workspace = await this.ctx.workspaceRegistry.create(cwd);
     const { sessionId } = await this.ctx.sessionController.create({ workspaceId: workspace.id });
-    await this.ctx.sessionController.rename({ sessionId, title });
-    if (mode) {
-      const agent = this.ctx.agents.get(sessionId);
-      this.ctx.permissionPresets.set(agent.session, mode === 'code' ? 'workspace-write' : 'read-only');
-      const policy = this.ctx.sandboxPolicy.resolve({ session: agent.session });
-      if (mode === 'code' && (policy.mode !== 'workspace-write' || await realpath(policy.workspaceRoot) !== await realpath(cwd))) throw Error('工作线程的写入边界没有落到独立工作树');
-      if (mode === 'research' && policy.mode !== 'read-only') throw Error('研究线程的只读边界未生效');
+    try {
+      await this.ctx.sessionController.rename({ sessionId, title });
+      if (mode) {
+        const agent = this.ctx.agents.get(sessionId);
+        this.ctx.permissionPresets.set(agent.session, mode === 'code' ? 'workspace-write' : 'read-only');
+        const policy = this.ctx.sandboxPolicy.resolve({ session: agent.session });
+        if (mode === 'code' && (policy.mode !== 'workspace-write' || await realpath(policy.workspaceRoot) !== await realpath(cwd))) throw Error('工作线程的写入边界没有落到独立工作树');
+        if (mode === 'research' && policy.mode !== 'read-only') throw Error('研究线程的只读边界未生效');
+      }
+      return sessionId;
+    } catch (error) {
+      const failure = error instanceof Error ? error : new Error(String(error));
+      failure.createdSessionId = sessionId;
+      throw failure;
     }
-    return sessionId;
   }
   async deliver({ id, target, sender, text }) {
     const result = await this.ctx.sessionController.resolveAgent(target);
