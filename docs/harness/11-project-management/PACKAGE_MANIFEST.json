@@ -1,10 +1,10 @@
 {
   "date": "2026-11-13",
-  "scope": "A branch plus common guide; sibling branches carry their own implementation",
+  "scope": "Combined A+B+C implementation and live API trial; full UI trial deferred",
   "files": [
     {
       "path": "docs/harness/11-project-management/CONTENTS.md",
-      "sha256": "978a89a275b413f0e7c6246ad4327a69fc370e17a23ac6b3b5010ca36523cc4c"
+      "sha256": "95e753e6012f4a93cd81f10704719c4bd29422149a31d0ba5c6d118b979ace12"
     },
     {
       "path": "docs/harness/11-project-management/LIVE_TRIAL.md",
@@ -23,6 +23,14 @@
       "sha256": "21403c2a7a46883aedf78af60c6c27a3ef4a5c17798afa569ac119d5fc8ae53e"
     },
     {
+      "path": "docs/harness/11-project-management/continuity-discussion-v0.1.1.md",
+      "sha256": "8443389d01c9b0f34b282efbf955bdfe453f51c55797d8d3030c378cf01203db"
+    },
+    {
+      "path": "docs/harness/11-project-management/continuity-implementation.md",
+      "sha256": "ce634a8d312459f5817a6d49714fee7125e5c1d57024c44271f01ce4f6731b49"
+    },
+    {
       "path": "docs/harness/11-project-management/coordination-discussion-v0.1.1.md",
       "sha256": "66879f9bbfbe842d549e5eb4ad4258c7fc66f81cebe89fc7ec7b7261ca01f0ef"
     },
@@ -31,8 +39,24 @@
       "sha256": "5add6297e2635b7f7fff18ffeb75c1b72fe03cb2ea72f7c01ac67827749f6fb2"
     },
     {
+      "path": "docs/harness/11-project-management/recovery-implementation.md",
+      "sha256": "0ef5e25a1206bf87d4bfc280681c2e41f10004a3d0e8a0e61dff1f11879f642d"
+    },
+    {
+      "path": "docs/harness/11-project-management/remote-recovery-discussion-v0.1.1.md",
+      "sha256": "3e8678e71788012ad41eb35a824f522a55c104896ed8284d31ec91b160a5545f"
+    },
+    {
       "path": "docs/harness/11-project-management/tasks/A-01-coordination.md",
       "sha256": "a174995a34e79135a7ea37d1d749a5648be73ccf06307f1d996629a8af345d73"
+    },
+    {
+      "path": "docs/harness/11-project-management/tasks/B-01-continuity.md",
+      "sha256": "af124c5d9638991b63789f394a77cf514a095639354c76c03f5319672e4f333b"
+    },
+    {
+      "path": "docs/harness/11-project-management/tasks/C-01-recovery.md",
+      "sha256": "0986791af301549f96cee6a755dfe7fc9b3d1dbb0d6f94b3815e6ae4df7d246f"
     }
   ]
 }
