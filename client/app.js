@@ -77,7 +77,8 @@ function ProjectPage(props) {
         h('button', { onClick: () => { setError(''); try { openProject(p); } catch (e) { setError(e.message); } } }, '打开总对话与线程'))))),
     managed && h('section', { className: 'pw-card', style: { marginTop: 18 }, 'aria-label': '项目管理' },
       h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, `管理项目 · ${managed.title}`), h('button', { onClick: () => setManaging(null) }, '收起管理')),
-      h(CoordinationPanel, { key: managed.id, project: managed, request: api, onSaved: refresh })),
+      h(CoordinationPanel, { key: managed.id, project: managed, request: api, onSaved: refresh }),
+      h(ContinuityPanel, { key: managed.id, project: managed, refresh, openProject, openSession: id => clientContext.get('uiWorkspace').openSession(id) })),
     h('p', { className: 'pw-muted', style: { marginTop: 20 } }, `DSH 原生会话 · 构建 ${BUILD}`)));
 }
 function SessionBody({ renderSlot }) { return renderSlot('project-workbench.conversation', {}); }
@@ -103,7 +104,7 @@ function NativeThread({ sessionId, SessionProvider, renderSlot }) {
 function ThreadWorkspace(props) {
   const tabInfo = props.useTabInfo?.();
   const [state, refresh] = useProjects(tabInfo?.tab?.visible !== false);
-  const p = state.projects.find(p => p.id === tabInfo?.tab?.navigation?.params?.projectId) || state.projects.find(p => p.lead === props.sessionId || p.threads.some(t => t.sessionId === props.sessionId));
+  const p = state.projects.find(p => p.id === tabInfo?.tab?.navigation?.params?.projectId) || state.projects.find(p => p.lead === props.sessionId || p.continuity?.previousLeads?.some(lead => lead.sessionId === props.sessionId) || p.threads.some(t => t.sessionId === props.sessionId));
   const [selected, setSelected] = useState('overview'), [error, setError] = useState(''), [busy, setBusy] = useState(false), [diff, setDiff] = useState(null), [joinId, setJoinId] = useState('');
   const sessions = props.useSessions?.(s => s) || { ids: [], byId: {} };
   const t = p?.threads.find(t => t.id === selected);
@@ -112,7 +113,7 @@ function ThreadWorkspace(props) {
   useEffect(() => { setDiff(null); }, [selected]);
   const run = async work => { setBusy(true); setError(''); try { await work(); await refresh(); } catch (e) { setError(e.message); } finally { setBusy(false); } };
   const action = (action, threadId) => run(() => api('action', { projectId: p.id, threadId, action }));
-  const candidateSessions = (sessions.ids || []).map(id => sessions.byId[id]).filter(s => s && s.origin !== 'subagent' && !s.blank && !state.projects.some(p => p.lead === s.id || p.threads.some(t => t.sessionId === s.id)));
+  const candidateSessions = (sessions.ids || []).map(id => sessions.byId[id]).filter(s => s && s.origin !== 'subagent' && !s.blank && !state.projects.some(p => p.lead === s.id || p.continuity?.previousLeads?.some(lead => lead.sessionId === s.id) || p.threads.some(t => t.sessionId === s.id)));
   return h('div', { className: 'pw pw-workspace', 'data-project-threads': BUILD }, h(Style),
     h('div', { className: 'pw-top' },
       h('div', { className: 'pw-bar' }, h('strong', { style: { flex: 1 } }, p?.title || '项目线程'), p && h('button', { disabled: busy, onClick: () => action(p.paused ? 'resume_project' : 'pause') }, p.paused ? '恢复分派' : '暂停新任务')),
@@ -131,6 +132,7 @@ function ThreadWorkspace(props) {
       h('div', { className: 'pw-native' }, t.sessionId ? h(NativeThread, { sessionId: t.sessionId, SessionProvider: props.SessionProvider, renderSlot: props.renderSlot }) : h('p', { className: 'pw-empty' }, '工作线程将在前置任务和并发额度就绪后启动。'))) : h('div', { className: 'pw-overview' },
       h(CoordinationPanel, { key: p.id, project: p, request: api, onSaved: refresh }),
       h('p', { className: 'pw-muted' }, p.paused ? '已暂停启动新任务。正在运行的线程继续执行。' : '在左侧总对话提出需求，模型会自行分派和继续工作线程。'),
+      h(ContinuityPanel, { key: p.id, project: p, refresh, openProject, openSession: id => clientContext.get('uiWorkspace').openSession(id) }),
       ...state.deliveryErrors?.filter(e => e.projectId === p.id).map(e => h(ErrorBox, { key: e.id, error: `消息未送达：${e.error}` })) || [],
       state.deliveryErrors?.some(e => e.projectId === p.id) && h('button', { disabled: busy, onClick: () => action('retry_delivery') }, '重试未送达消息'),
       p.threads.length ? h('div', { className: 'pw-timeline' }, ...ordered.map(x => h('article', { className: 'pw-thread', key: x.id },
@@ -145,7 +147,7 @@ function ThreadWorkspace(props) {
 }
 function Header(props) {
   const [state] = useProjects();
-  const p = state.projects.find(p => p.lead === props.sessionId || p.threads.some(t => t.sessionId === props.sessionId));
+  const p = state.projects.find(p => p.lead === props.sessionId || p.continuity?.previousLeads?.some(lead => lead.sessionId === props.sessionId) || p.threads.some(t => t.sessionId === props.sessionId));
   useEffect(() => {
     // onScreen changes before React mounts the native sidebar. Open from the mounted header instead.
     // A new blank conversation gains this header when its first message is sent.

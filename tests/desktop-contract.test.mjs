@@ -46,7 +46,8 @@ test('registered tools use provider-valid JSON Schema and reject missing/foreign
   assert.match(guards[0]({ agent: lead, name: 'send_message' }), /当前项目/);
   assert.equal(guards[0]({ agent: lead, name: 'project_dispatch' }), undefined);
   assert.equal(guards[0]({ agent: lead, name: 'read' }), undefined);
-  assert.deepEqual(endpoints.map(route => route.path).sort(), ['action', 'coordination-read', 'coordination-update', 'create', 'diff', 'health', 'join', 'list'].map(name => `/api/project-workbench/${name}`).sort());
+  assert.deepEqual(endpoints.map(route => route.path.split('/').at(-1)).sort(),
+    ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin'].sort());
   for (const cleanup of cleanups.reverse()) cleanup?.();
 });
 
@@ -98,7 +99,7 @@ function clientFixture(existing = false) {
   return { ctx, registered, types, cleanup: () => { for (const fn of cleanups.reverse()) fn(); } };
 }
 async function clientSource() {
-  return (await Promise.all(['coordination.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
+  return (await Promise.all(['coordination.js', 'continuity.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
 }
 test('client owns its embedded slot, registers the native tab body, and cleans up on hot reload', async () => {
   const source = await clientSource();

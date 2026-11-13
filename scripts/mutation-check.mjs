@@ -7,7 +7,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 const run = promisify(execFile), root = fileURLToPath(new URL('../', import.meta.url));
 const mutations = [
-  ['role-boundary', 'server/projects.js', "if (role !== 'lead') throw Error('只有项目总对话可以分派线程');", '', 'worker cannot dispatch'],
+  ['role-boundary', 'server/projects.js', "if (role !== 'lead') throw Error('只有项目总对话可以分派线程');", "if (role !== 'lead') actor = p.lead;", 'worker cannot dispatch'],
   ['dispatch-dedup', 'server/projects.js', 'if (duplicate) return duplicate;', '', 'stable dispatch key'],
   ['parallel-cap', 'server/projects.js', 'if (active >= this.limits.maxParallel)', 'if (false)', 'parallel dispatch respects'],
   ['relay-provenance', 'server/native.js', "source: { kind: 'agent-message'", "source: { kind: 'user'", 'native relay preserves'],
@@ -15,7 +15,7 @@ const mutations = [
   ['desktop-membership', 'server/native.js', 'create({ workspaceId: workspace.id })', 'create({ cwd })', 'native desktop sessions are created'],
   ['external-delegation', 'index.js', "if (!exec.agent) return;", 'return;', 'registered tools use provider-valid'],
   ['client-tab-body', 'client/app.js', "key: TAB, children:", "key: 'wrong-body', children:", 'client owns its embedded slot'],
-  ['recovery-replay', 'server/projects.js', "if (t && t.phase !== 'running') continue;", "if (t?.phase === 'stopped') continue;", 'restore does not replay'],
+  ['recovery-replay', 'server/projects.js', "if (t && (t.phase !== 'running' || t.recoveryHold)) return;", "if (t?.phase === 'stopped') return;", 'restore does not replay'],
   ['desktop-navigation', 'client/app.js', 'pendingProject = p;', '', 'project navigation waits'],
   ['joined-session-title', 'server/projects.js', "info.events.findLast(e => e.type === 'session/title')", 'info.events.findLast(e => false)', 'join only explicitly selected'],
 ];
