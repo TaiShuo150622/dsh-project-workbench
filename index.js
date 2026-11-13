@@ -56,7 +56,7 @@ export async function apply(ctx, config = {}) {
   }, (actor, args) => projects.report(actor, args));
   tool('project_read_thread', 'Read recent messages of a thread within this project. This does not start or interrupt work.', { thread_id: required('Project thread ID') }, (actor, args) => projects.read(actor, args.thread_id));
 
-  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health'];
+  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update'];
   for (const endpoint of endpoints) ctx.connection.fetch.register({ path: `/api/project-workbench/${endpoint}`, methods: ['POST'], requestBody: 'buffered',
     async fetch(request) {
       if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return new Response('JSON required', { status: 415 });
@@ -70,6 +70,8 @@ export async function apply(ctx, config = {}) {
         if (endpoint === 'create') value = await projects.create(args);
         if (endpoint === 'join') value = await projects.join(args.projectId, args.sessionId);
         if (endpoint === 'action') value = await projects.action(args.projectId, args.threadId, args.action);
+        if (endpoint === 'coordination-read') value = projects.readCoordination(args.projectId);
+        if (endpoint === 'coordination-update') value = await projects.updateCoordination(args.projectId, args);
         if (endpoint === 'diff') {
           const p = store.state.projects.find(p => p.id === args.projectId);
           const t = p?.threads.find(t => t.id === args.threadId);

@@ -1732,7 +1732,7 @@
       "sha256": "35f0e2a0c91f4bd281158900af2cc1e8b30f080177079c04d8d4b273fa70b403"
     }
   ],
-  "updated_date": "2026-11-08",
+  "updated_date": "2026-11-13",
   "research_collections": [
     {
       "path": "docs/harness/10-unified-engineering/2026-11-08-v0.1.9",
@@ -1746,6 +1746,18 @@
       "file_index": "docs/harness/10-unified-engineering/FILE_INDEX.md",
       "publication_record": "docs/harness/10-unified-engineering/PUBLICATION.json",
       "treatment": "已脱敏研究包按原字节冻结；新增公开导航，保留历史证据时点；公司及量化内部材料排除"
+    },
+    {
+      "path": "docs/harness/11-project-management",
+      "title": "多模块目标、接续与远程恢复",
+      "current_main_version": "v0.1.1",
+      "collection_date": "2026-11-13",
+      "file_count": 7,
+      "manifest_path": "docs/harness/11-project-management/PACKAGE_MANIFEST.json",
+      "manifest_sha256": "064bcd53a0841098555b100dac6603fe0bd917f88ecc51d386e5a939b4814bda",
+      "reading_guide": "docs/harness/11-project-management/README.md",
+      "file_index": "docs/harness/11-project-management/CONTENTS.md",
+      "treatment": "三个独立功能分支及组合试验；公开合成场景与脱敏结论，历史研究包不改动"
     }
   ]
 }

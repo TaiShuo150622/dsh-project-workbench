@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-13",
+  "scope": "A branch plus common guide; sibling branches carry their own implementation",
+  "files": [
+    {
+      "path": "docs/harness/11-project-management/CONTENTS.md",
+      "sha256": "86e1d38a1f05b536a33037e0d29bb82b9d967400db13c836ee12b302956e4716"
+    },
+    {
+      "path": "docs/harness/11-project-management/README.md",
+      "sha256": "82bc4a70fb1c355b4bb84ce700ca696971dbb10552d6bff748d50e18b0a12a98"
+    },
+    {
+      "path": "docs/harness/11-project-management/SCENES.md",
+      "sha256": "2d95424f057974cc049596db42ad50fbcd62d6d1585708bec7fcf126951b0547"
+    },
+    {
+      "path": "docs/harness/11-project-management/VALIDATION.md",
+      "sha256": "bfab0a62ba6000fe67818d5c236c350fab5ef23c8a786d6f14717a0e19afbcab"
+    },
+    {
+      "path": "docs/harness/11-project-management/coordination-discussion-v0.1.1.md",
+      "sha256": "66879f9bbfbe842d549e5eb4ad4258c7fc66f81cebe89fc7ec7b7261ca01f0ef"
+    },
+    {
+      "path": "docs/harness/11-project-management/coordination-implementation.md",
+      "sha256": "5add6297e2635b7f7fff18ffeb75c1b72fe03cb2ea72f7c01ac67827749f6fb2"
+    },
+    {
+      "path": "docs/harness/11-project-management/tasks/A-01-coordination.md",
+      "sha256": "a174995a34e79135a7ea37d1d749a5648be73ccf06307f1d996629a8af345d73"
+    }
+  ]
+}

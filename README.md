@@ -4,6 +4,8 @@
 
 ## Harness 讨论稿与后续设计
 
+- **[多模块目标、接续与远程恢复最小实现](docs/harness/11-project-management/README.md)**：三条独立分支、研究依据、最小范围及组合验证。
+
 个人围绕项目工作台、远程执行与长期任务的讨论资料已汇集到本仓库：
 
 - **[本轮统一 Harness 工程研究 · v0.1.9](docs/harness/10-unified-engineering/README.md)**：先看成果导读，再读 Coding 例子、统一总稿、证据与实施路线；包含 Record、DAG、远程与长期任务的连接，以及官方产品、开源和公开作者观点的对照。

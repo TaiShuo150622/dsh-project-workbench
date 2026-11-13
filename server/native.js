@@ -18,7 +18,17 @@ export function accepted(events, id) {
 export class Native {
   constructor(ctx) { this.ctx = ctx; }
   running(id) { return this.ctx.agents.get(id)?.status === 'running'; }
-  async inspect(id) { return this.ctx.sessionController.inspect(id); }
+  async inspect(id) {
+    // Older hosts expose the same passive read through SessionController.
+    if (typeof this.ctx.sessionController.inspect === 'function') return this.ctx.sessionController.inspect(id);
+    // Current hosts use read handles. Never resolve an agent just to inspect it:
+    // doing so would turn a status check into session activation.
+    const handle = await this.ctx.sessionPersistence.open(id, 'read');
+    try {
+      const { events } = await handle.read();
+      return { meta: handle.header, inheritedEventCount: handle.inheritedEventCount, events };
+    } finally { await handle.close(); }
+  }
   async ensureWorkspace(id) {
     const info = await this.inspect(id);
     const workspace = await this.ctx.workspaceRegistry.create(info.meta.cwd);

@@ -253,3 +253,7 @@
 | [工作区活跃度插件 · v0.1 实施稿：官方面板入口 + 活动视图，先读后写](<09-extensions/activity/docs/implementation/工作区活跃度插件-实施稿-2026-10-23.md>) | 未编号 | 公开整理版 |
 | [Claude Code 发展史：从 research preview 到现在](<09-extensions/cli/docs/research/claude-code-history.md>) | 未编号 | 公开整理版 |
 | [实时讨论工作台的开源参考与公共核心](<09-extensions/discussion/实时讨论工作台开源方案调研-2026-10-28-公开整理版.md>) | 未标版本；2026-10-28 | 公开整理版 |
+
+## 11 · 多模块目标、接续与远程恢复
+
+[入口与分支](11-project-management/README.md) · [试验场景](11-project-management/SCENES.md) · [验证记录](11-project-management/VALIDATION.md)。三个方向讨论稿 v0.1.1，独立分支包含自身实现。

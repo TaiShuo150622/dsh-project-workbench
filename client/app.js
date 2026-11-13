@@ -47,9 +47,11 @@ function openProject(p) {
 }
 function ProjectPage(props) {
   const [state, refresh] = useProjects();
+  const [managing, setManaging] = useState(null);
   const [creating, setCreating] = useState(false), [busy, setBusy] = useState(false), [error, setError] = useState('');
   const [title, setTitle] = useState(''), [paths, setPaths] = useState(''), [instructions, setInstructions] = useState('');
   const workspaces = props.useWorkspaces?.(s => s.items) || [];
+  const managed = state.projects.find(p => p.id === managing);
   async function create(e) {
     e.preventDefault(); setBusy(true); setError('');
     try { const p = await api('create', { title, paths: paths.split('\n').map(s => s.trim()).filter(Boolean), instructions }); setCreating(false); await refresh(); openProject(p); }
@@ -70,7 +72,12 @@ function ProjectPage(props) {
     h('div', { className: 'pw-cards' }, ...state.projects.map(p => h('article', { className: 'pw-card', key: p.id },
       h('h3', { className: 'pw-name' }, p.title), h('div', { className: 'pw-counts' }, `${p.threads.length} 条线程`, `${p.threads.filter(t => t.running).length} 个运行中`, `${p.threads.filter(t => t.phase === 'waiting_user' || t.phase === 'review').length} 个需要查看`),
       h('small', null, p.repos.map(r => r.path.split('/').at(-1)).join(' · ')),
-      h('button', { onClick: () => { setError(''); try { openProject(p); } catch (e) { setError(e.message); } } }, '打开总对话与线程')))),
+      h('div', { className: 'pw-bar' },
+        h('button', { onClick: () => setManaging(p.id) }, '管理项目'),
+        h('button', { onClick: () => { setError(''); try { openProject(p); } catch (e) { setError(e.message); } } }, '打开总对话与线程'))))),
+    managed && h('section', { className: 'pw-card', style: { marginTop: 18 }, 'aria-label': '项目管理' },
+      h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, `管理项目 · ${managed.title}`), h('button', { onClick: () => setManaging(null) }, '收起管理')),
+      h(CoordinationPanel, { key: managed.id, project: managed, request: api, onSaved: refresh })),
     h('p', { className: 'pw-muted', style: { marginTop: 20 } }, `DSH 原生会话 · 构建 ${BUILD}`)));
 }
 function SessionBody({ renderSlot }) { return renderSlot('project-workbench.conversation', {}); }
@@ -100,6 +107,7 @@ function ThreadWorkspace(props) {
   const [selected, setSelected] = useState('overview'), [error, setError] = useState(''), [busy, setBusy] = useState(false), [diff, setDiff] = useState(null), [joinId, setJoinId] = useState('');
   const sessions = props.useSessions?.(s => s) || { ids: [], byId: {} };
   const t = p?.threads.find(t => t.id === selected);
+  const ordered = coordinationThreads(p);
   useEffect(() => { setSelected('overview'); setDiff(null); }, [p?.id]);
   useEffect(() => { setDiff(null); }, [selected]);
   const run = async work => { setBusy(true); setError(''); try { await work(); await refresh(); } catch (e) { setError(e.message); } finally { setBusy(false); } };
@@ -111,7 +119,7 @@ function ThreadWorkspace(props) {
       h(ErrorBox, { error: error || state.error }),
       p && h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': '项目工作线程' },
         h('button', { role: 'tab', 'aria-selected': selected === 'overview', onClick: () => setSelected('overview') }, '总览'),
-        ...p.threads.map(x => h('button', { key: x.id, role: 'tab', 'aria-selected': selected === x.id, onClick: () => setSelected(x.id), title: x.title }, x.title, ' · ', labels[phaseOf(x)])))),
+        ...ordered.map(x => h('button', { key: x.id, role: 'tab', 'aria-selected': selected === x.id, onClick: () => setSelected(x.id), title: x.title }, x.title, ' · ', labels[phaseOf(x)])))),
     !p ? h('p', { className: 'pw-empty' }, state.loading ? '正在读取…' : '请从左侧「项目」打开一个项目。') : t ? h(React.Fragment, null,
       h('div', { className: 'pw-detail' }, h('div', { className: 'pw-bar' }, h(Status, { t }), t.sessionId && h('button', { onClick: () => clientContext.get('uiWorkspace').openSession(t.sessionId) }, '在主区打开'), t.worktree && h('button', { disabled: busy, onClick: () => run(async () => setDiff(await api('diff', { projectId: p.id, threadId: t.id }))) }, '查看改动'),
         ['running', 'queued', 'starting'].includes(t.phase) && h('button', { disabled: busy, onClick: () => action('stop', t.id) }, '停止线程'),
@@ -121,10 +129,11 @@ function ThreadWorkspace(props) {
         h(ErrorBox, { error: t.error }),
         diff && h('div', null, h('small', null, diff.path), h('pre', { className: 'pw-diff' }, `${diff.files}\n\n${diff.text || '没有已跟踪文件的差异。'}${diff.untracked ? '\n\n新增文件（尚未跟踪）：\n' + diff.untracked : ''}${diff.truncated ? '\n…预览已截断，请在工作树查看完整改动。' : ''}`))),
       h('div', { className: 'pw-native' }, t.sessionId ? h(NativeThread, { sessionId: t.sessionId, SessionProvider: props.SessionProvider, renderSlot: props.renderSlot }) : h('p', { className: 'pw-empty' }, '工作线程将在前置任务和并发额度就绪后启动。'))) : h('div', { className: 'pw-overview' },
+      h(CoordinationPanel, { key: p.id, project: p, request: api, onSaved: refresh }),
       h('p', { className: 'pw-muted' }, p.paused ? '已暂停启动新任务。正在运行的线程继续执行。' : '在左侧总对话提出需求，模型会自行分派和继续工作线程。'),
       ...state.deliveryErrors?.filter(e => e.projectId === p.id).map(e => h(ErrorBox, { key: e.id, error: `消息未送达：${e.error}` })) || [],
       state.deliveryErrors?.some(e => e.projectId === p.id) && h('button', { disabled: busy, onClick: () => action('retry_delivery') }, '重试未送达消息'),
-      p.threads.length ? h('div', { className: 'pw-timeline' }, ...p.threads.map(x => h('article', { className: 'pw-thread', key: x.id },
+      p.threads.length ? h('div', { className: 'pw-timeline' }, ...ordered.map(x => h('article', { className: 'pw-thread', key: x.id },
         h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, x.title), h(Status, { t: x })),
         x.dependsOn.length > 0 && h('div', { className: 'pw-deps' }, '前置 → ', x.dependsOn.map(id => p.threads.find(x => x.id === id)?.title || id).join('、')),
         h('div', { className: 'pw-summary' }, x.summary || x.task), h(ErrorBox, { error: x.error }),

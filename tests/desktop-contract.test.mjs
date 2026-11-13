@@ -46,7 +46,7 @@ test('registered tools use provider-valid JSON Schema and reject missing/foreign
   assert.match(guards[0]({ agent: lead, name: 'send_message' }), /当前项目/);
   assert.equal(guards[0]({ agent: lead, name: 'project_dispatch' }), undefined);
   assert.equal(guards[0]({ agent: lead, name: 'read' }), undefined);
-  assert.equal(endpoints.length, 6);
+  assert.deepEqual(endpoints.map(route => route.path).sort(), ['action', 'coordination-read', 'coordination-update', 'create', 'diff', 'health', 'join', 'list'].map(name => `/api/project-workbench/${name}`).sort());
   for (const cleanup of cleanups.reverse()) cleanup?.();
 });
 
@@ -97,8 +97,11 @@ function clientFixture(existing = false) {
   };
   return { ctx, registered, types, cleanup: () => { for (const fn of cleanups.reverse()) fn(); } };
 }
+async function clientSource() {
+  return (await Promise.all(['coordination.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
+}
 test('client owns its embedded slot, registers the native tab body, and cleans up on hot reload', async () => {
-  const source = await readFile(new URL('../client/app.js', import.meta.url), 'utf8');
+  const source = await clientSource();
   const sandbox = { React: { useState(){}, useEffect(){}, useRef(){} }, LIMITS: { panelOrder: 31 }, BUILD: 'test' };
   vm.runInNewContext(source + '\nthis.pluginApply=apply;', sandbox);
   for (const existing of [false, true]) {
@@ -112,7 +115,7 @@ test('client owns its embedded slot, registers the native tab body, and cleans u
   }
 });
 test('project navigation waits for the mounted desktop header before opening its thread pane', async () => {
-  const source = await readFile(new URL('../client/app.js', import.meta.url), 'utf8');
+  const source = await clientSource();
   const p = { id: 'project', lead: 'lead', threads: [] }, effects = [], opened = [];
   let mounted;
   const f = clientFixture();
@@ -132,4 +135,29 @@ test('project navigation waits for the mounted desktop header before opening its
   sandbox.header({ sessionId: p.lead }); effects.at(-1)();
   assert.equal(opened.length, 2, 'metadata polling must not reopen the tab repeatedly');
   f.cleanup();
+});
+
+test('a blank project can open management from the project page before sending any model message', async () => {
+  const source = await clientSource(), states = [];
+  let cursor = 0;
+  const p = { id: 'blank-project', title: '尚未开始的项目', lead: 'blank-lead', repos: [{ path: '/synthetic-repo' }], threads: [], coordination: { revision: 0, goal: '', criteria: [], order: [] } };
+  const sandbox = {
+    React: {
+      useState(initial) { const slot = cursor++; if (!(slot in states)) states[slot] = typeof initial === 'function' ? initial() : initial; return [states[slot], value => { states[slot] = value; }]; },
+      useEffect() {}, useRef() {},
+    },
+    h: (type, props, ...children) => ({ type, props: props || {}, children: children.flat(Infinity).filter(value => value !== false && value !== null && value !== undefined) }),
+    LIMITS: { panelOrder: 31 }, BUILD: 'test', project: p,
+  };
+  vm.runInNewContext(source + '\nuseProjects = () => [{projects: [project], loading: false}, async () => {}]; this.page = ProjectPage; this.Coordination = CoordinationPanel;', sandbox);
+  const render = () => { cursor = 0; return sandbox.page({}); };
+  const nodes = tree => typeof tree === 'object' ? [tree, ...tree.children.flatMap(nodes)] : [];
+  const initial = render();
+  const manage = nodes(initial).find(node => node.type === 'button' && node.children.includes('管理项目'));
+  assert.ok(manage, 'management is available independently of the blank conversation header');
+  manage.props.onClick();
+  const management = nodes(render()).find(node => node.type === sandbox.Coordination);
+  assert.ok(management, 'the project page renders the editor directly');
+  assert.equal(management.props.project, p);
+  assert.equal(typeof management.props.request, 'function');
 });
