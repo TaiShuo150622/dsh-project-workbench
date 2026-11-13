@@ -427,7 +427,7 @@ test('observations become stale across runtime or task identity changes and cann
   assert.equal(f.effects.delivered.length + f.effects.created.length, 0);
 });
 
-const clientSource = (await Promise.all(['coordination.js', 'continuity.js', 'recovery.js', 'app.js'].map(file => readFile(new URL(`../client/${file}`, import.meta.url), 'utf8')))).join('\n');
+const clientSource = (await Promise.all(['coordination.js', 'continuity.js', 'recovery.js', 'graph.js', 'delivery.js', 'app.js'].map(file => readFile(new URL(`../client/${file}`, import.meta.url), 'utf8')))).join('\n');
 function clientHarness(initial) {
   const hooks = [], effects = [], requests = [];
   let cursor = 0, offline = false;

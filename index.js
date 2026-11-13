@@ -6,6 +6,7 @@ import { Worktrees } from './server/worktrees.js';
 import { Native } from './server/native.js';
 import { Projects } from './server/projects.js';
 import { Continuity } from './server/continuity.js';
+import { Delivery } from './server/delivery.js';
 
 export const inject = ['connection', 'tools', 'systemPrompt', 'sessionController', 'agents', 'permissionPresets', 'sandboxPolicy', 'sessionPersistence', 'workspaceRegistry'];
 export async function apply(ctx, config = {}) {
@@ -16,6 +17,7 @@ export async function apply(ctx, config = {}) {
   const native = new Native(ctx), trees = new Worktrees(dataDir, limits);
   const projects = new Projects(store, native, trees, limits);
   const continuity = new Continuity(store, native, projects, limits);
+  const delivery = new Delivery(store, native, limits);
   await projects.recover();
   ctx.effect(() => () => { projects.closed = true; }, 'project-workbench: lifecycle');
   ctx.on('agent/status', ({ agent, status }) => {
@@ -64,7 +66,14 @@ export async function apply(ctx, config = {}) {
     source_token: string('sourceToken from the first page, required for continuation'),
   }, (actor, args) => continuity.read({ projectId: projects.status(actor).id, section: args.section, id: args.id, offset: args.offset, sourceToken: args.source_token }));
 
-  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin', 'recovery-check'];
+  tool('project_delivery', 'Read this project delivery gaps, versioned work packages, artifacts and acceptance. Read-only; never starts tasks or grants acceptance. Details use project_continuity(section=current) with pagination.', {}, actor => {
+    const p = projects.status(actor), value = delivery.read(p.id);
+    return { projectId: p.id, revision: value.revision, sourceToken: value.sourceToken, summary: value.summary,
+      gaps: value.gaps.slice(0, limits.continuityPreviewItems), omittedGaps: Math.max(0, value.gaps.length - limits.continuityPreviewItems),
+      packages: value.packages.slice(0, limits.continuityPreviewItems).map(w => ({ id: w.id, version: w.version, title: w.title, threadIds: w.threadIds, dependsOn: w.dependsOn })),
+      omittedPackages: Math.max(0, value.packages.length - limits.continuityPreviewItems) };
+  });
+  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin', 'recovery-check', 'delivery-read', 'delivery-update'];
   for (const endpoint of endpoints) ctx.connection.fetch.register({ path: `/api/project-workbench/${endpoint}`, methods: ['POST'], requestBody: 'buffered',
     async fetch(request) {
       if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return new Response('JSON required', { status: 415 });
@@ -86,6 +95,8 @@ export async function apply(ctx, config = {}) {
         if (endpoint === 'continuity-takeover') value = await continuity.takeover(args);
         if (endpoint === 'continuity-begin') value = await continuity.begin(args);
         if (endpoint === 'recovery-check') value = await projects.checkRecovery(args.projectId);
+        if (endpoint === 'delivery-read') value = delivery.read(args.projectId);
+        if (endpoint === 'delivery-update') value = await delivery.update(args);
         if (endpoint === 'diff') {
           const p = store.state.projects.find(p => p.id === args.projectId);
           const t = p?.threads.find(t => t.id === args.threadId);

@@ -83,6 +83,7 @@ function ProjectPage(props) {
     managed && h('section', { className: 'pw-card', style: { marginTop: 18 }, 'aria-label': '项目管理' },
       h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, `管理项目 · ${managed.title}`), h('button', { onClick: () => setManaging(null) }, '收起管理')),
       h(CoordinationPanel, { key: managed.id, project: managed, request: api, onSaved: refresh }),
+      h(DeliveryPanel, { key: `delivery-${managed.id}`, project: managed, onOpenThread: t => { if (t.sessionId) clientContext.get('uiWorkspace').openSession(t.sessionId); else openThreads(managed.id); } }),
       h(ContinuityPanel, { key: managed.id, project: managed, refresh, openProject, openSession: id => clientContext.get('uiWorkspace').openSession(id) })),
     managed && h('div', { style: { marginTop: 18 } }, h(RecoveryPanel, { key: managed.id, project: managed, connected: state.connected, busy, onCheck: () => manage(() => api('recovery-check', { projectId: managed.id })), onContinue: threadId => manage(() => api('action', { projectId: managed.id, threadId, action: 'retry' })), onFollowup: threadId => manage(() => api('action', { projectId: managed.id, threadId, action: 'retry_followup' })) })),
     h('p', { className: 'pw-muted', style: { marginTop: 20 } }, `DSH 原生会话 · 构建 ${BUILD}`)));
@@ -112,6 +113,7 @@ function ThreadWorkspace(props) {
   const [state, refresh] = useProjects(tabInfo?.tab?.visible !== false);
   const p = state.projects.find(p => p.id === tabInfo?.tab?.navigation?.params?.projectId) || state.projects.find(p => p.lead === props.sessionId || p.continuity?.previousLeads?.some(lead => lead.sessionId === props.sessionId) || p.threads.some(t => t.sessionId === props.sessionId));
   const [selected, setSelected] = useState('overview'), [error, setError] = useState(''), [busy, setBusy] = useState(false), [diff, setDiff] = useState(null), [joinId, setJoinId] = useState('');
+  const [focusThread, setFocusThread] = useState(null);
   const sessions = props.useSessions?.(s => s) || { ids: [], byId: {} };
   const t = p?.threads.find(t => t.id === selected);
   const ordered = coordinationThreads(p);
@@ -127,9 +129,12 @@ function ThreadWorkspace(props) {
       p && h(RecoveryPanel, { key: p.id, project: p, connected: state.connected, busy, onCheck: () => run(() => api('recovery-check', { projectId: p.id })), onContinue: threadId => action('retry', threadId), onFollowup: threadId => action('retry_followup', threadId) }),
       p && h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': '项目工作线程' },
         h('button', { role: 'tab', 'aria-selected': selected === 'overview', onClick: () => setSelected('overview') }, '总览'),
+        h('button', { role: 'tab', 'aria-selected': selected === 'delivery', onClick: () => setSelected('delivery') }, '交付 DAG'),
         ...ordered.map(x => h('button', { key: x.id, role: 'tab', 'aria-selected': selected === x.id, onClick: () => setSelected(x.id), title: x.title }, x.title, ' · ', labels[phaseOf(x)])))),
-    !p ? h('p', { className: 'pw-empty' }, state.loading ? '正在读取…' : '请从左侧「项目」打开一个项目。') : t ? h(React.Fragment, null,
+    !p ? h('p', { className: 'pw-empty' }, state.loading ? '正在读取…' : '请从左侧「项目」打开一个项目。') : selected === 'delivery'
+      ? h('div', { className: 'pw-overview' }, h(DeliveryPanel, { key: p.id, project: p, focusThread, onOpenThread: t => setSelected(t.id) })) : t ? h(React.Fragment, null,
       h('div', { className: 'pw-detail' }, h('div', { className: 'pw-bar' }, h(Status, { t }), t.sessionId && h('button', { onClick: () => clientContext.get('uiWorkspace').openSession(t.sessionId) }, '在主区打开'), t.worktree && h('button', { disabled: busy, onClick: () => run(async () => setDiff(await api('diff', { projectId: p.id, threadId: t.id }))) }, '查看改动'),
+        h('button', { onClick: () => { setFocusThread(t.id); setSelected('delivery'); } }, '在交付图中定位'),
         ['running', 'queued', 'starting'].includes(t.phase) && h('button', { disabled: busy, onClick: () => action('stop', t.id) }, '停止线程'),
         t.continueAvailable && h('button', { disabled: busy || !recoveryCanRetry(p, t, state.connected), onClick: () => action('retry', t.id) }, '继续原任务（可能接着执行）'),
         t.phase === 'review' && h('button', { disabled: busy || t.running, onClick: () => action('accept', t.id) }, '标记验收通过')),

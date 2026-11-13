@@ -204,7 +204,8 @@ test('UI coordination RPC returns distinguishable conflicts and keeps model tool
     assert.equal((await call('coordination-update', { ...input, expectedRevision: '1' })).ok, false);
     const modelTools = definitions.map(tool => tool.name).sort();
     for (const required of ['project_dispatch', 'project_read_thread', 'project_report', 'project_threads']) assert.ok(modelTools.includes(required));
-    assert.ok(modelTools.every(name => ['project_dispatch', 'project_read_thread', 'project_report', 'project_threads', 'project_continuity'].includes(name)), 'goal writes remain UI-only');
+    assert.ok(modelTools.every(name => ['project_dispatch', 'project_read_thread', 'project_report', 'project_threads', 'project_continuity', 'project_delivery'].includes(name)), 'goal writes remain UI-only');
+    assert.deepEqual(definitions.find(tool => tool.name === 'project_delivery').parameters.properties, {}, 'delivery model access is read-only and takes no mutation arguments');
     const lead = agents.get(created.value.lead);
     const status = await definitions.find(tool => tool.name === 'project_threads').execute({}, { agent: lead, signal: new AbortController().signal });
     assert.equal(JSON.parse(status.result).coordination.goal, '可审核交付');

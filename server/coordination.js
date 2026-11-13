@@ -1,3 +1,5 @@
+import { syncDeliveryCriteria } from './delivery.js';
+
 function project(state, id) {
   const value = state.projects.find(p => p.id === id);
   if (!value) throw Error('项目不存在');
@@ -54,6 +56,7 @@ export class Coordination {
       const order = [...args.order];
       for (const id of current.order) if (!order.includes(id)) order.push(id);
       p.coordination = { revision: current.revision + 1, goal, criteria, order };
+      syncDeliveryCriteria(p, current, p.coordination);
       return { conflict: false, coordination: coordinationOf(p) };
     });
   }

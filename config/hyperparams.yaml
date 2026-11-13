@@ -1,6 +1,7 @@
 {
   "maxParallel": { "value": 3, "why": "同时执行三条工作线，避免无界启动模型", "adjust": "修改本文件并重新构建发布" },
   "maxThreads": { "value": 64, "why": "单项目线程上限，满后复用已有线程", "adjust": "修改本文件并重新构建发布" },
+  "maxDeliveryItems": { "value": 128, "why": "限制每类交付管理对象数量，保证首轮单项目图与核对列表可控", "adjust": "修改本文件并重新构建发布" },
   "maxText": { "value": 24000, "why": "单条任务或汇报的字符上限", "adjust": "修改本文件并重新构建发布" },
   "continuityContextChars": { "value": 8000, "why": "接续 system prompt 摘要的字符预算，正文按需分页读取", "adjust": "修改本文件并重新构建发布" },
   "continuityPreviewItems": { "value": 8, "why": "项目列表最多预览的决定、接续记录和历史总对话条数，完整记录可分页读取", "adjust": "修改本文件并重新构建发布" },
