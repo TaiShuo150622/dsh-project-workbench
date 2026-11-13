@@ -549,3 +549,11 @@ for (const saving of ['decision', 'handoff']) {
     assert.equal(inputField(panel, '决定内容').props.value, saving === 'decision' ? '' : 'original 决定内容');
   });
 }
+
+
+test('current continuity guidance belongs to coordinators and does not replace an active worker task', async () => {
+  const f = await fixture(), worker = await f.worker();
+  assert.match(f.projects.context(f.p.lead), /项目接续摘要/);
+  assert.doesNotMatch(f.projects.context(worker.sessionId), /项目接续摘要/);
+  assert.match(f.projects.context(worker.sessionId), /你是工作线程/);
+});
