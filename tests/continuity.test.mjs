@@ -97,7 +97,7 @@ test('revision checks are transactional and decisions cannot replace another pro
 test('handoff packages bind project versions and observed evidence without upgrading a worker summary to acceptance', async () => {
   const f = await fixture(), t = await f.worker();
   await f.store.change(state => {
-    state.projects[0].coordination = { revision: 7, goal: '可靠接续', criteria: [{ id: 'criterion', text: '保留成果', done: false }], order: [t.id] };
+    state.projects[0].coordination = { revision: 7, goal: '可靠接续', criteria: ['保留成果'], order: [t.id] };
   });
   await f.continuity.decision({ projectId: f.p.id, expectedRevision: 0, text: '先检查在途任务' });
   const saved = await f.continuity.handoff({ projectId: f.p.id, expectedRevision: 1, nextStep: '先核对线程报告' });
