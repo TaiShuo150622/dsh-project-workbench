@@ -321,8 +321,8 @@ export class Projects {
       }
     }
     const starting = await this.store.change(s => {
-      const x = thread(project(s, p.id), t.id);
-      if (x.recoveryHold || x.phase !== 'queued') return false;
+      const current = project(s, p.id), x = thread(current, t.id);
+      if (this.closed || current.paused || x.recoveryHold || x.phase !== 'queued') return false;
       if (x.sessionId && currentRuntimeState(this.native, x.sessionId) !== 'idle') { x.recoveryHold = true; return false; }
       x.phase = 'starting'; x.startAttempted = true; return true;
     });
