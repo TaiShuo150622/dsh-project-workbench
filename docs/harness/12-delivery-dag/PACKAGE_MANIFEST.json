@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-13",
+  "scope": "Delivery DAG implementation; core UI loop and host API verified; final handoff UI pending browser reconnection",
+  "files": [
+    {
+      "path": "docs/harness/12-delivery-dag/CONTENTS.md",
+      "sha256": "0ee17f808ed68c7197cd93ec8f5be896627f2d22d32ffaa4eb349d84b0700e30"
+    },
+    {
+      "path": "docs/harness/12-delivery-dag/CONTRACT.md",
+      "sha256": "520b60d3cb1396c8705e3fc646571ceaa11a51af792d4cb03e63f517d58d12d5"
+    },
+    {
+      "path": "docs/harness/12-delivery-dag/Harness-工作台与DAG整体实施讨论稿-v0.1.1.md",
+      "sha256": "d8f6325f74b941d3b0cd03367da095e13fbffd3b8664fa0bee495b0e0d091f12"
+    },
+    {
+      "path": "docs/harness/12-delivery-dag/README.md",
+      "sha256": "8d0c7a6f8d307628a688b9c460793f68953e47f0591fa5ea8cca741b11582d54"
+    },
+    {
+      "path": "docs/harness/12-delivery-dag/VALIDATION.md",
+      "sha256": "b3c367e1eb428a9ec56a6469bde42c230f93a63300aad1461b440dff5e2f21eb"
+    }
+  ]
+}

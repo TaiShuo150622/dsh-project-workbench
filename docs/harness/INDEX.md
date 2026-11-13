@@ -6,6 +6,10 @@
 
 “源版本”沿用原稿标记；“历史”不表示错误，只表示有后续稿件或当时的讨论语境。公开整理可能删除内部案例、个人原话和私有附件；具体边界见各稿开头。所有实施卡均为计划材料，不以文件存在证明任务已经完成。
 
+## 新增 · 交付管理与项目 DAG
+
+2026-11-13 实现与验证见 [交付管理入口](12-delivery-dag/README.md)。[整体方案 v0.1.1](12-delivery-dag/Harness-工作台与DAG整体实施讨论稿-v0.1.1.md)、[数据与接口契约](12-delivery-dag/CONTRACT.md)、[验证记录](12-delivery-dag/VALIDATION.md)及[文件目录](12-delivery-dag/CONTENTS.md)分别说明方案、已实现行为和实际证据。前序三线实现见 [11-project-management](11-project-management/README.md)。
+
 ## 新增 · 统一 Harness 工程研究
 
 推荐先读 [本轮阅读指南](10-unified-engineering/README.md)，当前主稿为 [v0.1.9](10-unified-engineering/2026-11-08-v0.1.9/统一Harness工程与形式化基础讨论稿-v0.1.9.md)。[专题目录](10-unified-engineering/CONTENTS.md)按问题导航，[完整文件索引](10-unified-engineering/FILE_INDEX.md)逐项列出全部研究快照文件。对应 [PACKAGE_MANIFEST.json](10-unified-engineering/2026-11-08-v0.1.9/PACKAGE_MANIFEST.json)与 [公开整理记录](10-unified-engineering/PUBLICATION.json)保留文件身份、公开范围及历史时点说明。

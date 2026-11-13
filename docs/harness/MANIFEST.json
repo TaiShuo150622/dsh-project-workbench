@@ -1758,6 +1758,18 @@
       "reading_guide": "docs/harness/11-project-management/README.md",
       "file_index": "docs/harness/11-project-management/CONTENTS.md",
       "treatment": "三个独立功能分支及组合试验；公开合成场景与脱敏结论，历史研究包不改动"
+    },
+    {
+      "path": "docs/harness/12-delivery-dag",
+      "title": "交付管理与项目 DAG",
+      "current_main_version": "v0.1.1",
+      "collection_date": "2026-11-13",
+      "file_count": 5,
+      "manifest_path": "docs/harness/12-delivery-dag/PACKAGE_MANIFEST.json",
+      "manifest_sha256": "2b87847ea0e84daa8ba1b34f019e82871db97ec985b8394497bab1e953e25518",
+      "reading_guide": "docs/harness/12-delivery-dag/README.md",
+      "file_index": "docs/harness/12-delivery-dag/CONTENTS.md",
+      "treatment": "公开实现、通用方案和脱敏验证结论；保留原业务待验收状态，原始宿主状态和私有截图不上传"
     }
   ]
 }
