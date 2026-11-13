@@ -385,7 +385,7 @@ function elements(tree) {
 function button(tree, label) { return elements(tree).find(n => n.type === 'button' && n.children.includes(label)); }
 
 test('the blank project page exposes management and takeover requires a separate explicit report activation', async () => {
-  const source = (await Promise.all(['continuity.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
+  const source = (await Promise.all(['coordination.js', 'continuity.js', 'recovery.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
   const ui = uiHarness();
   vm.runInNewContext(source + '\nthis.panel=ContinuityPanel;this.setRpc=value=>{rpc=value};this.page=(project)=>{useProjects=()=>[{projects:[project],loading:false},async()=>{}];return ProjectPage({})};', ui.sandbox);
   const p = { id: 'p', title: 'Demo', lead: 'old', repos: [], threads: [], leadState: { state: 'idle', reason: '已核对' },
@@ -466,7 +466,7 @@ function mountedUiHarness() {
 }
 async function mountedContinuity() {
   const ui = mountedUiHarness();
-  const source = (await Promise.all(['continuity.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
+  const source = (await Promise.all(['coordination.js', 'continuity.js', 'recovery.js', 'app.js'].map(path => readFile(new URL(`../client/${path}`, import.meta.url), 'utf8')))).join('\n');
   vm.runInNewContext(source + '\nthis.Panel=ContinuityPanel;this.Page=ProjectPage;this.Workspace=ThreadWorkspace;this.setRpc=value=>{rpc=value};this.setProjects=projects=>{useProjects=()=>[{projects,loading:false},async()=>{}]};', ui.sandbox);
   return ui;
 }
@@ -549,3 +549,11 @@ for (const saving of ['decision', 'handoff']) {
     assert.equal(inputField(panel, '决定内容').props.value, saving === 'decision' ? '' : 'original 决定内容');
   });
 }
+
+
+test('current continuity guidance belongs to coordinators and does not replace an active worker task', async () => {
+  const f = await fixture(), worker = await f.worker();
+  assert.match(f.projects.context(f.p.lead), /项目接续摘要/);
+  assert.doesNotMatch(f.projects.context(worker.sessionId), /项目接续摘要/);
+  assert.match(f.projects.context(worker.sessionId), /你是工作线程/);
+});

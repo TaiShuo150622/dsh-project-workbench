@@ -8,7 +8,7 @@ async function api(op, payload = {}) {
   return result.value;
 }
 function useProjects(visible = true) {
-  const [state, setState] = useState({ projects: [], loading: true, error: '' });
+  const [state, setState] = useState({ projects: [], loading: true, error: '', connected: false });
   const refresh = useRef(null);
   useEffect(() => {
     if (!visible) return;
@@ -16,8 +16,8 @@ function useProjects(visible = true) {
     const load = async () => {
       try {
         const value = await api('list');
-        if (!cancelled) setState({ ...value, loading: false, error: value.error || '' });
-      } catch (e) { if (!cancelled) setState(s => ({ ...s, loading: false, error: e.message })); }
+        if (!cancelled) setState({ ...value, loading: false, error: value.error || '', connected: true });
+      } catch (e) { if (!cancelled) setState(s => ({ ...s, loading: false, error: e.message, connected: false })); }
       if (!cancelled) timer = setTimeout(load, LIMITS.pollMs);
     };
     refresh.current = () => { clearTimeout(timer); return load(); };
@@ -47,11 +47,16 @@ function openProject(p) {
 }
 function ProjectPage(props) {
   const [state, refresh] = useProjects();
-  const [managing, setManaging] = useState(null);
   const [creating, setCreating] = useState(false), [busy, setBusy] = useState(false), [error, setError] = useState('');
+  const [managing, setManaging] = useState(null);
   const [title, setTitle] = useState(''), [paths, setPaths] = useState(''), [instructions, setInstructions] = useState('');
   const workspaces = props.useWorkspaces?.(s => s.items) || [];
   const managed = state.projects.find(p => p.id === managing);
+  async function manage(work) {
+    setBusy(true); setError('');
+    try { await work(); await refresh(); }
+    catch (e) { setError(e.message); } finally { setBusy(false); }
+  }
   async function create(e) {
     e.preventDefault(); setBusy(true); setError('');
     try { const p = await api('create', { title, paths: paths.split('\n').map(s => s.trim()).filter(Boolean), instructions }); setCreating(false); await refresh(); openProject(p); }
@@ -79,6 +84,7 @@ function ProjectPage(props) {
       h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, `管理项目 · ${managed.title}`), h('button', { onClick: () => setManaging(null) }, '收起管理')),
       h(CoordinationPanel, { key: managed.id, project: managed, request: api, onSaved: refresh }),
       h(ContinuityPanel, { key: managed.id, project: managed, refresh, openProject, openSession: id => clientContext.get('uiWorkspace').openSession(id) })),
+    managed && h('div', { style: { marginTop: 18 } }, h(RecoveryPanel, { key: managed.id, project: managed, connected: state.connected, busy, onCheck: () => manage(() => api('recovery-check', { projectId: managed.id })), onContinue: threadId => manage(() => api('action', { projectId: managed.id, threadId, action: 'retry' })), onFollowup: threadId => manage(() => api('action', { projectId: managed.id, threadId, action: 'retry_followup' })) })),
     h('p', { className: 'pw-muted', style: { marginTop: 20 } }, `DSH 原生会话 · 构建 ${BUILD}`)));
 }
 function SessionBody({ renderSlot }) { return renderSlot('project-workbench.conversation', {}); }
@@ -118,13 +124,14 @@ function ThreadWorkspace(props) {
     h('div', { className: 'pw-top' },
       h('div', { className: 'pw-bar' }, h('strong', { style: { flex: 1 } }, p?.title || '项目线程'), p && h('button', { disabled: busy, onClick: () => action(p.paused ? 'resume_project' : 'pause') }, p.paused ? '恢复分派' : '暂停新任务')),
       h(ErrorBox, { error: error || state.error }),
+      p && h(RecoveryPanel, { key: p.id, project: p, connected: state.connected, busy, onCheck: () => run(() => api('recovery-check', { projectId: p.id })), onContinue: threadId => action('retry', threadId), onFollowup: threadId => action('retry_followup', threadId) }),
       p && h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': '项目工作线程' },
         h('button', { role: 'tab', 'aria-selected': selected === 'overview', onClick: () => setSelected('overview') }, '总览'),
         ...ordered.map(x => h('button', { key: x.id, role: 'tab', 'aria-selected': selected === x.id, onClick: () => setSelected(x.id), title: x.title }, x.title, ' · ', labels[phaseOf(x)])))),
     !p ? h('p', { className: 'pw-empty' }, state.loading ? '正在读取…' : '请从左侧「项目」打开一个项目。') : t ? h(React.Fragment, null,
       h('div', { className: 'pw-detail' }, h('div', { className: 'pw-bar' }, h(Status, { t }), t.sessionId && h('button', { onClick: () => clientContext.get('uiWorkspace').openSession(t.sessionId) }, '在主区打开'), t.worktree && h('button', { disabled: busy, onClick: () => run(async () => setDiff(await api('diff', { projectId: p.id, threadId: t.id }))) }, '查看改动'),
         ['running', 'queued', 'starting'].includes(t.phase) && h('button', { disabled: busy, onClick: () => action('stop', t.id) }, '停止线程'),
-        ['failed', 'interrupted', 'stopped'].includes(t.phase) && h('button', { disabled: busy, onClick: () => action('retry', t.id) }, '恢复此线程'),
+        t.continueAvailable && h('button', { disabled: busy || !recoveryCanRetry(p, t, state.connected), onClick: () => action('retry', t.id) }, '继续原任务（可能接着执行）'),
         t.phase === 'review' && h('button', { disabled: busy || t.running, onClick: () => action('accept', t.id) }, '标记验收通过')),
         t.worktree && h('small', null, `分支 ${t.worktree.branch}${t.worktree.sourceDirty ? ' · 基线未包含源目录未提交改动' : ''}`),
         h(ErrorBox, { error: t.error }),
@@ -133,8 +140,8 @@ function ThreadWorkspace(props) {
       h(CoordinationPanel, { key: p.id, project: p, request: api, onSaved: refresh }),
       h('p', { className: 'pw-muted' }, p.paused ? '已暂停启动新任务。正在运行的线程继续执行。' : '在左侧总对话提出需求，模型会自行分派和继续工作线程。'),
       h(ContinuityPanel, { key: p.id, project: p, refresh, openProject, openSession: id => clientContext.get('uiWorkspace').openSession(id) }),
-      ...state.deliveryErrors?.filter(e => e.projectId === p.id).map(e => h(ErrorBox, { key: e.id, error: `消息未送达：${e.error}` })) || [],
-      state.deliveryErrors?.some(e => e.projectId === p.id) && h('button', { disabled: busy, onClick: () => action('retry_delivery') }, '重试未送达消息'),
+      ...state.deliveryErrors?.filter(e => e.projectId === p.id).map(e => h(ErrorBox, { key: e.id, error: `消息待确认：${e.error}` })) || [],
+      state.deliveryErrors?.some(e => e.projectId === p.id && e.target === p.lead) && h('div', { className: 'pw-bar' }, h('button', { disabled: busy, onClick: () => action('retry_delivery') }, '确认重试总对话汇报'), h('small', null, '只处理当前总对话的汇报；核对不会自动重试。')),
       p.threads.length ? h('div', { className: 'pw-timeline' }, ...ordered.map(x => h('article', { className: 'pw-thread', key: x.id },
         h('div', { className: 'pw-bar' }, h('h3', { style: { flex: 1 } }, x.title), h(Status, { t: x })),
         x.dependsOn.length > 0 && h('div', { className: 'pw-deps' }, '前置 → ', x.dependsOn.map(id => p.threads.find(x => x.id === id)?.title || id).join('、')),

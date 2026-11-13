@@ -18,15 +18,23 @@ export class Worktrees {
     return { path: canonical, gitRoot: root };
   }
   async create(repo, projectId, threadId) {
-    if (!repo.gitRoot) throw Error('代码线程需要 Git 仓库；普通目录可创建研究线程');
-    const base = await this.git(repo.gitRoot, ['rev-parse', 'HEAD']);
-    const dirty = !!(await this.git(repo.gitRoot, ['status', '--porcelain']));
-    const folder = join(this.home, 'worktrees', projectId);
-    await mkdir(folder, { recursive: true });
-    const path = join(folder, threadId);
-    const branch = `codex/project-${projectId.slice(0, 8)}-${threadId.slice(0, 8)}`;
-    await this.git(repo.gitRoot, ['worktree', 'add', '-b', branch, path, base]);
-    return { path: await realpath(path), base, branch, sourceDirty: dirty };
+    let addCalled = false;
+    try {
+      if (!repo.gitRoot) throw Error('代码线程需要 Git 仓库；普通目录可创建研究线程');
+      const base = await this.git(repo.gitRoot, ['rev-parse', 'HEAD']);
+      const dirty = !!(await this.git(repo.gitRoot, ['status', '--porcelain']));
+      const folder = join(this.home, 'worktrees', projectId);
+      await mkdir(folder, { recursive: true });
+      const path = join(folder, threadId);
+      const branch = `codex/project-${projectId.slice(0, 8)}-${threadId.slice(0, 8)}`;
+      addCalled = true;
+      await this.git(repo.gitRoot, ['worktree', 'add', '-b', branch, path, base]);
+      return { path: await realpath(path), base, branch, sourceDirty: dirty };
+    } catch (cause) {
+      const error = cause instanceof Error ? cause : Error(String(cause));
+      error.worktreeNotCreated = !addCalled;
+      throw error;
+    }
   }
   async diff(thread) {
     if (!thread.worktree) return { text: '此线程没有独立代码分支。', files: '', truncated: false };

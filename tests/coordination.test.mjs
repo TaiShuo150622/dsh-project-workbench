@@ -22,8 +22,9 @@ async function fixture(overrides = {}) {
       return id;
     },
     running(id) { return sessions.get(id)?.running || false; },
-    runtimeState() { return { id: 'coordination-test-runtime' }; },
-    async observe(id) { const s = sessions.get(id); return { state: !s ? 'missing' : s.running ? 'running' : 'idle' }; },
+    runtime: { id: 'coordination-test-runtime' },
+    runtimeState(id) { const s = sessions.get(id); return !s ? 'missing' : s.running ? 'running' : 'idle'; },
+    async observe(id) { const runtimeState = this.runtimeState(id); return { runtimeState, reason: `agent-${runtimeState}` }; },
     coordinatorState(id) { const s = sessions.get(id); return { state: !s ? 'unknown' : s.running ? 'running' : 'idle' }; },
     async inspect(id) { const s = sessions.get(id); return { meta: { cwd: s.cwd, title: s.title }, events: s.events }; },
     async deliver(message) { deliveries.push(message); sessions.get(message.target).running = true; },

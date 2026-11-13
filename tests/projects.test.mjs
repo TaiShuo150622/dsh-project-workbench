@@ -18,8 +18,11 @@ async function fixture(overrides = {}) {
   const store = await new Store(join(dir, 'projects.json')).open();
   const sessions = new Map(); const deliveries = [];
   const native = {
+    runtime: { id: 'test-runtime', startedAt: '2026-11-13T00:00:00.000Z', platform: 'linux', arch: 'arm64' },
     async create(cwd, title, mode) { const id = `s${sessions.size}`; sessions.set(id, { cwd, title, mode, running: false, events: [] }); return id; },
     running(id) { return sessions.get(id)?.running || false; },
+    runtimeState(id) { return sessions.has(id) ? (sessions.get(id).running ? 'running' : 'idle') : 'unknown'; },
+    async observe(id) { const runtimeState = this.runtimeState(id); return { runtimeState, reason: runtimeState === 'unknown' ? 'session-not-loaded' : `agent-${runtimeState}` }; },
     async inspect(id) { const s = sessions.get(id); if (!s) throw Error('missing session'); return { meta: { cwd: s.cwd, title: s.title }, events: s.events }; },
     async deliver(m) { deliveries.push(m); if (!sessions.has(m.target)) throw Error('missing target'); sessions.get(m.target).running = true; },
     async stop(id) { sessions.get(id).running = false; },

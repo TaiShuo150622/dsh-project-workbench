@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { realpath } from 'node:fs/promises';
+import { agentObservation, runtimeInstance } from './recovery.js';
 
 function freeze(value) { if (value && typeof value === 'object') { Object.values(value).forEach(freeze); Object.freeze(value); } return value; }
 export function accepted(events, id) {
@@ -16,7 +17,7 @@ export function accepted(events, id) {
 
 /** Uses ordinary DSH sessions; agent relay messages retain their provenance. */
 export class Native {
-  constructor(ctx) { this.ctx = ctx; }
+  constructor(ctx) { this.ctx = ctx; this.runtime = runtimeInstance(); }
   running(id) { return this.ctx.agents.get(id)?.status === 'running'; }
   coordinatorState(id) {
     const observedAt = new Date().toISOString(), agent = this.ctx.agents.get(id);
@@ -27,6 +28,20 @@ export class Native {
     if (agent.inbox.nextTurn.length || agent.inbox.nextStep.length)
       return { state: 'unknown', observedAt, reason: '会话仍有待处理消息' };
     return { state: 'idle', observedAt, reason: '宿主已加载且空闲，收件箱为空' };
+  }
+  runtimeState(id) { return agentObservation(this.ctx.agents.get(id)).runtimeState; }
+  async observe(id) {
+    if (!id) return { runtimeState: 'missing', reason: 'session-not-assigned' };
+    const agent = this.ctx.agents.get(id);
+    if (agent) return agentObservation(agent);
+    try {
+      await this.inspect(id);
+      // Inspecting stored history does not activate an Agent or establish idleness.
+      return agentObservation(this.ctx.agents.get(id));
+    } catch (error) {
+      if (error?.code === 'session/not-found') return { runtimeState: 'missing', reason: 'session-not-found' };
+      return { runtimeState: 'unknown', reason: 'inspection-unavailable' };
+    }
   }
   async inspect(id) {
     // Older hosts expose the same passive read through SessionController.
@@ -45,23 +60,33 @@ export class Native {
     await workspace.attachSession(id);
   }
   async create(cwd, title, mode) {
-    const workspace = await this.ctx.workspaceRegistry.create(cwd);
-    const { sessionId } = await this.ctx.sessionController.create({ workspaceId: workspace.id });
+    let createCalled = false, sessionId;
     try {
+      const workspace = await this.ctx.workspaceRegistry.create(cwd);
+      createCalled = true;
+      sessionId = (await this.ctx.sessionController.create({ workspaceId: workspace.id }))?.sessionId;
+      if (typeof sessionId !== 'string' || !sessionId) throw Error('宿主未返回可核对的会话身份');
       await this.ctx.sessionController.rename({ sessionId, title });
       if (mode) {
         const agent = this.ctx.agents.get(sessionId);
         this.ctx.permissionPresets.set(agent.session, mode === 'code' ? 'workspace-write' : 'read-only');
-        const policy = this.ctx.sandboxPolicy.resolve({ session: agent.session });
-        if (mode === 'code' && (policy.mode !== 'workspace-write' || await realpath(policy.workspaceRoot) !== await realpath(cwd))) throw Error('工作线程的写入边界没有落到独立工作树');
-        if (mode === 'research' && policy.mode !== 'read-only') throw Error('研究线程的只读边界未生效');
+        await this.verifySession(sessionId, cwd, mode);
       }
       return sessionId;
-    } catch (error) {
-      const failure = error instanceof Error ? error : new Error(String(error));
-      failure.createdSessionId = sessionId;
-      throw failure;
+    } catch (cause) {
+      const error = cause instanceof Error ? cause : Error(String(cause));
+      error.sessionNotCreated = !createCalled;
+      if (sessionId) error.createdSessionId = sessionId;
+      throw error;
     }
+  }
+  async verifySession(sessionId, cwd, mode) {
+    if (!mode || mode === 'attached') return;
+    const agent = this.ctx.agents.get(sessionId);
+    if (!agent) throw Error('原会话尚未加载，无法核对权限');
+    const policy = this.ctx.sandboxPolicy.resolve({ session: agent.session });
+    if (mode === 'code' && (policy.mode !== 'workspace-write' || await realpath(policy.workspaceRoot) !== await realpath(cwd))) throw Error('工作线程的写入边界没有落到独立工作树');
+    if (mode === 'research' && policy.mode !== 'read-only') throw Error('研究线程的只读边界未生效');
   }
   async deliver({ id, target, sender, text }) {
     const result = await this.ctx.sessionController.resolveAgent(target);

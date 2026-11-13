@@ -64,7 +64,7 @@ export async function apply(ctx, config = {}) {
     source_token: string('sourceToken from the first page, required for continuation'),
   }, (actor, args) => continuity.read({ projectId: projects.status(actor).id, section: args.section, id: args.id, offset: args.offset, sourceToken: args.source_token }));
 
-  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin'];
+  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'coordination-read', 'coordination-update', 'continuity', 'continuity-decision', 'continuity-handoff', 'continuity-takeover', 'continuity-begin', 'recovery-check'];
   for (const endpoint of endpoints) ctx.connection.fetch.register({ path: `/api/project-workbench/${endpoint}`, methods: ['POST'], requestBody: 'buffered',
     async fetch(request) {
       if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return new Response('JSON required', { status: 415 });
@@ -74,7 +74,7 @@ export async function apply(ctx, config = {}) {
       try {
         const args = body.payload || {};
         let value;
-        if (endpoint === 'list') value = { projects: projects.list(), deliveryErrors: store.state.outbox.filter(m => m.error).map(m => ({ id: m.id, projectId: m.projectId, error: m.error })), error: projects.lastError || '' };
+        if (endpoint === 'list') value = { projects: projects.list(), deliveryErrors: store.state.outbox.filter(m => !m.sent && !m.cancelled && (m.error || m.recoveryHold)).map(m => ({ id: m.id, projectId: m.projectId, target: m.target, error: m.error || '历史消息保留待确认，不会自动重新投递。' })), error: projects.lastError || '' };
         if (endpoint === 'create') value = await projects.create(args);
         if (endpoint === 'join') value = await projects.join(args.projectId, args.sessionId);
         if (endpoint === 'action') value = await projects.action(args.projectId, args.threadId, args.action);
@@ -85,6 +85,7 @@ export async function apply(ctx, config = {}) {
         if (endpoint === 'continuity-handoff') value = await continuity.handoff(args);
         if (endpoint === 'continuity-takeover') value = await continuity.takeover(args);
         if (endpoint === 'continuity-begin') value = await continuity.begin(args);
+        if (endpoint === 'recovery-check') value = await projects.checkRecovery(args.projectId);
         if (endpoint === 'diff') {
           const p = store.state.projects.find(p => p.id === args.projectId);
           const t = p?.threads.find(t => t.id === args.threadId);
