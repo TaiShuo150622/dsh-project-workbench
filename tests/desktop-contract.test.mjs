@@ -46,7 +46,7 @@ test('registered tools use provider-valid JSON Schema and reject missing/foreign
   assert.match(guards[0]({ agent: lead, name: 'send_message' }), /当前项目/);
   assert.equal(guards[0]({ agent: lead, name: 'project_dispatch' }), undefined);
   assert.equal(guards[0]({ agent: lead, name: 'read' }), undefined);
-  assert.equal(endpoints.length, 6);
+  assert.deepEqual(endpoints.map(e => e.path.split('/').at(-1)).sort(), ['action', 'create', 'diff', 'health', 'join', 'list', 'recovery-check']);
   for (const cleanup of cleanups.reverse()) cleanup?.();
 });
 
@@ -97,8 +97,11 @@ function clientFixture(existing = false) {
   };
   return { ctx, registered, types, cleanup: () => { for (const fn of cleanups.reverse()) fn(); } };
 }
+async function clientSource() {
+  return (await Promise.all(['recovery.js', 'app.js'].map(file => readFile(new URL(`../client/${file}`, import.meta.url), 'utf8')))).join('\n');
+}
 test('client owns its embedded slot, registers the native tab body, and cleans up on hot reload', async () => {
-  const source = await readFile(new URL('../client/app.js', import.meta.url), 'utf8');
+  const source = await clientSource();
   const sandbox = { React: { useState(){}, useEffect(){}, useRef(){} }, LIMITS: { panelOrder: 31 }, BUILD: 'test' };
   vm.runInNewContext(source + '\nthis.pluginApply=apply;', sandbox);
   for (const existing of [false, true]) {
@@ -112,7 +115,7 @@ test('client owns its embedded slot, registers the native tab body, and cleans u
   }
 });
 test('project navigation waits for the mounted desktop header before opening its thread pane', async () => {
-  const source = await readFile(new URL('../client/app.js', import.meta.url), 'utf8');
+  const source = await clientSource();
   const p = { id: 'project', lead: 'lead', threads: [] }, effects = [], opened = [];
   let mounted;
   const f = clientFixture();

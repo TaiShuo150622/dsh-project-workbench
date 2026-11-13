@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto';
+import { checkedThread, continuePhase, currentRuntimeState, isRecoveryHeld, observeProject, observeSession, queuedFollowup, recoveryView, requireIdle, resumableCreation, unstartedHeldTask } from './recovery.js';
 
 const now = () => new Date().toISOString();
 const ACTIVE = new Set(['starting', 'running']);
@@ -25,7 +26,7 @@ function relay(state, p, sender, target, content) {
   return m;
 }
 export function publicProject(p, native) {
-  return { ...p, leadRunning: native.running(p.lead), threads: p.threads.map(t => ({ ...t, running: !!t.sessionId && native.running(t.sessionId) })) };
+  return { ...p, recovery: recoveryView(p, native), leadRunning: native.running(p.lead), threads: p.threads.map(t => ({ ...t, resumeUnstarted: unstartedHeldTask(t), resumeCreation: resumableCreation(t), followupAvailable: queuedFollowup(t), continueAvailable: continuePhase(t), runtimeState: currentRuntimeState(native, t.sessionId), running: !!t.sessionId && native.running(t.sessionId) })) };
 }
 
 /** Logical project identity deliberately does not change native Workspace membership or Session ancestry. */
@@ -80,13 +81,23 @@ export class Projects {
       const t = thread(p, args.thread_id);
       if (t.phase === 'starting' || t.phase === 'queued') throw Error('该线程正在准备，请等待启动后再追加');
       if (args.mode && args.mode !== t.mode) throw Error('已有线程不能改变隔离类型，请创建新线程');
+      if (t.recoveryHold && t.followups?.length) throw Error('已有后续任务保留待确认，请先核对并使用“继续已排队后续任务”，新交代尚未接纳。');
+      if (t.creationRecovery?.sessionState === 'created' && !t.creationRecovery.permissionVerified) throw Error('原会话权限尚未核实，请先核对并显式继续原任务。');
+      const observation = await observeSession(this.native, t.sessionId);
+      if (!['running', 'idle'].includes(observation.runtimeState)) throw Error('无法确认原任务状态，不能继续派发；请先核对原任务状态。');
       await this.store.change(state => {
         const target = thread(project(state, p.id), t.id);
-        if (this.native.running(target.sessionId)) {
+        const runtimeState = currentRuntimeState(this.native, target.sessionId);
+        if (!['running', 'idle'].includes(runtimeState)) throw Error('原任务状态已变化，请重新核对。');
+        if (runtimeState === 'running') {
           (target.followups ||= []).push(task);
           target.dispatchKeys = [...(target.dispatchKeys || []), key];
           return;
         }
+        if (target.followups?.length) throw Error('已有后续任务待处理，新交代尚未接纳；请先核对后续任务。');
+        // This is a new explicit continuation; uncertain old deliveries stay retired.
+        for (const message of state.outbox) if (message.target === target.sessionId && !message.sent && message.recoveryHold) message.cancelled = true;
+        target.recoveryHold = false;
         target.task = task; target.summary = ''; target.error = ''; target.generation += 1;
         target.dispatchKeys = [...(target.dispatchKeys || []), key];
         target.updated = now(); target.phase = 'queued';
@@ -121,6 +132,7 @@ export class Projects {
     await this.store.change(state => {
       const current = project(state, p.id), target = thread(current, t.id);
       if (target.phase === 'stopped') throw Error('线程已停止，不能覆盖停止状态');
+      target.recoveryHold = false;
       target.summary = summary; target.phase = outcome; target.reportedGeneration = target.generation; target.updated = now();
       relay(state, current, actor, current.lead, `线程「${target.title}」(${target.id})：${PHASES[outcome]}。\n${summary}\n${target.worktree ? `独立分支：${target.worktree.branch}\n工作树：${target.worktree.path}\n` : ''}这是一条工作汇报。需要时用 project_read_thread 看依据；请汇总对用户有用的变化或继续解锁后续任务，不要重复创建已经完成的线程。`);
     });
@@ -150,10 +162,39 @@ export class Projects {
       this.kick(); return;
     }
     if (action === 'retry_delivery') {
-      await this.store.change(s => { for (const m of s.outbox) if (m.projectId === p.id && !m.cancelled) m.error = ''; });
-      this.kick(); return;
+      const pending = this.store.snapshot().outbox.filter(m => m.projectId === p.id && m.target === p.lead && !m.sent && !m.cancelled && (m.error || m.recoveryHold));
+      if (!pending.length) throw Error('没有待确认的总对话汇报；工作线程请单独核对并继续。');
+      if (!p.recovery?.checkedAt || p.recovery.runtime?.id !== recoveryView(p, this.native).currentRuntime.id
+        || p.recovery.lead?.sessionId !== p.lead || p.recovery.lead.runtimeState !== 'idle') throw Error('请先核对总对话为空闲，再确认重试汇报。');
+      for (const message of pending) {
+        await requireIdle(this.native, message.target);
+      }
+      await this.store.change(s => {
+        for (const message of pending) {
+          const live = s.outbox.find(m => m.id === message.id);
+          if (!live || live.sent || live.cancelled) continue;
+          if (live.target !== message.target || project(s, p.id).lead !== live.target || currentRuntimeState(this.native, live.target) !== 'idle') throw Error('消息目标或状态已变化，请重新核对。');
+          live.error = ''; live.recoveryHold = false;
+        }
+      });
+      this.kick(); return { retriedReports: pending.length };
     }
     const t = thread(p, threadId);
+    if (action === 'retry_followup') {
+      if (!queuedFollowup(t)) throw Error('没有可明确继续的已排队后续任务；请先处理原任务状态。');
+      const row = checkedThread(p, t, this.native);
+      if (row?.runtimeState !== 'idle') throw Error('请先核对原会话为空闲，再继续已排队后续任务。');
+      await requireIdle(this.native, t.sessionId);
+      await this.store.change(s => {
+        const x = thread(project(s, p.id), t.id);
+        if (!queuedFollowup(x) || x.sessionId !== t.sessionId || x.generation !== t.generation || x.followups[0] !== t.followups[0]
+          || currentRuntimeState(this.native, x.sessionId) !== 'idle') throw Error('后续任务或原会话状态已变化，请重新核对。');
+        x.task = x.followups.shift(); x.phase = 'queued'; x.generation += 1;
+        x.recoveryHold = false; x.error = ''; x.updated = now();
+        for (const m of s.outbox) if (m.target === x.sessionId && !m.sent && m.recoveryHold) m.cancelled = true;
+      });
+      this.kick(); return { continuedFollowup: true };
+    }
     if (action === 'stop') {
       await this.store.change(s => {
         const x = thread(project(s, p.id), t.id); x.phase = 'stopped'; x.updated = now(); x.followups = [];
@@ -168,10 +209,22 @@ export class Projects {
       return;
     }
     if (action === 'retry') {
-      if (!['failed', 'interrupted', 'stopped'].includes(t.phase)) throw Error('该线程不需要恢复');
+      if (!continuePhase(t)) throw Error('该线程不需要恢复；待验收或已完成成果不能通过恢复重跑。');
+      if (t.creationRecovery?.sessionState === 'unknown' || t.creationRecovery?.worktreeState === 'unknown') throw Error('创建结果尚未确认，请人工核对原会话或工作树并修复记录；不会自动重创。');
+      const row = checkedThread(p, t, this.native), withoutSession = unstartedHeldTask(t) || resumableCreation(t);
+      if (!row || (withoutSession ? row.reason !== 'session-not-assigned' : row.runtimeState !== 'idle')) throw Error('请先核对原任务状态，再明确继续。');
+      if (!withoutSession) await requireIdle(this.native, t.sessionId);
+      if (t.creationRecovery?.sessionState === 'created' && !t.creationRecovery.permissionVerified) {
+        if (!this.native.verifySession) throw Error('当前宿主适配器无法核对原会话权限，请先修复。');
+        await this.native.verifySession(t.sessionId, t.cwd || t.worktree?.path || p.repos[t.repoIndex]?.path, t.mode);
+      }
       await this.store.change(s => {
-        const x = thread(project(s, p.id), t.id); x.phase = 'queued'; x.error = ''; x.updated = now(); x.generation += 1;
-        for (const m of s.outbox) if (m.target === t.sessionId && !m.sent) { m.cancelled = true; m.error = ''; }
+        const x = thread(project(s, p.id), t.id);
+        if (!continuePhase(x) || x.sessionId !== t.sessionId || x.generation !== t.generation
+          || (withoutSession ? !(unstartedHeldTask(x) || resumableCreation(x)) : currentRuntimeState(this.native, x.sessionId) !== 'idle')) throw Error('原任务状态已变化，请重新核对。');
+        if (x.creationRecovery?.sessionState === 'created') x.creationRecovery.permissionVerified = true;
+        x.phase = 'queued'; x.recoveryHold = false; x.error = ''; x.updated = now(); if (!withoutSession) x.generation += 1;
+        for (const m of s.outbox) if (t.sessionId && m.target === t.sessionId && !m.sent) { m.cancelled = true; m.error = ''; }
       });
       this.kick(); return;
     }
@@ -187,20 +240,46 @@ export class Projects {
     await this.report(sessionId, { outcome: 'waiting_user', summary: (result || '本轮已结束，但没有收到结构化工作汇报。请查看线程后继续。').slice(0, this.limits.maxText) });
   }
   async recover() {
+    // Saved dispatch state is not proof of whether a remote effect already happened.
+    await this.store.change(state => {
+      for (const message of state.outbox) if (!message.sent && !message.cancelled) message.recoveryHold = true;
+      for (const p of state.projects) for (const t of p.threads) {
+        if (ACTIVE.has(t.phase) || t.phase === 'queued' || t.followups?.length) t.recoveryHold = true;
+      }
+    });
     // Desktop composers need native Workspace membership even for saved blank sessions.
     // Only repair plugin-created sessions; explicitly joined sessions retain their original membership.
     if (this.native.ensureWorkspace) for (const p of this.store.state.projects) {
-      await this.native.ensureWorkspace(p.lead);
-      for (const t of p.threads) if (t.mode !== 'attached' && t.sessionId) await this.native.ensureWorkspace(t.sessionId);
+      const sessions = [p.lead, ...p.threads.filter(t => t.mode !== 'attached' && t.sessionId).map(t => t.sessionId)];
+      for (const id of sessions) {
+        try { await this.native.ensureWorkspace(id); } catch { /* A missing/cold session must not prevent observing the rest of the project. */ }
+      }
     }
+    for (const p of this.store.snapshot().projects) await this.checkRecovery(p.id);
     await this.store.change(state => {
       for (const p of state.projects) for (const t of p.threads) {
-        if (ACTIVE.has(t.phase) && (!t.sessionId || !this.native.running(t.sessionId))) {
-          t.phase = 'interrupted'; t.error = '宿主重新连接，原会话和工作树保留；可从这里恢复。';
+        const observation = p.recovery?.threads.find(row => row.threadId === t.id);
+        if (ACTIVE.has(t.phase) && observation?.runtimeState === 'idle' && currentRuntimeState(this.native, t.sessionId) === 'idle') {
+          t.phase = 'interrupted'; t.error = '原会话已空闲，原任务结果尚需核对；会话、成果和工作树保留。';
         }
       }
     });
-    this.kick();
+    // Reconnecting/observing never starts the scheduler or releases held messages.
+  }
+  async checkRecovery(projectId) {
+    const snapshot = project(this.store.snapshot(), projectId);
+    const observation = await observeProject(this.native, snapshot);
+    await this.store.change(state => {
+      const p = project(state, projectId);
+      observation.threads = p.threads.map(t => {
+        const row = observation.threads.find(row => row.threadId === t.id);
+        if (row && row.sessionId === (t.sessionId || null) && row.generation === (t.generation || 0)) return row;
+        return { threadId: t.id, sessionId: t.sessionId || null, generation: t.generation || 0, runtimeState: 'unknown', reason: 'task-changed-during-check' };
+      });
+      if (p.lead !== observation.lead.sessionId) observation.lead = { sessionId: p.lead, runtimeState: 'unknown', reason: 'task-changed-during-check' };
+      p.recovery = observation;
+    });
+    return recoveryView(project(this.store.state, projectId), this.native);
   }
   kick() {
     if (this.closed) return;
@@ -211,17 +290,17 @@ export class Projects {
   }
   async drive() {
     while (!this.closed) {
-      const followups = this.store.state.projects.some(p => !p.paused && p.threads.some(t => t.followups?.length && !this.native.running(t.sessionId) && !ACTIVE.has(t.phase)));
+      const followups = this.store.state.projects.some(p => !p.paused && p.threads.some(t => t.followups?.length && !t.recoveryHold && currentRuntimeState(this.native, t.sessionId) === 'idle' && !ACTIVE.has(t.phase) && !['queued', 'stopped'].includes(t.phase)));
       if (followups) await this.store.change(state => {
         for (const p of state.projects.filter(p => !p.paused)) for (const t of p.threads) {
-          if (!t.followups?.length || this.native.running(t.sessionId) || ACTIVE.has(t.phase) || t.phase === 'stopped') continue;
+          if (!t.followups?.length || t.recoveryHold || currentRuntimeState(this.native, t.sessionId) !== 'idle' || ACTIVE.has(t.phase) || ['queued', 'stopped'].includes(t.phase)) continue;
           t.task = t.followups.shift(); t.generation += 1; t.summary = ''; t.phase = 'queued'; t.updated = now();
         }
       });
       const candidates = this.store.state.projects.filter(p => !p.paused).flatMap(p => {
         const active = p.threads.filter(t => ACTIVE.has(t.phase) || (t.sessionId && this.native.running(t.sessionId))).length;
         if (active >= this.limits.maxParallel) return [];
-        const t = p.threads.find(t => t.phase === 'queued' && !this.native.running(t.sessionId) && t.dependsOn.every(id => READY.has(thread(p, id).phase)));
+        const t = p.threads.find(t => t.phase === 'queued' && !t.recoveryHold && (!t.sessionId || currentRuntimeState(this.native, t.sessionId) === 'idle') && t.dependsOn.every(id => READY.has(thread(p, id).phase)));
         return t ? [{ p, t }] : [];
       });
       if (!candidates.length) break;
@@ -231,19 +310,49 @@ export class Projects {
   }
   async start(projectId, threadId) {
     let p = project(this.store.state, projectId), t = thread(p, threadId);
-    await this.store.change(s => { thread(project(s, p.id), t.id).phase = 'starting'; });
+    if (t.recoveryHold || t.phase !== 'queued') return;
+    if (t.sessionId) {
+      try {
+        await requireIdle(this.native, t.sessionId);
+        if (this.native.verifySession) await this.native.verifySession(t.sessionId, t.cwd || t.worktree?.path || p.repos[t.repoIndex]?.path, t.mode);
+      } catch (error) {
+        await this.store.change(s => { const x = thread(project(s, p.id), t.id); x.recoveryHold = true; x.error = error.message; });
+        return;
+      }
+    }
+    const starting = await this.store.change(s => {
+      const x = thread(project(s, p.id), t.id);
+      if (x.recoveryHold || x.phase !== 'queued') return false;
+      if (x.sessionId && currentRuntimeState(this.native, x.sessionId) !== 'idle') { x.recoveryHold = true; return false; }
+      x.phase = 'starting'; x.startAttempted = true; return true;
+    });
+    if (!starting) return;
+    let cwd = t.cwd, createdSessionId = t.sessionId;
+    let sessionState = t.sessionId ? 'created' : 'not-created';
+    let worktreeState = t.worktree ? 'ready' : t.mode === 'code' ? 'not-created' : 'not-needed';
+    let permissionVerified = !!t.sessionId;
     try {
-      let cwd = t.cwd;
       if (!t.sessionId) {
         const repo = p.repos[t.repoIndex];
         if (t.mode === 'code' && !t.worktree) {
-          const worktree = await this.worktrees.create(repo, p.id, t.id);
+          let worktree;
+          try { worktree = await this.worktrees.create(repo, p.id, t.id); }
+          catch (error) { worktreeState = error?.worktreeNotCreated === true ? 'not-created' : 'unknown'; throw error; }
+          worktreeState = 'ready';
           await this.store.change(s => { thread(project(s, p.id), t.id).worktree = worktree; });
         }
         t = thread(project(this.store.state, p.id), t.id);
         cwd = t.worktree?.path || repo.path;
-        const sessionId = await this.native.create(cwd, `${p.title} · ${t.title}`, t.mode);
-        await this.store.change(s => { Object.assign(thread(project(s, p.id), t.id), { sessionId, cwd }); });
+        sessionState = 'unknown';
+        try {
+          createdSessionId = await this.native.create(cwd, `${p.title} · ${t.title}`, t.mode);
+          sessionState = 'created'; permissionVerified = true;
+        } catch (error) {
+          if (error?.createdSessionId) { createdSessionId = error.createdSessionId; sessionState = 'created'; }
+          else sessionState = error?.sessionNotCreated === true ? 'not-created' : 'unknown';
+          throw error;
+        }
+        await this.store.change(s => { Object.assign(thread(project(s, p.id), t.id), { sessionId: createdSessionId, cwd }); });
       }
       t = thread(project(this.store.state, p.id), t.id);
       if (t.phase === 'stopped') return;
@@ -251,6 +360,7 @@ export class Projects {
       await this.store.change(s => {
         const current = project(s, p.id), x = thread(current, t.id);
         if (x.phase === 'stopped') return;
+        delete x.creationRecovery;
         x.phase = 'running'; x.error = ''; x.updated = now();
         relay(s, current, current.lead, x.sessionId, input);
       });
@@ -259,8 +369,14 @@ export class Projects {
       await this.store.change(s => {
         const current = project(s, p.id), x = thread(current, t.id);
         if (x.phase === 'stopped') return;
-        x.phase = 'failed'; x.error = error.message; x.updated = now();
-        relay(s, current, x.sessionId || current.lead, current.lead, `线程「${x.title}」启动失败：${error.message}。已创建的会话和工作树保留，请检查后恢复，不要重复新建。`);
+        if (createdSessionId) Object.assign(x, { sessionId: createdSessionId, cwd });
+        x.creationRecovery = { sessionState, worktreeState, permissionVerified };
+        x.recoveryHold = true; x.phase = 'failed'; x.updated = now();
+        const guidance = sessionState === 'unknown' || worktreeState === 'unknown'
+          ? '创建结果尚未确认，请人工核对原会话或工作树并修复记录；不会自动重创。'
+          : sessionState === 'created' && !permissionVerified ? '原会话身份已保留，继续前必须修复并核对原权限。' : '确认状态后可显式继续，已有会话和工作树保留。';
+        x.error = `${error.message}。${guidance}`;
+        relay(s, current, x.sessionId || current.lead, current.lead, `线程「${x.title}」启动失败：${x.error}`);
       });
     }
   }
@@ -268,21 +384,39 @@ export class Projects {
     if (this.flushing) return this.flushing;
     this.flushing = (async () => {
       const pending = this.store.snapshot().outbox.filter(m => !m.sent && !m.error && !m.cancelled);
-      for (const m of pending) {
+      for (const candidate of pending) {
         if (this.closed) break;
+        let m = this.store.state.outbox.find(m => m.id === candidate.id);
+        if (!m || m.sent || m.error || m.cancelled) continue;
         const p = project(this.store.state, m.projectId);
         const t = p.threads.find(t => t.sessionId === m.target);
-        // Recovery leaves unsent work interrupted until the user explicitly resumes it.
+        // Holds survive observation and coordinator redirection until an explicit continuation.
+        if (isRecoveryHeld(m, t)) continue;
         // Pausing only stops new dispatch; completed workers may still report to the lead.
         if (t && t.phase !== 'running') continue;
+        const target = m.target;
+        const observation = await observeSession(this.native, target);
+        m = this.store.state.outbox.find(m => m.id === candidate.id);
+        if (!m || m.target !== target || m.sent || m.error || m.cancelled || isRecoveryHeld(m, project(this.store.state, m.projectId).threads.find(t => t.sessionId === m.target))) continue;
+        if (!['running', 'idle'].includes(observation.runtimeState) || !['running', 'idle'].includes(currentRuntimeState(this.native, target))) {
+          await this.store.change(s => {
+            const live = s.outbox.find(x => x.id === m.id);
+            if (!live || live.sent || live.cancelled || live.target !== target) return;
+            live.recoveryHold = true; live.error = '原会话状态尚未确认，消息保留待核对。';
+            const worker = project(s, m.projectId).threads.find(t => t.sessionId === target);
+            if (worker) worker.recoveryHold = true;
+          });
+          continue;
+        }
         try {
           await this.native.deliver(m);
           await this.store.change(s => { s.outbox.find(x => x.id === m.id).sent = true; });
         } catch (error) {
           await this.store.change(s => {
-            s.outbox.find(x => x.id === m.id).error = error.message;
+            const message = s.outbox.find(x => x.id === m.id);
+            message.error = '消息投递结果尚未确认，请先核对原任务状态。'; message.recoveryHold = true;
             const target = project(s, m.projectId).threads.find(t => t.sessionId === m.target);
-            if (target && target.phase === 'running') { target.phase = 'failed'; target.error = `消息尚未投递：${error.message}`; }
+            if (target) { target.recoveryHold = true; target.error = message.error; }
           });
         }
       }

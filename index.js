@@ -56,7 +56,7 @@ export async function apply(ctx, config = {}) {
   }, (actor, args) => projects.report(actor, args));
   tool('project_read_thread', 'Read recent messages of a thread within this project. This does not start or interrupt work.', { thread_id: required('Project thread ID') }, (actor, args) => projects.read(actor, args.thread_id));
 
-  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health'];
+  const endpoints = ['list', 'create', 'join', 'action', 'diff', 'health', 'recovery-check'];
   for (const endpoint of endpoints) ctx.connection.fetch.register({ path: `/api/project-workbench/${endpoint}`, methods: ['POST'], requestBody: 'buffered',
     async fetch(request) {
       if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return new Response('JSON required', { status: 415 });
@@ -66,10 +66,11 @@ export async function apply(ctx, config = {}) {
       try {
         const args = body.payload || {};
         let value;
-        if (endpoint === 'list') value = { projects: projects.list(), deliveryErrors: store.state.outbox.filter(m => m.error).map(m => ({ id: m.id, projectId: m.projectId, error: m.error })), error: projects.lastError || '' };
+        if (endpoint === 'list') value = { projects: projects.list(), deliveryErrors: store.state.outbox.filter(m => !m.sent && !m.cancelled && (m.error || m.recoveryHold)).map(m => ({ id: m.id, projectId: m.projectId, target: m.target, error: m.error || '历史消息保留待确认，不会自动重新投递。' })), error: projects.lastError || '' };
         if (endpoint === 'create') value = await projects.create(args);
         if (endpoint === 'join') value = await projects.join(args.projectId, args.sessionId);
         if (endpoint === 'action') value = await projects.action(args.projectId, args.threadId, args.action);
+        if (endpoint === 'recovery-check') value = await projects.checkRecovery(args.projectId);
         if (endpoint === 'diff') {
           const p = store.state.projects.find(p => p.id === args.projectId);
           const t = p?.threads.find(t => t.id === args.threadId);

@@ -15,7 +15,7 @@ const mutations = [
   ['desktop-membership', 'server/native.js', 'create({ workspaceId: workspace.id })', 'create({ cwd })', 'native desktop sessions are created'],
   ['external-delegation', 'index.js', "if (!exec.agent) return;", 'return;', 'registered tools use provider-valid'],
   ['client-tab-body', 'client/app.js', "key: TAB, children:", "key: 'wrong-body', children:", 'client owns its embedded slot'],
-  ['recovery-replay', 'server/projects.js', "if (t && t.phase !== 'running') continue;", "if (t?.phase === 'stopped') continue;", 'restore does not replay'],
+  ['recovery-replay', 'server/recovery.js', 'message?.recoveryHold', 'false', 'held lead deliveries survive observation'],
   ['desktop-navigation', 'client/app.js', 'pendingProject = p;', '', 'project navigation waits'],
   ['joined-session-title', 'server/projects.js', "info.events.findLast(e => e.type === 'session/title')", 'info.events.findLast(e => false)', 'join only explicitly selected'],
 ];
@@ -28,7 +28,7 @@ for (const [name, file, before, after, expected] of mutations) {
   if (!original.includes(before)) throw Error(`${name}: mutation target missing`);
   await writeFile(join(dir, file), original.replace(before, after));
   let output = '', exitCode = 0;
-  try { const result = await run(process.execPath, ['--test', 'tests/desktop-contract.test.mjs', 'tests/projects.test.mjs'], { cwd: dir }); output = result.stdout + result.stderr; }
+  try { const result = await run(process.execPath, ['--test', 'tests/desktop-contract.test.mjs', 'tests/projects.test.mjs', 'tests/recovery.test.mjs'], { cwd: dir }); output = result.stdout + result.stderr; }
   catch (e) { exitCode = e.code; output = (e.stdout || '') + (e.stderr || ''); }
   const failures = output.split('\n').filter(line => /^✖|^not ok/.test(line));
   const killed = exitCode !== 0 && failures.some(line => line.includes(expected));
