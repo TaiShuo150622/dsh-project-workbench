@@ -1752,9 +1752,9 @@
       "title": "多模块目标、接续与远程恢复",
       "current_main_version": "v0.1.1",
       "collection_date": "2026-11-13",
-      "file_count": 7,
+      "file_count": 8,
       "manifest_path": "docs/harness/11-project-management/PACKAGE_MANIFEST.json",
-      "manifest_sha256": "064bcd53a0841098555b100dac6603fe0bd917f88ecc51d386e5a939b4814bda",
+      "manifest_sha256": "1658dc74ec0bfc1379b0539453d131bf87e8598b58b246d45b37b2bc199c2c04",
       "reading_guide": "docs/harness/11-project-management/README.md",
       "file_index": "docs/harness/11-project-management/CONTENTS.md",
       "treatment": "三个独立功能分支及组合试验；公开合成场景与脱敏结论，历史研究包不改动"

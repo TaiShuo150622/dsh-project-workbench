@@ -8,7 +8,9 @@
 | B 跨会话接续 | [codex/harness-continuity](https://github.com/TaiShuo150622/dsh-project-workbench/tree/codex/harness-continuity) | 保存有效决定与替代关系、保存接续包、新总会话接手并显式开始 |
 | C 远程恢复 | [codex/harness-remote-recovery](https://github.com/TaiShuo150622/dsh-project-workbench/tree/codex/harness-remote-recovery) | 核对原任务、区分运行/空闲/未知、单独明确继续；默认不重复启动 |
 
-三条分支都从 `634ebb440a9cee2e0c0aa305dbcd4166c570dfbb` 出发。每条独立分支包含自身功能；[组合试验分支](https://github.com/TaiShuo150622/dsh-project-workbench/tree/codex/harness-management-trial)依 A→B→C 合并。阅读时先看本页与 [试验场景](SCENES.md)，再看各线讨论稿和实现说明。具体运行证据以 [验证记录](VALIDATION.md)为准。
+三条分支都从 `634ebb440a9cee2e0c0aa305dbcd4166c570dfbb` 出发。每条独立分支包含自身功能；[组合试验分支](https://github.com/TaiShuo150622/dsh-project-workbench/tree/codex/harness-management-trial)依 A→B→C 合并。阅读时先看本页与 [试验场景](SCENES.md)，再看各线讨论稿和实现说明。具体运行证据以 [验证记录](VALIDATION.md)和 [真实组合试验](LIVE_TRIAL.md)为准。
+
+当前状态：三条独立分支自动验证通过，组合分支 83 项测试通过；真实模型的两线程汇报、新协调会话接续及同宿主 HTTP 重连已验证。完整界面试用由用户安排后续进行，研究汇报和最终内容仍需人工验收。
 
 ## 管理方法
 

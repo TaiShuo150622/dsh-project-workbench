@@ -1,5 +1,6 @@
 # 本主题文件
 
+- [LIVE_TRIAL.md](LIVE_TRIAL.md)
 - [README.md](README.md)
 - [SCENES.md](SCENES.md)
 - [VALIDATION.md](VALIDATION.md)
