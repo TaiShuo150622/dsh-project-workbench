@@ -222,6 +222,32 @@ test('unknown existing sessions block new continuation, queued starts and saved 
   assert.equal(f.effects.created.length + f.effects.delivered.length, 0);
 });
 
+test('queued starts recheck pause and lifecycle closure after idle observation', async () => {
+  for (const change of ['pause', 'close']) {
+    const f = await fixture([{ ...baseThread, phase: 'queued' }]);
+    f.states.set('worker', 'idle');
+    let entered, release;
+    const observing = new Promise(resolve => { entered = resolve; });
+    const barrier = new Promise(resolve => { release = resolve; });
+    const observe = f.native.observe.bind(f.native);
+    f.native.observe = async id => {
+      if (id === 'worker') { entered(); await barrier; }
+      return observe(id);
+    };
+    f.service.kick();
+    await observing;
+    if (change === 'pause') await f.service.action(f.p.id, null, 'pause');
+    else f.service.closed = true;
+    release(); await f.drain();
+    const t = f.store.state.projects[0].threads[0];
+    assert.equal(t.phase, 'queued', change);
+    assert.equal(t.startAttempted, undefined, change);
+    assert.equal(t.summary, baseThread.summary);
+    assert.equal(f.store.state.outbox.length, 0);
+    assert.equal(f.effects.created.length + f.effects.delivered.length, 0);
+  }
+});
+
 test('ambiguous delivery preserves the running phase and holds its original message without automatic resend', async () => {
   const f = await fixture([{ ...baseThread, phase: 'queued' }]);
   f.states.set('worker', 'idle');
