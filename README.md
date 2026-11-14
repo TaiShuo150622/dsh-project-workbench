@@ -4,6 +4,7 @@
 
 ## Harness 讨论稿与后续设计
 
+- **[DAG 统一图形表达方案](docs/harness/13-dag-visual-understanding/README.md)**：将讨论稿中的架构、流程、反馈、部署、时序与状态等图纳入统一视图方向，附 15 类场景映射；当前为讨论稿。
 - **[交付管理与项目 DAG](docs/harness/12-delivery-dag/README.md)**：验收条件、模块输入输出约定、原线程、成果和人工验收；图上查看缺口、变更复核及双向导航。
 - **[多模块目标、接续与远程恢复最小实现](docs/harness/11-project-management/README.md)**：三条独立分支、研究依据、最小范围及组合验证。
 

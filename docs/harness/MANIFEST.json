@@ -1770,6 +1770,18 @@
       "reading_guide": "docs/harness/12-delivery-dag/README.md",
       "file_index": "docs/harness/12-delivery-dag/CONTENTS.md",
       "treatment": "公开实现、通用方案和脱敏验证结论；保留原业务待验收状态，原始宿主状态和私有截图不上传"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding",
+      "title": "DAG 统一图形表达与场景映射",
+      "current_main_version": "v0.1.0",
+      "collection_date": "2026-11-13",
+      "file_count": 6,
+      "manifest_path": "docs/harness/13-dag-visual-understanding/PACKAGE_MANIFEST.json",
+      "manifest_sha256": "d76800628cde59b51100d5b6858a7b3aa08695d3fe60ef10215214ab2c051b9f",
+      "reading_guide": "docs/harness/13-dag-visual-understanding/README.md",
+      "file_index": "docs/harness/13-dag-visual-understanding/CONTENTS.md",
+      "treatment": "公开讨论与来源核对；历史私人会话和目标图未上传；扫描数字包含历史版本与副本，不代表已转换或已实现"
     }
   ]
 }

@@ -6,6 +6,10 @@
 
 “源版本”沿用原稿标记；“历史”不表示错误，只表示有后续稿件或当时的讨论语境。公开整理可能删除内部案例、个人原话和私有附件；具体边界见各稿开头。所有实施卡均为计划材料，不以文件存在证明任务已经完成。
 
+## 新增 · DAG 统一图形表达
+
+2026-11-13 [整体讨论稿 v0.1.0](13-dag-visual-understanding/DAG统一图形表达与场景映射讨论稿-v0.1.0.md)明确多场景图形表达方向。[场景映射](13-dag-visual-understanding/SCENE_MAP.md)连接原有问题、讨论稿图与拟议交互；[图块清单](13-dag-visual-understanding/DIAGRAM_INVENTORY.md)保留覆盖与去重口径。仅讨论和资料整理，尚未新增产品实现。
+
 ## 新增 · 交付管理与项目 DAG
 
 2026-11-13 实现与验证见 [交付管理入口](12-delivery-dag/README.md)。[整体方案 v0.1.1](12-delivery-dag/Harness-工作台与DAG整体实施讨论稿-v0.1.1.md)、[数据与接口契约](12-delivery-dag/CONTRACT.md)、[验证记录](12-delivery-dag/VALIDATION.md)及[文件目录](12-delivery-dag/CONTENTS.md)分别说明方案、已实现行为和实际证据。前序三线实现见 [11-project-management](11-project-management/README.md)。

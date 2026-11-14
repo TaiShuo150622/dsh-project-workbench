@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-13",
+  "scope": "Discussion and source inventory only; no product implementation or runtime change",
+  "files": [
+    {
+      "path": "docs/harness/13-dag-visual-understanding/CONTENTS.md",
+      "sha256": "ea17347f4fe34a624da9e163a9b58350b501b13226f2de05e6e1e28de597f410"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding/DAG统一图形表达与场景映射讨论稿-v0.1.0.md",
+      "sha256": "e7e8ae4683889d88e57cf2500c63d9fa03ab028423a1bc3eae88d3e67e001266"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding/DIAGRAM_INVENTORY.json",
+      "sha256": "336aa288aaf63ee768750c13c76acc8615ba338033a4f284ec6b64246752b9df"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding/DIAGRAM_INVENTORY.md",
+      "sha256": "3cdd17cf1e1474897ae8e5f3c5d74e4cbd421595d5866951d2a1bc5f6eec0dbb"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding/README.md",
+      "sha256": "14ae784242811f1be7d01a058631dd7c6bd55289e1c4bf26da6c696316725c31"
+    },
+    {
+      "path": "docs/harness/13-dag-visual-understanding/SCENE_MAP.md",
+      "sha256": "a3c10cc7ccd0226f16efa52d8470ce47facabfae388240a7b4b8caf59a92e627"
+    }
+  ]
+}
